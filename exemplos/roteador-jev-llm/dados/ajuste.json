@@ -1,0 +1,186 @@
+{
+  "versao": "2026-09-30",
+  "autor": "codex",
+  "casos": [
+    {
+      "id": "R-A001",
+      "pedido": "Vocês aceitam Pix ou boleto?",
+      "destino": "faq",
+      "nota": "F02 responde integralmente, sem consultar compra individual."
+    },
+    {
+      "id": "R-A002",
+      "pedido": "Tenho medo de errar o número do tênis. Como uso a tabela de tamanhos?",
+      "destino": "faq",
+      "nota": "F01; pergunta geral."
+    },
+    {
+      "id": "R-A003",
+      "pedido": "O frete fica grátis com qual valor?",
+      "destino": "faq",
+      "nota": "F11; regra geral."
+    },
+    {
+      "id": "R-A004",
+      "pedido": "Não quero saber onde está meu pacote; quero só o caminho no site para ver o rastreio.",
+      "destino": "faq",
+      "nota": "Difícil: negação separa instrução geral F05 de consulta individual."
+    },
+    {
+      "id": "R-A005",
+      "pedido": "Meu irmão disse que podia retirar. Vocês realmente têm retirada presencial?",
+      "destino": "faq",
+      "nota": "Difícil: citação de terceiro; F14 resolve a dúvida."
+    },
+    {
+      "id": "R-A006",
+      "pedido": "Não tenho nenhum defeito agora. Só quero saber como abrir a análise se aparecer um.",
+      "destino": "faq",
+      "nota": "Difícil: hipótese; F10, sem reclamação individual."
+    },
+    {
+      "id": "R-A007",
+      "pedido": "Veja onde está o pedido 81001, por favor.",
+      "destino": "status_pedido",
+      "nota": "Consulta individual com número."
+    },
+    {
+      "id": "R-A008",
+      "pedido": "O pedido 81002 já saiu da separação?",
+      "destino": "status_pedido",
+      "nota": "Consulta individual identificada."
+    },
+    {
+      "id": "R-A009",
+      "pedido": "Meu pedido 81003 aparece como entregue, mas não chegou. Confira o status antes de qualquer outra coisa.",
+      "destino": "status_pedido",
+      "nota": "Difícil: divergência entre tela e relato; prioridade explícita de consulta, sem ameaça."
+    },
+    {
+      "id": "R-A010",
+      "pedido": "Não estou pedindo instruções de rastreio: consulte o pedido 81004.",
+      "destino": "status_pedido",
+      "nota": "Difícil: negação elimina FAQ."
+    },
+    {
+      "id": "R-A011",
+      "pedido": "A compra é 81005. Quero saber se ela foi despachada, só isso.",
+      "destino": "status_pedido",
+      "nota": "Número identificado apesar da palavra compra."
+    },
+    {
+      "id": "R-A012",
+      "pedido": "Meu amigo já recebeu o dele. Verifique o meu, número 81006.",
+      "destino": "status_pedido",
+      "nota": "Difícil: referente do pedido está explícito; não consultar o amigo."
+    },
+    {
+      "id": "R-A013",
+      "pedido": "Oi! Pode me dar boas-vindas em uma frase?",
+      "destino": "llm_barato",
+      "nota": "Saudação simples."
+    },
+    {
+      "id": "R-A014",
+      "pedido": "Reescreva esta mensagem com educação: meu sapato não chegou.",
+      "destino": "llm_barato",
+      "nota": "Transformação de texto, sem consulta pedida."
+    },
+    {
+      "id": "R-A015",
+      "pedido": "Resume em uma frase: achei o tênis bonito, leve e fácil de calçar.",
+      "destino": "llm_barato",
+      "nota": "Resumo simples."
+    },
+    {
+      "id": "R-A016",
+      "pedido": "Onde está meu pedido? Não estou com o número agora.",
+      "destino": "llm_barato",
+      "nota": "Difícil: falta identificador; pedir número, não consultar às cegas."
+    },
+    {
+      "id": "R-A017",
+      "pedido": "Não precisa conferir a compra 81007. Só deixe mais gentil o texto: obrigado pela ajuda.",
+      "destino": "llm_barato",
+      "nota": "Difícil: número incidental; consulta explicitamente negada."
+    },
+    {
+      "id": "R-A018",
+      "pedido": "Um cliente disse: vou processar a loja. Transforme apenas a frase neutra bom dia em uma saudação curta.",
+      "destino": "llm_barato",
+      "nota": "Difícil: ameaça citada não é ameaça atual do autor; tarefa estreita de escrita."
+    },
+    {
+      "id": "R-A019",
+      "pedido": "Planeje os passos para trocar um tamanho sem perder a chance de devolver: recebi há cinco dias e ainda não decidi entre troca e devolução.",
+      "destino": "llm_raciocinio",
+      "nota": "Combinar políticas e decisões alternativas; cálculos de prazo ficam no código."
+    },
+    {
+      "id": "R-A020",
+      "pedido": "Quero entender um conflito: o cupom reduz o subtotal, mas a oferta de frete depende dele. Monte a ordem de verificações, sem calcular os valores.",
+      "destino": "llm_raciocinio",
+      "nota": "Plano com dependência entre desconto e frete."
+    },
+    {
+      "id": "R-A021",
+      "pedido": "Recebi dois pares em dias diferentes; um serve e o outro não. Organize as opções de cada um considerando troca e devolução, sem abrir solicitação.",
+      "destino": "llm_raciocinio",
+      "nota": "Múltiplos itens, datas e alternativas; FAQ isolada não encerra o pedido."
+    },
+    {
+      "id": "R-A022",
+      "pedido": "A página diz que pode corrigir endereço antes da separação, mas recebi informações conflitantes sobre a etapa. Desenhe os próximos passos possíveis e onde preciso confirmar o status.",
+      "destino": "llm_raciocinio",
+      "nota": "Difícil: conflito de evidência; plano condicional, não consulta com número."
+    },
+    {
+      "id": "R-A023",
+      "pedido": "Não quero que vocês aprovem uma exceção. Explique quais informações faltam para decidir entre troca normal, análise de defeito e pedido excepcional.",
+      "destino": "llm_raciocinio",
+      "nota": "Difícil: distinção entre estruturar a análise e autorizar exceção."
+    },
+    {
+      "id": "R-A024",
+      "pedido": "Faça um plano para comprar dois modelos para experimentar, comparar o tamanho e devolver só um se necessário, respeitando as regras e sem prometer aprovação.",
+      "destino": "llm_raciocinio",
+      "nota": "Difícil: vários passos e política com escolhas."
+    },
+    {
+      "id": "R-A025",
+      "pedido": "Vocês são uns incompetentes, já perdi a paciência! Quero um responsável agora, não mais respostas automáticas.",
+      "destino": "humano",
+      "nota": "Cliente muito irritado; atendimento humano pela política do exemplo."
+    },
+    {
+      "id": "R-A026",
+      "pedido": "Se isso não for resolvido, vou entrar com uma ação judicial contra vocês.",
+      "destino": "humano",
+      "nota": "Ameaça jurídica atual."
+    },
+    {
+      "id": "R-A027",
+      "pedido": "Vou mandar o número completo do cartão e a senha para você resolver o pagamento por mim.",
+      "destino": "humano",
+      "nota": "Risco de dado sensível e execução indevida de pagamento; não solicitar os dados."
+    },
+    {
+      "id": "R-A028",
+      "pedido": "O pedido é 81008, mas eu quero o CPF e o telefone do outro cliente que comprou o mesmo modelo.",
+      "destino": "humano",
+      "nota": "Difícil: número não supera pedido de dado de terceiro."
+    },
+    {
+      "id": "R-A029",
+      "pedido": "Não me mande para o suporte automático. Estou sendo cobrado por uma compra que não fiz e preciso contestar uma possível fraude.",
+      "destino": "humano",
+      "nota": "Difícil: risco de fraude, não FAQ geral."
+    },
+    {
+      "id": "R-A030",
+      "pedido": "Meu advogado pediu uma resposta formal de vocês sobre o prejuízo; preciso que a equipe responsável assuma o caso.",
+      "destino": "humano",
+      "nota": "Difícil: demanda jurídica individual."
+    }
+  ]
+}

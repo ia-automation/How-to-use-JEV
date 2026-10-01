@@ -1,0 +1,27 @@
+{
+ "medicao": {
+  "ms": 342,
+  "input_tokens": 461,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "telefone": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 0.99,
+    "probabilities": {
+     "none": 0.99,
+     "(81) 90000-0205": 0.0,
+     "(81) 90000-0204": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 461,
+   "output_tokens": 67
+  }
+ }
+}

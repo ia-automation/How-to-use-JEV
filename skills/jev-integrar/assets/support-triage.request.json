@@ -1,0 +1,37 @@
+{
+  "model": "jev-1.13.0",
+  "state": {
+    "ticket": {
+      "id": "synthetic-ticket-001",
+      "message": "O aplicativo não abre depois da atualização. Preciso acessar meus arquivos para entregar um trabalho hoje. Não estou pedindo reembolso."
+    }
+  },
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "Qual equipe deve atender o problema principal descrito em `ticket.message`?",
+      "criteria": {
+        "technical": "Falha do aplicativo, erro ou dificuldade de acesso.",
+        "billing": "Dúvida ou problema de cobrança, pagamento ou reembolso.",
+        "other": "Nenhuma das equipes anteriores atende o problema, ou faltam informações para identificar o assunto."
+      }
+    },
+    "impact": {
+      "type": "score",
+      "instructions": "Qual é o impacto funcional descrito em `ticket.message`?",
+      "criteria": [
+        "O relato descreve somente mudança visual e nenhuma função está impedida.",
+        "Uma função está prejudicada, mas o relato informa uma alternativa utilizável.",
+        "O acesso ao aplicativo ou à função necessária está impedido e não há alternativa descrita."
+      ]
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "A pessoa solicita reembolso em `ticket.message`?",
+      "criteria": {
+        "true": "Há solicitação de devolução de dinheiro.",
+        "false": "Não há solicitação de devolução de dinheiro, inclusive quando ela é explicitamente negada."
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+ "medicao": {
+  "ms": 378,
+  "input_tokens": 447,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "email": {
+    "type": "choice",
+    "choice": "caio@exemplo.test",
+    "confidence": 0.99,
+    "probabilities": {
+     "none": 0.0,
+     "caio@exemplo.test": 1.0,
+     "caio@exemplo.invalid": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 447,
+   "output_tokens": 53
+  }
+ }
+}

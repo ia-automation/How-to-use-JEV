@@ -1,0 +1,36 @@
+{
+ "congelado_em": "2026-09-30T23:20:35+00:00",
+ "modelo": "jev-1.13.0",
+ "perguntas_py_sha256": "cc8188e3be9475a4c3575b5fe77a77caa1b871b07fc364c7670857649bc33057",
+ "baselines_py_sha256": "6b6088bf479db483d9c02cb3c50d9172e33a77df5ec20c0ccb463ce579c61293",
+ "preparacao_json_sha256": "b90e921809aa3614e6f4af1bb0de8a40edde08b44642512afe8b1d89eefe54da",
+ "usar": {
+  "R5": [
+   "hatebr",
+   "ofensivo_v2"
+  ],
+  "R4a": [
+   "b2w",
+   "recomenda"
+  ],
+  "R4b": [
+   "b2w",
+   "nota_v2"
+  ]
+ },
+ "limiar": {
+  "R5": 0.5,
+  "R4a": 0.5
+ },
+ "faixa": {
+  "R5": [
+   0.2,
+   0.8
+  ],
+  "R4a": [
+   0.2,
+   0.8
+  ]
+ },
+ "teste_executado_em": "2026-09-30T23:25:52+00:00"
+}

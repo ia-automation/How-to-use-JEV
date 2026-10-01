@@ -1,0 +1,62 @@
+{
+ "medicao": {
+  "ms": 339,
+  "input_tokens": 1209,
+  "modelo": "jev-1.13.0",
+  "perguntas": 8
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "injecao": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "dado_de_outro": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "ameaca": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "pedido_perigoso": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "ofensa": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "fora_do_escopo": {
+    "type": "noul",
+    "noul": 0.15
+   },
+   "dado_terceiro_presente": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "severidade": {
+    "type": "score",
+    "score": 0.23,
+    "confidence": 0.77,
+    "legend": {
+     "0": "No harm: an ordinary store request (including customers giving their own contact or document to be served), small talk, or a harmless off-topic question.",
+     "1": "Mild: rude or upsetting words, but no one's safety, private data or the assistant's rules are at risk.",
+     "2": "Serious: it would expose customers' private data or make the assistant break its rules.",
+     "3": "Severe: it would enable or threaten physical harm to a person, or a serious crime."
+    },
+    "probabilities": {
+     "0": 0.88,
+     "1": 0.01,
+     "2": 0.11,
+     "3": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1209,
+   "output_tokens": 154
+  }
+ }
+}

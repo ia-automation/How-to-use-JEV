@@ -1,0 +1,689 @@
+{
+ "descricao": "Catálogo único das fontes do estudo do Jev (2026-09-30): junta sources/catalog.json (estudo do Codex: 3 vídeos + 23 páginas), sources/review-catalog.json (revisão dirigida do Codex sobre fontes capturadas pelo Claude) e sources/claude-handoff/2026-09-30/manifest.json (cópias das notas temporárias do Claude). Hashes preservados sem alteração. Caminhos .local/ e fontes/docs/ existem só na máquina de estudo (fora do Git); originais dos três arquivos em .local/antigos/2026-09-30/sources/.",
+ "consolidado_em": "2026-09-30",
+ "estudo_codex": {
+  "schema_version": 1,
+  "topic": "Jev / Typesafe AI",
+  "initial_study_date": "2026-09-30",
+  "requested_order": [
+   "https://www.youtube.com/watch?v=vzYKuvD05rE",
+   "https://www.youtube.com/watch?v=VI7r1-BMN8I",
+   "https://www.youtube.com/watch?v=WLSqQprxai4",
+   "https://docs.typesafe.ai/introduction"
+  ],
+  "videos": [
+   {
+    "id": "video-01",
+    "study_order": 1,
+    "title": "Jev explicado em 4 minutos",
+    "channel": "Max carrau | IA",
+    "url": "https://www.youtube.com/watch?v=vzYKuvD05rE",
+    "published_on": "2026-09-23",
+    "duration_seconds": 253,
+    "studied_on": "2026-09-30",
+    "method": "complete_original_automatic_captions_and_selected_frames",
+    "caption_language": "pt-orig",
+    "caption_sha256": "9a0c080684511aa47c82dffc3fd240caefd0b84d6326e890dafc65d7f2419b83",
+    "caption_cache": ".local/videos/01-vzYKuvD05rE.pt-orig.vtt",
+    "normalized_transcript_cache": ".local/videos/01-transcript.txt",
+    "visual_sampling": {
+     "interval_seconds": 20
+    },
+    "note": "conhecimento/evidencias/videos/video-01-max-carrau.md",
+    "evidence_status": "third_party_demonstration_not_reproduced",
+    "note_original": "sources/01-video-visao-geral.md"
+   },
+   {
+    "id": "video-02",
+    "study_order": 2,
+    "title": "Por que o lançamento do Jev é uma notícia melhor do que parece",
+    "channel": "Rafael Quintanilha – QuantBrasil",
+    "url": "https://www.youtube.com/watch?v=VI7r1-BMN8I",
+    "published_on": "2026-09-20",
+    "duration_seconds": 2524,
+    "studied_on": "2026-09-30",
+    "method": "complete_original_automatic_captions_and_selected_frames",
+    "caption_language": "pt-orig",
+    "caption_sha256": "fcd9bc1638da0f21c00cd34f1880dae9c4fe3ece2865d181dec4e90cfdbc0553",
+    "caption_cache": ".local/videos/02-VI7r1-BMN8I.pt-orig.vtt",
+    "normalized_transcript_cache": ".local/videos/02-transcript.txt",
+    "visual_sampling": {
+     "timestamps_seconds": [
+      1398,
+      2165,
+      2240
+     ]
+    },
+    "note": "conhecimento/evidencias/videos/video-02-quantbrasil.md",
+    "evidence_status": "third_party_demonstration_not_reproduced",
+    "note_original": "sources/02-video-arquitetura-e-limites.md"
+   },
+   {
+    "id": "video-03",
+    "study_order": 3,
+    "title": "JEV: A melhor janela para lucrar com IA em anos (e ela vai fechar rápido)",
+    "channel": "Maestros da IA",
+    "url": "https://www.youtube.com/watch?v=WLSqQprxai4",
+    "published_on": "2026-09-28",
+    "duration_seconds": 2827,
+    "studied_on": "2026-09-30",
+    "method": "complete_original_automatic_captions_and_selected_frames",
+    "caption_language": "pt-orig",
+    "caption_sha256": "fbb2942fbf78dcafc6ff38a734e5a5d8f2401f3664f87bf518b732169b72b75f",
+    "caption_cache": ".local/videos/03-WLSqQprxai4.pt-orig.vtt",
+    "normalized_transcript_cache": ".local/videos/03-transcript.txt",
+    "visual_sampling": {
+     "timestamps_seconds": [
+      770,
+      1195,
+      2637
+     ]
+    },
+    "note": "conhecimento/evidencias/videos/video-03-maestros-da-ia.md",
+    "evidence_status": "third_party_demonstration_not_reproduced",
+    "note_original": "sources/03-video-aplicacoes.md"
+   }
+  ],
+  "documentation": [
+   {
+    "id": "doc-01",
+    "study_stage": 4,
+    "title": "Introduction",
+    "url": "https://docs.typesafe.ai/introduction",
+    "snapshot_url": "https://docs.typesafe.ai/introduction.md",
+    "fetched_at": "2026-09-30T20:34:49.702442+00:00",
+    "sha256": "e484b102dfe5bc25d71b4601712499835d02777da2d5dee4541436dd0c4a6c8a",
+    "cache": ".local/docs/introduction.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-02",
+    "study_stage": 4,
+    "title": "Quick start",
+    "url": "https://docs.typesafe.ai/introduction/quickstart",
+    "snapshot_url": "https://docs.typesafe.ai/introduction/quickstart.md",
+    "fetched_at": "2026-09-30T20:34:49.700444+00:00",
+    "sha256": "c30183944985b269c49939140272f9eec885895df346f19d76cf9b04e18073d2",
+    "cache": ".local/docs/introduction__quickstart.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-03",
+    "study_stage": 4,
+    "title": "Jev with coding agents",
+    "url": "https://docs.typesafe.ai/introduction/coding-agents",
+    "snapshot_url": "https://docs.typesafe.ai/introduction/coding-agents.md",
+    "fetched_at": "2026-09-30T20:34:49.685899+00:00",
+    "sha256": "591c36ffd02bacc587c880584a042c6ca1ae94f3775f67c56d289d23531aa831",
+    "cache": ".local/docs/introduction__coding-agents.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-04",
+    "study_stage": 4,
+    "title": "System One",
+    "url": "https://docs.typesafe.ai/concepts/system-one",
+    "snapshot_url": "https://docs.typesafe.ai/concepts/system-one.md",
+    "fetched_at": "2026-09-30T20:34:49.742821+00:00",
+    "sha256": "bd5ecf9c18ad8abb6847576ab630dde9529622bfd41bf02961aa84609a77dadd",
+    "cache": ".local/docs/concepts__system-one.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-05",
+    "study_stage": 4,
+    "title": "State",
+    "url": "https://docs.typesafe.ai/concepts/state",
+    "snapshot_url": "https://docs.typesafe.ai/concepts/state.md",
+    "fetched_at": "2026-09-30T20:34:49.701451+00:00",
+    "sha256": "0c78c1a347bdf97b5067655c2ff4bf9ae6f1ea1af601b54fbeac1beeecab5271",
+    "cache": ".local/docs/concepts__state.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-06",
+    "study_stage": 4,
+    "title": "Primitives (Questions)",
+    "url": "https://docs.typesafe.ai/primitives",
+    "snapshot_url": "https://docs.typesafe.ai/primitives.md",
+    "fetched_at": "2026-09-30T20:34:50.304767+00:00",
+    "sha256": "eb51deaaa836e919f10ecbb9b5731e89e25aeff9d2a73173d12141c66bf635f5",
+    "cache": ".local/docs/primitives.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-07",
+    "study_stage": 4,
+    "title": "Choice",
+    "url": "https://docs.typesafe.ai/primitives/choice",
+    "snapshot_url": "https://docs.typesafe.ai/primitives/choice.md",
+    "fetched_at": "2026-09-30T20:34:50.337972+00:00",
+    "sha256": "4c55085131f8f2d7ae1faefdec52b1c7b379d40657d701cd2c786021cfe9dac9",
+    "cache": ".local/docs/primitives__choice.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-08",
+    "study_stage": 4,
+    "title": "Score",
+    "url": "https://docs.typesafe.ai/primitives/score",
+    "snapshot_url": "https://docs.typesafe.ai/primitives/score.md",
+    "fetched_at": "2026-09-30T20:34:50.306785+00:00",
+    "sha256": "ee6afe3494b816770e34df1551d0a64659f2682a42879de5349e76db11e5e018",
+    "cache": ".local/docs/primitives__score.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-09",
+    "study_stage": 4,
+    "title": "Noul",
+    "url": "https://docs.typesafe.ai/primitives/noul",
+    "snapshot_url": "https://docs.typesafe.ai/primitives/noul.md",
+    "fetched_at": "2026-09-30T20:34:50.315304+00:00",
+    "sha256": "8b04eed7b25e1e30368e4379bbe6bede7fc0b77578f7546f193f946bd11c405a",
+    "cache": ".local/docs/primitives__noul.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-10",
+    "study_stage": 4,
+    "title": "Advanced: structure",
+    "url": "https://docs.typesafe.ai/primitives/advanced",
+    "snapshot_url": "https://docs.typesafe.ai/primitives/advanced.md",
+    "fetched_at": "2026-09-30T20:34:50.357090+00:00",
+    "sha256": "7fc102da510626951b513921902b70513e07718d072daf844e360757efab7af1",
+    "cache": ".local/docs/primitives__advanced.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-11",
+    "study_stage": 4,
+    "title": "Confidence",
+    "url": "https://docs.typesafe.ai/confidence",
+    "snapshot_url": "https://docs.typesafe.ai/confidence.md",
+    "fetched_at": "2026-09-30T20:34:50.887098+00:00",
+    "sha256": "97dafe98b77979906a2ad456013dd85a70dcecd109d0644b096817d910997ea5",
+    "cache": ".local/docs/confidence.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-12",
+    "study_stage": 4,
+    "title": "How to build with TypeSafe",
+    "url": "https://docs.typesafe.ai/concepts/how-to-build-with-system-one",
+    "snapshot_url": "https://docs.typesafe.ai/concepts/how-to-build-with-system-one.md",
+    "fetched_at": "2026-09-30T20:34:50.949634+00:00",
+    "sha256": "d9f4d34c1349bf5acb55c99d6a1651eacfc481ad8d1f78ccb8776769da729a49",
+    "cache": ".local/docs/concepts__how-to-build-with-system-one.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-13",
+    "study_stage": 4,
+    "title": "Patterns",
+    "url": "https://docs.typesafe.ai/patterns",
+    "snapshot_url": "https://docs.typesafe.ai/patterns.md",
+    "fetched_at": "2026-09-30T20:34:50.910400+00:00",
+    "sha256": "570ac5ae2a4502846bd7da05fd10696a6ddb17e0bb3dadf5ab1246622d3a3006",
+    "cache": ".local/docs/patterns.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-14",
+    "study_stage": 4,
+    "title": "Speculative fan-out",
+    "url": "https://docs.typesafe.ai/patterns/fan-out",
+    "snapshot_url": "https://docs.typesafe.ai/patterns/fan-out.md",
+    "fetched_at": "2026-09-30T20:34:50.955142+00:00",
+    "sha256": "8d7a251ea6b735cb4994c1e0a95166cc0b3febce7d18189c3aa5e1673f182c91",
+    "cache": ".local/docs/patterns__fan-out.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-15",
+    "study_stage": 4,
+    "title": "Confidence-gated routing",
+    "url": "https://docs.typesafe.ai/patterns/confidence-routing",
+    "snapshot_url": "https://docs.typesafe.ai/patterns/confidence-routing.md",
+    "fetched_at": "2026-09-30T20:34:50.927893+00:00",
+    "sha256": "7a4de8d39a24c5d6b7e74b1b170fbbe101ca69419af39bac6da4e0c1f678b7bf",
+    "cache": ".local/docs/patterns__confidence-routing.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-16",
+    "study_stage": 4,
+    "title": "Composite scoring",
+    "url": "https://docs.typesafe.ai/patterns/composite-scoring",
+    "snapshot_url": "https://docs.typesafe.ai/patterns/composite-scoring.md",
+    "fetched_at": "2026-09-30T20:34:51.504613+00:00",
+    "sha256": "538f42d614fbf29cbfa0aa9fee1859651083a0b67c4b31a21d2710f3fe84d9f5",
+    "cache": ".local/docs/patterns__composite-scoring.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-17",
+    "study_stage": 4,
+    "title": "Intent routing",
+    "url": "https://docs.typesafe.ai/patterns/intent-routing",
+    "snapshot_url": "https://docs.typesafe.ai/patterns/intent-routing.md",
+    "fetched_at": "2026-09-30T20:34:51.554361+00:00",
+    "sha256": "84b670d502b3f41165a901495688dc7bd586ff3082854f5432a7a4962d697cfb",
+    "cache": ".local/docs/patterns__intent-routing.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-18",
+    "study_stage": 4,
+    "title": "Models",
+    "url": "https://docs.typesafe.ai/models",
+    "snapshot_url": "https://docs.typesafe.ai/models.md",
+    "fetched_at": "2026-09-30T20:34:51.530981+00:00",
+    "sha256": "c4ebee942e3fef93bfc12c1bce5c04ea9f3e03fd3267dcdd4b76183c83c0639c",
+    "cache": ".local/docs/models.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-19",
+    "study_stage": 4,
+    "title": "API reference",
+    "url": "https://docs.typesafe.ai/api",
+    "snapshot_url": "https://docs.typesafe.ai/api.md",
+    "fetched_at": "2026-09-30T20:34:51.547115+00:00",
+    "sha256": "0252c4126fdaa45c537fa83718f90d544890a878a12324690294dfeee9f0849e",
+    "cache": ".local/docs/api.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-20",
+    "study_stage": 4,
+    "title": "Agent skill",
+    "url": "https://docs.typesafe.ai/agent-skill",
+    "snapshot_url": "https://docs.typesafe.ai/agent-skill.md",
+    "fetched_at": "2026-09-30T20:34:51.535500+00:00",
+    "sha256": "5ed8f74a133760523a67674f0feaac6ac88d9f1d242574ce3c9c4965f6e037c4",
+    "cache": ".local/docs/agent-skill.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-21",
+    "study_stage": 4,
+    "title": "Jev 1.13 jaggedness",
+    "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+    "snapshot_url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13.md",
+    "fetched_at": "2026-09-30T20:34:52.116028+00:00",
+    "sha256": "e5f4d10c3f67fa93de403530cd8b0ef9d3178223dfcced8961b48260c849f501",
+    "cache": ".local/docs/model-jaggedness__jev-1.13.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-22",
+    "study_stage": 4,
+    "title": "TypeSafe Python SDK",
+    "url": "https://docs.typesafe.ai/sdk/python",
+    "snapshot_url": "https://docs.typesafe.ai/sdk/python.md",
+    "fetched_at": "2026-09-30T20:34:52.109183+00:00",
+    "sha256": "6b8fa10843621f6090026ed81259e5b420eadaa9af6f2370de63097d3486875a",
+    "cache": ".local/docs/sdk__python.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   },
+   {
+    "id": "doc-23",
+    "study_stage": 4,
+    "title": "JavaScript SDK",
+    "url": "https://docs.typesafe.ai/sdk/javascript",
+    "snapshot_url": "https://docs.typesafe.ai/sdk/javascript.md",
+    "fetched_at": "2026-09-30T20:34:52.136388+00:00",
+    "sha256": "25ba04f5b55819bee85e21d9184b7b8c807a81e95754baef4b05157240a2e1bb",
+    "cache": ".local/docs/sdk__javascript.md",
+    "review_scope": "guidance_and_relevant_contract_examples; repeated_language_examples_and_UI_components_not_exhaustively_reviewed",
+    "evidence_status": "official_documentation_not_runtime_verification"
+   }
+  ],
+  "notes": [
+   "Local cache paths are optional on other machines and excluded from Git.",
+   "Hashes identify downloaded source snapshots, not model execution results."
+  ]
+ },
+ "revisao_dirigida_codex": {
+  "purpose": "Additional local source review; does not extend the initial 23 pages into a claim of complete coverage.",
+  "live_requests": 0,
+  "documentation": [
+   {
+    "url": "https://docs.typesafe.ai/confidence",
+    "snapshot": "fontes/docs/paginas/confidence.md",
+    "sha256": "97dafe98b77979906a2ad456013dd85a70dcecd109d0644b096817d910997ea5",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/primitives/score",
+    "snapshot": "fontes/docs/paginas/primitives/score.md",
+    "sha256": "ee6afe3494b816770e34df1551d0a64659f2682a42879de5349e76db11e5e018",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/concepts/how-to-build-with-system-one",
+    "snapshot": "fontes/docs/paginas/concepts/how-to-build-with-system-one.md",
+    "sha256": "d9f4d34c1349bf5acb55c99d6a1651eacfc481ad8d1f78ccb8776769da729a49",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/python/api/retries",
+    "snapshot": "fontes/docs/paginas/sdk/python/api/retries.md",
+    "sha256": "bdf94b25ae1d23a0784c9e1affcf0363e80deb56089a0e48d3e3860bb5181cc9",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/python/api/clients/sync",
+    "snapshot": "fontes/docs/paginas/sdk/python/api/clients/sync.md",
+    "sha256": "55a144c0161e9b22dc3cf1b2134f9c64ae28348ead2ef4a269e39fbe4757d8f6",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/python/usage",
+    "snapshot": "fontes/docs/paginas/sdk/python/usage.md",
+    "sha256": "bf5ce8360b16a97f203f8ad1c54693a6d41f27ea6a98412617a6f1ada3c38be7",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/RetryPolicy",
+    "snapshot": "fontes/docs/paginas/sdk/javascript/api/interfaces/RetryPolicy.md",
+    "sha256": "ecaf1ae900811fdb14829e188bb398347d1d8b549d01d24953eab1eabef5eddb",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/RequestOptions",
+    "snapshot": "fontes/docs/paginas/sdk/javascript/api/interfaces/RequestOptions.md",
+    "sha256": "81fae66c86b0b25f88536144d656f3f8ecf20588658a24b488514d22091d67ee",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/TypeSafeClientConfig",
+    "snapshot": "fontes/docs/paginas/sdk/javascript/api/interfaces/TypeSafeClientConfig.md",
+    "sha256": "5780a70b4f0bc12433b1cebc8810e22ad6c5298fcec7fb77163770af483a1f69",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/sdk/javascript/api/classes/APIPromise",
+    "snapshot": "fontes/docs/paginas/sdk/javascript/api/classes/APIPromise.md",
+    "sha256": "0d00c57977f2777183bc2dcf7019f4293a89dd2e76fe3706b3b3db80a069ceb3",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/pre_parsed_value_extraction_cookbook",
+    "snapshot": "fontes/docs/paginas/cookbooks/pre_parsed_value_extraction_cookbook.md",
+    "sha256": "c9ebb87b822ba958664b28b4e214e322dd62540c0964ea317d54da531a0fa6bd",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/date_extraction_cookbook",
+    "snapshot": "fontes/docs/paginas/cookbooks/date_extraction_cookbook.md",
+    "sha256": "c216cb3d293a07eadb64464b2f9b1d2a8e1670efc309cbfb6acd92724f386300",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/skill_suggestion",
+    "snapshot": "fontes/docs/paginas/cookbooks/skill_suggestion.md",
+    "sha256": "fb53dc000c8bad01e45f64210fefedbc27ab5b87d7037a77dd23d2654629105b",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages",
+    "snapshot": "fontes/docs/paginas/cookbooks/classifying_rag_passages.md",
+    "sha256": "fbe9208da48e2bdada3c671a02e5dc55954660b2e283a85f0f2df1b596c090e3",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/sde_cascade",
+    "snapshot": "fontes/docs/paginas/cookbooks/sde_cascade.md",
+    "sha256": "03675753d74f2a08c746afe04c4f4283b55e5c6931d58a6ca9c6268b954a1a2f",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/parallel_questions",
+    "snapshot": "fontes/docs/paginas/cookbooks/parallel_questions.md",
+    "sha256": "53dfe4516fd67b9bfc5abc9a50a6f4db6426b5b2951d41cd91e2fec45aded2fe",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/consistency_choice_cookbook",
+    "snapshot": "fontes/docs/paginas/cookbooks/consistency_choice_cookbook.md",
+    "sha256": "adbff767c226d0b94671778ca8d49c3fc6bf1de6ef1253de88829f1efcb5ecc4",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/consistency_noul_cookbook",
+    "snapshot": "fontes/docs/paginas/cookbooks/consistency_noul_cookbook.md",
+    "sha256": "037ce3ab766d0966d761ca668ec9b808eda52bdb752ba78924defa29b6089f14",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/cookbooks/autoresearch_feature_discovery",
+    "snapshot": "fontes/docs/paginas/cookbooks/autoresearch_feature_discovery.md",
+    "sha256": "af2595f41e8cb26ca4116f346e7e269502bcf2892e8cb6e810883ddb7f5f5768",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://docs.typesafe.ai/migrating-to-v1",
+    "snapshot": "fontes/docs/paginas/migrating-to-v1.md",
+    "sha256": "b371022d75aca6d7308c260a52e6ff98d151fb0916cb9fbbca8d414260af3612",
+    "review_scope": "selected_passages_or_signatures_not_full_page",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30"
+   },
+   {
+    "url": "https://api.typesafe.ai/openapi.json",
+    "snapshot": ".local/docs/openapi-claude-2026-09-30.json",
+    "sha256": "a191f8a7df6bd6fedced8120dd0fd106f88575d1d1c8360d08900a6c7c0360d5",
+    "review_scope": "question_and_answer_schemas_usage_validation_errors_not_full_spec",
+    "source_captured_by": "Claude",
+    "reviewed_by": "Codex",
+    "review_date": "2026-09-30",
+    "spec_version": "0.2.0"
+   }
+  ],
+  "secondary_recipe_notes": [
+   {
+    "path": "memoria/receitas/alinhamento-de-entidades.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/alinhamento-de-entidades.md"
+   },
+   {
+    "path": "memoria/receitas/autoconsistencia-choices.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/autoconsistencia-choices.md"
+   },
+   {
+    "path": "memoria/receitas/autoconsistencia-nouls.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/autoconsistencia-nouls.md"
+   },
+   {
+    "path": "memoria/receitas/autoresearch-de-features.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/autoresearch-de-features.md"
+   },
+   {
+    "path": "memoria/receitas/busca-linha-a-linha.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/busca-linha-a-linha.md"
+   },
+   {
+    "path": "memoria/receitas/cascata-sde.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/cascata-sde.md"
+   },
+   {
+    "path": "memoria/receitas/checagem-de-citacoes.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/checagem-de-citacoes.md"
+   },
+   {
+    "path": "memoria/receitas/classificacao-com-confianca.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/classificacao-com-confianca.md"
+   },
+   {
+    "path": "memoria/receitas/classificacao-hierarquica.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/classificacao-hierarquica.md"
+   },
+   {
+    "path": "memoria/receitas/classificar-passagens-rag.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/classificar-passagens-rag.md"
+   },
+   {
+    "path": "memoria/receitas/demo-casa-inteligente.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/demo-casa-inteligente.md"
+   },
+   {
+    "path": "memoria/receitas/extracao-de-datas.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/extracao-de-datas.md"
+   },
+   {
+    "path": "memoria/receitas/extracao-de-valor-pre-parseado.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/extracao-de-valor-pre-parseado.md"
+   },
+   {
+    "path": "memoria/receitas/function-calling.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/function-calling.md"
+   },
+   {
+    "path": "memoria/receitas/guardrails-llm.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/guardrails-llm.md"
+   },
+   {
+    "path": "memoria/receitas/perguntas-em-paralelo.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/perguntas-em-paralelo.md"
+   },
+   {
+    "path": "memoria/receitas/recuperacao-de-estrutura.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/recuperacao-de-estrutura.md"
+   },
+   {
+    "path": "memoria/receitas/reranking.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/reranking.md"
+   },
+   {
+    "path": "memoria/receitas/sugestao-de-skill.md",
+    "review_scope": "problem_reusable_techniques_limitations_and_selected_details_not_all_code",
+    "path_atual": "conhecimento/receitas/sugestao-de-skill.md"
+   }
+  ]
+ },
+ "handoff_claude": [
+  {
+   "source": "scratchpad local da sessão Claude (temporário): lacunas-fechadas.md",
+   "copy": "sources/claude-handoff/2026-09-30/lacunas-fechadas.md (caminho local na época; ver copia_atual)",
+   "sha256": "45E9B8015CBD980F5F819F4F6B9E83DA3A4449C114A7D0860C9E92F3D9E24925",
+   "captured_by": "Claude",
+   "copied_at": "2026-09-30T18:39:56.4439129-03:00",
+   "copia_atual": ".local/antigos/2026-09-30/sources/claude-handoff/2026-09-30/lacunas-fechadas.md"
+  },
+  {
+   "source": "scratchpad local da sessão Claude (temporário): absorver-do-codex.md",
+   "copy": "sources/claude-handoff/2026-09-30/absorver-do-codex.md (caminho local na época; ver copia_atual)",
+   "sha256": "0DC6207CF21B422BA01A258D49F063F7FF9DDE2470021E234E80B2A932CCDF40",
+   "captured_by": "Claude",
+   "copied_at": "2026-09-30T18:39:56.4569731-03:00",
+   "copia_atual": ".local/antigos/2026-09-30/sources/claude-handoff/2026-09-30/absorver-do-codex.md"
+  },
+  {
+   "source": "scratchpad local da sessão Claude (temporário): openapi.json",
+   "copy": ".local/docs/openapi-claude-2026-09-30.json (caminho local na época; ver copia_atual)",
+   "sha256": "A191F8A7DF6BD6FEDCED8120DD0FD106F88575D1D1C8360D08900A6C7C0360D5",
+   "captured_by": "Claude",
+   "copied_at": "2026-09-30T18:39:56.4694805-03:00",
+   "copia_atual": ".local/docs/openapi-claude-2026-09-30.json"
+  }
+ ]
+}

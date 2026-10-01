@@ -1,0 +1,27 @@
+{
+ "medicao": {
+  "ms": 251,
+  "input_tokens": 457,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "valor": {
+    "type": "choice",
+    "choice": "R$ 425.000",
+    "confidence": 1.0,
+    "probabilities": {
+     "none": 0.0,
+     "R$ 410.000": 0.0,
+     "R$ 425.000": 1.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 457,
+   "output_tokens": 65
+  }
+ }
+}

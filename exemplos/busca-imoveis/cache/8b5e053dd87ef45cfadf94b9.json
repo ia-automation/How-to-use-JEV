@@ -1,0 +1,27 @@
+{
+ "medicao": {
+  "ms": 283,
+  "input_tokens": 437,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "jardim": {
+    "type": "choice",
+    "choice": "nega",
+    "confidence": 0.99,
+    "probabilities": {
+     "nega": 0.99,
+     "omite": 0.01,
+     "afirma": 0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 437,
+   "output_tokens": 41
+  }
+ }
+}

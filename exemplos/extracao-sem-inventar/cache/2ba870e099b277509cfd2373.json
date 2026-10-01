@@ -1,0 +1,36 @@
+{
+ "medicao": {
+  "ms": 332,
+  "input_tokens": 599,
+  "modelo": "jev-1.13.0",
+  "perguntas": 2
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "cpf": {
+    "type": "choice",
+    "choice": "529.982.247-25",
+    "confidence": 1.0,
+    "probabilities": {
+     "none": 0.0,
+     "529.982.247-25": 1.0
+    }
+   },
+   "valor": {
+    "type": "choice",
+    "choice": "um milhão e cinquenta mil",
+    "confidence": 1.0,
+    "probabilities": {
+     "none": 0.0,
+     "1,2 milhão": 0.0,
+     "um milhão e cinquenta mil": 1.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 599,
+   "output_tokens": 107
+  }
+ }
+}

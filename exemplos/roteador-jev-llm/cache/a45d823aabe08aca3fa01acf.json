@@ -1,0 +1,157 @@
+{
+ "medicao": {
+  "ms": 357,
+  "input_tokens": 2444,
+  "modelo": "jev-1.13.0",
+  "perguntas": 27
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "risco_juridico": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "risco_ameaca": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "risco_dado_sensivel": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "risco_dado_terceiro": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "risco_pede_humano": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "risco_fraude": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "irritacao": {
+    "type": "score",
+    "score": 0.03,
+    "confidence": 0.97,
+    "legend": {
+     "0": "Calm, neutral or friendly",
+     "1": "Disappointed or annoyed, but polite",
+     "2": "Very angry: shouting, all caps, accusations or repeated complaints",
+     "3": "Hostile: insults, curses or aggressive language toward the store or its staff"
+    },
+    "probabilities": {
+     "0": 0.97,
+     "1": 0.03,
+     "2": 0.0,
+     "3": 0.0
+    }
+   },
+   "status_pedido": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "faq": {
+    "type": "choice",
+    "choice": "F02",
+    "confidence": 1.0,
+    "probabilities": {
+     "F02": 1.0,
+     "F10": 0.0,
+     "none": 0.0,
+     "F14": 0.0,
+     "F01": 0.0,
+     "F07": 0.0,
+     "F03": 0.0,
+     "F15": 0.0,
+     "F05": 0.0,
+     "F13": 0.0,
+     "F08": 0.0,
+     "F11": 0.0,
+     "F12": 0.0,
+     "F09": 0.0,
+     "F06": 0.0,
+     "F04": 0.0
+    }
+   },
+   "faq_cobre::F01": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F02": {
+    "type": "noul",
+    "noul": 0.74
+   },
+   "faq_cobre::F03": {
+    "type": "noul",
+    "noul": 0.12
+   },
+   "faq_cobre::F04": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "faq_cobre::F05": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F06": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "faq_cobre::F07": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F08": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F09": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "faq_cobre::F10": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "faq_cobre::F11": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F12": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F13": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::F14": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "faq_cobre::F15": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "rac_plano": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "rac_varias_regras": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "rac_excecao": {
+    "type": "noul",
+    "noul": 0.28
+   }
+  },
+  "usage": {
+   "input_tokens": 2444,
+   "output_tokens": 710
+  }
+ }
+}

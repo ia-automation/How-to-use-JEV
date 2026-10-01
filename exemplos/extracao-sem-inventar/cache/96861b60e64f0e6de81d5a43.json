@@ -1,0 +1,135 @@
+{
+ "medicao": {
+  "ms": 296,
+  "input_tokens": 1550,
+  "modelo": "jev-1.13.0",
+  "perguntas": 7
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "visita_relativo": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "weekday": 0.0,
+     "day_after": 0.0,
+     "today": 0.0,
+     "tomorrow": 0.0,
+     "none": 1.0
+    }
+   },
+   "visita_dia_semana": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "Wednesday": 0.0,
+     "Sunday": 0.0,
+     "none": 1.0,
+     "Friday": 0.0,
+     "Thursday": 0.0,
+     "Saturday": 0.0,
+     "Tuesday": 0.0,
+     "Monday": 0.0
+    }
+   },
+   "visita_semana": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "next_week": 0.0,
+     "plain": 0.0,
+     "none": 1.0,
+     "this_week": 0.0
+    }
+   },
+   "valor": {
+    "type": "choice",
+    "choice": "dez mil reais",
+    "confidence": 1.0,
+    "probabilities": {
+     "mil reais": 0.0,
+     "dez mil reais": 1.0,
+     "none": 0.0
+    }
+   },
+   "visita_modo": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "unclear": 0.0,
+     "absolute": 0.0,
+     "none": 1.0,
+     "relative": 0.0
+    }
+   },
+   "visita_dia": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 0.99,
+    "probabilities": {
+     "18": 0.0,
+     "3": 0.0,
+     "13": 0.0,
+     "26": 0.0,
+     "4": 0.0,
+     "21": 0.0,
+     "5": 0.0,
+     "9": 0.0,
+     "11": 0.0,
+     "29": 0.0,
+     "23": 0.0,
+     "24": 0.0,
+     "19": 0.0,
+     "12": 0.0,
+     "20": 0.0,
+     "16": 0.0,
+     "15": 0.0,
+     "31": 0.0,
+     "8": 0.0,
+     "22": 0.0,
+     "28": 0.0,
+     "25": 0.0,
+     "27": 0.0,
+     "6": 0.0,
+     "10": 0.0,
+     "17": 0.0,
+     "none": 1.0,
+     "7": 0.0,
+     "2": 0.0,
+     "1": 0.0,
+     "30": 0.0,
+     "14": 0.0
+    }
+   },
+   "visita_mes": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "none": 1.0,
+     "January": 0.0,
+     "May": 0.0,
+     "February": 0.0,
+     "December": 0.0,
+     "November": 0.0,
+     "October": 0.0,
+     "July": 0.0,
+     "June": 0.0,
+     "April": 0.0,
+     "August": 0.0,
+     "March": 0.0,
+     "September": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1550,
+   "output_tokens": 636
+  }
+ }
+}

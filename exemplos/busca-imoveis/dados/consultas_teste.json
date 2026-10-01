@@ -1,0 +1,308 @@
+{
+  "versao": "2026-09-30",
+  "autor": "codex",
+  "casos": [
+    {
+      "id": "BI-T001",
+      "consulta": "Uma casa em Cidade Horizonte de até 650 mil, dois quartos no mínimo e uma vaga ou mais; meu cachorro precisa poder morar comigo.",
+      "relevancia": {
+        "IM-102": 1,
+        "IM-103": 1,
+        "IM-105": 3,
+        "IM-109": 3,
+        "IM-117": 3,
+        "IM-122": 3,
+        "IM-123": 3,
+        "IM-124": 1
+      }
+    },
+    {
+      "id": "BI-T002",
+      "consulta": "Apartamento em Cidade Aurora: até R$ 750.000 e ao menos três quartos. Não quero rua barulhenta.",
+      "relevancia": {
+        "IM-002": 3,
+        "IM-013": 1,
+        "IM-014": 1,
+        "IM-020": 1,
+        "IM-021": 3,
+        "IM-023": 1,
+        "IM-024": 1
+      }
+    },
+    {
+      "id": "BI-T003",
+      "consulta": "Sobrado em Cidade Horizonte, no máximo 850 mil, ao menos dois quartos. Trabalho de casa e faço questão de sol da manhã.",
+      "relevancia": {
+        "IM-126": 2,
+        "IM-127": 2,
+        "IM-128": 2,
+        "IM-129": 3,
+        "IM-131": 3,
+        "IM-134": 3,
+        "IM-137": 3,
+        "IM-141": 1,
+        "IM-142": 2,
+        "IM-143": 3,
+        "IM-148": 3,
+        "IM-149": 3,
+        "IM-150": 2
+      }
+    },
+    {
+      "id": "BI-T004",
+      "consulta": "Apartamento em Cidade Horizonte com 2 quartos ou mais e pelo menos uma vaga, até 700 mil. Quero silêncio na rua e metrô a pé.",
+      "relevancia": {
+        "IM-077": 2,
+        "IM-079": 2,
+        "IM-081": 2,
+        "IM-082": 2,
+        "IM-085": 3,
+        "IM-086": 3,
+        "IM-089": 1,
+        "IM-090": 2,
+        "IM-095": 3
+      }
+    },
+    {
+      "id": "BI-T005",
+      "consulta": "No Jardim Norte de Cidade Horizonte, imóvel de até 900 mil e pelo menos dois quartos. Já reformado e com sol matinal.",
+      "relevancia": {
+        "IM-082": 2,
+        "IM-083": 2,
+        "IM-086": 2,
+        "IM-095": 2,
+        "IM-101": 3,
+        "IM-116": 2,
+        "IM-117": 2,
+        "IM-119": 2,
+        "IM-126": 3,
+        "IM-131": 3,
+        "IM-134": 3,
+        "IM-141": 1,
+        "IM-143": 3,
+        "IM-149": 2
+      }
+    },
+    {
+      "id": "BI-T006",
+      "consulta": "Na Vila Verde de Cidade Aurora, aceito qualquer tipo com pelo menos um quarto até 850 mil, mas tem de aceitar meu gato.",
+      "relevancia": {
+        "IM-001": 3,
+        "IM-003": 3,
+        "IM-006": 1,
+        "IM-008": 1,
+        "IM-011": 1,
+        "IM-014": 1,
+        "IM-016": 3,
+        "IM-019": 3,
+        "IM-020": 1,
+        "IM-021": 3,
+        "IM-032": 1,
+        "IM-033": 3,
+        "IM-035": 1,
+        "IM-036": 1,
+        "IM-037": 3,
+        "IM-038": 3,
+        "IM-055": 1,
+        "IM-064": 1,
+        "IM-068": 1
+      }
+    },
+    {
+      "id": "BI-T007",
+      "consulta": "Casa em Cidade Aurora por até 800 mil, com no mínimo dois quartos e jardim exclusivo para cultivar plantas.",
+      "relevancia": {
+        "IM-026": 1,
+        "IM-028": 1,
+        "IM-029": 3,
+        "IM-030": 3,
+        "IM-031": 1,
+        "IM-032": 1,
+        "IM-033": 1,
+        "IM-034": 3,
+        "IM-035": 3,
+        "IM-036": 1,
+        "IM-037": 3,
+        "IM-038": 1,
+        "IM-048": 1,
+        "IM-049": 3
+      }
+    },
+    {
+      "id": "BI-T008",
+      "consulta": "Sobrado em Cidade Aurora até 800 mil, 2 quartos ou mais e uma vaga no mínimo; preciso trabalhar em casa e levar meu pet.",
+      "relevancia": {
+        "IM-051": 1,
+        "IM-052": 2,
+        "IM-053": 1,
+        "IM-057": 2,
+        "IM-059": 2,
+        "IM-060": 2,
+        "IM-061": 2,
+        "IM-066": 3,
+        "IM-068": 2,
+        "IM-070": 1,
+        "IM-072": 2,
+        "IM-075": 1
+      }
+    },
+    {
+      "id": "BI-T009",
+      "consulta": "Apartamento em Cidade Horizonte com ao menos 3 quartos e 1 vaga, teto de 900 mil. Vista aberta e rua sossegada, por favor.",
+      "relevancia": {
+        "IM-077": 1,
+        "IM-079": 2,
+        "IM-082": 3,
+        "IM-084": 3,
+        "IM-085": 3,
+        "IM-089": 2,
+        "IM-090": 2,
+        "IM-095": 3
+      }
+    },
+    {
+      "id": "BI-T010",
+      "consulta": "Procuro imóvel em Cidade Aurora até 740 mil, dois quartos ou mais. Não serve se precisar de reforma; quero pronto e numa rua silenciosa.",
+      "relevancia": {
+        "IM-010": 1,
+        "IM-013": 2,
+        "IM-014": 2,
+        "IM-017": 1,
+        "IM-019": 2,
+        "IM-020": 2,
+        "IM-021": 3,
+        "IM-023": 1,
+        "IM-024": 2,
+        "IM-030": 2,
+        "IM-033": 2,
+        "IM-041": 2,
+        "IM-043": 2,
+        "IM-047": 2,
+        "IM-048": 2,
+        "IM-049": 3,
+        "IM-051": 3,
+        "IM-052": 2,
+        "IM-055": 2,
+        "IM-059": 1,
+        "IM-061": 3,
+        "IM-062": 2,
+        "IM-064": 2,
+        "IM-066": 2,
+        "IM-068": 2,
+        "IM-069": 3,
+        "IM-070": 1
+      }
+    },
+    {
+      "id": "BI-T011",
+      "consulta": "Qualquer tipo em Cidade Horizonte até R$ 590 mil, pelo menos 2 quartos. Precisa ter um ambiente reservado para escritório.",
+      "relevancia": {
+        "IM-076": 1,
+        "IM-077": 3,
+        "IM-079": 1,
+        "IM-081": 1,
+        "IM-082": 3,
+        "IM-084": 1,
+        "IM-089": 1,
+        "IM-091": 3,
+        "IM-102": 1,
+        "IM-103": 1,
+        "IM-109": 3,
+        "IM-111": 3,
+        "IM-122": 3,
+        "IM-123": 1,
+        "IM-124": 3,
+        "IM-126": 1,
+        "IM-127": 3,
+        "IM-128": 3,
+        "IM-131": 3,
+        "IM-133": 1,
+        "IM-134": 3,
+        "IM-142": 3,
+        "IM-143": 3,
+        "IM-145": 1,
+        "IM-149": 3
+      }
+    },
+    {
+      "id": "BI-T012",
+      "consulta": "Casa de três quartos ou mais e no mínimo duas vagas em Cidade Horizonte, até 950 mil. Quero reforma concluída e sol da manhã.",
+      "relevancia": {
+        "IM-109": 2,
+        "IM-124": 1
+      }
+    },
+    {
+      "id": "BI-T013",
+      "consulta": "Apartamento em Cidade Aurora entre 350 e 650 mil, pelo menos dois quartos, com espaço de home office e acesso ao metrô caminhando.",
+      "relevancia": {
+        "IM-002": 3,
+        "IM-010": 3,
+        "IM-012": 2,
+        "IM-014": 2,
+        "IM-017": 3,
+        "IM-023": 3,
+        "IM-024": 2
+      }
+    },
+    {
+      "id": "BI-T014",
+      "consulta": "Imóvel no Centro de Cidade Horizonte, máximo de 750 mil e ao menos 2 quartos. Preciso que a reforma já tenha sido feita.",
+      "relevancia": {
+        "IM-076": 3,
+        "IM-089": 3,
+        "IM-090": 3,
+        "IM-109": 3,
+        "IM-115": 1,
+        "IM-124": 1,
+        "IM-128": 1,
+        "IM-136": 1,
+        "IM-142": 3,
+        "IM-147": 3
+      }
+    },
+    {
+      "id": "BI-T015",
+      "consulta": "Sobrado em Cidade Aurora até 900 mil com pelo menos três quartos e duas vagas. Jardim privativo e rua tranquila são requisitos.",
+      "relevancia": {
+        "IM-051": 3,
+        "IM-061": 3,
+        "IM-071": 3,
+        "IM-072": 2
+      }
+    },
+    {
+      "id": "BI-T016",
+      "consulta": "Até 900 mil em Cidade Aurora, qualquer tipo, ao menos um quarto. Quero vista livre, escritório, permissão para animais e rua silenciosa.",
+      "relevancia": {
+        "IM-006": 2,
+        "IM-008": 2,
+        "IM-010": 2,
+        "IM-013": 2,
+        "IM-014": 2,
+        "IM-016": 2,
+        "IM-017": 2,
+        "IM-021": 2,
+        "IM-023": 2,
+        "IM-025": 3,
+        "IM-031": 3,
+        "IM-032": 2,
+        "IM-041": 2,
+        "IM-046": 2,
+        "IM-047": 2,
+        "IM-049": 2,
+        "IM-051": 2,
+        "IM-054": 2,
+        "IM-056": 2,
+        "IM-059": 2,
+        "IM-061": 2,
+        "IM-062": 1,
+        "IM-064": 2,
+        "IM-066": 2,
+        "IM-068": 2,
+        "IM-070": 1,
+        "IM-075": 2
+      }
+    }
+  ]
+}

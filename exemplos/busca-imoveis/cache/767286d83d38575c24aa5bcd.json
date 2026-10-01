@@ -1,0 +1,176 @@
+{
+ "medicao": {
+  "ms": 313,
+  "input_tokens": 3466,
+  "modelo": "jev-1.13.0",
+  "perguntas": 15
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "tipo": {
+    "type": "choice",
+    "choice": "qualquer",
+    "confidence": 0.99,
+    "probabilities": {
+     "casa": 0,
+     "apartamento": 0,
+     "sobrado": 0,
+     "qualquer": 1
+    }
+   },
+   "cidade": {
+    "type": "choice",
+    "choice": "qualquer",
+    "confidence": 1,
+    "probabilities": {
+     "aurora": 0,
+     "horizonte": 0,
+     "qualquer": 1
+    }
+   },
+   "bairro": {
+    "type": "choice",
+    "choice": "qualquer",
+    "confidence": 1,
+    "probabilities": {
+     "centro": 0,
+     "jardim_norte": 0,
+     "vila_verde": 0,
+     "qualquer": 1
+    }
+   },
+   "quartos_min": {
+    "type": "choice",
+    "choice": "q4",
+    "confidence": 1,
+    "probabilities": {
+     "sem_minimo": 0,
+     "q5": 0,
+     "q2": 0,
+     "q3": 0,
+     "q4": 1,
+     "q1": 0
+    }
+   },
+   "vagas_min": {
+    "type": "choice",
+    "choice": "sem_minimo",
+    "confidence": 1,
+    "probabilities": {
+     "sem_minimo": 1,
+     "v2": 0,
+     "v4": 0,
+     "v3": 0,
+     "v1": 0
+    }
+   },
+   "preco_max": {
+    "type": "choice",
+    "choice": "p1100",
+    "confidence": 1,
+    "probabilities": {
+     "p550": 0,
+     "p650": 0,
+     "p750": 0,
+     "p1100": 1,
+     "p1500": 0,
+     "p200": 0,
+     "sem_limite": 0,
+     "p950": 0,
+     "p300": 0,
+     "p500": 0,
+     "p1000": 0,
+     "p1150": 0,
+     "p1350": 0,
+     "p350": 0,
+     "p1300": 0,
+     "p800": 0,
+     "p600": 0,
+     "p1200": 0,
+     "p850": 0,
+     "p1450": 0,
+     "p700": 0,
+     "p250": 0,
+     "p1250": 0,
+     "p400": 0,
+     "p900": 0,
+     "p450": 0,
+     "p1400": 0,
+     "p1050": 0
+    }
+   },
+   "preco_min": {
+    "type": "choice",
+    "choice": "sem_minimo",
+    "confidence": 1,
+    "probabilities": {
+     "sem_minimo": 1,
+     "p500": 0,
+     "p750": 0,
+     "p400": 0,
+     "p650": 0,
+     "p200": 0,
+     "p1500": 0,
+     "p950": 0,
+     "p550": 0,
+     "p1100": 0,
+     "p1000": 0,
+     "p1150": 0,
+     "p1350": 0,
+     "p350": 0,
+     "p1300": 0,
+     "p800": 0,
+     "p600": 0,
+     "p1200": 0,
+     "p850": 0,
+     "p250": 0,
+     "p700": 0,
+     "p1450": 0,
+     "p1250": 0,
+     "p300": 0,
+     "p900": 0,
+     "p450": 0,
+     "p1400": 0,
+     "p1050": 0
+    }
+   },
+   "pede_pet": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "pede_rua_tranquila": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "pede_home_office": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "pede_metro": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "pede_sol_manha": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "pede_reformado": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "pede_vista": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "pede_jardim": {
+    "type": "noul",
+    "noul": 0.03
+   }
+  },
+  "usage": {
+   "input_tokens": 3466,
+   "output_tokens": 1045
+  }
+ }
+}

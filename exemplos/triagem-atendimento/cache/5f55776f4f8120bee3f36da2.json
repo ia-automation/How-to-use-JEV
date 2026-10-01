@@ -1,0 +1,97 @@
+{
+ "medicao": {
+  "ms": 559,
+  "input_tokens": 2225,
+  "modelo": "jev-1.13.0",
+  "perguntas": 10
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "setor": {
+    "type": "choice",
+    "choice": "exchange_return",
+    "confidence": 0.93,
+    "probabilities": {
+     "account_access": 0.0,
+     "exchange_return": 0.94,
+     "payment": 0.04,
+     "other": 0.01,
+     "unclear": 0.01,
+     "product_question": 0.0,
+     "delivery": 0.0
+    }
+   },
+   "pede_reembolso": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "quer_humano": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "ameaca_cancelar": {
+    "type": "noul",
+    "noul": 0.95
+   },
+   "frustracao": {
+    "type": "score",
+    "score": 0.54,
+    "confidence": 0.31,
+    "legend": {
+     "0": {
+      "summary": "Calm",
+      "signals": [
+       "Neutral, polite or friendly tone",
+       "Reports a problem or asks something without expressing negative feelings"
+      ]
+     },
+     "1": {
+      "summary": "Frustrated but polite",
+      "signals": [
+       "Says they are frustrated, disappointed or annoyed",
+       "Sarcasm",
+       "No insults and no shouting"
+      ]
+     },
+     "2": {
+      "summary": "Very angry or hostile",
+      "signals": [
+       "Insults, profanity or shouting in capital letters",
+       "Furious or aggressive tone"
+      ]
+     }
+    },
+    "probabilities": {
+     "0": 0.46,
+     "1": 0.54,
+     "2": 0.0
+    }
+   },
+   "tambem_pagamento": {
+    "type": "noul",
+    "noul": 0.2
+   },
+   "tambem_entrega": {
+    "type": "noul",
+    "noul": 0.19
+   },
+   "tambem_troca_devolucao": {
+    "type": "noul",
+    "noul": 0.48
+   },
+   "tambem_conta_acesso": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "tambem_produto_duvida": {
+    "type": "noul",
+    "noul": 0.24
+   }
+  },
+  "usage": {
+   "input_tokens": 2225,
+   "output_tokens": 251
+  }
+ }
+}

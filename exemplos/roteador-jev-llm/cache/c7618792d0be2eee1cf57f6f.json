@@ -1,0 +1,107 @@
+{
+ "medicao": {
+  "ms": 433,
+  "input_tokens": 1474,
+  "modelo": "jev-1.13.0",
+  "perguntas": 17
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "risco_juridico": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "risco_ameaca": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "risco_dado_sensivel": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "risco_dado_terceiro": {
+    "type": "noul",
+    "noul": 0.0
+   },
+   "risco_pede_humano": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "risco_fraude": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "irritacao": {
+    "type": "score",
+    "score": 0.18,
+    "confidence": 0.82,
+    "legend": {
+     "0": "Calm, neutral or friendly",
+     "1": "Disappointed or annoyed, but polite",
+     "2": "Very angry: shouting, all caps, accusations or repeated complaints",
+     "3": "Hostile: insults, curses or aggressive language toward the store or its staff"
+    },
+    "probabilities": {
+     "0": 0.82,
+     "1": 0.18,
+     "2": 0.0,
+     "3": 0.0
+    }
+   },
+   "status_pedido": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "faq": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "como_rastrear": 0.0,
+     "trocar_tamanho": 0.0,
+     "prazo_troca": 0.0,
+     "none": 1.0,
+     "entrega_sabado": 0.0,
+     "formas_pagamento": 0.0
+    }
+   },
+   "faq_cobre::prazo_troca": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "faq_cobre::entrega_sabado": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::formas_pagamento": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "faq_cobre::como_rastrear": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "faq_cobre::trocar_tamanho": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "rac_plano": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "rac_varias_regras": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "rac_excecao": {
+    "type": "noul",
+    "noul": 0.04
+   }
+  },
+  "usage": {
+   "input_tokens": 1474,
+   "output_tokens": 412
+  }
+ }
+}

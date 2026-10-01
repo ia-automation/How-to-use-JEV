@@ -1,0 +1,57 @@
+{
+ "medicao": {
+  "ms": 269,
+  "input_tokens": 756,
+  "modelo": "jev-1.13.0",
+  "perguntas": 4
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "pet": {
+    "type": "choice",
+    "choice": "omite",
+    "confidence": 1,
+    "probabilities": {
+     "nega": 0,
+     "omite": 1,
+     "afirma": 0
+    }
+   },
+   "rua_tranquila": {
+    "type": "choice",
+    "choice": "nega",
+    "confidence": 0.99,
+    "probabilities": {
+     "nega": 0.99,
+     "omite": 0.01,
+     "afirma": 0
+    }
+   },
+   "home_office": {
+    "type": "choice",
+    "choice": "omite",
+    "confidence": 0.97,
+    "probabilities": {
+     "nega": 0.02,
+     "omite": 0.98,
+     "afirma": 0
+    }
+   },
+   "vista": {
+    "type": "choice",
+    "choice": "omite",
+    "confidence": 1,
+    "probabilities": {
+     "nega": 0,
+     "omite": 1,
+     "afirma": 0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 756,
+   "output_tokens": 153
+  }
+ }
+}

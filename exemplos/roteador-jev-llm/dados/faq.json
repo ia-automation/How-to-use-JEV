@@ -1,0 +1,81 @@
+{
+  "versao": "2026-09-30",
+  "autor": "codex",
+  "casos": [
+    {
+      "id": "F01",
+      "pergunta": "Como escolho o tamanho?",
+      "resposta": "Na página de cada modelo há uma tabela em centímetros. Meça o pé do calcanhar ao dedo mais longo e compare com a tabela daquele modelo; a numeração pode variar."
+    },
+    {
+      "id": "F02",
+      "pergunta": "Quais formas de pagamento aceitam?",
+      "resposta": "Nesta loja fictícia aceitamos Pix e cartão de crédito. Não aceitamos boleto, cheque nem pagamento por mensagem."
+    },
+    {
+      "id": "F03",
+      "pergunta": "Posso parcelar?",
+      "resposta": "Compras a partir de R$ 100 podem ser parceladas em até três vezes sem juros no cartão. O checkout mostra as opções disponíveis."
+    },
+    {
+      "id": "F04",
+      "pergunta": "Qual é o prazo de entrega?",
+      "resposta": "O prazo estimado depende do CEP e aparece no checkout antes do pagamento. A FAQ não informa a situação de um pedido específico."
+    },
+    {
+      "id": "F05",
+      "pergunta": "Onde encontro o rastreamento?",
+      "resposta": "Entre em Minha conta, abra Meus pedidos e selecione Acompanhar entrega. O código também é enviado por e-mail quando a encomenda é despachada."
+    },
+    {
+      "id": "F06",
+      "pergunta": "Como corrijo o endereço de entrega?",
+      "resposta": "Antes de o pedido entrar em separação, solicite a correção no atendimento. Depois da separação não prometemos alteração; o atendimento precisa verificar as opções."
+    },
+    {
+      "id": "F07",
+      "pergunta": "Como troco um tamanho?",
+      "resposta": "A política desta loja fictícia permite solicitar troca de tamanho em até 30 dias do recebimento, com produto sem uso e etiqueta preservada. Inicie a solicitação em Meus pedidos."
+    },
+    {
+      "id": "F08",
+      "pergunta": "Qual é a política de devolução por arrependimento?",
+      "resposta": "Para este exemplo fictício, a solicitação de devolução por arrependimento deve ser aberta em Meus pedidos em até sete dias do recebimento. A equipe envia as instruções; esta FAQ não resolve exceções individuais."
+    },
+    {
+      "id": "F09",
+      "pergunta": "Como o valor é devolvido?",
+      "resposta": "A devolução aprovada segue o meio de pagamento original: Pix para a conta de origem e cartão como estorno no cartão. O processamento depende da instituição financeira; a FAQ não confirma um estorno específico."
+    },
+    {
+      "id": "F10",
+      "pergunta": "O que faço se o produto apresentar defeito?",
+      "resposta": "Abra uma solicitação em Meus pedidos, descreva o problema e anexe fotos do produto. A equipe avaliará o caso; enviar fotos não significa aprovação automática."
+    },
+    {
+      "id": "F11",
+      "pergunta": "Existe frete grátis?",
+      "resposta": "Nesta loja fictícia, compras com subtotal de produtos a partir de R$ 399 têm frete padrão gratuito. O subtotal considerado é o valor dos produtos após descontos."
+    },
+    {
+      "id": "F12",
+      "pergunta": "Posso usar dois cupons?",
+      "resposta": "Só é permitido um cupom por compra. Cupons não são acumuláveis entre si. As condições de cada cupom aparecem no checkout."
+    },
+    {
+      "id": "F13",
+      "pergunta": "Qual é o horário do atendimento humano?",
+      "resposta": "O atendimento humano funciona de segunda a sexta, das 9h às 18h, no horário de Brasília. Mensagens fora desse período são respondidas no próximo período de atendimento."
+    },
+    {
+      "id": "F14",
+      "pergunta": "Posso retirar na loja?",
+      "resposta": "Esta loja fictícia vende apenas online e não oferece retirada presencial. Os pedidos são enviados ao endereço informado na compra."
+    },
+    {
+      "id": "F15",
+      "pergunta": "Posso lavar o tênis na máquina?",
+      "resposta": "Para os modelos desta loja fictícia, use pano macio, água e sabão neutro e deixe secar à sombra. Não recomendamos máquina de lavar; confira também as instruções específicas na etiqueta."
+    }
+  ]
+}

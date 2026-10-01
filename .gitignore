@@ -1,0 +1,34 @@
+# Fontes integrais e material de processamento ficam apenas nesta maquina.
+.local/
+.venv/
+__pycache__/
+*.pyc
+
+# Credenciais e configuracao privada nunca fazem parte da memoria.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Artefatos de ferramentas locais.
+.DS_Store
+Thumbs.db
+
+# Segredo local: chave da TypeSafe nunca entra no Git
+api_key.txt
+
+# Dependências do Node nos exemplos TypeScript
+node_modules/
+
+# Material integral de terceiros (documentação TypeSafe e transcrições de vídeos): só local
+fontes/docs/
+fontes/videos/
+
+# Canal de coordenação entre agentes (interno)
+chat.txt
+
+# Pasta de estudo: material privado e a prova nunca vão para a versão pública
+privado/
+prova/

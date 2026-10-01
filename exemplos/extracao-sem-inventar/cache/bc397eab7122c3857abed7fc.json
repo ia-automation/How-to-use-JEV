@@ -1,0 +1,35 @@
+{
+ "medicao": {
+  "ms": 239,
+  "input_tokens": 568,
+  "modelo": "jev-1.13.0",
+  "perguntas": 2
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "telefone": {
+    "type": "choice",
+    "choice": "(85) 90000-0206",
+    "confidence": 1.0,
+    "probabilities": {
+     "none": 0.0,
+     "(85) 90000-0206": 1.0
+    }
+   },
+   "cpf": {
+    "type": "choice",
+    "choice": "810.235.108-04",
+    "confidence": 1.0,
+    "probabilities": {
+     "none": 0.0,
+     "810.235.108-04": 1.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 568,
+   "output_tokens": 114
+  }
+ }
+}

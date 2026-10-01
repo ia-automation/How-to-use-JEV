@@ -1,0 +1,12 @@
+{
+  "name": "jev-memoria",
+  "description": "Memória e skills do Jev (TypeSafe System One), em português.",
+  "owner": { "name": "Inovai (ia-automation)" },
+  "plugins": [
+    {
+      "name": "jev",
+      "description": "Desenhar, escrever e revisar integrações com o Jev; manter a memória em dia.",
+      "source": "./"
+    }
+  ]
+}

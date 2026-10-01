@@ -1,0 +1,7 @@
+{"versao": "2026-09-30", "autor": "claude (rascunho do construtor, não é métrica)", "casos": [
+ {"id": "prazo_troca", "pergunta": "Qual é o prazo para trocar ou devolver um produto?", "resposta": "Você pode trocar ou devolver em até 30 dias corridos após o recebimento, com o produto sem uso e na embalagem original. A primeira troca tem frete grátis."},
+ {"id": "entrega_sabado", "pergunta": "Vocês entregam aos sábados?", "resposta": "Sim. As transportadoras entregam de segunda a sábado, das 8h às 18h. Não entregamos aos domingos e feriados."},
+ {"id": "formas_pagamento", "pergunta": "Quais formas de pagamento vocês aceitam?", "resposta": "Aceitamos PIX (5% de desconto), boleto e cartão de crédito em até 10x sem juros."},
+ {"id": "como_rastrear", "pergunta": "Como faço para rastrear meu pedido?", "resposta": "Entre em Minha Conta > Meus Pedidos e clique em Rastrear. O código de rastreio também vai por e-mail quando o pedido é despachado."},
+ {"id": "trocar_tamanho", "pergunta": "Como faço para trocar por outro tamanho?", "resposta": "Em Minha Conta > Meus Pedidos, clique em Trocar, escolha o novo tamanho e gere a etiqueta de postagem. Enviamos o novo tamanho assim que o produto chegar ao nosso centro."}
+]}

@@ -1,0 +1,97 @@
+{
+ "medicao": {
+  "ms": 260,
+  "input_tokens": 2441,
+  "modelo": "jev-1.13.0",
+  "perguntas": 10
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "setor": {
+    "type": "choice",
+    "choice": "conta_acesso",
+    "confidence": 1.0,
+    "probabilities": {
+     "sem_informacao": 0.0,
+     "entrega": 0.0,
+     "outro": 0.0,
+     "troca_devolucao": 0.0,
+     "produto_duvida": 0.0,
+     "conta_acesso": 1.0,
+     "pagamento": 0.0
+    }
+   },
+   "pede_reembolso": {
+    "type": "noul",
+    "noul": 0.01
+   },
+   "quer_humano": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "ameaca_cancelar": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "frustracao": {
+    "type": "score",
+    "score": 0.0,
+    "confidence": 0.99,
+    "legend": {
+     "0": {
+      "summary": "Calmo",
+      "signals": [
+       "Tom neutro, educado ou simpático",
+       "Relata um problema ou pergunta algo sem expressar sentimento negativo"
+      ]
+     },
+     "1": {
+      "summary": "Frustrado, mas educado",
+      "signals": [
+       "Diz que está frustrado, decepcionado ou incomodado",
+       "Ironia",
+       "Sem ofensa e sem gritar"
+      ]
+     },
+     "2": {
+      "summary": "Muito irritado ou hostil",
+      "signals": [
+       "Ofensa, palavrão ou gritando em maiúsculas",
+       "Tom furioso ou agressivo"
+      ]
+     }
+    },
+    "probabilities": {
+     "0": 1.0,
+     "1": 0.0,
+     "2": 0.0
+    }
+   },
+   "tambem_pagamento": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "tambem_entrega": {
+    "type": "noul",
+    "noul": 0.18
+   },
+   "tambem_troca_devolucao": {
+    "type": "noul",
+    "noul": 0.23
+   },
+   "tambem_conta_acesso": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "tambem_produto_duvida": {
+    "type": "noul",
+    "noul": 0.37
+   }
+  },
+  "usage": {
+   "input_tokens": 2441,
+   "output_tokens": 264
+  }
+ }
+}

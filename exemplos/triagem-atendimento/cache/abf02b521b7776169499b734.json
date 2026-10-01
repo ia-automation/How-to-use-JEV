@@ -1,0 +1,97 @@
+{
+ "medicao": {
+  "ms": 426,
+  "input_tokens": 2457,
+  "modelo": "jev-1.13.0",
+  "perguntas": 10
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "setor": {
+    "type": "choice",
+    "choice": "pagamento",
+    "confidence": 0.46,
+    "probabilities": {
+     "pagamento": 0.53,
+     "entrega": 0.0,
+     "conta_acesso": 0.43,
+     "produto_duvida": 0.0,
+     "sem_informacao": 0.0,
+     "troca_devolucao": 0.03,
+     "outro": 0.01
+    }
+   },
+   "ameaca_cancelar": {
+    "type": "noul",
+    "noul": 0.18
+   },
+   "frustracao": {
+    "type": "score",
+    "score": 2.0,
+    "confidence": 1.0,
+    "legend": {
+     "0": {
+      "summary": "Calmo",
+      "signals": [
+       "Tom neutro, educado ou simpático",
+       "Relata um problema ou pergunta algo sem expressar sentimento negativo"
+      ]
+     },
+     "1": {
+      "summary": "Frustrado, mas educado",
+      "signals": [
+       "Diz que está frustrado, decepcionado ou incomodado",
+       "Ironia",
+       "Sem ofensa e sem gritar"
+      ]
+     },
+     "2": {
+      "summary": "Muito irritado ou hostil",
+      "signals": [
+       "Ofensa, palavrão ou gritando em maiúsculas",
+       "Tom furioso ou agressivo"
+      ]
+     }
+    },
+    "probabilities": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 1.0
+    }
+   },
+   "tambem_pagamento": {
+    "type": "noul",
+    "noul": 0.72
+   },
+   "tambem_produto_duvida": {
+    "type": "noul",
+    "noul": 0.33
+   },
+   "pede_reembolso": {
+    "type": "noul",
+    "noul": 0.89
+   },
+   "quer_humano": {
+    "type": "noul",
+    "noul": 0.9
+   },
+   "tambem_entrega": {
+    "type": "noul",
+    "noul": 0.15
+   },
+   "tambem_troca_devolucao": {
+    "type": "noul",
+    "noul": 0.74
+   },
+   "tambem_conta_acesso": {
+    "type": "noul",
+    "noul": 0.65
+   }
+  },
+  "usage": {
+   "input_tokens": 2457,
+   "output_tokens": 262
+  }
+ }
+}

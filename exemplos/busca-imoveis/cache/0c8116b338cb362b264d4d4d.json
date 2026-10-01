@@ -1,0 +1,37 @@
+{
+ "medicao": {
+  "ms": 273,
+  "input_tokens": 547,
+  "modelo": "jev-1.13.0",
+  "perguntas": 2
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "sol_manha": {
+    "type": "choice",
+    "choice": "omite",
+    "confidence": 1,
+    "probabilities": {
+     "afirma": 0,
+     "nega": 0,
+     "omite": 1
+    }
+   },
+   "reformado": {
+    "type": "choice",
+    "choice": "afirma",
+    "confidence": 1,
+    "probabilities": {
+     "afirma": 1,
+     "nega": 0,
+     "omite": 0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 547,
+   "output_tokens": 80
+  }
+ }
+}

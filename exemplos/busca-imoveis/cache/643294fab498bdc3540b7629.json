@@ -1,0 +1,37 @@
+{
+ "medicao": {
+  "ms": 333,
+  "input_tokens": 557,
+  "modelo": "jev-1.13.0",
+  "perguntas": 2
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "pet": {
+    "type": "choice",
+    "choice": "omite",
+    "confidence": 1,
+    "probabilities": {
+     "afirma": 0,
+     "omite": 1,
+     "nega": 0
+    }
+   },
+   "rua_tranquila": {
+    "type": "choice",
+    "choice": "afirma",
+    "confidence": 1,
+    "probabilities": {
+     "afirma": 1,
+     "omite": 0,
+     "nega": 0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 557,
+   "output_tokens": 80
+  }
+ }
+}

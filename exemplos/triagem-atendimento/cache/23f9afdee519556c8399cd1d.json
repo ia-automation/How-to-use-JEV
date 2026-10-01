@@ -1,0 +1,97 @@
+{
+ "medicao": {
+  "ms": 416,
+  "input_tokens": 2228,
+  "modelo": "jev-1.13.0",
+  "perguntas": 10
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "frustracao": {
+    "type": "score",
+    "score": 1.0,
+    "confidence": 1.0,
+    "legend": {
+     "0": {
+      "summary": "Calm",
+      "signals": [
+       "Neutral, polite or friendly tone",
+       "Reports a problem or asks something without expressing negative feelings"
+      ]
+     },
+     "1": {
+      "summary": "Frustrated but polite",
+      "signals": [
+       "Says they are frustrated, disappointed or annoyed",
+       "Sarcasm",
+       "No insults and no shouting"
+      ]
+     },
+     "2": {
+      "summary": "Very angry or hostile",
+      "signals": [
+       "Insults, profanity or shouting in capital letters",
+       "Furious or aggressive tone"
+      ]
+     }
+    },
+    "probabilities": {
+     "0": 0.0,
+     "1": 1.0,
+     "2": 0.0
+    }
+   },
+   "tambem_pagamento": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "tambem_troca_devolucao": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "setor": {
+    "type": "choice",
+    "choice": "delivery",
+    "confidence": 0.99,
+    "probabilities": {
+     "unclear": 0.0,
+     "product_question": 0.0,
+     "other": 0.01,
+     "delivery": 0.99,
+     "account_access": 0.0,
+     "payment": 0.0,
+     "exchange_return": 0.0
+    }
+   },
+   "quer_humano": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "tambem_entrega": {
+    "type": "noul",
+    "noul": 0.27
+   },
+   "tambem_conta_acesso": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "tambem_produto_duvida": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "pede_reembolso": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "ameaca_cancelar": {
+    "type": "noul",
+    "noul": 0.03
+   }
+  },
+  "usage": {
+   "input_tokens": 2228,
+   "output_tokens": 250
+  }
+ }
+}

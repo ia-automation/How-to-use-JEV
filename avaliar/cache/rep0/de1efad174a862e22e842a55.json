@@ -1,0 +1,32 @@
+{
+ "medicao": {
+  "ms": 256,
+  "input_tokens": 431,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "judge": {
+    "type": "score",
+    "score": 1.84,
+    "confidence": 0.76,
+    "legend": {
+     "0": "A cosmetic or wording defect only; the relevant workflow and functionality still work normally.",
+     "1": "A function is broken, degraded, or slower, but the required workflow can still be completed through a usable workaround or despite the degradation.",
+     "2": "The required workflow cannot be completed and no usable workaround is available."
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.01,
+     "2": 0.92
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 431,
+   "output_tokens": 17
+  }
+ }
+}

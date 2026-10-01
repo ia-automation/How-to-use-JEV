@@ -1,0 +1,22 @@
+{
+  "name": "busca-imoveis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Busca em linguagem natural sobre 150 anúncios fictícios: restrições duras em código, critérios subjetivos lidos pelo Jev (SDK JS).",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/run.ts",
+    "ajuste": "tsx src/run.ts ajuste",
+    "congelar": "tsx src/run.ts congelar",
+    "rascunho": "tsx src/run.ts rascunho",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
