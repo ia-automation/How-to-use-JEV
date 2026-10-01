@@ -37,7 +37,7 @@ from datetime import datetime
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-PERMITIDO_NA_RAIZ = {"AGENTS.md", "CLAUDE.md", "README.md", "CHANGELOG.md", "LICENSE", "LICENSE-CONTEUDO.md",
+PERMITIDO_NA_RAIZ = {"AGENTS.md", "CLAUDE.md", "README.md", "CHANGELOG.md", "LICENSE", "CONTRIBUTING.md",
                      ".gitignore", ".claude-plugin", "avaliar", "conhecimento", "exemplos", "ferramentas", "skills"}
 EXCLUIDO_NA_RAIZ = {"prova", "privado", "fontes", "chat.txt", ".local", ".git", "api_key.txt", ".venv"}
 # --publicar: a versão pública leva também fontes/ (catálogo e skill oficial MIT), nunca o material integral.

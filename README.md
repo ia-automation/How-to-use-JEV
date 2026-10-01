@@ -59,8 +59,9 @@ presença dos arquivos não prova instalação, descoberta automática nem memó
   agregados, IDs e hashes, com crédito às fontes; o texto licenciado fica em `.local/`.
 - Dados reais do CRM: só anonimizados, e nem texto nem números entram na versão pública (ficam na pasta de
   estudo privada, junto com as propostas internas e a prova).
-- Licença do acervo próprio: código sob MIT ([LICENSE](LICENSE)); textos e notas sob CC BY 4.0
-  ([LICENSE-CONTEUDO.md](LICENSE-CONTEUDO.md)). Material de terceiros mantém a licença de origem.
+- Licença: MIT para todo o acervo próprio — código, notas, dados sintéticos ([LICENSE](LICENSE)); material de
+  terceiros mantém a licença de origem. Contribuições são bem-vindas por PR; merge e publicação só pelos
+  mantenedores ([CONTRIBUTING.md](CONTRIBUTING.md)).
 - Chave da TypeSafe: variável `TYPESAFE_API_KEY` ou `api_key.txt` local (ignorado pelo Git); nunca em arquivo versionado.
 
 ## Estado

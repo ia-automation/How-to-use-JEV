@@ -1,5 +1,10 @@
 # Histórico
 
+## 2026-10-01 — licença MIT única e contribuições
+
+- Todo o acervo próprio sob MIT (sai o CC BY 4.0 dos textos); `CONTRIBUTING.md`: fork + PR, merge e publicação
+  só pelos mantenedores; contribuição aceita entra pela pasta de estudo e é republicada.
+
 ## 2026-10-01 — versão pública (`ia-automation/How-to-use-JEV`)
 
 - Esta pasta segue como pasta de estudo; a versão pública sai por `copia_fria.py --publicar` (lista permitida;

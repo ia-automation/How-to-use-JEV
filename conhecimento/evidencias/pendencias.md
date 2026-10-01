@@ -52,7 +52,7 @@ automáticas podem conter erros. Detalhe de cobertura: [proveniencia](provenienc
 - Instalação das skills (`skills/`) e do plugin (`.claude-plugin/`): **não validada** em nenhum cliente;
   arquivos presentes não provam instalação, descoberta automática nem memória permanente — **ABERTO**.
 - Publicação no GitHub: destino, conta, visibilidade e licença do acervo próprio — **FECHADO 2026-10-01**:
-  `ia-automation/How-to-use-JEV`, público, código MIT e textos CC BY 4.0 ([decisoes](decisoes.md)).
+  `ia-automation/How-to-use-JEV`, público, licença MIT, aberto a contribuições ([decisoes](decisoes.md)).
   Material de terceiros, `privado/`, `prova/` e `.local/` ficam fora.
 
 ## Ideias a explorar (não são do doc)

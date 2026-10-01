@@ -21,6 +21,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
-Applies to the code (`*.py`, `*.ts`, `*.json`) of this repository. Notes and other
-text (`*.md`) are licensed under CC BY 4.0 — see LICENSE-CONTEUDO.md. Third-party
-material keeps its original license (e.g. `fontes/skill-oficial/`, MIT, TypeSafe).
+Applies to everything in this repository: code, notes and other text, synthetic data
+and recorded API responses. Contributions are accepted under this same license (see
+CONTRIBUTING.md). Third-party material keeps its original license: `fontes/skill-oficial/`
+(MIT, TypeSafe); summaries and short quotes of the TypeSafe documentation and of the
+cited videos belong to their authors and are cited with source; the HateBR and
+B2W-Reviews01 datasets are not redistributed (only IDs, hashes and aggregates).
+Synthetic data is fictitious (CPFs generated with valid check digits on purpose;
+e-mails on example domains).
