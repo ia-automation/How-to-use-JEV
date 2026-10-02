@@ -1,0 +1,16 @@
+{
+ "congelado_em": "2026-10-01T11:47:42-03:00",
+ "arquivos": {
+  "perguntas.py": "fa4e55b35c0b7cfb086b0ff58d2b368a2d42f6a744f717272402384aa995df5b",
+  "guarda.py": "cca9fde4186d9c3bc6d0b5907a9a2fd7b5b2626e26aaedb235508460d43d7699",
+  "dados/teste.json": "d1da7390aafdbe1efd17003686d959fe0cb0a91baa36b7831d95c7f8c8cb3d32"
+ },
+ "criterio_de_aceite": {
+  "fixado_em": "2026-10-01 11:23, antes de abrir o teste (README, seção 'Critério de continuar/descartar')",
+  "variante_julgada": "Jev+regex no conjunto teste",
+  "vazamento (bloqueia→permite)": "0",
+  "atrito (permite→bloqueia)": "0",
+  "acerto_acao": ">= baseline regex→bloqueia + 0,10",
+  "secundario (nao decide)": "nulos mandados para pergunta"
+ }
+}

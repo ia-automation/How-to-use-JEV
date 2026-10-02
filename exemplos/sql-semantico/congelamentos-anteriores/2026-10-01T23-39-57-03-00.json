@@ -1,0 +1,31 @@
+{
+ "congelado_em": "2026-10-01T23:39:57-03:00",
+ "arquivos": {
+  "perguntas.py": "ca1f9374f7123aa560acdc618fb2d287a9b08dd139f01f9bf3b41a2cf5ea8b20",
+  "sql.py": "1be64866ae7f02d083b1f5224483af1af9508bf11385f33b003eb5f1229fa81c",
+  "run.py": "103cdfb7c4d5b97d748f95ed7e0919085b82b8419281e04e9a36276cf6b5b51d",
+  "dados/linhas.json": "b11253f810da103eb34e4967eec9bd92567f5ee56c761542eb1a03a3edd89f15",
+  "dados/condicoes_teste.json": "2310fb5836605d529ef147c087b245deae5df431c90d1e82e9d4fba01b32993b"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (18 condições × 187 linhas), com a política acima",
+  "1_f1": "F1 do Jev sobre as decidíveis decididas ≥ 0,85 e ≥ F1 do baseline (LIKE) + 0,15",
+  "2_perdidas": "linha verdadeira do gabarito que saiu `falso` ≤ 5% das verdadeiras",
+  "3_negacao": "linha falsa marcada `verdadeiro` em condição de negação ≤ 2",
+  "4_humano": "decidíveis mandadas a humano (`indecidivel`) ≤ 8%",
+  "secundario_nao_decide": "indecidíveis do gabarito que foram a humano ≥ 50%; falha operacional = 0",
+  "se_falhar": "1 falhando = o LIKE basta ou o Jev não lê a condição; 2 ou 3 = o filtro perde ou inverte o que deveria achar (não serve sem mudança); 4 = custa humano demais",
+  "limites": {
+   "f1_min": 0.85,
+   "margem_baseline": 0.15,
+   "perdidas_max": 0.05,
+   "fp_negacao_max": 2,
+   "humano_max": 0.08,
+   "indecidiveis_a_humano_min": 0.5
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "969aa3fdf93eb9d8958bc47b7f19ff22d594003a69e7bd2c30a4cf6c5b79d794",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6"
+ }
+}

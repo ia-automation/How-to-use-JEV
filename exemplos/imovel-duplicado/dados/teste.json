@@ -1,0 +1,2646 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "ID-T001",
+   "a": {
+    "titulo": "Apartamento à venda, 35 m², 1 dormitório, Pinheiros",
+    "descricao": "Rua Teodoro Sampaio, Pinheiros: quarto e sala com sacada, sem vaga, reformado, cozinha americana, janelas antirruído. A 3 min do metrô Oscar Freire.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 35,
+    "preco": 380000,
+    "condominio_reais": 500
+   },
+   "b": {
+    "titulo": "Apartamento 1 quarto em Pinheiros",
+    "descricao": "Pinheiros, Rua Teodoro Sampaio, perto do metrô Oscar Freire: quarto e sala reformado, sacada, cozinha americana, antirruído, sem vaga.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 35,
+    "preco": 381000,
+    "condominio_reais": 500
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T002",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Edifício Lourdes Residence",
+    "descricao": "3 dormitórios e 3 vagas em Lourdes, Edifício Lourdes Residence, Rua Curitiba. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Lourdes",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 3,
+    "area_m2": 125,
+    "preco": 1476000,
+    "condominio_reais": 1760
+   },
+   "b": {
+    "titulo": "Apto 4 dorms, 3 vagas, 160 m² - Lourdes",
+    "descricao": "Edifício Lourdes Residence, Rua Curitiba: 4 quartos (2 suítes), 3 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista para a Serra. Lazer completo.",
+    "bairro": "Lourdes",
+    "cidade": "Belo Horizonte",
+    "quartos": 4,
+    "vagas": 3,
+    "area_m2": 160,
+    "preco": 1800000,
+    "condominio_reais": 2000
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesmo prédio) — outra planta (quartos e área)"
+  },
+  {
+   "id": "ID-T003",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Jardim, Santo André",
+    "descricao": "Bairro Jardim, Edifício Jardim das Flores: 2 quartos com suíte, varanda gourmet, 2 vagas, vista livre, armários. Piscina e academia.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 71,
+    "preco": 582000,
+    "condominio_reais": 700
+   },
+   "b": {
+    "titulo": "Jardim – 2 quartos, 72 m², pronto para morar",
+    "descricao": "Edifício Jardim das Flores, Rua das Figueiras: 2 dormitórios (1 suíte), 2 vagas, varanda gourmet, armários, vista livre. Lazer com piscina e academia. Entregue mobiliado.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 72,
+    "preco": 590000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-T004",
+   "a": {
+    "titulo": "Apto 2 dorms, 2 vagas, 85 m² - Itaim Bibi",
+    "descricao": "Rua Dom Pedro, Itaim Bibi: 2 quartos, 2 vagas, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Itaim Bibi",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 1443000,
+    "condominio_reais": 1350
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Europa Tower",
+    "descricao": "Edifício Europa Tower, Rua Pedroso Alvarenga: 2 suítes, 2 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista livre. Lazer com piscina, academia e spa.",
+    "bairro": "Itaim Bibi",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 1400000,
+    "condominio_reais": 1600
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-T005",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Boqueirão, Santos",
+    "descricao": "Edifício Praia Mar, Avenida Bartolomeu de Gusmão: 3 dormitórios (1 suíte), 1 vaga, sala ampla de frente para o mar, varanda com vista total da praia. Cozinha reformada, dependência de empregada.",
+    "bairro": "Boqueirão",
+    "cidade": "Santos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 120,
+    "preco": 1100000,
+    "condominio_reais": 1300
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Boqueirão, Santos",
+    "descricao": "3 dormitórios, suíte, frente para o mar, 160 m² de área total (120 m² úteis). Edifício Praia Mar, Avenida Bartolomeu de Gusmão. Cozinha reformada.",
+    "bairro": "Boqueirão",
+    "cidade": "Santos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 160,
+    "preco": 1110000,
+    "condominio_reais": 1300
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-T006",
+   "a": {
+    "titulo": "Jardim Vergueiro – 2 quartos, 57 m², pronto para morar",
+    "descricao": "Jardim Vergueiro, Rua Comendador Oetterer: 2 dorms, 1 vaga, sacada, cozinha com armários. Salão de festas.",
+    "bairro": "Jardim Vergueiro",
+    "cidade": "Sorocaba",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 57,
+    "preco": 316000,
+    "condominio_reais": 350
+   },
+   "b": {
+    "titulo": "Jardim Vergueiro – 2 quartos, 58 m², pronto para morar",
+    "descricao": "Rua Comendador Oetterer, Jardim Vergueiro: 2 quartos, 1 vaga, sala com sacada, cozinha com armários, piso frio. Condomínio com salão de festas.",
+    "bairro": "Jardim Vergueiro",
+    "cidade": "Sorocaba",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 58,
+    "preco": 320000,
+    "condominio_reais": 350
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T007",
+   "a": {
+    "titulo": "Apartamento à venda, 35 m², 1 dormitório, Pinheiros",
+    "descricao": "Rua Teodoro Sampaio, Pinheiros: quarto e sala com sacada, sem vaga, reformado, cozinha americana, janelas antirruído. A 3 min do metrô Oscar Freire.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 35,
+    "preco": 380000,
+    "condominio_reais": 500
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Pinheiros, São Paulo",
+    "descricao": "Rua Teodoro Sampaio, Pinheiros: quarto e sala sem sacada, sem vaga, original, cozinha fechada, janelas comuns. Perto do metrô.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 35,
+    "preco": 343000,
+    "condominio_reais": 500
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesma rua) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-T008",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Residencial Mata da Praia",
+    "descricao": "Residencial Mata da Praia: 3 quartos (1 suíte), 2 vagas, varanda voltada para a rua, cozinha sem planejados. Lazer completo.",
+    "bairro": "Mata da Praia",
+    "cidade": "Vitória",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 108,
+    "preco": 876000,
+    "condominio_reais": 1000
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 110 m², 3 dormitórios, Mata da Praia",
+    "descricao": "Residencial Mata da Praia, Mata da Praia: 3 quartos (1 suíte), 2 vagas, varanda, cozinha planejada, vista para o parque Pedra da Cebola. Lazer completo.",
+    "bairro": "Mata da Praia",
+    "cidade": "Vitória",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 900000,
+    "condominio_reais": 1000
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesmo prédio, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T009",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Tatuapé",
+    "descricao": "Tatuapé, Rua Tuiuti: 2 dorms, sacada, cozinha americana, laminado, 1 vaga. Perto do metrô.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 57,
+    "preco": 461000,
+    "condominio_reais": 560
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Tatuapé",
+    "descricao": "Rua Tuiuti, Tatuapé: 2 quartos, 1 vaga, sala com sacada, cozinha americana, piso laminado. Perto do metrô Tatuapé.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 58,
+    "preco": 450000,
+    "condominio_reais": 560
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T010",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos em Bigorrilho",
+    "descricao": "Rua Padre Anchieta, Bigorrilho: 3 quartos (1 suíte), 2 vagas, sacada com churrasqueira, face sul, aquecimento elétrico, sem armários, piso frio.",
+    "bairro": "Bigorrilho",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 100,
+    "preco": 750000,
+    "condominio_reais": 720
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 100 m², 3 dormitórios, Bigorrilho",
+    "descricao": "Rua Padre Anchieta, Bigorrilho: 3 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, face norte, aquecimento a gás, armários, piso de madeira.",
+    "bairro": "Bigorrilho",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 100,
+    "preco": 780000,
+    "condominio_reais": 720
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T011",
+   "a": {
+    "titulo": "Pinheiros – 2 quartos, 60 m², pronto para morar",
+    "descricao": "Pinheiros, Rua Cardeal Arcoverde: 2 quartos, 1 vaga, unidade de frente, sala com varanda, cozinha reformada, piso de madeira. A 5 min do metrô Fradique Coutinho.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 690000,
+    "condominio_reais": 900
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Pinheiros",
+    "descricao": "2 quartos em Pinheiros, a 5 minutos do metrô Fradique Coutinho. Unidade de frente, varanda, cozinha reformada, piso de madeira, 1 vaga.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 61,
+    "preco": 697000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: anúncio sem endereço — bairro, planta, números e o conjunto de detalhes distintivos coincidem; mesmo imóvel"
+  },
+  {
+   "id": "ID-T012",
+   "a": {
+    "titulo": "Oportunidade! 4 quartos em Boa Viagem",
+    "descricao": "Rua dos Navegantes, Boa Viagem: 4 quartos (2 suítes), 2 vagas, varanda com vista para o mar, cozinha com ilha, dependência completa. Reformado.",
+    "bairro": "Boa Viagem",
+    "cidade": "Recife",
+    "quartos": 4,
+    "vagas": 2,
+    "area_m2": 140,
+    "preco": 1250000,
+    "condominio_reais": 1500
+   },
+   "b": {
+    "titulo": "Boa Viagem – 4 quartos, 141 m², pronto para morar",
+    "descricao": "4 quartos (2 suítes) em Boa Viagem, varanda com vista mar, cozinha com ilha, dependência completa, 2 vagas. Reformado, pronto para morar.",
+    "bairro": "Boa Viagem",
+    "cidade": "Recife",
+    "quartos": 4,
+    "vagas": 2,
+    "area_m2": 141,
+    "preco": 1264000,
+    "condominio_reais": 1500
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: anúncio sem endereço — bairro, planta, números e o conjunto de detalhes distintivos coincidem; mesmo imóvel"
+  },
+  {
+   "id": "ID-T013",
+   "a": {
+    "titulo": "Apartamento 4 quartos em Boa Viagem",
+    "descricao": "Rua dos Navegantes, Boa Viagem: 4 quartos (2 suítes), 2 vagas, varanda com vista para o mar, cozinha com ilha, dependência completa. Reformado.",
+    "bairro": "Boa Viagem",
+    "cidade": "Recife",
+    "quartos": 4,
+    "vagas": 2,
+    "area_m2": 140,
+    "preco": 1250000,
+    "condominio_reais": 1500
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos em América",
+    "descricao": "América, Rua Jaguaruna: 3 quartos, suíte, 2 vagas, churrasqueira na sacada, aquecimento a gás. Muito ventilado.",
+    "bairro": "América",
+    "cidade": "Joinville",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 95,
+    "preco": 640000,
+    "condominio_reais": 500
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-T014",
+   "a": {
+    "titulo": "Cambuí – 2 quartos, 68 m², pronto para morar",
+    "descricao": "2 dormitórios e 1 vaga em Cambuí, Residencial Cambuí Garden, Rua Maria Monteiro. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 560000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Cambuí",
+    "descricao": "Apartamento em Cambuí: 2 dormitórios, 1 vaga. Prédio com portaria e elevador. Bem localizado, documentação em ordem.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 69,
+    "preco": 560000,
+    "condominio_reais": 650
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — um anúncio sem endereço, números batem; indecidível"
+  },
+  {
+   "id": "ID-T015",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Asa Sul",
+    "descricao": "3 quartos, suíte, 1 vaga, varanda com vista para a quadra arborizada. Área total 135 m², útil 100 m². Edifício Lago Sul Residence, Asa Sul. Planejados.",
+    "bairro": "Asa Sul",
+    "cidade": "Brasília",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 135,
+    "preco": 954000,
+    "condominio_reais": 1000
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos no Edifício Lago Sul Residence",
+    "descricao": "Edifício Lago Sul Residence, Asa Sul: 3 quartos (1 suíte), 1 vaga, sala com varanda, armários planejados, vista para a quadra arborizada. Prédio com elevador e salão de festas.",
+    "bairro": "Asa Sul",
+    "cidade": "Brasília",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 100,
+    "preco": 950000,
+    "condominio_reais": 1000
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-T016",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 92 m² - Setor Bueno",
+    "descricao": "Condomínio Vista Bueno, Setor Bueno: 3 quartos (1 suíte), 2 vagas, varanda gourmet, armários nos quartos, nascente! Lazer com piscina e academia. Agende já sua visita.",
+    "bairro": "Setor Bueno",
+    "cidade": "Goiânia",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 92,
+    "preco": 575000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Setor Bueno, Goiânia",
+    "descricao": "Condomínio Vista Bueno, Setor Bueno: 3 quartos (1 suíte), 2 vagas, varanda gourmet, armários nos quartos, nascente. Lazer com piscina e academia.",
+    "bairro": "Setor Bueno",
+    "cidade": "Goiânia",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 92,
+    "preco": 580000,
+    "condominio_reais": 650
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-T017",
+   "a": {
+    "titulo": "Apartamento à venda, 80 m², 2 dormitórios, Meireles",
+    "descricao": "Meireles, Rua Barbosa de Freitas: 2 quartos (1 suíte), 2 vagas, varanda com vista parcial do mar, armários, a 300 m da Beira Mar. Prédio com piscina e academia.",
+    "bairro": "Meireles",
+    "cidade": "Fortaleza",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 80,
+    "preco": 600000,
+    "condominio_reais": 750
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Meireles",
+    "descricao": "Rua Barbosa de Freitas, Meireles: 2 quartos (1 suíte), 2 vagas, varanda voltada para os fundos, sem vista para o mar. Sem armários. Piscina e academia.",
+    "bairro": "Meireles",
+    "cidade": "Fortaleza",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 79,
+    "preco": 596000,
+    "condominio_reais": 750
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T018",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos em Meireles",
+    "descricao": "2 dormitórios e 2 vagas em Meireles, Rua Santa Clara. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Meireles",
+    "cidade": "Fortaleza",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 79,
+    "preco": 596000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Meireles, Fortaleza",
+    "descricao": "Meireles, Rua Barbosa de Freitas: 2 quartos (1 suíte), 2 vagas, varanda com vista parcial do mar, armários, a 300 m da Beira Mar. Prédio com piscina e academia.",
+    "bairro": "Meireles",
+    "cidade": "Fortaleza",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 80,
+    "preco": 600000,
+    "condominio_reais": 750
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-T019",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Santana",
+    "descricao": "Rua Voluntários da Pátria, Santana: 2 quartos, 1 vaga, sala com sacada, cozinha com armários, piso laminado. Perto do metrô Santana.",
+    "bairro": "Santana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 62,
+    "preco": 440000,
+    "condominio_reais": 520
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 55 m², 2 dormitórios, Santana",
+    "descricao": "Rua das Camélias, Santana: 2 quartos, 1 vaga, sala com sacada, cozinha com armários, piso laminado. Perto do metrô Santana.",
+    "bairro": "Santana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 55,
+    "preco": 374000,
+    "condominio_reais": 550
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: texto reaproveitado — descrição idêntica de corretor em outro anúncio, mas endereço, área e preço diferem; outro imóvel"
+  },
+  {
+   "id": "ID-T020",
+   "a": {
+    "titulo": "Centro – 1 quarto, 45 m², pronto para morar",
+    "descricao": "Rua Bernardino de Campos, Centro de Ribeirão: 1 dormitório, 1 vaga, cozinha americana, sacada, reformado, próximo ao Hospital das Clínicas.",
+    "bairro": "Centro",
+    "cidade": "Ribeirão Preto",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 45,
+    "preco": 280000,
+    "condominio_reais": 400
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 45 m², 1 dormitório, Centro",
+    "descricao": "Centro, Rua Bernardino de Campos: apê de 1 quarto reformado, sacada, cozinha americana, 1 vaga. Perto do HC.",
+    "bairro": "Centro",
+    "cidade": "Ribeirão Preto",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 45,
+    "preco": 282000,
+    "condominio_reais": 400
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T021",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos em Botafogo",
+    "descricao": "Rua Lauro Müller, Botafogo: 3 quartos (1 suíte), 1 vaga, varanda, dependência completa, piso de madeira, vista para o Cristo. Portaria 24h.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 1050000,
+    "condominio_reais": 1200
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Botafogo, Rio de Janeiro",
+    "descricao": "Rua Lauro Müller, Botafogo: 3 quartos (1 suíte), 1 vaga, varanda, dependência completa, vista para o prédio vizinho, piso frio.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 96,
+    "preco": 1010000,
+    "condominio_reais": 1200
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T022",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Petrópolis",
+    "descricao": "Condomínio Petrópolis Residence, Rua Vicente da Fontoura: 2 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, lareira, água quente central, armários. Piscina e academia.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 82,
+    "preco": 720000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 2 vagas, 82 m² - Petrópolis",
+    "descricao": "Condomínio Petrópolis Residence, Rua Vicente da Fontoura: 2 dorms (1 suíte), 2 vagas, sacada com churrasqueira, lareira, água quente central, armários! Piscina e academia. Agende já sua visita.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 82,
+    "preco": 723000,
+    "condominio_reais": 800
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-T023",
+   "a": {
+    "titulo": "Apartamento 4 quartos em Boqueirão",
+    "descricao": "Edifício Praia Mar, Avenida Bartolomeu de Gusmão, Boqueirão: 4 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Boqueirão",
+    "cidade": "Santos",
+    "quartos": 4,
+    "vagas": 1,
+    "area_m2": 146,
+    "preco": 1298000,
+    "condominio_reais": 1460
+   },
+   "b": {
+    "titulo": "Boqueirão – 3 quartos, 120 m², pronto para morar",
+    "descricao": "Edifício Praia Mar, Avenida Bartolomeu de Gusmão: 3 dormitórios (1 suíte), 1 vaga, sala ampla de frente para o mar, varanda com vista total da praia. Cozinha reformada, dependência de empregada.",
+    "bairro": "Boqueirão",
+    "cidade": "Santos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 120,
+    "preco": 1100000,
+    "condominio_reais": 1300
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesmo prédio) — outra planta (quartos e área)"
+  },
+  {
+   "id": "ID-T024",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Centro",
+    "descricao": "Apartamento em Centro (Condomínio Parque Osasco, Avenida dos Autonomistas): 2 dormitórios, 1 vaga. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Centro",
+    "cidade": "Osasco",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 50,
+    "preco": 330000,
+    "condominio_reais": 480
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Centro",
+    "descricao": "Apartamento em Centro: 2 dormitórios, 1 vaga. Prédio com portaria e elevador. Bem localizado, documentação em ordem.",
+    "bairro": "Centro",
+    "cidade": "Osasco",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 49,
+    "preco": 324000,
+    "condominio_reais": 480
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — um anúncio sem endereço, números batem; indecidível"
+  },
+  {
+   "id": "ID-T025",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 58 m² - Jardim Vergueiro",
+    "descricao": "Rua Comendador Oetterer, Jardim Vergueiro: 2 quartos, 1 vaga, sala com sacada, cozinha com armários, piso frio. Condomínio com salão de festas.",
+    "bairro": "Jardim Vergueiro",
+    "cidade": "Sorocaba",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 58,
+    "preco": 320000,
+    "condominio_reais": 350
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Jardim Vergueiro",
+    "descricao": "Rua Comendador Oetterer, Jardim Vergueiro: 2 quartos, 1 vaga, sala sem sacada, cozinha sem armários. Salão de festas.",
+    "bairro": "Jardim Vergueiro",
+    "cidade": "Sorocaba",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 58,
+    "preco": 293000,
+    "condominio_reais": 350
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesma rua) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-T026",
+   "a": {
+    "titulo": "Apto 1 dorm, 1 vaga, 40 m² - Brooklin",
+    "descricao": "Brooklin, Condomínio Brooklin Life: studio com marcenaria planejada, varanda, 1 vaga, coworking e lavanderia no prédio. Próximo ao metrô.",
+    "bairro": "Brooklin",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 40,
+    "preco": 521000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Apartamento 1 quarto em Brooklin",
+    "descricao": "Condomínio Brooklin Life, Rua Barão do Triunfo: studio de 1 dormitório, 1 vaga, varanda, marcenaria sob medida, lavanderia coletiva e coworking. Perto da estação Brooklin.",
+    "bairro": "Brooklin",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 40,
+    "preco": 480000,
+    "condominio_reais": 650
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T027",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Jardim das Flores",
+    "descricao": "Edifício Jardim das Flores, Rua das Figueiras: 2 dorms (1 suíte), 2 vagas, varanda gourmet, armários, vista livre! Lazer com piscina e academia. Agende já sua visita.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 72,
+    "preco": 595000,
+    "condominio_reais": 700
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Jardim das Flores",
+    "descricao": "Edifício Jardim das Flores, Rua das Figueiras: 2 dormitórios (1 suíte), 2 vagas, varanda gourmet, armários, vista livre. Lazer com piscina e academia.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 72,
+    "preco": 590000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-T028",
+   "a": {
+    "titulo": "Petrópolis – 2 quartos, 82 m², pronto para morar",
+    "descricao": "Condomínio Petrópolis Residence, Rua Vicente da Fontoura: 2 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, lareira, água quente central, armários. Piscina e academia.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 82,
+    "preco": 720000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 72 m², 2 dormitórios, Petrópolis",
+    "descricao": "Edifício Mirante, Rua Barão do Rio Branco: 2 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, lareira, água quente central, armários. Piscina e academia.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 72,
+    "preco": 612000,
+    "condominio_reais": 910
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: texto reaproveitado — descrição idêntica de corretor em outro anúncio, mas endereço, área e preço diferem; outro imóvel"
+  },
+  {
+   "id": "ID-T029",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Mata da Praia",
+    "descricao": "Residencial Mata da Praia, Mata da Praia: 3 quartos (1 suíte), 2 vagas, varanda, cozinha planejada, vista para o parque Pedra da Cebola. Lazer completo.",
+    "bairro": "Mata da Praia",
+    "cidade": "Vitória",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 900000,
+    "condominio_reais": 1000
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 2 vagas, 150 m² - Mata da Praia",
+    "descricao": "Residencial Mata da Praia: 3 quartos, suíte, 2 vagas, varanda, vista para o parque. Área total 150 m², privativa 110 m². Cozinha planejada.",
+    "bairro": "Mata da Praia",
+    "cidade": "Vitória",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 150,
+    "preco": 895000,
+    "condominio_reais": 1000
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-T030",
+   "a": {
+    "titulo": "Apartamento à venda, 50 m², 2 dormitórios, Centro",
+    "descricao": "Centro de Osasco, Condomínio Parque Osasco: 2 dorms reformados, varanda, cozinha americana, 1 vaga, ao lado da estação. Piscina.",
+    "bairro": "Centro",
+    "cidade": "Osasco",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 50,
+    "preco": 361000,
+    "condominio_reais": 480
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Centro",
+    "descricao": "Condomínio Parque Osasco, Avenida dos Autonomistas: 2 quartos, 1 vaga, sala com varanda, cozinha americana, reformado, ao lado da estação Osasco. Lazer com piscina.",
+    "bairro": "Centro",
+    "cidade": "Osasco",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 50,
+    "preco": 330000,
+    "condominio_reais": 480
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T031",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 77 m² - Icaraí",
+    "descricao": "Rua Gavião Peixoto, Icaraí, a duas quadras da praia: 2 dorms com suíte, varanda, planejados, 1 vaga, piscina no prédio.",
+    "bairro": "Icaraí",
+    "cidade": "Niterói",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 77,
+    "preco": 648000,
+    "condominio_reais": 850
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Icaraí",
+    "descricao": "Icaraí, Rua Gavião Peixoto: 2 quartos (1 suíte), 1 vaga, varanda, armários planejados, a 2 quadras da praia. Prédio com piscina.",
+    "bairro": "Icaraí",
+    "cidade": "Niterói",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 78,
+    "preco": 650000,
+    "condominio_reais": 850
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T032",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Tatuapé, São Paulo",
+    "descricao": "Rua Tuiuti, Tatuapé: 2 quartos, 1 vaga, sala sem sacada, cozinha fechada, piso frio. Perto do metrô.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 57,
+    "preco": 406000,
+    "condominio_reais": 560
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 58 m², 2 dormitórios, Tatuapé",
+    "descricao": "Rua Tuiuti, Tatuapé: 2 quartos, 1 vaga, sala com sacada, cozinha americana, piso laminado. Perto do metrô Tatuapé.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 58,
+    "preco": 450000,
+    "condominio_reais": 560
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesma rua) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-T033",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Boqueirão, Santos",
+    "descricao": "Edifício Praia Mar, Avenida Bartolomeu de Gusmão: 3 dormitórios (1 suíte), 1 vaga, sala ampla de frente para o mar, varanda com vista total da praia. Cozinha reformada, dependência de empregada.",
+    "bairro": "Boqueirão",
+    "cidade": "Santos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 120,
+    "preco": 1100000,
+    "condominio_reais": 1300
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 1 vaga, 120 m² - Boqueirão",
+    "descricao": "Frente mar no Boqueirão! Edifício Praia Mar: 3 quartos com suíte, varanda com vista para a praia, cozinha reformada, dependência. 1 vaga.",
+    "bairro": "Boqueirão",
+    "cidade": "Santos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 120,
+    "preco": 1199000,
+    "condominio_reais": 1300
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T034",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Pinheiros",
+    "descricao": "Pinheiros, Rua Cardeal Arcoverde: 2 quartos, 1 vaga, unidade de frente, sala com varanda, cozinha reformada, piso de madeira. A 5 min do metrô Fradique Coutinho.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 690000,
+    "condominio_reais": 900
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 60 m² - Pinheiros",
+    "descricao": "Rua Cardeal Arcoverde, Pinheiros: 2 quartos, 1 vaga, unidade de fundos, varanda, cozinha original, piso frio. Perto do metrô Fradique.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 676000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T035",
+   "a": {
+    "titulo": "Apartamento à venda, 95 m², 3 dormitórios, América",
+    "descricao": "Rua Jaguaruna, bairro América: 3 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, aquecimento a gás, ventilação cruzada. Entregue mobiliado.",
+    "bairro": "América",
+    "cidade": "Joinville",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 95,
+    "preco": 640000,
+    "condominio_reais": 500
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos em América",
+    "descricao": "América, Rua Jaguaruna: 3 quartos, suíte, 2 vagas, churrasqueira na sacada, aquecimento a gás. Muito ventilado.",
+    "bairro": "América",
+    "cidade": "Joinville",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 94,
+    "preco": 636000,
+    "condominio_reais": 500
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-T036",
+   "a": {
+    "titulo": "Apartamento à venda, 116 m², 3 dormitórios, Alto da Lapa",
+    "descricao": "Edifício Alto da Lapa Garden, Rua Afonso Sardinha: 3 suítes, 2 vagas, varanda gourmet, piso porcelanato, vista para o pátio. Lazer completo.",
+    "bairro": "Alto da Lapa",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 116,
+    "preco": 1289000,
+    "condominio_reais": 1400
+   },
+   "b": {
+    "titulo": "Alto da Lapa – 3 quartos, 115 m², pronto para morar",
+    "descricao": "Edifício Alto da Lapa Garden, Rua Afonso Sardinha: 3 suítes, 2 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista para o Pico do Jaraguá. Lazer completo.",
+    "bairro": "Alto da Lapa",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 115,
+    "preco": 1300000,
+    "condominio_reais": 1400
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesmo prédio, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T037",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos em Bigorrilho",
+    "descricao": "Rua Padre Anchieta, Bigorrilho: 3 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, face norte, aquecimento a gás, armários, piso de madeira.",
+    "bairro": "Bigorrilho",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 100,
+    "preco": 780000,
+    "condominio_reais": 720
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 2 vagas, 100 m² - Bigorrilho",
+    "descricao": "Bigorrilho: 3 dormitórios com suíte, 2 vagas, sacada com churrasqueira, face norte, aquecimento a gás, armários e piso de madeira.",
+    "bairro": "Bigorrilho",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 100,
+    "preco": 769000,
+    "condominio_reais": 720
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: anúncio sem endereço — bairro, planta, números e o conjunto de detalhes distintivos coincidem; mesmo imóvel"
+  },
+  {
+   "id": "ID-T038",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 64 m² - Pituba",
+    "descricao": "Residencial Alto da Pituba, Rua Ceará: 2 quartos (1 suíte), 1 vaga, varanda, piso em porcelanato, ventilado, perto do shopping. Portaria 24h e piscina.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 420000,
+    "condominio_reais": 700
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Pituba, Salvador",
+    "descricao": "Edifício Dona Lúcia, Rua Ceará, Pituba: 2 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 72,
+    "preco": 470000,
+    "condominio_reais": 580
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mesma rua, prédios diferentes — nomes de condomínio distintos; não é duplicata"
+  },
+  {
+   "id": "ID-T039",
+   "a": {
+    "titulo": "Lindo apartamento à venda em América, Joinville",
+    "descricao": "Rua Jaguaruna, bairro América: 3 dormitórios (1 suíte), 2 vagas, sacada com churrasqueira, aquecimento a gás, ventilação cruzada.",
+    "bairro": "América",
+    "cidade": "Joinville",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 95,
+    "preco": 640000,
+    "condominio_reais": 500
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 95 m², 3 dormitórios, América",
+    "descricao": "América, Rua Jaguaruna: 3 quartos, suíte, 2 vagas, churrasqueira na sacada, aquecimento a gás. Muito ventilado.",
+    "bairro": "América",
+    "cidade": "Joinville",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 95,
+    "preco": 621000,
+    "condominio_reais": 500
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T040",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Cambuí, Campinas",
+    "descricao": "Residencial Cambuí Garden, Rua Maria Monteiro: 2 dormitórios (1 suíte), 1 vaga, varanda, cozinha planejada, piso porcelanato, vista livre. Lazer com piscina.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 560000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Cambuí",
+    "descricao": "Residencial Cambuí Garden, Rua Maria Monteiro: 2 dorms (1 suíte), 1 vaga, varanda, cozinha planejada, piso porcelanato, vista livre! Lazer com piscina. Agende já sua visita.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 564000,
+    "condominio_reais": 650
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-T041",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Vila Leopoldina, São Paulo",
+    "descricao": "Condomínio Leopoldina Park, Rua Carlos Weber: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, piso laminado. Lazer com piscina, quadra e brinquedoteca.",
+    "bairro": "Vila Leopoldina",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 90,
+    "preco": 820000,
+    "condominio_reais": 950
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Vila Leopoldina, São Paulo",
+    "descricao": "Apartamento em Vila Leopoldina (Residencial Aurora, Rua Carlos Weber): 3 dormitórios, 2 vagas. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Vila Leopoldina",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 79,
+    "preco": 877000,
+    "condominio_reais": 1000
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mesma rua, prédios diferentes — nomes de condomínio distintos; não é duplicata"
+  },
+  {
+   "id": "ID-T042",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Europa Tower",
+    "descricao": "Edifício Europa Tower, Rua Pedroso Alvarenga: 2 suítes, 2 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista livre. Lazer com piscina, academia e spa. Entregue mobiliado e decorado.",
+    "bairro": "Itaim Bibi",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 1400000,
+    "condominio_reais": 1600
+   },
+   "b": {
+    "titulo": "Itaim Bibi – 2 quartos, 85 m², pronto para morar",
+    "descricao": "Itaim Bibi, Edifício Europa Tower: 2 suítes, varanda gourmet, planejados, madeira, vista livre, 2 vagas. Piscina, academia, spa. Entregue vazio, sem móveis.",
+    "bairro": "Itaim Bibi",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 1302000,
+    "condominio_reais": 1600
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mobiliado × vazio — resto igual: pode ser a mesma unidade em outro momento ou a vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-T043",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Residencial Cambuí Garden",
+    "descricao": "Residencial Cambuí Garden, Rua Maria Monteiro: 2 dormitórios (1 suíte), 1 vaga, varanda, cozinha planejada, piso porcelanato, vista livre. Lazer com piscina.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 560000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Cambuí – 2 quartos, 69 m², pronto para morar",
+    "descricao": "Rua Doutor Arnaldo, Cambuí: 2 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 69,
+    "preco": 577000,
+    "condominio_reais": 500
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-T044",
+   "a": {
+    "titulo": "Apartamento à venda, 85 m², 2 dormitórios, Itaim Bibi",
+    "descricao": "Edifício Europa Tower, Rua Pedroso Alvarenga: 2 suítes, 2 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista livre! Lazer com piscina, academia e spa. Agende já sua visita.",
+    "bairro": "Itaim Bibi",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 1400000,
+    "condominio_reais": 1600
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Itaim Bibi, São Paulo",
+    "descricao": "Edifício Europa Tower, Rua Pedroso Alvarenga: 2 suítes, 2 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista livre. Lazer com piscina, academia e spa.",
+    "bairro": "Itaim Bibi",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 1400000,
+    "condominio_reais": 1600
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-T045",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos em Rio Comprido",
+    "descricao": "Rio Comprido, Rua Barão de Itapagipe: 2 dorms, varanda, dependência, madeira, 1 vaga. Portaria.",
+    "bairro": "Rio Comprido",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 66,
+    "preco": 417000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 66 m² - Rio Comprido",
+    "descricao": "Rua Barão de Itapagipe, Rio Comprido: 2 quartos, 1 vaga, sala com varanda, dependência, piso de madeira. Prédio com portaria.",
+    "bairro": "Rio Comprido",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 66,
+    "preco": 380000,
+    "condominio_reais": 600
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T046",
+   "a": {
+    "titulo": "Asa Sul – 3 quartos, 100 m², pronto para morar",
+    "descricao": "Asa Sul, Edifício Lago Sul Residence: 3 dormitórios com suíte, varanda, planejados, vista livre para a quadra arborizada. Elevador, salão de festas, 1 vaga. Valor reduzido para venda rápida.",
+    "bairro": "Asa Sul",
+    "cidade": "Brasília",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 100,
+    "preco": 826000,
+    "condominio_reais": 1000
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 100 m², 3 dormitórios, Asa Sul",
+    "descricao": "Edifício Lago Sul Residence, Asa Sul: 3 quartos (1 suíte), 1 vaga, sala com varanda, armários planejados, vista para a quadra arborizada. Prédio com elevador e salão de festas.",
+    "bairro": "Asa Sul",
+    "cidade": "Brasília",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 100,
+    "preco": 950000,
+    "condominio_reais": 1000
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T047",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Condomínio Vista Bueno",
+    "descricao": "Apartamento nascente no Condomínio Vista Bueno: 3 dorms, suíte, varanda gourmet, 2 vagas, armários. Piscina e academia. Entregue vazio, sem móveis.",
+    "bairro": "Setor Bueno",
+    "cidade": "Goiânia",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 92,
+    "preco": 542000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Setor Bueno",
+    "descricao": "Condomínio Vista Bueno, Setor Bueno: 3 quartos (1 suíte), 2 vagas, varanda gourmet, armários nos quartos, nascente. Lazer com piscina e academia. Entregue mobiliado e decorado.",
+    "bairro": "Setor Bueno",
+    "cidade": "Goiânia",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 92,
+    "preco": 580000,
+    "condominio_reais": 650
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mobiliado × vazio — resto igual: pode ser a mesma unidade em outro momento ou a vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-T048",
+   "a": {
+    "titulo": "Apto 3 dorms, 1 vaga, 80 m² - Centro",
+    "descricao": "Rua Doutor Ramos de Azevedo, Centro de Guarulhos: 3 quartos (1 suíte), 1 vaga, sacada, armários planejados, piso laminado. Prédio com portaria.",
+    "bairro": "Centro",
+    "cidade": "Guarulhos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 80,
+    "preco": 420000,
+    "condominio_reais": 550
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 1 vaga, 80 m² - Centro",
+    "descricao": "Avenida das Nações, Centro: 3 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Centro",
+    "cidade": "Guarulhos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 80,
+    "preco": 415000,
+    "condominio_reais": 540
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-T049",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Tatuapé, São Paulo",
+    "descricao": "Tatuapé, Rua Tuiuti: 2 dorms, sacada, cozinha americana, laminado, 1 vaga. Perto do metrô.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 58,
+    "preco": 450000,
+    "condominio_reais": 560
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 60 m², 2 dormitórios, Pinheiros",
+    "descricao": "Pinheiros, Rua Cardeal Arcoverde: 2 quartos, 1 vaga, unidade de frente, sala com varanda, cozinha reformada, piso de madeira. A 5 min do metrô Fradique Coutinho.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 690000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-T050",
+   "a": {
+    "titulo": "Apartamento à venda, 113 m², 3 dormitórios, Alto da Lapa",
+    "descricao": "Apartamento em Alto da Lapa (Edifício Alto da Lapa Garden, Rua Afonso Sardinha): 3 dormitórios, 2 vagas. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Alto da Lapa",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 113,
+    "preco": 1315000,
+    "condominio_reais": 1400
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos no Edifício Alto da Lapa Garden",
+    "descricao": "3 dormitórios e 2 vagas em Alto da Lapa, Edifício Alto da Lapa Garden, Rua Afonso Sardinha. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Alto da Lapa",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 115,
+    "preco": 1300000,
+    "condominio_reais": 1400
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — mesmo prédio e mesma planta: mesma unidade ou vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-T051",
+   "a": {
+    "titulo": "Apartamento à venda, 62 m², 2 dormitórios, Santana",
+    "descricao": "Rua Voluntários da Pátria, Santana: 2 quartos, 1 vaga, sala com sacada, cozinha com armários, piso laminado. Perto do metrô Santana. Entregue mobiliado.",
+    "bairro": "Santana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 62,
+    "preco": 440000,
+    "condominio_reais": 520
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Santana, São Paulo",
+    "descricao": "Santana, Rua Voluntários da Pátria, perto do metrô: 2 dorms, sacada, armários na cozinha, laminado, 1 vaga.",
+    "bairro": "Santana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 63,
+    "preco": 427000,
+    "condominio_reais": 520
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-T052",
+   "a": {
+    "titulo": "Apartamento à venda, 62 m², 2 dormitórios, Gleba Palhano",
+    "descricao": "Apartamento em Gleba Palhano (Condomínio Ipê Amarelo, Rua Caracas): 2 dormitórios, 1 vaga. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Gleba Palhano",
+    "cidade": "Londrina",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 62,
+    "preco": 478000,
+    "condominio_reais": 500
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 70 m² - Gleba Palhano",
+    "descricao": "Edifício Palhano Tower, Rua Caracas: 2 quartos (1 suíte), 1 vaga, sacada com churrasqueira, vista para o Lago Igapó, armários. Lazer com piscina.",
+    "bairro": "Gleba Palhano",
+    "cidade": "Londrina",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 600
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mesma rua, prédios diferentes — nomes de condomínio distintos; não é duplicata"
+  },
+  {
+   "id": "ID-T053",
+   "a": {
+    "titulo": "Apartamento à venda, 90 m², 3 dormitórios, Vila Leopoldina",
+    "descricao": "Condomínio Leopoldina Park, Rua Carlos Weber: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, piso laminado. Lazer com piscina, quadra e brinquedoteca.",
+    "bairro": "Vila Leopoldina",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 90,
+    "preco": 820000,
+    "condominio_reais": 950
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Vila Leopoldina, São Paulo",
+    "descricao": "Condomínio Leopoldina Park: 3 dormitórios, suíte, 2 vagas, varanda gourmet, cozinha planejada, piso laminado. 122 m² de área total, 90 m² privativos. Piscina, quadra e brinquedoteca.",
+    "bairro": "Vila Leopoldina",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 122,
+    "preco": 835000,
+    "condominio_reais": 950
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-T054",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Pituba, Salvador",
+    "descricao": "Residencial Alto da Pituba, Rua Ceará: 2 quartos (1 suíte), 1 vaga, varanda, piso em porcelanato, ventilado, perto do shopping. Portaria 24h e piscina.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 420000,
+    "condominio_reais": 700
+   },
+   "b": {
+    "titulo": "Pituba – 2 quartos, 64 m², pronto para morar",
+    "descricao": "Pituba, Residencial Alto da Pituba: 2 dorms com suíte, varanda, porcelanato, 1 vaga. Muito ventilado, próximo ao shopping. Piscina.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 426000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T055",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Centro",
+    "descricao": "Centro, Rua Doutor Ramos de Azevedo: 3 dorms com suíte, sacada, planejados, laminado, 1 vaga. Portaria 24h.",
+    "bairro": "Centro",
+    "cidade": "Guarulhos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 80,
+    "preco": 419000,
+    "condominio_reais": 550
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 80 m², 3 dormitórios, Centro",
+    "descricao": "Rua Doutor Ramos de Azevedo, Centro de Guarulhos: 3 quartos (1 suíte), 1 vaga, sacada, armários planejados, piso laminado. Prédio com portaria.",
+    "bairro": "Centro",
+    "cidade": "Guarulhos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 80,
+    "preco": 420000,
+    "condominio_reais": 550
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T056",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Jardim Aquarius",
+    "descricao": "Condomínio Jardim Aquarius: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet com churrasqueira, cozinha planejada, piso em porcelanato. Lazer clube.",
+    "bairro": "Jardim Aquarius",
+    "cidade": "São José dos Campos",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 780000,
+    "condominio_reais": 900
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 2 vagas, 105 m² - Jardim Aquarius",
+    "descricao": "Condomínio Jardim Aquarius: 3 dorms (1 suíte), 2 vagas, varanda gourmet com churrasqueira, cozinha planejada, piso em porcelanato! Lazer clube. Agende já sua visita.",
+    "bairro": "Jardim Aquarius",
+    "cidade": "São José dos Campos",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 781000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-T057",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Rio Comprido",
+    "descricao": "Rua Barão de Itapagipe, Rio Comprido: 2 quartos, 1 vaga, sala com varanda, dependência, piso de madeira. Prédio com portaria.",
+    "bairro": "Rio Comprido",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 66,
+    "preco": 380000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Rio Comprido",
+    "descricao": "Rua Barão de Itapagipe, Rio Comprido: 2 quartos, 1 vaga, sem varanda, dependência revertida em closet, piso frio. Portaria.",
+    "bairro": "Rio Comprido",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 67,
+    "preco": 353000,
+    "condominio_reais": 600
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesma rua) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-T058",
+   "a": {
+    "titulo": "Asa Sul – 3 quartos, 100 m², pronto para morar",
+    "descricao": "Edifício Lago Sul Residence, Asa Sul: 3 quartos (1 suíte), 1 vaga, sala com varanda, armários planejados, vista para a quadra arborizada. Prédio com elevador e salão de festas.",
+    "bairro": "Asa Sul",
+    "cidade": "Brasília",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 100,
+    "preco": 950000,
+    "condominio_reais": 1000
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 1 vaga, 101 m² - Asa Sul",
+    "descricao": "Edifício Lago Sul Residence, Asa Sul: 3 quartos (1 suíte), 1 vaga, varanda, sem armários, vista para o estacionamento. Elevador.",
+    "bairro": "Asa Sul",
+    "cidade": "Brasília",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 101,
+    "preco": 918000,
+    "condominio_reais": 1000
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesmo prédio, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T059",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Setor Bueno, Goiânia",
+    "descricao": "Condomínio Vista Bueno, Setor Bueno: 3 quartos (1 suíte), 2 vagas, varanda gourmet, armários nos quartos, nascente. Lazer com piscina e academia.",
+    "bairro": "Setor Bueno",
+    "cidade": "Goiânia",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 92,
+    "preco": 580000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Setor Bueno – 3 quartos, 93 m², pronto para morar",
+    "descricao": "Apartamento nascente no Condomínio Vista Bueno: 3 dorms, suíte, varanda gourmet, 2 vagas, armários. Piscina e academia.",
+    "bairro": "Setor Bueno",
+    "cidade": "Goiânia",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 93,
+    "preco": 595000,
+    "condominio_reais": 650
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T060",
+   "a": {
+    "titulo": "Apartamento à venda, 155 m², 3 dormitórios, Alto da Lapa",
+    "descricao": "Edifício Alto da Lapa Garden: 3 suítes, 2 vagas, varanda gourmet, vista para o Jaraguá. Área total 155 m² (115 m² úteis). Planejados, piso de madeira.",
+    "bairro": "Alto da Lapa",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 155,
+    "preco": 1308000,
+    "condominio_reais": 1400
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos no Edifício Alto da Lapa Garden",
+    "descricao": "Edifício Alto da Lapa Garden, Rua Afonso Sardinha: 3 suítes, 2 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista para o Pico do Jaraguá. Lazer completo.",
+    "bairro": "Alto da Lapa",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 115,
+    "preco": 1300000,
+    "condominio_reais": 1400
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-T061",
+   "a": {
+    "titulo": "Pituba – 2 quartos, 64 m², pronto para morar",
+    "descricao": "Residencial Alto da Pituba, Rua Ceará: 2 quartos (1 suíte), 1 vaga, varanda, piso em porcelanato, ventilado, perto do shopping. Portaria 24h e piscina. Entregue mobiliado.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 420000,
+    "condominio_reais": 700
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Pituba",
+    "descricao": "Pituba, Residencial Alto da Pituba: 2 dorms com suíte, varanda, porcelanato, 1 vaga. Muito ventilado, próximo ao shopping. Piscina.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 65,
+    "preco": 410000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-T062",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Jardim, Santo André",
+    "descricao": "2 dormitórios e 2 vagas em Jardim, Edifício Itaúna, Rua das Figueiras. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 81,
+    "preco": 543000,
+    "condominio_reais": 760
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 72 m², 2 dormitórios, Jardim",
+    "descricao": "Edifício Jardim das Flores, Rua das Figueiras: 2 dormitórios (1 suíte), 2 vagas, varanda gourmet, armários, vista livre. Lazer com piscina e academia.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 72,
+    "preco": 590000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mesma rua, prédios diferentes — nomes de condomínio distintos; não é duplicata"
+  },
+  {
+   "id": "ID-T063",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 64 m² - Pituba",
+    "descricao": "Residencial Alto da Pituba, Rua Ceará, Pituba: 2 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 417000,
+    "condominio_reais": 700
+   },
+   "b": {
+    "titulo": "Pituba – 2 quartos, 64 m², pronto para morar",
+    "descricao": "Apartamento em Pituba (Residencial Alto da Pituba, Rua Ceará): 2 dormitórios, 1 vaga. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 420000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — mesmo prédio e mesma planta: mesma unidade ou vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-T064",
+   "a": {
+    "titulo": "Gleba Palhano – 2 quartos, 70 m², pronto para morar",
+    "descricao": "Edifício Palhano Tower, Rua Caracas: 2 quartos (1 suíte), 1 vaga, sacada com churrasqueira, vista para o Lago Igapó, armários. Lazer com piscina.",
+    "bairro": "Gleba Palhano",
+    "cidade": "Londrina",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Palhano Tower",
+    "descricao": "Gleba Palhano, Edifício Palhano Tower: 2 dorms com suíte, sacada com churrasqueira, vista pro lago, 1 vaga, armários. Piscina. Valor reduzido para venda rápida.",
+    "bairro": "Gleba Palhano",
+    "cidade": "Londrina",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 449000,
+    "condominio_reais": 600
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T065",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 62 m² - Santana",
+    "descricao": "Rua Voluntários da Pátria, Santana: 2 quartos, 1 vaga, sala com sacada, cozinha com armários, piso laminado. Perto do metrô Santana.",
+    "bairro": "Santana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 62,
+    "preco": 440000,
+    "condominio_reais": 520
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Santana",
+    "descricao": "Santana, Rua Voluntários da Pátria, perto do metrô: 2 dorms, sacada, armários na cozinha, laminado, 1 vaga.",
+    "bairro": "Santana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 61,
+    "preco": 438000,
+    "condominio_reais": 520
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-T066",
+   "a": {
+    "titulo": "Boa Viagem – 4 quartos, 138 m², pronto para morar",
+    "descricao": "Rua dos Navegantes, Boa Viagem: 4 quartos, 2 suítes, 2 vagas, varanda, dependência. Vista para a rua lateral, cozinha tradicional, imóvel original.",
+    "bairro": "Boa Viagem",
+    "cidade": "Recife",
+    "quartos": 4,
+    "vagas": 2,
+    "area_m2": 138,
+    "preco": 1237000,
+    "condominio_reais": 1500
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 140 m², 4 dormitórios, Boa Viagem",
+    "descricao": "Rua dos Navegantes, Boa Viagem: 4 quartos (2 suítes), 2 vagas, varanda com vista para o mar, cozinha com ilha, dependência completa. Reformado.",
+    "bairro": "Boa Viagem",
+    "cidade": "Recife",
+    "quartos": 4,
+    "vagas": 2,
+    "area_m2": 140,
+    "preco": 1250000,
+    "condominio_reais": 1500
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-T067",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos em Icaraí",
+    "descricao": "Icaraí, Rua Gavião Peixoto: 2 quartos (1 suíte), 1 vaga, varanda, armários planejados, a 2 quadras da praia. Prédio com piscina. Entregue mobiliado.",
+    "bairro": "Icaraí",
+    "cidade": "Niterói",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 78,
+    "preco": 650000,
+    "condominio_reais": 850
+   },
+   "b": {
+    "titulo": "Icaraí – 2 quartos, 78 m², pronto para morar",
+    "descricao": "Rua Gavião Peixoto, Icaraí, a duas quadras da praia: 2 dorms com suíte, varanda, planejados, 1 vaga, piscina no prédio.",
+    "bairro": "Icaraí",
+    "cidade": "Niterói",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 78,
+    "preco": 636000,
+    "condominio_reais": 850
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-T068",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Botafogo, Rio de Janeiro",
+    "descricao": "Rua Lauro Müller, Botafogo: 3 quartos (1 suíte), 1 vaga, varanda, dependência completa, piso de madeira, vista para o Cristo. Portaria 24h. Entregue mobiliado.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 1050000,
+    "condominio_reais": 1200
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 1 vaga, 95 m² - Botafogo",
+    "descricao": "Botafogo, Rua Lauro Müller: 3 dorms com suíte, varanda com vista pro Cristo, dependência, madeira, 1 vaga. Portaria.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 1061000,
+    "condominio_reais": 1200
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-T069",
+   "a": {
+    "titulo": "Apartamento à venda, 70 m², 3 dormitórios, Centro",
+    "descricao": "Rua Coronel Oliveira, Centro de Guarulhos: 3 quartos (1 suíte), 1 vaga, sacada, armários planejados, piso laminado. Prédio com portaria.",
+    "bairro": "Centro",
+    "cidade": "Guarulhos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 357000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Centro, Guarulhos",
+    "descricao": "Rua Doutor Ramos de Azevedo, Centro de Guarulhos: 3 quartos (1 suíte), 1 vaga, sacada, armários planejados, piso laminado. Prédio com portaria.",
+    "bairro": "Centro",
+    "cidade": "Guarulhos",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 80,
+    "preco": 420000,
+    "condominio_reais": 550
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: texto reaproveitado — descrição idêntica de corretor em outro anúncio, mas endereço, área e preço diferem; outro imóvel"
+  },
+  {
+   "id": "ID-T070",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Condomínio Parque Osasco",
+    "descricao": "Condomínio Parque Osasco, Avenida dos Autonomistas: 2 quartos, 1 vaga, sala com varanda, cozinha americana, reformado, ao lado da estação Osasco. Lazer com piscina.",
+    "bairro": "Centro",
+    "cidade": "Osasco",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 50,
+    "preco": 330000,
+    "condominio_reais": 480
+   },
+   "b": {
+    "titulo": "Centro – 1 quarto, 45 m², pronto para morar",
+    "descricao": "Centro, Rua Bernardino de Campos: apê de 1 quarto reformado, sacada, cozinha americana, 1 vaga. Perto do HC.",
+    "bairro": "Centro",
+    "cidade": "Ribeirão Preto",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 45,
+    "preco": 280000,
+    "condominio_reais": 400
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-T071",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Petrópolis",
+    "descricao": "Apartamento em Petrópolis (Condomínio Petrópolis Residence, Rua Vicente da Fontoura): 2 dormitórios, 2 vagas. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 81,
+    "preco": 727000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 2 vagas, 82 m² - Petrópolis",
+    "descricao": "2 dormitórios e 2 vagas em Petrópolis, Condomínio Petrópolis Residence, Rua Vicente da Fontoura. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 82,
+    "preco": 720000,
+    "condominio_reais": 800
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — mesmo prédio e mesma planta: mesma unidade ou vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-T072",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Jardim, Santo André",
+    "descricao": "3 dormitórios e 2 vagas em Jardim, Edifício Jardim das Flores, Rua das Figueiras. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 88,
+    "preco": 696000,
+    "condominio_reais": 780
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 72 m², 2 dormitórios, Jardim",
+    "descricao": "Edifício Jardim das Flores, Rua das Figueiras: 2 dormitórios (1 suíte), 2 vagas, varanda gourmet, armários, vista livre. Lazer com piscina e academia.",
+    "bairro": "Jardim",
+    "cidade": "Santo André",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 72,
+    "preco": 590000,
+    "condominio_reais": 700
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesmo prédio) — outra planta (quartos e área)"
+  },
+  {
+   "id": "ID-T073",
+   "a": {
+    "titulo": "Apartamento à venda, 105 m², 3 dormitórios, Jardim Aquarius",
+    "descricao": "Jardim Aquarius, Condomínio Jardim Aquarius: 3 quartos com suíte, churrasqueira na varanda, cozinha planejada, 2 vagas, porcelanato. Lazer completo. Valor reduzido para venda rápida.",
+    "bairro": "Jardim Aquarius",
+    "cidade": "São José dos Campos",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 704000,
+    "condominio_reais": 900
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Jardim Aquarius",
+    "descricao": "Condomínio Jardim Aquarius: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet com churrasqueira, cozinha planejada, piso em porcelanato. Lazer clube.",
+    "bairro": "Jardim Aquarius",
+    "cidade": "São José dos Campos",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 780000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T074",
+   "a": {
+    "titulo": "Brooklin – 1 quarto, 40 m², pronto para morar",
+    "descricao": "Condomínio Brooklin Life, Rua Barão do Triunfo: studio de 1 dormitório, 1 vaga, varanda, marcenaria sob medida, lavanderia coletiva e coworking. Perto da estação Brooklin.",
+    "bairro": "Brooklin",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 40,
+    "preco": 480000,
+    "condominio_reais": 650
+   },
+   "b": {
+    "titulo": "Brooklin – 1 quarto, 39 m², pronto para morar",
+    "descricao": "1 dormitório e 1 vaga em Brooklin, Rua Coronel Oliveira. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Brooklin",
+    "cidade": "São Paulo",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 39,
+    "preco": 480000,
+    "condominio_reais": 660
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-T075",
+   "a": {
+    "titulo": "Apartamento à venda, 160 m², 4 dormitórios, Lourdes",
+    "descricao": "Edifício Lourdes Residence, Rua Curitiba: 4 quartos (2 suítes), 3 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista para a Serra. Lazer completo.",
+    "bairro": "Lourdes",
+    "cidade": "Belo Horizonte",
+    "quartos": 4,
+    "vagas": 3,
+    "area_m2": 160,
+    "preco": 1800000,
+    "condominio_reais": 2000
+   },
+   "b": {
+    "titulo": "Apto 4 dorms, 3 vagas, 210 m² - Lourdes",
+    "descricao": "Edifício Lourdes Residence: 4 quartos, 2 suítes, 3 vagas, varanda gourmet. Área total 210 m², privativa 160 m². Vista para a Serra, piso de madeira.",
+    "bairro": "Lourdes",
+    "cidade": "Belo Horizonte",
+    "quartos": 4,
+    "vagas": 3,
+    "area_m2": 210,
+    "preco": 1785000,
+    "condominio_reais": 2000
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-T076",
+   "a": {
+    "titulo": "Apartamento 1 quarto em Centro",
+    "descricao": "Rua Bernardino de Campos, Centro: 1 dormitório, 1 vaga, cozinha fechada, sem sacada, imóvel original.",
+    "bairro": "Centro",
+    "cidade": "Ribeirão Preto",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 45,
+    "preco": 266000,
+    "condominio_reais": 400
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Centro, Ribeirão Preto",
+    "descricao": "Rua Bernardino de Campos, Centro de Ribeirão: 1 dormitório, 1 vaga, cozinha americana, sacada, reformado, próximo ao Hospital das Clínicas.",
+    "bairro": "Centro",
+    "cidade": "Ribeirão Preto",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 45,
+    "preco": 280000,
+    "condominio_reais": 400
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: unidade diferente (mesma rua) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-T077",
+   "a": {
+    "titulo": "Meireles – 2 quartos, 80 m², pronto para morar",
+    "descricao": "Meireles, a 300 metros da Beira Mar: 2 quartos sendo 1 suíte, 2 vagas, varanda com vista parcial do mar, armários. Piscina e academia no prédio.",
+    "bairro": "Meireles",
+    "cidade": "Fortaleza",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 80,
+    "preco": 592000,
+    "condominio_reais": 750
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 80 m², 2 dormitórios, Meireles",
+    "descricao": "Meireles, Rua Barbosa de Freitas: 2 quartos (1 suíte), 2 vagas, varanda com vista parcial do mar, armários, a 300 m da Beira Mar. Prédio com piscina e academia.",
+    "bairro": "Meireles",
+    "cidade": "Fortaleza",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 80,
+    "preco": 600000,
+    "condominio_reais": 750
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: anúncio sem endereço — bairro, planta, números e o conjunto de detalhes distintivos coincidem; mesmo imóvel"
+  },
+  {
+   "id": "ID-T078",
+   "a": {
+    "titulo": "Apartamento à venda, 90 m², 3 dormitórios, Vila Leopoldina",
+    "descricao": "Vila Leopoldina, Condomínio Leopoldina Park: 3 quartos com suíte, varanda gourmet, planejados, laminado, 2 vagas. Piscina, quadra, brinquedoteca. Valor reduzido para venda rápida.",
+    "bairro": "Vila Leopoldina",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 90,
+    "preco": 751000,
+    "condominio_reais": 950
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Vila Leopoldina",
+    "descricao": "Condomínio Leopoldina Park, Rua Carlos Weber: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, piso laminado. Lazer com piscina, quadra e brinquedoteca.",
+    "bairro": "Vila Leopoldina",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 90,
+    "preco": 820000,
+    "condominio_reais": 950
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-T079",
+   "a": {
+    "titulo": "Gleba Palhano – 2 quartos, 70 m², pronto para morar",
+    "descricao": "Edifício Palhano Tower, Rua Caracas, Gleba Palhano: 2 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Gleba Palhano",
+    "cidade": "Londrina",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Gleba Palhano, Londrina",
+    "descricao": "2 dormitórios e 1 vaga em Gleba Palhano, Edifício Palhano Tower, Rua Caracas. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Gleba Palhano",
+    "cidade": "Londrina",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 525000,
+    "condominio_reais": 600
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — mesmo prédio e mesma planta: mesma unidade ou vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-T080",
+   "a": {
+    "titulo": "Petrópolis – 2 quartos, 82 m², pronto para morar",
+    "descricao": "Petrópolis, Condomínio Petrópolis Residence: 2 quartos com suíte, churrasqueira, lareira, água quente, armários, 2 vagas. Piscina e academia.",
+    "bairro": "Petrópolis",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 82,
+    "preco": 720000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Lourdes – 4 quartos, 160 m², pronto para morar",
+    "descricao": "Edifício Lourdes Residence, Rua Curitiba: 4 quartos (2 suítes), 3 vagas, varanda gourmet, cozinha planejada, piso de madeira, vista para a Serra. Lazer completo.",
+    "bairro": "Lourdes",
+    "cidade": "Belo Horizonte",
+    "quartos": 4,
+    "vagas": 3,
+    "area_m2": 160,
+    "preco": 1800000,
+    "condominio_reais": 2000
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  }
+ ]
+}

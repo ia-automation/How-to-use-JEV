@@ -1,0 +1,1614 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "IE-T001",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vi o de 2 quartos na mooca no site"
+    },
+    {
+     "de": "agente",
+     "texto": "Oi! O da Mooca tem 2 quartos, 1 vaga, R$ 520 mil. Tenho também um no Belém, R$ 470 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "o da mooca aceita pet?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Mooca, 1 vaga, aceita pet, R$ 520 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Belém, sem vaga, não aceita pet, R$ 470 mil"
+    }
+   ],
+   "rascunho": "Aceita sim, o da Mooca é pet friendly.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-T002",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "o da tijuca tem quantos quartos?"
+    },
+    {
+     "de": "agente",
+     "texto": "O da Tijuca tem 3 quartos. O do Grajaú tem 2."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o do grajaú, qual o valor?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos na Tijuca, 2 vagas, R$ 720 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Grajaú, 1 vaga, R$ 540 mil"
+    }
+   ],
+   "rascunho": "O do Grajaú está por R$ 720 mil, com 2 vagas.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "rascunho nomeia Grajaú e usa preço e vagas da Tijuca"
+  },
+  {
+   "id": "IE-T003",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, to vendo o apê do centro de curitiba"
+    },
+    {
+     "de": "agente",
+     "texto": "Oi! Esse tem 1 quarto, 48 m², R$ 380 mil. Quer agendar?"
+    },
+    {
+     "de": "cliente",
+     "texto": "antes disso, e aquele do cabral que vc mandou? tem 2 vagas?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Cabral tem 2 vagas sim, 3 quartos, R$ 790 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "esse tem elevador?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 1 quarto no Centro de Curitiba, 48 m², sem vaga, prédio sem elevador, R$ 380 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos no Cabral, Curitiba, 2 vagas, prédio com elevador, R$ 790 mil"
+    }
+   ],
+   "rascunho": "Não tem elevador, é um prédio de 4 andares sem elevador.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: troca de foco no meio; 'esse' = Cabral; rascunho responde com o fato do Centro"
+  },
+  {
+   "id": "IE-T004",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, lembra que vc me falou de um apê que o proprietário aceita financiamento?"
+    },
+    {
+     "de": "agente",
+     "texto": "Lembro, foi o de Icaraí. O de Santa Rosa é só à vista."
+    },
+    {
+     "de": "cliente",
+     "texto": "então, esse que vc disse que aceita financiamento, tem quantos m²?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos em Santa Rosa, Niterói, 60 m², só à vista, R$ 500 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos em Icaraí, 72 m², aceita financiamento, R$ 680 mil"
+    }
+   ],
+   "rascunho": "Tem 72 m², com 2 quartos.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: citação de fala antiga ('esse que vc disse que aceita financiamento')"
+  },
+  {
+   "id": "IE-T005",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "achei dois na vila mariana no site de vcs, um de 640 e outro de 660"
+    },
+    {
+     "de": "agente",
+     "texto": "Sim! O de 640 tem 2 quartos e 1 vaga; o de 660 tem 2 quartos e 2 vagas."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 660 fica perto do metrô?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Vila Mariana, 1 vaga, 300 m do metrô Ana Rosa, R$ 640 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Vila Mariana, 2 vagas, 1,1 km do metrô Vila Mariana, R$ 660 mil"
+    }
+   ],
+   "rascunho": "Fica pertinho, 300 m da estação Ana Rosa.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: dois imóveis parecidos; rascunho usa a distância do de 640"
+  },
+  {
+   "id": "IE-T006",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "o de copacabana tem vaga?"
+    },
+    {
+     "de": "agente",
+     "texto": "Não tem. O do Leme tem 1 vaga."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o outro é mobiliado?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 1 quarto em Copacabana, sem vaga, mobiliado, R$ 690 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 1 quarto no Leme, 1 vaga, não mobiliado, R$ 750 mil"
+    }
+   ],
+   "rascunho": "O do Leme não é mobiliado, vai vazio.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência vaga ('o outro' = Leme)"
+  },
+  {
+   "id": "IE-T007",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, quero saber do apê que vc mandou"
+    },
+    {
+     "de": "agente",
+     "texto": "Mandei dois: o do Jardim Botânico (R$ 1,4 mi) e o da Gávea (R$ 1,6 mi). Qual?"
+    },
+    {
+     "de": "cliente",
+     "texto": "o da gávea"
+    },
+    {
+     "de": "agente",
+     "texto": "O da Gávea tem 3 quartos, 2 vagas, 120 m²."
+    },
+    {
+     "de": "cliente",
+     "texto": "ah não, me confundi, é o do jardim botânico. ele tem 2 vagas tb?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Jardim Botânico, 1 vaga, 105 m², R$ 1,4 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos na Gávea, 2 vagas, 120 m², R$ 1,6 mi"
+    }
+   ],
+   "rascunho": "Tem sim, 2 vagas cobertas.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: correção do cliente; rascunho usa as vagas da Gávea"
+  },
+  {
+   "id": "IE-T008",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, dos três que vc mandou em BH, qual tem vista?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Sion tem vista para a Serra do Curral. Os outros dois são voltados para a rua."
+    },
+    {
+     "de": "cliente",
+     "texto": "o que tem vista é quanto?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Funcionários, BH, 2 vagas, R$ 900 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos no Sion, BH, vista para a Serra do Curral, 2 vagas, R$ 1,05 mi"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 2 quartos no Buritis, BH, 1 vaga, R$ 620 mil"
+    }
+   ],
+   "rascunho": "O do Sion, com vista para a serra, está por R$ 1,05 mi.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência por atributo que só um tem (vista)"
+  },
+  {
+   "id": "IE-T009",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, qual dos dois tem 2 vagas?"
+    },
+    {
+     "de": "agente",
+     "texto": "Os dois têm 2 vagas, tanto o do Brooklin quanto o do Campo Belo."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o de 2 vagas tem churrasqueira?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Brooklin, 2 vagas, varanda com churrasqueira, R$ 1,1 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos no Campo Belo, 2 vagas, sem varanda, R$ 980 mil"
+    }
+   ],
+   "rascunho": "Tem sim, varanda gourmet com churrasqueira.",
+   "referente": null,
+   "rascunho_usa_outro": true,
+   "nota": "difícil: atributo que dois têm (2 vagas) → null; rascunho se compromete com o Brooklin"
+  },
+  {
+   "id": "IE-T010",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "to entre o apê de perdizes e a casa de vila na pompeia"
+    },
+    {
+     "de": "agente",
+     "texto": "O apê tem 2 quartos e lazer; a casa de vila tem 2 quartos, quintal e sem condomínio."
+    },
+    {
+     "de": "cliente",
+     "texto": "a casa de vila tem condomínio?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos em Perdizes, condomínio R$ 900, 1 vaga, R$ 720 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Casa de vila na Pompeia, 2 quartos, sem condomínio, 1 vaga, R$ 690 mil"
+    }
+   ],
+   "rascunho": "Não tem condomínio, é casa de vila sem taxa mensal.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "referência por tipo (casa de vila) que só um tem"
+  },
+  {
+   "id": "IE-T011",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "vc me mandou três em floripa, lembra?"
+    },
+    {
+     "de": "agente",
+     "texto": "Lembro: o do Centro, o do Córrego Grande e o de Jurerê."
+    },
+    {
+     "de": "cliente",
+     "texto": "o do centro é muito barulhento, descarta. o do córrego grande tem vaga?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tem 1 vaga."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o outro?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos no Centro de Florianópolis, 1 vaga, R$ 560 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Córrego Grande, 1 vaga, R$ 610 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Casa 3 quartos em Jurerê, 2 vagas, R$ 1,5 mi"
+    }
+   ],
+   "rascunho": "A casa de Jurerê tem 2 vagas.",
+   "referente": "IM-03",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência vaga ('o outro') com um descartado e um discutido → sobra Jurerê"
+  },
+  {
+   "id": "IE-T012",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vc comentou que um dos apês tinha piscina no prédio"
+    },
+    {
+     "de": "agente",
+     "texto": "Isso, o da Aldeota tem piscina. O do Meireles não tem lazer."
+    },
+    {
+     "de": "cliente",
+     "texto": "esse da piscina, qual o condomínio?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Meireles, Fortaleza, condomínio R$ 500, R$ 650 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos na Aldeota, Fortaleza, piscina, condomínio R$ 900, R$ 700 mil"
+    }
+   ],
+   "rascunho": "O condomínio é R$ 500 por mês.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: citação de fala antiga + atributo único; rascunho usa o condomínio do Meireles"
+  },
+  {
+   "id": "IE-T013",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "me manda de novo os dois do tatuapé?"
+    },
+    {
+     "de": "agente",
+     "texto": "Claro: o primeiro é o de 3 quartos, R$ 680 mil; o segundo é o de 2 quartos, R$ 590 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "o segundo tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Tatuapé, 2 vagas, R$ 680 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Tatuapé, 1 vaga, R$ 590 mil"
+    }
+   ],
+   "rascunho": "Tem 1 vaga.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: dois imóveis parecidos (mesmo bairro); 'o segundo' pela ordem de apresentação"
+  },
+  {
+   "id": "IE-T014",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o da lapa eu já visitei, não gostei"
+    },
+    {
+     "de": "agente",
+     "texto": "Entendi. Sobram o da Barra Funda e o de Perdizes."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de perdizes aceita pet?"
+    },
+    {
+     "de": "agente",
+     "texto": "Aceita, de pequeno porte."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o da barra funda?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Lapa, 1 vaga, R$ 600 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Barra Funda, sem vaga, não aceita pet, R$ 520 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 2 quartos em Perdizes, 1 vaga, aceita pet pequeno, R$ 700 mil"
+    }
+   ],
+   "rascunho": "O da Barra Funda não aceita pet, infelizmente.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "pergunta elíptica ('e o da barra funda?') herda o tema (pet) do turno anterior"
+  },
+  {
+   "id": "IE-T015",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, dos dois de 1 quarto, qual é mobiliado?"
+    },
+    {
+     "de": "agente",
+     "texto": "O da Consolação é mobiliado. O da Bela Vista vai vazio."
+    },
+    {
+     "de": "cliente",
+     "texto": "o mobiliado tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 1 quarto na Consolação, mobiliado, sem vaga, R$ 450 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 1 quarto na Bela Vista, não mobiliado, 1 vaga, R$ 480 mil"
+    }
+   ],
+   "rascunho": "Tem sim, 1 vaga.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: atributo único (mobiliado = Consolação); rascunho usa a vaga da Bela Vista"
+  },
+  {
+   "id": "IE-T016",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, to olhando o sobrado de alphaville"
+    },
+    {
+     "de": "agente",
+     "texto": "Oi! O sobrado tem 4 suítes, 4 vagas, R$ 2,1 mi. Tenho também um apê em Barueri, R$ 780 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "o sobrado aceita permuta?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Sobrado 4 suítes em Alphaville, 4 vagas, aceita permuta, R$ 2,1 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos em Barueri, 2 vagas, só à vista, R$ 780 mil"
+    }
+   ],
+   "rascunho": "Aceita sim, o proprietário estuda permuta por imóvel de menor valor.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-T017",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vc me mandou dois na asa sul e um na asa norte"
+    },
+    {
+     "de": "agente",
+     "texto": "Isso. Os da Asa Sul são de 3 quartos; o da Asa Norte é de 2."
+    },
+    {
+     "de": "cliente",
+     "texto": "o da asa sul tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos na Asa Sul, 1 vaga, R$ 950 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos na Asa Sul, 2 vagas, R$ 1,1 mi"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 2 quartos na Asa Norte, 1 vaga, R$ 720 mil"
+    }
+   ],
+   "rascunho": "Tem sim, 1 vaga coberta.",
+   "referente": null,
+   "rascunho_usa_outro": true,
+   "nota": "difícil: atributo que dois têm (Asa Sul) → null; rascunho se compromete com um"
+  },
+  {
+   "id": "IE-T018",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o apê do bigorrilho ta disponivel?"
+    },
+    {
+     "de": "agente",
+     "texto": "Está! 2 quartos, 1 vaga, R$ 540 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o do batel?"
+    },
+    {
+     "de": "agente",
+     "texto": "Também disponível: 3 quartos, 2 vagas, R$ 890 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "o do bigorrilho tem sacada?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos no Bigorrilho, Curitiba, 1 vaga, sem sacada, R$ 540 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos no Batel, Curitiba, 2 vagas, sacada com churrasqueira, R$ 890 mil"
+    }
+   ],
+   "rascunho": "Tem sim, sacada com churrasqueira.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: troca de foco e volta; rascunho usa a sacada do Batel"
+  },
+  {
+   "id": "IE-T019",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, qual o valor do de ipanema?"
+    },
+    {
+     "de": "agente",
+     "texto": "R$ 2,4 mi. O do Leblon é R$ 2,9 mi."
+    },
+    {
+     "de": "cliente",
+     "texto": "nossa. e o condomínio do de ipanema?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos em Ipanema, condomínio R$ 2.200, R$ 2,4 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos no Leblon, condomínio R$ 3.100, R$ 2,9 mi"
+    }
+   ],
+   "rascunho": "O de Ipanema tem condomínio de R$ 2.200.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-T020",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "lembra que vc disse que um deles tinha problema de infiltração?"
+    },
+    {
+     "de": "agente",
+     "texto": "Lembro: o do Catete teve infiltração, já reparada. O do Flamengo não."
+    },
+    {
+     "de": "cliente",
+     "texto": "esse que teve infiltração, o preço é negociável?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos no Flamengo, 1 vaga, R$ 850 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Catete, sem vaga, infiltração reparada, R$ 690 mil, proprietário aceita proposta"
+    }
+   ],
+   "rascunho": "O do Catete sim, o proprietário aceita proposta. Está anunciado por R$ 690 mil.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: citação de fala antiga (infiltração)"
+  },
+  {
+   "id": "IE-T021",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vi dois em moema quase iguais no site de vcs"
+    },
+    {
+     "de": "agente",
+     "texto": "Sim: um de 95 m² por R$ 1,15 mi e um de 98 m² por R$ 1,2 mi, os dois de 3 quartos."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 98 tem quantas vagas?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos em Moema, 95 m², 2 vagas, R$ 1,15 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos em Moema, 98 m², 1 vaga, R$ 1,2 mi"
+    }
+   ],
+   "rascunho": "O de 98 m² tem 2 vagas.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: dois imóveis parecidos; rascunho usa as vagas do de 95 m²"
+  },
+  {
+   "id": "IE-T022",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o de 450 mil e o de 520 mil ainda tão disponíveis?"
+    },
+    {
+     "de": "agente",
+     "texto": "Os dois estão. O de 450 é o do Jabaquara, o de 520 é o da Saúde."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 450 fica a quantos metros do metrô?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos no Jabaquara, 600 m do metrô Jabaquara, R$ 450 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Saúde, 350 m do metrô Saúde, R$ 520 mil"
+    }
+   ],
+   "rascunho": "Uns 600 m da estação Jabaquara, 8 minutinhos a pé.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-T023",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, me explica a diferença entre os dois da vila olímpia?"
+    },
+    {
+     "de": "agente",
+     "texto": "Um tem 1 quarto e é mobiliado; o outro tem 2 quartos e vai vazio."
+    },
+    {
+     "de": "cliente",
+     "texto": "o que vai vazio aceita pet?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 1 quarto na Vila Olímpia, mobiliado, aceita pet, R$ 720 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Vila Olímpia, não mobiliado, não aceita pet, R$ 950 mil"
+    }
+   ],
+   "rascunho": "Aceita sim, pode trazer o pet.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: dois parecidos + atributo único (vai vazio); rascunho usa o pet do mobiliado"
+  },
+  {
+   "id": "IE-T024",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, to vendo o de 2 quartos"
+    },
+    {
+     "de": "agente",
+     "texto": "Tenho dois de 2 quartos na sua lista: o da Pompeia e o da Lapa. E um de 3 em Perdizes."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 2 quartos, qual o condomínio?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Pompeia, condomínio R$ 700, R$ 620 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Lapa, condomínio R$ 550, R$ 580 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 3 quartos em Perdizes, condomínio R$ 1.000, R$ 850 mil"
+    }
+   ],
+   "rascunho": "Você fala do da Pompeia ou do da Lapa? O da Pompeia é R$ 700 e o da Lapa, R$ 550.",
+   "referente": null,
+   "rascunho_usa_outro": false,
+   "nota": "difícil: atributo que dois têm → null; rascunho pede esclarecimento nomeando cada um"
+  },
+  {
+   "id": "IE-T025",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o da aclimação é de frente ou de fundos?"
+    },
+    {
+     "de": "agente",
+     "texto": "De frente. O do Cambuci é de fundos."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o de fundos, é silencioso?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Aclimação, de frente, rua movimentada, R$ 640 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Cambuci, de fundos, silencioso, R$ 560 mil"
+    }
+   ],
+   "rascunho": "Sim, o do Cambuci é bem silencioso por ser de fundos.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência por atributo que só um tem (de fundos)"
+  },
+  {
+   "id": "IE-T026",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! qual o mais barato dos três de porto alegre?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Menino Deus, R$ 490 mil. Depois o da Cidade Baixa (R$ 530 mil) e o de Petrópolis (R$ 610 mil)."
+    },
+    {
+     "de": "cliente",
+     "texto": "o mais barato tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos no Menino Deus, Porto Alegre, sem vaga, R$ 490 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Cidade Baixa, Porto Alegre, 1 vaga, R$ 530 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 2 quartos em Petrópolis, Porto Alegre, 1 vaga, R$ 610 mil"
+    }
+   ],
+   "rascunho": "Não tem vaga, o do Menino Deus é sem garagem.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": "referência por atributo único (mais barato)"
+  },
+  {
+   "id": "IE-T027",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde, ainda tem aquele apê que a gente conversou no telefone?"
+    },
+    {
+     "de": "agente",
+     "texto": "Boa tarde! Conversamos de dois: o de Santana e o da Vila Guilherme."
+    },
+    {
+     "de": "cliente",
+     "texto": "aquele que vc disse que tinha a melhor planta"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos em Santana, 1 vaga, R$ 560 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Vila Guilherme, 1 vaga, R$ 510 mil"
+    }
+   ],
+   "rascunho": "Tem sim! O de Santana continua disponível por R$ 560 mil.",
+   "referente": null,
+   "rascunho_usa_outro": true,
+   "nota": "citação de fala que não está na conversa (telefone) → null; rascunho chuta Santana"
+  },
+  {
+   "id": "IE-T028",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vc mandou dois em niterói e um no rio, certo?"
+    },
+    {
+     "de": "agente",
+     "texto": "Certo: Icaraí, Ingá e Botafogo."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de botafogo tem vaga?"
+    },
+    {
+     "de": "agente",
+     "texto": "Não tem."
+    },
+    {
+     "de": "cliente",
+     "texto": "hmm, e o do ingá?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos em Icaraí, 1 vaga, R$ 700 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Ingá, Niterói, 1 vaga, R$ 650 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 2 quartos em Botafogo, sem vaga, R$ 890 mil"
+    }
+   ],
+   "rascunho": "O do Ingá não tem vaga também.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "pergunta elíptica herda 'vaga'; rascunho repete o fato de Botafogo (sem vaga) para o Ingá, que tem 1"
+  },
+  {
+   "id": "IE-T029",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, qual dos dois é frente mar?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Gonzaga é frente mar. O do Boqueirão fica a duas quadras da praia."
+    },
+    {
+     "de": "cliente",
+     "texto": "o frente mar tem quantos quartos?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Gonzaga, Santos, frente mar, 1 vaga, R$ 1,3 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Boqueirão, Santos, 2 quadras da praia, 1 vaga, R$ 720 mil"
+    }
+   ],
+   "rascunho": "Tem 3 quartos e 1 vaga.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": "atributo único (frente mar)"
+  },
+  {
+   "id": "IE-T030",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o da augusta é quanto?"
+    },
+    {
+     "de": "agente",
+     "texto": "R$ 420 mil. O da Frei Caneca é R$ 460 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "o da frei caneca"
+    },
+    {
+     "de": "agente",
+     "texto": "Esse tem 1 quarto, 42 m², mobiliado."
+    },
+    {
+     "de": "cliente",
+     "texto": "não, desculpa, eu quis dizer o da augusta. ele é mobiliado?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Studio na Rua Augusta, 30 m², não mobiliado, R$ 420 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 1 quarto na Rua Frei Caneca, 42 m², mobiliado, R$ 460 mil"
+    }
+   ],
+   "rascunho": "O da Augusta vai vazio, sem móveis. O da Frei Caneca é o mobiliado.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: correção do cliente; rascunho atribui o fato certo a cada um"
+  },
+  {
+   "id": "IE-T031",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, to olhando a casa de cotia"
+    },
+    {
+     "de": "agente",
+     "texto": "Oi! A casa tem 3 quartos, quintal e 3 vagas, R$ 850 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "legal. ah, e o apê de osasco, quantos quartos?"
+    },
+    {
+     "de": "agente",
+     "texto": "O apê de Osasco tem 3 quartos, 2 vagas, R$ 690 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "ele tem quintal?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Casa 3 quartos em Cotia, quintal 200 m², 3 vagas, R$ 850 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos em Osasco, lazer completo, 2 vagas, R$ 690 mil"
+    }
+   ],
+   "rascunho": "Quintal não, é apartamento. Mas o condomínio tem lazer completo com playground.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: troca de foco no meio; 'ele' = Osasco; rascunho correto"
+  },
+  {
+   "id": "IE-T032",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vc falou que um dos dois era de esquina, muito barulho?"
+    },
+    {
+     "de": "agente",
+     "texto": "O de esquina é o da Rua Pamplona. O da Alameda Jaú é de meio de quadra."
+    },
+    {
+     "de": "cliente",
+     "texto": "então o de meio de quadra, qual o valor?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Rua Pamplona, esquina, R$ 980 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Alameda Jaú, meio de quadra, R$ 1,05 mi"
+    }
+   ],
+   "rascunho": "O da Alameda Jaú está por R$ 980 mil.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: citação de fala antiga + atributo único; rascunho usa o preço do Pamplona"
+  },
+  {
+   "id": "IE-T033",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "me manda os de 3 quartos até 800?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tenho dois: um no Ipiranga (R$ 740 mil) e um na Vila Prudente (R$ 690 mil)."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 3 quartos aceita pet?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Ipiranga, aceita pet, R$ 740 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos na Vila Prudente, não aceita pet, R$ 690 mil"
+    }
+   ],
+   "rascunho": "O do Ipiranga aceita pet; o da Vila Prudente não. Qual deles você quer ver?",
+   "referente": null,
+   "rascunho_usa_outro": false,
+   "nota": "difícil: atributo que dois têm (3 quartos) → null; rascunho nomeia cada um"
+  },
+  {
+   "id": "IE-T034",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, dos dois que vc mandou, o de 2 vagas tem elevador?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tem, o do Alto da Lapa tem elevador. O da Vila Romana é sem elevador e 1 vaga."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o outro tem quantos m²?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Alto da Lapa, 2 vagas, elevador, 110 m², R$ 1,2 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Vila Romana, 1 vaga, sem elevador, 70 m², R$ 680 mil"
+    }
+   ],
+   "rascunho": "O da Vila Romana tem 70 m².",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência vaga ('o outro')"
+  },
+  {
+   "id": "IE-T035",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o de perdizes é de quantos m²?"
+    },
+    {
+     "de": "agente",
+     "texto": "90 m². O da Pompeia tem 75 m²."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de perdizes tem 2 vagas?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos em Perdizes, 90 m², 1 vaga, R$ 880 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Pompeia, 75 m², 2 vagas, R$ 700 mil"
+    }
+   ],
+   "rascunho": "O de Perdizes tem 2 vagas sim, e 90 m².",
+   "referente": "IM-01",
+   "rascunho_usa_outro": true,
+   "nota": "rascunho nomeia Perdizes certo, acerta a área e usa as vagas da Pompeia"
+  },
+  {
+   "id": "IE-T036",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vc comentou que um deles tinha vaga rotativa, lembra qual?"
+    },
+    {
+     "de": "agente",
+     "texto": "O da Glória tem vaga rotativa. O do Catete tem vaga fixa."
+    },
+    {
+     "de": "cliente",
+     "texto": "o da vaga fixa é quanto?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 1 quarto na Glória, vaga rotativa, R$ 520 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 1 quarto no Catete, vaga fixa, R$ 580 mil"
+    }
+   ],
+   "rascunho": "R$ 580 mil, o do Catete.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: citação de fala antiga invertida (pergunta pelo outro atributo)"
+  },
+  {
+   "id": "IE-T037",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, qual dos quatro é o maior?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Jardim Europa, com 180 m²."
+    },
+    {
+     "de": "cliente",
+     "texto": "o maior tem quantas vagas?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Jardim Paulista, 120 m², 2 vagas, R$ 2,1 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 4 quartos no Jardim Europa, 180 m², 3 vagas, R$ 3,2 mi"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 2 quartos em Cerqueira César, 80 m², 1 vaga, R$ 1,1 mi"
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apto 3 quartos nos Jardins, 140 m², 2 vagas, R$ 2,5 mi"
+    }
+   ],
+   "rascunho": "O do Jardim Europa tem 3 vagas.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "atributo único (maior) entre quatro"
+  },
+  {
+   "id": "IE-T038",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, to olhando os dois da barra"
+    },
+    {
+     "de": "agente",
+     "texto": "O primeiro é o de 2 quartos com vista lagoa, o segundo é o de 3 quartos com vista mar."
+    },
+    {
+     "de": "cliente",
+     "texto": "o segundo aceita financiamento?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Barra da Tijuca, vista lagoa, aceita financiamento, R$ 850 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos na Barra da Tijuca, vista mar, só à vista, R$ 1,4 mi"
+    }
+   ],
+   "rascunho": "Aceita sim, financiamento e FGTS.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: 'o segundo' pela ordem; rascunho usa o financiamento do primeiro"
+  },
+  {
+   "id": "IE-T039",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vcs têm algo em jurerê?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tenho uma casa em Jurerê e um apê nos Ingleses."
+    },
+    {
+     "de": "cliente",
+     "texto": "quanto é a taxa de corretagem de vcs?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Casa 3 quartos em Jurerê, 2 vagas, R$ 1,5 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos nos Ingleses, 1 vaga, R$ 620 mil"
+    }
+   ],
+   "rascunho": "A corretagem é paga pelo vendedor, você não paga nada a mais. Quer agendar visita em algum deles?",
+   "referente": null,
+   "rascunho_usa_outro": false,
+   "nota": "pergunta geral sobre a imobiliária → null; rascunho genérico"
+  },
+  {
+   "id": "IE-T040",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o apê de botafogo e o do humaitá, qual tem varanda?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Humaitá tem varanda. O de Botafogo não."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de botafogo então, quanto é o condomínio?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos em Botafogo, sem varanda, condomínio R$ 1.100, R$ 950 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Humaitá, varanda, condomínio R$ 1.400, R$ 1,1 mi"
+    }
+   ],
+   "rascunho": "O condomínio é R$ 1.400, inclui gás e água.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": true,
+   "nota": "rascunho usa o condomínio do Humaitá"
+  },
+  {
+   "id": "IE-T041",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "achei dois no site de vcs na vila madalena, 68 m² e 70 m²"
+    },
+    {
+     "de": "agente",
+     "texto": "Sim! O de 68 m² é R$ 820 mil e o de 70 m² é R$ 835 mil. Os dois têm 2 quartos e 1 vaga."
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 68 aceita pet?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Vila Madalena, 68 m², 1 vaga, aceita pet, R$ 820 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos na Vila Madalena, 70 m², 1 vaga, não aceita pet, R$ 835 mil"
+    }
+   ],
+   "rascunho": "Aceita sim, o de 68 m² é pet friendly.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: dois imóveis parecidos; metragem distingue"
+  },
+  {
+   "id": "IE-T042",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o da tijuca aceita pet?"
+    },
+    {
+     "de": "agente",
+     "texto": "Aceita. O do Maracanã também aceita."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o que aceita pet, qual o condomínio?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Tijuca, aceita pet, condomínio R$ 700, R$ 560 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Maracanã, aceita pet, condomínio R$ 600, R$ 500 mil"
+    }
+   ],
+   "rascunho": "O condomínio é R$ 700.",
+   "referente": null,
+   "rascunho_usa_outro": true,
+   "nota": "difícil: atributo que dois têm (pet) → null; rascunho se compromete com a Tijuca"
+  },
+  {
+   "id": "IE-T043",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, me manda os dois de 2 quartos em campinas?"
+    },
+    {
+     "de": "agente",
+     "texto": "Primeiro o do Cambuí (R$ 650 mil), segundo o do Taquaral (R$ 600 mil)."
+    },
+    {
+     "de": "cliente",
+     "texto": "o do taquaral tem vaga?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tem 1 vaga."
+    },
+    {
+     "de": "cliente",
+     "texto": "não, pera, era o primeiro que eu queria saber. tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos no Cambuí, Campinas, 2 vagas, R$ 650 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Taquaral, Campinas, 1 vaga, R$ 600 mil"
+    }
+   ],
+   "rascunho": "O do Cambuí tem 2 vagas.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: correção do cliente ('era o primeiro')"
+  },
+  {
+   "id": "IE-T044",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o sobrado de santa felicidade tem churrasqueira?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tem sim. O apê do Batel tem churrasqueira na sacada."
+    },
+    {
+     "de": "cliente",
+     "texto": "esse tem piscina?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Sobrado 3 quartos em Santa Felicidade, Curitiba, churrasqueira, piscina, R$ 1,1 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos no Batel, Curitiba, sacada com churrasqueira, sem piscina, R$ 950 mil"
+    }
+   ],
+   "rascunho": "Piscina não tem, mas a sacada com churrasqueira compensa.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência vaga ('esse' = último em foco, o Batel); rascunho correto"
+  },
+  {
+   "id": "IE-T045",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, dos três de recife, qual aceita financiamento?"
+    },
+    {
+     "de": "agente",
+     "texto": "O de Boa Viagem e o de Casa Forte aceitam. O do Pina é só à vista."
+    },
+    {
+     "de": "cliente",
+     "texto": "o que aceita financiamento tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos em Boa Viagem, 2 vagas, aceita financiamento, R$ 800 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Pina, 1 vaga, só à vista, R$ 650 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 3 quartos em Casa Forte, 1 vaga, aceita financiamento, R$ 700 mil"
+    }
+   ],
+   "rascunho": "Os dois que aceitam têm vaga: Boa Viagem com 2 e Casa Forte com 1.",
+   "referente": null,
+   "rascunho_usa_outro": false,
+   "nota": "difícil: atributo que dois têm → null; rascunho nomeia cada um"
+  },
+  {
+   "id": "IE-T046",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vc disse que o de 3 quartos tinha suíte, confirma?"
+    },
+    {
+     "de": "agente",
+     "texto": "Confirmo: o de 3 quartos, no Jardim Botânico, tem 1 suíte. O de 2 quartos, em Laranjeiras, não tem."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o de laranjeiras, qual o valor?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Jardim Botânico, Rio, 1 suíte, R$ 1,5 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos em Laranjeiras, sem suíte, R$ 980 mil"
+    }
+   ],
+   "rascunho": "O de Laranjeiras está por R$ 980 mil.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: citação de fala antiga e depois troca para o outro candidato"
+  },
+  {
+   "id": "IE-T047",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, o da pompeia tem 2 vagas?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tem 1. O de Perdizes tem 2."
+    },
+    {
+     "de": "cliente",
+     "texto": "ah tá. o de perdizes é mais caro?"
+    },
+    {
+     "de": "agente",
+     "texto": "É, R$ 900 mil contra R$ 720 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "e ele fica perto do metrô?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Pompeia, 1 vaga, 1,5 km do metrô, R$ 720 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos em Perdizes, 2 vagas, 400 m do metrô Sumaré, R$ 900 mil"
+    }
+   ],
+   "rascunho": "Fica a 1,5 km, uns 20 minutos a pé.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "difícil: troca de foco; 'ele' = Perdizes; rascunho usa a distância da Pompeia"
+  },
+  {
+   "id": "IE-T048",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, dos dois que vc mandou, o que tem quintal aceita cachorro grande?"
+    },
+    {
+     "de": "agente",
+     "texto": "A casa do Butantã, que tem quintal, aceita sim."
+    },
+    {
+     "de": "cliente",
+     "texto": "e o outro, o apê, aceita?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Casa 3 quartos no Butantã, quintal, aceita pet, R$ 950 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Morumbi, não aceita pet, R$ 780 mil"
+    }
+   ],
+   "rascunho": "O apê do Morumbi não aceita pet, infelizmente.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": "difícil: referência vaga ('o outro')"
+  }
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "OL-A001",
+   "mensagem": "para de me mandar mensagem, não tenho interesse",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "opt-out explícito; 'para de me mandar mensagem' tem objeto de contato"
+  },
+  {
+   "id": "OL-A002",
+   "mensagem": "Oi, vi o anúncio da casa em Barão Geraldo, ainda tá disponível?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado"
+  },
+  {
+   "id": "OL-A003",
+   "mensagem": "Não precisa parar de mandar não, eu gosto de ver as novidades, só não me liga de manhã",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — 'não precisa parar' + preferência de horário"
+  },
+  {
+   "id": "OL-A004",
+   "mensagem": "adoro spam viu? 6 mensagens só hoje. pode parar.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: ironia — o pedido vem junto ('pode parar')"
+  },
+  {
+   "id": "OL-A005",
+   "mensagem": "Minha mãe pediu pra avisar que não quer mais receber as mensagens de vocês no número dela",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — pedido sobre OUTRO contato; registrar e confirmar com a titular; não é opt-out deste número"
+  },
+  {
+   "id": "OL-A006",
+   "mensagem": "esse número aqui é da minha mãe, ela não quer mais receber nada de vocês, pode tirar",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — o número deste canal pede para sair"
+  },
+  {
+   "id": "OL-A007",
+   "mensagem": "Quero saber exatamente quais informações vocês têm sobre mim no cadastro.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "acesso",
+   "pausa_temporaria": false,
+   "nota": "acesso"
+  },
+  {
+   "id": "OL-A008",
+   "mensagem": "Meu nome tá errado nas mensagens, é Juliana com J, não Giuliana. Corrige aí pfv",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "correcao",
+   "pausa_temporaria": false,
+   "nota": "correção de dado cadastral"
+  },
+  {
+   "id": "OL-A009",
+   "mensagem": "Por enquanto não, tô sem condições de comprar. Quem sabe ano que vem",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa: 'por enquanto' + retomada 'ano que vem'"
+  },
+  {
+   "id": "OL-A010",
+   "mensagem": "não quero mais receber, se um dia eu precisar eu procuro vocês",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: pausa × opt-out — sem prazo de retomada; a porta aberta é do lado do cliente → opt-out"
+  },
+  {
+   "id": "OL-A011",
+   "mensagem": "Olha, eu marquei visita duas vezes e o corretor não apareceu nas duas, perdi a manhã de sábado, ninguém me avisou nada, e ainda vem mensagem automática perguntando se gostei da visita. Francamente. Não quero mais receber nada de vocês, pode encerrar meu cadastro.",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "difícil: reclamação longa — opt-out dentro; 'encerrar meu cadastro' = exclusão"
+  },
+  {
+   "id": "OL-A012",
+   "mensagem": "quem te passou meu número?",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "difícil: origem sem pedir exclusão — nem parar"
+  },
+  {
+   "id": "OL-A013",
+   "mensagem": "tô interessado sim, mas só consigo visitar depois do dia 15, pode ser?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "agendamento, não pausa de contato"
+  },
+  {
+   "id": "OL-A014",
+   "mensagem": "para",
+   "opt_out": null,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: 'para' ambíguo — sozinho, sem objeto: parar o envio ou reação a outra coisa? indecidível, humano confirma"
+  },
+  {
+   "id": "OL-A015",
+   "mensagem": "para de me mandar casa de 2 milhões, meu teto é 600 mil",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: 'para' ambíguo — é pedido de filtro, não opt-out"
+  },
+  {
+   "id": "OL-A016",
+   "mensagem": "Tirem meu nome dessa lista de disparo. E já que estão aí, quero que apaguem meu CPF, não autorizei.",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "opt-out + exclusão de um dado"
+  },
+  {
+   "id": "OL-A017",
+   "mensagem": "to viajando, me procura depois do carnaval",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com prazo"
+  },
+  {
+   "id": "OL-A018",
+   "mensagem": "Pode mandar sim! Quais horários vocês atendem?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado"
+  },
+  {
+   "id": "OL-A019",
+   "mensagem": "não quero mais",
+   "opt_out": null,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: 'para' ambíguo — 'não quero mais' sem objeto: o imóvel ou as mensagens? indecidível"
+  },
+  {
+   "id": "OL-A020",
+   "mensagem": "oi, troquei de número, esse aqui é o novo. atualiza no cadastro pfv",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "correcao",
+   "pausa_temporaria": false,
+   "nota": "correção: pede atualização NO CADASTRO"
+  },
+  {
+   "id": "OL-A021",
+   "mensagem": "me liga nesse outro número hoje à tarde que o meu tá sem bateria",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — parece correção, mas é preferência pontual de contato; não muda cadastro"
+  },
+  {
+   "id": "OL-A022",
+   "mensagem": "Não autorizo o uso dos meus dados para marketing. Quero a exclusão completa conforme a LGPD.",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "exclusão formal"
+  },
+  {
+   "id": "OL-A023",
+   "mensagem": "Boa tarde, ainda procuro imóvel, mas por favor sem ligação, só mensagem",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "preferência de canal com o outro mantido"
+  },
+  {
+   "id": "OL-A024",
+   "mensagem": "kkkk vcs são insistentes hein, mas tá valendo, manda o do tatuapé",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: ironia — leve, com interesse mantido"
+  },
+  {
+   "id": "OL-A025",
+   "mensagem": "Vocês compraram meu contato de alguma lista? Quero saber de onde veio e que me expliquem a base legal.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "origem + base legal"
+  },
+  {
+   "id": "OL-A026",
+   "mensagem": "não tenho mais interesse, obrigado",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: fim de interesse sem pedido de parar — o atendente encerra, mas não é opt-out"
+  },
+  {
+   "id": "OL-A027",
+   "mensagem": "Agora não, estamos esperando o financiamento sair. Quando sair eu aviso.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com condição de retomada"
+  },
+  {
+   "id": "OL-A028",
+   "mensagem": "Deixa eu entender: vocês guardam meu CPF e minha renda? Por quanto tempo?",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "acesso",
+   "pausa_temporaria": false,
+   "nota": "acesso (o que guardam e por quanto tempo)"
+  },
+  {
+   "id": "OL-A029",
+   "mensagem": "tirem o meu número da lista, mas podem continuar mandando pro meu marido, ele que tá cuidando disso",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — o titular deste canal sai; o marido continua"
+  },
+  {
+   "id": "OL-A030",
+   "mensagem": "Prefiro que me chamem só mês que vem, agora tô resolvendo a mudança. Não precisa me tirar da lista.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "difícil: pausa × opt-out — pausa com negação explícita de opt-out"
+  }
+ ]
+}

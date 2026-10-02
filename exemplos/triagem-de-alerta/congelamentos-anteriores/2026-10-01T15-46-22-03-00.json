@@ -1,0 +1,35 @@
+{
+ "congelado_em": "2026-10-01T15:46:22-03:00",
+ "arquivos": {
+  "perguntas.py": "c0e7246d743c05c936d7e315b252b638da6a557d4ac3d1b3b7671cf4388c1f93",
+  "triagem.py": "9a9f027bfa1e402ae01c273abfb0b380fd8d398259e438ccc7df615b6407b0f3",
+  "run.py": "996391f2c230cc3362f8eb8106977665b23b7ae337f29b419c164d2b4b9474bf",
+  "dados/teste.json": "c998df96ff07cf3643716fe41711f884c80e85ad28ccfc967118e46064340b58"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (80 alertas), variante principal `Jev (Nouls + política)` com as faixas acima",
+  "variante_principal": "Jev (Nouls + política)",
+  "1_E1": "comprometimento em andamento em ativo crítico (gabarito `contain_now`) que saiu `auto_close` ou `notify_owner` = 0",
+  "2_E2": "`auto_close` em alerta com indício verdadeiro ou nulo no gabarito = 0",
+  "3_E3": "`contain_now` em alerta com atividade esperada no gabarito = 0",
+  "4_acerto": "ação (4 classes) ≥ 0,85 (68/80)",
+  "5_contra_baseline": "ação ≥ baseline de regras no próprio teste + 0,05 (4 alertas)",
+  "secundario_nao_decide": "contenção perdida (`contain_now` → fila) ≤ 2; contenção indevida ≤ 2; pior sinal (Noul ≥ 0,5) ≥ 0,90; falhas operacionais = 0 (senão o conjunto não é medição)",
+  "se_falhar": "1, 2 ou 3 falhando = o desenho não serve para agir sem humano (só `queue_tier2`/`notify_owner` automáticos); 4 falhando = não serve como triagem automática; 5 falhando = as regras de código bastam",
+  "limites": {
+   "e1_max": 0,
+   "e2_max": 0,
+   "e3_max": 0,
+   "acerto_min": 0.85,
+   "margem_sobre_baseline": 0.05,
+   "contencao_perdida_max": 2,
+   "contencao_indevida_max": 2,
+   "sinal_min": 0.9
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "a4442f13c3cfb4d8120707a9d6e7c16a9e7c34eb3a605ea80e58cdea9fb9d110",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6",
+  "../_comum/metricas.py": "9fbd24d53375d3a63147cb404937463e7319f0b0442990b1873a9edb5d7b4c3c"
+ }
+}

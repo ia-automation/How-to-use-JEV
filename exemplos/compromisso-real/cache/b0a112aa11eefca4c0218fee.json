@@ -1,0 +1,137 @@
+{
+ "medicao": {
+  "ms": 350,
+  "input_tokens": 13837,
+  "modelo": "jev-1.13.0",
+  "perguntas": 18
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "k1_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 0.5,
+    "probabilities": {
+     "proposal": 0.34,
+     "old_quote": 0.0,
+     "commitment": 0.59,
+     "cancelled": 0.01,
+     "unaccepted_request": 0.06
+    }
+   },
+   "k1_accepted": {
+    "type": "noul",
+    "noul": 0.52
+   },
+   "k1_undone": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "k1_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k1_open_request": {
+    "type": "noul",
+    "noul": 0.29
+   },
+   "k1_deadline": {
+    "type": "choice",
+    "choice": "m4: segunda",
+    "confidence": 0.77,
+    "probabilities": {
+     "none": 0.01,
+     "m4: segunda": 0.81,
+     "m1: segunda": 0.06,
+     "m4: quarta": 0.11,
+     "m2: segunda": 0.0
+    }
+   },
+   "k2_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 0.44,
+    "probabilities": {
+     "proposal": 0.41,
+     "old_quote": 0.0,
+     "cancelled": 0.0,
+     "commitment": 0.55,
+     "unaccepted_request": 0.04
+    }
+   },
+   "k2_accepted": {
+    "type": "noul",
+    "noul": 0.38
+   },
+   "k2_undone": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k2_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k2_open_request": {
+    "type": "noul",
+    "noul": 0.22
+   },
+   "k2_deadline": {
+    "type": "choice",
+    "choice": "m4: quarta",
+    "confidence": 0.96,
+    "probabilities": {
+     "none": 0.01,
+     "m4: segunda": 0.01,
+     "m1: segunda": 0.01,
+     "m4: quarta": 0.97,
+     "m2: segunda": 0.0
+    }
+   },
+   "k3_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 0.33,
+    "probabilities": {
+     "old_quote": 0.0,
+     "proposal": 0.08,
+     "commitment": 0.47000000000000003,
+     "cancelled": 0.26,
+     "unaccepted_request": 0.19
+    }
+   },
+   "k3_accepted": {
+    "type": "noul",
+    "noul": 0.21
+   },
+   "k3_undone": {
+    "type": "noul",
+    "noul": 0.73
+   },
+   "k3_quoted": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k3_open_request": {
+    "type": "noul",
+    "noul": 0.63
+   },
+   "k3_deadline": {
+    "type": "choice",
+    "choice": "m4: quarta",
+    "confidence": 0.6,
+    "probabilities": {
+     "none": 0.01,
+     "m4: segunda": 0.07,
+     "m1: segunda": 0.24,
+     "m4: quarta": 0.68,
+     "m2: segunda": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 13837,
+   "output_tokens": 633
+  }
+ }
+}

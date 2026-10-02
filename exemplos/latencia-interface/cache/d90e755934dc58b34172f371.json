@@ -1,0 +1,31 @@
+{
+ "medicao": {
+  "ms": 256,
+  "input_tokens": 637,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "destino": {
+    "type": "choice",
+    "choice": "nenhum",
+    "confidence": 0.9,
+    "probabilities": {
+     "criar_tarefa": 0.06,
+     "nenhum": 0.91,
+     "agendar_visita": 0.02,
+     "buscar_cliente": 0.0,
+     "buscar_imovel": 0.0,
+     "abrir_relatorio": 0.0,
+     "enviar_mensagem": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 637,
+   "output_tokens": 86
+  }
+ }
+}

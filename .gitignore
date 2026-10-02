@@ -32,3 +32,7 @@ chat.txt
 # Pasta de estudo: material privado e a prova nunca vão para a versão pública
 privado/
 prova/
+
+# Caches de reavaliacao por versao (ferramentas/reavaliar_versao.py): ~1.700 arquivos por rodada; a nota em
+# conhecimento/evidencias/reavaliacao-*.md e o registro; o cache fica so nesta maquina
+exemplos/*/cache-jev-*/

@@ -1,0 +1,1688 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "TA-T001",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Sucesso de login após rajada de falhas",
+    "detalhe": "Conta diretoria: 2.300 falhas de IMAP a partir da rede 203.0.113.0/24 entre 00:10 e 02:05; 02:06 login com sucesso da mesma rede. A caixa está sendo sincronizada: 1,4 GB de 4 GB baixados.",
+    "ativo": "mail-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Força bruta que acertou; a caixa está sendo baixada agora."
+  },
+  {
+   "id": "TA-T002",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Verificação de restauração falhou",
+    "detalhe": "02:50 a verificação automática do completo de 30/09 falhou: soma de verificação divergente no bloco 1.204.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Backup possivelmente corrompido; falha operacional."
+  },
+  {
+   "id": "TA-T003",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Execução de programa pelo banco",
+    "detalhe": "30/09 22:31 a conta `postgres` executou `COPY … FROM PROGRAM 'id'` no pg-hml-01 a partir de 203.0.113.61. Sessão encerrada às 22:33. O acesso externo à porta do banco foi fechado às 23:00.",
+    "ativo": "pg-hml-01",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "A base de homologação deste caso é sintética (recarregada em 29/09)."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "Execução de comando por origem externa em homologação sintética, já encerrada."
+  },
+  {
+   "id": "TA-T004",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Atraso de replicação de 25 min",
+    "detalhe": "O atraso do pg-prod-02 chegou a 25 min às 03:00 e sobe 2 min a cada 10 min.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Sem contexto que explique."
+  },
+  {
+   "id": "TA-T005",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Atraso de replicação de 40 s (7ª ocorrência na semana)",
+    "detalhe": "02:15 atraso do pg-prod-02 em 40 s. Ocorrências anteriores: entre 35 e 45 s, sempre entre 01:00 e 05:00.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Chamado INFRA-498 aberto: o atraso vem da carga noturna do BI; o dono está ciente.",
+    "Ajuste do limiar do alerta previsto para a próxima semana."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: alerta repetido — mesmo valor, mesma causa, chamado aberto e dono ciente."
+  },
+  {
+   "id": "TA-T006",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Sondagens de XSS no gateway de produção",
+    "detalhe": "03:10 a 03:25: 260 requisições com payloads de XSS contra o gateway-borda a partir de 10.0.0.77. Todas barradas. Continua.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Teste de intrusão SEG-91: escopo = gateway-borda (produção) e serviços -hml, somente leitura.",
+    "Origem registrada: 10.0.0.77. Janela: 01/10 das 00:00 às 05:00."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: teste de intrusão — desta vez produção ESTÁ no escopo; alvo, origem e hora batem. Ataque em ativo crítico e, ainda assim, esperado."
+  },
+  {
+   "id": "TA-T007",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Nó drenado e fora do cluster",
+    "detalhe": "01:10 o worker-03 foi drenado e saiu do cluster. Tarefas redistribuídas.",
+    "ativo": "worker-03",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Mudança MUD-219: troca de disco do worker-03, 01/10 da 01:00 às 05:00; o plano drena o nó."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Previsto na mudança, dentro da janela."
+  },
+  {
+   "id": "TA-T008",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Túnel reverso ativo em estação de desenvolvimento",
+    "detalhe": "01:30 o binário `tnl` foi executado na sessão de p.sales e mantém túnel para 203.0.113.150 expondo a porta local 3000. Ativo.",
+    "ativo": "dev-box-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "Último uso interativo de p.sales: ontem às 19:00.",
+    "dev-box-01 não guarda cópia de produção nesta semana."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Túnel aberto com o dono da sessão ausente; máquina de dev sem dado de produção."
+  },
+  {
+   "id": "TA-T009",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "CPU em 100% após deploy",
+    "detalhe": "01:52 o contêiner api-relatorios iniciou `/usr/bin/.cache/kswap`, 100% de CPU, com conexão para 203.0.113.120 porta 3333. O digest da imagem em execução é diferente do digest gerado pelo pipeline. Rodando.",
+    "ativo": "worker-04",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy do api-relatorios 3.2.0 às 01:50."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — o deploy explicaria CPU alta, não um binário escondido falando com porta de mineração nem uma imagem que não é a do pipeline."
+  },
+  {
+   "id": "TA-T010",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Binário não assinado em execução",
+    "detalhe": "03:00 `agente-metricas` em execução em worker-01, sem assinatura; hash terminado em 9f3c. Rodando.",
+    "ativo": "worker-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Chamado SEG-77 (exceção pendente na EDR): agente-metricas é o coletor interno; o hash aprovado termina em 9f3c.",
+    "O mesmo alerta foi fechado 9 vezes neste mês."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: alerta repetido — binário sem assinatura assusta, mas o hash é exatamente o do coletor da casa, com exceção em andamento."
+  },
+  {
+   "id": "TA-T011",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "CRÍTICO: despejo de memória de processo",
+    "detalhe": "02:33 `gcore` executado sobre o processo node do contêiner api-pedidos na sessão de r.koga; arquivo de 1,8 GB gravado em /var/tmp. Comando terminou às 02:35.",
+    "ativo": "worker-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Chamado INC-311: r.koga investiga vazamento de memória no api-pedidos e está autorizada a coletar despejo de memória nesta noite."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: título engana — despejo de memória é técnica de roubo de credencial, mas aqui é a pessoa do chamado fazendo a coleta autorizada."
+  },
+  {
+   "id": "TA-T012",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Fila de mensagens rejeitadas crescendo",
+    "detalhe": "A fila pedidos.dlq recebeu 3 mil mensagens desde 23:00. Erro registrado: 'campo canal_origem ausente'. Continua.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Erro de aplicação acumulando rejeições."
+  },
+  {
+   "id": "TA-T013",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Ferramenta de exploração detectada",
+    "detalhe": "02:40 varredura de portas seguida de módulo de exploração contra o host do api-pedidos-hml, origem 10.0.0.77. Continua.",
+    "ativo": "api-pedidos-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Teste de intrusão contratado (chamado SEG-88): escopo = serviços com sufixo -hml, origem 10.0.0.77.",
+    "Janela do teste: 30/09 22:00 a 01/10 06:00."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: teste de intrusão — alvo, janela e origem batem com o contratado."
+  },
+  {
+   "id": "TA-T014",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Regra de encaminhamento externo criada em caixa de e-mail",
+    "detalhe": "02:10 regra criada na caixa financeiro: encaminha tudo para endereço de fora da empresa. Criada numa sessão vinda de 203.0.113.71. 37 mensagens já encaminhadas; a regra está ativa.",
+    "ativo": "mail-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Desvio de e-mail do financeiro em curso: desativar a regra e derrubar a sessão."
+  },
+  {
+   "id": "TA-T015",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Consultas DNS longas e regulares a domínio único",
+    "detalhe": "O contêiner api-clientes faz 1 consulta DNS a cada 5 s para subdomínios de 60 caracteres de `x7.exemplo.net` desde 17:50 de ontem. Cerca de 11 MB já saíram codificados nos nomes. Continua.",
+    "ativo": "worker-02",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: exfiltração lenta — nenhum pico: 11 MB em nove horas por DNS; subdomínio longo e ritmo fixo são túnel de dados, e continua."
+  },
+  {
+   "id": "TA-T016",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Latência p95 do api-clientes em 4 vezes o normal",
+    "detalhe": "Latência p95 em 1,2 s desde 01:00. Às 03:00 continua.",
+    "ativo": "api-clientes",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 2.7.0 do api-clientes ontem às 14:20."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: contexto não cobre — há um deploy no contexto, mas de onze horas antes do início da lentidão; não explica."
+  },
+  {
+   "id": "TA-T017",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Gateway respondendo 502 em todas as rotas",
+    "detalhe": "Desde 03:31 o gateway-borda responde 502 em 100% das requisições. Continua às 03:40.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: operacional grave — produção inteira fora; a ação é acordar o dono, não conter."
+  },
+  {
+   "id": "TA-T018",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Leituras periódicas de clientes por origem fora do inventário",
+    "detalhe": "Relatório semanal: entre 25/09 e 29/09 o papel svc-relatorios leu 300 linhas de `clientes` a cada 10 min a partir de 10.0.0.93. Última leitura em 29/09 às 23:50. A senha do papel foi trocada em 30/09 (rotação de rotina); nenhuma leitura depois.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "10.0.0.93 não consta no inventário."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: exfiltração lenta — o mesmo padrão de gotejamento, mas visto depois: parou há dois dias e a senha já foi trocada. Nada a conter; muito a investigar."
+  },
+  {
+   "id": "TA-T019",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Restauração de backup de produção em andamento",
+    "detalhe": "01:05 restauração do completo de 30/09 do pg-prod-01 iniciada em pg-ensaio-01 pela conta svc-backup. 52% concluído.",
+    "ativo": "pg-ensaio-01",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Ensaio trimestral de recuperação (mudança MUD-210): restauração em instância isolada, 01/10 da 01:00 às 04:00.",
+    "A instância é destruída ao fim do ensaio."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: dado de produção fora de produção — a instância de ensaio guarda a base real (ativo crítico), e mesmo assim o alerta é esperado: ensaio agendado, na janela, pela conta certa."
+  },
+  {
+   "id": "TA-T020",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Script de instalação de dependência contatou endereço externo",
+    "detalhe": "23:12 durante `npm install`, o script de pós-instalação do pacote `formata-cores` leu as variáveis de ambiente e enviou requisição para 203.0.113.99. A tarefa de build terminou às 23:14.",
+    "ativo": "ci-runner-02",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "ci-runner-02 só gera o site de documentação; não tem segredo de deploy nem acesso a produção."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício em ativo não crítico — dependência maliciosa rodou, mas num executor sem segredo; investigar de onde veio o pacote, sem acordar ninguém."
+  },
+  {
+   "id": "TA-T021",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Chave de conta de serviço usada de endereço inédito",
+    "detalhe": "02:12 a chave de svc-integracao passou a ser usada a partir de 203.0.113.201. Desde então, 1 chamada por segundo a /usuarios?pagina=N (página 311 agora). Continua.",
+    "ativo": "auth-svc",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "svc-integracao só chama a partir de 10.0.0.31.",
+    "A integração nunca usou a rota /usuarios."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Chave fora do lugar, listando usuários página a página: revogar agora."
+  },
+  {
+   "id": "TA-T022",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Pico de erros 5xx em homologação",
+    "detalhe": "22:18 a 22:21: o gateway-hml respondeu 5xx em 60% das chamadas. Normal desde 22:22.",
+    "ativo": "gateway-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Exercício de falha agendado em homologação: 30/09 das 22:00 às 23:00; réplicas são derrubadas de propósito."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Efeito do exercício agendado, em homologação, já encerrado."
+  },
+  {
+   "id": "TA-T023",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Disco de logs em 88% (4ª ocorrência na semana)",
+    "detalhe": "02:00 volume de logs do api-pedidos em 88%. Nas 3 ocorrências anteriores voltou a 60% depois da rotação das 04:00.",
+    "ativo": "api-pedidos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Nenhum chamado aberto sobre o volume de logs."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: alerta repetido — repete e se resolve sozinho, mas ninguém abriu chamado: o dono não sabe. Repetição sem dono ciente não é 'esperado'."
+  },
+  {
+   "id": "TA-T024",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Memória do api-pedidos crescendo",
+    "detalhe": "A memória das réplicas cresce 4% por hora desde 20:10. Três reinícios por falta de memória entre 00:00 e 02:30.",
+    "ativo": "api-pedidos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 4.17.2 do api-pedidos às 20:05."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — começou no deploy, mas vazamento de memória com reinícios não é efeito previsto de subida; é regressão para o dono."
+  },
+  {
+   "id": "TA-T025",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Senha de conta de serviço expira em 3 dias",
+    "detalhe": "A senha de svc-backup expira em 04/10. Nenhuma rotação agendada.",
+    "ativo": "auth-svc",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Pendência com prazo."
+  },
+  {
+   "id": "TA-T026",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Backup concluído em 4 s",
+    "detalhe": "02:00 o backup das caixas do mail-01 terminou em 4 s, código de saída 0, 0 caixas incluídas. Ontem: 312 caixas, 41 min.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: backup — sucesso que é falha silenciosa: zero caixas copiadas. Não é ataque."
+  },
+  {
+   "id": "TA-T027",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Backup incremental não executado",
+    "detalhe": "01:00 o incremental do pg-prod-01 não rodou. Último incremental: 30/09 às 01:00.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Política de backup: na quinta-feira roda o completo semanal (03:00) e o incremental é suprimido.",
+    "Hoje é quinta-feira."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: backup — parece falha, é a política: no dia do completo o incremental não roda."
+  },
+  {
+   "id": "TA-T028",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Rajada de falhas de login em conta de administrador",
+    "detalhe": "02:00 a 02:45: 4.100 falhas de login na conta adm-jonas a partir de 60 endereços externos. Nenhum sucesso. O bloqueio temporário está sendo aplicado. Continua.",
+    "ativo": "auth-svc",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: tentativa barrada — alvo de alto valor e ataque em curso, mas nenhum acesso: sem indício. O dono é avisado; não há sessão para derrubar."
+  },
+  {
+   "id": "TA-T029",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Consumidor novo conectado",
+    "detalhe": "02:31 um consumidor a partir de 10.0.0.201 criou a fila `tmp_c1` ligada à exchange pagamentos.confirmados e recebe cópia de todas as mensagens. Conectado até agora.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "10.0.0.201 não consta no inventário.",
+    "Os consumidores registrados de pagamentos.confirmados são api-pedidos e api-notas."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: título engana — 'consumidor novo' soa rotina de deploy; é uma máquina desconhecida copiando confirmações de pagamento em tempo real."
+  },
+  {
+   "id": "TA-T030",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Chave SSH adicionada a conta de deploy",
+    "detalhe": "02:05 nova chave pública adicionada ao authorized_keys da conta deploy no host do api-pedidos-hml, numa sessão vinda de 10.0.0.156 (rede de visitantes). A chave continua lá.",
+    "ativo": "api-pedidos-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "A base de homologação é sintética.",
+    "Nenhuma mudança registrada."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Chave plantada em homologação sintética: fila."
+  },
+  {
+   "id": "TA-T031",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Réplica reiniciada",
+    "detalhe": "01:30 o pg-prod-02 reiniciou. Voltou à 01:33 e está sincronizando.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Janela MUD-209: troca de parâmetro no pg-hml-01, 01/10 da 01:00 às 02:00."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: manutenção fora da janela — a hora bate, o ativo não: a mudança era no banco de homologação, quem reiniciou foi a réplica de produção."
+  },
+  {
+   "id": "TA-T032",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Transação aberta há 6 h",
+    "detalhe": "O papel app_relatorios mantém uma transação aberta desde 21:00. A limpeza automática da tabela pedidos está bloqueada; a tabela cresceu 18%.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Degradação operacional em curso."
+  },
+  {
+   "id": "TA-T033",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Envio contínuo de dados para fora há 4 h",
+    "detalhe": "O backup-prod envia 1,5 MB/s para 198.51.100.10 desde 00:31. 21 GB até agora. Continua.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Réplica externa do backup: envio diário das 00:30 às 06:00 para o armazenamento contratado.",
+    "198.51.100.10 está na lista de destinos aprovados."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: exfiltração lenta — tem a cara de dado saindo, mas é a réplica externa do backup: horário, destino aprovado e ritmo de sempre."
+  },
+  {
+   "id": "TA-T034",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Backup falhou pela 3ª noite seguida",
+    "detalhe": "01:20 o backup do pg-prod-01 falhou: sem espaço no destino. Falhas iguais em 29/09 e 30/09.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Três noites sem backup e nenhum chamado."
+  },
+  {
+   "id": "TA-T035",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "DDL destrutivo por papel de aplicação",
+    "detalhe": "03:40 o papel app_pedidos criou a tabela `LEIA_PARA_RECUPERAR` e iniciou `DROP TABLE` em sequência: 12 de 58 tabelas removidas. Continua.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "app_pedidos nunca executou DDL; as migrations rodam com svc-deploy."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Destruição em curso no primário: cortar a sessão e o papel."
+  },
+  {
+   "id": "TA-T036",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Usuário local criado no gerente do cluster",
+    "detalhe": "02:58 a conta `sysupd` foi criada e adicionada ao grupo docker por um processo filho do contêiner exportador-metricas. 03:01 chave SSH adicionada à conta. 03:04 login de sysupd a partir de 10.0.0.201; sessão ativa.",
+    "ativo": "swarm-manager-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Nenhuma mudança registrada para hoje.",
+    "10.0.0.201 não consta no inventário."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Conta plantada e já em uso no gerente do cluster."
+  },
+  {
+   "id": "TA-T037",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Viagem impossível: Curitiba e Estados Unidos em 25 min",
+    "detalhe": "01:40 login de l.nogueira em Curitiba. 02:05 login de l.nogueira a partir de endereço nos Estados Unidos. Mesmo dispositivo. Sessão ativa no cofre.",
+    "ativo": "cofre-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "O endereço dos Estados Unidos é o nó de saída 2 da VPN corporativa (lista de saídas conhecidas).",
+    "l.nogueira está de sobreaviso de banco esta semana e acessa o cofre pela VPN."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: login impossível — o 'outro país' é a saída da VPN da casa, mesmo dispositivo, em quem está de sobreaviso."
+  },
+  {
+   "id": "TA-T038",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Backup semanal falhou",
+    "detalhe": "00:30 o backup semanal da wiki-interna falhou: destino sem permissão de escrita. Não houve nova tentativa.",
+    "ativo": "wiki-interna",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "wiki-interna: documentação de integração de novos funcionários; sem dado de cliente nem segredo."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Falha de backup de ferramenta não crítica; aviso para a manhã."
+  },
+  {
+   "id": "TA-T039",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "52 senhas redefinidas em 10 min",
+    "detalhe": "08:00 a 08:10: 52 contas tiveram a senha redefinida no auth-svc pela conta sup-marina.",
+    "ativo": "auth-svc",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Campanha de troca obrigatória de senha (chamado SUP-930): lote 3, time comercial, 52 contas.",
+    "Disparo do lote 3 marcado para 01/10 às 08:00, executora sup-marina."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: título engana — redefinição em massa parece tomada de contas; é o lote da campanha, na hora, no tamanho e pela executora previstos."
+  },
+  {
+   "id": "TA-T040",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Envio de arquivo grande para armazenamento externo",
+    "detalhe": "02:36 o processo `rclone` na sessão de p.sales lê /srv/dumps/prod_clientes.sql.gz e envia para 198.51.100.77. 2,1 GB de 6 GB enviados. Continua.",
+    "ativo": "dev-box-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "dev-box-01 guarda cópia de produção para o chamado DEV-431.",
+    "rclone não faz parte das ferramentas do time.",
+    "Último uso interativo de p.sales: ontem às 19:00."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: dado de produção fora de produção — a máquina é de dev, o arquivo é a base de clientes de produção saindo para destino desconhecido com o dono da sessão ausente."
+  },
+  {
+   "id": "TA-T041",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Login a partir de país inédito",
+    "detalhe": "03:30 login de r.koga a partir de Lisboa. Dispositivo registrado; segundo fator aprovado. Sessão ativa.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "r.koga registrou viagem a Lisboa de 28/09 a 05/10 (chamado RH-140).",
+    "03:30 daqui são 07:30 em Lisboa."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: login impossível — país novo, mas a viagem está registrada, o aparelho é o dela e a hora local é de expediente."
+  },
+  {
+   "id": "TA-T042",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Agente de EDR parou de reportar",
+    "detalhe": "O agente do worker-02 não envia sinal de vida desde 01:55. O nó responde normalmente ao gerente do cluster.",
+    "ativo": "worker-02",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: título engana — agente calado pode ser sabotagem, mas sozinho, sem nenhum outro sinal, é falha de agente: aviso ao dono, não fila."
+  },
+  {
+   "id": "TA-T043",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Banco de homologação fora do ar",
+    "detalhe": "06:40 o pg-hml-01 parou de aceitar conexões. Continua fora às 07:00.",
+    "ativo": "pg-hml-01",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Janela MUD-209: troca de parâmetro no pg-hml-01, 01/10 da 01:00 às 02:00.",
+    "A base de homologação deste caso é sintética."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: manutenção fora da janela — o ativo é o da mudança, a hora não: a janela fechou às 02:00. Homologação: aviso sem urgência."
+  },
+  {
+   "id": "TA-T044",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Token de API usado de endereço externo",
+    "detalhe": "22:14 o token de adm-jonas fez 3 chamadas a /usuarios a partir de 203.0.113.44. 22:15 a regra de anomalia revogou o token. Nenhum uso depois.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício encerrado — o token vazou e foi usado, mas já está revogado; falta descobrir como vazou e o que as 3 chamadas levaram."
+  },
+  {
+   "id": "TA-T045",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Viagem impossível: São Paulo e exterior em 40 min",
+    "detalhe": "02:10 login de c.moura em São Paulo. 02:50 login de c.moura a partir de endereço de provedor de nuvem no exterior. Mesmo dispositivo; segundo fator aprovado. Sessão ativa.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "c.moura não tem VPN corporativa registrada.",
+    "Cerca de 30% do time usa VPN pessoal em casa."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": null,
+    "em_andamento": true
+   },
+   "nota": "difícil: login impossível — indício `null`: mesmo dispositivo e segundo fator sugerem VPN pessoal, mas não há registro que confirme; nem fecha nem derruba."
+  },
+  {
+   "id": "TA-T046",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Conteúdo de página pública alterado",
+    "detalhe": "00:12 a página inicial do painel-status foi trocada por texto estranho usando a credencial de publicação, a partir de 203.0.113.99. 00:30 a publicação automática restaurou a página. 00:35 a credencial de publicação foi trocada pelo turno.",
+    "ativo": "painel-status",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "painel-status: página pública de situação dos serviços, em máquina isolada, sem credencial de produção e sem dado de cliente."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "Desfiguração já desfeita e credencial trocada, em ativo não crítico: só apuração."
+  },
+  {
+   "id": "TA-T047",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Arquivo malicioso em quarentena",
+    "detalhe": "30/09 17:42 instalador baixado por p.sales identificado como cavalo de troia pelo hash. Posto em quarentena antes de executar.",
+    "ativo": "dev-box-01",
+    "ambiente": "dev"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: tentativa barrada — barrado antes de rodar: não há comprometimento a investigar; o dono da máquina deve saber o que baixou."
+  },
+  {
+   "id": "TA-T048",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Ferramenta de acesso remoto instalada",
+    "detalhe": "30/09 16:20 instalador de acesso remoto executado em dev-box-01 com privilégio de administrador. Serviço ativo.",
+    "ativo": "dev-box-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "Comunicado TI-55: o suporte instala o agente padrão de acesso remoto em todas as estações nesta semana.",
+    "Instalador e assinatura iguais aos do comunicado."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Instalação anunciada pelo suporte, mesmo instalador."
+  },
+  {
+   "id": "TA-T049",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Segundo fator desativado em contas de administrador",
+    "detalhe": "03:05 r.koga desativou o segundo fator de 3 contas de administrador do painel-admin, pela VPN corporativa. Sessão encerrada às 03:09. As 3 contas seguem sem segundo fator.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "O acesso veio do nó de saída 4 da VPN corporativa (lista de saídas conhecidas).",
+    "r.koga está de férias desde 22/09 (calendário do time).",
+    "Nenhum chamado pede a desativação."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: contexto não cobre — a VPN conhecida explica a origem, não a ação: ninguém de férias derruba o segundo fator de três administradores às 3h. O efeito continua instalado."
+  },
+  {
+   "id": "TA-T050",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Pico de erros 5xx",
+    "detalhe": "02:21 o api-pagamentos respondeu 5xx em 22% das chamadas por 40 s. Às 02:22 voltou a 0%.",
+    "ativo": "api-pagamentos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 5.3.0 do api-pagamentos às 02:20 (troca gradual de réplicas)."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Erro curto durante a troca de réplicas do próprio serviço; já passou."
+  },
+  {
+   "id": "TA-T051",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Login com conta padrão a partir da rede de visitantes",
+    "detalhe": "30/09 20:30 login de `postgres` no pg-hml-01 a partir de 10.0.0.156 (rede de visitantes). Executou `\\dt` e `SELECT count(*) FROM clientes`. Sessão encerrada às 20:41; a rede de visitantes foi bloqueada no firewall do banco às 21:00.",
+    "ativo": "pg-hml-01",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "pg-hml-01 recebeu cópia de produção em 27/09 para teste de carga; o mascaramento falhou e a coluna cpf está em claro."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: dado de produção fora de produção — homologação com cópia de produção sem máscara é ativo crítico; o acesso acabou e a rede foi bloqueada, então é fila."
+  },
+  {
+   "id": "TA-T052",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Payloads de bypass de autenticação com respostas de sucesso",
+    "detalhe": "03:14 a 03:26: 96 requisições com payloads de bypass contra /admin/export do api-pagamentos, origem 10.0.0.77. 2 respostas 200 com 3 MB cada. Continua.",
+    "ativo": "api-pagamentos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Teste de intrusão contratado (chamado SEG-88): escopo = serviços com sufixo -hml, origem 10.0.0.77.",
+    "Janela do teste: 30/09 22:00 a 01/10 06:00.",
+    "Produção está fora do escopo contratado."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: teste de intrusão — origem e janela batem, o alvo não: produção está fora do escopo e houve exportação com sucesso. Bloquear a origem e ligar para o responsável."
+  },
+  {
+   "id": "TA-T053",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Login de conta com desligamento pendente",
+    "detalhe": "23:48 login de t.barros na wiki-interna. Leu 3 páginas. Saiu às 23:55.",
+    "ativo": "wiki-interna",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "t.barros saiu da empresa em 20/09; a desativação da conta está pendente.",
+    "wiki-interna: documentação de integração de novos funcionários; sem dado de cliente nem segredo."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "Ex-funcionário usando conta que devia estar desativada, em ativo não crítico."
+  },
+  {
+   "id": "TA-T054",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Payloads de ataque em homologação de origem não registrada",
+    "detalhe": "02:20 a 02:50: 800 requisições com payloads de SQLi contra o gateway-hml a partir de 10.0.0.191. 4 respostas 200 em /api/clientes/busca. Continua.",
+    "ativo": "gateway-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Teste de intrusão contratado (chamado SEG-88): escopo -hml, janela 30/09 22:00 a 01/10 06:00.",
+    "Origem registrada do teste: 10.0.0.77.",
+    "A base de homologação é sintética."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: teste de intrusão — alvo e janela batem, a origem não: 10.0.0.191 não é a máquina do teste. Homologação sintética: fila."
+  },
+  {
+   "id": "TA-T055",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Página de situação fora do ar",
+    "detalhe": "02:40 o painel-status parou de responder. Continua fora às 03:00.",
+    "ativo": "painel-status",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "painel-status: página pública de situação dos serviços, em máquina isolada."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Queda de ferramenta não crítica; aviso para a manhã."
+  },
+  {
+   "id": "TA-T056",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Serviço reiniciado",
+    "detalhe": "03:00 a wiki-interna reiniciou. Voltou às 03:02.",
+    "ativo": "wiki-interna",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Atualização automática semanal da wiki: toda quinta-feira às 03:00."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Reinício da atualização semanal."
+  },
+  {
+   "id": "TA-T057",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Conta padrão autenticada no painel da fila",
+    "detalhe": "30/09 18:22 login da conta `guest` no painel de gestão do fila-rabbit-01 a partir de 10.0.0.156 (rede de visitantes). Listou filas e exchanges. Saiu às 18:25. A conta guest foi desativada às 18:30 pelo turno da tarde.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "Acesso indevido que acabou e cuja porta foi fechada."
+  },
+  {
+   "id": "TA-T058",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Servidor de e-mail fora do ar",
+    "detalhe": "04:10 o mail-01 parou de responder na porta 25 e na 993. Continua fora às 04:25.",
+    "ativo": "mail-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Janela MUD-215: atualização do mail-01, 01/10 das 02:00 às 03:30.",
+    "A mudança foi registrada como concluída às 03:10."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: manutenção fora da janela — a manutenção era deste servidor, mas terminou às 03:10; cair às 04:10 é problema novo (talvez sequela), e o dono precisa saber."
+  },
+  {
+   "id": "TA-T059",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Tráfego de saída três vezes acima do normal",
+    "detalhe": "Entre 02:00 e 02:40 o worker-02 enviou 3 vezes o volume normal para um provedor de nuvem no exterior. Voltou ao normal às 02:41. Sem identificação do processo: o agente de EDR do nó não reporta desde 01:55.",
+    "ativo": "worker-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Nenhum deploy nem tarefa agendada registrados no período."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": null,
+    "em_andamento": false
+   },
+   "nota": "difícil: sinal indecidível — indício `null`: pode ser atualização de imagem ou dado saindo; sem o agente de EDR não há como saber qual processo foi. Dúvida vai para a fila."
+  },
+  {
+   "id": "TA-T060",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Bloqueio de tráfego do aplicativo móvel",
+    "detalhe": "Desde 00:30 o WAF responde 403 a 31% das chamadas do aplicativo móvel em /pedidos. Continua.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Atualização automática do conjunto de regras do WAF às 00:30."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: contexto não cobre — a causa é conhecida (regras novas), mas barrar cliente legítimo não era o efeito planejado: causa conhecida não é atividade esperada."
+  },
+  {
+   "id": "TA-T061",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Taxa de erro 5xx em 9%",
+    "detalhe": "O api-pedidos responde 5xx em 9% das chamadas desde 02:11. Às 02:40 continua em 9%.",
+    "ativo": "api-pedidos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 4.18.0 do api-pedidos às 02:09; troca de réplicas concluída às 02:14."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — erro durante a troca seria esperado; 26 minutos depois de a troca acabar, não é."
+  },
+  {
+   "id": "TA-T062",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Latência p95 do api-clientes em 2,1 s",
+    "detalhe": "Latência p95 em 2,1 s desde 02:12 (o normal é 300 ms). Às 02:18 continua.",
+    "ativo": "api-clientes",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 2.7.2 do api-clientes às 02:10, com migration que recria um índice.",
+    "Aviso do dono no canal às 02:05: 'uns 10 minutos de lentidão enquanto o índice sobe'."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — lentidão avisada pelo dono, e ainda dentro dos 10 minutos avisados."
+  },
+  {
+   "id": "TA-T063",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Arquivo com código ofuscado em pasta pública",
+    "detalhe": "Arquivo `st.php` com `eval(base64_decode(…))` criado há 2 dias na pasta pública do painel-status. 14 acessos de endereços externos; o último à 01:10 de hoje. O arquivo continua lá.",
+    "ativo": "painel-status",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "painel-status: página pública de situação dos serviços, em máquina isolada, sem credencial de produção e sem dado de cliente."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: indício em ativo não crítico — porta dos fundos instalada e em uso, mas numa máquina isolada sem dado nem credencial: produção não é sinônimo de crítico."
+  },
+  {
+   "id": "TA-T064",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Fila emails.saida sem consumidor",
+    "detalhe": "02:25 consumidores da fila emails.saida: 0. Mensagens acumuladas: 1.900.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Janela MUD-215: atualização do mail-01, 01/10 das 02:00 às 03:30.",
+    "Plano da mudança: os consumidores de e-mail são pausados; a fila retém e reenvia ao fim."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Pausa prevista no plano, dentro da janela."
+  },
+  {
+   "id": "TA-T065",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Dispositivo desconhecido na rede de servidores",
+    "detalhe": "02:44 o endereço 10.0.0.201 apareceu na rede de servidores com endereço físico nunca visto. Respondeu a ping; nenhum tráfego para outros hosts até agora.",
+    "ativo": "desconhecido (10.0.0.201)",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "10.0.0.201 não consta no inventário.",
+    "Nenhuma instalação agendada."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": null,
+    "indicio_de_comprometimento": null,
+    "em_andamento": true
+   },
+   "nota": "difícil: sinal indecidível — `ativo_critico` e indício `null`: não se sabe o que é a máquina nem se é hostil (pode ser equipamento ligado sem registro). Não fecha nem contém: fila."
+  },
+  {
+   "id": "TA-T066",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Conexões no limite: 195 de 200",
+    "detalhe": "00:06 o pg-prod-01 chegou a 195 conexões. Às 00:14 continua em 190.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Fechamento mensal: o lote de relatórios do dia 1º abre até 60 conexões extras.",
+    "Mesmo pico nos dias 1º dos últimos três meses, sem impacto; o limite foi dimensionado para isso."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Pico mensal conhecido e dimensionado."
+  },
+  {
+   "id": "TA-T067",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Cluster da fila partido",
+    "detalhe": "03:12 partição de rede entre os nós da fila. A fila pagamentos.confirmados está pausada no lado minoritário. Continua.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: operacional grave — confirmações de pagamento paradas; grave, mas é falha de infraestrutura, sem nada a conter."
+  },
+  {
+   "id": "TA-T068",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Download de backup completo por conta humana",
+    "detalhe": "30/09 19:30 m.tavares baixou o backup completo do pg-prod-01 (42 GB) para 10.0.0.58. Concluído às 19:58.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "m.tavares saiu da empresa em 26/09.",
+    "A conta foi desativada às 20:05 pelo processo de desligamento."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício encerrado — ex-funcionário levou um backup inteiro; a conta já está desativada, então o que resta é apuração."
+  },
+  {
+   "id": "TA-T069",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Travessia de diretório com respostas de sucesso",
+    "detalhe": "03:02 a 03:19: 346 requisições a /arquivos?nome=../../… de 203.0.113.33. 340 barradas; 6 com resposta 200 contendo linhas no formato de /etc/passwd. A origem continua enviando.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Média dos últimos 30 dias nesta rota: 40 tentativas barradas por hora, nenhuma com sucesso."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: tentativa barrada — 98% barrado parece ruído de sempre, mas seis respostas devolveram arquivo do sistema e a origem segue ativa."
+  },
+  {
+   "id": "TA-T070",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Cópia completa de esquema por usuário humano",
+    "detalhe": "21:50 l.nogueira executou `pg_dump` do esquema pagamentos (9 GB) no pg-prod-02 para a estação 10.0.0.52. Terminou às 22:20.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "l.nogueira é administrador de banco e costuma fazer cópias para chamados.",
+    "Nenhum chamado aberto em nome dele nesta semana."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": null,
+    "em_andamento": false
+   },
+   "nota": "difícil: usuário legítimo, ação incomum — indício `null`: quem pode fazer fez algo que costuma fazer, mas sem o chamado de sempre. Pode ser esquecimento ou coleta indevida."
+  },
+  {
+   "id": "TA-T071",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Login de superusuário com credencial de manutenção",
+    "detalhe": "04:50 login de `postgres` no pg-prod-01 a partir de 10.0.0.88 com a credencial de manutenção. 04:52 `ALTER ROLE app_relatorios SUPERUSER`. Sessão ativa.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Janela MUD-208 (atualização do Postgres): 01/10 das 01:00 às 03:00; concluída às 02:20.",
+    "O técnico da mudança encerrou o turno às 02:30.",
+    "10.0.0.88 não é a estação do técnico."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: manutenção fora da janela — a credencial é a da manutenção, mas a janela fechou, o técnico saiu e a origem é outra; e ainda promoveu um papel de aplicação a superusuário."
+  },
+  {
+   "id": "TA-T072",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Requisição do servidor a endereço interno com resposta de sucesso",
+    "detalhe": "00:40 duas requisições a /importar?url=http://10.0.0.5:8200/… tiveram resposta 200 com 1,2 kB, origem 203.0.113.33. 00:42 a regra do WAF foi atualizada e passou a barrar; 31 tentativas barradas depois, a última à 00:58.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "10.0.0.5:8200 é o endereço interno do cofre-prod."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício encerrado — duas respostas passaram antes da regra; agora está tudo barrado e parou. Saber o que o cofre respondeu é trabalho do analista."
+  },
+  {
+   "id": "TA-T073",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Uso de credenciais vazadas contra a área do cliente",
+    "detalhe": "00:20 a 01:50: 18 mil tentativas de login de 2.100 endereços; 23 contas de cliente com sucesso. As 23 foram travadas automaticamente e as sessões derrubadas. O ataque parou à 01:50.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício encerrado — houve 23 acessos indevidos, mas as contas estão travadas e o ataque parou; sobra avisar clientes e investigar, trabalho do analista."
+  },
+  {
+   "id": "TA-T074",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Script ofuscado executado (4ª ocorrência na semana)",
+    "detalhe": "01:15 script de shell ofuscado executado na sessão de p.sales; hash diferente das 3 ocorrências anteriores; abriu conexão para 203.0.113.140. O processo terminou sozinho às 01:16.",
+    "ativo": "dev-box-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "As 3 ocorrências anteriores foram fechadas como falso positivo: script de instalação do gerenciador de versões, hash conhecido.",
+    "dev-box-01 não guarda cópia de produção nesta semana."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: alerta repetido — três falsos positivos convidam a fechar o quarto, mas o hash é outro e houve conexão para fora: é alerta novo."
+  },
+  {
+   "id": "TA-T075",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Conta de serviço criada",
+    "detalhe": "30/09 23:20 conta svc-fila-novo criada no auth-svc por m.gouveia, com permissão de leitura na fila.",
+    "ativo": "auth-svc",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Mudança MUD-223 aprovada: criar svc-fila-novo para o novo consumidor; executora m.gouveia; noite de 30/09."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Criação prevista na mudança, pela executora indicada."
+  },
+  {
+   "id": "TA-T076",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Banco apagado e recriado",
+    "detalhe": "23:41 svc-ci executou `DROP DATABASE app_teste` e `CREATE DATABASE app_teste` no pg-dev-02. Concluído em 3 s.",
+    "ativo": "pg-dev-02",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "O pipeline de testes de integração recria o banco app_teste do pg-dev-02 a cada execução.",
+    "pg-dev-02 só tem base sintética."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: título engana — 'banco apagado' é o passo normal do pipeline de testes, em base sintética."
+  },
+  {
+   "id": "TA-T077",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Banco aceitando conexões de qualquer origem",
+    "detalhe": "A configuração de acesso do pg-dev-01 passou a aceitar 0.0.0.0/0 desde ontem às 18:20. Nenhuma conexão de fora da rede interna registrada até agora.",
+    "ativo": "pg-dev-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "pg-dev-01 guarda cópia integral de produção desde 28/09 (chamado DEV-431)."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: dado de produção fora de produção — exposição não é comprometimento: ninguém de fora entrou. Mas a base é cópia de produção, então o aviso ao dono é urgente."
+  },
+  {
+   "id": "TA-T078",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "9 mil requisições por minuto de um único endereço",
+    "detalhe": "02:05 a 02:30: 10.0.0.40 envia 9 mil requisições por minuto ao gateway-borda, rotas /pedidos e /catalogo. Continua.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "10.0.0.40 é a sonda de carga da casa.",
+    "Teste de carga mensal agendado: 01/10 das 02:00 às 03:00 (mudança MUD-221)."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Teste de carga agendado, da sonda registrada."
+  },
+  {
+   "id": "TA-T079",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "DDL em produção fora do horário comercial",
+    "detalhe": "02:10 svc-deploy executou `ALTER TABLE pedidos ADD COLUMN canal_origem text` no pg-prod-01. Terminou em 2 s.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "O deploy 4.18.0 do api-pedidos inclui a migration 0142 (adiciona canal_origem em pedidos).",
+    "Deploy iniciado às 02:09."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "A migration é a do deploy, pela conta do deploy."
+  },
+  {
+   "id": "TA-T080",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Aprovação de segundo fator após 14 pedidos seguidos",
+    "detalhe": "01:02 a 01:08: 14 pedidos de aprovação enviados ao celular de adm-jonas; o 14º foi aprovado. O login vinha de 203.0.113.44, dispositivo novo. A regra de dispositivo não conforme derrubou a sessão na hora e travou a conta.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício encerrado — a última barreira segurou, mas a senha está na mão de alguém e o segundo fator foi vencido por cansaço; conta travada, vai para o analista."
+  }
+ ]
+}

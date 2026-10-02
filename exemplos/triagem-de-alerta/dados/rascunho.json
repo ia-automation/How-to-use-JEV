@@ -1,0 +1,108 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "TA-R001",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Réplicas do api-pedidos reiniciando",
+    "detalhe": "3 de 3 tarefas reiniciadas em sequência entre 02:10 e 02:14. Todas saudáveis às 02:15.",
+    "ativo": "api-pedidos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy da versão 4.18.0 do api-pedidos iniciado às 02:09 pelo pipeline (troca gradual de réplicas)."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Reinício em sequência durante o deploy do próprio serviço; já voltou."
+  },
+  {
+   "id": "TA-R002",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Disco em 86%",
+    "detalhe": "Volume de dados do pg-hml-01 em 86% às 03:00, crescendo cerca de 1% ao dia há uma semana.",
+    "ativo": "pg-hml-01",
+    "ambiente": "homolog"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Capacidade em homologação, sem contexto e sem sinal de ataque: o dono precisa saber."
+  },
+  {
+   "id": "TA-R003",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Login de administrador a partir de país inédito",
+    "detalhe": "01:22 login da conta wiki-admin a partir de 203.0.113.80 (exterior), dispositivo nunca visto. Leu 4 páginas e saiu às 01:31. Sessão encerrada.",
+    "ativo": "wiki-interna",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "wiki-interna guarda só documentação de integração de novos funcionários; a varredura semanal não achou segredo."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "Indício claro, mas o ativo não é crítico e a sessão acabou: fila do analista."
+  },
+  {
+   "id": "TA-R004",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Shell reverso detectado",
+    "detalhe": "02:47 o processo node do contêiner api-clientes abriu `sh -i` com conexão de saída para 203.0.113.50 porta 4444. Conexão ativa há 6 min.",
+    "ativo": "worker-02",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Comando remoto ativo em nó de produção: isolar agora."
+  },
+  {
+   "id": "TA-R005",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Restauração iniciada",
+    "detalhe": "01:05 restauração do backup completo de ontem iniciada em pg-hml-01 pela conta svc-backup. 38% concluído.",
+    "ativo": "pg-hml-01",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Teste mensal de restauração agendado para 01/10 das 01:00 às 04:00 (mudança MUD-212).",
+    "O teste usa o backup da base sintética de homologação."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Teste agendado, dentro da janela, pela conta de sempre."
+  }
+ ]
+}

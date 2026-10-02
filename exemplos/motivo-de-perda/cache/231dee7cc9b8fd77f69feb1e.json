@@ -1,0 +1,137 @@
+{
+ "medicao": {
+  "ms": 300,
+  "input_tokens": 6091,
+  "modelo": "jev-1.13.0",
+  "perguntas": 12
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "group": {
+    "type": "choice",
+    "choice": "credito_documentacao",
+    "confidence": 0.92,
+    "probabilities": {
+     "atendimento": 0.0,
+     "credito_documentacao": 0.93,
+     "sem_informacao": 0.0,
+     "imovel": 0.0,
+     "momento_cliente": 0.0,
+     "localizacao": 0.0,
+     "concorrencia": 0.06,
+     "preco": 0.01
+    }
+   },
+   "leaf.preco": {
+    "type": "choice",
+    "choice": "condicao_pagamento",
+    "confidence": 0.84,
+    "probabilities": {
+     "only_group": 0.08,
+     "condicao_pagamento": 0.87,
+     "preco_acima_orcamento": 0.02,
+     "custos_extras": 0.03,
+     "negociacao_frustrada": 0.0
+    }
+   },
+   "leaf.credito_documentacao": {
+    "type": "choice",
+    "choice": "garantia_locaticia",
+    "confidence": 1.0,
+    "probabilities": {
+     "garantia_locaticia": 1.0,
+     "only_group": 0.0,
+     "financiamento_negado": 0.0,
+     "documentacao_imovel": 0.0,
+     "restricao_cadastral": 0.0
+    }
+   },
+   "leaf.imovel": {
+    "type": "choice",
+    "choice": "only_group",
+    "confidence": 0.97,
+    "probabilities": {
+     "diferente_do_anuncio": 0.0,
+     "only_group": 0.98,
+     "falta_item": 0.02,
+     "estado_conservacao": 0.0,
+     "tamanho_planta": 0.0
+    }
+   },
+   "leaf.localizacao": {
+    "type": "choice",
+    "choice": "only_group",
+    "confidence": 1.0,
+    "probabilities": {
+     "only_group": 1.0,
+     "bairro_nao_desejado": 0.0,
+     "distancia_deslocamento": 0.0,
+     "entorno_seguranca": 0.0
+    }
+   },
+   "leaf.concorrencia": {
+    "type": "choice",
+    "choice": "direto_proprietario",
+    "confidence": 0.64,
+    "probabilities": {
+     "only_group": 0.26,
+     "lancamento_construtora": 0.0,
+     "outra_imobiliaria": 0.0,
+     "direto_proprietario": 0.74
+    }
+   },
+   "leaf.atendimento": {
+    "type": "choice",
+    "choice": "only_group",
+    "confidence": 0.9,
+    "probabilities": {
+     "demora_resposta": 0.0,
+     "visita_falhou": 0.0,
+     "pressao_insistencia": 0.0,
+     "informacao_errada": 0.03,
+     "only_group": 0.92,
+     "imovel_indisponivel": 0.05
+    }
+   },
+   "leaf.momento_cliente": {
+    "type": "choice",
+    "choice": "only_group",
+    "confidence": 0.9,
+    "probabilities": {
+     "only_group": 0.93,
+     "mudanca_de_vida": 0.02,
+     "desistiu_de_mudar": 0.04,
+     "decisor_vetou": 0.0,
+     "adiou_decisao": 0.01
+    }
+   },
+   "leaf.sem_informacao": {
+    "type": "choice",
+    "choice": "sumiu_apos_valor",
+    "confidence": 0.18,
+    "probabilities": {
+     "adiou_sem_motivo": 0.09,
+     "sumiu_apos_valor": 0.46,
+     "sumiu_sem_resposta": 0.45
+    }
+   },
+   "reason_stated": {
+    "type": "noul",
+    "noul": 0.95
+   },
+   "blames_agency": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "closed_elsewhere": {
+    "type": "noul",
+    "noul": 0.05
+   }
+  },
+  "usage": {
+   "input_tokens": 6091,
+   "output_tokens": 708
+  }
+ }
+}

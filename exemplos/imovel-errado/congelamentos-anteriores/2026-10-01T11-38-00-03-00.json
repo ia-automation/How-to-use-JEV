@@ -1,0 +1,20 @@
+{
+ "congelado_em": "2026-10-01T11:38:00-03:00",
+ "arquivos": {
+  "perguntas.py": "25e7b7cdbe7a5d6dc7cdba2f8bd4a55594e668d70cc6e0659c834294cf6c8eba",
+  "referente.py": "61480de1c0a47c299ae6aa16d208000e66091642e4ce0b4c86205b31cfe42ad8",
+  "run.py": "be734ccfb258792d07339f51245c77df4d32c81fa48664621aa22423ae76f656",
+  "dados/teste.json": "2c07ffb6e6e37c45af377c94cd962c7c88827fa083e84ebeff6a5d9537558a62"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (48 conversas), com a política de perguntas.py",
+  "1_resposta_errada_ao_cliente": "erro caro (rascunho de outro imóvel → manter) + troca sugerindo candidato errado ≤ 1/48 (2,1%)",
+  "2_acerto_referente": "nulo incluído, ≥ baseline + 0,15",
+  "secundario_nao_decide": "nulos → pedir ≥ 6/8; pediu sem necessidade ≤ 10% dos não nulos"
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "4f8108692356f1419e66abc3b934cf214c4a0174a9f3cc37e383e820dcbd8c43"
+ },
+ "nota": "Manifesto RETROATIVO da rodada 1 (cega), gravado em 2026-10-01 pelo aplicador da revisão, com os arquivos originais ainda intactos (os hashes de perguntas.py, referente.py e dados/teste.json batem com a linha 'Versão congelada (gravada em 2026-10-01 11:38)' de resultados-rodada1.md). Na rodada 1 o congelamento era essa linha no relatório, sem manifesto, sem run.py, sem critério e sem _comum/; os hashes de _comum/ aqui são os do momento desta gravação."
+}

@@ -1,0 +1,320 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "SQ-T01",
+   "condicao": "Famílias com filhos pequenos ou bebê a caminho.",
+   "linhas_verdadeiras": [
+    "OB-028",
+    "OB-049",
+    "OB-055",
+    "OB-056",
+    "OB-058",
+    "OB-061",
+    "OB-094",
+    "OB-123",
+    "OB-135",
+    "OB-160",
+    "OB-168"
+   ],
+   "linhas_indecidiveis": [
+    "OB-059",
+    "OB-062"
+   ],
+   "nota": "fácil; 'filhos adultos morando fora' é falso; 'área kids?' e 'sobrinha por uns meses' são fracas"
+  },
+  {
+   "id": "SQ-T02",
+   "condicao": "Clientes com necessidade de acessibilidade (idoso com dificuldade, cadeirante, não pode subir escada).",
+   "linhas_verdadeiras": [
+    "OB-053",
+    "OB-087",
+    "OB-088",
+    "OB-091",
+    "OB-094",
+    "OB-152",
+    "OB-163",
+    "OB-181"
+   ],
+   "linhas_indecidiveis": [
+    "OB-089",
+    "OB-093"
+   ],
+   "nota": "difícil: inferência fraca — 'tem elevador?' sem motivo e 'pai idoso que sobe escada numa boa' são fracas; 'escada não é problema' é falso"
+  },
+  {
+   "id": "SQ-T03",
+   "condicao": "Investidores (compra para renda ou revenda, não para morar) com orçamento de R$ 400.000 ou mais (`orcamento` >= 400000).",
+   "linhas_verdadeiras": [
+    "OB-095",
+    "OB-096",
+    "OB-101",
+    "OB-159"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: composta com parte numérica — 'quanto renderia, só pra saber, vai morar' é falso; 'pro filho morar e depois talvez alugar' é fraco"
+  },
+  {
+   "id": "SQ-T04",
+   "condicao": "Clientes que acharam o valor alto (preço, aluguel, condomínio ou parcela).",
+   "linhas_verdadeiras": [
+    "OB-014",
+    "OB-082",
+    "OB-105",
+    "OB-110",
+    "OB-112",
+    "OB-114",
+    "OB-116",
+    "OB-118",
+    "OB-119",
+    "OB-156",
+    "OB-164",
+    "OB-167",
+    "OB-184",
+    "OB-185",
+    "OB-186"
+   ],
+   "linhas_indecidiveis": [
+    "OB-115"
+   ],
+   "nota": "fácil; 'achou barato' e 'preço dentro do esperado' são falsos; 'aceita negociação?' é fraco"
+  },
+  {
+   "id": "SQ-T05",
+   "condicao": "Clientes preocupados com barulho ou com a tranquilidade da vizinhança.",
+   "linhas_verdadeiras": [
+    "OB-050",
+    "OB-094",
+    "OB-120",
+    "OB-121",
+    "OB-123",
+    "OB-126",
+    "OB-163"
+   ],
+   "linhas_indecidiveis": [
+    "OB-124",
+    "OB-125",
+    "OB-172"
+   ],
+   "nota": "difícil: inferência fraca — 'frente ou fundos?', 'músico que toca bateria' e 'vizinhança tranquila à noite?' são fracas; 'barulho não incomoda' é falso"
+  },
+  {
+   "id": "SQ-T06",
+   "condicao": "A decisão de fechar depende de outra pessoa (cônjuge, pais, sócio).",
+   "linhas_verdadeiras": [
+    "OB-015",
+    "OB-055",
+    "OB-127",
+    "OB-128",
+    "OB-131",
+    "OB-154",
+    "OB-164"
+   ],
+   "linhas_indecidiveis": [
+    "OB-130",
+    "OB-132"
+   ],
+   "nota": "difícil: inferência fraca — 'mostrar as fotos pro namorado' e 'sogra tem opinião' são fracas; 'decide sozinha' é falso"
+  },
+  {
+   "id": "SQ-T07",
+   "condicao": "Clientes que querem o imóvel perto do trabalho ou da escola (trajeto diário).",
+   "linhas_verdadeiras": [
+    "OB-134",
+    "OB-135",
+    "OB-138",
+    "OB-139",
+    "OB-165",
+    "OB-168"
+   ],
+   "linhas_indecidiveis": [
+    "OB-137"
+   ],
+   "nota": "fácil; 'distância até o centro?' é fraco; 'localização não importa' e 'aposentado' são falsos"
+  },
+  {
+   "id": "SQ-T08",
+   "condicao": "Clientes que declararam NÃO ter animal de estimação.",
+   "linhas_verdadeiras": [
+    "OB-047",
+    "OB-050",
+    "OB-054",
+    "OB-173"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: negação — só a negação explícita; linhas com gato/cachorro são falsas; silêncio é falso"
+  },
+  {
+   "id": "SQ-T09",
+   "condicao": "Clientes que vão mudar de cidade E têm urgência para fechar.",
+   "linhas_verdadeiras": [
+    "OB-007",
+    "OB-153",
+    "OB-154",
+    "OB-178"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: composta (E) — os dois fatos afirmados; um afirmado e o outro fraco → indecidível; um negado → falso"
+  },
+  {
+   "id": "SQ-T10",
+   "condicao": "Clientes de locação (`finalidade` = locacao) com urgência para fechar.",
+   "linhas_verdadeiras": [
+    "OB-007",
+    "OB-024",
+    "OB-030",
+    "OB-154",
+    "OB-158",
+    "OB-178",
+    "OB-179",
+    "OB-180"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "fácil com filtro de campo; 'quatro mensagens no mesmo dia' é fraco"
+  },
+  {
+   "id": "SQ-T11",
+   "condicao": "Imóveis descritos como recém-reformados em observações com visita feita (`visitas` >= 1).",
+   "linhas_verdadeiras": [
+    "OB-012",
+    "OB-013",
+    "OB-014",
+    "OB-015",
+    "OB-016",
+    "OB-017",
+    "OB-018",
+    "OB-156",
+    "OB-159"
+   ],
+   "linhas_indecidiveis": [
+    "OB-022",
+    "OB-023"
+   ],
+   "nota": "difícil: negação com parte numérica — 'anúncio dizia reformado, piso de 30 anos' é falso"
+  },
+  {
+   "id": "SQ-T12",
+   "condicao": "Clientes que acharam caro mas seguem procurando (a observação diz que continuam).",
+   "linhas_verdadeiras": [
+    "OB-105",
+    "OB-114",
+    "OB-116",
+    "OB-156"
+   ],
+   "linhas_indecidiveis": [
+    "OB-014",
+    "OB-082",
+    "OB-112",
+    "OB-115",
+    "OB-118",
+    "OB-119",
+    "OB-164"
+   ],
+   "nota": "difícil: composta com negação — caro afirmado E continuação explícita; caro + desistiu → falso; caro sem dizer se continua → indecidível"
+  },
+  {
+   "id": "SQ-T13",
+   "condicao": "Clientes avaliando outra imobiliária ou corretor, em observações de setembro de 2026 (`data` em 2026-09).",
+   "linhas_verdadeiras": [
+    "OB-029",
+    "OB-071",
+    "OB-081",
+    "OB-085"
+   ],
+   "linhas_indecidiveis": [
+    "OB-084"
+   ],
+   "nota": "fácil com filtro de data; 'largou a outra imobiliária' e 'só com a gente' são falsos; 'um conhecido vende direto' é fraco"
+  },
+  {
+   "id": "SQ-T14",
+   "condicao": "Clientes que precisam de um cômodo extra: trabalham de casa OU têm filhos pequenos/bebê a caminho.",
+   "linhas_verdadeiras": [
+    "OB-011",
+    "OB-028",
+    "OB-049",
+    "OB-055",
+    "OB-056",
+    "OB-058",
+    "OB-061",
+    "OB-063",
+    "OB-064",
+    "OB-067",
+    "OB-069",
+    "OB-094",
+    "OB-123",
+    "OB-135",
+    "OB-157",
+    "OB-160",
+    "OB-168"
+   ],
+   "linhas_indecidiveis": [
+    "OB-059",
+    "OB-062",
+    "OB-066",
+    "OB-068"
+   ],
+   "nota": "difícil: composta (OU) — basta um lado; 'quarto sobrando sem dizer pra quê' sozinho é indecidível"
+  },
+  {
+   "id": "SQ-T15",
+   "condicao": "Clientes que elogiaram o nosso atendimento.",
+   "linhas_verdadeiras": [
+    "OB-073",
+    "OB-075",
+    "OB-077",
+    "OB-162",
+    "OB-169"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: negação — reclamações sobre o atendimento contêm 'atendimento' e são falsas; 'prefere nosso portfólio' não é elogio ao atendimento (falso)"
+  },
+  {
+   "id": "SQ-T16",
+   "condicao": "Clientes que dependem de financiamento e já fizeram 2 ou mais visitas (`visitas` >= 2).",
+   "linhas_verdadeiras": [
+    "OB-034",
+    "OB-038",
+    "OB-169",
+    "OB-175",
+    "OB-176",
+    "OB-177"
+   ],
+   "linhas_indecidiveis": [
+    "OB-042"
+   ],
+   "nota": "difícil: composta com parte numérica"
+  },
+  {
+   "id": "SQ-T17",
+   "condicao": "Clientes que desistiram da busca por motivo ligado ao preço (acharam caro E desistiram).",
+   "linhas_verdadeiras": [
+    "OB-110",
+    "OB-167",
+    "OB-184",
+    "OB-185",
+    "OB-186"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: composta (E) — caro e desistência afirmados; 'achou caro e continua' é falso"
+  },
+  {
+   "id": "SQ-T18",
+   "condicao": "Clientes de locação (`finalidade` = locacao) que têm animal de estimação.",
+   "linhas_verdadeiras": [
+    "OB-005",
+    "OB-045",
+    "OB-053",
+    "OB-157",
+    "OB-161",
+    "OB-182",
+    "OB-183"
+   ],
+   "linhas_indecidiveis": [
+    "OB-048"
+   ],
+   "nota": "fácil com filtro de campo; 'não tem pet' é falso"
+  }
+ ]
+}

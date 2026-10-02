@@ -1,0 +1,216 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CR-R001",
+   "data_referencia": "2026-10-05",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Rafa",
+     "texto": "Caio, consegue subir a correção do login até quarta?"
+    },
+    {
+     "id": "m2",
+     "autor": "Caio",
+     "texto": "Consigo, subo até quarta."
+    },
+    {
+     "id": "m3",
+     "autor": "Dani",
+     "texto": "Posso revisar o PR se quiserem."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "subo até quarta",
+     "responsavel_candidato": "Caio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Posso revisar o PR se quiserem.",
+     "responsavel_candidato": "Dani"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "proposta"
+   },
+   "prazo": {
+    "k1": "2026-10-07",
+    "k2": null
+   },
+   "nota": "fácil: aceite explícito e oferta solta"
+  },
+  {
+   "id": "CR-R002",
+   "data_referencia": "2026-10-06",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Hugo",
+     "texto": "Fico de pedir o orçamento da gráfica hoje."
+    },
+    {
+     "id": "m2",
+     "autor": "Lívia",
+     "texto": "E as artes, você manda amanhã?"
+    },
+    {
+     "id": "m3",
+     "autor": "Hugo",
+     "texto": "Mando sim, amanhã de manhã."
+    },
+    {
+     "id": "m4",
+     "autor": "Lívia",
+     "texto": "Ótimo. O orçamento da gráfica não precisa mais, o cliente desistiu do impresso."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Mando sim, amanhã de manhã.",
+     "responsavel_candidato": "Hugo"
+    },
+    {
+     "id": "k2",
+     "trecho": "Fico de pedir o orçamento da gráfica hoje.",
+     "responsavel_candidato": "Hugo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-10-07",
+    "k2": null
+   },
+   "nota": "fácil: cancelamento explícito"
+  },
+  {
+   "id": "CR-R003",
+   "data_referencia": "2026-10-08",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Sônia",
+     "texto": "Vítor, pode entregar a planilha de custos na sexta?"
+    },
+    {
+     "id": "m2",
+     "autor": "Aline",
+     "texto": "Eu envio o contrato revisado na segunda."
+    },
+    {
+     "id": "m3",
+     "autor": "Sônia",
+     "texto": "Obrigada, Aline."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu envio o contrato revisado na segunda.",
+     "responsavel_candidato": "Aline"
+    },
+    {
+     "id": "k2",
+     "trecho": "pode entregar a planilha de custos na sexta?",
+     "responsavel_candidato": "Vítor"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "pedido_sem_aceite"
+   },
+   "prazo": {
+    "k1": "2026-10-12",
+    "k2": "2026-10-09"
+   },
+   "nota": "fácil: pedido sem resposta e compromisso direto"
+  },
+  {
+   "id": "CR-R004",
+   "data_referencia": "2026-10-14",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Duda",
+     "texto": "Segue o que o cliente escreveu no chamado de setembro: \"vocês prometeram o reembolso para o dia 20\"."
+    },
+    {
+     "id": "m2",
+     "autor": "Fábio",
+     "texto": "Vi. Eu ligo para ele hoje e explico."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "vocês prometeram o reembolso para o dia 20",
+     "responsavel_candidato": "Fábio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Eu ligo para ele hoje e explico.",
+     "responsavel_candidato": "Fábio"
+    }
+   ],
+   "vereditos": {
+    "k1": "citacao_antiga",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-14"
+   },
+   "nota": "fácil: citação entre aspas"
+  },
+  {
+   "id": "CR-R005",
+   "data_referencia": "2026-10-20",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Guto",
+     "texto": "Helô, dá pra documentar a API nova?"
+    },
+    {
+     "id": "m2",
+     "autor": "Helô",
+     "texto": "Pode deixar, faço isso."
+    },
+    {
+     "id": "m3",
+     "autor": "Ivo",
+     "texto": "Eu poderia ajudar com os exemplos, se sobrar tempo."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu poderia ajudar com os exemplos, se sobrar tempo.",
+     "responsavel_candidato": "Ivo"
+    },
+    {
+     "id": "k2",
+     "trecho": "Pode deixar, faço isso.",
+     "responsavel_candidato": "Helô"
+    }
+   ],
+   "vereditos": {
+    "k1": "proposta",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": null
+   },
+   "nota": "fácil: compromisso sem data"
+  }
+ ]
+}

@@ -27,7 +27,7 @@ Abrir a pasta como projeto basta: o Codex lê o `AGENTS.md`; o Claude lê o `CLA
 | `avaliar/` | pt × en sintético, texto real pt-BR (HateBR, B2W) |
 | `prova/` | prova de aceite do pacote (fora da cópia fria) |
 | `fontes/` | `catalogo/` (URLs, datas, hashes), `skill-oficial/` (MIT); `docs/` e `videos/` = terceiros, fora do Git |
-| `ferramentas/` | `validar.py`, `copia_fria.py`, `normalize_youtube_vtt.py` |
+| `ferramentas/` | `validar.py`, `copia_fria.py`, `normalize_youtube_vtt.py`, `reavaliar_versao.py` |
 | `.local/` | cache, medições brutas, dados locais e `antigos/` (originais superados) — fora do Git |
 
 ## Como usar as skills
@@ -46,6 +46,9 @@ presença dos arquivos não prova instalação, descoberta automática nem memó
   `.venv/`); entrada não classificada, nome de credencial ou link interrompe. Confere na cópia que a chave não
   aparece e que o validador passa; o manifesto lista cada arquivo com hash. Serve para testar um agente
   "frio"; protocolo e limites em [prova-fria](conhecimento/avaliar/prova-fria.md).
+- `ferramentas/reavaliar_versao.py` — roda o teste congelado de cada exemplo ao vivo contra um modelo dado
+  (`--modelo jev-1.14.0`; `--so-estimar` só conta custo), grava em `exemplos/<ex>/cache-<modelo>/` sem tocar no
+  exemplo e escreve `conhecimento/evidencias/reavaliacao-<modelo>-<data>.md` (precisa do `.venv`).
 - `ferramentas/normalize_youtube_vtt.py` — normaliza legendas progressivas do YouTube (biblioteca padrão; não
   baixa vídeo nem corrige a transcrição): `python ferramentas/normalize_youtube_vtt.py .local/entrada.vtt
   .local/transcricao.txt`; `--keep-repeats` conserva cues repetidos em legendas convencionais.

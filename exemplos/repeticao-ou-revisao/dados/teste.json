@@ -1,0 +1,1214 @@
+{
+  "versao": "2026-10-01",
+  "autor": "fable",
+  "casos": [
+    {
+      "id": "RR-T001",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda quinta às 10h no apê do Jardim Aurora",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Quinta não dá mais, pode ser sexta às 10h?",
+          "minutos_desde_a_primeira": 90
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Mudança de dia explícita."
+    },
+    {
+      "id": "RR-T002",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "corretor",
+          "texto": "Confirma a chave do cód. 1190 pra visita de sexta 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "corretor",
+          "texto": "Confirma a chave do cód. 1190 pra visita de sexta 10h",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "Envio duplicado do corretor."
+    },
+    {
+      "id": "RR-T003",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda pra mim a visita na casa do Jardim Europa domingo 9h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Domingo 9h não, domingo 16h",
+          "minutos_desde_a_primeira": 7
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Mudança de hora explícita."
+    },
+    {
+      "id": "RR-T004",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode ser dia 10 às 15h a visita no studio do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Sábado dia 10, 15h, studio do Centro, pode ser?",
+          "minutos_desde_a_primeira": 5
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: paráfrase — mesma data dita de outro jeito ('dia 10' → 'sábado dia 10'); nada muda."
+    },
+    {
+      "id": "RR-T005",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Oi, meu marido falou com vocês hoje cedo pra marcar a visita no sobrado do cód. 3105, sábado 15h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "É a mesma visita que ele pediu, só reforçando: sábado 15h no sobrado",
+          "minutos_desde_a_primeira": 10
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: cópia de terceiro — ela repete o pedido do marido e diz que é o mesmo."
+    },
+    {
+      "id": "RR-T006",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Boa tarde! Quero marcar visita no apartamento do Jardim Aurora, sexta às 17h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Boa tarde! Quero marcar visita no apartamento do Jardim Aurora, sexta às 17h",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "Reenvio idêntico."
+    },
+    {
+      "id": "RR-T007",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Minha visita é amanhã 10h no studio do Centro, né?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Não vou mudar nada não, tá? Amanhã 10h, studio do Centro, só confirma pra mim",
+          "minutos_desde_a_primeira": 9
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: negativa que não revisa — 'não vou mudar nada' reafirma."
+    },
+    {
+      "id": "RR-T008",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Queria agendar duas visitas: a primeira no cód. 2041 sábado 9h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "A segunda no cód. 2055 sábado 10h30",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Duas visitas anunciadas."
+    },
+    {
+      "id": "RR-T009",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Visita sábado 9h na casa do cód. 3105",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Consegue passar pra 11h? 9h ficou apertado",
+          "minutos_desde_a_primeira": 30
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Mudança de hora explícita."
+    },
+    {
+      "id": "RR-T010",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero visitar o apê da Rua das Oliveiras sexta 17h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Aproveita e me diz se o condomínio inclui água",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Visita + pergunta nova."
+    },
+    {
+      "id": "RR-T011",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero visitar o apê do Jardim Aurora sábado 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "E também o studio do Centro, pode ser sábado 11h30",
+          "minutos_desde_a_primeira": 3
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: 'e também' que soma — segundo imóvel, segundo horário."
+    },
+    {
+      "id": "RR-T012",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Tem visita disponível sábado de manhã no apê da Rua das Acácias?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Tem visita disponível sábado de manhã no apê da Rua das Oliveiras?",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: sem conectivo — ruas de nome parecido: corrigiu a rua ou quer os dois?"
+    },
+    {
+      "id": "RR-T013",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "corretor",
+          "texto": "Agenda visita do casal Paulo e Bianca no cód. 1187, sexta 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "corretor",
+          "texto": "E reserva a chave do cód. 1190 pro mesmo horário, vou mostrar os dois",
+          "minutos_desde_a_primeira": 3
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Corretor soma um segundo imóvel à mesma saída."
+    },
+    {
+      "id": "RR-T014",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda a visita sábado 10h na casa do Jardim Europa e me manda a planta dela",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "A visita deixa pra domingo 10h",
+          "minutos_desde_a_primeira": 25
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: revisão parcial — corrige só a visita; o pedido da planta em m1 continua de pé (limite do esquema: uma relação por grupo)."
+    },
+    {
+      "id": "RR-T015",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero ver o sobrado da Vila Nova amanhã 16h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Cancela",
+          "minutos_desde_a_primeira": 20
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Cancelamento curto com um único pedido anterior (referente claro)."
+    },
+    {
+      "id": "RR-T016",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "agenda visita sexta 11h na casa do cód. 3105",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "agenda visita sexta 11h na casa do cód. 3105",
+          "minutos_desde_a_primeira": 1
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "ops, é sábado 11h, sexta não",
+          "minutos_desde_a_primeira": 3
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m3",
+      "nota": "difícil: grupo de 3 — repetição seguida de revisão."
+    },
+    {
+      "id": "RR-T017",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode marcar terça às 15h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "*quarta",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: mudança de dia — asterisco que muda o conteúdo (terça → quarta)."
+    },
+    {
+      "id": "RR-T018",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Visita sexta 18h no studio do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Sexta também não vai dar, vê pra mim segunda 18h",
+          "minutos_desde_a_primeira": 130
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: 'também' que não soma — troca de dia."
+    },
+    {
+      "id": "RR-T019",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode marcar quinta 17h na cobertura da Rua Sete",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Muda pra sexta 17h",
+          "minutos_desde_a_primeira": 20
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "Não, pera, quinta mesmo, esquece a sexta",
+          "minutos_desde_a_primeira": 22
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m3",
+      "nota": "difícil: grupo de 3 — revisão desfeita; a última restaura a quinta."
+    },
+    {
+      "id": "RR-T020",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero agendar visita no apê do Centro, sábado 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Só reforçando o que pedi: apê do Centro, sábado 10h. Não é pedido novo, tá?",
+          "minutos_desde_a_primeira": 240
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "O próprio cliente diz que é o mesmo pedido."
+    },
+    {
+      "id": "RR-T021",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "corretor",
+          "texto": "Cancela a visita da Dona Marina de amanhã 9h no cód. 1187",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "corretor",
+          "texto": "Não cancela não! Ela confirmou agora, mantém amanhã 9h",
+          "minutos_desde_a_primeira": 6
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: negativa da negativa — o cancelamento foi revogado; vale manter."
+    },
+    {
+      "id": "RR-T022",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda visita sábado 10h na casa do cód. 3312",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Vou querer voltar lá com o engenheiro na terça às 8h, já deixa agendado também",
+          "minutos_desde_a_primeira": 8
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: segundo pedido intencional parecido — mesmo imóvel, segunda visita anunciada ('voltar', 'também')."
+    },
+    {
+      "id": "RR-T023",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode marcar terça",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Não, terça não; quarta",
+          "minutos_desde_a_primeira": 4
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Negativa com troca explícita (o caso do briefing)."
+    },
+    {
+      "id": "RR-T024",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode agendar sábado 10h no apê da Vila Nova",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Se tiver horário à tarde eu prefiro, senão mantém 10h",
+          "minutos_desde_a_primeira": 12
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: mudança de hora condicional — a última traz a regra inteira (tarde se houver; senão 10h)."
+    },
+    {
+      "id": "RR-T025",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda visita terça 10h no studio do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Gostei muito do studio! Quero agendar outra visita, agora com meu pai, sábado 10h",
+          "minutos_desde_a_primeira": 7200
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: segundo pedido intencional parecido — cinco dias depois, 'outra visita'; a primeira já aconteceu."
+    },
+    {
+      "id": "RR-T026",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda a visita sexta 15h no cód. 2041, vou sozinho",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Corrigindo: vamos em três, eu, minha esposa e meu sogro",
+          "minutos_desde_a_primeira": 10
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: mudança de atributo que não é dia nem hora — número de visitantes corrigido."
+    },
+    {
+      "id": "RR-T027",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca domingo 14h no studio do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Minha filha adoeceu, não vou conseguir ir. Depois eu remarco",
+          "minutos_desde_a_primeira": 400
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: negativa — cancelamento implícito, sem nova data."
+    },
+    {
+      "id": "RR-T028",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca visita sexta 9h no cód. 2041 pra mim",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Marca outra no mesmo imóvel sábado 9h pra minha irmã ver",
+          "minutos_desde_a_primeira": 4
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: segundo pedido intencional parecido — 'outra', para outra pessoa, outro dia."
+    },
+    {
+      "id": "RR-T029",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda sábado 10h no apê do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "E domingo 10h na casa do Jardim Europa",
+          "minutos_desde_a_primeira": 2
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "Cancela",
+          "minutos_desde_a_primeira": 30
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: negativa sem referente — 'cancela' depois de dois pedidos: qual? os dois?"
+    },
+    {
+      "id": "RR-T030",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Me manda as fotos do sobrado da Vila Nova",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "E a planta",
+          "minutos_desde_a_primeira": 1
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "E o valor do condomínio",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Três pedidos que se somam."
+    },
+    {
+      "id": "RR-T031",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca a visita no apê do Jardim Aurora terça 15h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Quarta 15h",
+          "minutos_desde_a_primeira": 18
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: sem conectivo — troca de dia ou segunda visita?"
+    },
+    {
+      "id": "RR-T032",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca visita sábado 10h no cód. 2077",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Minha sogra vai junto comigo nessa visita, pode anotar",
+          "minutos_desde_a_primeira": 5
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: complemento — acrescenta uma acompanhante à mesma visita; nada é contradito (compare: 'vou sozinho' → 'vamos em três' é revisão)."
+    },
+    {
+      "id": "RR-T033",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Então fica quarta mesmo, obrigado",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Consegue terça 15h pra visita na cobertura?",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: mensagem atrasada — a segunda a chegar parece ser a mais antiga; confirmar antes de agir."
+    },
+    {
+      "id": "RR-T034",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Posso visitar terça de manhã o cód. 3105",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Quarta de manhã também serve, o que tiver primeiro",
+          "minutos_desde_a_primeira": 6
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: 'também' que amplia — acrescenta uma alternativa sem retirar a terça."
+    },
+    {
+      "id": "RR-T035",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "corretor",
+          "texto": "Bloqueia a agenda do cód. 1187 terça 14h pra visita da cliente Helena",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "corretor",
+          "texto": "Bloqueia a agenda do cod 1187 terca 14h pra visita da cliente Helena",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: retry com erro de digitação — mesma ordem sem acentos; mesmo código."
+    },
+    {
+      "id": "RR-T036",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero agendar visita domingo 16h no apê da Vila Nova",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Bom dia, tudo bem? Quero agendar visita domingo 16h no apê da Vila Nova, por favor",
+          "minutos_desde_a_primeira": 600
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: mensagem atrasada — mesmo pedido com saudação, dez horas depois; sem 'outra', é cobrança do mesmo."
+    },
+    {
+      "id": "RR-T037",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca visita sexta 9h no cód. 2041",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Marca visita sexta 15h no cód. 2041",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: sem conectivo — mesmo imóvel, mesmo dia, dois horários: troca de hora ou duas visitas?"
+    },
+    {
+      "id": "RR-T038",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero ver o apê do cód. 2077 quarta 18h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Quero ver o apê do cód. 2077 quarta 18h",
+          "minutos_desde_a_primeira": 1
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "E tem como mandar o vídeo dele antes?",
+          "minutos_desde_a_primeira": 3
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: grupo de 3 — repetição seguida de pedido novo."
+    },
+    {
+      "id": "RR-T039",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero remarcar minha visita de quinta pra sexta 16h, apê do Jardim Aurora",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Ah, e aceita proposta com carta de crédito?",
+          "minutos_desde_a_primeira": 5
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: m1 já é uma remarcação — a relação é entre as mensagens do grupo: a segunda soma uma pergunta."
+    },
+    {
+      "id": "RR-T040",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Confirma minha visita sábado 11h no studio do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Meu irmão também quer ver esse studio, marca pra ele segunda 10h",
+          "minutos_desde_a_primeira": 9
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: terceiro com pedido novo — outra pessoa, outro dia."
+    },
+    {
+      "id": "RR-T041",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca a visita de sábado 9h na casa do cód. 3312",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Não esquece hein, sábado 9h, casa do 3312",
+          "minutos_desde_a_primeira": 300
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: negativa que não revisa — 'não esquece' é reforço, horas depois."
+    },
+    {
+      "id": "RR-T042",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Marca sábado 10h a visita no apê do Jardim Aurora",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Sábado 14h fica melhor",
+          "minutos_desde_a_primeira": 15
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "Desculpa a confusão, domingo 14h então",
+          "minutos_desde_a_primeira": 40
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m3",
+      "nota": "difícil: grupo de 3 — cadeia de revisões; vale a última."
+    },
+    {
+      "id": "RR-T043",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero agendar visita no sobrado da Vila Nova domingo 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Me manda o endereço certinho por favor",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Visita + pedido de endereço."
+    },
+    {
+      "id": "RR-T044",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero visitar a cobertura da Rua Sete na quinta",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Depois das 17h, que eu saio do trabalho",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: complemento — traz o horário que faltava; vale a soma."
+    },
+    {
+      "id": "RR-T045",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "vcs conseguem me encaixar pra ver o ap do jd europa na quarta depois das 18h?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Quarta à noite, depois das 18h, dá pra eu visitar o apartamento do Jardim Europa?",
+          "minutos_desde_a_primeira": 14
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: paráfrase — abreviado e por extenso; mesmos atributos."
+    },
+    {
+      "id": "RR-T046",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero visitar a casa do Jardim Europa sábado 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Pensando melhor, prefiro ver o apê da Rua das Acácias nesse horário em vez da casa",
+          "minutos_desde_a_primeira": 50
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: mudança de imóvel — 'em vez de' substitui; não é segunda visita."
+    },
+    {
+      "id": "RR-T047",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Preciso remarcar minha visita do apê da Rua das Acácias pra segunda às 18h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Preciso remarcar minha visita do apê da Rua das Acácias pra segunda às 18h",
+          "minutos_desde_a_primeira": 180
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: mensagem atrasada — cópia idêntica 3 horas depois; o pedido (uma remarcação) é o mesmo, executa uma vez."
+    },
+    {
+      "id": "RR-T048",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero visitar o apê do cód. 2077 terça 9h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Passa pra quarta 9h, e aproveita e me manda o valor do IPTU",
+          "minutos_desde_a_primeira": 70
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: revisão + pedido novo na mesma mensagem — a última carrega a troca e a pergunta nova."
+    },
+    {
+      "id": "RR-T049",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "qro visitar a casa da vila nova domingo as 10",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "quero visitar a casa da Vila Nova domingo às 10h",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: retry com erro de digitação — o segundo envio só arruma a escrita."
+    },
+    {
+      "id": "RR-T050",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode agendar a vizita pra quinta 9h no cód. 2077?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "*visita",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: asterisco que só corrige grafia — nenhum atributo muda."
+    },
+    {
+      "id": "RR-T051",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Visita dia 12 às 10h no apê da Vila Nova",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Visita dia 21 às 10h no apê da Vila Nova",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: retry com erro de digitação — dígitos trocados (12 × 21): engano de digitação (qual vale?), troca de data ou duas visitas; o texto não decide."
+    },
+    {
+      "id": "RR-T052",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Queria ver a cobertura da Rua Sete no sábado às 11h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Minha mãe mandou mensagem pra vocês pedindo essa mesma visita, pode considerar uma só",
+          "minutos_desde_a_primeira": 22
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "difícil: cópia de terceiro — o próprio cliente avisa que o pedido da mãe é duplicata."
+    },
+    {
+      "id": "RR-T053",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Agenda pra mim sábado 15h no apê da Rua das Acácias",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Meu nome é Cristina, esqueci de falar",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "difícil: complemento — acrescenta o nome; nada é substituído."
+    },
+    {
+      "id": "RR-T054",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "corretor",
+          "texto": "Marca visita do cliente Rafael no cód. 3312 quinta 16h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "corretor",
+          "texto": "Corrigindo o código: é 3321, não 3312",
+          "minutos_desde_a_primeira": 2
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "difícil: mudança de imóvel — código parecido lembra retry com erro de digitação, mas troca o imóvel."
+    },
+    {
+      "id": "RR-T055",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Vamos eu e minha esposa visitar o cód. 3105 sábado 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Minha esposa pediu domingo",
+          "minutos_desde_a_primeira": 20
+        }
+      ],
+      "relacao": "unclear",
+      "acao_vigente": null,
+      "nota": "difícil: terceiro ambíguo — a esposa quer trocar a visita para domingo ou pediu outra por conta própria?"
+    },
+    {
+      "id": "RR-T056",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero cancelar a visita de amanhã no apê do Centro",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Quero cancelar a visita de amanhã no apê do Centro",
+          "minutos_desde_a_primeira": 2
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "Cancelar visita de amanhã, apê do Centro",
+          "minutos_desde_a_primeira": 4
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "Pedido de cancelamento repetido três vezes: o pedido repetido é o cancelamento."
+    },
+    {
+      "id": "RR-T057",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Tem como me enviar o vídeo do apê do cód. 2041?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "oi?",
+          "minutos_desde_a_primeira": 35
+        },
+        {
+          "id": "m3",
+          "de": "cliente",
+          "texto": "consegue mandar o vídeo do 2041?",
+          "minutos_desde_a_primeira": 36
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "Cobrança do mesmo pedido."
+    },
+    {
+      "id": "RR-T058",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Qual o valor do IPTU da casa do Jardim Europa?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Ela tem quantas vagas?",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Duas perguntas diferentes."
+    }
+  ]
+}

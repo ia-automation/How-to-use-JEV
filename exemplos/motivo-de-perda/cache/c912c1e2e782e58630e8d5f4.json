@@ -1,0 +1,29 @@
+{
+ "medicao": {
+  "ms": 258,
+  "input_tokens": 1036,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "falta_item",
+    "confidence": 0.97,
+    "probabilities": {
+     "estado_conservacao": 0.0,
+     "tamanho_planta": 0.0,
+     "falta_item": 0.97,
+     "diferente_do_anuncio": 0.0,
+     "only_group": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1036,
+   "output_tokens": 70
+  }
+ }
+}

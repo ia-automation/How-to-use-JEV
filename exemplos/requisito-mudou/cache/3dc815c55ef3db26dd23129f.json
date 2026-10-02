@@ -1,0 +1,156 @@
+{
+ "medicao": {
+  "ms": 456,
+  "input_tokens": 14417,
+  "modelo": "jev-1.13.0",
+  "perguntas": 22
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "q2_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "0": 0.0,
+     "2": 0.0,
+     "none": 1.0,
+     "3": 0.0,
+     "4": 0.0
+    }
+   },
+   "q4_changed": {
+    "type": "noul",
+    "noul": 0.93
+   },
+   "q5_open": {
+    "type": "noul",
+    "noul": 0.19
+   },
+   "q1_open": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "q2_open": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "q3_status": {
+    "type": "choice",
+    "choice": "replaced",
+    "confidence": 0.84,
+    "probabilities": {
+     "denied": 0.01,
+     "kept": 0.11,
+     "replaced": 0.88,
+     "uncertain": 0.0
+    }
+   },
+   "q3_changed": {
+    "type": "noul",
+    "noul": 0.82
+   },
+   "q5_status": {
+    "type": "choice",
+    "choice": "replaced",
+    "confidence": 0.34,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 0.49,
+     "replaced": 0.51,
+     "uncertain": 0.0
+    }
+   },
+   "q1_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 1.0,
+     "replaced": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q2_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 1.0,
+     "replaced": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q2_changed": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "q2_dropped": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "q3_dropped": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "q3_open": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "q4_dropped": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "q4_open": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "q1_changed": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "q1_dropped": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "q4_status": {
+    "type": "choice",
+    "choice": "replaced",
+    "confidence": 0.99,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 0.0,
+     "replaced": 1.0,
+     "uncertain": 0.0
+    }
+   },
+   "q5_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 0.76,
+    "probabilities": {
+     "2": 0.01,
+     "5": 0.0,
+     "none": 0.81,
+     "1": 0.0,
+     "4": 0.18
+    }
+   },
+   "q5_changed": {
+    "type": "noul",
+    "noul": 0.41
+   },
+   "q5_dropped": {
+    "type": "noul",
+    "noul": 0.08
+   }
+  },
+  "usage": {
+   "input_tokens": 14417,
+   "output_tokens": 646
+  }
+ }
+}

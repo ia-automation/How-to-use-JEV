@@ -1,0 +1,176 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "SQ-A01",
+   "condicao": "Clientes que mencionaram que vão mudar de cidade (vêm de fora ou vão embora).",
+   "linhas_verdadeiras": [
+    "OB-001",
+    "OB-002",
+    "OB-003",
+    "OB-004",
+    "OB-005",
+    "OB-006",
+    "OB-007",
+    "OB-152",
+    "OB-153",
+    "OB-154",
+    "OB-160",
+    "OB-170",
+    "OB-178"
+   ],
+   "linhas_indecidiveis": [
+    "OB-008",
+    "OB-009"
+   ],
+   "nota": "difícil: inferência fraca — linhas com pista indireta (filha vai prestar vestibular fora, pergunta sobre ônibus pra rodoviária) ficam indecidíveis; 'não vai mudar de cidade' é falso"
+  },
+  {
+   "id": "SQ-A02",
+   "condicao": "Observações em que o corretor descreve o imóvel visitado ou oferecido como recém-reformado.",
+   "linhas_verdadeiras": [
+    "OB-012",
+    "OB-013",
+    "OB-014",
+    "OB-015",
+    "OB-016",
+    "OB-017",
+    "OB-018",
+    "OB-156",
+    "OB-159"
+   ],
+   "linhas_indecidiveis": [
+    "OB-022",
+    "OB-023"
+   ],
+   "nota": "difícil: negação — 'precisa de reforma', 'oportunidade para reforma' e 'anúncio dizia reformado mas não é' contêm a palavra e são falsas; pintura de um quarto é pista fraca"
+  },
+  {
+   "id": "SQ-A03",
+   "condicao": "Clientes que dependem de financiamento bancário e têm orçamento de até R$ 500.000 (`orcamento` <= 500000, não nulo).",
+   "linhas_verdadeiras": [
+    "OB-025",
+    "OB-034",
+    "OB-035",
+    "OB-039",
+    "OB-175",
+    "OB-177"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: composta (E) com parte numérica — a parte do orçamento é do código; 'aceita financiamento?' sem decisão é fraca"
+  },
+  {
+   "id": "SQ-A04",
+   "condicao": "Clientes que descartaram financiamento: vão pagar com recurso próprio (à vista, herança, venda de bem).",
+   "linhas_verdadeiras": [
+    "OB-002",
+    "OB-036",
+    "OB-037",
+    "OB-040",
+    "OB-043",
+    "OB-152",
+    "OB-159"
+   ],
+   "linhas_indecidiveis": [],
+   "nota": "difícil: negação — só vale a negação explícita; linha que fala em financiar é falsa; silêncio é falso (a condição é sobre o que a observação diz)"
+  },
+  {
+   "id": "SQ-A05",
+   "condicao": "Clientes com animal de estimação, em observações registradas pelo WhatsApp (`canal` = whatsapp).",
+   "linhas_verdadeiras": [
+    "OB-045",
+    "OB-046",
+    "OB-049",
+    "OB-051",
+    "OB-053",
+    "OB-157"
+   ],
+   "linhas_indecidiveis": [
+    "OB-048",
+    "OB-052"
+   ],
+   "nota": "fácil (com filtro de canal pelo código); 'não tem pet' e 'alérgico' são falsas; pergunta sobre regra pra animais é fraca"
+  },
+  {
+   "id": "SQ-A06",
+   "condicao": "Clientes com urgência para fechar OU que estão avaliando propostas de outra imobiliária/corretor.",
+   "linhas_verdadeiras": [
+    "OB-007",
+    "OB-024",
+    "OB-025",
+    "OB-028",
+    "OB-029",
+    "OB-030",
+    "OB-071",
+    "OB-080",
+    "OB-081",
+    "OB-082",
+    "OB-085",
+    "OB-107",
+    "OB-153",
+    "OB-154",
+    "OB-158",
+    "OB-162",
+    "OB-178",
+    "OB-179",
+    "OB-180"
+   ],
+   "linhas_indecidiveis": [
+    "OB-031",
+    "OB-032",
+    "OB-084"
+   ],
+   "nota": "difícil: composta (OU) — basta um lado afirmado; quando nenhum lado é afirmado e um é fraco, indecidível"
+  },
+  {
+   "id": "SQ-A07",
+   "condicao": "Observações de locação (`finalidade` = locacao) em que o cliente reclamou do nosso atendimento.",
+   "linhas_verdadeiras": [
+    "OB-071",
+    "OB-074",
+    "OB-076",
+    "OB-155"
+   ],
+   "linhas_indecidiveis": [
+    "OB-078"
+   ],
+   "nota": "difícil: composta com filtro de campo — elogio ao atendimento é falso; 'perguntou por que demorou' é fraco"
+  },
+  {
+   "id": "SQ-A08",
+   "condicao": "Clientes que trabalham de casa (home office, remoto, consultório virtual).",
+   "linhas_verdadeiras": [
+    "OB-011",
+    "OB-063",
+    "OB-064",
+    "OB-067",
+    "OB-069",
+    "OB-157",
+    "OB-160"
+   ],
+   "linhas_indecidiveis": [
+    "OB-066",
+    "OB-068"
+   ],
+   "nota": "difícil: inferência fraca — 'um quarto sobrando' e 'boa internet' não bastam; 'largou o home office' é falso"
+  },
+  {
+   "id": "SQ-A09",
+   "condicao": "Clientes que desistiram da busca ou a encerraram por ora, tendo feito ao menos 1 visita (`visitas` >= 1).",
+   "linhas_verdadeiras": [
+    "OB-110",
+    "OB-167",
+    "OB-184",
+    "OB-185",
+    "OB-186",
+    "OB-187"
+   ],
+   "linhas_indecidiveis": [
+    "OB-104",
+    "OB-169"
+   ],
+   "nota": "difícil: inferência fraca com parte numérica — 'parou de responder' e 'pausou até vender o carro' são fracas; 'continua procurando' é falso"
+  }
+ ]
+}

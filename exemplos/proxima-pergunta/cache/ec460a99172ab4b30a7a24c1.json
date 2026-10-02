@@ -1,0 +1,86 @@
+{
+ "medicao": {
+  "ms": 455,
+  "input_tokens": 2669,
+  "modelo": "jev-1.13.0",
+  "perguntas": 14
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "answered.purpose": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.neighbourhood": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.parking": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "answered.timeframe": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "answered.financing": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "answered.visit": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "rental": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "answered.budget": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.bedrooms": {
+    "type": "noul",
+    "noul": 0.69
+   },
+   "answered.pet": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "investor_not_living": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "specific_property": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "positive_reaction": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "single_choice": {
+    "type": "choice",
+    "choice": "no_question_needed",
+    "confidence": 0.35,
+    "probabilities": {
+     "visit": 0.0,
+     "neighbourhood": 0.0,
+     "budget": 0.0,
+     "pet": 0.0,
+     "parking": 0.31,
+     "timeframe": 0.22,
+     "bedrooms": 0.0,
+     "purpose": 0.0,
+     "no_question_needed": 0.43,
+     "financing": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2669,
+   "output_tokens": 345
+  }
+ }
+}

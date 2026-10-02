@@ -1,0 +1,118 @@
+{
+ "medicao": {
+  "ms": 375,
+  "input_tokens": 3946,
+  "modelo": "jev-1.13.0",
+  "perguntas": 22
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "answered.purpose": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.budget": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.neighbourhood": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.bedrooms": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.parking": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.timeframe": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.pet": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.financing": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.visit": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "withdrawn.purpose": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.budget": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.neighbourhood": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.bedrooms": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.parking": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.timeframe": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.pet": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.financing": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "rental": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "investor_not_living": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "specific_property": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "positive_reaction": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "single_choice": {
+    "type": "choice",
+    "choice": "no_question_needed",
+    "confidence": 0.99,
+    "probabilities": {
+     "no_question_needed": 1.0,
+     "parking": 0.0,
+     "timeframe": 0.0,
+     "purpose": 0.0,
+     "financing": 0.0,
+     "visit": 0.0,
+     "pet": 0.0,
+     "bedrooms": 0.0,
+     "neighbourhood": 0.0,
+     "budget": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 3946,
+   "output_tokens": 513
+  }
+ }
+}

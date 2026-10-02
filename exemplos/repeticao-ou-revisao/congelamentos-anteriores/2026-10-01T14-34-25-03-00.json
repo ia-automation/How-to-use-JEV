@@ -1,0 +1,30 @@
+{
+ "congelado_em": "2026-10-01T14:34:25-03:00",
+ "arquivos": {
+  "perguntas.py": "f60a3cf35481f94d5fbbdb4ba87273fc8566191b55dff75ee484074eb3f2342e",
+  "relacao.py": "8c80452b8f12bc49899142c1e1ca8f585dc6e211888e447c7598c7ec636427ba",
+  "run.py": "f5f5c884bcb239251ba71279c69d228ad224251137de6130717a1a62020eb798",
+  "dados/teste.json": "a47e759ecfc8113665ed6aca8fb86097ab71743183513b1708252920c0cc409b"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (58 grupos: 16 same_intent, 18 revision, 17 additional_request, 7 unclear), com a política acima",
+  "1_correcao_perdida": "revisão (gabarito revision) que saiu `colapsar` = 0 (de 18)",
+  "2_efeito_duplicado": "repetição (gabarito same_intent) que saiu `somar` ≤ 1 (de 16)",
+  "3_acerto_relacao": "relação (4 classes) ≥ melhor baseline de código no próprio teste + 0,15",
+  "secundario_nao_decide": "unclear → `revisar` ≥ 70% (≥ 5 de 7); revisou sem necessidade ≤ 20% dos decidíveis; `acao_vigente` certa ≥ 80%",
+  "se_falhar": "1 falhando = não serve para colapsar sem humano (só a igualdade exata do código colapsa); 2 falhando = `somar` precisa de confirmação; 3 falhando = a regra de código basta",
+  "limites": {
+   "correcao_perdida_max": 0,
+   "efeito_duplicado_max": 1,
+   "margem_relacao": 0.15,
+   "unclear_revisar_min_fracao": 0.7,
+   "revisou_sem_necessidade_max": 0.2,
+   "vigente_min_fracao": 0.8
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "5c91a542fa97497ae46a75970aa7a9e90079c8cbc2517f3fe80d93edb415c93b",
+  "../_comum/metricas.py": "9fbd24d53375d3a63147cb404937463e7319f0b0442990b1873a9edb5d7b4c3c"
+ }
+}

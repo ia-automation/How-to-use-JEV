@@ -76,6 +76,40 @@ estudado_em: 2026-09-30
     Português: acurácia não publicada pelo doc; o que medimos em 2026-09-30 (sintético e texto real)
     está em [medicoes-2026-09-30](evidencias/medicoes-2026-09-30.md#idioma) — medir de novo no próprio domínio.
 
+## O que os 12 exemplos de 2026-10-01 acrescentaram [testado]
+Sintético, n de 40–87 por exemplo; números em [medicoes-2026-10-01](evidencias/medicoes-2026-10-01.md).
+26. **Resposta do Jev nunca é autorização — nem dispensa.** Um Noul "o usuário dispensou a confirmação" retirava a
+    confirmação; um Noul "pode continuar mandando" dispensava o bloqueio legal. Dispensa vem de campo estruturado
+    do chamador; um Noul de guarda nunca é a razão única para NÃO cumprir uma obrigação
+    ([guarda-tool-call](../exemplos/guarda-tool-call/README.md), [opt-out-lgpd](../exemplos/opt-out-lgpd/README.md)).
+27. **Sinal medido sem regra que o leia é sinal perdido.** `shared_target` deu 0,96 e nenhuma regra o consumia: o
+    comando vazou. Para cada pergunta, apontar a linha da política que usa a resposta.
+28. **O que o modelo não pode ver é filtrado ANTES da chamada.** O lint mandava o diff com o segredo que devia
+    detectar; a máscara entra em código, antes do state.
+29. **O Jev não lê notação posicional com segurança** (`+`/`-` de diff, índice de lista): o código diz o que é novo
+    e aponta a parte por nome (`last_message`, não "a terceira").
+30. **Recência, magnitude, contagem e comparativo são do código** e entram no state como fato calculado ("o mais
+    barato é B"). Cuidado: um fato calculado no state pode mover um Noul vizinho — conferir no ajuste as perguntas
+    que não deviam mudar ([proxima-pergunta](../exemplos/proxima-pergunta/README.md)).
+31. **Guarda só no lado caro.** Cada Noul de guarda tem de apontar para um erro com custo declarado; guarda extra
+    só comprou revisão a mais ([repeticao-ou-revisao](../exemplos/repeticao-ou-revisao/README.md): 7 Nouls
+    perderam para a Choice sozinha, 0,862 × 0,931, com o mesmo erro caro zero).
+32. **Decompor rende quando a Choice não vê a classe** (indecidível, afirmação com várias partes, injeção escondida);
+    onde a Choice já acerta, mais perguntas custam acerto. Choice + válvula acertou onde o Noul relacional hesitou
+    ([imovel-errado](../exemplos/imovel-errado/README.md)); o Score não acrescentou nada aos Nouls
+    ([imovel-duplicado](../exemplos/imovel-duplicado/README.md)).
+33. **Dividir um Noul em dois abre um vão entre eles**: o caso do meio fica com 0,37 e 0,39 e sem dono. Somar as
+    duas leituras em código antes da faixa, ou conferir o caso do meio no ajuste.
+34. **Enumerar opostos na pergunta falha fora da lista**; escrever a condição geral.
+35. **O state carrega o payload.** Conteúdo que argumenta pela própria classificação move a resposta: trocou
+    `descartar` por alerta, e não trocou alerta por `usar` só porque nenhum Noul lido do conteúdo libera sozinho
+    ([injecao-em-ferramenta](../exemplos/injecao-em-ferramenta/README.md)). Filtro, não fronteira.
+36. **A saída diz ao consumidor o que ele NÃO pode fazer.** Aviso só no README não protege: `substituir` passou a
+    sair com o contexto obrigatório e `descartar_anterior: false`; sinal de reconciliação nunca autoriza apagar.
+37. **Com catálogo que cabe numa Choice, comece pela Choice única com descrição completa e a política de "nenhuma"
+    escrita na válvula**; limiar publicado em receita não é parâmetro local (0,30 deu 6/24 de skill indevida)
+    ([selecao-de-skill](../exemplos/selecao-de-skill/README.md)) — hipótese exploratória, não era a variante principal.
+
 ## Anti-padrões (o que as receitas e o doc condenam)
 - Fragmentar sem motivo perguntas agrupáveis. · Noul usado como escala. · Limiar de Noul reaproveitado em Choice.
 - Pedir ao Jev para contar, somar, comparar datas ou gerar texto. · State com o documento inteiro

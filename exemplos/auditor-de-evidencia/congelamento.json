@@ -1,0 +1,19 @@
+{
+ "congelado_em": "2026-10-01T23:52:28-03:00",
+ "arquivos": {
+  "perguntas.py": "bc1f1307eaabb826aa9cc2f0534628bf3d8b5d8cc64deae2cd32829ec0785375",
+  "auditor.py": "93a182f5013ecaabd9d91233c0eb1b982ebd5470eafad591608364ed26c0795e",
+  "run.py": "e2ea0450128a7269e0e3e3fc0af61f4db831bcb4a335139a5f95826665740989",
+  "dados/teste.json": "6bdb935ba4030be26d46c85363c845b8a1920765491f0d3f88698d213780db5b"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (73 afirmações), com a política acima, revisa contado como erro no acerto",
+  "1_falsa_aprovacao": "gabarito insufficient_evidence ou contradicted → supported: ≤ 2% (≤ 1/73)",
+  "2_acerto": "acerto da relação (revisa = erro) ≥ baseline + 0,15",
+  "secundario_nao_decide": "falso alarme (supported → contradicted) ≤ 2; cobertura (não revisa) ≥ 0,80; precisão e recall dos registros_de_apoio reportados"
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "969aa3fdf93eb9d8958bc47b7f19ff22d594003a69e7bd2c30a4cf6c5b79d794",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "congelado_em": "2026-10-01T14:13:26-03:00",
+ "arquivos": {
+  "perguntas.py": "bc7dfcced4da9e7fc58d3117bbce47937ee8138c8254dbd85cb7d8ed9d144cf8",
+  "duplicado.py": "31325c5f764282575daf830b4e29e0b07563ae5abbee7b1df0c78fd9fad81482",
+  "run.py": "36b1d651a355dec0aab5fa50b5c78d11e06173d772e9579edb6570556cd37a73",
+  "dados/teste.json": "4d3613efeb8272a7cb8ab6fa313513e18719a3ee64e7263e98a5edc2741aafb1"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (80 pares: 40 duplicatas, 32 diferentes, 8 indecidíveis), com a política acima",
+  "1_diferente_unido": "par de imóveis diferentes (gabarito false) que saiu `unir` = 0",
+  "2_indecidivel_unido": "par indecidível (gabarito null) que saiu `unir` ≤ 1 (de 8)",
+  "3_duplicata_separada": "duplicata real (gabarito true) que saiu `manter_separados` ≤ 5% (≤ 2 de 40)",
+  "4_acerto_acao": "ação (3 classes) ≥ baseline + 0,15",
+  "secundario_nao_decide": "todo nulo → `revisar`; revisou sem necessidade ≤ 15% dos decidíveis; sinais numéricos do código = 100% (senão é bug)",
+  "se_falhar": "1 ou 2 falhando = não serve para propor união sem humano conferir cada uma; 3 falhando = os vetos separam demais; 4 falhando = a regra de código basta",
+  "limites": {
+   "diferente_unido_max": 0,
+   "indecidivel_unido_max": 1,
+   "duplicata_separada_max_fracao": 0.05,
+   "margem_acao": 0.15,
+   "revisou_sem_necessidade_max": 0.15
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "5c91a542fa97497ae46a75970aa7a9e90079c8cbc2517f3fe80d93edb415c93b",
+  "../_comum/numeros_br.py": "cc458db7fef558845db02e421bdeb0521f7b3a0892d01018aac984fdda339b05"
+ }
+}

@@ -1,0 +1,212 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "preco",
+   "nome": "Preço e condições financeiras",
+   "descricao": "O negócio não fechou por causa de valor, custo ou forma de pagamento do imóvel oferecido.",
+   "folhas": [
+    {
+     "id": "preco_acima_orcamento",
+     "nome": "Preço acima do orçamento",
+     "descricao": "O valor pedido (venda ou aluguel) está acima do que o cliente pode ou aceita pagar."
+    },
+    {
+     "id": "custos_extras",
+     "nome": "Custos em volta do preço",
+     "descricao": "O preço em si servia; pesaram os custos em volta: condomínio, IPTU, taxas da imobiliária, ITBI, escritura, registro."
+    },
+    {
+     "id": "negociacao_frustrada",
+     "nome": "Negociação frustrada",
+     "descricao": "O cliente fez proposta ou pediu desconto e o proprietário recusou; não houve acordo de valor."
+    },
+    {
+     "id": "condicao_pagamento",
+     "nome": "Condição de pagamento",
+     "descricao": "O valor servia, a forma não: entrada exigida, parcelamento direto, permuta, uso de FGTS ou financiamento recusados pelo vendedor."
+    }
+   ]
+  },
+  {
+   "id": "credito_documentacao",
+   "nome": "Crédito e documentação",
+   "descricao": "O cliente queria fechar, mas crédito, garantia, cadastro ou documentos impediram.",
+   "folhas": [
+    {
+     "id": "financiamento_negado",
+     "nome": "Financiamento negado ou insuficiente",
+     "descricao": "O banco não aprovou o crédito do cliente ou aprovou valor menor que o necessário."
+    },
+    {
+     "id": "garantia_locaticia",
+     "nome": "Garantia da locação",
+     "descricao": "Locação: sem fiador aceito, seguro-fiança reprovado ou caro demais, caução ou título inviável."
+    },
+    {
+     "id": "restricao_cadastral",
+     "nome": "Cadastro reprovado",
+     "descricao": "A análise cadastral reprovou o cliente: nome negativado, renda não comprovada ou insuficiente para a locação."
+    },
+    {
+     "id": "documentacao_imovel",
+     "nome": "Documentação do imóvel ou do vendedor",
+     "descricao": "Problema do lado do imóvel: matrícula irregular, inventário, penhora, dívida, área não averbada, falta de habite-se."
+    }
+   ]
+  },
+  {
+   "id": "imovel",
+   "nome": "Características do imóvel",
+   "descricao": "O imóvel visitado ou oferecido não agradou pelo que ele é.",
+   "folhas": [
+    {
+     "id": "tamanho_planta",
+     "nome": "Tamanho ou planta",
+     "descricao": "Pequeno, poucos cômodos, cômodos apertados ou mal distribuídos."
+    },
+    {
+     "id": "estado_conservacao",
+     "nome": "Estado de conservação",
+     "descricao": "Precisa de reforma: infiltração, mofo, instalações antigas, prédio malcuidado."
+    },
+    {
+     "id": "falta_item",
+     "nome": "Falta um item exigido",
+     "descricao": "Falta algo de que o cliente não abre mão: vaga, elevador ou acesso sem escada, aceitar pet, varanda, quintal, mobília."
+    },
+    {
+     "id": "diferente_do_anuncio",
+     "nome": "Diferente do anúncio",
+     "descricao": "O imóvel visitado não corresponde às fotos ou à descrição do anúncio (metragem, vagas, estado, vista)."
+    }
+   ]
+  },
+  {
+   "id": "localizacao",
+   "nome": "Localização",
+   "descricao": "O imóvel até servia; o lugar não.",
+   "folhas": [
+    {
+     "id": "distancia_deslocamento",
+     "nome": "Distância e deslocamento",
+     "descricao": "Longe do trabalho, da escola, da família ou do transporte; tempo de trajeto inviável."
+    },
+    {
+     "id": "entorno_seguranca",
+     "nome": "Entorno e segurança",
+     "descricao": "Rua ou vizinhança: barulho, insegurança, alagamento, bar ou obra ao lado."
+    },
+    {
+     "id": "bairro_nao_desejado",
+     "nome": "Fora do bairro desejado",
+     "descricao": "O cliente só aceita um bairro ou cidade e a imobiliária não tem imóvel lá que sirva."
+    }
+   ]
+  },
+  {
+   "id": "concorrencia",
+   "nome": "Fechou em outro lugar",
+   "descricao": "O cliente comprou ou alugou outro imóvel, ou o mesmo por outro caminho.",
+   "folhas": [
+    {
+     "id": "outra_imobiliaria",
+     "nome": "Outra imobiliária ou corretor",
+     "descricao": "Fechou por outra imobiliária ou por outro corretor."
+    },
+    {
+     "id": "direto_proprietario",
+     "nome": "Direto com o proprietário",
+     "descricao": "Fechou direto com um proprietário, sem imobiliária (o mesmo imóvel ou outro)."
+    },
+    {
+     "id": "lancamento_construtora",
+     "nome": "Lançamento ou construtora",
+     "descricao": "Comprou na planta ou em lançamento, direto com construtora ou incorporadora."
+    }
+   ]
+  },
+  {
+   "id": "atendimento",
+   "nome": "Atendimento e processo",
+   "descricao": "A perda nasceu do lado da imobiliária: demora, falha de visita, informação errada, imóvel que saiu, pressão.",
+   "folhas": [
+    {
+     "id": "demora_resposta",
+     "nome": "Demora na resposta",
+     "descricao": "O atendimento demorou a responder ou a dar um retorno prometido, e o cliente desistiu ou foi atendido antes por outro."
+    },
+    {
+     "id": "visita_falhou",
+     "nome": "Visita que não aconteceu",
+     "descricao": "Visita desmarcada, corretor atrasado ou ausente, chave indisponível, ou nenhum horário compatível."
+    },
+    {
+     "id": "informacao_errada",
+     "nome": "Informação errada",
+     "descricao": "O atendimento passou informação errada ou desatualizada (valor, disponibilidade, característica, regra do condomínio)."
+    },
+    {
+     "id": "imovel_indisponivel",
+     "nome": "Imóvel saiu do mercado",
+     "descricao": "O imóvel foi vendido, alugado ou retirado pelo dono antes de o cliente fechar, e nenhuma alternativa foi aceita."
+    },
+    {
+     "id": "pressao_insistencia",
+     "nome": "Pressão ou insistência",
+     "descricao": "O cliente se incomodou com insistência, pressão para fechar ou com a postura do corretor."
+    }
+   ]
+  },
+  {
+   "id": "momento_cliente",
+   "nome": "Momento do cliente",
+   "descricao": "Nada contra o imóvel nem contra o atendimento: o plano do cliente mudou ou parou.",
+   "folhas": [
+    {
+     "id": "adiou_decisao",
+     "nome": "Adiou com motivo",
+     "descricao": "Decidiu esperar por um motivo de momento declarado: juros, vender o imóvel atual antes, um evento, o ano que vem."
+    },
+    {
+     "id": "mudanca_de_vida",
+     "nome": "Mudança de vida",
+     "descricao": "Um fato da vida tirou o sentido do negócio: transferência, separação, desemprego, doença."
+    },
+    {
+     "id": "desistiu_de_mudar",
+     "nome": "Desistiu de mudar",
+     "descricao": "Resolveu ficar onde está: renovou o aluguel, vai reformar o imóvel atual, desistiu de vender."
+    },
+    {
+     "id": "decisor_vetou",
+     "nome": "Veto de quem decide junto",
+     "descricao": "Cônjuge, pais ou sócio não aprovaram, sem motivo declarado sobre o imóvel."
+    }
+   ]
+  },
+  {
+   "id": "sem_informacao",
+   "nome": "Sem informação",
+   "descricao": "A conversa não diz por que o negócio não saiu.",
+   "folhas": [
+    {
+     "id": "sumiu_sem_resposta",
+     "nome": "Sumiu sem resposta",
+     "descricao": "O cliente parou de responder, sem reação que indique motivo."
+    },
+    {
+     "id": "sumiu_apos_valor",
+     "nome": "Sumiu depois do valor",
+     "descricao": "O cliente parou de responder logo depois de receber preço ou condições, sem comentar."
+    },
+    {
+     "id": "adiou_sem_motivo",
+     "nome": "Adiou sem motivo",
+     "descricao": "\"Vou pensar\", \"qualquer coisa te chamo\": adiamento educado sem motivo declarado nem pista na conversa."
+    }
+   ]
+  }
+ ]
+}

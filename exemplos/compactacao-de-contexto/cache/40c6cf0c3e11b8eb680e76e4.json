@@ -1,0 +1,257 @@
+{
+ "medicao": {
+  "ms": 513,
+  "input_tokens": 30201,
+  "modelo": "jev-1.13.0",
+  "perguntas": 60
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "needed_m01": {
+    "type": "noul",
+    "noul": 0.59
+   },
+   "superseded_m01": {
+    "type": "noul",
+    "noul": 0.68
+   },
+   "rule_m01": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "needed_m02": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "superseded_m02": {
+    "type": "noul",
+    "noul": 0.66
+   },
+   "status_m02": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "needed_m03": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "superseded_m03": {
+    "type": "noul",
+    "noul": 0.69
+   },
+   "rule_m03": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "needed_m04": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "superseded_m04": {
+    "type": "noul",
+    "noul": 0.6
+   },
+   "literal_m04": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "needed_m05": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "superseded_m05": {
+    "type": "noul",
+    "noul": 0.25
+   },
+   "status_m05": {
+    "type": "noul",
+    "noul": 0.26
+   },
+   "needed_m06": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "superseded_m06": {
+    "type": "noul",
+    "noul": 0.89
+   },
+   "rule_m06": {
+    "type": "noul",
+    "noul": 0.16
+   },
+   "needed_m07": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "superseded_m07": {
+    "type": "noul",
+    "noul": 0.33
+   },
+   "status_m07": {
+    "type": "noul",
+    "noul": 0.26
+   },
+   "needed_m08": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "superseded_m08": {
+    "type": "noul",
+    "noul": 0.16
+   },
+   "literal_m08": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "needed_m09": {
+    "type": "noul",
+    "noul": 0.49
+   },
+   "superseded_m09": {
+    "type": "noul",
+    "noul": 0.29
+   },
+   "rule_m09": {
+    "type": "noul",
+    "noul": 0.88
+   },
+   "needed_m10": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "superseded_m10": {
+    "type": "noul",
+    "noul": 0.88
+   },
+   "status_m10": {
+    "type": "noul",
+    "noul": 0.91
+   },
+   "needed_m11": {
+    "type": "noul",
+    "noul": 0.68
+   },
+   "superseded_m11": {
+    "type": "noul",
+    "noul": 0.33
+   },
+   "rule_m11": {
+    "type": "noul",
+    "noul": 0.86
+   },
+   "needed_m12": {
+    "type": "noul",
+    "noul": 0.4
+   },
+   "superseded_m12": {
+    "type": "noul",
+    "noul": 0.81
+   },
+   "status_m12": {
+    "type": "noul",
+    "noul": 0.92
+   },
+   "needed_m13": {
+    "type": "noul",
+    "noul": 0.85
+   },
+   "superseded_m13": {
+    "type": "noul",
+    "noul": 0.45
+   },
+   "rule_m13": {
+    "type": "noul",
+    "noul": 0.95
+   },
+   "needed_m14": {
+    "type": "noul",
+    "noul": 0.42
+   },
+   "superseded_m14": {
+    "type": "noul",
+    "noul": 0.48
+   },
+   "literal_m14": {
+    "type": "noul",
+    "noul": 0.26
+   },
+   "needed_m15": {
+    "type": "noul",
+    "noul": 0.44
+   },
+   "superseded_m15": {
+    "type": "noul",
+    "noul": 0.49
+   },
+   "literal_m15": {
+    "type": "noul",
+    "noul": 0.56
+   },
+   "needed_m16": {
+    "type": "noul",
+    "noul": 0.29
+   },
+   "superseded_m16": {
+    "type": "noul",
+    "noul": 0.69
+   },
+   "literal_m16": {
+    "type": "noul",
+    "noul": 0.72
+   },
+   "needed_m17": {
+    "type": "noul",
+    "noul": 0.59
+   },
+   "superseded_m17": {
+    "type": "noul",
+    "noul": 0.5
+   },
+   "status_m17": {
+    "type": "noul",
+    "noul": 0.91
+   },
+   "needed_m18": {
+    "type": "noul",
+    "noul": 0.77
+   },
+   "superseded_m18": {
+    "type": "noul",
+    "noul": 0.16
+   },
+   "rule_m18": {
+    "type": "noul",
+    "noul": 0.94
+   },
+   "needed_m19": {
+    "type": "noul",
+    "noul": 0.24
+   },
+   "superseded_m19": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "status_m19": {
+    "type": "noul",
+    "noul": 0.32
+   },
+   "needed_m20": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "superseded_m20": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "rule_m20": {
+    "type": "noul",
+    "noul": 0.09
+   }
+  },
+  "usage": {
+   "input_tokens": 30201,
+   "output_tokens": 1184
+  }
+ }
+}

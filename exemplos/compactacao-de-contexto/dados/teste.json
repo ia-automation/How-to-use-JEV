@@ -1,0 +1,3255 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CC-T001",
+   "tarefa_atual": "Subir a cobertura de testes de src/cupons para 80%.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "A cobertura de src/cupons está em 61%. Sobe para 80% no mínimo. Teste de verdade, não teste que só chama a função."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/cupons --coverage\nError: Failed to load coverage provider \"v8\": Cannot find package '@vitest/coverage-v8'"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "Ah, esse pacote está quebrado no lockfile. Por enquanto roda com --coverage.provider=istanbul."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/cupons --coverage --coverage.provider=istanbul | tail -4\n File         | % Lines\n validar.ts   |   52.9\n aplicar.ts   |   48.0\n All files    |   61.2"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Com istanbul roda: 61,2% de linhas. Os buracos estão em validar.ts (regras de data) e aplicar.ts (cupom progressivo)."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Arrumei o lockfile e dei push. Puxa a branch e volta a usar o v8, que é o do CI."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ git pull -q && pnpm install --silent && pnpm vitest run src/cupons --coverage | tail -1\n All files    |   61.4"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "v8 funcionando: 61,4%."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Escrevi 9 testes para validar.ts: vigência, fuso e cupom que expira no mesmo dia."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/cupons --coverage | tail -4\n File         | % Lines\n validar.ts   |   94.1\n aplicar.ts   |   48.0\n All files    |   73.8"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Cobertura em 73,8% (v8). validar.ts foi a 94% com 9 testes; falta aplicar.ts, em 48% — o ramo do cupom progressivo não tem teste nenhum."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "No progressivo, testa os limites: 2, 3 e 5 itens. São os degraus do desconto."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m06",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m07",
+    "m08",
+    "m09",
+    "m10"
+   ],
+   "nota": "difícil: contorno em vigor — aqui o contorno CADUCOU: o istanbul de m03 valia só enquanto o lockfile estava quebrado; m06 manda voltar ao v8. O erro, o contorno e as medições feitas com ele saem; o placar de m11 substitui o de m05."
+  },
+  {
+   "id": "CC-T002",
+   "tarefa_atual": "Padronizar o formato de data das rotas de src/relatorios.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Na API de relatórios, as datas saem em ISO 8601 com fuso (2026-09-30T14:00:00-03:00). Padroniza todas as rotas de src/relatorios."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou listar as rotas."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn \"router\\.get\" src/relatorios | wc -l\n6"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "São 6 rotas em src/relatorios. Três já estão em ISO; três devolvem 'dd/mm/aaaa'."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Pensando bem, o pessoal do BI prefere epoch em milissegundos. Muda tudo para epoch."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Ok, epoch em milissegundos nas 6 rotas."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/relatorios\n ✓ src/relatorios/datas.test.ts (6)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Feito: as 6 rotas devolvem epoch em milissegundos."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Falei com o BI: eles se viram com ISO; quem não se vira com epoch é o front. Volta ao que era antes."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Voltando as 6 rotas."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/relatorios\n ✓ 5 rotas em ISO com fuso\n ✗ GET /relatorios/funil devolve criado_em em ISO com fuso\n   AssertionError: expected '2026-09-30T17:00:00.000Z' to be '2026-09-30T14:00:00-03:00'\n Tests  1 failed | 5 passed (6)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Cinco rotas ok. A GET /relatorios/funil devolve em UTC ('2026-09-30T17:00:00.000Z') em vez de -03:00: a consulta dela formata a data no banco, sem o fuso."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "O fuso é sempre America/Sao_Paulo, mesmo para cliente de outro estado."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m09",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m10",
+    "m11"
+   ],
+   "nota": "difícil: decisão revertida — ISO (m01) virou epoch (m05) e voltou a ISO (m09). m09 diz só 'volta ao que era antes': quem dá o conteúdo é m01, que fica; m05 e tudo o que foi feito para epoch saem. A falha de m11 está, com os literais, em m12."
+  },
+  {
+   "id": "CC-T003",
+   "tarefa_atual": "Configurar o consumidor da fila de notas fiscais no worker-notas.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Cria o consumidor de notas no worker-notas. Fila: notas.emitir. Exchange: fiscal. Prefetch 20."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou seguir o molde do consumidor de e-mail."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 1,5p worker-email/src/consumidores/email.ts\nexport async function iniciar(canal: Channel) {\n  await canal.prefetch(10);\n  await canal.assertQueue('emails.saida', { durable: true });\n  await canal.consume('emails.saida', tratar);\n}"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Consumidor criado em worker-notas/src/consumidores/notas.ts, com prefetch 20."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Corrigindo: prefetch 5, não 20. A emissão é lenta e 20 segura mensagem demais."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Ajustado para 5."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "E o nome da fila tem um detalhe: em dev é notas.emitir.dev, por causa do broker compartilhado."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx worker-notas/src/main.ts\n[amqp] connected\n[notas] error: PRECONDITION_FAILED - inequivalent arg 'x-dead-letter-exchange' for queue 'notas.emitir.dev' in vhost '/': received none but current is the value 'fiscal.dlx' of type 'longstr'"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Conecta, mas a declaração da fila diverge: a notas.emitir.dev já existe com x-dead-letter-exchange = fiscal.dlx, e o nosso código declara sem esse argumento (PRECONDITION_FAILED)."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Ah é, toda fila fiscal tem DLX. Declara com fiscal.dlx."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Declarando com a DLX."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "show"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m07",
+    "m09",
+    "m10"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m08",
+    "m11",
+    "m12"
+   ],
+   "nota": "difícil: valor corrigido — o prefetch 20 de m01 foi corrigido para 5 em m05 e o nome da fila ganhou o sufixo de dev em m07; m01 fica pela exchange e pelo pedido. Em m08/m09 o resumo do assistente traz o erro com os literais, então a saída bruta sai."
+  },
+  {
+   "id": "CC-T004",
+   "tarefa_atual": "Descobrir por que o worker-email envia e-mails duplicados (em aberto).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Clientes estão recebendo e-mail de confirmação em dobro desde ontem. Investiga no worker-email. Dev e leitura de log de prod, só; nada de reiniciar ou republicar em prod."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou começar pelos logs de prod das últimas 24 h."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/logs.sh prod worker-email --since 24h | grep -c enviado\n18422"
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/logs.sh prod worker-email --since 24h | grep enviado | awk '{print $5}' | sort | uniq -d | wc -l\n1307"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Em 24 h de prod: 18.422 envios, e 1.307 ids de mensagem aparecem mais de uma vez — cerca de 7%."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "7% é muito. Antes de ontem era zero?"
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/logs.sh prod worker-email --since 72h --until 48h | grep enviado | awk '{print $5}' | sort | uniq -d | wc -l\n0"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Sim: entre 72 h e 48 h atrás, zero duplicados. Começou depois."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ git log --oneline -3 worker-email/\n7ab21f0 feat(email): prefetch 20 e ack ao fim do tratamento\n33c1d9e chore: bump amqplib\n1e88a02 fix: template de recibo"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "O que mudou ontem: o commit 7ab21f0 (deploy 3.8.0, às 10:12) passou o prefetch para 20 e moveu o ack para o fim do tratamento. Antes dele não havia duplicado."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Hipótese 1: o envio demora mais que o prazo de confirmação do broker, a mensagem volta para a fila e outro consumidor envia de novo."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/logs.sh prod worker-email --since 24h | grep -c 'delivery acknowledgement timed out'\n0"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Descartado: nenhum estouro do prazo de confirmação no log de prod."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "E reconexão? Quando o canal cai, tudo que estava sem ack volta pra fila."
+    },
+    {
+     "id": "m15",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/logs.sh prod worker-email --since 24h | grep -c 'channel closed'\n212"
+    },
+    {
+     "id": "m16",
+     "papel": "assistente",
+     "texto": "Aí tem coisa: 212 quedas de canal em 24 h. Com prefetch 20 e ack no fim, cada queda devolve à fila até 20 mensagens já enviadas e ainda sem ack. Bate com a ordem de grandeza dos 1.307."
+    },
+    {
+     "id": "m17",
+     "papel": "usuario",
+     "texto": "Faz sentido. Mas por que o canal cai 212 vezes?"
+    },
+    {
+     "id": "m18",
+     "papel": "assistente",
+     "texto": "Ainda não sei por que o canal cai: o motivo do fechamento não aparece no nível de log atual de prod."
+    },
+    {
+     "id": "m19",
+     "papel": "usuario",
+     "texto": "Não vou subir nível de log em prod hoje. Reproduz em dev derrubando o canal na mão."
+    },
+    {
+     "id": "m20",
+     "papel": "assistente",
+     "texto": "Vou forçar o fechamento do canal em dev no meio de um lote."
+    },
+    {
+     "id": "m21",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/dev/derrubar-canal.sh worker-email && sleep 20 && ./scripts/logs.sh dev worker-email --since 1m | grep enviado | awk '{print $5}' | sort | uniq -d | wc -l\nchannel closed by admin\n14"
+    },
+    {
+     "id": "m22",
+     "papel": "assistente",
+     "texto": "Reproduzido em dev com ./scripts/dev/derrubar-canal.sh worker-email: derrubar o canal no meio de um lote gerou 14 envios duplicados. O mecanismo está confirmado; a causa das quedas em prod, não."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m10",
+    "m13",
+    "m16",
+    "m18",
+    "m19",
+    "m22"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m11",
+    "m12",
+    "m14",
+    "m15",
+    "m17",
+    "m20",
+    "m21"
+   ],
+   "nota": "difícil: hipótese descartada — o erro segue aberto (a causa das quedas de canal em prod é desconhecida): a conclusão negativa de m13 fica, a evidência dela (m11, m12) sai. As sete saídas de ferramenta estão todas resumidas, com os números, pelo assistente (m05, m10, m16, m22), e as perguntas do usuário (m06, m14, m17) foram absorvidas pelas respostas. A restrição de m01 (prod só para leitura) é reforçada em m19."
+  },
+  {
+   "id": "CC-T005",
+   "tarefa_atual": "Implementar a reconexão automática do websocket de notificações.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O websocket de notificações cai e não volta. Implementa reconexão automática em src/notificacoes/socket.ts."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Proponho recuo exponencial de 1 s até 30 s, com variação aleatória, zerando o contador quando conectar."
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "Bom. Só não tenta reconectar se a aba estiver em segundo plano."
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Implementando."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/notificacoes\n ✓ reconecta com recuo\n ✓ não reconecta em segundo plano\n Tests  2 passed (2)"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Reconexão implementada, com recuo e pausa em segundo plano."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Testei aqui: reconecta, mas as notificações que chegaram enquanto estava fora se perdem."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "O servidor não reenvia o que passou. Posso mandar o id da última notificação recebida ao reconectar, se o servidor aceitar um parâmetro para isso."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "O servidor já aceita ?desde=<id>. Usa."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Usando o parâmetro desde."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/notificacoes\n ✓ reconecta com recuo\n ✓ não reconecta em segundo plano\n ✓ ao reconectar pede as notificações desde o último id\n Tests  3 passed (3)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Pronto: ao reconectar, o cliente envia ?desde=<último id> e recupera o que perdeu. Falta testar com a aba em segundo plano por mais de 5 min."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m02",
+    "m03",
+    "m12"
+   ],
+   "descartar": [
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m10",
+    "m11"
+   ],
+   "nota": "A perda de notificações (m07 a m09) foi resolvida e está no placar de m12. O 'Bom' de m03 aprova a proposta de m02, que é a decisão em vigor sobre o recuo."
+  },
+  {
+   "id": "CC-T006",
+   "tarefa_atual": "Publicar a versão 2.4.0 da biblioteca interna de componentes.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Vamos publicar a 2.4.0 da biblioteca de componentes. Regra: nada vai para o registro sem o changelog atualizado."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "O que entra na 2.4.0?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "TabelaV2, o conserto do foco no Modal e a remoção do BotaoAntigo. Essa remoção não quebra ninguém, acho; ninguém usa."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ grep -rln BotaoAntigo ../*/src | wc -l\n7"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Sete arquivos em outros repositórios ainda importam BotaoAntigo. Remover é quebra de compatibilidade; pela regra de versão seria 3.0.0, não 2.4.0."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Putz. Então não remove agora: marca como obsoleto, com aviso no console, e remove na 3.0."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Certo: BotaoAntigo fica, com aviso de obsolescência."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run\n Test Files  41 passed (41)"
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ pnpm version minor -m \"%s\" && git log --oneline -1\nv2.4.0\n1c9e7b2 2.4.0"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Versão 2.4.0 marcada (commit 1c9e7b2). Changelog escrito com TabelaV2, conserto do foco no Modal e obsolescência do BotaoAntigo. Ainda não publiquei."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Deixa eu ler o changelog antes."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Segue o trecho:\n## 2.4.0\n- Novo: TabelaV2\n- Corrigido: foco preso no Modal\n- Obsoleto: BotaoAntigo (remoção prevista para a 3.0.0)"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m06",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m07",
+    "m08",
+    "m09"
+   ],
+   "nota": "difícil: decisão revertida — a remoção do BotaoAntigo (m03) virou obsolescência (m06); a lista do que entra na versão está repetida em m10. discutível: m05 (por que remover seria quebra: justifica m06, que já basta) e m12 (trecho do changelog à espera da leitura do usuário: o texto está no arquivo)."
+  },
+  {
+   "id": "CC-T007",
+   "tarefa_atual": "Criar a regra de lint que proíbe importar src/infra fora de src/infra e src/main.ts.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Quero uma regra de lint: ninguém importa de src/infra diretamente, só o src/main.ts e o próprio src/infra. O resto usa as interfaces de src/portas."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Dá para fazer com no-restricted-imports por padrão de caminho. Vou configurar."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm lint\nOops! Something went wrong! :(\nESLint: 9.12.0\nError: Key \"rules\": Key \"no-restricted-imports\": Value [{\"patterns\":\"src/infra/*\"}] should be array."
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Errei o formato da opção (patterns é uma lista de objetos). Corrigindo."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm lint\nsrc/pedidos/servico.ts\n  3:1  error  'src/infra/redis' import is restricted from being used by a pattern  no-restricted-imports\nsrc/relatorios/funil.ts\n  2:1  error  'src/infra/db' import is restricted from being used by a pattern     no-restricted-imports\n✖ 2 problems (2 errors, 0 warnings)"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "A regra está ativa e pegou 2 violações: src/pedidos/servico.ts:3 (redis) e src/relatorios/funil.ts:2 (db). Corrijo as duas?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Corrige as duas."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "servico.ts corrigido: agora recebe a porta Cache por injeção."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Na de relatórios, cuidado: o funil usa SQL cru de propósito. Cria uma porta ConsultaSql em vez de forçar o repositório."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Entendido."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm lint\n✔ No problems found"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Lint limpo: as duas violações foram corrigidas, e funil.ts usa a nova porta ConsultaSql (src/portas/consulta-sql.ts). Falta escrever no CONTRIBUTING a regra e o porquê."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m09",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m10",
+    "m11"
+   ],
+   "nota": "O erro de configuração (m03, m04) foi resolvido e as duas violações (m05 a m08) já foram corrigidas, como diz m12. m09 fica: é requisito da tarefa e traz o porquê que vai para o CONTRIBUTING."
+  },
+  {
+   "id": "CC-T008",
+   "tarefa_atual": "Criar a rotina noturna que arquiva propostas vencidas (pronta; falta relatar a primeira carga em dev).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Hoje: (1) renomear a coluna valor para valor_centavos em propostas e (2) criar uma rotina noturna que arquiva proposta vencida. Sempre com migration reversível."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Começo pela coluna."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create propostas-valor-centavos\nCreated migrations/0165_propostas-valor-centavos.ts"
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:run --env dev && pnpm vitest run src/propostas\nApplied 0165_propostas-valor-centavos (0.2s)\n ✓ src/propostas/servico.test.ts (12)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Coluna renomeada em dev (migration 0165, com down). Código atualizado em 6 arquivos; testes passando."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Boa. Vamos para a rotina. Proposta vencida = validade < hoje e status 'enviada'. Arquivar = status 'arquivada' e preencher arquivada_em."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "A que horas roda?"
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "03:00."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Proponho também um limite por execução, para não segurar a tabela: 5 mil por noite."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Sem limite. São poucas, umas 200 por dia."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/jobs/arquivar-vencidas.ts --dry-run --env dev\n[dry-run] vencidas encontradas: 48211\n[dry-run] nada foi alterado"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Atenção: em dev há 48.211 propostas vencidas acumuladas, não 200. A primeira execução seria uma carga grande de uma vez."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "Eita, tem o passivo. Então na primeira vez roda em lotes de 2 mil; depois disso, sem limite mesmo."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "E muda o horário: 03:00 bate com o backup. Põe 04:30."
+    },
+    {
+     "id": "m15",
+     "papel": "assistente",
+     "texto": "04:30, e primeira execução em lotes de 2 mil."
+    },
+    {
+     "id": "m16",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/jobs/arquivar-vencidas.test.ts\n ✓ arquiva vencida enviada\n ✓ ignora vencida já aceita\n ✓ primeira execução respeita o lote\n Tests  3 passed (3)"
+    },
+    {
+     "id": "m17",
+     "papel": "assistente",
+     "texto": "Rotina pronta em scripts/jobs/arquivar-vencidas.ts, agendada para 04:30, com a opção --lote para a primeira execução. Ainda não rodei de verdade em dev."
+    },
+    {
+     "id": "m18",
+     "papel": "usuario",
+     "texto": "Roda em dev a primeira carga e me diz quanto tempo levou."
+    },
+    {
+     "id": "m19",
+     "papel": "ferramenta",
+     "texto": "$ time pnpm tsx scripts/jobs/arquivar-vencidas.ts --env dev --lote 2000\n[lote 1] 2000 arquivadas\n...\n[lote 24] 2000 arquivadas\n[lote 25] 211 arquivadas\ntotal: 48211\n\nreal\t1m52.4s"
+    },
+    {
+     "id": "m20",
+     "papel": "usuario",
+     "texto": "fui pegar um café, já leio"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m06",
+    "m13",
+    "m14",
+    "m17",
+    "m18",
+    "m19"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m07",
+    "m08",
+    "m09",
+    "m10",
+    "m11",
+    "m15",
+    "m16",
+    "m20"
+   ],
+   "nota": "difícil: decisão revertida — o horário de 03:00 (m08) virou 04:30 (m14), e o 'sem limite' de m10 foi refeito em m13 (lotes de 2 mil só na primeira execução; depois, sem limite). m19 é saída que fica: traz o total e o tempo que o usuário pediu em m18 e que ninguém resumiu ainda. A troca da coluna (m02 a m05) acabou e não sustenta a rotina. discutível: m12 (tamanho do passivo em dev: motivou m13, mas a carga de dev já rodou em m19)."
+  },
+  {
+   "id": "CC-T009",
+   "tarefa_atual": "Montar o relatório de comissões de setembro.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Preciso do relatório de comissões de setembro. O comercial reclamou de novo que o número não bate, semana passada foi uma novela, enfim. O que importa: comissão é 3% sobre venda com status 'assinado', e a data que conta é a da assinatura, não a da criação. Ah, e devolução em até 7 dias anula a comissão."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou olhar as tabelas."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c '\\d vendas' | grep -E 'em |status|valor'\n criado_em     | timestamp with time zone\n assinado_em   | timestamp with time zone\n status        | text\n valor_centavos| bigint"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "A tabela vendas tem assinado_em e criado_em; as devoluções ficam em vendas_devolucoes, com devolvido_em."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "isso mesmo"
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -f relatorios/comissoes-2026-09.sql\n corretor | vendas | comissao_centavos\n----------+--------+-------------------\n ana.r    |      7 |            412300\n bruno.t  |      4 |            198000\n(2 rows)"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Primeira versão em relatorios/comissoes-2026-09.sql: 2 corretores, 11 vendas."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Só 2 corretores? Tem uns 9 no time."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "O filtro de status estava como 'Assinado', com maiúscula; no banco é 'assinado'. Corrigido."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -f relatorios/comissoes-2026-09.sql | tail -1\n(9 rows)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Agora são 9 corretores e 63 vendas em relatorios/comissoes-2026-09.sql. Ainda não apliquei a regra da devolução em 7 dias."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Legal, tá ficando bom. Quando aplicar a devolução, o prazo conta da assinatura até devolvido_em, em dias corridos."
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Aplicando."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "E no fim exporta em CSV com ponto e vírgula."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m11",
+    "m12",
+    "m14"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m10",
+    "m13"
+   ],
+   "nota": "difícil: decisão embutida — m01 é metade desabafo, mas traz as três regras do cálculo; m12 abre com elogio e fecha com a regra de contagem do prazo. A primeira versão do relatório (m06, m07) e o erro do filtro (m08, m09) já ficaram para trás."
+  },
+  {
+   "id": "CC-T010",
+   "tarefa_atual": "Cadastrar e verificar o webhook de pagamento no ambiente de testes do provedor.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Cadastra o nosso webhook de pagamento no ambiente de testes do provedor. URL: https://dev.exemplo.com/webhooks/pagamento. Eventos: pagamento.aprovado e pagamento.estornado."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou usar o script do provedor que já está no repositório (scripts/provedor.ts)."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/provedor.ts webhooks:list --env sandbox\n[]"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Nenhum webhook cadastrado ainda. Criando."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/provedor.ts webhooks:create --env sandbox --url https://dev.exemplo.com/webhooks/pagamento --events pagamento.aprovado,pagamento.estornado\n{\n  \"id\": \"wh_test_7Qk2\",\n  \"url\": \"https://dev.exemplo.com/webhooks/pagamento\",\n  \"events\": [\"pagamento.aprovado\", \"pagamento.estornado\"],\n  \"signing_ref\": \"cofre:dev/provedor/webhook\",\n  \"status\": \"pending_verification\"\n}"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Webhook criado. Está aguardando verificação."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Como verifica?"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "O provedor manda um POST com um desafio e espera o mesmo valor de volta em até 5 s. Nosso endpoint ainda não trata isso."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Implementa o tratamento do desafio. Sem registrar o corpo da requisição em log: tem dado de cartão."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Implementado em src/webhooks/pagamento.ts: responde o desafio e não registra o corpo."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/provedor.ts webhooks:verify --env sandbox --id wh_test_7Qk2\nError: verification failed: endpoint returned 404"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "A verificação falhou com 404: dev ainda roda a versão antiga, sem a rota do desafio. Falta publicar em dev e repetir o webhooks:verify."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "ok, publica"
+    },
+    {
+     "id": "m14",
+     "papel": "assistente",
+     "texto": "Publicando em dev."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m09",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m07",
+    "m08",
+    "m10",
+    "m11",
+    "m14"
+   ],
+   "nota": "difícil: saída longa com uma linha necessária — m05 é a única mensagem com o id do webhook (wh_test_7Qk2), que o verify vai pedir de novo; o resumo de m06 não o repete. Já o erro de m11 está inteiro em m12. 'ok, publica' (m13) é a autorização do passo que m12 descreve."
+  },
+  {
+   "id": "CC-T011",
+   "tarefa_atual": "Corrigir o erro ao gerar o PDF da proposta 8812.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Gerar o PDF da proposta 8812 em dev dá erro. Corrige. O modelo do PDF (templates/proposta.hbs) não pode mudar de aparência."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ docker service logs api-propostas --tail 8\nTypeError: Cannot read properties of undefined (reading 'toFixed')\n    at formatarValor (src/pdf/ajudantes.ts:14:18)\n    at Object.<anonymous> (node_modules/handlebars/dist/cjs/handlebars/runtime.js:271:12)\n    at main (templates/proposta.hbs:58:21)\n    at ret (node_modules/handlebars/dist/cjs/handlebars/runtime.js:208:12)\n    at gerarPdf (src/pdf/gerar.ts:33:16)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\nPOST /propostas/8812/pdf 500 212ms"
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "O erro é um TypeError em formatarValor (src/pdf/ajudantes.ts:14), chamado na linha 58 do modelo: algum valor chega undefined."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 58p templates/proposta.hbs\n      <td>{{formatarValor item.desconto}}</td>"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "A linha 58 formata item.desconto. Na 8812 há itens sem desconto: o campo está ausente, não zerado."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Item sem desconto é normal desde agosto, o campo virou opcional."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Então o ajudante tem que tratar a ausência. Mostro 'R$ 0,00' ou um traço?"
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Traço."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Ajustando formatarValor."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/pdf\n ✓ formata 1250 como R$ 12,50\n ✗ valor ausente vira traço\n   AssertionError: expected 'R$ NaN' to be '—'\n Tests  1 failed | 1 passed (2)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Ainda devolve 'R$ NaN' em formatarValor (src/pdf/ajudantes.ts:14): tratei undefined, mas na 8812 o item.desconto de alguns itens vem null."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Ah, tem dos dois no banco mesmo. Trata os dois."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m08",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m09",
+    "m10"
+   ],
+   "nota": "difícil: redundância — saída longa cuja linha necessária já foi repetida: o rastro de pilha de m02 tem uma linha útil (src/pdf/ajudantes.ts:14), mas m11 a traz junto com o estado atual do erro; m02, m03, m05 e a falha de m10 saem. 'Traço.' (m08) depende da pergunta de m07. discutível: m06 (campo opcional desde agosto: explica a causa, e m12 já manda tratar os dois casos)."
+  },
+  {
+   "id": "CC-T012",
+   "tarefa_atual": "Fazer a suíte e2e do checkout passar.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "A suíte e2e do checkout está falhando depois do merge de ontem. Faz passar. Não desliga teste."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Rodando a suíte."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm playwright test e2e/checkout\nRunning 7 tests using 2 workers\n  ✓ carrinho vazio mostra aviso (1.2s)\n  ✓ adiciona item (2.0s)\n  ✓ aplica cupom válido (2.4s)\n  ✘ finaliza com PIX (30.1s)\n      Timeout 30000ms exceeded waiting for getByTestId('qr-pix')\n  ✓ finaliza com cartão (4.8s)\n  ✓ mostra resumo (1.1s)\n  1 failed, 5 passed"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Um teste falha esperando um elemento. Vou ver o histórico do componente."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ git log --oneline -3 -- src/checkout/Pix.tsx\na41c9d0 refactor(checkout): padroniza test ids\n77be012 feat(checkout): copia e cola do pix\n1f0c3aa fix(checkout): expiração do qr"
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ git show a41c9d0 -- src/checkout/Pix.tsx | grep testid\n-      <img data-testid=\"qr-pix\" src={qr} />\n+      <img data-testid=\"pix-qr-code\" src={qr} />"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Causa: o commit a41c9d0 ('padroniza test ids') renomeou os identificadores de teste do Pix.tsx, e os testes ainda procuram os antigos. Corrijo os testes ou volto os identificadores?"
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Corrige os testes. O padrão novo é o certo: <área>-<coisa>."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Troquei qr-pix por pix-qr-code em e2e/checkout/pix.spec.ts."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm playwright test e2e/checkout\nRunning 7 tests using 2 workers\n  ✓ carrinho vazio mostra aviso (1.1s)\n  ✓ adiciona item (2.1s)\n  ✓ aplica cupom válido (2.3s)\n  ✘ finaliza com PIX (30.0s)\n      Timeout 30000ms exceeded waiting for getByTestId('pix-copia-cola')\n  ✓ finaliza com cartão (4.9s)\n  ✓ mostra resumo (1.0s)\n  1 failed, 5 passed"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Passou do QR e parou em outro identificador."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "deve ter mais de um mesmo, o refactor foi grande"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m08",
+    "m10"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m09",
+    "m11",
+    "m12"
+   ],
+   "nota": "difícil: saída longa com uma linha necessária — m10 lista sete testes e só a linha do que falha interessa (o identificador pix-copia-cola); ninguém a repetiu depois. m03 tem o mesmo formato, mas a falha dela já foi corrigida: sai. m07 fica pelo hash do commit que renomeou os identificadores."
+  },
+  {
+   "id": "CC-T013",
+   "tarefa_atual": "Cadastrar e validar o domínio de envio de e-mail em dev.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Cadastra o domínio dev-mail.exemplo.com no provedor de e-mail e me diz que registros de DNS eu preciso criar. Quem mexe no DNS sou eu."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou usar o script do provedor."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/email.ts dominios:criar dev-mail.exemplo.com\n{\n  \"dominio\": \"dev-mail.exemplo.com\",\n  \"id\": \"dom_4h7Kp\",\n  \"registros\": [\n    {\"tipo\": \"TXT\", \"nome\": \"_verif.dev-mail\", \"valor\": \"verif=4h7Kp-91c2\"},\n    {\"tipo\": \"CNAME\", \"nome\": \"dk1._domainkey.dev-mail\", \"valor\": \"dk1.dom-4h7kp.mail.exemplo.com\"},\n    {\"tipo\": \"MX\", \"nome\": \"dev-mail\", \"valor\": \"10 retorno.mail.exemplo.com\"}\n  ],\n  \"estado\": \"aguardando_dns\"\n}"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Domínio cadastrado. São três registros: um TXT de verificação, um CNAME de DKIM e um MX de retorno. Os valores estão na saída acima."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "peraí que vou abrir o painel do DNS"
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Criei os três agora."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Vou pedir a verificação."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/email.ts dominios:verificar dom_4h7Kp\nTXT: ok\nCNAME: pendente (NXDOMAIN)\nMX: ok"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "TXT e MX verificados. O CNAME de DKIM ainda não resolve (NXDOMAIN). Pode ser propagação ou nome digitado diferente."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Deve ser propagação, o painel de DNS demora uns 10 min. Tenta de novo daqui a pouco."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Enquanto isso, já deixa a variável EMAIL_DOMINIO no stack de dev."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "EMAIL_DOMINIO=dev-mail.exemplo.com adicionada ao stack.dev.yaml do worker-email."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "ok"
+    },
+    {
+     "id": "m14",
+     "papel": "assistente",
+     "texto": "Repito a verificação em 10 min."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m09",
+    "m10",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m11",
+    "m13",
+    "m14"
+   ],
+   "nota": "difícil: saída longa com uma linha necessária — m03 é a única mensagem com o id do domínio (dom_4h7Kp) e com o valor do CNAME que ainda não resolveu; o resumo de m04 aponta para 'a saída acima' sem repetir nada. A verificação de m08 está inteira em m09; a instrução de m11 já foi cumprida (m12)."
+  },
+  {
+   "id": "CC-T014",
+   "tarefa_atual": "Corrigir o arredondamento das parcelas no simulador.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "No simulador de parcelas, 100 reais em 3 vezes mostra 33,33 + 33,33 + 33,33. Falta 1 centavo. Corrige: a diferença vai na primeira parcela."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou ver a função."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 3,6p src/simulador/parcelas.ts\nexport function parcelar(totalCentavos: number, n: number): number[] {\n  const p = Math.floor(totalCentavos / n);\n  return Array(n).fill(p);\n}"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "A função divide e arredonda cada parcela para baixo. Vou calcular o resto e somar na primeira."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/simulador\n ✓ sem juros fecha no centavo\n Tests  1 passed (1)"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Corrigido em src/simulador/parcelas.ts: 33,34 + 33,33 + 33,33. Teste novo passando."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "E com juros? A tabela Price também tem que fechar no centavo."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Com juros a parcela é fixa e a diferença costuma ir na última. Sigo essa convenção ou mantenho na primeira?"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Na última, nesse caso."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Ok."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/simulador\n ✓ sem juros fecha no centavo\n ✓ com juros fecha no centavo\n Tests  2 passed (2)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Pronto para os dois casos em src/simulador/parcelas.ts, com teste. Falta atualizar o texto de ajuda da tela, que ainda diz 'parcelas iguais'."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m10",
+    "m11"
+   ],
+   "nota": "'Na última, nesse caso' (m09) depende da pergunta de m08; o resumo de m06 foi absorvido pelo placar de m12."
+  },
+  {
+   "id": "CC-T015",
+   "tarefa_atual": "Implementar o limite de requisições por chave na API pública.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "A API pública precisa de limite de requisições por cliente: 100 por minuto por chave."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Três formas: (1) janela fixa em memória, simples, mas não vale com várias réplicas; (2) janela deslizante no Redis, exata e compartilhada; (3) balde de fichas no gateway, sem código nosso. Qual?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "A segunda."
+    },
+    {
+     "id": "m04",
+     "papel": "usuario",
+     "texto": "Quer dizer... no gateway seria mais limpo, né? Mas a gente não tem acesso à configuração dele essa semana. Fica a segunda mesmo."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Vou usar a conexão de src/infra/redis.ts."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/limite\n ✓ src/limite/janela.test.ts (5)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Implementado em src/limite/janela.ts."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Quando estourar, responde 429 com o cabeçalho Retry-After em segundos."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/rajada.sh 120\n200: 100\n429: 20\nRetry-After: 37"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Funciona: 100 passam, 20 recebem 429 com Retry-After."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "E as chaves internas (prefixo int_) não têm limite."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Placar: limite de 100 por minuto por chave em src/limite/janela.ts, com 429 e Retry-After. Falta a isenção das chaves int_ e o teste dela."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "top"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m02",
+    "m03",
+    "m08",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m05",
+    "m06",
+    "m07",
+    "m09",
+    "m10",
+    "m13"
+   ],
+   "nota": "difícil: resposta curta que depende da pergunta — 'A segunda.' (m03) só existe junto das três opções de m02. discutível: m04 (reafirma a escolha e dá o motivo — sem acesso ao gateway nesta semana: justificativa de decisão já mantida)."
+  },
+  {
+   "id": "CC-T016",
+   "tarefa_atual": "Escrever os testes de integração do repositório de agendamentos.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Escreve testes de integração para src/agenda/repo.ts, contra o Postgres do docker compose. Sem simular o banco."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Subindo o banco e escrevendo o primeiro teste."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/agenda/repo.int.test.ts\nError: connect ECONNREFUSED ::1:5433\n    at TCPConnectWrap.afterConnect [as oncomplete]"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "O teste tenta ::1 (IPv6) e o contêiner só escuta em IPv4."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Isso é conhecido nesse projeto. Roda sempre com DB_HOST=127.0.0.1 na frente, até trocarem o compose."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ DB_HOST=127.0.0.1 pnpm vitest run src/agenda/repo.int.test.ts\n ✓ cria agendamento\n ✓ lista por dia\n Tests  2 passed (2)"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Com DB_HOST=127.0.0.1 passa. Dois testes escritos."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Falta o caso de conflito: dois agendamentos no mesmo horário para o mesmo profissional têm que dar erro de conflito, não erro genérico."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Vou ver se há restrição no banco para isso."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c '\\d agendamentos' | grep -i excl\n    \"agendamentos_sem_sobreposicao\" EXCLUDE USING gist (profissional_id WITH =, periodo WITH &&)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Criar e listar por dia já estão testados e passando. Para o conflito: o banco tem a restrição agendamentos_sem_sobreposicao (EXCLUDE), mas o repositório deixa o erro 23P01 vazar como genérico; falta traduzir para ErroDeConflito e testar."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "isso"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Fazendo."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m08",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m07",
+    "m09",
+    "m10",
+    "m12",
+    "m13"
+   ],
+   "nota": "difícil: contorno em vigor — o erro de conexão (m03, m04) sumiu, mas só por causa do contorno de m05, que vale até trocarem o compose: o erro sai, o contorno fica."
+  },
+  {
+   "id": "CC-T017",
+   "tarefa_atual": "Implementar a retentativa do webhook de saída para clientes.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Nosso webhook de saída para clientes não tem retentativa. Implementa."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou ver como o envio é feito hoje."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 10,16p src/webhooks/enviar.ts\nexport async function enviar(evento: Evento, destino: string) {\n  const r = await http.post(destino, evento, { timeout: 5000 });\n  if (r.status >= 400) logger.warn({ destino, status: r.status }, 'webhook recusado');\n}"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Hoje é um POST único, sem fila. Para retentar preciso de persistência: uso a tabela webhooks_envios, que já existe e tem status e tentativas?"
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Usa."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Proposta de política: até 6 tentativas, recuo exponencial começando em 30 s (30 s, 1, 2, 4, 8 e 16 min), e desiste depois. Resposta 4xx não retenta, exceto 408 e 429."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Deixa eu pensar no número de tentativas. O resto pode seguir."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Sigo com o recuo e a regra dos 4xx, e deixo o máximo de tentativas configurável."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/webhooks\n ✓ src/webhooks/retentar.test.ts (7)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Implementado com persistência na tabela webhooks_envios: recuo exponencial e regra dos 4xx; o máximo de tentativas vem de WEBHOOK_MAX_TENTATIVAS (padrão provisório 6). Pendente: você decidir o número."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Uma dúvida: se o cliente responder 200 mas demorar mais de 10 s, conta como falha?"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Hoje o tempo limite é 5 s e conta como falha, então retenta — e o cliente pode processar duas vezes. Quer que eu mande um cabeçalho de idempotência para ele poder deduplicar?"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m06",
+    "m07",
+    "m10",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m08",
+    "m09",
+    "m11"
+   ],
+   "nota": "difícil: progresso parcial — há duas pendências abertas: o número de tentativas (m07, resumido em m10) e a pergunta sobre idempotência (m12), ainda sem resposta. 'O resto pode seguir' (m07) só aprova algo junto da proposta de m06. m04 e m05 saem: a decisão sobre a tabela está repetida em m10; a dúvida de m11 está respondida dentro de m12."
+  },
+  {
+   "id": "CC-T018",
+   "tarefa_atual": "Aplicar os 4 pontos da revisão da PR 318.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "A revisão da PR 318 deixou 4 pontos: (1) validar o CEP antes de chamar o parceiro; (2) trocar console.log por logger; (3) o teste do frete não cobre CEP inexistente; (4) variável chamada `x` em calcular.ts. Aplica todos."
+    },
+    {
+     "id": "m02",
+     "papel": "usuario",
+     "texto": "E não junta os commits dessa PR: o revisor quer um commit por ponto."
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "Vou na ordem, um commit por ponto."
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "(1) feito: validação de CEP em src/frete/parceiro.ts, antes da chamada."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "(2) feito: logger no lugar de console.log, 3 ocorrências."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "No (3), usa o CEP 00000000 como inexistente, é o que o parceiro documenta."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/frete/parceiro.test.ts -t inexistente\n ✗ CEP inexistente devolve erro de negócio\n   Error: timeout of 3000ms exceeded\n Tests  1 failed (1)"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "O teste do (3) estoura o tempo: o ambiente de testes do parceiro não responde para 00000000, fica pendurado."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Estranho. Deixa eu perguntar pro pessoal do parceiro. Enquanto isso faz o (4)."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "(4) feito: `x` virou `pesoExcedente` em calcular.ts."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Placar: (1), (2) e (4) prontos, um commit cada. (3) parado: o teste com 00000000 estoura os 3 s no ambiente de testes do parceiro; aguardando o retorno do usuário."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "O parceiro respondeu: 00000000 só funciona em produção. No ambiente de testes, o CEP inexistente é 99999999."
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Então troco o CEP do teste para 99999999 e rodo de novo."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "isso"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m02",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m10",
+    "m13",
+    "m14"
+   ],
+   "nota": "difícil: progresso parcial — os avisos de 'feito' um a um (m04, m05, m10) e o erro do ponto 3 (m07, m08) estão no placar de m11; o CEP de teste de m06 foi corrigido em m12 (valor corrigido), então m06 sai. A regra de m02 (um commit por ponto) vale até o fim."
+  },
+  {
+   "id": "CC-T019",
+   "tarefa_atual": "Preparar o relatório de inadimplência de setembro em xlsx para o financeiro.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Gera o relatório de inadimplência de setembro e deixa pronto para eu mandar ao financeiro. Formato xlsx."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Rodando o script de relatório."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/relatorios/inadimplencia.ts --mes 2026-09\nlendo cobranças... 4182\nem atraso: 311\ntotal em atraso: R$ 184.220,17\narquivo: saida/inadimplencia-2026-09-a7f3.csv"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Gerado: 311 cobranças em atraso, R$ 184.220,17 no total, em saida/inadimplencia-2026-09-a7f3.csv. O script só gera CSV; preciso converter para xlsx."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Antes de converter: tira as cobranças em negociação, elas não contam como inadimplência."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Como identifico 'em negociação'?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "status = 'acordo' na tabela cobrancas."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/relatorios/inadimplencia.ts --mes 2026-09 --excluir-status acordo\nlendo cobranças... 4182\nem atraso: 268\ntotal em atraso: R$ 151.902,40\narquivo: saida/inadimplencia-2026-09-c21b.csv"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Sem os acordos: 268 cobranças, R$ 151.902,40."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Bate com o que o financeiro esperava, uns 150 mil."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Convertendo para xlsx."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/csv-para-xlsx.ts saida/inadimplencia-2026-09-c21b.csv\nError: Cannot find module 'exceljs'"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "A conversão falhou: falta a dependência exceljs, que o scripts/csv-para-xlsx.ts usa. Posso instalar?"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m07",
+    "m08",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m09",
+    "m10",
+    "m11",
+    "m12"
+   ],
+   "nota": "difícil: saída longa com uma linha necessária — m08 é a única mensagem com o caminho do arquivo válido (saida/inadimplencia-2026-09-c21b.csv) e a opção que o gerou; o resumo de m09 traz só os números. O arquivo e os totais de m03/m04 ficaram velhos quando os acordos saíram (valor corrigido). O erro de m12 está em m13, que é pergunta aberta."
+  },
+  {
+   "id": "CC-T020",
+   "tarefa_atual": "Verificar se o PUT /propostas/:id tem o mesmo problema do contract_name (o POST já foi corrigido em dev).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O POST /propostas em dev está dando 500 desde hoje cedo. Olha o log."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ docker service logs api-propostas --tail 6\nERROR QueryFailedError: null value in column \"contract_name\" of relation \"propostas\" violates not-null constraint\n    at PostgresQueryRunner.query (node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:219:19)\n    at criarProposta (src/propostas/servico.ts:88:23)\n    at PropostasController.criar (src/propostas/controller.ts:31:12)\nPOST /propostas 500 41ms"
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "O 500 vem de src/propostas/servico.ts:88: o INSERT viola o NOT NULL de propostas.contract_name. O corpo da requisição chega sem esse campo."
+    },
+    {
+     "id": "m04",
+     "papel": "usuario",
+     "texto": "contract_name virou obrigatório ontem, na migration 0158. O front novo manda; quem não manda é o aplicativo antigo."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Há duas saídas: valor padrão no banco ou preencher no servidor quando faltar. Preferência?"
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Preenche no servidor com o nome do cliente quando faltar. Padrão no banco não, mascara erro."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Implementando em servico.ts."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/propostas\n ✓ src/propostas/servico.test.ts (12)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ curl -s -X POST https://dev.exemplo.com/propostas -H 'content-type: application/json' -d '{\"cliente_id\": 41}' | jq .status\n\"criada\""
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "POST corrigido em dev: sem contract_name, o servidor usa o nome do cliente. Testado com requisição real."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Ótimo. Vê se o mesmo problema existe no PUT /propostas/:id."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Olhando o caminho de atualização."
+    }
+   ],
+   "manter": [
+    "m04",
+    "m06",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m05",
+    "m07",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "difícil: conclusão anterior é premissa — o 500 do POST já foi corrigido: pedido, log e diagnóstico (m01 a m03) saem; ficam o fato de m04 (obrigatório desde a 0158, aplicativo antigo não manda), a decisão de m06 e o resumo de m10, que valem igual para o PUT."
+  },
+  {
+   "id": "CC-T021",
+   "tarefa_atual": "Adicionar o idioma inglês à tela de login.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Vamos traduzir a tela de login para inglês. Convenção de chave: tela.elemento, tudo minúsculo, sem acento (ex.: login.botao_entrar)."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou extrair os textos fixos."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -no \">[^<{]*[a-zA-Z][^<{]*<\" src/pages/login.tsx\n14:>Entrar<\n19:>E-mail<\n23:>Senha<\n30:>Esqueci minha senha<\n34:>Criar conta<"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "São 5 textos na tela. Crio locales/pt.json e locales/en.json?"
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Isso. E inglês americano."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Criando."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ cat locales/en.json\n{\n  \"login.botao_entrar\": \"Log in\",\n  \"login.rotulo_email\": \"Email\",\n  \"login.rotulo_senha\": \"Password\",\n  \"login.link_esqueci\": \"Forgot your password?\",\n  \"login.link_criar_conta\": \"Create account\"\n}"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Arquivos criados e tela usando as chaves. O idioma é escolhido pelo cabeçalho Accept-Language."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Mudança: inglês britânico, o cliente é de Londres. Revisa os textos com isso em mente."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "E não é pelo Accept-Language: é pela preferência salva no perfil; sem perfil, português."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Ajustando os dois pontos."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/i18n\n ✓ usa inglês quando o perfil pede\n ✗ sem perfil usa português\n   AssertionError: expected 'Log in' to be 'Entrar'\n Tests  1 failed | 1 passed (2)"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "O teste 'sem perfil usa português' falha: o usuário de teste não tem o campo idioma e o código cai em inglês ('Log in') em vez de português."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m09",
+    "m10",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m11",
+    "m12"
+   ],
+   "nota": "difícil: decisão revertida — inglês americano (m05) virou britânico (m09), e a escolha por Accept-Language (m08, do assistente) foi trocada por preferência do perfil (m10). A convenção de chaves de m01 segue valendo. A falha de m12 está inteira em m13."
+  },
+  {
+   "id": "CC-T022",
+   "tarefa_atual": "Adicionar a métrica de tempo de envio ao worker-email.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Nesta PR de pagamentos você não toca em nada fora de src/pagamentos, o revisor é chato com escopo. Tarefa: trocar o cliente HTTP antigo pelo novo em src/pagamentos/gateway.ts."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Entendido, só src/pagamentos."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -n clienteAntigo src/pagamentos/gateway.ts\n12:import { clienteAntigo } from '../infra/http-antigo';\n40:    const r = await clienteAntigo.post(url, corpo);\n77:    const r = await clienteAntigo.get(url);\n103:    await clienteAntigo.post(urlEstorno, corpo);"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Troquei as 3 chamadas em gateway.ts pelo cliente novo. Testes passando."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ gh pr create --fill\nhttps://git.exemplo.com/acme/api-pagamentos/pull/212"
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Aprovado e mergeado. Valeu."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Outra coisa, em outro repositório: no worker-email quero uma métrica de tempo de envio por provedor. Histograma, no padrão Prometheus que a gente já usa."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Qual o nome da métrica e quais rótulos?"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "email_envio_duracao_segundos, com o rótulo provedor. Nada de rótulo com endereço de e-mail: explode a cardinalidade."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn \"new Histogram\" worker-email/src | head -1\nworker-email/src/metricas.ts:6:export const filaEspera = new Histogram({ name: 'email_fila_espera_segundos', help: 'espera na fila', buckets: [0.1, 0.5, 1, 5, 30] });"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Já existe um histograma em worker-email/src/metricas.ts; sigo o mesmo molde e os mesmos buckets, salvo ordem em contrário."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ curl -s localhost:9100/metrics | grep email_envio | head -2\nemail_envio_duracao_segundos_bucket{provedor=\"ses\",le=\"0.5\"} 3\nemail_envio_duracao_segundos_count{provedor=\"ses\"} 3"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Métrica no ar para o provedor ses. Falta instrumentar o provedor smtp e adicionar ao painel."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "O painel é o 'E-mail — operação': linha nova embaixo da de fila."
+    }
+   ],
+   "manter": [
+    "m07",
+    "m09",
+    "m13",
+    "m14"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m10",
+    "m12"
+   ],
+   "nota": "difícil: restrição que caducou — 'nada fora de src/pagamentos' (m01) valia para a PR anterior, já mergeada e em outro repositório; a tarefa atual não herda. discutível: m11 (premissa declarada pelo assistente sobre os buckets: ajuda a continuar, mas está no código)."
+  },
+  {
+   "id": "CC-T023",
+   "tarefa_atual": "Implementar a exportação CSV de leads.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Regra que vale para tudo hoje: qualquer exportação de dado de cliente registra em auditoria quem exportou (src/auditoria/registrar.ts). Dito isso, começa arrumando o filtro por data da tela de leads, que está ignorando o fuso."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou reproduzir o problema do filtro."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ curl -s 'localhost:3000/leads?de=2026-09-01&ate=2026-09-01' | jq length\n0"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "O filtro compara a data em UTC; lead criado à noite cai no dia seguinte. Corrigi convertendo o intervalo para America/Sao_Paulo."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ curl -s 'localhost:3000/leads?de=2026-09-01&ate=2026-09-01' | jq length\n14"
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Agora sim. Commit."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ git commit -qm \"fix(leads): filtro por data respeita o fuso\" && git log --oneline -1\nd91c0aa fix(leads): filtro por data respeita o fuso"
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Próximo: botão 'Exportar CSV' na tela de leads, respeitando os filtros aplicados."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Quais colunas no CSV?"
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "nome, e-mail, telefone, origem e criado_em. Separador ponto e vírgula, por causa do Excel daqui."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Vou gerar no servidor em fluxo, para não carregar tudo em memória."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ curl -s 'localhost:3000/leads/exportar?de=2026-09-01&ate=2026-09-30' | head -3\nnome;email;telefone;origem;criado_em\nLaura Pires;laura@exemplo.com;+5511900000001;site;2026-09-01T09:12:00-03:00\nCaio Brandt;caio@exemplo.com;+5521900000002;indicacao;2026-09-01T10:40:00-03:00"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Rota /leads/exportar pronta, em fluxo, respeitando os filtros. Falta o botão na tela e o registro em auditoria."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "boa"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m08",
+    "m10",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m09",
+    "m11",
+    "m12",
+    "m14"
+   ],
+   "nota": "difícil: restrição antiga ainda válida — a regra de auditoria foi dita em m01, antes de uma tarefa que nem era de exportação, e é exatamente o que falta fazer; a correção do filtro (m02 a m07) sai."
+  },
+  {
+   "id": "CC-T024",
+   "tarefa_atual": "Implementar a matriz de permissões do módulo de propostas.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Hoje é dia de permissão no módulo de propostas. Segue a matriz:\n- corretor: cria e edita as próprias; vê as próprias\n- gerente: vê todas da equipe; aprova desconto até 10%\n- diretor: vê todas; aprova qualquer desconto\n- financeiro: só leitura, todas"
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Onde ficam as checagens hoje?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "Espalhadas nos controllers, infelizmente. Centraliza em src/propostas/permissoes.ts."
+    },
+    {
+     "id": "m04",
+     "papel": "usuario",
+     "texto": "nossa, o café daqui acabou de novo"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Vou criar a função pode(usuario, acao, proposta)."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/propostas/permissoes.test.ts\n ✓ src/propostas/permissoes.test.ts (8)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "permissoes.ts criado com a matriz e 8 testes. Falta trocar as checagens dos 5 controllers."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Detalhe que esqueci: gerente também edita proposta da equipe, mas só enquanto estiver em rascunho."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "e desculpa a demora, tava em reunião"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Incluindo a regra do rascunho."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/propostas/permissoes.test.ts\n ✓ src/propostas/permissoes.test.ts (10)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Placar: matriz completa em src/propostas/permissoes.ts (10 testes). Controllers já trocados: criar e editar. Faltam: listar, aprovar-desconto e excluir."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "Excluir ninguém pode, só diretor. Tinha esquecido também."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m08",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m09",
+    "m10",
+    "m11"
+   ],
+   "nota": "Mensagem do usuário também sai quando é só conversa (m04, m09). A matriz de m01 e os dois acréscimos (m08, m13) são requisitos da tarefa; o placar de m12 substitui o de m07."
+  },
+  {
+   "id": "CC-T025",
+   "tarefa_atual": "Rodar o preenchimento de canal_origem em dev até o fim.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Roda o scripts/preencher-canal.ts em dev. Lote de 5 mil. Se cair, retoma de onde parou; não começa do zero."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Iniciando."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/preencher-canal.ts --env dev --lote 5000\n[lote 1] ids 1..5000 ok (812 ms)\n[lote 2] ids 5001..10000 ok (790 ms)\n...\n[lote 97] ids 480001..485000 ok (801 ms)\n[lote 98] ids 485001..490000 FAILED: deadlock detected\nultimo id confirmado: 485000"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Parou no lote 98 com deadlock. Último id confirmado: 485000."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Deadlock com quê?"
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -Atc \"select pid, left(query, 60) from pg_stat_activity where wait_event_type = 'Lock'\"\n8841|UPDATE pedidos SET status = 'fechado' WHERE id = ANY($1)"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Com a tarefa agendada fecha-pedidos, que atualiza os mesmos pedidos em outra ordem. Ela roda a cada 10 min em dev."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Pausa a fecha-pedidos em dev enquanto o script roda. Só em dev."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/agendador.sh dev pausar fecha-pedidos\npaused: fecha-pedidos (dev)"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "fecha-pedidos pausada em dev para evitar o deadlock com o script. Pendência: religar quando o preenchimento terminar."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/preencher-canal.ts --env dev --lote 5000 --a-partir-de 485001\n[lote 1] ids 485001..490000 ok (799 ms)\n...\n[lote 212] ids 1540001..1545000 ok (805 ms)\n^C interrupted by user\nultimo id confirmado: 1545000"
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Interrompi sem querer, foi mal. Pode continuar."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "Quando terminar, me passa a contagem por canal."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m10",
+    "m11",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "difícil: saída longa com uma linha necessária — o que importa em m11 é a última linha (ultimo id confirmado: 1545000) e a opção --a-partir-de, que ninguém repetiu; o progresso anterior (m03, m04: 485000) ficou velho. O deadlock (m05 a m09) está contornado e o contorno, com a pendência de religar, está em m10."
+  },
+  {
+   "id": "CC-T026",
+   "tarefa_atual": "Implementar a exclusão de anúncio no painel.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Precisamos do botão de excluir anúncio no painel. Rota DELETE /anuncios/:id."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Exclusão definitiva ou só marcação?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "Definitiva. Apaga a linha e as fotos do bucket."
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Certo. Apago as fotos primeiro e a linha depois."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/anuncios\n ✓ excluir remove a linha\n ✓ excluir remove fotos do bucket\n Tests  2 passed (2)"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "DELETE /anuncios/:id pronto: remove fotos e linha. Testes passando."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Hmm, falei com o jurídico agora. Não pode apagar de verdade: tem que guardar por 5 anos. Muda para marcação, com uma coluna excluido_em, e as fotos ficam."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Entendido. Isso pede migration para a coluna e filtro de excluídos nas listagens. Posso criar a migration?"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Pode. E a listagem do admin continua mostrando os excluídos, com um selo 'excluído'."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create anuncios-excluido-em\nCreated migrations/0160_anuncios-excluido-em.ts"
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/anuncios\n ✓ excluir marca excluido_em\n ✓ listagem pública esconde excluídos\n ✗ excluir remove fotos do bucket\n   AssertionError: expected \"spy\" to be called 3 times, but got 0 times\n Tests  1 failed | 2 passed (3)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Marcação pronta (migrations/0160_anuncios-excluido-em.ts, ainda não aplicada). O teste antigo 'excluir remove fotos do bucket' falha, como esperado: precisa virar um teste de que as fotos FICAM. Falta também o selo no admin."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "ok"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m09",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m10",
+    "m11",
+    "m13"
+   ],
+   "nota": "difícil: decisão revertida — 'definitiva, apaga as fotos' (m03) foi revogada em m07 por exigência do jurídico; tudo o que foi feito para a exclusão definitiva (m04 a m06) sai junto. A falha de m11 está descrita, com o nome do teste, em m12."
+  },
+  {
+   "id": "CC-T027",
+   "tarefa_atual": "Migrar as tarefas do cron do servidor para o agendador da aplicação.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Vamos tirar as tarefas do cron do servidor e passar para o agendador da aplicação (src/agendador). Horários sempre em America/Sao_Paulo, nunca UTC."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Listando o cron atual."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ crontab -l\n# m h dom mon dow command\n0 3 * * * /srv/app/bin/limpar-sessoes\n*/10 * * * * /srv/app/bin/fecha-pedidos\n30 6 * * 1-5 /srv/app/bin/relatorio-diario\n0 1 1 * * /srv/app/bin/fechamento-mensal"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Quatro tarefas no cron."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "O servidor está em UTC, então esses horários aí são UTC? O relatório diário devia sair 06:30 de Brasília. Confere a que horas ele sai de verdade."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ date -u +%H:%M; ls -l --time-style=+%H:%M saida/relatorio-diario/ | tail -1\n14:02\n-rw-r--r-- 1 app app 48211 06:30 2026-10-01.pdf"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Conferido: o servidor está em UTC e o relatório é gerado às 06:30 UTC, ou seja, 03:30 de Brasília."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Então está errado há meses e ninguém viu: o cron está em UTC. Na migração, o relatório diário vai para 06:30 de Brasília. As outras três mantêm o horário REAL de hoje, convertido."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Atenção na conversão: o fechamento-mensal roda 01:00 UTC do dia 1º, que é 22:00 de Brasília do ÚLTIMO dia do mês anterior. Mantenho assim (último dia, 22:00) ou passo para o dia 1º?"
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Boa pegada. Deixa eu ver com o financeiro."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Enquanto isso migrei as três que não dependem disso: limpar-sessoes (00:00), fecha-pedidos (a cada 10 min) e relatorio-diario (06:30, dias úteis), todas em America/Sao_Paulo. O cron do servidor ainda não foi desligado."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "show"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m08",
+    "m09",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m12"
+   ],
+   "nota": "difícil: restrição antiga ainda válida — a regra do fuso (m01) decide tudo o que vem depois. m03 é saída de ferramenta que fica: é a única cópia do cron que está sendo migrado e não vive no repositório. A conferência de m05 a m07 está absorvida em m08. m09 é pergunta ainda aberta. discutível: m10 (só adia a resposta de m09)."
+  },
+  {
+   "id": "CC-T028",
+   "tarefa_atual": "Documentar as variáveis de ambiente do worker-email no README.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Documenta no README do worker-email todas as variáveis de ambiente que ele lê. Tabela: nome, obrigatória?, padrão, para que serve."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou levantar no código."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -rhno \"process\\.env\\.[A-Z_]*\" worker-email/src | sort -u -t: -k3\n4:process.env.EMAIL_DOMINIO\n9:process.env.EMAIL_PROVEDOR\n5:process.env.EMAIL_REMETENTE\n2:process.env.LOG_NIVEL\n7:process.env.METRICAS_PORTA\n3:process.env.RABBITMQ_URL"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "O código lê 6 variáveis: RABBITMQ_URL, EMAIL_PROVEDOR, EMAIL_DOMINIO, EMAIL_REMETENTE, LOG_NIVEL e METRICAS_PORTA."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "EMAIL_REMETENTE não é obrigatória: se faltar, usa nao-responda@ mais o domínio."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "E não documenta valor de exemplo que pareça credencial. Só o nome."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Certo."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ grep -n \"??\" worker-email/src/config.ts\n2:  logNivel: process.env.LOG_NIVEL ?? 'info',\n7:  metricasPorta: Number(process.env.METRICAS_PORTA ?? 9100),\n9:  provedor: process.env.EMAIL_PROVEDOR ?? 'ses',"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Padrões no código: LOG_NIVEL=info, METRICAS_PORTA=9100, EMAIL_PROVEDOR=ses. As outras não têm padrão."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ git diff --stat\n worker-email/README.md | 14 ++++++++++++++\n 1 file changed, 14 insertions(+)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Tabela escrita no worker-email/README.md com as 6 variáveis. Falta só você conferir o texto da coluna 'para que serve'."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Manda o trecho aqui no chat que eu reviso."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m06",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m07",
+    "m08",
+    "m09",
+    "m10"
+   ],
+   "nota": "Buscas e leituras saem; as listas de m04 e m09 já viraram a tabela (m11). Os dois requisitos do usuário (m05, m06) ficam: valem para a revisão do texto."
+  },
+  {
+   "id": "CC-T029",
+   "tarefa_atual": "Limpar os arquivos órfãos de tmp/uploads do api-arquivos.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O diretório tmp/uploads do api-arquivos está com 40 GB. Limpa o que for órfão."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou medir o que há lá."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ df -h tmp | tail -1\n/dev/sdb1        50G   40G   10G  80% /srv/dados"
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ du -sh tmp/uploads/* | sort -h | tail -4\n1.1G\ttmp/uploads/2026-09-28\n6.3G\ttmp/uploads/import-legado\n12G\ttmp/uploads/2026-08\n19G\ttmp/uploads/2026-07"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Quatro grupos: 2026-07 (19 GB), 2026-08 (12 GB), import-legado (6,3 GB) e 2026-09-28 (1,1 GB). Posso apagar 2026-07 e 2026-08 inteiros? Os outros dois eu não sei o que são."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Pode."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "O import-legado NÃO. É a carga do cliente antigo, ainda vão reprocessar."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Certo: apago 07 e 08, preservo import-legado. E 2026-09-28?"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "2026-09-28 também fica, é de segunda-feira."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "vou entrar numa reunião, já volto"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Antes de apagar, confiro se algum arquivo de 07 ou 08 ainda é referenciado no banco."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/referenciados.ts tmp/uploads/2026-07 tmp/uploads/2026-08\nchecked 18211 files\nreferenced: 3\n  tmp/uploads/2026-08/a91f/contrato-assinado.pdf\n  tmp/uploads/2026-08/a91f/anexo-1.pdf\n  tmp/uploads/2026-08/c07e/planta.pdf"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Três arquivos de 2026-08 ainda são referenciados por registros no banco. Apago o resto e deixo esses três, ou movo os três para o armazenamento definitivo antes?"
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "bom achado"
+    },
+    {
+     "id": "m15",
+     "papel": "assistente",
+     "texto": "Aguardo sua decisão sobre os três arquivos."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m06",
+    "m07",
+    "m09",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m08",
+    "m10",
+    "m11",
+    "m14",
+    "m15"
+   ],
+   "nota": "difícil: resposta curta que depende da pergunta — 'Pode.' (m06) só autoriza algo lido junto com a pergunta de m05 (apagar 2026-07 e 2026-08 inteiros). m12 é saída que fica: os três caminhos ainda referenciados não foram repetidos em lugar nenhum. m13 é pergunta sem resposta."
+  },
+  {
+   "id": "CC-T030",
+   "tarefa_atual": "Implementar o upload de anexos da proposta.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Antes do upload, precisamos do bucket em dev. Cria pelo script de infra."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/infra/criar-bucket.sh dev anexos-proposta\nbucket created: acme-dev-anexos-proposta (region sa-east-1)\npolicy applied: private\nenv hint: ARQUIVOS_BUCKET=acme-dev-anexos-proposta"
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "Bucket criado em dev. Falta a variável ARQUIVOS_BUCKET no stack do api-propostas."
+    },
+    {
+     "id": "m04",
+     "papel": "usuario",
+     "texto": "Põe a variável no stack de dev. No de prod não: o bucket de prod ainda não existe."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ git diff --stat\n api-propostas/stack.dev.yaml | 1 +\n 1 file changed, 1 insertion(+)"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Pronto: bucket acme-dev-anexos-proposta criado em dev (privado) e ARQUIVOS_BUCKET no stack.dev.yaml do api-propostas. Em prod não há bucket nem variável."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Agora o upload em si: POST /propostas/:id/anexos, só PDF, até 10 MB."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Upload passando pelo servidor ou URL pré-assinada para o navegador enviar direto?"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Pré-assinada, com validade de 5 minutos."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Vou usar o cliente S3 que já existe em src/infra/s3.ts."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/propostas/anexos.test.ts\n ✓ gera URL pré-assinada com validade de 300 s\n ✓ rejeita tipo diferente de PDF\n ✓ rejeita acima de 10 MB\n Tests  3 passed (3)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Rota pronta e testada com o cliente simulado. Ainda não testei contra o bucket real de dev."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "Testa no real. Simulado não vale."
+    }
+   ],
+   "manter": [
+    "m06",
+    "m07",
+    "m09",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m08",
+    "m10",
+    "m11"
+   ],
+   "nota": "difícil: conclusão anterior é premissa — criar o bucket foi a tarefa anterior e acabou, mas o resumo de m06 (nome do bucket, variável já no stack de dev, nada em prod) é o que o upload usa; pedido, saída e passos (m01 a m05) saem, inclusive a instrução de m04, que m06 repete por inteiro."
+  },
+  {
+   "id": "CC-T031",
+   "tarefa_atual": "Corrigir a recusa de login quando o relógio do celular está adiantado (a divisão do sessao.ts ficou para depois).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Vamos quebrar o src/auth/sessao.ts em arquivos menores. Está com 900 linhas."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Proponho 4 arquivos: criar.ts, validar.ts, renovar.ts e revogar.ts."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsc --noEmit && echo ok\nok"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "criar.ts e validar.ts já extraídos, com os tipos passando. Faltam renovar.ts e revogar.ts."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Pausa nisso, depois a gente retoma. O suporte acabou de escalar: usuário com relógio do celular 3 min adiantado não consegue logar, o token é recusado como 'emitido no futuro'."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Vou ver a validação do campo iat."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ grep -n iat src/auth/validar.ts\n27:  if (payload.iat > agora) throw new ErroToken('emitido no futuro');"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Em src/auth/validar.ts:27 a checagem do iat não tem tolerância nenhuma. O usual é aceitar algum desvio de relógio."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Tolerância de 60 segundos. Mais que isso não, segurança não deixa."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Mas o caso do suporte é de 3 minutos; com 60 s ele continua recusado. Sigo com 60 s mesmo assim?"
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Hmm, verdade. Vou confirmar com segurança se pode 5 min. Enquanto isso implementa configurável, com padrão de 60 s."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Implementando a variável AUTH_TOLERANCIA_RELOGIO_S com padrão 60."
+    }
+   ],
+   "manter": [
+    "m05",
+    "m08",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m06",
+    "m07",
+    "m09",
+    "m10",
+    "m12"
+   ],
+   "nota": "difícil: tarefa interrompida — a divisão do sessao.ts parou no meio e 'depois retoma'; a tarefa atual é o erro do relógio. A tolerância fixa de m09 foi revista em m11 (configurável, padrão 60 s, 5 min em consulta), que responde também à pergunta de m10. discutível: m01 e m04 (pedido e ponto de parada da refatoração interrompida: não servem ao erro, mas são o único registro de onde ela parou)."
+  },
+  {
+   "id": "CC-T032",
+   "tarefa_atual": "Achar a causa dos 502 intermitentes do api-agenda em dev.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O api-agenda em dev devolve 502 de vez em quando, uns 2% das chamadas. Acha a causa. Não mexe em configuração do gateway sem me perguntar."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou medir a taxa."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/sonda.sh https://dev.exemplo.com/agenda/saude 500\n200: 489\n502: 11"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "11 de 500, cerca de 2,2%."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Hipótese 1: réplica reiniciando por falta de memória."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ docker service ps api-agenda --format '{{.CurrentState}}'\nRunning 3 days ago\nRunning 3 days ago"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Descartado: as duas réplicas estão de pé há 3 dias, sem reinício."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Hipótese 2: tempo limite do gateway menor que o da aplicação."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ grep -n timeout gateway/rotas/agenda.yaml\n12:    timeout: 30s"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Descartado também: o tempo limite do gateway é 30 s e os 502 voltam em menos de 100 ms."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Menos de 100 ms? Então a conexão está sendo recusada na hora. Olha o keep-alive."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Boa pista. Vou comparar o keep-alive do Node com o tempo de ociosidade do gateway."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m07",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "difícil: hipótese descartada — o 502 segue sem causa; as duas conclusões negativas (m07, m10) ficam para ninguém refazer os testes, e a evidência delas sai. m10 ainda carrega o dado novo (502 em menos de 100 ms) que sustenta a pista de m11. m03 fica pelo comando da sonda."
+  },
+  {
+   "id": "CC-T033",
+   "tarefa_atual": "Corrigir a lentidão do GET /agenda/dia (correção feita; falta o commit).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O GET /agenda/dia leva 4 s num dia cheio. Descobre e corrige."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Medindo."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ curl -s -o /dev/null -w '%{time_total}\\n' 'localhost:3000/agenda/dia?data=2026-09-30'\n4.118"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "4,1 s para 30/09, dia com 62 agendamentos."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Hipótese 1: falta de índice em agendamentos(data)."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c \"EXPLAIN ANALYZE SELECT * FROM agendamentos WHERE data = '2026-09-30'\" | tail -3\n Index Scan using idx_agendamentos_data on agendamentos  (actual time=0.020..0.311 rows=62 loops=1)\n Planning Time: 0.1 ms\n Execution Time: 2.1 ms"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Descartado: a consulta principal usa índice e leva 2 ms."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ LOG_SQL=1 pnpm tsx scripts/chamar.ts '/agenda/dia?data=2026-09-30' 2>&1 | grep -c SELECT\n125"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Achei: a rota faz 125 consultas para 62 agendamentos — uma para o cliente e outra para o profissional de cada um, em src/agenda/dia.ts:40. É o clássico N+1."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Resolve com junção, não com cache."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Reescrevendo com JOIN."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ curl -s -o /dev/null -w '%{time_total}\\n' 'localhost:3000/agenda/dia?data=2026-09-30'\n0.087"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Com a junção em src/agenda/dia.ts: 0,087 s (era 4,1 s) e 1 consulta em vez de 125. Testes passando. Falta o commit."
+    },
+    {
+     "id": "m14",
+     "papel": "usuario",
+     "texto": "Commit na branch perf/agenda-dia."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m10",
+    "m13",
+    "m14"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m11",
+    "m12"
+   ],
+   "nota": "difícil: hipótese descartada — a hipótese do índice (m05 a m07) foi eliminada, mas a causa já foi achada e corrigida: nem a eliminação nem o diagnóstico (m09) são mais necessários; m13 resume o antes e o depois. m10 fica: é requisito da tarefa (junção, não cache)."
+  },
+  {
+   "id": "CC-T034",
+   "tarefa_atual": "Bloquear cadastro com e-mail de domínio descartável.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Quero bloquear e-mail descartável no cadastro."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Entendi: validar o formato do e-mail e rejeitar os inválidos. Vou reforçar a expressão regular."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/cadastro/validar.test.ts\n ✓ rejeita e-mail sem arroba\n ✓ rejeita domínio sem ponto\n Tests  2 passed (2)"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Validação de formato reforçada em src/cadastro/validar.ts."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Não é isso. Formato já está ok. Descartável é domínio de e-mail temporário, desses de 10 minutos. Tem que ter uma lista de domínios bloqueados."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Desculpe, entendi errado. Desfaço a mudança da expressão regular?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Desfaz. E a lista fica no banco, não no código, para o suporte poder editar."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Revertido. Vou criar a tabela dominios_bloqueados."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create dominios-bloqueados\nCreated migrations/0161_dominios-bloqueados.ts"
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/cadastro\n ✓ rejeita domínio bloqueado\n ✓ aceita domínio comum\n Tests  2 passed (2)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Feito: migrations/0161_dominios-bloqueados.ts (aplicada só em dev) e checagem no cadastro. A tabela está vazia; falta a carga inicial e a tela do suporte."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Carga inicial: uso a lista que o time de fraude mantém, te mando o CSV. A tela fica para outra tarefa."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m07",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m08",
+    "m09",
+    "m10"
+   ],
+   "nota": "difícil: valor corrigido — o assistente entendeu 'descartável' como 'formato inválido' (m02 a m04) e o usuário corrige em m05; o entendimento errado e o que foi feito por causa dele saem. m07 traz o 'desfaz', já cumprido, e a decisão que continua valendo (lista no banco): fica por ela."
+  },
+  {
+   "id": "CC-T035",
+   "tarefa_atual": "Atualizar a especificação OpenAPI com as rotas novas de agendamento.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Regra para hoje: não sobe nada para dev sem eu ver o diff antes. Primeira tarefa: agendamento duplicado quando o usuário clica duas vezes. Corrige."
+    },
+    {
+     "id": "m02",
+     "papel": "usuario",
+     "texto": "Para esse bug, usa a branch fix/agenda-dup e não mexe no front, só no servidor."
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "Certo: fix/agenda-dup, só servidor."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/agenda/criar.test.ts\n ✓ segunda chamada com a mesma chave devolve o mesmo agendamento\n Tests  1 passed (1)"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Corrigido no servidor com chave de idempotência: o POST /agendamentos passa a aceitar o cabeçalho Idempotency-Key. Segue o diff para você ver antes de subir."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ git diff --stat main\n src/agenda/criar.ts      | 21 +++++++++++++++------\n src/agenda/criar.test.ts | 18 ++++++++++++++++++\n 2 files changed, 33 insertions(+), 6 deletions(-)"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Vi. Pode subir para dev."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/deploy.sh dev api-agenda\nservice api-agenda converged (2/2)"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Agora atualiza a especificação OpenAPI (docs/openapi.yaml): faltam as rotas GET /agendamentos/:id/historico e POST /agendamentos/:id/remarcar."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "As duas rotas existem no código desde a versão passada; vou descrever a partir dos DTOs."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Aproveita e documenta o Idempotency-Key no POST /agendamentos."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ pnpm openapi:lint docs/openapi.yaml\ndocs/openapi.yaml:412:9  error  operation-operationId  Operation must have \"operationId\".\n✖ 1 problem (1 error, 0 warnings)"
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "As duas rotas e o cabeçalho estão descritos em docs/openapi.yaml. O lint acusa falta de operationId na linha 412 (rota de remarcar)."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m09",
+    "m11",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m07",
+    "m08",
+    "m10",
+    "m12"
+   ],
+   "nota": "difícil: restrição que caducou — das duas restrições do começo, a de m01 (ver o diff antes de subir) vale o dia todo; a de m02 (branch e 'não mexe no front') era só do erro da duplicidade, já entregue. m05 fica: o cabeçalho Idempotency-Key criado ali é o que m11 manda documentar. O erro de m12 está inteiro em m13."
+  },
+  {
+   "id": "CC-T036",
+   "tarefa_atual": "Reaplicar o cupom progressivo sem o erro do total negativo (o revert já está em dev).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O deploy de ontem quebrou o checkout em dev. Reverte o commit do cupom."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ git log --oneline -4\n9e3b1a7 chore: bump deps\nc4d2f80 feat(checkout): cupom progressivo\n51aa0e2 fix(carrinho): frete grátis\n0b7c9d1 docs: readme"
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "O commit é o c4d2f80 (cupom progressivo). Revertendo."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ git revert --no-edit c4d2f80\n[feat/checkout 7f1e2d3] Revert \"feat(checkout): cupom progressivo\"\n 4 files changed, 12 insertions(+), 96 deletions(-)"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Revertido no commit 7f1e2d3 (desfaz o c4d2f80) e publicado em dev. O checkout voltou a funcionar."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Ufa. Obrigado."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Agora quero o cupom progressivo de volta, sem o erro. O problema era desconto maior que o subtotal dando total negativo."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Posso reaplicar com `git revert 7f1e2d3` e corrigir por cima, ou refazer do zero. Qual prefere?"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "A primeira. Mas em commits separados: um reaplica, outro corrige."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ git revert --no-edit 7f1e2d3\n[feat/checkout a2c4e6f] Reapply \"feat(checkout): cupom progressivo\""
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Reaplicado no commit a2c4e6f, ainda só local. Falta o commit da correção: limitar o desconto ao subtotal."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "E um teste com cupom de 120%, pra garantir."
+    }
+   ],
+   "manter": [
+    "m05",
+    "m07",
+    "m09",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m08",
+    "m10"
+   ],
+   "nota": "difícil: conclusão anterior é premissa — o revert foi a tarefa anterior; o resumo de m05 (hash do revert, dev funcionando sem o cupom) é o chão da atual. 'A primeira' (m09) já foi executada (m10, m11), então a pergunta de m08 sai; m09 fica pela regra dos commits separados."
+  }
+ ]
+}

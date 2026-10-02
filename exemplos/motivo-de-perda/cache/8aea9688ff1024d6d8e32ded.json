@@ -1,0 +1,44 @@
+{
+ "medicao": {
+  "ms": 353,
+  "input_tokens": 1552,
+  "modelo": "jev-1.13.0",
+  "perguntas": 4
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "group": {
+    "type": "choice",
+    "choice": "imovel",
+    "confidence": 0.9,
+    "probabilities": {
+     "imovel": 0.91,
+     "atendimento": 0.0,
+     "momento_cliente": 0.0,
+     "concorrencia": 0.0,
+     "localizacao": 0.0,
+     "credito_documentacao": 0.0,
+     "sem_informacao": 0.0,
+     "preco": 0.09
+    }
+   },
+   "reason_stated": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "blames_agency": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "closed_elsewhere": {
+    "type": "noul",
+    "noul": 0.03
+   }
+  },
+  "usage": {
+   "input_tokens": 1552,
+   "output_tokens": 150
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "congelado_em": "2026-10-02T00:37:25-03:00",
+ "arquivos": {
+  "perguntas.py": "e940102ada41341f2936cf93503b836d1f8114583f2b5824947b298f814f8f50",
+  "triagem.py": "2d67ca35b8bcfa46dcb9e81f6931708677b854d7aa81b9b391d0ee4f4f740daf",
+  "run.py": "6b3e3d8d49e352b4f90c50c1c5794fd00912e47122ed0c8827b56117ac3f754b",
+  "dados/documentos.json": "a88bf9ddaf8c4c45ef4a046184699568d0121ca79b09e4e9f788eee0965a7120",
+  "dados/condicoes_teste.json": "7a3e17812df7f0043930ab06ebb802ea056017e84ea847b7d1803afb106f5d7c"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (12 condições × 44 documentos), desenho padrão `mapa` (A) com a política acima",
+  "1_f1": "F1 do desenho padrão sobre os decidíveis decididos ≥ 0,90 e ≥ F1 do baseline (palavras-chave por seção) + 0,20",
+  "2_perdidas": "documento verdadeiro do gabarito que saiu `falso` ≤ 5% dos verdadeiros",
+  "3_negada_revogada": "documento falso marcado `verdadeiro` em condição das famílias negada/revogada ≤ 1",
+  "4_humano": "decidíveis mandados a humano (`indecidivel`) ≤ 6%",
+  "secundario_nao_decide": "seção que prova certa ≥ 80% dos verdadeiros das condições semânticas; indecidíveis do gabarito que foram a humano ≥ 50%; falha operacional = 0; desenho B medido ao lado, com n",
+  "se_falhar": "1 falhando = palavra-chave basta ou o Jev não lê a condição; 2 ou 3 = o mapa perde ou inverte o que deveria achar (não serve sem mudança); 4 = custa humano demais",
+  "limites": {
+   "f1_min": 0.9,
+   "margem_baseline": 0.2,
+   "perdidas_max": 0.05,
+   "fp_negada_revogada_max": 1,
+   "humano_max": 0.06,
+   "prova_min": 0.8,
+   "indecidiveis_a_humano_min": 0.5
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "969aa3fdf93eb9d8958bc47b7f19ff22d594003a69e7bd2c30a4cf6c5b79d794",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6"
+ }
+}

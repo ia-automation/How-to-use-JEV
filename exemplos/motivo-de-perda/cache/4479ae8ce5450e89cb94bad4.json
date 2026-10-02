@@ -1,0 +1,66 @@
+{
+ "medicao": {
+  "ms": 251,
+  "input_tokens": 2660,
+  "modelo": "jev-1.13.0",
+  "perguntas": 4
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "preco_acima_orcamento",
+    "confidence": 0.99,
+    "probabilities": {
+     "adiou_decisao": 0.0,
+     "entorno_seguranca": 0.0,
+     "falta_item": 0.0,
+     "demora_resposta": 0.0,
+     "documentacao_imovel": 0.0,
+     "sumiu_sem_resposta": 0.0,
+     "preco_acima_orcamento": 1.0,
+     "pressao_insistencia": 0.0,
+     "sumiu_apos_valor": 0.0,
+     "custos_extras": 0.0,
+     "imovel_indisponivel": 0.0,
+     "tamanho_planta": 0.0,
+     "mudanca_de_vida": 0.0,
+     "lancamento_construtora": 0.0,
+     "condicao_pagamento": 0.0,
+     "informacao_errada": 0.0,
+     "negociacao_frustrada": 0.0,
+     "decisor_vetou": 0.0,
+     "direto_proprietario": 0.0,
+     "adiou_sem_motivo": 0.0,
+     "garantia_locaticia": 0.0,
+     "visita_falhou": 0.0,
+     "restricao_cadastral": 0.0,
+     "diferente_do_anuncio": 0.0,
+     "financiamento_negado": 0.0,
+     "bairro_nao_desejado": 0.0,
+     "desistiu_de_mudar": 0.0,
+     "estado_conservacao": 0.0,
+     "outra_imobiliaria": 0.0,
+     "distancia_deslocamento": 0.0
+    }
+   },
+   "reason_stated": {
+    "type": "noul",
+    "noul": 0.8
+   },
+   "blames_agency": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "closed_elsewhere": {
+    "type": "noul",
+    "noul": 0.02
+   }
+  },
+  "usage": {
+   "input_tokens": 2660,
+   "output_tokens": 420
+  }
+ }
+}

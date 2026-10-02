@@ -1,0 +1,654 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "AE-A001",
+   "afirmacao": "Testes do módulo de propostas passando na revisão b7e2f90.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "commit",
+     "texto": "b7e2f90 feat(propostas): parcelas com juros — 3 arquivos alterados · 2026-09-30 14:40"
+    },
+    {
+     "id": "e2",
+     "tipo": "log_teste",
+     "texto": "CI api-leads · revisão 4c1d8aa · vitest run — 52 passed (52) · 2026-09-30 14:02"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: o log é da revisão 4c1d8aa, anterior ao commit; não prova nada sobre b7e2f90."
+  },
+  {
+   "id": "AE-A002",
+   "afirmacao": "Rota GET /leads/:id funcionando em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/leads/9b2c-… → 200 OK · content-length: 0"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "swarm · prod · api-leads:1.9.0 — rollout completed · 3/3"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: 200 com corpo vazio prova que a rota responde, não que devolve o lead; o deploy não fala da rota."
+  },
+  {
+   "id": "AE-A003",
+   "afirmacao": "Testes passando após a refatoração do worker.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_build",
+     "texto": "fila-cobranca · tsc --noEmit — 0 errors"
+    },
+    {
+     "id": "e2",
+     "tipo": "log_build",
+     "texto": "docker build fila-cobranca:1.3.0 — exporting layers · done · 48s"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: dois registros de build (tipagem e imagem), nenhum de teste."
+  },
+  {
+   "id": "AE-A004",
+   "afirmacao": "Integração com o gateway de pagamento funcionando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "vitest tests/cobranca.test.ts — 8 passed (8)\nvi.mock('../gateway') ativo · resposta fixa { status: 'pago' } em todos os testes"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "b2b2b2b feat(cobranca): cliente do gateway de pagamento"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: teste verde com o gateway dublado prova o código local, não a integração."
+  },
+  {
+   "id": "AE-A005",
+   "afirmacao": "Migration 0011 aplicada nos dois bancos.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · ambiente: dev · 0011_score_lead aplicada (2 statements)"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "d1d1d1d feat(leads): coluna score_lead + migration 0011"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: só dev; 'nos dois bancos' inclui prod, sem registro."
+  },
+  {
+   "id": "AE-A006",
+   "afirmacao": "Página de propostas carregando sem erro no navegador.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "manual",
+     "texto": "Abri a tela de propostas e estava normal (anotação do agente, sem captura nem console)."
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "e2e2e2e feat(propostas): tela de lista com filtros"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: registro manual sem processo (sem log, sem resposta, sem captura)."
+  },
+  {
+   "id": "AE-A007",
+   "afirmacao": "Correção do telefone testada e publicada.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "api-leads · vitest run — 61 passed (61) · revisão e3f9a01"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "e3f9a01 fix(leads): normaliza DDD antes de comparar"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1",
+    "e2"
+   ],
+   "nota": "difícil: 'testada' tem prova; 'publicada' não tem deploy nem push."
+  },
+  {
+   "id": "AE-A008",
+   "afirmacao": "Suíte do api-leads verde.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "10:02 · revisão 5a5a5a5 · vitest run — 61 passed (61)"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "10:20 · 6b6b6b6 refactor(leads): extrai normalizador para util"
+    },
+    {
+     "id": "e3",
+     "tipo": "log_teste",
+     "texto": "10:31 · revisão 6b6b6b6 · vitest run — 60 passed, 1 failed · FAIL tests/leads.test.ts > normaliza DDD"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e3"
+   ],
+   "nota": "difícil: o registro mais recente, na revisão atual, falha; o verde anterior ficou velho."
+  },
+  {
+   "id": "AE-A009",
+   "afirmacao": "Suíte do api-leads verde.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "09:50 · revisão 1c1c1c1 · vitest run — 60 passed, 1 failed"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "10:05 · 2d2d2d2 fix(leads): ajusta regex do DDD"
+    },
+    {
+     "id": "e3",
+     "tipo": "log_teste",
+     "texto": "10:12 · revisão 2d2d2d2 · vitest run — 61 passed (61)"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e3"
+   ],
+   "nota": "difícil: houve falha, mas a rodada mais recente, na revisão atual, passou."
+  },
+  {
+   "id": "AE-A010",
+   "afirmacao": "Deploy da portal-web 2.2.0 em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "swarm · ambiente: homolog · portal-web:2.2.0 — rollout completed · 2/2"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "f3f3f3f release: portal-web 2.2.0"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: o rollout foi em homolog; nada sobre prod."
+  },
+  {
+   "id": "AE-A011",
+   "afirmacao": "Todos os testes passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "vitest run -t 'leads' — 7 passed (7) · 113 skipped"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "a4a4a4a fix(leads): telefone com DDD repetido"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: filtro `-t` rodou 7 de 120; 'todos' não está provado."
+  },
+  {
+   "id": "AE-A012",
+   "afirmacao": "Todos os testes do módulo de agenda passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "vitest tests/agenda — 12 passed · 4 skipped (16)"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "b5b5b5b feat(agenda): bloqueio de horário"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: 4 pulados não passaram nem falharam; 'todos' fica sem prova."
+  },
+  {
+   "id": "AE-A013",
+   "afirmacao": "Correção enviada para o repositório remoto.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "commit",
+     "texto": "[Manolo 7d7d7d7] fix(agenda): fuso horário do lembrete · 1 file changed, 4 insertions(+), 1 deletion(-)"
+    },
+    {
+     "id": "e2",
+     "tipo": "log_build",
+     "texto": "tsc --noEmit — 0 errors"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: commit local não é push."
+  },
+  {
+   "id": "AE-A014",
+   "afirmacao": "Branch Manolo enviada ao remoto.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "commit",
+     "texto": "[Manolo 8e8e8e8] feat(agenda): bloqueio de horário"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "git push origin Manolo → ! [rejected] Manolo -> Manolo (fetch first) · error: failed to push some refs"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e2"
+   ],
+   "nota": "difícil: o push foi recusado."
+  },
+  {
+   "id": "AE-A015",
+   "afirmacao": "Migration 0012 aplicada nos dois bancos.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · dev · 0012_remove_tabela_antiga aplicada"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · prod · ERROR: relation \"leads_importados_v1\" does not exist · 0012 não aplicada"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e2"
+   ],
+   "nota": "Prod falhou."
+  },
+  {
+   "id": "AE-A016",
+   "afirmacao": "Migration 0013 aplicada em dev e prod.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · dev · 0013_limpa_area_antiga aplicada · 2026-09-30 11:10"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · prod · 0013_limpa_area_antiga aplicada · 2026-09-30 16:45"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1",
+    "e2"
+   ],
+   "nota": "Os dois ambientes, a mesma migration."
+  },
+  {
+   "id": "AE-A017",
+   "afirmacao": "Lint sem erros.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_build",
+     "texto": "eslint . — 0 errors, 3 warnings (no-unused-vars ×2, prefer-const ×1)"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "c6c6c6c chore: ajusta regras do eslint"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: a afirmação fala em erros; warnings não contradizem."
+  },
+  {
+   "id": "AE-A018",
+   "afirmacao": "Lint limpo.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_build",
+     "texto": "eslint . — 0 errors, 3 warnings (no-unused-vars ×2, prefer-const ×1)"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "c6c6c6c chore: ajusta regras do eslint"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: 'limpo' quer dizer sem reclamação; 3 warnings contradizem (decisão no LEIA-ME)."
+  },
+  {
+   "id": "AE-A019",
+   "afirmacao": "Cobertura acima de 80%.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "coverage · statements 78.4% · branches 71.0% · functions 80.2% · lines 78.9%"
+    },
+    {
+     "id": "e2",
+     "tipo": "log_teste",
+     "texto": "vitest run — 118 passed (118)"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "numérica: statements 78,4% < 80%."
+  },
+  {
+   "id": "AE-A020",
+   "afirmacao": "Cobertura acima de 80%.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "coverage · statements 83.1% · branches 76.5% · functions 85.0% · lines 83.4%"
+    },
+    {
+     "id": "e2",
+     "tipo": "log_teste",
+     "texto": "vitest run — 118 passed (118)"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "numérica: a métrica padrão (statements) está acima."
+  },
+  {
+   "id": "AE-A021",
+   "afirmacao": "Rota POST /visitas funcionando em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "resposta_http",
+     "texto": "POST http://localhost:3000/visitas → 201 Created · {\"id\":\"c3d4-…\",\"quando\":\"2026-10-03T10:00:00-03:00\"}"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "d7d7d7d feat(visitas): rota POST /visitas"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: funciona em localhost; produção não aparece."
+  },
+  {
+   "id": "AE-A022",
+   "afirmacao": "Rota GET /propostas funcionando em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/saude → 200 OK · {\"ok\":true,\"versao\":\"1.9.0\"}"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "swarm · prod · api-leads:1.9.0 — rollout completed"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: a resposta é do /saude, não da rota afirmada."
+  },
+  {
+   "id": "AE-A023",
+   "afirmacao": "Deploy da api-leads 1.9.1 concluído e serviço saudável.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "swarm · prod · api-leads:1.9.1 — rollout completed · 3/3"
+    },
+    {
+     "id": "e2",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/saude → 503 Service Unavailable · {\"ok\":false,\"db\":\"timeout\"}"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e2"
+   ],
+   "nota": "difícil: o rollout terminou, mas a saúde contradiz a segunda metade."
+  },
+  {
+   "id": "AE-A024",
+   "afirmacao": "Testes do módulo de cobrança passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "manual",
+     "texto": "Rodei os testes localmente, tudo verde."
+    },
+    {
+     "id": "e2",
+     "tipo": "log_teste",
+     "texto": "vitest tests/cobranca — 19 passed (19) · revisão a9a9a9a"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e2"
+   ],
+   "nota": "difícil: o manual não vale; o log vale."
+  },
+  {
+   "id": "AE-A025",
+   "afirmacao": "Bug do DDD duplicado corrigido.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "commit",
+     "texto": "c0c0c0c fix(leads): remove DDD duplicado na normalização"
+    },
+    {
+     "id": "e2",
+     "tipo": "log_build",
+     "texto": "tsc --noEmit — 0 errors"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [],
+   "nota": "difícil: mensagem de commit é intenção, não prova."
+  },
+  {
+   "id": "AE-A026",
+   "afirmacao": "Rota GET /imoveis/:id devolve 404 para id inexistente em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/imoveis/00000000-0000-0000-0000-000000000000 → 404 Not Found · {\"erro\":\"imovel nao encontrado\"}"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "e8e8e8e fix(imoveis): 404 para id inexistente"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: o 404 é o comportamento afirmado."
+  },
+  {
+   "id": "AE-A027",
+   "afirmacao": "Rota GET /leads funcionando em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/leads → 200 OK · {\"erro\":\"sem permissao\",\"dados\":[]}"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "swarm · prod · api-leads:1.9.1 — rollout completed"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: status 200, mas o corpo diz erro — a rota não funciona."
+  },
+  {
+   "id": "AE-A028",
+   "afirmacao": "Versão 1.9.2 da api-leads em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "swarm · prod · service update api-leads --image api-leads:1.9.1 — rollout completed"
+    },
+    {
+     "id": "e2",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/versao → 200 OK · {\"versao\":\"1.9.1\"}"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e1",
+    "e2"
+   ],
+   "nota": "difícil: deploy e resposta mostram 1.9.1."
+  },
+  {
+   "id": "AE-A029",
+   "afirmacao": "Build do portal-web passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_build",
+     "texto": "portal-web · next build — compiled successfully · 0 errors, 0 warnings"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "f9f9f9f feat(portal): página de imóvel com galeria"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "Fácil."
+  },
+  {
+   "id": "AE-A030",
+   "afirmacao": "Testes passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "vitest run — 61 passed (61) · 1 teste repetido 2× (agenda > lembrete) · passou na repetição"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "0a0a0a0 fix(agenda): lembrete no fuso correto"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: instável, mas passou; a afirmação não promete estabilidade."
+  },
+  {
+   "id": "AE-A031",
+   "afirmacao": "Testes passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "vitest run — cancelado após 10m (timeout do runner) · 40 passed · 21 não executados"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "1b1b1b1 refactor(agenda): extrai serviço de lembrete"
+    }
+   ],
+   "relacao": "insufficient_evidence",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "difícil: 40 passaram, 21 nem rodaram."
+  }
+ ]
+}

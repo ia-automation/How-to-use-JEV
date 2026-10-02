@@ -1,0 +1,140 @@
+{
+ "medicao": {
+  "ms": 433,
+  "input_tokens": 14192,
+  "modelo": "jev-1.13.0",
+  "perguntas": 18
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "k3_open_request": {
+    "type": "noul",
+    "noul": 0.29
+   },
+   "k1_accepted": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k1_deadline": {
+    "type": "choice",
+    "choice": "m1: segunda",
+    "confidence": 0.87,
+    "probabilities": {
+     "m4: depois": 0.0,
+     "m1: segunda": 0.9,
+     "m2: Segunda": 0.08,
+     "m5: amanhã": 0.0,
+     "m3: este mês": 0.0,
+     "none": 0.02
+    }
+   },
+   "k1_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k2_verdict": {
+    "type": "choice",
+    "choice": "proposal",
+    "confidence": 0.72,
+    "probabilities": {
+     "unaccepted_request": 0.22,
+     "proposal": 0.78,
+     "cancelled": 0.0,
+     "old_quote": 0.0,
+     "commitment": 0.0
+    }
+   },
+   "k3_accepted": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "k3_deadline": {
+    "type": "choice",
+    "choice": "m3: este mês",
+    "confidence": 0.84,
+    "probabilities": {
+     "m4: depois": 0.03,
+     "m1: segunda": 0.0,
+     "m2: Segunda": 0.0,
+     "m5: amanhã": 0.02,
+     "m3: este mês": 0.87,
+     "none": 0.08
+    }
+   },
+   "k1_verdict": {
+    "type": "choice",
+    "choice": "unaccepted_request",
+    "confidence": 0.99,
+    "probabilities": {
+     "unaccepted_request": 0.99,
+     "proposal": 0.0,
+     "cancelled": 0.01,
+     "old_quote": 0.0,
+     "commitment": 0.0
+    }
+   },
+   "k1_undone": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "k2_accepted": {
+    "type": "noul",
+    "noul": 0.12
+   },
+   "k2_open_request": {
+    "type": "noul",
+    "noul": 0.71
+   },
+   "k3_verdict": {
+    "type": "choice",
+    "choice": "proposal",
+    "confidence": 0.98,
+    "probabilities": {
+     "unaccepted_request": 0.01,
+     "proposal": 0.99,
+     "cancelled": 0.0,
+     "old_quote": 0.0,
+     "commitment": 0.0
+    }
+   },
+   "k3_undone": {
+    "type": "noul",
+    "noul": 0.23
+   },
+   "k1_open_request": {
+    "type": "noul",
+    "noul": 0.89
+   },
+   "k2_undone": {
+    "type": "noul",
+    "noul": 0.28
+   },
+   "k2_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k2_deadline": {
+    "type": "choice",
+    "choice": "m3: este mês",
+    "confidence": 0.94,
+    "probabilities": {
+     "m4: depois": 0.0,
+     "m1: segunda": 0.0,
+     "m2: Segunda": 0.0,
+     "m5: amanhã": 0.01,
+     "m3: este mês": 0.95,
+     "none": 0.04
+    }
+   },
+   "k3_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   }
+  },
+  "usage": {
+   "input_tokens": 14192,
+   "output_tokens": 666
+  }
+ }
+}

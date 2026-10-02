@@ -1,0 +1,28 @@
+{
+ "medicao": {
+  "ms": 1740,
+  "input_tokens": 6569,
+  "output_tokens": 180,
+  "modelo": "claude-haiku-4-5-20251001",
+  "data": "2026-10-01",
+  "tentativas": 1,
+  "stop_reason": "end_turn"
+ },
+ "resposta": {
+  "answers": {
+   "group": "sem_informacao",
+   "leaf.preco": "only_group",
+   "leaf.credito_documentacao": "only_group",
+   "leaf.imovel": "only_group",
+   "leaf.localizacao": "only_group",
+   "leaf.concorrencia": "only_group",
+   "leaf.atendimento": "only_group",
+   "leaf.momento_cliente": "adiou_decisao",
+   "leaf.sem_informacao": "adiou_sem_motivo",
+   "reason_stated": false,
+   "blames_agency": false,
+   "closed_elsewhere": false
+  }
+ },
+ "texto": "```json\n{\n  \"answers\": {\n    \"group\": \"sem_informacao\",\n    \"leaf.preco\": \"only_group\",\n    \"leaf.credito_documentacao\": \"only_group\",\n    \"leaf.imovel\": \"only_group\",\n    \"leaf.localizacao\": \"only_group\",\n    \"leaf.concorrencia\": \"only_group\",\n    \"leaf.atendimento\": \"only_group\",\n    \"leaf.momento_cliente\": \"adiou_decisao\",\n    \"leaf.sem_informacao\": \"adiou_sem_motivo\",\n    \"reason_stated\": false,\n    \"blames_agency\": false,\n    \"closed_elsewhere\": false\n  }\n}\n```"
+}

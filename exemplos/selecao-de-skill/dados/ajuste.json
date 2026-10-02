@@ -1,0 +1,319 @@
+{
+  "versao": "2026-10-01",
+  "autor": "fable",
+  "casos": [
+    {
+      "id": "SS-A001",
+      "pedido": "Tá muito duplicado o que eu escrevi agora no serviço de agenda, dá uma enxugada.",
+      "skill": "simplify",
+      "aceitaveis": [
+        "simplify",
+        "refactor-safe"
+      ],
+      "nota": "difícil: duas próximas — diff recém-escrito e queixa de duplicação → simplify; refatoração segura é aceitável."
+    },
+    {
+      "id": "SS-A002",
+      "pedido": "Faz um code review do texto da landing do lançamento, tá fraco.",
+      "skill": "copywriting",
+      "aceitaveis": [
+        "copywriting"
+      ],
+      "nota": "difícil: cita o nome de uma skill — 'code review' aqui é revisão de TEXTO de página."
+    },
+    {
+      "id": "SS-A003",
+      "pedido": "Deu ruim em prod ontem à noite, o agendamento ficou fora 40 min. Escreve o pós-incidente.",
+      "skill": "incident-postmortem",
+      "aceitaveis": [
+        "incident-postmortem",
+        "logs-prod"
+      ],
+      "nota": "difícil: duas próximas — vai precisar dos logs, mas a entrega pedida é o pós-incidente."
+    },
+    {
+      "id": "SS-A004",
+      "pedido": "Atualiza o axios, saiu CVE.",
+      "skill": "dependency-upgrade",
+      "aceitaveis": [
+        "dependency-upgrade"
+      ],
+      "nota": "difícil: jargão — CVE puxa para segurança, mas o trabalho é subir a versão do pacote."
+    },
+    {
+      "id": "SS-A005",
+      "pedido": "Roda os testes do módulo de busca.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — rodar um comando não é escrever teste nem dirigir navegador."
+    },
+    {
+      "id": "SS-A006",
+      "pedido": "Tá lento.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: vago — sem objeto (tela? endpoint? consulta?); perguntar antes."
+    },
+    {
+      "id": "SS-A007",
+      "pedido": "Preciso de um HSM de lembrete de visita pra aprovar na Meta.",
+      "skill": "whatsapp-template",
+      "aceitaveis": [
+        "whatsapp-template"
+      ],
+      "nota": "difícil: jargão — HSM = mensagem-modelo do WhatsApp."
+    },
+    {
+      "id": "SS-A008",
+      "pedido": "Quero aparecer quando perguntam pro ChatGPT por imobiliária em Campinas.",
+      "skill": "ai-seo",
+      "aceitaveis": [
+        "ai-seo"
+      ],
+      "nota": "difícil: duas próximas — ser citado por assistente de IA não é SEO de Google."
+    },
+    {
+      "id": "SS-A009",
+      "pedido": "Revisa esse PR, principalmente a parte de permissão do gestor.",
+      "skill": "security-review",
+      "aceitaveis": [
+        "security-review",
+        "code-review"
+      ],
+      "nota": "difícil: duas próximas — o foco declarado é permissão → revisão de segurança; a revisão comum é aceitável."
+    },
+    {
+      "id": "SS-A010",
+      "pedido": "Não precisa revisar nada, só abre o PR com o que tá na branch.",
+      "skill": "pr-open",
+      "aceitaveis": [
+        "pr-open"
+      ],
+      "nota": "difícil: negação — a revisão foi dispensada; `code-review` não é aceitável."
+    },
+    {
+      "id": "SS-A011",
+      "pedido": "Escreve os testes do módulo de proposta e depois abre o PR.",
+      "skill": "test-writer",
+      "aceitaveis": [
+        "test-writer",
+        "pr-open"
+      ],
+      "nota": "difícil: composto — duas etapas; a primeira a executar é escrever os testes."
+    },
+    {
+      "id": "SS-A012",
+      "pedido": "Documenta o endpoint novo de exportação, com os parâmetros e respostas.",
+      "skill": "api-contract",
+      "aceitaveis": [
+        "api-contract",
+        "docs-writer"
+      ],
+      "nota": "difícil: duas próximas — documentar ENDPOINT (parâmetros, respostas) é contrato de API; documentação técnica é aceitável."
+    },
+    {
+      "id": "SS-A013",
+      "pedido": "Valeu, ficou ótimo!",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Conversa; nenhuma skill."
+    },
+    {
+      "id": "SS-A014",
+      "pedido": "Cria uma tela de comparação de imóveis lado a lado.",
+      "skill": "frontend-design",
+      "aceitaveis": [
+        "frontend-design"
+      ],
+      "nota": "Tela nova."
+    },
+    {
+      "id": "SS-A015",
+      "pedido": "Sobe pra homolog.",
+      "skill": "deploy-dev",
+      "aceitaveis": [
+        "deploy-dev"
+      ],
+      "nota": "difícil: jargão — 'homolog' é o ambiente de dev/homologação."
+    },
+    {
+      "id": "SS-A016",
+      "pedido": "O CPL do Meta estourou essa semana, o que houve?",
+      "skill": "ads-audit",
+      "aceitaveis": [
+        "ads-audit",
+        "lead-report"
+      ],
+      "nota": "difícil: jargão — CPL = custo por lead; pergunta de causa na conta de anúncios → auditoria; o relatório é aceitável."
+    },
+    {
+      "id": "SS-A017",
+      "pedido": "Às vezes o webhook do WhatsApp processa a mesma mensagem duas vezes, não consigo reproduzir.",
+      "skill": "diagnosing-bugs",
+      "aceitaveis": [
+        "diagnosing-bugs"
+      ],
+      "nota": "Intermitente e sem reprodução: caso típico."
+    },
+    {
+      "id": "SS-A018",
+      "pedido": "Muda o prompt da Lia pra ela parar de prometer desconto, e mede se piorou outra coisa.",
+      "skill": "prompt-tuning",
+      "aceitaveis": [
+        "prompt-tuning",
+        "llm-eval"
+      ],
+      "nota": "difícil: composto — primeiro muda o prompt, depois mede."
+    },
+    {
+      "id": "SS-A019",
+      "pedido": "Planeja comigo a feature de reagendamento antes de eu sair codando, tem coisa que eu não decidi.",
+      "skill": "grilling",
+      "aceitaveis": [
+        "grilling"
+      ],
+      "nota": "difícil: duas próximas — há decisão em aberto → entrevista de desenho; quebrar em tickets só depois."
+    },
+    {
+      "id": "SS-A020",
+      "pedido": "Dá uma olhada nisso aqui.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: vago — sem objeto nem intenção; perguntar antes."
+    },
+    {
+      "id": "SS-A021",
+      "pedido": "A tela de proposta tá confusa, os corretores se perdem. Avalia o que tá errado.",
+      "skill": "ux-review",
+      "aceitaveis": [
+        "ux-review"
+      ],
+      "nota": "difícil: duas próximas — avaliar tela existente → revisão de UX; redesenhar não foi pedido."
+    },
+    {
+      "id": "SS-A022",
+      "pedido": "Adiciona a coluna `origem_campanha` na tabela de leads.",
+      "skill": "migration-2bancos",
+      "aceitaveis": [
+        "migration-2bancos"
+      ],
+      "nota": "Mudança de schema."
+    },
+    {
+      "id": "SS-A023",
+      "pedido": "Volta a versão de ontem do serviço de mensagens, a de hoje quebrou o envio.",
+      "skill": "rollback",
+      "aceitaveis": [
+        "rollback"
+      ],
+      "nota": "Pedido direto de reversão."
+    },
+    {
+      "id": "SS-A024",
+      "pedido": "Monta a régua de reativação por e-mail pra quem visitou e não fechou.",
+      "skill": "email-sequence",
+      "aceitaveis": [
+        "email-sequence"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-A025",
+      "pedido": "Quantos leads entraram pelo portal em setembro?",
+      "skill": "db-query",
+      "aceitaveis": [
+        "db-query",
+        "lead-report"
+      ],
+      "nota": "difícil: duas próximas — pergunta de um número só → consulta; o relatório de leads também responderia."
+    },
+    {
+      "id": "SS-A026",
+      "pedido": "Faz uma planilha com as despesas do escritório por mês.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Fora do catálogo."
+    },
+    {
+      "id": "SS-A027",
+      "pedido": "O que significa esse erro: TypeError: Cannot read properties of undefined (reading 'map')?",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Explicar erro literal; nenhuma skill."
+    },
+    {
+      "id": "SS-A028",
+      "pedido": "Precisa rotacionar a senha do banco de dev.",
+      "skill": "secrets-vault",
+      "aceitaveis": [
+        "secrets-vault"
+      ],
+      "nota": "Rotação de segredo."
+    },
+    {
+      "id": "SS-A029",
+      "pedido": "Cria páginas de bairro pro site, uma por bairro, a partir da planilha de imóveis.",
+      "skill": "programmatic-seo",
+      "aceitaveis": [
+        "programmatic-seo"
+      ],
+      "nota": "Páginas em escala por dados."
+    },
+    {
+      "id": "SS-A030",
+      "pedido": "O pipeline quebrou no passo de lint depois do meu push, vê o que foi.",
+      "skill": "fix-ci",
+      "aceitaveis": [
+        "fix-ci"
+      ],
+      "nota": "Pipeline vermelho."
+    },
+    {
+      "id": "SS-A031",
+      "pedido": "Me ajuda a escrever um e-mail pro síndico reclamando do barulho.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: cita o nome de uma skill — 'e-mail', mas é carta pessoal avulsa, não régua de marketing; fora do catálogo."
+    },
+    {
+      "id": "SS-A032",
+      "pedido": "Renomeia a variável `x` para `totalLeads` nessa função.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — renomear numa função só não precisa do rito de refatoração."
+    },
+    {
+      "id": "SS-A033",
+      "pedido": "Faz a migration do conteúdo do blog antigo pro template novo.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: cita o nome de uma skill — 'migration' aqui é mover conteúdo de blog, não schema de banco; nenhuma skill cobre."
+    },
+    {
+      "id": "SS-A034",
+      "pedido": "Gera a nota da versão 3.2 com o que entrou desde a última tag.",
+      "skill": "changelog-release",
+      "aceitaveis": [
+        "changelog-release"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-A035",
+      "pedido": "Corrige o typo no README: 'instalaçao' sem til.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — um caractere no README não precisa da skill de documentação."
+    },
+    {
+      "id": "SS-A036",
+      "pedido": "O endpoint de busca tá levando 4 segundos, descobre onde tá o gargalo.",
+      "skill": "perf-profile",
+      "aceitaveis": [
+        "perf-profile",
+        "diagnosing-bugs"
+      ],
+      "nota": "difícil: duas próximas — lentidão com alvo definido → perfil de performance; diagnóstico é aceitável."
+    }
+  ]
+}

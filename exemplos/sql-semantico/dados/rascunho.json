@@ -1,0 +1,121 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "SQ-R01",
+   "condicao": "Clientes que mencionaram que vão mudar de cidade.",
+   "linhas_verdadeiras": [
+    "OB-001",
+    "OB-002",
+    "OB-003",
+    "OB-004",
+    "OB-005",
+    "OB-006",
+    "OB-007",
+    "OB-152",
+    "OB-153",
+    "OB-154",
+    "OB-160",
+    "OB-170",
+    "OB-178"
+   ],
+   "linhas_indecidiveis": [
+    "OB-008",
+    "OB-009"
+   ],
+   "nota": "fácil: mesma condição da SQ-A01, para testar o encanamento"
+  },
+  {
+   "id": "SQ-R02",
+   "condicao": "Clientes com animal de estimação.",
+   "linhas_verdadeiras": [
+    "OB-005",
+    "OB-045",
+    "OB-046",
+    "OB-049",
+    "OB-051",
+    "OB-053",
+    "OB-157",
+    "OB-161",
+    "OB-182",
+    "OB-183"
+   ],
+   "linhas_indecidiveis": [
+    "OB-048",
+    "OB-052"
+   ],
+   "nota": "fácil"
+  },
+  {
+   "id": "SQ-R03",
+   "condicao": "Clientes que acharam o valor alto.",
+   "linhas_verdadeiras": [
+    "OB-014",
+    "OB-082",
+    "OB-105",
+    "OB-110",
+    "OB-112",
+    "OB-114",
+    "OB-116",
+    "OB-118",
+    "OB-119",
+    "OB-156",
+    "OB-164",
+    "OB-167",
+    "OB-184",
+    "OB-185",
+    "OB-186"
+   ],
+   "linhas_indecidiveis": [
+    "OB-115"
+   ],
+   "nota": "fácil"
+  },
+  {
+   "id": "SQ-R04",
+   "condicao": "Clientes de compra (`finalidade` = compra) que dependem de financiamento bancário.",
+   "linhas_verdadeiras": [
+    "OB-001",
+    "OB-025",
+    "OB-034",
+    "OB-035",
+    "OB-038",
+    "OB-039",
+    "OB-044",
+    "OB-118",
+    "OB-153",
+    "OB-165",
+    "OB-166",
+    "OB-169",
+    "OB-175",
+    "OB-176",
+    "OB-177"
+   ],
+   "linhas_indecidiveis": [
+    "OB-041",
+    "OB-042"
+   ],
+   "nota": "fácil: parte de campo é do código"
+  },
+  {
+   "id": "SQ-R05",
+   "condicao": "Clientes com necessidade de acessibilidade.",
+   "linhas_verdadeiras": [
+    "OB-053",
+    "OB-087",
+    "OB-088",
+    "OB-091",
+    "OB-094",
+    "OB-152",
+    "OB-163",
+    "OB-181"
+   ],
+   "linhas_indecidiveis": [
+    "OB-089",
+    "OB-093"
+   ],
+   "nota": "fácil"
+  }
+ ]
+}

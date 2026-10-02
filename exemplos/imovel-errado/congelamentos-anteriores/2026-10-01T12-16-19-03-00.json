@@ -1,0 +1,19 @@
+{
+ "congelado_em": "2026-10-01T12:16:19-03:00",
+ "arquivos": {
+  "perguntas.py": "61af98a2c1f26b2cc2939f65464f698d5fca904decb03ba8533e97892985a2d0",
+  "referente.py": "e3ad2c924efdccd42f4e9e04c624aea0750bc8b1ea05d6018314cf84db6fc122",
+  "run.py": "87493ddb94ac08a93c0d0a77ed2c98c4f108b18de4831f0402aa788397e3f0b4",
+  "dados/teste.json": "2c07ffb6e6e37c45af377c94cd962c7c88827fa083e84ebeff6a5d9537558a62"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (48 conversas), com a política acima",
+  "1_resposta_errada_ao_cliente": "erro caro (rascunho de outro imóvel → manter) + troca sugerindo candidato errado + sugeriu candidato com gabarito nulo ≤ 1/48 (2,1%)",
+  "2_acerto_referente": "nulo incluído, ≥ baseline + 0,15",
+  "secundario_nao_decide": "nulos → pedir ≥ 6/8; pediu sem necessidade ≤ 10% dos não nulos"
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "4f8108692356f1419e66abc3b934cf214c4a0174a9f3cc37e383e820dcbd8c43"
+ }
+}

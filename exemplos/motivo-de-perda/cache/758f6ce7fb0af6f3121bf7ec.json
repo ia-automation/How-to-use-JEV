@@ -1,0 +1,29 @@
+{
+ "medicao": {
+  "ms": 243,
+  "input_tokens": 1041,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "preco_acima_orcamento",
+    "confidence": 0.57,
+    "probabilities": {
+     "only_group": 0.34,
+     "condicao_pagamento": 0.0,
+     "custos_extras": 0.01,
+     "preco_acima_orcamento": 0.65,
+     "negociacao_frustrada": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1041,
+   "output_tokens": 76
+  }
+ }
+}

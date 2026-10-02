@@ -1,0 +1,106 @@
+{
+  "versao": "2026-10-01",
+  "autor": "fable",
+  "casos": [
+    {
+      "id": "RR-R001",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Oi, quero agendar uma visita no apartamento da Rua das Acácias sábado às 10h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Oi, quero agendar uma visita no apartamento da Rua das Acácias sábado às 10h",
+          "minutos_desde_a_primeira": 1
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "Reenvio idêntico."
+    },
+    {
+      "id": "RR-R002",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Pode marcar a visita terça às 15h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Não, terça não vou conseguir. Marca quarta às 15h",
+          "minutos_desde_a_primeira": 12
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Troca de dia explícita."
+    },
+    {
+      "id": "RR-R003",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Me manda as fotos da casa do Jardim Europa",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "E quero agendar uma visita nela no sábado de manhã",
+          "minutos_desde_a_primeira": 3
+        }
+      ],
+      "relacao": "additional_request",
+      "acao_vigente": null,
+      "nota": "Dois pedidos diferentes."
+    },
+    {
+      "id": "RR-R004",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Quero visitar o studio do Centro amanhã às 9h",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Desculpa, não vou mais poder ir, pode cancelar a visita",
+          "minutos_desde_a_primeira": 45
+        }
+      ],
+      "relacao": "revision",
+      "acao_vigente": "m2",
+      "nota": "Cancelamento explícito."
+    },
+    {
+      "id": "RR-R005",
+      "mensagens": [
+        {
+          "id": "m1",
+          "de": "cliente",
+          "texto": "Vocês têm horário pra visita no sábado?",
+          "minutos_desde_a_primeira": 0
+        },
+        {
+          "id": "m2",
+          "de": "cliente",
+          "texto": "Vocês têm horário pra visita no sábado??",
+          "minutos_desde_a_primeira": 20
+        }
+      ],
+      "relacao": "same_intent",
+      "acao_vigente": "m1",
+      "nota": "Cobrança da mesma pergunta."
+    }
+  ]
+}

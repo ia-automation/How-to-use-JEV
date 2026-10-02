@@ -1,0 +1,173 @@
+{
+ "medicao": {
+  "ms": 440,
+  "input_tokens": 19968,
+  "modelo": "jev-1.13.0",
+  "perguntas": 39
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "needed_m01": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "superseded_m01": {
+    "type": "noul",
+    "noul": 0.79
+   },
+   "rule_m01": {
+    "type": "noul",
+    "noul": 0.27
+   },
+   "needed_m02": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "superseded_m02": {
+    "type": "noul",
+    "noul": 0.57
+   },
+   "status_m02": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "needed_m03": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "superseded_m03": {
+    "type": "noul",
+    "noul": 0.28
+   },
+   "literal_m03": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "needed_m04": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "superseded_m04": {
+    "type": "noul",
+    "noul": 0.53
+   },
+   "status_m04": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "needed_m05": {
+    "type": "noul",
+    "noul": 0.58
+   },
+   "superseded_m05": {
+    "type": "noul",
+    "noul": 0.47
+   },
+   "rule_m05": {
+    "type": "noul",
+    "noul": 0.92
+   },
+   "needed_m06": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "superseded_m06": {
+    "type": "noul",
+    "noul": 0.72
+   },
+   "status_m06": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "needed_m07": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "superseded_m07": {
+    "type": "noul",
+    "noul": 0.52
+   },
+   "literal_m07": {
+    "type": "noul",
+    "noul": 0.3
+   },
+   "needed_m08": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "superseded_m08": {
+    "type": "noul",
+    "noul": 0.54
+   },
+   "status_m08": {
+    "type": "noul",
+    "noul": 0.7
+   },
+   "needed_m09": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "superseded_m09": {
+    "type": "noul",
+    "noul": 0.92
+   },
+   "status_m09": {
+    "type": "noul",
+    "noul": 0.88
+   },
+   "needed_m10": {
+    "type": "noul",
+    "noul": 0.85
+   },
+   "superseded_m10": {
+    "type": "noul",
+    "noul": 0.3
+   },
+   "rule_m10": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "needed_m11": {
+    "type": "noul",
+    "noul": 0.21
+   },
+   "superseded_m11": {
+    "type": "noul",
+    "noul": 0.3
+   },
+   "literal_m11": {
+    "type": "noul",
+    "noul": 0.37
+   },
+   "needed_m12": {
+    "type": "noul",
+    "noul": 0.39
+   },
+   "superseded_m12": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "status_m12": {
+    "type": "noul",
+    "noul": 0.89
+   },
+   "needed_m13": {
+    "type": "noul",
+    "noul": 0.65
+   },
+   "superseded_m13": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "rule_m13": {
+    "type": "noul",
+    "noul": 0.83
+   }
+  },
+  "usage": {
+   "input_tokens": 19968,
+   "output_tokens": 771
+  }
+ }
+}

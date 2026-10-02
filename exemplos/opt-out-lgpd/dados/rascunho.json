@@ -1,0 +1,51 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "OL-R001",
+   "mensagem": "Não quero mais receber mensagens de vocês, por favor me removam da lista.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "fácil: opt-out explícito"
+  },
+  {
+   "id": "OL-R002",
+   "mensagem": "Oi! Ainda tenho interesse no apê de Moema, pode me mandar mais fotos?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "fácil: cliente interessado"
+  },
+  {
+   "id": "OL-R003",
+   "mensagem": "Apaguem todos os meus dados do sistema de vocês.",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "fácil: exclusão (implica opt-out)"
+  },
+  {
+   "id": "OL-R004",
+   "mensagem": "Agora não dá, tô viajando. Me chama em março.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "fácil: pausa com prazo"
+  },
+  {
+   "id": "OL-R005",
+   "mensagem": "Quem passou meu telefone pra vocês? Não lembro de ter me cadastrado.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "fácil: origem sem pedir exclusão"
+  }
+ ]
+}

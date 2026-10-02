@@ -1,0 +1,112 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "AE-R001",
+   "afirmacao": "Testes do módulo de leads passando.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_teste",
+     "texto": "api-leads · vitest run tests/leads — 14 passed (14) em 3.2s · revisão a1b2c3d"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "a1b2c3d fix(leads): normaliza telefone antes de salvar"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "Log de teste da mesma revisão, tudo passou."
+  },
+  {
+   "id": "AE-R002",
+   "afirmacao": "Rota GET /imoveis/:id funcionando em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "resposta_http",
+     "texto": "GET https://api.exemplo.com.br/imoveis/7f3a-… → 500 Internal Server Error · corpo: {\"erro\":\"relation imoveis_fotos does not exist\"}"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "swarm · prod · api-leads:1.9.0 — rollout completed · 3/3"
+    }
+   ],
+   "relacao": "contradicted",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "500 em produção."
+  },
+  {
+   "id": "AE-R003",
+   "afirmacao": "Migration 0009 aplicada nos dois bancos.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · ambiente: dev · 0009_origem_lead aplicada (1 statement, 40 ms)"
+    },
+    {
+     "id": "e2",
+     "tipo": "deploy",
+     "texto": "drizzle migrate · ambiente: prod · 0009_origem_lead aplicada (1 statement, 55 ms)"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1",
+    "e2"
+   ],
+   "nota": "Dev e prod, as duas aplicadas."
+  },
+  {
+   "id": "AE-R004",
+   "afirmacao": "Build do portal-web verde.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "log_build",
+     "texto": "portal-web · next build — compiled successfully · 0 errors · 42 páginas geradas"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "2c2c2c2 feat(portal): página de imóvel"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "Build concluído sem erro."
+  },
+  {
+   "id": "AE-R005",
+   "afirmacao": "Deploy da api-leads 1.8.0 concluído em produção.",
+   "registros": [
+    {
+     "id": "e1",
+     "tipo": "deploy",
+     "texto": "swarm · ambiente: prod · service update api-leads --image api-leads:1.8.0 — rollout completed · 3/3 réplicas"
+    },
+    {
+     "id": "e2",
+     "tipo": "commit",
+     "texto": "3d3d3d3 release: api-leads 1.8.0"
+    }
+   ],
+   "relacao": "supported",
+   "registros_de_apoio": [
+    "e1"
+   ],
+   "nota": "Rollout completo em prod."
+  }
+ ]
+}

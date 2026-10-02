@@ -1,0 +1,30 @@
+{
+ "medicao": {
+  "ms": 258,
+  "input_tokens": 786,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "next": {
+    "type": "choice",
+    "choice": "no_question_needed",
+    "confidence": 0.49,
+    "probabilities": {
+     "no_question_needed": 0.58,
+     "parking": 0.2,
+     "timeframe": 0.16,
+     "financing": 0.02,
+     "pet": 0.03,
+     "visit": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 786,
+   "output_tokens": 67
+  }
+ }
+}

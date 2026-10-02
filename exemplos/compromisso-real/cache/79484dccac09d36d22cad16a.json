@@ -1,0 +1,143 @@
+{
+ "medicao": {
+  "ms": 421,
+  "input_tokens": 14247,
+  "modelo": "jev-1.13.0",
+  "perguntas": 18
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "k1_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 1.0,
+    "probabilities": {
+     "cancelled": 0.0,
+     "old_quote": 0.0,
+     "unaccepted_request": 0.0,
+     "proposal": 0.0,
+     "commitment": 1.0
+    }
+   },
+   "k1_accepted": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "k1_undone": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "k1_quoted": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "k1_open_request": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k1_deadline": {
+    "type": "choice",
+    "choice": "m1: até dia 16",
+    "confidence": 0.71,
+    "probabilities": {
+     "m1: até dia 18": 0.0,
+     "none": 0.0,
+     "m2: Dia 16": 0.22,
+     "m4: para o dia 16": 0.02,
+     "m3: Dia 18": 0.0,
+     "m3: dia 17": 0.0,
+     "m1: até dia 16": 0.76
+    }
+   },
+   "k2_verdict": {
+    "type": "choice",
+    "choice": "unaccepted_request",
+    "confidence": 0.98,
+    "probabilities": {
+     "old_quote": 0.0,
+     "proposal": 0.0,
+     "unaccepted_request": 0.99,
+     "commitment": 0.0,
+     "cancelled": 0.01
+    }
+   },
+   "k2_accepted": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k2_undone": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "k2_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k2_open_request": {
+    "type": "noul",
+    "noul": 0.84
+   },
+   "k2_deadline": {
+    "type": "choice",
+    "choice": "m4: para o dia 16",
+    "confidence": 0.9,
+    "probabilities": {
+     "none": 0.0,
+     "m4: para o dia 16": 0.92,
+     "m2: Dia 16": 0.0,
+     "m1: até dia 18": 0.06,
+     "m3: Dia 18": 0.01,
+     "m3: dia 17": 0.0,
+     "m1: até dia 16": 0.01
+    }
+   },
+   "k3_verdict": {
+    "type": "choice",
+    "choice": "unaccepted_request",
+    "confidence": 0.76,
+    "probabilities": {
+     "cancelled": 0.17,
+     "old_quote": 0.0,
+     "unaccepted_request": 0.81,
+     "proposal": 0.0,
+     "commitment": 0.01
+    }
+   },
+   "k3_accepted": {
+    "type": "noul",
+    "noul": 0.19
+   },
+   "k3_undone": {
+    "type": "noul",
+    "noul": 0.54
+   },
+   "k3_quoted": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "k3_open_request": {
+    "type": "noul",
+    "noul": 0.82
+   },
+   "k3_deadline": {
+    "type": "choice",
+    "choice": "m1: até dia 18",
+    "confidence": 0.46,
+    "probabilities": {
+     "none": 0.0,
+     "m4: para o dia 16": 0.42,
+     "m2: Dia 16": 0.0,
+     "m1: até dia 18": 0.55,
+     "m3: Dia 18": 0.02,
+     "m3: dia 17": 0.0,
+     "m1: até dia 16": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 14247,
+   "output_tokens": 776
+  }
+ }
+}

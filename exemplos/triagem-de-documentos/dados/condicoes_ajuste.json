@@ -1,0 +1,134 @@
+{
+ "versao": "2026-10-02b",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "TD-A01",
+   "condicao": "Contrato de locação que prevê multa a cargo do locatário em caso de devolução antecipada do imóvel (rescisão antecipada).",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L02",
+    "L06",
+    "L09",
+    "L10",
+    "L11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s5",
+    "L02": "L02-s5",
+    "L06": "L06-s5",
+    "L09": "L09-s5",
+    "L10": "L10-s5",
+    "L11": "L11-s5"
+   },
+   "nota": "difícil: negada — 'NÃO haverá multa' (L03, L04) é falso; revogada em seção posterior (L05) é falso; seção parecida de outro assunto (multa por atraso, L07) é falso; L08 não tem a cláusula"
+  },
+  {
+   "id": "TD-A02",
+   "condicao": "Contrato de locação com multa por rescisão antecipada superior a dois aluguéis (`multa_alugueis` > 2).",
+   "tipo": "numerica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L06",
+    "L10",
+    "L11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s5",
+    "L06": "L06-s5",
+    "L10": "L10-s5",
+    "L11": "L11-s5"
+   },
+   "nota": "fácil para o código: `multa_alugueis` é o valor EFETIVO (null quando negada, ausente ou revogada); dois aluguéis não é 'superior a dois'"
+  },
+  {
+   "id": "TD-A03",
+   "condicao": "Proposta comercial que concede desconto sobre o preço E condiciona esse desconto exclusivamente ao pagamento à vista.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "P01",
+    "P03",
+    "P06",
+    "P09",
+    "P11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "P01": "P01-s4",
+    "P03": "P03-s4",
+    "P06": "P06-s4",
+    "P09": "P09-s4",
+    "P11": "P11-s4"
+   },
+   "nota": "difícil: duas seções — o desconto está na seção de preço e a condição 'exclusivamente à vista' na de pagamento; desconto 'para qualquer modalidade' (P02, P10) e desconto sem condição declarada (P05, P07) são falsos"
+  },
+  {
+   "id": "TD-A04",
+   "condicao": "Contrato de prestação de serviços com cláusula de exclusividade que restringe a contratada de atender concorrentes da contratante.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "S01",
+    "S05",
+    "S06",
+    "S08",
+    "S11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "S01": "S01-s4",
+    "S05": "S05-s4",
+    "S06": "S06-s4",
+    "S08": "S08-s4",
+    "S11": "S11-s4"
+   },
+   "nota": "difícil: termo só no título — S04 e S09 têm 'exclusividade' no título de uma seção que só trata de confidencialidade e propriedade intelectual (falso); 'NÃO estabelece exclusividade' (S02, S10) é falso; exclusividade restrita a lista de concorrentes (S06) é verdadeira"
+  },
+  {
+   "id": "TD-A05",
+   "condicao": "Contrato (de locação ou de prestação de serviços) com prazo de vigência inferior a doze meses (`prazo_meses` < 12).",
+   "tipo": "numerica",
+   "documentos_verdadeiros": [
+    "L04",
+    "L08",
+    "S02",
+    "S05",
+    "S08"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L04": "L04-s2",
+    "L08": "L08-s2",
+    "S02": "S02-s2",
+    "S05": "S05-s2",
+    "S08": "S08-s2"
+   },
+   "nota": "fácil para o código: prazo em `campos`; atas e propostas não têm o campo e valem falso"
+  },
+  {
+   "id": "TD-A06",
+   "condicao": "Ata que registra a aprovação de reajuste da taxa condominial.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "A01",
+    "A03",
+    "A05",
+    "A07",
+    "A08",
+    "A11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "A01": "A01-s3",
+    "A03": "A03-s3",
+    "A05": "A05-s3",
+    "A07": "A07-s3",
+    "A08": "A08-s3",
+    "A11": "A11-s3"
+   },
+   "nota": "difícil: negada — 'MANTER a taxa sem reajuste' (A02, A06, A10) e 'reajuste REJEITADO' (A04, A09) contêm o termo e são falsos"
+  }
+ ]
+}

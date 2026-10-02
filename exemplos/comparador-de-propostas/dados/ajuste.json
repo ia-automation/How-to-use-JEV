@@ -1,0 +1,991 @@
+{
+ "versao": "2026-10-02",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CP-A01",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Instalação dos 6 aparelhos inclusa no preço.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Garantia de pelo menos 12 meses (`garantia_meses` >= 12).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Preço total de até R$ 30.000 (`preco_total` <= 30000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Manutenção preventiva no primeiro ano inclusa.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Fornecimento de 6 splits inverter 18.000 BTUs com instalação inclusa. Garantia de 12 meses. Duas visitas de manutenção preventiva no primeiro ano, sem custo. Total: R$ 28.900,00. Observação: os valores não contemplam infraestrutura (tubulação, dreno e ponto elétrico), orçada à parte após vistoria.",
+     "campos": {
+      "garantia_meses": 12,
+      "preco_total": 28900
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "6 aparelhos split 18.000 BTUs, instalação completa inclusa (infraestrutura até 5 m por aparelho). Garantia de 1 ano. Total de R$ 29.600,00. Manutenção preventiva disponível em contrato separado.",
+     "campos": {
+      "garantia_meses": 12,
+      "preco_total": 29600
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Venda e instalação de 6 splits. Instalação inclusa. Garantia conforme o fabricante. Total R$ 26.500,00. Manutenção preventiva: 1 visita gratuita no primeiro ano.",
+     "campos": {
+      "garantia_meses": null,
+      "preco_total": 26500
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "contradiz"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "os valores não contemplam infraestrutura (tubulação, dreno e ponto elétrico), orçada à parte",
+     "r2": "Garantia de 12 meses",
+     "r3": "R$ 28.900,00",
+     "r4": "Duas visitas de manutenção preventiva no primeiro ano, sem custo"
+    },
+    "p2": {
+     "r1": "instalação completa inclusa (infraestrutura até 5 m por aparelho)",
+     "r2": "Garantia de 1 ano",
+     "r3": "R$ 29.600,00",
+     "r4": "Manutenção preventiva disponível em contrato separado"
+    },
+    "p3": {
+     "r1": "Instalação inclusa",
+     "r2": null,
+     "r3": "R$ 26.500,00",
+     "r4": "1 visita gratuita no primeiro ano"
+    }
+   },
+   "elegiveis": [
+    "p2",
+    "p3"
+   ],
+   "nota": "difícil: exclusão escondida — p1 diz 'instalação inclusa' e, na observação final, tira a infraestrutura; p3 não diz a garantia em meses (pergunta)"
+  },
+  {
+   "id": "CP-A02",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Treinamento da equipe de vendas incluso.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Suporte técnico por pelo menos 12 meses (`suporte_meses` >= 12).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Integração com os portais de anúncio (importar leads automaticamente).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Prazo de implantação de até 30 dias (`prazo_dias` <= 30).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "CRM imobiliário com implantação em 25 dias. Treinamento incluso para até 10 usuários. Suporte incluso. Integração nativa com os principais portais, com importação automática de leads. Mensalidade R$ 1.200,00.",
+     "campos": {
+      "suporte_meses": null,
+      "prazo_dias": 25
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Implantação em 3 semanas. Treinamento incluso no plano anual; no plano mensal, cobrado à parte. Suporte por 12 meses, em horário comercial. Importação de leads dos portais inclusa. Plano mensal R$ 950,00.",
+     "campos": {
+      "suporte_meses": 12,
+      "prazo_dias": 21
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Implantação em 20 dias. Treinamento de 4 horas incluso. Suporte por 18 meses. Os leads dos portais chegam por e-mail e precisam ser cadastrados manualmente no sistema. Mensalidade R$ 780,00.",
+     "campos": {
+      "suporte_meses": 18,
+      "prazo_dias": 20
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "nao_informado",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Treinamento incluso para até 10 usuários",
+     "r2": null,
+     "r3": "Integração nativa com os principais portais, com importação automática de leads",
+     "r4": "25 dias"
+    },
+    "p2": {
+     "r1": null,
+     "r2": "Suporte por 12 meses",
+     "r3": "Importação de leads dos portais inclusa",
+     "r4": "3 semanas"
+    },
+    "p3": {
+     "r1": "Treinamento de 4 horas incluso",
+     "r2": "Suporte por 18 meses",
+     "r3": "precisam ser cadastrados manualmente no sistema",
+     "r4": "20 dias"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p2"
+   ],
+   "nota": "difícil: termo vago — 'suporte incluso' (p1) não diz duração; promessa condicionada em p2 (treinamento só no plano anual, e o pedido é o plano mensal → não informado, pergunta)"
+  },
+  {
+   "id": "CP-A03",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Pintura externa com textura e impermeabilização das platibandas.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Andaime e proteção de fachada por conta da contratada.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de obra de até 60 dias (`prazo_dias` <= 60).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 85.000 (`preco_total` <= 85000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Recuperação de fachada com pintura texturizada e impermeabilização das platibandas. Andaimes, telas de proteção e ART inclusos. Prazo: 75 dias corridos. Valor: R$ 79.000,00.",
+     "campos": {
+      "prazo_dias": 75,
+      "preco_total": 79000
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Pintura externa texturizada. Impermeabilização das platibandas inclusa. Prazo de 50 dias. Valor R$ 82.000,00. Locação de andaime e tela de proteção por conta do contratante.",
+     "campos": {
+      "prazo_dias": 50,
+      "preco_total": 82000
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Pintura de fachada em textura acrílica, com tratamento das platibandas conforme memorial descritivo anexo. Andaime fachadeiro e telas inclusos. 55 dias. Total R$ 84.500,00.",
+     "campos": {
+      "prazo_dias": 55,
+      "preco_total": 84500
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "nao_informado",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "pintura texturizada e impermeabilização das platibandas",
+     "r2": "Andaimes, telas de proteção e ART inclusos",
+     "r3": "75 dias corridos",
+     "r4": "R$ 79.000,00"
+    },
+    "p2": {
+     "r1": "Pintura externa texturizada. Impermeabilização das platibandas inclusa",
+     "r2": "Locação de andaime e tela de proteção por conta do contratante",
+     "r3": "50 dias",
+     "r4": "R$ 82.000,00"
+    },
+    "p3": {
+     "r1": null,
+     "r2": "Andaime fachadeiro e telas inclusos",
+     "r3": "55 dias",
+     "r4": "R$ 84.500,00"
+    }
+   },
+   "elegiveis": [
+    "p3"
+   ],
+   "nota": "difícil: atende tudo menos o prazo — p1 é a melhor e cai no prazo; p3 remete a um anexo que não veio (impermeabilização não informada)"
+  },
+  {
+   "id": "CP-A04",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Câmeras com gravação em nuvem por 30 dias.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Monitoramento 24 horas por central própria.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Equipamentos em comodato (sem compra).",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 1.500 (`preco_total` <= 1500).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "8 câmeras full HD com gravação em nuvem, retenção de 30 dias. Monitoramento 24h pela nossa central. Equipamentos em comodato. Mensalidade R$ 1.390,00.",
+     "campos": {
+      "preco_total": 1390
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "8 câmeras com gravação local em DVR de 2 TB (cerca de 20 dias de retenção). Monitoramento 24h terceirizado para central parceira. Equipamentos vendidos por R$ 4.800,00; mensalidade R$ 690,00.",
+     "campos": {
+      "preco_total": 690
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Câmeras com gravação em nuvem. Monitoramento em horário comercial, com extensão para 24h mediante adicional de R$ 400,00. Comodato incluso. Mensalidade R$ 1.250,00.",
+     "campos": {
+      "preco_total": 1250
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "nao_informado",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "gravação em nuvem, retenção de 30 dias",
+     "r2": "Monitoramento 24h pela nossa central",
+     "r3": "Equipamentos em comodato",
+     "r4": "R$ 1.390,00"
+    },
+    "p2": {
+     "r1": "gravação local em DVR de 2 TB (cerca de 20 dias de retenção)",
+     "r2": "Monitoramento 24h terceirizado para central parceira",
+     "r3": "Equipamentos vendidos por R$ 4.800,00",
+     "r4": "R$ 690,00"
+    },
+    "p3": {
+     "r1": null,
+     "r2": "Monitoramento em horário comercial",
+     "r3": "Comodato incluso",
+     "r4": "R$ 1.250,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: termo vago — 'gravação em nuvem' sem dizer os dias (p3); monitoramento 24h só com adicional é contradição da oferta base"
+  },
+  {
+   "id": "CP-A05",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Central telefônica com URA (atendimento automático) e gravação de chamadas.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Portabilidade dos números atuais inclusa.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Sem fidelidade contratual.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 800 (`preco_total` <= 800).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "PABX em nuvem com URA e gravação de chamadas. Portabilidade dos números inclusa. Contrato sem fidelidade. Mensalidade de R$ 740,00 para 10 ramais.",
+     "campos": {
+      "preco_total": 740
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "PABX virtual com URA. Gravação de chamadas disponível no plano Pro. Portabilidade gratuita. Fidelidade de 12 meses. Plano Básico: R$ 590,00/mês.",
+     "campos": {
+      "preco_total": 590
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Telefonia IP com URA e gravação inclusas. Sem fidelidade. Mensalidade R$ 690,00. A portabilidade é tratada diretamente com a operadora de origem, sem envolvimento nosso.",
+     "campos": {
+      "preco_total": 690
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "nao_informado",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "URA e gravação de chamadas",
+     "r2": "Portabilidade dos números inclusa",
+     "r3": "Contrato sem fidelidade",
+     "r4": "R$ 740,00"
+    },
+    "p2": {
+     "r1": null,
+     "r2": "Portabilidade gratuita",
+     "r3": "Fidelidade de 12 meses",
+     "r4": "R$ 590,00/mês"
+    },
+    "p3": {
+     "r1": "URA e gravação inclusas",
+     "r2": "A portabilidade é tratada diretamente com a operadora de origem, sem envolvimento nosso",
+     "r3": "Sem fidelidade",
+     "r4": "R$ 690,00"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p2"
+   ],
+   "nota": "difícil: promessa condicionada — gravação só no plano Pro quando o preço cotado é do Básico (não informado); p3 esconde que não faz portabilidade"
+  },
+  {
+   "id": "CP-A06",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Emissão das notas fiscais de comissão.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Folha de pagamento dos funcionários inclusa.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Atendimento por contador dedicado.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Honorário mensal de até R$ 2.000 (`preco_total` <= 2000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Contabilidade completa para a imobiliária: escrituração, emissão de notas de comissão e folha de pagamento de até 8 funcionários. Contador responsável dedicado. Honorários R$ 1.900,00/mês.",
+     "campos": {
+      "preco_total": 1900
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Escrituração contábil e fiscal, com emissão de notas. Folha de pagamento sob demanda, cobrada por funcionário. Atendimento por equipe. Honorários R$ 1.400,00/mês.",
+     "campos": {
+      "preco_total": 1400
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Pacote contábil mensal: obrigações fiscais, folha de pagamento e emissão de notas fiscais inclusas. Honorários de R$ 2.300,00.",
+     "campos": {
+      "preco_total": 2300
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "nao_informado",
+     "r4": "contradiz"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "emissão de notas de comissão",
+     "r2": "folha de pagamento de até 8 funcionários",
+     "r3": "Contador responsável dedicado",
+     "r4": "R$ 1.900,00/mês"
+    },
+    "p2": {
+     "r1": "emissão de notas",
+     "r2": "Folha de pagamento sob demanda, cobrada por funcionário",
+     "r3": "Atendimento por equipe",
+     "r4": "R$ 1.400,00/mês"
+    },
+    "p3": {
+     "r1": "emissão de notas fiscais inclusas",
+     "r2": "folha de pagamento",
+     "r3": null,
+     "r4": "R$ 2.300,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "fácil: tudo dito; 'folha cobrada por funcionário' contradiz 'inclusa'"
+  },
+  {
+   "id": "CP-A07",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Entrega e montagem dos móveis inclusas.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Cadeiras com certificação ergonômica (NR-17).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de entrega de até 20 dias (`prazo_dias` <= 20).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 18.000 (`preco_total` <= 18000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "10 estações de trabalho e 10 cadeiras giratórias com certificado NR-17. Entrega e montagem inclusas na capital; para outras cidades, frete e montagem sob consulta. Prazo 15 dias. Total R$ 17.200,00.",
+     "campos": {
+      "prazo_dias": 15,
+      "preco_total": 17200
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Mobiliário completo para 10 posições, cadeiras ergonômicas. Entrega inclusa; montagem opcional por R$ 900,00. Prazo 18 dias. Total R$ 15.800,00.",
+     "campos": {
+      "prazo_dias": 18,
+      "preco_total": 15800
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "10 mesas e 10 cadeiras presidente certificadas NR-17. Entregamos e montamos sem custo adicional. Prazo de 30 dias. Total R$ 16.400,00.",
+     "campos": {
+      "prazo_dias": 30,
+      "preco_total": 16400
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Entrega e montagem inclusas na capital",
+     "r2": "cadeiras giratórias com certificado NR-17",
+     "r3": "15 dias",
+     "r4": "R$ 17.200,00"
+    },
+    "p2": {
+     "r1": "montagem opcional por R$ 900,00",
+     "r2": null,
+     "r3": "18 dias",
+     "r4": "R$ 15.800,00"
+    },
+    "p3": {
+     "r1": "Entregamos e montamos sem custo adicional",
+     "r2": "cadeiras presidente certificadas NR-17",
+     "r3": "30 dias",
+     "r4": "R$ 16.400,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: termo vago — 'cadeiras ergonômicas' sem certificação (p2); p1 condiciona a montagem à capital, que é onde fica o escritório (o pedido é na capital, logo atende)"
+  },
+  {
+   "id": "CP-A08",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Energia solar com instalação inclusa e homologação na concessionária.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Garantia dos painéis de pelo menos 10 anos (`garantia_meses` >= 120).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de instalação de até 90 dias (`prazo_dias` <= 90).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Monitoramento da geração por aplicativo.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Sistema fotovoltaico de 12 kWp com instalação e homologação junto à concessionária inclusas. Garantia dos módulos: 12 anos de produto. Prazo: 60 dias após a aprovação do projeto. Monitoramento por app incluso. R$ 48.000,00.",
+     "campos": {
+      "garantia_meses": 144,
+      "prazo_dias": 60
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Kit fotovoltaico 12 kWp com instalação. A homologação é feita pelo cliente junto à concessionária, com orientação nossa. Garantia dos módulos conforme fabricante. Prazo de 45 dias. R$ 41.500,00.",
+     "campos": {
+      "garantia_meses": null,
+      "prazo_dias": 45
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Usina de 12 kWp instalada e homologada. Garantia de 10 anos nos painéis. Prazo estimado de 120 dias, considerando a fila da concessionária. App de monitoramento incluso. R$ 45.900,00.",
+     "campos": {
+      "garantia_meses": 120,
+      "prazo_dias": 120
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "nao_informado"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "instalação e homologação junto à concessionária inclusas",
+     "r2": "12 anos de produto",
+     "r3": "60 dias",
+     "r4": "Monitoramento por app incluso"
+    },
+    "p2": {
+     "r1": "A homologação é feita pelo cliente junto à concessionária",
+     "r2": null,
+     "r3": "45 dias",
+     "r4": null
+    },
+    "p3": {
+     "r1": "instalada e homologada",
+     "r2": "Garantia de 10 anos nos painéis",
+     "r3": "120 dias",
+     "r4": "App de monitoramento incluso"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: atende tudo menos o prazo — p3; 'garantia conforme fabricante' é não informado (pergunta)"
+  },
+  {
+   "id": "CP-A09",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Portaria remota com abertura de portão e atendimento de visitantes 24h.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Instalação de interfone e fechaduras inclusa.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Mensalidade de até R$ 3.000 (`preco_total` <= 3000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Prazo de implantação de até 45 dias (`prazo_dias` <= 45).",
+     "obrigatorio": false,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Portaria remota 24h com liberação de portão e atendimento de visitantes pela central. Instalação dos equipamentos (interfone IP, fechaduras eletromagnéticas) inclusa. Implantação em 30 dias. Mensalidade R$ 2.850,00.",
+     "campos": {
+      "preco_total": 2850,
+      "prazo_dias": 30
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Portaria virtual 24 horas. Equipamentos e instalação cobrados em parcela única de R$ 9.000,00. Mensalidade de R$ 2.100,00. Prazo conforme cronograma a ser enviado.",
+     "campos": {
+      "preco_total": 2100,
+      "prazo_dias": null
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Controle de acesso remoto com atendimento de visitantes de segunda a sábado, das 6h às 22h. Instalação inclusa. Implantação em 40 dias. Mensalidade R$ 2.400,00.",
+     "campos": {
+      "preco_total": 2400,
+      "prazo_dias": 40
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "nao_informado"
+    },
+    "p3": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Portaria remota 24h com liberação de portão e atendimento de visitantes pela central",
+     "r2": "Instalação dos equipamentos (interfone IP, fechaduras eletromagnéticas) inclusa",
+     "r3": "R$ 2.850,00",
+     "r4": "30 dias"
+    },
+    "p2": {
+     "r1": "Portaria virtual 24 horas",
+     "r2": "Equipamentos e instalação cobrados em parcela única de R$ 9.000,00",
+     "r3": "R$ 2.100,00",
+     "r4": null
+    },
+    "p3": {
+     "r1": "de segunda a sábado, das 6h às 22h",
+     "r2": "Instalação inclusa",
+     "r3": "R$ 2.400,00",
+     "r4": "40 dias"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: anexo citado mas ausente — 'cronograma a ser enviado' deixa o prazo não informado; o '24h' do pedido não é atendido por 6h–22h"
+  },
+  {
+   "id": "CP-A10",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Plataforma de e-mail marketing com automação (fluxos por comportamento).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Até 50 mil contatos no plano (`contatos` >= 50000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Suporte em português.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 600 (`preco_total` <= 600).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Plano Growth: até 50.000 contatos, automações por comportamento (abertura, clique, visita), suporte em português por chat. R$ 580,00/mês.",
+     "campos": {
+      "preco_total": 580,
+      "contatos": 50000
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Plano Essencial: envio de campanhas e segmentação para até 25.000 contatos. Automação disponível a partir do plano Pro (R$ 890,00). Suporte em inglês por e-mail. R$ 420,00/mês.",
+     "campos": {
+      "preco_total": 420,
+      "contatos": 25000
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Plano Pro: contatos ilimitados, automação completa. Suporte incluso. R$ 550,00/mês.",
+     "campos": {
+      "preco_total": 550,
+      "contatos": 999999999
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "nao_informado",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "automações por comportamento (abertura, clique, visita)",
+     "r2": "até 50.000 contatos",
+     "r3": "suporte em português por chat",
+     "r4": "R$ 580,00/mês"
+    },
+    "p2": {
+     "r1": "Automação disponível a partir do plano Pro",
+     "r2": "até 25.000 contatos",
+     "r3": "Suporte em inglês por e-mail",
+     "r4": "R$ 420,00/mês"
+    },
+    "p3": {
+     "r1": "automação completa",
+     "r2": "contatos ilimitados",
+     "r3": null,
+     "r4": "R$ 550,00/mês"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "fácil: 'ilimitados' cobre 50 mil; 'suporte incluso' não diz o idioma (não informado, opcional)"
+  }
+ ]
+}

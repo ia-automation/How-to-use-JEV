@@ -1,0 +1,32 @@
+{
+ "congelado_em": "2026-10-01T16:14:33-03:00",
+ "arquivos": {
+  "perguntas.py": "8b2914532a56161070fefa6eeaa9ef0f0059b8c3b7f6620c7880c9089b02b69f",
+  "motivo.py": "44151a7e23ba2ec438fbbf31b569654469044a04ef7976798d6fd70533803a0d",
+  "run.py": "625005edb785efe1f50195ccd105473bad39d08b90baa156dd26c27ee61d01ca",
+  "dados/teste.json": "015a04e1f083ddb743d9155474505752c92ec73ef3f0a3d6824e83b813f1bca3",
+  "dados/taxonomia.json": "7ab1ad5faeeedc803af42d7127e58e3840903f90be0fe66b4d2d9cd0a5ec4d8f"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (68 conversas: 8 `sem_informacao`, 7 com `folha: null`), variante principal com os limiares acima",
+  "variante_principal": "c",
+  "1_motivo_inventado": "gabarito `sem_informacao` e saiu outro grupo sem revisar ≤ 1/8",
+  "2_grupo_errado_automatizado": "grupo ≠ gabarito (e folha fora de `aceitaveis`) sem revisar ≤ 6/68 (≤ 0,09)",
+  "3_acerto_folgado": "folha ∈ `aceitaveis` (ou só o grupo certo quando `folha` é null), revisão e falha contam como erro ≥ 0,70",
+  "4_grupo_certo": "grupo = gabarito ou folha ∈ `aceitaveis`, revisão e falha contam como erro ≥ 0,80",
+  "5_revisao": "conversas mandadas a revisão (inclui falha operacional) ≤ 20% (≤ 13/68)",
+  "6_contra_baseline": "acerto folgado > o do baseline de palavras-chave nos mesmos casos",
+  "se_falhar": "1 = o relatório inventa motivo: não serve nem como sugestão; 2 = o relatório mente de grupo: não serve sem revisão humana de tudo; 3/4 = não lê a conversa melhor que um gestor apressado; 5 = revisa demais para valer a automação; 6 = palavra-chave basta",
+  "limites": {
+   "inventado_max": 1,
+   "grupo_errado_max_fracao": 0.09,
+   "folgado_min": 0.7,
+   "grupo_min": 0.8,
+   "revisao_max_fracao": 0.2
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "a4442f13c3cfb4d8120707a9d6e7c16a9e7c34eb3a605ea80e58cdea9fb9d110",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6"
+ }
+}

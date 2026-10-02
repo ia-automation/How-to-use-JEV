@@ -1,0 +1,21 @@
+{
+ "medicao": {
+  "ms": 317,
+  "input_tokens": 655,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "atende": {
+    "type": "noul",
+    "noul": 0.94
+   }
+  },
+  "usage": {
+   "input_tokens": 655,
+   "output_tokens": 21
+  }
+ }
+}

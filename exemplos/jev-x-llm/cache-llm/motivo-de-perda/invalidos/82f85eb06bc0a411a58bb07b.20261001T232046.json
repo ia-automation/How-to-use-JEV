@@ -1,0 +1,13 @@
+{
+ "medicao": {
+  "ms": 2140,
+  "input_tokens": 6639,
+  "output_tokens": 178,
+  "modelo": "claude-haiku-4-5-20251001",
+  "data": "2026-10-01",
+  "tentativas": 1,
+  "stop_reason": "end_turn"
+ },
+ "erro": "`leaf.sem_informacao` fora das opções: 'only_group'",
+ "texto": "```json\n{\n  \"answers\": {\n    \"group\": \"localizacao\",\n    \"leaf.preco\": \"only_group\",\n    \"leaf.credito_documentacao\": \"only_group\",\n    \"leaf.imovel\": \"only_group\",\n    \"leaf.localizacao\": \"bairro_nao_desejado\",\n    \"leaf.concorrencia\": \"only_group\",\n    \"leaf.atendimento\": \"only_group\",\n    \"leaf.momento_cliente\": \"only_group\",\n    \"leaf.sem_informacao\": \"only_group\",\n    \"reason_stated\": true,\n    \"blames_agency\": false,\n    \"closed_elsewhere\": false\n  }\n}\n```"
+}

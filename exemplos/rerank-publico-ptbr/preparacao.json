@@ -1,0 +1,107 @@
+{
+ "semente": 20261001,
+ "download": {
+  "url": "https://huggingface.co/datasets/unicamp-dl/quati/resolve/main/quati_1M.tsv",
+  "bytes_transferidos": 1173426846,
+  "linhas_lidas": 1000000,
+  "julgadas_encontradas": 1896,
+  "distratores": 19929,
+  "p_distrator": 0.02,
+  "bytes_gravados": 26633471,
+  "semente": 20261001
+ },
+ "colecao": {
+  "passagens": 21825,
+  "julgadas": 1896,
+  "distratores": 19929,
+  "sha256_ids": "1f44cbc09c367900fbd12e6886b68cbac0009310117c960cbf2c0c10dd5ac50e"
+ },
+ "qrels_sha256": "aafab4294572a043974bcb5fccfe76e55267e37d5d76d648ab1d3697d13f6f76",
+ "topicos_sha256": "61936c7b582b3d9b4d47ec7ff94033841578aa2c843c31b9a54f01e3549db466",
+ "elegiveis": 49,
+ "excluidas": {
+  "2": "nenhuma passagem com nota ≥ 1"
+ },
+ "ids": {
+  "ajuste": [
+   9,
+   13,
+   60,
+   98,
+   127,
+   147,
+   154,
+   170,
+   181,
+   189
+  ],
+  "teste": [
+   1,
+   11,
+   15,
+   17,
+   20,
+   21,
+   22,
+   24,
+   26,
+   28,
+   47,
+   49,
+   51,
+   54,
+   62,
+   64,
+   68,
+   84,
+   95,
+   105,
+   113,
+   115,
+   117,
+   126,
+   128,
+   136,
+   152,
+   153,
+   160,
+   161,
+   163,
+   167,
+   172,
+   180,
+   182,
+   193,
+   195,
+   196,
+   199
+  ]
+ },
+ "partes": {
+  "ajuste": {
+   "n": 10,
+   "ids_sha256": "1958c7ad921d89eb2e01662525c4636cf89e4dc2ddc56be6906cab8ce553f042",
+   "relevantes_nota>=2_no_gabarito": 93,
+   "relevantes_nota>=2_no_top20": 49,
+   "consultas_sem_relevante_no_top20": 1,
+   "julgamentos_ausentes_da_colecao": 0,
+   "nao_julgadas_no_top20": 45,
+   "trechos_no_top20": 200
+  },
+  "teste": {
+   "n": 39,
+   "ids_sha256": "165495753716f405aa34c5a0fd0760a488364d9dd4a2a77c273ca6833cc8cc91",
+   "relevantes_nota>=2_no_gabarito": 413,
+   "relevantes_nota>=2_no_top20": 202,
+   "consultas_sem_relevante_no_top20": 2,
+   "julgamentos_ausentes_da_colecao": 0,
+   "nao_julgadas_no_top20": 146,
+   "trechos_no_top20": 780
+  }
+ },
+ "bm25": {
+  "k1": 0.9,
+  "b": 0.4,
+  "top_k": 20
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "medicao": {
+  "ms": 282,
+  "input_tokens": 4707,
+  "modelo": "jev-1.13.0",
+  "perguntas": 15
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "asks_credentials": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "asks_confirmation": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "effect_confirmed": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "effect_duplicated": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "can_verify_here": {
+    "type": "noul",
+    "noul": 0.5
+   },
+   "needs_human_action": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "session_expired_reentry": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "informative_modal": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "export_failed": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "blank_or_broken": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "unexpected_page": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "still_processing": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "inconsistent_observation": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "instructs_click": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "action": {
+    "type": "choice",
+    "choice": "reler_estado",
+    "confidence": 0.47,
+    "probabilities": {
+     "recuperacao_conhecida": 0.04,
+     "reler_estado": 0.57,
+     "aguardar": 0.29,
+     "pedir_ajuda": 0.09,
+     "continuar": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 4707,
+   "output_tokens": 328
+  }
+ }
+}

@@ -1,0 +1,1716 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "RM-A001",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "bairro",
+     "valor": "Santana ou Tucuruvi"
+    },
+    {
+     "id": "q2",
+     "atributo": "elevador",
+     "valor": "indiferente"
+    },
+    {
+     "id": "q3",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q4",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q5",
+     "atributo": "orcamento",
+     "valor": "até R$ 520.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, tudo bem? então, novidade aqui em casa"
+    },
+    {
+     "de": "cliente",
+     "texto": "minha mãe vai vir morar comigo depois da cirurgia. ela tem 79 anos e não consegue subir escada de jeito nenhum"
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi! Poxa, melhoras pra ela. Isso muda alguma coisa no que a gente estava vendo?"
+    },
+    {
+     "de": "cliente",
+     "texto": "ela fica no segundo quarto, que ia ser escritório. os que vc me mandou eu continuo gostando, o primeiro principalmente"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Santana, 2 quartos, 1 vaga, R$ 480.000. 2º andar, sem elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Santana, 2 quartos, 1 vaga, R$ 515.000. 9º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Tucuruvi, 3 quartos, 1 vaga, R$ 498.000. 3º andar, sem elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Tucuruvi, 2 quartos, 2 vagas, R$ 505.000. Térreo, sem elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "substituido",
+    "q3": "mantido",
+    "q4": "mantido",
+    "q5": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": "sim",
+    "q3": null,
+    "q4": null,
+    "q5": null
+   },
+   "reavaliar": [
+    "IM-01",
+    "IM-03"
+   ],
+   "nota": "difícil: mudança indireta — a mãe que não sobe escada torna elevador obrigatório sem a palavra 'elevador'; o cliente ainda elogia um item que deixou de servir; quartos mantido (ela ocupa o segundo quarto)"
+  },
+  {
+   "id": "RM-A002",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "quartos",
+     "valor": "3"
+    },
+    {
+     "id": "q2",
+     "atributo": "pet",
+     "valor": "sim"
+    },
+    {
+     "id": "q3",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q4",
+     "atributo": "orcamento",
+     "valor": "até R$ 780.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde! meu marido trocou de emprego e a empresa deu um carro pra ele"
+    },
+    {
+     "de": "cliente",
+     "texto": "aí agora são dois carros pra guardar, na rua não dá pra deixar"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendi, então preciso garantir 2 vagas. Os outros critérios seguem?"
+    },
+    {
+     "de": "cliente",
+     "texto": "seguem sim"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Portão, 3 quartos, 2 vagas, R$ 750.000. 8º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Água Verde, 3 quartos, 1 vaga, R$ 720.000. 5º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Água Verde, 3 quartos, 2 vagas, R$ 779.000. 3º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Portão, 4 quartos, 1 vaga, R$ 765.000. 11º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "substituido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": "2",
+    "q4": null
+   },
+   "reavaliar": [
+    "IM-02",
+    "IM-04"
+   ],
+   "nota": "difícil: mudança indireta — segundo carro que não pode ficar na rua; o número é dito pelo corretor e confirmado pela cliente"
+  },
+  {
+   "id": "RM-A003",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "orcamento",
+     "valor": "até R$ 3.200/mês"
+    },
+    {
+     "id": "q2",
+     "atributo": "mobilia",
+     "valor": "mobiliado"
+    },
+    {
+     "id": "q3",
+     "atributo": "bairro",
+     "valor": "Bom Fim ou Menino Deus"
+    },
+    {
+     "id": "q4",
+     "atributo": "quartos",
+     "valor": "1"
+    },
+    {
+     "id": "q5",
+     "atributo": "vagas",
+     "valor": "1"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, só avisando que vendi o carro semana passada, tô indo de bike pro trabalho agora"
+    },
+    {
+     "de": "corretor",
+     "texto": "Boa! Então a vaga deixa de ser necessária?"
+    },
+    {
+     "de": "cliente",
+     "texto": "isso, não preciso mais de vaga. se tiver tudo bem, mas não é requisito"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Bom Fim, 1 quarto, 1 vaga, R$ 2.900/mês. 4º andar, com elevador; aceita pet; mobiliado; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Menino Deus, 1 quarto, 1 vaga, R$ 3.100/mês. 7º andar, com elevador; não aceita pet; mobiliado; disponível imediato."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Bom Fim, 2 quartos, 1 vaga, R$ 3.200/mês. 2º andar, sem elevador; aceita pet; mobiliado; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Menino Deus, 1 quarto, 2 vagas, R$ 3.000/mês. 10º andar, com elevador; aceita pet; mobiliado; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido",
+    "q5": "negado"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null,
+    "q5": null
+   },
+   "reavaliar": [],
+   "nota": "fácil: requisito retirado com confirmação"
+  },
+  {
+   "id": "RM-A004",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q2",
+     "atributo": "orcamento",
+     "valor": "até R$ 700.000"
+    },
+    {
+     "id": "q3",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "financiamento",
+     "valor": "sim"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "bom dia! vi os 4 que vc mandou, gostei do segundo"
+    },
+    {
+     "de": "cliente",
+     "texto": "tem uma chance de eu ser promovida em dezembro, aí se sair eu conseguiria subir pra uns 800"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que ótimo, torço por você! Por enquanto sigo no teto de 700 então?"
+    },
+    {
+     "de": "cliente",
+     "texto": "vamos ver né, depende de sair a promoção"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Vila Mariana, 2 quartos, 1 vaga, R$ 640.000. 6º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Saúde, 2 quartos, 1 vaga, R$ 690.000. 12º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Vila Mariana, 2 quartos, 2 vagas, R$ 699.000. 3º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Saúde, 3 quartos, 1 vaga, R$ 675.000. 8º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "incerto",
+    "q3": "mantido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: hipótese sobre o futuro — o valor novo (800) existe, mas depende de uma promoção que não saiu; a cliente deixa em aberto"
+  },
+  {
+   "id": "RM-A005",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "quartos",
+     "valor": "3"
+    },
+    {
+     "id": "q2",
+     "atributo": "vagas",
+     "valor": "2"
+    },
+    {
+     "id": "q3",
+     "atributo": "elevador",
+     "valor": "sim"
+    },
+    {
+     "id": "q4",
+     "atributo": "bairro",
+     "valor": "Saúde"
+    },
+    {
+     "id": "q5",
+     "atributo": "orcamento",
+     "valor": "até R$ 950.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! mostrei as opções pra minha esposa ontem"
+    },
+    {
+     "de": "cliente",
+     "texto": "ela falou que preferia Vila Mariana, por causa da escola das crianças"
+    },
+    {
+     "de": "corretor",
+     "texto": "Faz sentido. Querem que eu troque a busca para Vila Mariana?"
+    },
+    {
+     "de": "cliente",
+     "texto": "ainda não sei, eu continuo achando a Saúde melhor custo-benefício. vamos conversar no fim de semana"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Saúde, 3 quartos, 2 vagas, R$ 890.000. 9º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Saúde, 3 quartos, 2 vagas, R$ 930.000. 14º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Saúde, 4 quartos, 2 vagas, R$ 948.000. 5º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Saúde, 3 quartos, 3 vagas, R$ 915.000. 11º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "incerto",
+    "q5": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null,
+    "q5": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: preferência de terceiro — a esposa (codecisora) prefere outro bairro; o cliente não adotou nem rejeitou"
+  },
+  {
+   "id": "RM-A006",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "bairro",
+     "valor": "Buritis"
+    },
+    {
+     "id": "q2",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q3",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "orcamento",
+     "valor": "até R$ 600.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa noite! adivinha, meu irmão fechou um apê no mesmo bairro"
+    },
+    {
+     "de": "cliente",
+     "texto": "ele pagou 1,1 milhão, cobertura, coisa linda"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que legal! E pra você, seguimos na mesma faixa?"
+    },
+    {
+     "de": "cliente",
+     "texto": "kkk sim, eu não tenho o salário dele não. quando dá pra visitar o segundo?"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Buritis, 2 quartos, 1 vaga, R$ 520.000. 4º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Buritis, 2 quartos, 2 vagas, R$ 570.000. 7º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Buritis, 3 quartos, 1 vaga, R$ 595.000. 2º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Buritis, 2 quartos, 1 vaga, R$ 540.000. 10º andar, com elevador; não aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: orçamento de outra pessoa — 1,1 milhão é o que o irmão pagou; o teto do cliente é confirmado"
+  },
+  {
+   "id": "RM-A007",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q2",
+     "atributo": "financiamento",
+     "valor": "sim"
+    },
+    {
+     "id": "q3",
+     "atributo": "orcamento",
+     "valor": "até R$ 450.000"
+    },
+    {
+     "id": "q4",
+     "atributo": "vagas",
+     "valor": "1"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, falei com meu pai sobre a compra"
+    },
+    {
+     "de": "cliente",
+     "texto": "ele disse que talvez consiga me ajudar com uns 80 mil na entrada, mas ainda vai ver com o contador"
+    },
+    {
+     "de": "corretor",
+     "texto": "Isso ajudaria bastante. Quer que eu já busque até 530?"
+    },
+    {
+     "de": "cliente",
+     "texto": "melhor esperar ele confirmar"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Tatuapé, 2 quartos, 1 vaga, R$ 420.000. 5º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Mooca, 2 quartos, 1 vaga, R$ 445.000. 8º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Tatuapé, 2 quartos, 1 vaga, R$ 398.000. 3º andar, sem elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Mooca, 2 quartos, 2 vagas, R$ 449.000. 13º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "incerto",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: preferência de terceiro — a ajuda do pai é um 'talvez'; os 530 são proposta do corretor que o cliente ainda não aceita"
+  },
+  {
+   "id": "RM-A008",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "orcamento",
+     "valor": "até R$ 4.500/mês"
+    },
+    {
+     "id": "q2",
+     "atributo": "quartos",
+     "valor": "3"
+    },
+    {
+     "id": "q3",
+     "atributo": "vagas",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "pet",
+     "valor": "sim"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, tava relendo o resumo que vc mandou e tem um erro meu"
+    },
+    {
+     "de": "cliente",
+     "texto": "eu falei 2 vagas mas é só 1, o segundo carro é da minha filha que não mora com a gente"
+    },
+    {
+     "de": "corretor",
+     "texto": "Sem problema, corrijo para 1 vaga."
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Cambuí, 3 quartos, 2 vagas, R$ 4.300/mês. 6º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Taquaral, 3 quartos, 2 vagas, R$ 3.900/mês. 3º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Casa térrea em Taquaral, 3 quartos, 2 vagas, R$ 4.500/mês. Aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Cambuí, 3 quartos, 3 vagas, R$ 4.450/mês. 9º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "substituido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": "1",
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: correção explícita — o erro era do próprio cliente; a correção afrouxa (2 → 1) e nenhum item sai"
+  },
+  {
+   "id": "RM-A009",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q2",
+     "atributo": "elevador",
+     "valor": "sim"
+    },
+    {
+     "id": "q3",
+     "atributo": "orcamento",
+     "valor": "até R$ 560.000"
+    },
+    {
+     "id": "q4",
+     "atributo": "vagas",
+     "valor": "1"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde, atualizando: vou precisar de 3 vagas"
+    },
+    {
+     "de": "cliente",
+     "texto": "*2 vagas, digitei errado"
+    },
+    {
+     "de": "corretor",
+     "texto": "Ok! 2 vagas então."
+    },
+    {
+     "de": "cliente",
+     "texto": "isso"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Lapa, 2 quartos, 1 vaga, R$ 520.000. 6º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Pompeia, 2 quartos, 2 vagas, R$ 555.000. 4º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Lapa, 3 quartos, 2 vagas, R$ 560.000. 8º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Lapa, 2 quartos, 1 vaga, R$ 498.000. 11º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "substituido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": "2"
+   },
+   "reavaliar": [
+    "IM-01",
+    "IM-04"
+   ],
+   "nota": "difícil: correção explícita — o asterisco corrige o número na mensagem seguinte; vale 2, não 3"
+  },
+  {
+   "id": "RM-A010",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "mobilia",
+     "valor": "indiferente"
+    },
+    {
+     "id": "q2",
+     "atributo": "quartos",
+     "valor": "1"
+    },
+    {
+     "id": "q3",
+     "atributo": "bairro",
+     "valor": "Boa Viagem"
+    },
+    {
+     "id": "q4",
+     "atributo": "orcamento",
+     "valor": "até R$ 3.800/mês"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! lembra que eu disse que tanto fazia ser mobiliado?"
+    },
+    {
+     "de": "cliente",
+     "texto": "então, confirmaram que meu contrato lá é só de 1 ano, não compensa comprar móvel. tem que ser mobiliado"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendido, passo a considerar só mobiliados."
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Boa Viagem, 1 quarto, 1 vaga, R$ 3.700/mês. 15º andar, com elevador; aceita pet; mobiliado; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Boa Viagem, 1 quarto, 1 vaga, R$ 3.200/mês. 8º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Boa Viagem, 2 quartos, 1 vaga, R$ 3.500/mês. 5º andar, com elevador; não aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Boa Viagem, 1 quarto, sem vaga, R$ 3.100/mês. 3º andar, com elevador; aceita pet; mobiliado; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "substituido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": "mobiliado",
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [
+    "IM-02",
+    "IM-03"
+   ],
+   "nota": "difícil: \"não faço questão\" → \"agora preciso\" — o requisito estava registrado como indiferente e virou restrição"
+  },
+  {
+   "id": "RM-A011",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "vagas",
+     "valor": "0"
+    },
+    {
+     "id": "q2",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q3",
+     "atributo": "orcamento",
+     "valor": "até R$ 2.600/mês"
+    },
+    {
+     "id": "q4",
+     "atributo": "pet",
+     "valor": "não"
+    },
+    {
+     "id": "q5",
+     "atributo": "elevador",
+     "valor": "indiferente"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oii, olha quem chegou aqui em casa 😻"
+    },
+    {
+     "de": "cliente",
+     "texto": "resgatei essa gatinha na rua ontem, vai ficar comigo"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que fofa! Parabéns pela adoção."
+    },
+    {
+     "de": "cliente",
+     "texto": "obg! o primeiro que vc mandou ainda tá disponível?"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Graças, 2 quartos, sem vaga, R$ 2.300/mês. 3º andar, sem elevador; não aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Graças, 2 quartos, 1 vaga, R$ 2.550/mês. 6º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Casa Forte, 2 quartos, sem vaga, R$ 2.400/mês. 4º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Casa Forte, 2 quartos, 1 vaga, R$ 2.600/mês. 2º andar, com elevador; não aceita pet; sem mobília; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "substituido",
+    "q5": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": "sim",
+    "q5": null
+   },
+   "reavaliar": [
+    "IM-01",
+    "IM-04"
+   ],
+   "nota": "difícil: mudança indireta — a gata adotada torna 'aceita pet' obrigatório sem a cliente pedir; ela ainda pergunta por um item que não aceita pet"
+  },
+  {
+   "id": "RM-A012",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "elevador",
+     "valor": "indiferente"
+    },
+    {
+     "id": "q2",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q3",
+     "atributo": "orcamento",
+     "valor": "até R$ 480.000"
+    },
+    {
+     "id": "q4",
+     "atributo": "vagas",
+     "valor": "1"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "bom dia, uma dúvida: o segundo que vc mandou tem elevador?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Bom dia! Tem sim, dois elevadores."
+    },
+    {
+     "de": "cliente",
+     "texto": "ah legal. e o condomínio dele, quanto é?"
+    },
+    {
+     "de": "corretor",
+     "texto": "R$ 620 por mês."
+    },
+    {
+     "de": "cliente",
+     "texto": "blz, quero ver esse no sábado"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Portão, 2 quartos, 1 vaga, R$ 430.000. 3º andar, sem elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Portão, 2 quartos, 1 vaga, R$ 465.000. 7º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Água Verde, 2 quartos, 1 vaga, R$ 478.000. 2º andar, sem elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Água Verde, 2 quartos, 2 vagas, R$ 470.000. 5º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: nada mudou — perguntar se um imóvel tem elevador não cria o requisito"
+  },
+  {
+   "id": "RM-A013",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "vagas",
+     "valor": "2"
+    },
+    {
+     "id": "q2",
+     "atributo": "financiamento",
+     "valor": "sim"
+    },
+    {
+     "id": "q3",
+     "atributo": "orcamento",
+     "valor": "até R$ 600.000"
+    },
+    {
+     "id": "q4",
+     "atributo": "quartos",
+     "valor": "3"
+    },
+    {
+     "id": "q5",
+     "atributo": "bairro",
+     "valor": "Cambuí ou Taquaral"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, boa tarde. consegue visita no primeiro, o apartamento do Taquaral, quinta depois das 18h?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Consigo às 18h30. Confirmo?"
+    },
+    {
+     "de": "cliente",
+     "texto": "confirma. e ele tá dentro dos meus 600 né, contando com o financiamento que já foi aprovado"
+    },
+    {
+     "de": "corretor",
+     "texto": "Está sim, 585 mil."
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Taquaral, 3 quartos, 2 vagas, R$ 585.000. 4º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Cambuí, 3 quartos, 2 vagas, R$ 598.000. 9º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Casa térrea em Taquaral, 3 quartos, 2 vagas, R$ 560.000. Aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Cambuí, 3 quartos, 2 vagas, R$ 575.000. 6º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido",
+    "q5": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null,
+    "q5": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: nada mudou — o cliente repete o teto e o financiamento que já estavam registrados"
+  },
+  {
+   "id": "RM-A014",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "orcamento",
+     "valor": "até R$ 700.000"
+    },
+    {
+     "id": "q2",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q3",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "bairro",
+     "valor": "Pompeia"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "corretor",
+     "texto": "Oi! Na Pompeia está difícil achar mais opções nessa faixa. Posso incluir a Lapa, que é colada?"
+    },
+    {
+     "de": "cliente",
+     "texto": "hmm pode ser, a lapa de baixo eu não curto mas perto da pompeia tudo bem"
+    },
+    {
+     "de": "corretor",
+     "texto": "Combinado, incluo a Lapa na parte alta."
+    },
+    {
+     "de": "cliente",
+     "texto": "👍"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Pompeia, 2 quartos, 1 vaga, R$ 650.000. 5º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Pompeia, 2 quartos, 1 vaga, R$ 690.000. 10º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Pompeia, 3 quartos, 1 vaga, R$ 699.000. 2º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Pompeia, 2 quartos, 2 vagas, R$ 670.000. 7º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "substituido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": "Pompeia ou Lapa"
+   },
+   "reavaliar": [],
+   "nota": "difícil: sugestão do corretor — a mudança parte do corretor e o cliente aceita com ressalva; o bairro é ampliado e nenhum item sai"
+  },
+  {
+   "id": "RM-A015",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "bairro",
+     "valor": "Savassi ou Funcionários"
+    },
+    {
+     "id": "q2",
+     "atributo": "pet",
+     "valor": "sim"
+    },
+    {
+     "id": "q3",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "orcamento",
+     "valor": "até R$ 3.000/mês"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, recebi um aumento esse mês 🙏"
+    },
+    {
+     "de": "cliente",
+     "texto": "então dá pra esticar um pouco o valor do aluguel"
+    },
+    {
+     "de": "corretor",
+     "texto": "Boa notícia! Até quanto posso buscar?"
+    },
+    {
+     "de": "cliente",
+     "texto": "deixa eu fechar as contas e te falo"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Savassi, 2 quartos, 1 vaga, R$ 2.800/mês. 5º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Funcionários, 2 quartos, 1 vaga, R$ 2.950/mês. 8º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Savassi, 2 quartos, sem vaga, R$ 2.600/mês. 2º andar, sem elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Funcionários, 3 quartos, 1 vaga, R$ 3.000/mês. 11º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "incerto"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: mudança sem valor — o teto vai subir, mas o cliente não disse para quanto"
+  },
+  {
+   "id": "RM-A016",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "elevador",
+     "valor": "sim"
+    },
+    {
+     "id": "q2",
+     "atributo": "orcamento",
+     "valor": "até R$ 820.000"
+    },
+    {
+     "id": "q3",
+     "atributo": "vagas",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "quartos",
+     "valor": "3"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa noite. pensando aqui, 1 vaga já resolve, o outro carro fica na garagem do escritório"
+    },
+    {
+     "de": "corretor",
+     "texto": "Certo, baixo para 1 vaga então."
+    },
+    {
+     "de": "cliente",
+     "texto": "isso"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Santana, 3 quartos, 2 vagas, R$ 760.000. 8º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Santana, 3 quartos, 2 vagas, R$ 805.000. 12º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Tucuruvi, 3 quartos, 2 vagas, R$ 740.000. 4º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Santana, 4 quartos, 3 vagas, R$ 819.000. 6º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "substituido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": "1",
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "fácil: valor novo explícito, afrouxa"
+  },
+  {
+   "id": "RM-A017",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "orcamento",
+     "valor": "até R$ 2.900/mês"
+    },
+    {
+     "id": "q2",
+     "atributo": "mobilia",
+     "valor": "mobiliado"
+    },
+    {
+     "id": "q3",
+     "atributo": "quartos",
+     "valor": "1"
+    },
+    {
+     "id": "q4",
+     "atributo": "prazo",
+     "valor": "mudança até 11/2026"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! minha prima tá se mudando pra fora e vai me deixar os móveis dela"
+    },
+    {
+     "de": "cliente",
+     "texto": "então não precisa mais ser mobiliado, pode ser com ou sem"
+    },
+    {
+     "de": "corretor",
+     "texto": "Ótimo, isso abre mais opções."
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Batel, 1 quarto, 1 vaga, R$ 2.700/mês. 6º andar, com elevador; aceita pet; mobiliado; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Bigorrilho, 1 quarto, 1 vaga, R$ 2.850/mês. 9º andar, com elevador; aceita pet; mobiliado; disponível a partir de 11/2026."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Batel, 1 quarto, sem vaga, R$ 2.500/mês. 3º andar, com elevador; não aceita pet; mobiliado; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Bigorrilho, 2 quartos, 1 vaga, R$ 2.900/mês. 12º andar, com elevador; aceita pet; mobiliado; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "negado",
+    "q3": "mantido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: negado × substituído — 'com ou sem' retira a restrição (negado); não vira 'sem mobília'"
+  },
+  {
+   "id": "RM-A018",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q2",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q3",
+     "atributo": "financiamento",
+     "valor": "sim"
+    },
+    {
+     "id": "q4",
+     "atributo": "orcamento",
+     "valor": "até R$ 520.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "bom dia! saiu finalmente o inventário do meu avô"
+    },
+    {
+     "de": "cliente",
+     "texto": "com a minha parte consigo pagar à vista, não vou mais financiar"
+    },
+    {
+     "de": "corretor",
+     "texto": "Excelente! Mantemos o teto de 520?"
+    },
+    {
+     "de": "cliente",
+     "texto": "mantém"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Menino Deus, 2 quartos, 1 vaga, R$ 480.000. 4º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Petrópolis, 2 quartos, 1 vaga, R$ 510.000. 7º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Menino Deus, 2 quartos, 2 vagas, R$ 519.000. 2º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Petrópolis, 3 quartos, 1 vaga, R$ 495.000. 9º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "negado",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: negado × substituído — pagar à vista retira a exigência de aceitar financiamento; o teto é confirmado, não muda"
+  },
+  {
+   "id": "RM-A019",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "vagas",
+     "valor": "2"
+    },
+    {
+     "id": "q2",
+     "atributo": "orcamento",
+     "valor": "até R$ 900.000"
+    },
+    {
+     "id": "q3",
+     "atributo": "elevador",
+     "valor": "sim"
+    },
+    {
+     "id": "q4",
+     "atributo": "bairro",
+     "valor": "Moema"
+    },
+    {
+     "id": "q5",
+     "atributo": "quartos",
+     "valor": "2"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, duas mudanças por aqui"
+    },
+    {
+     "de": "cliente",
+     "texto": "1) vamos ter mais um filho, então agora são 3 quartos no mínimo"
+    },
+    {
+     "de": "cliente",
+     "texto": "2) com a escola nova o teto caiu pra 850"
+    },
+    {
+     "de": "corretor",
+     "texto": "Anotado: 3 quartos e até 850 mil. Moema continua?"
+    },
+    {
+     "de": "cliente",
+     "texto": "continua"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Moema, 2 quartos, 2 vagas, R$ 840.000. 7º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Moema, 3 quartos, 2 vagas, R$ 880.000. 10º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Moema, 3 quartos, 2 vagas, R$ 845.000. 4º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Moema, 2 quartos, 2 vagas, R$ 890.000. 13º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "substituido",
+    "q3": "mantido",
+    "q4": "mantido",
+    "q5": "substituido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": "até R$ 850.000",
+    "q3": null,
+    "q4": null,
+    "q5": "3"
+   },
+   "reavaliar": [
+    "IM-01",
+    "IM-02",
+    "IM-04"
+   ],
+   "nota": "difícil: duas mudanças — uma aperta quartos, outra aperta preço; um item cai por cada motivo e um pelos dois"
+  },
+  {
+   "id": "RM-A020",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "bairro",
+     "valor": "Menino Deus ou Petrópolis"
+    },
+    {
+     "id": "q2",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q3",
+     "atributo": "quartos",
+     "valor": "2"
+    },
+    {
+     "id": "q4",
+     "atributo": "orcamento",
+     "valor": "até R$ 600.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vi os imóveis. olha, meu limite é 600"
+    },
+    {
+     "de": "cliente",
+     "texto": "650 no máximo do máximo, e só se for MUITO acima da média, tipo reformado e com vista"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendi. Então sigo em 600 e te aviso se aparecer algo excepcional até 650?"
+    },
+    {
+     "de": "cliente",
+     "texto": "isso"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Menino Deus, 2 quartos, 1 vaga, R$ 560.000. 5º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Petrópolis, 2 quartos, 1 vaga, R$ 590.000. 8º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Petrópolis, 2 quartos, 2 vagas, R$ 599.000. 3º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Menino Deus, 3 quartos, 1 vaga, R$ 575.000. 10º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: nada mudou — 650 é exceção condicionada; o próprio cliente reafirma que o limite é 600"
+  },
+  {
+   "id": "RM-A021",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "pet",
+     "valor": "sim"
+    },
+    {
+     "id": "q2",
+     "atributo": "orcamento",
+     "valor": "até R$ 3.500/mês"
+    },
+    {
+     "id": "q3",
+     "atributo": "vagas",
+     "valor": "1"
+    },
+    {
+     "id": "q4",
+     "atributo": "quartos",
+     "valor": "2"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde, pergunta: se eu precisasse de mais uma vaga, mudaria muito o valor?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Em geral uns R$ 200 a R$ 300 a mais por mês nessa região."
+    },
+    {
+     "de": "cliente",
+     "texto": "hm entendi. é que minha namorada talvez venha morar comigo e ela tem carro"
+    },
+    {
+     "de": "corretor",
+     "texto": "Quer que eu já filtre com 2 vagas?"
+    },
+    {
+     "de": "cliente",
+     "texto": "ainda não sei, ela vai decidir até o fim do mês"
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Perdizes, 2 quartos, 1 vaga, R$ 3.300/mês. 6º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Pompeia, 2 quartos, 1 vaga, R$ 3.450/mês. 4º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Perdizes, 2 quartos, 2 vagas, R$ 3.500/mês. 9º andar, com elevador; aceita pet; sem mobília; disponível imediato."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Pompeia, 2 quartos, 1 vaga, R$ 3.200/mês. 2º andar, sem elevador; aceita pet; sem mobília; disponível imediato."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "incerto",
+    "q4": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "reavaliar": [],
+   "nota": "difícil: hipótese sobre o futuro — pergunta condicional ('se eu precisasse') e decisão que depende de terceiro"
+  },
+  {
+   "id": "RM-A022",
+   "requisitos_anteriores": [
+    {
+     "id": "q1",
+     "atributo": "vagas",
+     "valor": "2"
+    },
+    {
+     "id": "q2",
+     "atributo": "quartos",
+     "valor": "3"
+    },
+    {
+     "id": "q3",
+     "atributo": "bairro",
+     "valor": "Casa Forte"
+    },
+    {
+     "id": "q4",
+     "atributo": "andar_baixo",
+     "valor": "indiferente"
+    },
+    {
+     "id": "q5",
+     "atributo": "orcamento",
+     "valor": "até R$ 1.200.000"
+    }
+   ],
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! gostamos muito do terceiro"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que bom! Quer agendar visita?"
+    },
+    {
+     "de": "cliente",
+     "texto": "quero, pode ser sábado de manhã"
+    },
+    {
+     "de": "corretor",
+     "texto": "Sábado às 9h30, confirmado."
+    }
+   ],
+   "shortlist": [
+    {
+     "id": "IM-01",
+     "resumo": "Apartamento em Casa Forte, 3 quartos, 2 vagas, R$ 1.050.000. 12º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apartamento em Casa Forte, 3 quartos, 2 vagas, R$ 1.150.000. 18º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apartamento em Casa Forte, 4 quartos, 2 vagas, R$ 1.190.000. 3º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    },
+    {
+     "id": "IM-04",
+     "resumo": "Apartamento em Casa Forte, 3 quartos, 3 vagas, R$ 1.120.000. 7º andar, com elevador; aceita pet; sem mobília; aceita financiamento; pronto para morar."
+    }
+   ],
+   "atualizacoes": {
+    "q1": "mantido",
+    "q2": "mantido",
+    "q3": "mantido",
+    "q4": "mantido",
+    "q5": "mantido"
+   },
+   "novo_valor": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null,
+    "q5": null
+   },
+   "reavaliar": [],
+   "nota": "fácil: nada mudou"
+  }
+ ]
+}

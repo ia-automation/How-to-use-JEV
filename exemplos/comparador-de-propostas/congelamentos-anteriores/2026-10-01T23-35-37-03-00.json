@@ -1,0 +1,21 @@
+{
+ "congelado_em": "2026-10-01T23:35:37-03:00",
+ "arquivos": {
+  "perguntas.py": "6107efad47cd0119601ec10885ed59a383e00e62a3fe047921b47eb6131599d2",
+  "comparador.py": "d8f6d961d9eb13ed7bfb5d42fa3dcff1e3a2a186f0c4019234dced0584b62c85",
+  "run.py": "8d705aba1a882143492573ae5336fb8e583ff97d3541f245d2f9fcfc497528be",
+  "dados/teste.json": "8f02e3efe38c6cd28da4356e9a9fa007644da7a32fac4531a7101f0b3f443ead"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (20 disputas, 60 propostas), com o desenho padrão e os limiares de perguntas.py",
+  "1_numericas": "células numéricas pelo código 100% (menos é bug)",
+  "2_acerto_semantico": "células semânticas (Jev, com válvula) ≥ baseline + 15 p.p.",
+  "3_exclusao_aprovada": "gabarito contradiz semântico → atende ≤ 5% dessas células",
+  "4_inelegivel_elegivel": "proposta inelegível no gabarito dentro de `elegiveis` ≤ 10% das inelegíveis",
+  "5_elegiveis_exatos": "lista `elegiveis` igual ao gabarito em ≥ 70% das disputas"
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "05fd7417c05a53422b55d1c30b197d5ad1ceba475871c5193cd033b0ec85e59e",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6"
+ }
+}

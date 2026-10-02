@@ -1,0 +1,1951 @@
+{
+ "versao": "2026-10-02",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CP-T01",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Instalação e configuração das impressoras inclusas.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Toner e manutenção inclusos na mensalidade.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Franquia mínima de 5 mil páginas por mês (`paginas_mes` >= 5000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 1.200 (`preco_total` <= 1200).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Outsourcing de 3 multifuncionais com instalação e configuração em rede inclusas. Toner, peças e manutenção inclusos. Franquia de 6.000 páginas/mês. Mensalidade R$ 1.150,00.",
+     "campos": {
+      "preco_total": 1150,
+      "paginas_mes": 6000
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Locação de 3 impressoras com instalação inclusa. Manutenção inclusa; o toner é fornecido ao custo de R$ 0,06 por página impressa. Franquia de 5.000 páginas. Mensalidade R$ 890,00.",
+     "campos": {
+      "preco_total": 890,
+      "paginas_mes": 5000
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "3 equipamentos em locação, tudo incluso (toner, peças, assistência). Franquia de 4.000 páginas, excedente a R$ 0,08. Instalação inclusa. R$ 980,00/mês.",
+     "campos": {
+      "preco_total": 980,
+      "paginas_mes": 4000
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "instalação e configuração em rede inclusas",
+     "r2": "Toner, peças e manutenção inclusos",
+     "r3": "Franquia de 6.000 páginas/mês",
+     "r4": "R$ 1.150,00"
+    },
+    "p2": {
+     "r1": "instalação inclusa",
+     "r2": "o toner é fornecido ao custo de R$ 0,06 por página impressa",
+     "r3": "Franquia de 5.000 páginas",
+     "r4": "R$ 890,00"
+    },
+    "p3": {
+     "r1": "Instalação inclusa",
+     "r2": "tudo incluso (toner, peças, assistência)",
+     "r3": "Franquia de 4.000 páginas",
+     "r4": "R$ 980,00/mês"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: exclusão escondida — 'manutenção inclusa' seguida de toner cobrado por página (p2)"
+  },
+  {
+   "id": "CP-T02",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Pintura interna de todas as salas com tinta lavável.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Serviço executado fora do horário comercial (noite ou fim de semana).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de até 10 dias (`prazo_dias` <= 10).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 12.000 (`preco_total` <= 12000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Pintura das 8 salas e corredor com tinta acrílica lavável premium. Execução noturna, das 19h às 23h, sem interromper o expediente. 8 dias. R$ 11.400,00, material incluso.",
+     "campos": {
+      "prazo_dias": 8,
+      "preco_total": 11400
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Pintura de todas as salas com tinta acrílica fosca. Trabalhamos em horário comercial, de 8h às 17h. 6 dias. R$ 8.900,00.",
+     "campos": {
+      "prazo_dias": 6,
+      "preco_total": 8900
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Pintura interna completa com tinta lavável. Podemos executar aos fins de semana, com acréscimo de 20% sobre o valor. Prazo 12 dias. Valor base R$ 10.200,00.",
+     "campos": {
+      "prazo_dias": 12,
+      "preco_total": 10200
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "nao_informado",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "tinta acrílica lavável premium",
+     "r2": "Execução noturna, das 19h às 23h",
+     "r3": "8 dias",
+     "r4": "R$ 11.400,00"
+    },
+    "p2": {
+     "r1": null,
+     "r2": "Trabalhamos em horário comercial, de 8h às 17h",
+     "r3": "6 dias",
+     "r4": "R$ 8.900,00"
+    },
+    "p3": {
+     "r1": "tinta lavável",
+     "r2": "Podemos executar aos fins de semana, com acréscimo de 20% sobre o valor",
+     "r3": "12 dias",
+     "r4": "R$ 10.200,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: promessa condicionada — fim de semana só com acréscimo (o preço cotado não cobre o pedido → contradiz); 'acrílica fosca' não diz se é lavável"
+  },
+  {
+   "id": "CP-T03",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Vídeo aéreo com drone de cada empreendimento, editado.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Piloto com cadastro na ANAC e seguro do equipamento.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Entrega em até 7 dias após a captação (`prazo_dias` <= 7).",
+     "obrigatorio": false,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço por empreendimento de até R$ 1.500 (`preco_total` <= 1500).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Captação aérea com drone e edição de vídeo de 1 a 2 minutos. Piloto cadastrado na ANAC, equipamento segurado. Entrega em 5 dias úteis. R$ 1.300,00 por empreendimento.",
+     "campos": {
+      "prazo_dias": 7,
+      "preco_total": 1300
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Imagens aéreas em 4K, entregues brutas para a sua equipe editar. Piloto habilitado. Entrega em 3 dias. R$ 800,00.",
+     "campos": {
+      "prazo_dias": 3,
+      "preco_total": 800
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Vídeo aéreo editado com trilha e legendas. Documentação do piloto e apólice do drone conforme anexo. Entrega em 10 dias. R$ 1.450,00.",
+     "campos": {
+      "prazo_dias": 10,
+      "preco_total": 1450
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Captação aérea com drone e edição de vídeo de 1 a 2 minutos",
+     "r2": "Piloto cadastrado na ANAC, equipamento segurado",
+     "r3": "5 dias úteis",
+     "r4": "R$ 1.300,00"
+    },
+    "p2": {
+     "r1": "entregues brutas para a sua equipe editar",
+     "r2": null,
+     "r3": "3 dias",
+     "r4": "R$ 800,00"
+    },
+    "p3": {
+     "r1": "Vídeo aéreo editado com trilha e legendas",
+     "r2": null,
+     "r3": "10 dias",
+     "r4": "R$ 1.450,00"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: anexo citado mas ausente — p3 remete a documentação anexa que não veio; 'piloto habilitado' (p2) não diz ANAC nem seguro"
+  },
+  {
+   "id": "CP-T04",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Cobertura contra incêndio, roubo e danos elétricos.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Responsabilidade civil para visitantes do escritório.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Franquia de até R$ 2.000 por sinistro (`franquia` <= 2000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Prêmio anual de até R$ 4.500 (`preco_total` <= 4500).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Seguro empresarial: incêndio, roubo de bens, danos elétricos e responsabilidade civil estabelecimentos (visitantes e terceiros). Franquia R$ 1.500,00. Prêmio anual R$ 4.200,00.",
+     "campos": {
+      "franquia": 1500,
+      "preco_total": 4200
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Apólice com cobertura básica de incêndio e vendaval. Roubo e danos elétricos são coberturas adicionais, cotadas à parte. RC não contemplada. Franquia R$ 1.000,00. Prêmio R$ 2.900,00/ano.",
+     "campos": {
+      "franquia": 1000,
+      "preco_total": 2900
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Cobertura ampla: incêndio, roubo, danos elétricos, equipamentos e RC. Franquia de 10% dos prejuízos, mínimo de R$ 3.000,00. Prêmio anual R$ 4.100,00.",
+     "campos": {
+      "franquia": 3000,
+      "preco_total": 4100
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "incêndio, roubo de bens, danos elétricos",
+     "r2": "responsabilidade civil estabelecimentos (visitantes e terceiros)",
+     "r3": "R$ 1.500,00",
+     "r4": "R$ 4.200,00"
+    },
+    "p2": {
+     "r1": "Roubo e danos elétricos são coberturas adicionais, cotadas à parte",
+     "r2": "RC não contemplada",
+     "r3": "R$ 1.000,00",
+     "r4": "R$ 2.900,00/ano"
+    },
+    "p3": {
+     "r1": "incêndio, roubo, danos elétricos",
+     "r2": "RC",
+     "r3": "mínimo de R$ 3.000,00",
+     "r4": "R$ 4.100,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: exclusão escondida — 'cobertura básica' com roubo e danos elétricos cotados à parte; a franquia mínima de p3 estoura o limite"
+  },
+  {
+   "id": "CP-T05",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Treinamento presencial de vendas para 15 corretores.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Material didático incluso.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Carga horária de pelo menos 16 horas (`horas` >= 16).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 9.000 (`preco_total` <= 9000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Programa de vendas consultivas, 2 dias presenciais (16 horas), para até 20 participantes. Apostila e certificado inclusos. R$ 8.500,00.",
+     "campos": {
+      "horas": 16,
+      "preco_total": 8500
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Treinamento de vendas ao vivo, online, 4 encontros de 3 horas. Material em PDF incluso. R$ 5.200,00 para até 15 pessoas.",
+     "campos": {
+      "horas": 12,
+      "preco_total": 5200
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Workshop presencial de técnicas de fechamento para equipes imobiliárias. Material impresso cobrado à parte (R$ 60,00 por participante). R$ 7.800,00.",
+     "campos": {
+      "horas": null,
+      "preco_total": 7800
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "nao_informado",
+     "r2": "contradiz",
+     "r3": "nao_informado",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "2 dias presenciais (16 horas), para até 20 participantes",
+     "r2": "Apostila e certificado inclusos",
+     "r3": "16 horas",
+     "r4": "R$ 8.500,00"
+    },
+    "p2": {
+     "r1": "ao vivo, online",
+     "r2": "Material em PDF incluso",
+     "r3": "4 encontros de 3 horas",
+     "r4": "R$ 5.200,00"
+    },
+    "p3": {
+     "r1": null,
+     "r2": "Material impresso cobrado à parte",
+     "r3": null,
+     "r4": "R$ 7.800,00"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: termo vago — p3 é presencial mas não diz carga horária nem se cabem 15 pessoas (duas perguntas); online não é presencial"
+  },
+  {
+   "id": "CP-T06",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Manutenção mensal preventiva dos 2 elevadores.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Atendimento de emergência 24h com chegada em até 2 horas.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Peças de reposição inclusas no contrato.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 2.200 (`preco_total` <= 2200).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Contrato de conservação dos 2 elevadores com visita mensal preventiva. Plantão 24h, atendimento em até 2 horas na capital. Peças inclusas, exceto cabos de tração e máquina. Mensalidade R$ 2.100,00.",
+     "campos": {
+      "preco_total": 2100
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Manutenção preventiva mensal. Chamados de emergência 24h. Contrato integral: todas as peças inclusas, sem exceção. Mensalidade R$ 2.650,00.",
+     "campos": {
+      "preco_total": 2650
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Preventiva mensal nos 2 equipamentos. Emergência 24h, tempo de resposta de até 2 horas. Contrato simples: mão de obra inclusa, peças orçadas à parte. Mensalidade R$ 1.700,00.",
+     "campos": {
+      "preco_total": 1700
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "contradiz"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "visita mensal preventiva",
+     "r2": "Plantão 24h, atendimento em até 2 horas na capital",
+     "r3": "Peças inclusas, exceto cabos de tração e máquina",
+     "r4": "R$ 2.100,00"
+    },
+    "p2": {
+     "r1": "Manutenção preventiva mensal",
+     "r2": null,
+     "r3": "todas as peças inclusas, sem exceção",
+     "r4": "R$ 2.650,00"
+    },
+    "p3": {
+     "r1": "Preventiva mensal nos 2 equipamentos",
+     "r2": "Emergência 24h, tempo de resposta de até 2 horas",
+     "r3": "peças orçadas à parte",
+     "r4": "R$ 1.700,00"
+    }
+   },
+   "elegiveis": [],
+   "nota": "difícil: exclusão escondida — 'peças inclusas, exceto…' (p1) contradiz 'inclusas'; p2 não diz o tempo de chegada; nenhuma fica elegível"
+  },
+  {
+   "id": "CP-T07",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Buffet para 120 pessoas com opção vegetariana.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Garçons e louça inclusos.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Bebidas não alcoólicas inclusas.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 15.000 (`preco_total` <= 15000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Coquetel para 120 convidados com 12 itens, incluindo 3 opções vegetarianas. 6 garçons, louça, taças e mesas de apoio inclusos. Refrigerantes, sucos e água inclusos. R$ 14.200,00.",
+     "campos": {
+      "preco_total": 14200
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Buffet para 120 pessoas, cardápio completo. Equipe de garçons inclusa; a louça é locada à parte (R$ 1.100,00). Bebidas por conta do contratante. R$ 11.800,00.",
+     "campos": {
+      "preco_total": 11800
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Jantar volante para 120 pessoas com opção vegetariana e vegana. Garçons, louça e bebidas não alcoólicas inclusos. R$ 16.500,00.",
+     "campos": {
+      "preco_total": 16500
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "nao_informado",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "contradiz"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "incluindo 3 opções vegetarianas",
+     "r2": "6 garçons, louça, taças e mesas de apoio inclusos",
+     "r3": "Refrigerantes, sucos e água inclusos",
+     "r4": "R$ 14.200,00"
+    },
+    "p2": {
+     "r1": null,
+     "r2": "a louça é locada à parte (R$ 1.100,00)",
+     "r3": "Bebidas por conta do contratante",
+     "r4": "R$ 11.800,00"
+    },
+    "p3": {
+     "r1": "opção vegetariana e vegana",
+     "r2": "Garçons, louça e bebidas não alcoólicas inclusos",
+     "r3": "Garçons, louça e bebidas não alcoólicas inclusos",
+     "r4": "R$ 16.500,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: termo vago — 'cardápio completo' não diz se há opção vegetariana; louça à parte contradiz 'inclusos'"
+  },
+  {
+   "id": "CP-T08",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Mapeamento dos dados pessoais e relatório de impacto (RIPD).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Treinamento da equipe sobre LGPD.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Atuação como encarregado (DPO) terceirizado por 12 meses.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 25.000 (`preco_total` <= 25000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Projeto de adequação à LGPD: inventário de dados, RIPD, políticas e treinamento de 4 horas para a equipe. DPO como serviço por 12 meses incluso. R$ 24.000,00.",
+     "campos": {
+      "preco_total": 24000
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Diagnóstico de conformidade com mapeamento de dados e plano de ação. O relatório de impacto, quando necessário, é cotado em etapa posterior. Treinamento incluso. DPO terceirizado: R$ 1.500,00/mês, opcional. R$ 14.000,00.",
+     "campos": {
+      "preco_total": 14000
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Adequação completa à LGPD com mapeamento, RIPD e políticas. Capacitação da equipe conforme cronograma anexo. R$ 19.500,00. Não atuamos como encarregado.",
+     "campos": {
+      "preco_total": 19500
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "inventário de dados, RIPD",
+     "r2": "treinamento de 4 horas para a equipe",
+     "r3": "DPO como serviço por 12 meses incluso",
+     "r4": "R$ 24.000,00"
+    },
+    "p2": {
+     "r1": "O relatório de impacto, quando necessário, é cotado em etapa posterior",
+     "r2": "Treinamento incluso",
+     "r3": "DPO terceirizado: R$ 1.500,00/mês, opcional",
+     "r4": "R$ 14.000,00"
+    },
+    "p3": {
+     "r1": "mapeamento, RIPD e políticas",
+     "r2": null,
+     "r3": "Não atuamos como encarregado",
+     "r4": "R$ 19.500,00"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: anexo citado mas ausente — capacitação 'conforme cronograma anexo' sem anexo; 'cotado em etapa posterior' é exclusão escondida"
+  },
+  {
+   "id": "CP-T09",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Gerador a diesel com partida automática (QTA).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Instalação e ligação ao quadro inclusas.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Potência de pelo menos 60 kVA (`kva` >= 60).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 70.000 (`preco_total` <= 70000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Grupo gerador 75 kVA silenciado com quadro de transferência automática. Instalação, cabeamento e ligação ao quadro geral inclusos. R$ 68.000,00.",
+     "campos": {
+      "kva": 75,
+      "preco_total": 68000
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Gerador 60 kVA com partida manual; QTA disponível como opcional por R$ 6.500,00. Instalação inclusa. R$ 59.000,00.",
+     "campos": {
+      "kva": 60,
+      "preco_total": 59000
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Grupo gerador 80 kVA com QTA. Entrega no local; a instalação elétrica deve ser feita por eletricista do cliente, seguindo nosso memorial. R$ 64.000,00.",
+     "campos": {
+      "kva": 80,
+      "preco_total": 64000
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "quadro de transferência automática",
+     "r2": "Instalação, cabeamento e ligação ao quadro geral inclusos",
+     "r3": "75 kVA",
+     "r4": "R$ 68.000,00"
+    },
+    "p2": {
+     "r1": "partida manual; QTA disponível como opcional",
+     "r2": "Instalação inclusa",
+     "r3": "60 kVA",
+     "r4": "R$ 59.000,00"
+    },
+    "p3": {
+     "r1": "80 kVA com QTA",
+     "r2": "a instalação elétrica deve ser feita por eletricista do cliente",
+     "r3": "80 kVA",
+     "r4": "R$ 64.000,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "fácil: tudo dito; 'opcional' para o QTA e 'eletricista do cliente' são contradições claras"
+  },
+  {
+   "id": "CP-T10",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Máquinas de café em comodato com manutenção inclusa.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Insumos (café, leite, copos) inclusos na mensalidade.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Mensalidade de até R$ 900 (`preco_total` <= 900).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Troca da máquina em até 48 horas em caso de defeito (`prazo_dias` <= 2).",
+     "obrigatorio": false,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "2 máquinas de café expresso em comodato, com manutenção e higienização mensal inclusas. Insumos inclusos para até 1.200 doses/mês. Troca em até 24 horas em caso de defeito. R$ 860,00/mês.",
+     "campos": {
+      "preco_total": 860,
+      "prazo_dias": 1
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Comodato de 2 máquinas com manutenção inclusa. Insumos vendidos à parte, pedido mínimo mensal de R$ 350,00. Mensalidade R$ 420,00. Troca do equipamento em até 5 dias úteis.",
+     "campos": {
+      "preco_total": 420,
+      "prazo_dias": 7
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Comodato de 2 máquinas com tudo incluso: manutenção, café em grãos, leite e copos. R$ 940,00/mês. Suporte técnico ágil.",
+     "campos": {
+      "preco_total": 940,
+      "prazo_dias": null
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "contradiz"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "nao_informado"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "em comodato, com manutenção e higienização mensal inclusas",
+     "r2": "Insumos inclusos para até 1.200 doses/mês",
+     "r3": "R$ 860,00/mês",
+     "r4": "24 horas"
+    },
+    "p2": {
+     "r1": "Comodato de 2 máquinas com manutenção inclusa",
+     "r2": "Insumos vendidos à parte",
+     "r3": "R$ 420,00",
+     "r4": "5 dias úteis"
+    },
+    "p3": {
+     "r1": "Comodato de 2 máquinas com tudo incluso: manutenção",
+     "r2": "café em grãos, leite e copos",
+     "r3": "R$ 940,00/mês",
+     "r4": null
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: termo vago — 'suporte técnico ágil' não é prazo de troca (não informado, requisito opcional); p3 cai só no preço"
+  },
+  {
+   "id": "CP-T11",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Mudança do escritório com embalagem e desmontagem/montagem dos móveis.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Seguro da carga incluso.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Execução em um único fim de semana.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 8.000 (`preco_total` <= 8000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Mudança comercial completa: embalagem, desmontagem e montagem de móveis, transporte em caminhão baú. Seguro de carga incluso. Execução no sábado e domingo. R$ 7.600,00.",
+     "campos": {
+      "preco_total": 7600
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Transporte e montagem dos móveis. A embalagem dos itens fica a cargo do cliente; fornecemos as caixas. Seguro mediante contratação à parte (1,5% do valor declarado). Fim de semana. R$ 5.900,00.",
+     "campos": {
+      "preco_total": 5900
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Mudança com embalagem, desmontagem e remontagem, seguro incluso. Prazo de execução: 3 dias úteis, em horário comercial. R$ 7.200,00.",
+     "campos": {
+      "preco_total": 7200
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "embalagem, desmontagem e montagem de móveis",
+     "r2": "Seguro de carga incluso",
+     "r3": "Execução no sábado e domingo",
+     "r4": "R$ 7.600,00"
+    },
+    "p2": {
+     "r1": "A embalagem dos itens fica a cargo do cliente",
+     "r2": "Seguro mediante contratação à parte",
+     "r3": "Fim de semana",
+     "r4": "R$ 5.900,00"
+    },
+    "p3": {
+     "r1": "embalagem, desmontagem e remontagem",
+     "r2": "seguro incluso",
+     "r3": "3 dias úteis, em horário comercial",
+     "r4": "R$ 7.200,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "fácil: requisito de fim de semana é semântico (dias úteis contradiz)"
+  },
+  {
+   "id": "CP-T12",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Chatbot de WhatsApp com transferência para atendente humano.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Integração com o CRM atual (API).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Número oficial da API do WhatsApp (não app comum).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 700 (`preco_total` <= 700).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Bot no WhatsApp pela API oficial da Meta, com fluxo de qualificação e transbordo para atendente. Integração via API REST com qualquer CRM. R$ 650,00/mês + custo por conversa da Meta.",
+     "campos": {
+      "preco_total": 650
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Automação de WhatsApp usando o aplicativo Business instalado em um celular dedicado. Transfere para humano. Integração com CRM por planilha exportada diariamente. R$ 290,00/mês.",
+     "campos": {
+      "preco_total": 290
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Plataforma de atendimento com bot e humanos na mesma tela, API oficial do WhatsApp. Integrações disponíveis com os principais CRMs do mercado. R$ 690,00/mês.",
+     "campos": {
+      "preco_total": 690
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "transbordo para atendente",
+     "r2": "Integração via API REST com qualquer CRM",
+     "r3": "API oficial da Meta",
+     "r4": "R$ 650,00/mês"
+    },
+    "p2": {
+     "r1": "Transfere para humano",
+     "r2": "Integração com CRM por planilha exportada diariamente",
+     "r3": "usando o aplicativo Business instalado em um celular dedicado",
+     "r4": "R$ 290,00/mês"
+    },
+    "p3": {
+     "r1": "bot e humanos na mesma tela",
+     "r2": null,
+     "r3": "API oficial do WhatsApp",
+     "r4": "R$ 690,00/mês"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: termo vago — 'integrações com os principais CRMs' não diz se o nosso está entre eles (pergunta); planilha diária não é integração por API"
+  },
+  {
+   "id": "CP-T13",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Piso vinílico em régua, com instalação inclusa.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Remoção e descarte do carpete atual inclusos.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de até 5 dias (`prazo_dias` <= 5).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 22.000 (`preco_total` <= 22000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Fornecimento e instalação de 180 m² de piso vinílico em régua clicada. Remoção do carpete e descarte inclusos. 4 dias. R$ 21.500,00.",
+     "campos": {
+      "prazo_dias": 4,
+      "preco_total": 21500
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "180 m² de vinílico em régua colada, instalado. Prazo 3 dias. R$ 18.900,00. Remoção do revestimento existente e regularização do contrapiso não inclusas.",
+     "campos": {
+      "prazo_dias": 3,
+      "preco_total": 18900
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Piso vinílico em manta, instalação inclusa, remoção do carpete inclusa. 5 dias. R$ 19.800,00.",
+     "campos": {
+      "prazo_dias": 5,
+      "preco_total": 19800
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Fornecimento e instalação de 180 m² de piso vinílico em régua clicada",
+     "r2": "Remoção do carpete e descarte inclusos",
+     "r3": "4 dias",
+     "r4": "R$ 21.500,00"
+    },
+    "p2": {
+     "r1": "vinílico em régua colada, instalado",
+     "r2": "Remoção do revestimento existente e regularização do contrapiso não inclusas",
+     "r3": "3 dias",
+     "r4": "R$ 18.900,00"
+    },
+    "p3": {
+     "r1": "Piso vinílico em manta",
+     "r2": "remoção do carpete inclusa",
+     "r3": "5 dias",
+     "r4": "R$ 19.800,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: exclusão escondida — a remoção fica na última frase de p2; manta não é régua"
+  },
+  {
+   "id": "CP-T14",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Uniformes com bordado do logotipo.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Amostra para aprovação antes da produção.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Entrega em até 25 dias (`prazo_dias` <= 25).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 6.000 (`preco_total` <= 6000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "40 camisas polo com logotipo bordado no peito. Enviamos peça piloto para aprovação. Entrega em 20 dias após a aprovação. R$ 5.600,00.",
+     "campos": {
+      "prazo_dias": 20,
+      "preco_total": 5600
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "40 polos com logotipo aplicado em silk. Sem peça piloto. Entrega em 15 dias. R$ 3.900,00.",
+     "campos": {
+      "prazo_dias": 15,
+      "preco_total": 3900
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "40 camisas com bordado. Amostra conforme catálogo anexo. Entrega em 30 dias. R$ 5.200,00.",
+     "campos": {
+      "prazo_dias": 30,
+      "preco_total": 5200
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "contradiz",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "logotipo bordado no peito",
+     "r2": "Enviamos peça piloto para aprovação",
+     "r3": "20 dias",
+     "r4": "R$ 5.600,00"
+    },
+    "p2": {
+     "r1": "logotipo aplicado em silk",
+     "r2": "Sem peça piloto",
+     "r3": "15 dias",
+     "r4": "R$ 3.900,00"
+    },
+    "p3": {
+     "r1": "40 camisas com bordado",
+     "r2": null,
+     "r3": "30 dias",
+     "r4": "R$ 5.200,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: atende tudo menos o prazo — p3; 'amostra conforme catálogo anexo' sem anexo não diz se há peça piloto"
+  },
+  {
+   "id": "CP-T15",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Paisagismo da entrada com irrigação automática.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Manutenção quinzenal por 6 meses inclusa.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Preço total de até R$ 14.000 (`preco_total` <= 14000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Projeto e execução do jardim da entrada com sistema de irrigação automatizado por temporizador. Manutenção quinzenal por 6 meses inclusa. R$ 13.500,00.",
+     "campos": {
+      "preco_total": 13500
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Execução do paisagismo com plantio e substrato. Irrigação automática orçada separadamente após o projeto elétrico. Manutenção mensal por 3 meses. R$ 9.800,00.",
+     "campos": {
+      "preco_total": 9800
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Jardim de entrada com irrigação automática inclusa. Manutenção inclusa. R$ 12.900,00.",
+     "campos": {
+      "preco_total": 12900
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "sistema de irrigação automatizado por temporizador",
+     "r2": "Manutenção quinzenal por 6 meses inclusa",
+     "r3": "R$ 13.500,00"
+    },
+    "p2": {
+     "r1": "Irrigação automática orçada separadamente",
+     "r2": "Manutenção mensal por 3 meses",
+     "r3": "R$ 9.800,00"
+    },
+    "p3": {
+     "r1": "irrigação automática inclusa",
+     "r2": null,
+     "r3": "R$ 12.900,00"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: termo vago — 'manutenção inclusa' sem frequência nem duração (pergunta)"
+  },
+  {
+   "id": "CP-T16",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Entregas de documentos com motoboy em até 3 horas na cidade.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Comprovante de entrega com foto e assinatura.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Mensalidade de até R$ 1.800 para 60 entregas (`preco_total` <= 1800).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Plano de 60 entregas mensais com coleta em até 1 hora e entrega em até 3 horas dentro da cidade. Comprovante digital com foto e assinatura no app. R$ 1.750,00/mês.",
+     "campos": {
+      "preco_total": 1750
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "60 entregas/mês, prazo de entrega no mesmo dia. Comprovante por assinatura no protocolo em papel. R$ 1.300,00/mês.",
+     "campos": {
+      "preco_total": 1300
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Pacote de 60 entregas expressas (até 3 horas) com confirmação em tempo real pelo app. R$ 1.650,00/mês. Entregas fora do perímetro urbano têm acréscimo por km.",
+     "campos": {
+      "preco_total": 1650
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "entrega em até 3 horas dentro da cidade",
+     "r2": "Comprovante digital com foto e assinatura no app",
+     "r3": "R$ 1.750,00/mês"
+    },
+    "p2": {
+     "r1": "prazo de entrega no mesmo dia",
+     "r2": "Comprovante por assinatura no protocolo em papel",
+     "r3": "R$ 1.300,00/mês"
+    },
+    "p3": {
+     "r1": "entregas expressas (até 3 horas)",
+     "r2": null,
+     "r3": "R$ 1.650,00/mês"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: termo vago — 'confirmação em tempo real' não diz foto nem assinatura; 'mesmo dia' não garante 3 horas"
+  },
+  {
+   "id": "CP-T17",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Placas de fachada em ACM com iluminação em LED.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Instalação inclusa, com ART.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Garantia de pelo menos 24 meses (`garantia_meses` >= 24).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Preço total de até R$ 16.000 (`preco_total` <= 16000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Letreiro em ACM com letras caixa iluminadas por LED. Instalação com ART inclusa. Garantia de 2 anos. R$ 15.400,00.",
+     "campos": {
+      "garantia_meses": 24,
+      "preco_total": 15400
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Fachada em ACM com LED. Instalação inclusa. Garantia de 12 meses para o LED e 36 meses para a estrutura. R$ 13.900,00. A ART, quando exigida pelo município, é cobrada à parte.",
+     "campos": {
+      "garantia_meses": 12,
+      "preco_total": 13900
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Painel de fachada em ACM, sem iluminação (LED opcional, +R$ 2.800,00). Instalação com ART. Garantia de 3 anos. R$ 12.000,00.",
+     "campos": {
+      "garantia_meses": 36,
+      "preco_total": 12000
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Letreiro em ACM com letras caixa iluminadas por LED",
+     "r2": "Instalação com ART inclusa",
+     "r3": "Garantia de 2 anos",
+     "r4": "R$ 15.400,00"
+    },
+    "p2": {
+     "r1": "Fachada em ACM com LED",
+     "r2": "A ART, quando exigida pelo município, é cobrada à parte",
+     "r3": "Garantia de 12 meses para o LED",
+     "r4": "R$ 13.900,00"
+    },
+    "p3": {
+     "r1": "sem iluminação (LED opcional, +R$ 2.800,00)",
+     "r2": "Instalação com ART",
+     "r3": "Garantia de 3 anos",
+     "r4": "R$ 12.000,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "difícil: exclusão escondida — ART cobrada à parte na última frase; garantia dupla: vale a menor (12 meses do LED) para o campo"
+  },
+  {
+   "id": "CP-T18",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Internet dedicada com IP fixo.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "SLA de reparo de até 4 horas (`sla_horas` <= 4).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Velocidade de pelo menos 200 Mbps (`mbps` >= 200).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 1.200 (`preco_total` <= 1200).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Link dedicado 300 Mbps simétrico com IP fixo. SLA de reparo de 4 horas, 24x7. R$ 1.150,00/mês com fidelidade de 24 meses.",
+     "campos": {
+      "mbps": 300,
+      "preco_total": 1150,
+      "sla_horas": 4
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Banda larga empresarial 500 Mbps (compartilhada), IP fixo opcional por R$ 50,00/mês. Reparo em até 48 horas. R$ 390,00/mês.",
+     "campos": {
+      "mbps": 500,
+      "preco_total": 390,
+      "sla_horas": 48
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Link dedicado 200 Mbps com IP fixo. Atendimento prioritário para empresas. R$ 1.090,00/mês.",
+     "campos": {
+      "mbps": 200,
+      "preco_total": 1090,
+      "sla_horas": null
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Link dedicado 300 Mbps simétrico com IP fixo",
+     "r2": "SLA de reparo de 4 horas, 24x7",
+     "r3": "300 Mbps",
+     "r4": "R$ 1.150,00/mês"
+    },
+    "p2": {
+     "r1": "compartilhada",
+     "r2": "Reparo em até 48 horas",
+     "r3": "500 Mbps",
+     "r4": "R$ 390,00/mês"
+    },
+    "p3": {
+     "r1": "Link dedicado 200 Mbps com IP fixo",
+     "r2": null,
+     "r3": "200 Mbps",
+     "r4": "R$ 1.090,00/mês"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: termo vago — 'atendimento prioritário' não é SLA de 4 horas (pergunta); 'compartilhada' contradiz dedicada"
+  },
+  {
+   "id": "CP-T19",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Auditoria anual das demonstrações com parecer assinado.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Revisão trimestral dos controles internos.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Equipe com registro na CVM.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r4",
+     "texto": "Honorários anuais de até R$ 40.000 (`preco_total` <= 40000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Auditoria independente das demonstrações financeiras anuais com emissão de parecer. Revisões trimestrais de controles inclusas. Firma registrada na CVM. Honorários R$ 38.000,00/ano.",
+     "campos": {
+      "preco_total": 38000
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Auditoria anual com parecer. Revisão de controles sob demanda, cobrada por hora. Registro CVM em processo de renovação. Honorários R$ 29.000,00.",
+     "campos": {
+      "preco_total": 29000
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Revisão contábil anual com relatório de recomendações. Não emitimos parecer de auditoria. Honorários R$ 18.000,00.",
+     "campos": {
+      "preco_total": 18000
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "nao_informado",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "contradiz",
+     "r2": "nao_informado",
+     "r3": "nao_informado",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Auditoria independente das demonstrações financeiras anuais com emissão de parecer",
+     "r2": "Revisões trimestrais de controles inclusas",
+     "r3": "Firma registrada na CVM",
+     "r4": "R$ 38.000,00/ano"
+    },
+    "p2": {
+     "r1": "Auditoria anual com parecer",
+     "r2": "Revisão de controles sob demanda, cobrada por hora",
+     "r3": null,
+     "r4": "R$ 29.000,00"
+    },
+    "p3": {
+     "r1": "Não emitimos parecer de auditoria",
+     "r2": null,
+     "r3": null,
+     "r4": "R$ 18.000,00"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p2"
+   ],
+   "nota": "difícil: promessa condicionada — 'registro em processo de renovação' não é registro vigente (pergunta); 'revisão com relatório' não é auditoria com parecer"
+  },
+  {
+   "id": "CP-T20",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Locação de 5 notebooks com Windows e Office licenciados.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Substituição em até 24 horas em caso de defeito (`troca_horas` <= 24).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo mínimo de contrato de no máximo 12 meses (`contrato_meses` <= 12).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r4",
+     "texto": "Mensalidade de até R$ 1.000 (`preco_total` <= 1000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "5 notebooks i5 com Windows 11 Pro e Microsoft 365 licenciados. Substituição em até 24h. Contrato de 12 meses. R$ 950,00/mês.",
+     "campos": {
+      "contrato_meses": 12,
+      "preco_total": 950,
+      "troca_horas": 24
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "5 notebooks com Windows licenciado. Office por conta do cliente. Troca em até 48h. Contrato mínimo de 24 meses. R$ 720,00/mês.",
+     "campos": {
+      "contrato_meses": 24,
+      "preco_total": 720,
+      "troca_horas": 48
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "5 notebooks com Windows e Office. Suporte com substituição rápida. Contrato de 6 meses renovável. R$ 980,00/mês.",
+     "campos": {
+      "contrato_meses": 6,
+      "preco_total": 980,
+      "troca_horas": null
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende",
+     "r4": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "contradiz",
+     "r4": "atende"
+    },
+    "p3": {
+     "r1": "nao_informado",
+     "r2": "nao_informado",
+     "r3": "atende",
+     "r4": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Windows 11 Pro e Microsoft 365 licenciados",
+     "r2": "Substituição em até 24h",
+     "r3": "12 meses",
+     "r4": "R$ 950,00/mês"
+    },
+    "p2": {
+     "r1": "Office por conta do cliente",
+     "r2": "Troca em até 48h",
+     "r3": "24 meses",
+     "r4": "R$ 720,00/mês"
+    },
+    "p3": {
+     "r1": null,
+     "r2": null,
+     "r3": "6 meses",
+     "r4": "R$ 980,00/mês"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "difícil: termo vago — 'com Windows e Office' sem dizer licenciados e 'substituição rápida' sem prazo (duas perguntas em p3)"
+  }
+ ]
+}

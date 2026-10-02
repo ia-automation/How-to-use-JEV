@@ -1,0 +1,28 @@
+{
+ "medicao": {
+  "ms": 272,
+  "input_tokens": 681,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "next": {
+    "type": "choice",
+    "choice": "neighbourhood",
+    "confidence": 0.25,
+    "probabilities": {
+     "bedrooms": 0.09,
+     "no_question_needed": 0.1,
+     "budget": 0.37,
+     "neighbourhood": 0.44
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 681,
+   "output_tokens": 57
+  }
+ }
+}

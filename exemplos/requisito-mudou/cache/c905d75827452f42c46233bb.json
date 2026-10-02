@@ -1,0 +1,133 @@
+{
+ "medicao": {
+  "ms": 312,
+  "input_tokens": 11614,
+  "modelo": "jev-1.13.0",
+  "perguntas": 18
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "q1_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 1.0,
+     "replaced": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q1_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "5": 0.0,
+     "none": 1.0,
+     "3": 0.0,
+     "1": 0.0,
+     "4": 0.0
+    }
+   },
+   "q1_changed": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q1_dropped": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q1_open": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "q2_status": {
+    "type": "choice",
+    "choice": "denied",
+    "confidence": 0.57,
+    "probabilities": {
+     "denied": 0.68,
+     "kept": 0.0,
+     "replaced": 0.32,
+     "uncertain": 0.0
+    }
+   },
+   "q2_changed": {
+    "type": "noul",
+    "noul": 0.95
+   },
+   "q2_dropped": {
+    "type": "noul",
+    "noul": 0.68
+   },
+   "q2_open": {
+    "type": "noul",
+    "noul": 0.21
+   },
+   "q3_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 1.0,
+     "replaced": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q3_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "0": 0.0,
+     "2": 0.0,
+     "none": 1.0,
+     "3": 0.0,
+     "4": 0.0
+    }
+   },
+   "q3_changed": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q3_dropped": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "q3_open": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "q4_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 0.99,
+    "probabilities": {
+     "denied": 0.0,
+     "kept": 1.0,
+     "replaced": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q4_changed": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "q4_dropped": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "q4_open": {
+    "type": "noul",
+    "noul": 0.24
+   }
+  },
+  "usage": {
+   "input_tokens": 11614,
+   "output_tokens": 536
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "medicao": {
+  "ms": 344,
+  "input_tokens": 3585,
+  "modelo": "jev-1.13.0",
+  "perguntas": 9
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "supports_0": {
+    "type": "noul",
+    "noul": 0.23
+   },
+   "contradicts_0": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "supports_1": {
+    "type": "noul",
+    "noul": 0.56
+   },
+   "contradicts_1": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "established": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "object_shown": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "state_shown": {
+    "type": "noul",
+    "noul": 0.24
+   },
+   "place_shown": {
+    "type": "noul",
+    "noul": 0.64
+   },
+   "scope_shown": {
+    "type": "noul",
+    "noul": 0.22
+   }
+  },
+  "usage": {
+   "input_tokens": 3585,
+   "output_tokens": 171
+  }
+ }
+}

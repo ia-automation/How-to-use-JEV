@@ -1,0 +1,36 @@
+{
+ "versao": "2026-10-02",
+ "autor": "fable",
+ "rotinas": [
+  {
+   "id": "refazer_login",
+   "nome": "Entrar novamente pelo acesso corporativo",
+   "pre_condicao": "A tela mostra o aviso de sessão expirada ou encerrada com um botão de reentrada pelo acesso corporativo ou pelo certificado da empresa ('Entrar novamente'), que reautentica sem digitar usuário, senha ou código. Não há campo de senha, código de verificação, captcha nem troca de senha. Se uma ação com efeito ficou sem resposta antes da expiração, o passo seguinte à reentrada é conferir_resultado, nunca continuar."
+  },
+  {
+   "id": "fechar_modal",
+   "nome": "Fechar modal informativo",
+   "pre_condicao": "Um modal cobre a tela e bloqueia os cliques; o texto é informativo (novidade, dica, aviso, lembrete) e o botão disponível apenas fecha o modal ('Fechar', 'OK', 'Entendi', 'X'), sem confirmar, cancelar ou disparar nenhuma operação. O modal não faz pergunta."
+  },
+  {
+   "id": "reabrir_exportacao",
+   "nome": "Gerar a exportação de novo",
+   "pre_condicao": "A geração de relatório, arquivo ou PDF falhou ou o link expirou ('link expirado', 'erro ao gerar', 'arquivo não encontrado'); gerar de novo é só leitura: não cria registro, não envia nada e não altera dados."
+  },
+  {
+   "id": "conferir_resultado",
+   "nome": "Conferir na tela de consulta se o efeito ocorreu",
+   "pre_condicao": "Uma ação com efeito (salvar, enviar, emitir, dar baixa, aprovar, agendar) foi submetida e a tela não disse se deu certo (tempo limite, 'solicitação recebida', erro de rede, tela em branco, sessão expirada logo depois); existe uma tela de consulta (lista, histórico, agenda, protocolo) onde o efeito pode ser verificado. Só depois da conferência se decide repetir ou seguir."
+  },
+  {
+   "id": "recarregar_pagina",
+   "nome": "Recarregar a página",
+   "pre_condicao": "A tela está em branco, com erro de rede ou com layout quebrado DEPOIS de uma navegação ou leitura; nenhum formulário preenchido se perderia e nenhuma ação com efeito foi submetida sem resposta."
+  },
+  {
+   "id": "voltar_ao_inicio",
+   "nome": "Voltar ao início do roteiro pelo menu",
+   "pre_condicao": "A automação está em uma página inesperada (outro módulo, central de ajuda, aba errada) sem efeito pendente, e o menu principal ou o link de retorno continua acessível; recomeçar o roteiro não repete nenhum efeito."
+  }
+ ]
+}

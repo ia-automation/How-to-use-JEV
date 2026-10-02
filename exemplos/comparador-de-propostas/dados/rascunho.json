@@ -1,0 +1,434 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CP-R01",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Instalação dos aparelhos inclusa no preço.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Garantia de pelo menos 12 meses (`garantia_meses` >= 12).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Preço total de até R$ 20.000 (`preco_total` <= 20000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Fornecimento e instalação de 4 splits de 12.000 BTUs. Instalação inclusa no valor, com infraestrutura de até 3 metros por aparelho. Garantia de 12 meses contra defeitos de fabricação e instalação. Valor total: R$ 17.800,00.",
+     "campos": {
+      "preco_total": 17800,
+      "garantia_meses": 12
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Proposta para 4 aparelhos split inverter. O valor cobre somente os equipamentos; a instalação é cobrada à parte, R$ 450,00 por aparelho. Garantia de 24 meses do fabricante. Total dos equipamentos: R$ 15.200,00.",
+     "campos": {
+      "preco_total": 15200,
+      "garantia_meses": 24
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "4 splits com instalação completa inclusa (dreno, suporte e tubulação). Garantia de 12 meses. Investimento total de R$ 23.400,00 em até 10x.",
+     "campos": {
+      "preco_total": 23400,
+      "garantia_meses": 12
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Instalação inclusa no valor",
+     "r2": "Garantia de 12 meses",
+     "r3": "R$ 17.800,00"
+    },
+    "p2": {
+     "r1": "a instalação é cobrada à parte",
+     "r2": "Garantia de 24 meses",
+     "r3": "R$ 15.200,00"
+    },
+    "p3": {
+     "r1": "instalação completa inclusa",
+     "r2": "Garantia de 12 meses",
+     "r3": "R$ 23.400,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "fácil: cada proposta declara tudo; p2 exclui instalação às claras, p3 estoura o preço"
+  },
+  {
+   "id": "CP-R02",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Treinamento da equipe incluso.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Suporte por pelo menos 12 meses (`suporte_meses` >= 12).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de implantação de até 30 dias (`prazo_dias` <= 30).",
+     "obrigatorio": false,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Implantação do sistema de gestão imobiliária em 20 dias úteis. Inclui treinamento presencial de 8 horas para toda a equipe. Suporte técnico por 12 meses por chat e telefone. Mensalidade de R$ 890,00.",
+     "campos": {
+      "suporte_meses": 12,
+      "prazo_dias": 28
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Sistema pronto para uso em 45 dias. Treinamento incluso em vídeo-aulas e dois encontros ao vivo. Suporte por 24 meses. Mensalidade de R$ 1.100,00.",
+     "campos": {
+      "suporte_meses": 24,
+      "prazo_dias": 45
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Licença anual com implantação em 15 dias. Treinamento não incluso (pacote opcional de R$ 2.500,00). Suporte por 6 meses após a implantação.",
+     "campos": {
+      "suporte_meses": 6,
+      "prazo_dias": 15
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz"
+    },
+    "p3": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Inclui treinamento presencial de 8 horas para toda a equipe",
+     "r2": "Suporte técnico por 12 meses",
+     "r3": "20 dias úteis"
+    },
+    "p2": {
+     "r1": "Treinamento incluso em vídeo-aulas e dois encontros ao vivo",
+     "r2": "Suporte por 24 meses",
+     "r3": "45 dias"
+    },
+    "p3": {
+     "r1": "Treinamento não incluso",
+     "r2": "Suporte por 6 meses",
+     "r3": "15 dias"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p2"
+   ],
+   "nota": "fácil: tudo explícito; o prazo é opcional, então p2 segue elegível"
+  },
+  {
+   "id": "CP-R03",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Fotos editadas entregues em alta resolução.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Tour virtual 360º incluso.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Preço por imóvel de até R$ 400 (`preco_total` <= 400).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Ensaio fotográfico com 20 fotos editadas em alta resolução e tour virtual 360º incluso. R$ 380,00 por imóvel.",
+     "campos": {
+      "preco_total": 380
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Pacote de 25 fotos editadas em alta resolução. Não trabalhamos com tour virtual. R$ 250,00 por imóvel.",
+     "campos": {
+      "preco_total": 250
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Fotos editadas em alta resolução, vídeo de 60 segundos e tour 360º. R$ 650,00 por imóvel.",
+     "campos": {
+      "preco_total": 650
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "20 fotos editadas em alta resolução",
+     "r2": "tour virtual 360º incluso",
+     "r3": "R$ 380,00"
+    },
+    "p2": {
+     "r1": "25 fotos editadas em alta resolução",
+     "r2": "Não trabalhamos com tour virtual",
+     "r3": "R$ 250,00"
+    },
+    "p3": {
+     "r1": "Fotos editadas em alta resolução",
+     "r2": "tour 360º",
+     "r3": "R$ 650,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "fácil: p2 nega o tour, p3 estoura o preço"
+  },
+  {
+   "id": "CP-R04",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Materiais de limpeza fornecidos pela contratada.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Atendimento de segunda a sábado.",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Valor mensal de até R$ 6.000 (`preco_total` <= 6000).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Limpeza do escritório de segunda a sábado, com dois profissionais no período da manhã. Todos os materiais e equipamentos de limpeza são fornecidos por nós. Valor mensal: R$ 5.400,00.",
+     "campos": {
+      "preco_total": 5400
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Serviço de limpeza de segunda a sexta. Materiais por conta do cliente. Valor mensal: R$ 4.200,00.",
+     "campos": {
+      "preco_total": 4200
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Equipe de segunda a sábado, materiais inclusos. Valor mensal de R$ 6.800,00.",
+     "campos": {
+      "preco_total": 6800
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "contradiz",
+     "r2": "contradiz",
+     "r3": "atende"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "contradiz"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "Todos os materiais e equipamentos de limpeza são fornecidos por nós",
+     "r2": "de segunda a sábado",
+     "r3": "R$ 5.400,00"
+    },
+    "p2": {
+     "r1": "Materiais por conta do cliente",
+     "r2": "de segunda a sexta",
+     "r3": "R$ 4.200,00"
+    },
+    "p3": {
+     "r1": "materiais inclusos",
+     "r2": "de segunda a sábado",
+     "r3": "R$ 6.800,00"
+    }
+   },
+   "elegiveis": [
+    "p1"
+   ],
+   "nota": "fácil"
+  },
+  {
+   "id": "CP-R05",
+   "requisitos": [
+    {
+     "id": "r1",
+     "texto": "Site responsivo (funciona em celular).",
+     "obrigatorio": true,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r2",
+     "texto": "Hospedagem no primeiro ano inclusa.",
+     "obrigatorio": false,
+     "tipo": "semantico"
+    },
+    {
+     "id": "r3",
+     "texto": "Prazo de entrega de até 45 dias (`prazo_dias` <= 45).",
+     "obrigatorio": true,
+     "tipo": "numerico"
+    }
+   ],
+   "propostas": [
+    {
+     "id": "p1",
+     "texto": "Site institucional responsivo, adaptado a celular e tablet, entregue em 30 dias. Hospedagem do primeiro ano inclusa. R$ 7.500,00.",
+     "campos": {
+      "prazo_dias": 30
+     }
+    },
+    {
+     "id": "p2",
+     "texto": "Site responsivo em 60 dias. Hospedagem não inclusa. R$ 4.900,00.",
+     "campos": {
+      "prazo_dias": 60
+     }
+    },
+    {
+     "id": "p3",
+     "texto": "Site com layout responsivo, prazo de 40 dias. Hospedagem por conta do cliente. R$ 6.200,00.",
+     "campos": {
+      "prazo_dias": 40
+     }
+    }
+   ],
+   "matriz": {
+    "p1": {
+     "r1": "atende",
+     "r2": "atende",
+     "r3": "atende"
+    },
+    "p2": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "contradiz"
+    },
+    "p3": {
+     "r1": "atende",
+     "r2": "contradiz",
+     "r3": "atende"
+    }
+   },
+   "trechos": {
+    "p1": {
+     "r1": "responsivo, adaptado a celular e tablet",
+     "r2": "Hospedagem do primeiro ano inclusa",
+     "r3": "30 dias"
+    },
+    "p2": {
+     "r1": "Site responsivo",
+     "r2": "Hospedagem não inclusa",
+     "r3": "60 dias"
+    },
+    "p3": {
+     "r1": "layout responsivo",
+     "r2": "Hospedagem por conta do cliente",
+     "r3": "40 dias"
+    }
+   },
+   "elegiveis": [
+    "p1",
+    "p3"
+   ],
+   "nota": "fácil: hospedagem é opcional, só o prazo derruba p2"
+  }
+ ]
+}

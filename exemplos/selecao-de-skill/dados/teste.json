@@ -1,0 +1,762 @@
+{
+  "versao": "2026-10-01",
+  "autor": "fable",
+  "casos": [
+    {
+      "id": "SS-T001",
+      "pedido": "Sobe o React da 18 pra 19 e vê o que quebra.",
+      "skill": "dependency-upgrade",
+      "aceitaveis": [
+        "dependency-upgrade"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T002",
+      "pedido": "A fila de envio trava de vez em quando e só volta reiniciando; ninguém sabe por quê.",
+      "skill": "diagnosing-bugs",
+      "aceitaveis": [
+        "diagnosing-bugs"
+      ],
+      "nota": "Fila que não se recupera."
+    },
+    {
+      "id": "SS-T003",
+      "pedido": "Faz um teste A/B de assunto de e-mail na régua de boas-vindas.",
+      "skill": "email-sequence",
+      "aceitaveis": [
+        "email-sequence",
+        "landing-ab-test"
+      ],
+      "nota": "difícil: cita o nome de uma skill — 'teste A/B', mas o objeto é e-mail da régua, não página."
+    },
+    {
+      "id": "SS-T004",
+      "pedido": "A Lia tá respondendo em inglês de vez em quando; ajusta o prompt.",
+      "skill": "prompt-tuning",
+      "aceitaveis": [
+        "prompt-tuning"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T005",
+      "pedido": "Registra num ADR por que escolhemos fila em vez de cron.",
+      "skill": "docs-writer",
+      "aceitaveis": [
+        "docs-writer"
+      ],
+      "nota": "difícil: jargão — ADR = registro de decisão de arquitetura; é documentação técnica."
+    },
+    {
+      "id": "SS-T006",
+      "pedido": "Troca a cor do botão de agendar pra verde.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — uma propriedade de estilo não precisa de design de interface."
+    },
+    {
+      "id": "SS-T007",
+      "pedido": "O que aconteceu com o serviço de mensagens hoje entre 14h e 14h30? Teve erro?",
+      "skill": "logs-prod",
+      "aceitaveis": [
+        "logs-prod"
+      ],
+      "nota": "Janela de tempo em produção."
+    },
+    {
+      "id": "SS-T008",
+      "pedido": "Faz um gráfico de leads por canal por semana pro painel.",
+      "skill": "dataviz",
+      "aceitaveis": [
+        "dataviz",
+        "lead-report"
+      ],
+      "nota": "difícil: duas próximas — construir gráfico → dataviz; os números são os do relatório de leads."
+    },
+    {
+      "id": "SS-T009",
+      "pedido": "Me lembra de ligar pro cartório amanhã às 9h.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Fora do catálogo."
+    },
+    {
+      "id": "SS-T010",
+      "pedido": "Abre o arquivo de rotas e me mostra onde tá registrada a /agenda.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Leitura de arquivo."
+    },
+    {
+      "id": "SS-T011",
+      "pedido": "Vê se tem bug nessa mudança do cálculo de sinal; aproveita e olha se dá pra simplificar.",
+      "skill": "code-review",
+      "aceitaveis": [
+        "code-review",
+        "simplify"
+      ],
+      "nota": "difícil: composto — caçar bug vem primeiro; simplificar é a segunda etapa."
+    },
+    {
+      "id": "SS-T012",
+      "pedido": "Mudei a resposta do /leads e o front quebrou; confere se mais alguém consome esse campo.",
+      "skill": "api-contract",
+      "aceitaveis": [
+        "api-contract"
+      ],
+      "nota": "difícil: jargão — pedido indireto: conferir consumidores de um campo é checagem de contrato entre serviços."
+    },
+    {
+      "id": "SS-T013",
+      "pedido": "Acabei de escrever o serviço de lembretes e ficou verboso; enxuga antes de eu mandar.",
+      "skill": "simplify",
+      "aceitaveis": [
+        "simplify",
+        "code-review"
+      ],
+      "nota": "difícil: duas próximas — diff recém-escrito e queixa de verbosidade → simplify; a revisão também cobre simplificações."
+    },
+    {
+      "id": "SS-T014",
+      "pedido": "Simplifica essa explicação sobre ITBI pra eu mandar pro cliente.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: cita o nome de uma skill — 'simplifica' um texto solto para cliente; `simplify` é para diff de código."
+    },
+    {
+      "id": "SS-T015",
+      "pedido": "Reescreve o texto da home, tá muito institucional.",
+      "skill": "copywriting",
+      "aceitaveis": [
+        "copywriting"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T016",
+      "pedido": "Tá dando 502 na borda pro /api/agenda desde cedo.",
+      "skill": "logs-prod",
+      "aceitaveis": [
+        "logs-prod",
+        "diagnosing-bugs"
+      ],
+      "nota": "difícil: jargão — '502 na borda' = erro do proxy em produção; primeiro olhar os logs."
+    },
+    {
+      "id": "SS-T017",
+      "pedido": "Faz a landing do lançamento: layout e texto.",
+      "skill": "frontend-design",
+      "aceitaveis": [
+        "frontend-design",
+        "copywriting"
+      ],
+      "nota": "difícil: composto — layout e texto; o layout vem primeiro."
+    },
+    {
+      "id": "SS-T018",
+      "pedido": "Esse módulo de importação tem 900 linhas num arquivo só; separa em arquivos sem mudar o comportamento.",
+      "skill": "refactor-safe",
+      "aceitaveis": [
+        "refactor-safe"
+      ],
+      "nota": "difícil: duas próximas — código antigo a dividir em arquivos → refatoração segura, não simplify (que é do diff recente)."
+    },
+    {
+      "id": "SS-T019",
+      "pedido": "Cria um logo novo pra imobiliária.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: fora do catálogo que parece dentro — identidade de marca não é design de interface."
+    },
+    {
+      "id": "SS-T020",
+      "pedido": "Abre o PR da minha branch pra develop.",
+      "skill": "pr-open",
+      "aceitaveis": [
+        "pr-open"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T021",
+      "pedido": "Responde esse cliente que perguntou se aceita pet.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Atendimento; fora do catálogo."
+    },
+    {
+      "id": "SS-T022",
+      "pedido": "Qual a diferença entre índice composto e parcial?",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — pergunta conceitual de banco; não é migration nem consulta."
+    },
+    {
+      "id": "SS-T023",
+      "pedido": "Quebra esse plano de migração do chat em tickets que dê pra paralelizar.",
+      "skill": "to-tickets",
+      "aceitaveis": [
+        "to-tickets"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T024",
+      "pedido": "Testa o login.",
+      "skill": "e2e-browser",
+      "aceitaveis": [
+        "e2e-browser",
+        "test-writer"
+      ],
+      "nota": "difícil: vago — 'testa' um fluxo de tela → conferir no navegador; escrever teste automatizado é aceitável."
+    },
+    {
+      "id": "SS-T025",
+      "pedido": "O que entrou nessa release? Preciso mandar pro time comercial.",
+      "skill": "changelog-release",
+      "aceitaveis": [
+        "changelog-release"
+      ],
+      "nota": "Nota de versão."
+    },
+    {
+      "id": "SS-T026",
+      "pedido": "Quanto custou cada visita agendada que veio do Meta em setembro?",
+      "skill": "lead-report",
+      "aceitaveis": [
+        "lead-report",
+        "ads-audit",
+        "db-query"
+      ],
+      "nota": "difícil: duas próximas — custo por visita por canal é número do relatório de leads; auditoria e consulta também chegam lá."
+    },
+    {
+      "id": "SS-T027",
+      "pedido": "Explica o que esse regex faz: ^\\d{5}-?\\d{3}$",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Explicação; nenhuma skill."
+    },
+    {
+      "id": "SS-T028",
+      "pedido": "Antes de codar o módulo de comissão quero que você me faça as perguntas difíceis.",
+      "skill": "grilling",
+      "aceitaveis": [
+        "grilling"
+      ],
+      "nota": "Entrevista de desenho."
+    },
+    {
+      "id": "SS-T029",
+      "pedido": "Vê isso pra mim depois.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: vago — sem objeto."
+    },
+    {
+      "id": "SS-T030",
+      "pedido": "Bom dia! Tudo certo por aí?",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Conversa."
+    },
+    {
+      "id": "SS-T031",
+      "pedido": "Ajusta o texto do botão de 'Enviar' para 'Enviar proposta'.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — um rótulo de botão não é texto de página."
+    },
+    {
+      "id": "SS-T032",
+      "pedido": "Faz um deploy do post de sexta no Instagram.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: cita o nome de uma skill — 'deploy' de post é publicar em rede social; o catálogo planeja a pauta, não publica."
+    },
+    {
+      "id": "SS-T033",
+      "pedido": "Revisa o PR 482 pra mim.",
+      "skill": "code-review",
+      "aceitaveis": [
+        "code-review"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T034",
+      "pedido": "Quero testar duas versões do título da landing; quantas visitas preciso?",
+      "skill": "landing-ab-test",
+      "aceitaveis": [
+        "landing-ab-test"
+      ],
+      "nota": "Tamanho de amostra de teste A/B."
+    },
+    {
+      "id": "SS-T035",
+      "pedido": "A listagem de leads demora 8s pra abrir quando filtra por corretor.",
+      "skill": "perf-profile",
+      "aceitaveis": [
+        "perf-profile",
+        "diagnosing-bugs"
+      ],
+      "nota": "Lentidão com alvo definido."
+    },
+    {
+      "id": "SS-T036",
+      "pedido": "Roteiro de reels mostrando o bairro Vila Nova.",
+      "skill": "video-listing",
+      "aceitaveis": [
+        "video-listing",
+        "social-calendar"
+      ],
+      "nota": "difícil: duas próximas — um roteiro de vídeo → vídeo de imóvel/bairro; a pauta de redes é aceitável."
+    },
+    {
+      "id": "SS-T037",
+      "pedido": "Melhora.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: vago — sem objeto nem critério."
+    },
+    {
+      "id": "SS-T038",
+      "pedido": "Lista os arquivos que mudaram na branch.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Um comando."
+    },
+    {
+      "id": "SS-T039",
+      "pedido": "Faz o commit do que tá pronto.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — commit simples não é abrir PR."
+    },
+    {
+      "id": "SS-T040",
+      "pedido": "Roda o lint.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Um comando."
+    },
+    {
+      "id": "SS-T041",
+      "pedido": "Adiciona um console.log aqui pra eu ver o valor de `resposta`.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Edição trivial."
+    },
+    {
+      "id": "SS-T042",
+      "pedido": "Revisa e publica em produção.",
+      "skill": "code-review",
+      "aceitaveis": [
+        "code-review",
+        "deploy-prod"
+      ],
+      "nota": "difícil: composto — revisar antes de publicar."
+    },
+    {
+      "id": "SS-T043",
+      "pedido": "Preciso de 5 variações de título pro anúncio do Meta do Residencial Aurora.",
+      "skill": "ad-creative",
+      "aceitaveis": [
+        "ad-creative"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T044",
+      "pedido": "Pauta de posts de outubro pro Instagram da imobiliária.",
+      "skill": "social-calendar",
+      "aceitaveis": [
+        "social-calendar"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T045",
+      "pedido": "Escreve o texto do anúncio que vai na landing do lançamento.",
+      "skill": "copywriting",
+      "aceitaveis": [
+        "copywriting",
+        "ad-creative"
+      ],
+      "nota": "difícil: duas próximas — diz 'anúncio', mas o texto vai NA landing → texto de página; criativo de anúncio é aceitável."
+    },
+    {
+      "id": "SS-T046",
+      "pedido": "Qual skill eu uso pra fazer deploy?",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: cita o nome de uma skill — pergunta SOBRE o catálogo; responder, não carregar o deploy."
+    },
+    {
+      "id": "SS-T047",
+      "pedido": "Monta uma régua de reativação pra lead frio, primeiro WhatsApp e depois e-mail.",
+      "skill": "whatsapp-template",
+      "aceitaveis": [
+        "whatsapp-template",
+        "email-sequence"
+      ],
+      "nota": "difícil: composto — dois canais; o primeiro passo é o template de WhatsApp."
+    },
+    {
+      "id": "SS-T048",
+      "pedido": "Publica em produção a versão que tá na develop.",
+      "skill": "deploy-prod",
+      "aceitaveis": [
+        "deploy-prod"
+      ],
+      "nota": "Produção explícita."
+    },
+    {
+      "id": "SS-T049",
+      "pedido": "Escreve o README do serviço de notificações: como rodar, variáveis, filas.",
+      "skill": "docs-writer",
+      "aceitaveis": [
+        "docs-writer"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T050",
+      "pedido": "CI vermelho: o job de build não acha o Node 20 no runner.",
+      "skill": "fix-ci",
+      "aceitaveis": [
+        "fix-ci"
+      ],
+      "nota": "Pipeline quebrado por versão do runner."
+    },
+    {
+      "id": "SS-T051",
+      "pedido": "Revisa o prompt novo do classificador.",
+      "skill": "prompt-tuning",
+      "aceitaveis": [
+        "prompt-tuning",
+        "llm-eval"
+      ],
+      "nota": "difícil: cita o nome de uma skill — 'revisa', mas o objeto é um prompt, não código."
+    },
+    {
+      "id": "SS-T052",
+      "pedido": "O teste de integração da agenda falha uma a cada dez vezes no CI.",
+      "skill": "diagnosing-bugs",
+      "aceitaveis": [
+        "diagnosing-bugs",
+        "fix-ci"
+      ],
+      "nota": "difícil: duas próximas — intermitente → diagnóstico; como aparece no CI, consertar o pipeline é aceitável."
+    },
+    {
+      "id": "SS-T053",
+      "pedido": "Passa um pente fino de segurança no que mudei na autenticação.",
+      "skill": "security-review",
+      "aceitaveis": [
+        "security-review"
+      ],
+      "nota": "Segurança explícita."
+    },
+    {
+      "id": "SS-T054",
+      "pedido": "O formulário de cadastro de imóvel é acessível? Dá uma avaliada com leitor de tela em mente.",
+      "skill": "ux-review",
+      "aceitaveis": [
+        "ux-review"
+      ],
+      "nota": "Avaliar tela existente."
+    },
+    {
+      "id": "SS-T055",
+      "pedido": "Monta o llms.txt do site.",
+      "skill": "ai-seo",
+      "aceitaveis": [
+        "ai-seo"
+      ],
+      "nota": "difícil: jargão — `llms.txt` é o arquivo para assistentes de IA."
+    },
+    {
+      "id": "SS-T056",
+      "pedido": "Calcula quanto dá 6% de comissão sobre 640 mil.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Conta; nenhuma skill."
+    },
+    {
+      "id": "SS-T057",
+      "pedido": "Qual o horário do plantão de sábado?",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Fora do catálogo."
+    },
+    {
+      "id": "SS-T058",
+      "pedido": "Não precisa fazer deploy agora, só me diz em que versão a dev tá.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: negação — deploy dispensado; ver a versão é um comando."
+    },
+    {
+      "id": "SS-T059",
+      "pedido": "Faz um vídeo curto do apê da Rua das Acácias com as fotos da ficha.",
+      "skill": "video-listing",
+      "aceitaveis": [
+        "video-listing"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T060",
+      "pedido": "Faz o merge da develop na minha branch e resolve o conflito do lockfile.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "difícil: trivial que parece pedir skill — rotina de git; não é abrir PR nem atualizar dependência."
+    },
+    {
+      "id": "SS-T061",
+      "pedido": "Cria a variável `PORTAL_API_URL` pros dois ambientes e liga no stack.",
+      "skill": "secrets-vault",
+      "aceitaveis": [
+        "secrets-vault"
+      ],
+      "nota": "Variável nova no cofre."
+    },
+    {
+      "id": "SS-T062",
+      "pedido": "Traduz esse parágrafo do contrato pro inglês.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Fora do catálogo."
+    },
+    {
+      "id": "SS-T063",
+      "pedido": "Cria um índice em `leads(telefone)`.",
+      "skill": "migration-2bancos",
+      "aceitaveis": [
+        "migration-2bancos"
+      ],
+      "nota": "difícil: duas próximas — a decisão já foi tomada; criar índice é mudança de schema, não medição."
+    },
+    {
+      "id": "SS-T064",
+      "pedido": "Monta a linha do tempo da queda de sexta com o que tem nos logs e no chat.",
+      "skill": "incident-postmortem",
+      "aceitaveis": [
+        "incident-postmortem",
+        "logs-prod"
+      ],
+      "nota": "difícil: duas próximas — linha do tempo de incidente é o pós-incidente; ler os logs é meio."
+    },
+    {
+      "id": "SS-T065",
+      "pedido": "A Meta reprovou nosso template de confirmação de visita como 'marketing'. Reescreve como utilidade.",
+      "skill": "whatsapp-template",
+      "aceitaveis": [
+        "whatsapp-template"
+      ],
+      "nota": "difícil: jargão — categoria de template do WhatsApp (marketing × utilidade)."
+    },
+    {
+      "id": "SS-T066",
+      "pedido": "Desenha a tela nova de funil de vendas, quero algo com cara própria.",
+      "skill": "frontend-design",
+      "aceitaveis": [
+        "frontend-design"
+      ],
+      "nota": "Tela nova."
+    },
+    {
+      "id": "SS-T067",
+      "pedido": "Atualiza o OpenAPI do serviço de propostas, entrou o campo `validade`.",
+      "skill": "api-contract",
+      "aceitaveis": [
+        "api-contract"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T068",
+      "pedido": "Quero estrelinha de avaliação aparecendo no resultado do Google.",
+      "skill": "schema-markup",
+      "aceitaveis": [
+        "schema-markup"
+      ],
+      "nota": "difícil: jargão — pedido indireto: 'estrelinha' é resultado rico, que vem de dados estruturados, não de auditoria."
+    },
+    {
+      "id": "SS-T069",
+      "pedido": "Entra no front de dev e confere se o fluxo de agendar visita vai até o fim.",
+      "skill": "e2e-browser",
+      "aceitaveis": [
+        "e2e-browser"
+      ],
+      "nota": "Fluxo no front real."
+    },
+    {
+      "id": "SS-T070",
+      "pedido": "Sobe isso aí.",
+      "skill": "deploy-dev",
+      "aceitaveis": [
+        "deploy-dev"
+      ],
+      "nota": "difícil: vago — sem ambiente; o padrão do parque é dev (produção exige pedido explícito)."
+    },
+    {
+      "id": "SS-T071",
+      "pedido": "Cola aqui o conteúdo do package.json.",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Leitura de arquivo."
+    },
+    {
+      "id": "SS-T072",
+      "pedido": "Planeja a integração com o portal novo.",
+      "skill": "grilling",
+      "aceitaveis": [
+        "grilling",
+        "to-tickets"
+      ],
+      "nota": "difícil: vago — 'planeja' sem dizer se o desenho está fechado; começa pela entrevista, tickets é aceitável."
+    },
+    {
+      "id": "SS-T073",
+      "pedido": "Coloca o JSON-LD de imóvel nas páginas de anúncio.",
+      "skill": "schema-markup",
+      "aceitaveis": [
+        "schema-markup"
+      ],
+      "nota": "difícil: jargão — JSON-LD = dados estruturados."
+    },
+    {
+      "id": "SS-T074",
+      "pedido": "Quantas visitas foram agendadas ontem em prod?",
+      "skill": "db-query",
+      "aceitaveis": [
+        "db-query"
+      ],
+      "nota": "Pergunta de dado."
+    },
+    {
+      "id": "SS-T075",
+      "pedido": "Gera uma página pra cada combinação de cidade e tipo de imóvel.",
+      "skill": "programmatic-seo",
+      "aceitaveis": [
+        "programmatic-seo"
+      ],
+      "nota": "Páginas em escala."
+    },
+    {
+      "id": "SS-T076",
+      "pedido": "O site sumiu do Google pra 'apartamento à venda Jundiaí'. Investiga.",
+      "skill": "seo-audit",
+      "aceitaveis": [
+        "seo-audit"
+      ],
+      "nota": "Diagnóstico no Google."
+    },
+    {
+      "id": "SS-T077",
+      "pedido": "Faz um diagnóstico do bug da campanha: os leads do formulário do Meta não tão chegando no CRM.",
+      "skill": "logs-prod",
+      "aceitaveis": [
+        "logs-prod",
+        "diagnosing-bugs"
+      ],
+      "nota": "difícil: cita o nome de uma skill — 'diagnóstico do bug' e 'campanha', mas é falha de integração em produção: começa pelos logs do webhook."
+    },
+    {
+      "id": "SS-T078",
+      "pedido": "Deploy feito ontem quebrou o login, desfaz.",
+      "skill": "rollback",
+      "aceitaveis": [
+        "rollback"
+      ],
+      "nota": "difícil: cita o nome de uma skill — fala em 'deploy', mas quer reverter."
+    },
+    {
+      "id": "SS-T079",
+      "pedido": "Cria a tabela de visitas, expõe o endpoint e documenta no OpenAPI.",
+      "skill": "migration-2bancos",
+      "aceitaveis": [
+        "migration-2bancos",
+        "api-contract"
+      ],
+      "nota": "difícil: composto — três etapas; a primeira é a tabela."
+    },
+    {
+      "id": "SS-T080",
+      "pedido": "Roda um EXPLAIN nessa query e me diz se tá usando índice.",
+      "skill": "perf-profile",
+      "aceitaveis": [
+        "perf-profile",
+        "db-query"
+      ],
+      "nota": "difícil: jargão — EXPLAIN é medição de consulta → perfil; rodar como consulta de leitura é aceitável."
+    },
+    {
+      "id": "SS-T081",
+      "pedido": "Cobre o `normalizarTelefone` com testes, inclusive fixo de 8 dígitos.",
+      "skill": "test-writer",
+      "aceitaveis": [
+        "test-writer"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T082",
+      "pedido": "Preciso popular a coluna nova `cidade_normalizada` pros 200 mil imóveis existentes.",
+      "skill": "migration-2bancos",
+      "aceitaveis": [
+        "migration-2bancos"
+      ],
+      "nota": "difícil: jargão — é um backfill (dado em massa), mesmo rito da migration."
+    },
+    {
+      "id": "SS-T083",
+      "pedido": "Onde tá indo o dinheiro do Google Ads? Tem campanha queimando verba?",
+      "skill": "ads-audit",
+      "aceitaveis": [
+        "ads-audit"
+      ],
+      "nota": "Auditoria de conta."
+    },
+    {
+      "id": "SS-T084",
+      "pedido": "Manda o relatório de leads da semana com conversão em visita.",
+      "skill": "lead-report",
+      "aceitaveis": [
+        "lead-report"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T085",
+      "pedido": "Compara o modelo atual com o mais barato nas 200 conversas rotuladas.",
+      "skill": "llm-eval",
+      "aceitaveis": [
+        "llm-eval"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-T086",
+      "pedido": "O bot de triagem tá errando muito 'proposta' × 'documentos'. Quanto, exatamente?",
+      "skill": "llm-eval",
+      "aceitaveis": [
+        "llm-eval"
+      ],
+      "nota": "difícil: duas próximas — pede a MEDIDA do erro, não a mudança do prompt."
+    },
+    {
+      "id": "SS-T087",
+      "pedido": "Sequência de boas-vindas pra quem se cadastra no site: 4 e-mails.",
+      "skill": "email-sequence",
+      "aceitaveis": [
+        "email-sequence"
+      ],
+      "nota": "Pedido direto."
+    }
+  ]
+}

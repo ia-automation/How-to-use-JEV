@@ -1,0 +1,49 @@
+{
+  "versao": "2026-10-01",
+  "autor": "fable",
+  "casos": [
+    {
+      "id": "SS-R001",
+      "pedido": "Revisa o diff que eu acabei de fazer antes de eu commitar.",
+      "skill": "code-review",
+      "aceitaveis": [
+        "code-review"
+      ],
+      "nota": "Pedido direto de revisão."
+    },
+    {
+      "id": "SS-R002",
+      "pedido": "Escreve os testes unitários do módulo de cálculo de comissão.",
+      "skill": "test-writer",
+      "aceitaveis": [
+        "test-writer"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-R003",
+      "pedido": "Preciso de títulos e descrições para a campanha do lançamento Vila Nova no Google Ads.",
+      "skill": "ad-creative",
+      "aceitaveis": [
+        "ad-creative"
+      ],
+      "nota": "Pedido direto."
+    },
+    {
+      "id": "SS-R004",
+      "pedido": "Qual a diferença entre `let` e `const`?",
+      "skill": null,
+      "aceitaveis": [],
+      "nota": "Pergunta conceitual; nenhuma skill."
+    },
+    {
+      "id": "SS-R005",
+      "pedido": "Faz o deploy da branch em dev.",
+      "skill": "deploy-dev",
+      "aceitaveis": [
+        "deploy-dev"
+      ],
+      "nota": "Pedido direto."
+    }
+  ]
+}

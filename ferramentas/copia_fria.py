@@ -39,7 +39,8 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 PERMITIDO_NA_RAIZ = {"AGENTS.md", "CLAUDE.md", "README.md", "CHANGELOG.md", "LICENSE", "CONTRIBUTING.md",
                      ".gitignore", ".claude-plugin", "avaliar", "conhecimento", "exemplos", "ferramentas", "skills"}
-EXCLUIDO_NA_RAIZ = {"prova", "privado", "fontes", "chat.txt", ".local", ".git", "api_key.txt", ".venv"}
+EXCLUIDO_NA_RAIZ = {"prova", "privado", "fontes", "chat.txt", ".local", ".git", "api_key.txt", ".venv",
+                    ".ignore"}  # .ignore: lista do conselheiro (Codex) com os caminhos privados desta máquina
 # --publicar: a versão pública leva também fontes/ (catálogo e skill oficial MIT), nunca o material integral.
 PERMITIDO_NA_RAIZ_PUBLICO = PERMITIDO_NA_RAIZ | {"fontes"}
 PULAR_NO_PUBLICO = {"fontes/docs", "fontes/videos"}

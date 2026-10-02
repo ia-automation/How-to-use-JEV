@@ -1,5 +1,64 @@
 # Histórico
 
+## 2026-10-02 (madrugada, goal 23:00) — casos novos: mais 7 pastas, 30 no total; a lista dos 26 zerou (2 retirados)
+- `supervisor-de-automacao` (erro caro 0/14 e 0/7; critério **reprovado** em acerto × regras),
+  `triagem-de-documentos` (mapa por seção × documento inteiro: F1 1,000 nos dois; rodada 3 com condições
+  compostas "A E B" medidas na API), `sql-semantico`, `comparador-de-propostas` (dado v2 após a revisão: 12 células numéricas rotuladas como
+  semânticas), `rerank-publico-ptbr` (**dado público** Quati, CC BY 4.0; texto do corpus fora do Git), `jev-x-llm`
+  (**Jev × Haiku 4.5** nos 3 testes congelados), `latencia-interface` (420 chamadas ao vivo: p95 em série 303 ms,
+  **não cabe em 300**). Mesmo rito, Codex em cada um (menos a latência, reduzida).
+- `ferramentas/reavaliar_versao.py`: arnês que roda os testes congelados ao vivo contra uma versão do modelo e
+  compara com o cache congelado; provado contra o próprio `jev-1.13.0` (105 de 13.652 perguntas trocaram de lado;
+  veredito de `compactacao-de-contexto` virou). Nota em `conhecimento/evidencias/reavaliacao-jev-1.13.0-2026-10-01.md`.
+- Infra comum: `jevcache.py` lê `JEV_MODELO`/`JEV_PASTA_CACHE` (modelo por ambiente exige pasta distinta);
+  `llmcache.py` novo (cliente de LLM por `urllib`, cache, orçamento persistido, quarentena).
+
+## 2026-10-01 (tarde) — casos novos: mais 6 fechados, 18 no total
+
+- `triagem-de-alerta`, `requisito-mudou`, `motivo-de-perda`, `compactacao-de-contexto` (critério **reprovado**
+  para descarte automático), `compromisso-real` e `roteador-email` (**dado real** do classificador de e-mail em
+  produção, anonimizado; texto e cache fora do Git; critério **não passou** por um caso). Mesmo rito.
+- Infra comum por achados do Codex: trava do cache por pasta e compartilhada entre instâncias; registro de cache
+  com medição fora do contrato vai para quarentena; `congelamento.choice` rejeita Choice cuja opção escolhida não
+  é a de maior probabilidade. Síntese em `conhecimento/evidencias/medicoes-2026-10-01.md`.
+- Briefing ganhou a onda 5 (6 especificações); faltam rotulador e construtor para esses e para `sql-semantico` e
+  `comparador-de-propostas`.
+
+## 2026-10-01 — casos novos: 12 exemplos fechados (ondas 1 a 3)
+
+- Fechados depois da entrada abaixo: `lint-semantico-de-diff`, `auditor-de-evidencia`, `opt-out-lgpd`,
+  `proxima-pergunta`, `imovel-duplicado`, `injecao-em-ferramenta`, `selecao-de-skill`, `repeticao-ou-revisao` —
+  mesmo rito (rotulador ≠ construtor, rodada 1 cega com manifesto, revisão adversarial do Codex, rodada pós-revisão
+  declarada não cega). Critério fixado antes do teste **não passou** em `lint-semantico-de-diff` e
+  `selecao-de-skill`, e está dito nos READMEs. Números no índice [exemplos/README.md](exemplos/README.md).
+- Infra comum: `_comum/numeros_br.py` (leitor único de número em formato brasileiro, nascido de três exemplos que
+  erraram ponto de milhar e "milhão"); `jevcache.py` com gravação atômica, `cache/invalidos/` e `Jev.invalidar()`;
+  `congelamento.choice()` confere `type` e a soma da distribuição.
+- `repeticao-ou-revisao`: `acao_vigente` sobre o grupo sem reentregas por ID; toda saída leva
+  `ids_de_contexto_obrigatorio` e `descartar_anterior: false` (achados do Codex).
+- Nota nova `conhecimento/evidencias/medicoes-2026-10-01.md` (síntese dos 12, com limites); lições de método em
+  `conhecimento/avaliar/metodo.md` e de desenho em `conhecimento/licoes-transversais.md` (itens 26–37).
+- Briefing dos casos novos ganhou a onda 5 (especificação de dados dos 6 exemplos restantes: referências de
+  anúncio, supervisor de automação, organizador de downloads, triagem de documentos, rerank em corpus público,
+  decisão de interface em 300 ms).
+
+## 2026-10-01 — casos novos: catálogo externo e onda 1 de exemplos (em curso)
+
+- Nota nova `conhecimento/evidencias/casos-externos.md`: 30 casos reais relatados fora daqui (guarda de agente de
+  código, juiz de eval, lint de PR, SQL semântico, navegador, SOC, roteador de e-mail…), com número, fonte e o que
+  cada relato não prova; onde o LLM ganha. 26 exemplos novos mapeados; briefing da task em
+  `exemplos/BRIEFING-2026-10-01-casos-novos.md`.
+- Exemplos novos medidos na API real (`jev-1.13.0`): `guarda-tool-call`, `juiz-de-eval`, `imovel-errado`,
+  `conferencia-de-promessas` — dados rotulados por Fable (rotulador ≠ construtor; construtor não abre o teste),
+  rodada 1 cega, revisão adversarial do Codex em cada um (7+7+6+6 achados, todos aceitos e aplicados), rodada 2
+  pós-revisão declarada não cega. Em construção: `lint-semantico-de-diff`, `auditor-de-evidencia`.
+- Infra comum: `_comum/congelamento.py` (manifesto auditável com hashes de código, dados e critério; validação de
+  probabilidade que rejeita bool/string) e `jevcache.py` guarda a resposta anterior em `cache/historico/` no modo
+  `ao_vivo` — ambos nascidos de achados do Codex ("rodada única não era auditável"; `isinstance(True, int)`).
+- Pasta de estudo ganhou `.ignore` (chave, `.local/`, `privado/`, `prova/`, `chat.txt`) para a passada do Codex.
+- Bloqueio registrado: o held-out de 300 e-mails do F11 foi apagado do disco; `roteador-email` com dado real espera
+  extração nova do mail-01 com aval do dono.
+
 ## 2026-10-01 — licença MIT única e contribuições
 
 - Todo o acervo próprio sob MIT (sai o CC BY 4.0 dos textos); `CONTRIBUTING.md`: fork + PR, merge e publicação

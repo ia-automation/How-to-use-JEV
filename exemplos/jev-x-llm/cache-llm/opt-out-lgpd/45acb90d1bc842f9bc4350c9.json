@@ -1,0 +1,23 @@
+{
+ "medicao": {
+  "ms": 1241,
+  "input_tokens": 2296,
+  "output_tokens": 95,
+  "modelo": "claude-haiku-4-5-20251001",
+  "data": "2026-10-01",
+  "tentativas": 1,
+  "stop_reason": "end_turn"
+ },
+ "resposta": {
+  "answers": {
+   "opt_out": true,
+   "temporary_pause": false,
+   "lgpd_request": true,
+   "lgpd_type": "deletion",
+   "wants_contact_to_continue": false,
+   "stop_without_object": false,
+   "about_another_contact": false
+  }
+ },
+ "texto": "```json\n{\n  \"answers\": {\n    \"opt_out\": true,\n    \"temporary_pause\": false,\n    \"lgpd_request\": true,\n    \"lgpd_type\": \"deletion\",\n    \"wants_contact_to_continue\": false,\n    \"stop_without_object\": false,\n    \"about_another_contact\": false\n  }\n}\n```"
+}

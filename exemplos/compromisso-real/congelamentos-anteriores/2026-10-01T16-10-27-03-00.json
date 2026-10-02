@@ -1,0 +1,34 @@
+{
+ "congelado_em": "2026-10-01T16:10:27-03:00",
+ "arquivos": {
+  "perguntas.py": "6ee7f8a8524eeac8c3586cbf8a82bd28dc16a143c32a49181efe248eeba3c43e",
+  "compromisso.py": "393133a6e07bb0d1b4c01ddc09cb45c28ebb2811a54af0da9b458dddcac4e3e4",
+  "run.py": "ede2eb604d43f82cff6a28c2312ab27032f85401ce00e42e99d68cd2a1690efe",
+  "dados/teste.json": "2d603138083f3ea42f322bb5a08c178f65696733d8c7aef46a89dd1711e159c6"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (46 conversas, 102 candidatos), variante principal `choice` com a política acima",
+  "variante_principal": "choice",
+  "1_tarefa_fantasma": "candidato `proposta`, `cancelado`, `citacao_antiga` ou `pedido_sem_aceite` no gabarito que saiu `compromisso` ≤ 3 de 45",
+  "2_compromisso_perdido": "candidato `compromisso` no gabarito que saiu `cancelado` ou `citacao_antiga` ≤ 3 de 57",
+  "3_prazo_dos_compromissos": "entre os `compromisso` acertados, `prazo` igual ao gabarito (data ou nulo) ≥ 0,85",
+  "4_acerto_total": "veredito exato nos 102 candidatos (`revisar` conta como erro) ≥ 0,80 (sempre-compromisso = 0,559)",
+  "5_acerto_nao_compromisso": "veredito exato nos 45 candidatos que não são `compromisso` ≥ 0,70",
+  "secundario_nao_decide": "`revisar` ≤ 15% dos candidatos; `prazo` exato nos vivos acertados (compromisso/proposta/pedido) ≥ 0,85; baseline informativo",
+  "se_falhar": "1 ou 2 falhando = o desenho não serve para criar/fechar tarefa sem humano; 3, 4 ou 5 falhando = volta ao ajuste com dados novos",
+  "limites": {
+   "fantasma_max": 3,
+   "perdido_max": 3,
+   "prazo_compromisso_min": 0.85,
+   "acerto_total_min": 0.8,
+   "acerto_nao_compromisso_min": 0.7,
+   "revisar_max": 0.15,
+   "prazo_vivos_min": 0.85
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "a4442f13c3cfb4d8120707a9d6e7c16a9e7c34eb3a605ea80e58cdea9fb9d110",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6",
+  "../_comum/numeros_br.py": "cc458db7fef558845db02e421bdeb0521f7b3a0892d01018aac984fdda339b05"
+ }
+}

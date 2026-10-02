@@ -1,0 +1,40 @@
+{
+ "medicao": {
+  "ms": 287,
+  "input_tokens": 2712,
+  "modelo": "jev-1.13.0",
+  "perguntas": 3
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "holds": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "deferred": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "proving_section": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 0.69,
+    "probabilities": {
+     "S01-s3": 0.25,
+     "S01-s6": 0.0,
+     "S01-s1": 0.0,
+     "S01-s2": 0.01,
+     "S01-s7": 0.01,
+     "S01-s4": 0.0,
+     "S01-s5": 0.01,
+     "none": 0.72
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2712,
+   "output_tokens": 137
+  }
+ }
+}

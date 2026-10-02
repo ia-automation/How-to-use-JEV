@@ -1,0 +1,30 @@
+{
+ "congelado_em": "2026-10-01T14:35:02-03:00",
+ "arquivos": {
+  "perguntas.py": "963fa924f1683ca50f2055b1cddc3f7bca2f020b752c822ba9747e291b3c7d7c",
+  "selecao.py": "114f23269487a5839ba656d04864b9bdcb4d218494c08a4ea8d248ccd1f5760c",
+  "run.py": "279c6ee354bb4b6067b639f9a25201b8d75f78b17edd26dde82f91fe1230ed76",
+  "dados/teste.json": "a0fda5b28211387b4918b744dc36502858041258c999e5351424aef61616eb90",
+  "dados/skills.json": "0d33c8a448652ad0f5e8f4dae71866d163451b3b7ec5d35af61b63b7c6b63e56"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (87 pedidos: 24 `null`, 63 com skill), variante principal com os limiares acima",
+  "variante_principal": "b",
+  "1_skill_indevida": "carregou skill com gabarito `null` ≤ 2/24",
+  "2_acerto_folgado": "escolha ∈ `aceitaveis` (ou nenhuma quando vazio) ≥ baseline de código (BM25) + 0,20",
+  "3_contra_choice_unica": "acerto folgado ≥ o da Choice única (a) E skill indevida ≤ a dela",
+  "4_null_indevido": "não carregou quando havia skill ≤ 10% (≤ 6/63)",
+  "5_skill_errada": "carregou skill fora de `aceitaveis` ≤ 5% (≤ 3/63)",
+  "se_falhar": "1 = a sugestão carrega skill onde não devia: não serve como dica automática; 2 = a sobreposição de palavras basta; 3 = o Noul do vencedor não paga a 2ª requisição: a Choice única faz o mesmo; 4 = a etapa cala demais (o agente fica sozinho); 5 = sugestão errada e confiante é pior que nenhuma",
+  "limites": {
+   "indevida_max_fracao": 0.0834,
+   "margem_folgado": 0.2,
+   "null_indevido_max_fracao": 0.1,
+   "errada_max_fracao": 0.05
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "5c91a542fa97497ae46a75970aa7a9e90079c8cbc2517f3fe80d93edb415c93b"
+ }
+}

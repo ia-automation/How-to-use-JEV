@@ -1,0 +1,1608 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CC-A001",
+   "tarefa_atual": "Corrigir o teste intermitente 'reprocessa mensagem' (causa já encontrada).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O teste 'reprocessa mensagem' em src/fila/fila.test.ts falha de vez em quando no CI. Descobre a causa e corrige. Não aumenta timeout para mascarar."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou rodar 20 vezes para medir."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ for i in $(seq 20); do pnpm vitest run src/fila/fila.test.ts -t reprocessa >/dev/null || echo FAIL; done | grep -c FAIL\n3"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Reproduz localmente: falha em 3 de 20."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Hipótese 1: outro arquivo de teste mexendo no mesmo Redis. Vou rodar sem paralelismo entre arquivos."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ for i in $(seq 20); do pnpm vitest run src/fila --no-file-parallelism >/dev/null || echo FAIL; done | grep -c FAIL\n4"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Descartado: sem paralelismo continua falhando (4 de 20). Não é interferência entre arquivos."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Pode ser o relógio? Esse teste usa setTimeout de verdade."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ grep -n \"setTimeout\" src/fila/fila.test.ts\n88:    await new Promise((r) => setTimeout(r, 50));"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Achei: na linha 88 o teste dorme 50 ms fixos e depois confere o reprocessamento, mas o worker reprocessa com atraso de 40 a 60 ms (recuo com variação aleatória). Quando o atraso passa de 50, o teste falha."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Faz sentido. Mas não troca por temporizador falso no arquivo inteiro, os outros testes dependem do relógio real."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Entendido. Proponho esperar pelo evento `reprocessada` em vez de dormir 50 ms. Sigo assim?"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m10",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09"
+   ],
+   "nota": "difícil: hipótese descartada — m07 registra uma hipótese eliminada, mas a causa já foi achada em m10: o que se eliminou no caminho não é mais necessário. m03 fica: é o comando que mede a falha e vai conferir a correção (m04 repete o número sem o comando). m12 é proposta aguardando resposta."
+  },
+  {
+   "id": "CC-A002",
+   "tarefa_atual": "Fazer a busca de imóveis por bairro ignorar acento (a troca do logo e o ajuste do rodapé já terminaram).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Bom dia. Lista de hoje: trocar o logo do cabeçalho, arrumar o rodapé no celular e depois a busca por bairro. Em tudo: nada de mexer em src/legado, e todo texto novo de tela vai no arquivo de traduções, nunca fixo no componente."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Bom dia! Começo pelo logo."
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "O arquivo novo é public/logo-2026.svg."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn \"logo.svg\" src/ | wc -l\n3"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Troquei as 3 referências para logo-2026.svg."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Ficou bom. Rodapé agora: no celular os links estão colando um no outro."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Faltava espaçamento na quebra abaixo de 480 px. Corrigido em src/componentes/Rodape.css."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/componentes\n ✓ src/componentes/Rodape.test.tsx (3)\n ✓ src/componentes/Cabecalho.test.tsx (2)\n Test Files  2 passed (2)"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Perfeito, as duas resolvidas. Agora a busca: digitar 'sao joao' tem que achar 'São João'. Hoje não acha."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "A busca é feita no banco ou no front?"
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "No banco, pela rota GET /imoveis?bairro=. O banco é Postgres 16; dá para usar extensão, se precisar."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Proponho a extensão unaccent com um índice funcional em lower(unaccent(bairro)). Precisa de migration, e a extensão tem de existir no banco. Pode?"
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "Pode, mas a extensão em prod quem cria sou eu, como superusuário. Você faz a migration assumindo que ela já existe e cria só em dev."
+    },
+    {
+     "id": "m14",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c 'CREATE EXTENSION IF NOT EXISTS unaccent'\nCREATE EXTENSION"
+    },
+    {
+     "id": "m15",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create idx-imoveis-bairro-sem-acento\nCreated migrations/0164_idx-imoveis-bairro-sem-acento.ts"
+    },
+    {
+     "id": "m16",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:run --env dev\nError: functions in index expression must be marked IMMUTABLE"
+    },
+    {
+     "id": "m17",
+     "papel": "assistente",
+     "texto": "A extensão já está criada em dev, mas migrations/0164_idx-imoveis-bairro-sem-acento.ts falha: unaccent() não é IMMUTABLE e não entra direto em índice funcional. O contorno usual é uma função própria, imutável, que chama unaccent."
+    },
+    {
+     "id": "m18",
+     "papel": "usuario",
+     "texto": "Faz a função; chama de f_sem_acento. E aproveita: o texto de dica do campo de busca devia dizer 'Bairro (com ou sem acento)'."
+    },
+    {
+     "id": "m19",
+     "papel": "assistente",
+     "texto": "Certo: f_sem_acento na migration e o texto de dica novo."
+    },
+    {
+     "id": "m20",
+     "papel": "usuario",
+     "texto": "valeu, volto em 20 min"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m09",
+    "m11",
+    "m12",
+    "m13",
+    "m17",
+    "m18"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m10",
+    "m14",
+    "m15",
+    "m16",
+    "m19",
+    "m20"
+   ],
+   "nota": "difícil: restrição antiga ainda válida — m01 abre o dia com duas regras; a segunda (texto de tela só no arquivo de traduções) volta a valer em m18, dezessete mensagens depois. As duas tarefas concluídas (m02 a m08) saem inteiras. O 'Pode' de m13 depende da proposta de m12. As três saídas de m14 a m16 estão resumidas, com os literais, em m17."
+  },
+  {
+   "id": "CC-A003",
+   "tarefa_atual": "Criar o endpoint GET /saude no api-agenda.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Regra da casa: sempre roda o lint antes de me dizer que terminou. Agora: refatora o formatarPreco em src/util/preco.ts, está ilegível."
+    },
+    {
+     "id": "m02",
+     "papel": "usuario",
+     "texto": "Ah, e não muda a assinatura do formatarPreco, tem 30 chamadores."
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "Combinado: assinatura intacta. Vendo a função."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 1,8p src/util/preco.ts\nexport function formatarPreco(centavos: number, moeda = 'BRL'): string {\n  let s = String(Math.floor(centavos / 100));\n  let r = '';\n  for (let i = s.length - 1, c = 0; i >= 0; i--, c++) { if (c && c % 3 === 0) r = '.' + r; r = s[i] + r; }\n  return (moeda === 'BRL' ? 'R$ ' : '$ ') + r + ',' + String(centavos % 100).padStart(2, '0');\n}"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Reescrevi com Intl.NumberFormat, mesma assinatura. Lint e testes passando."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ pnpm lint && pnpm vitest run src/util\n✔ No problems found\n ✓ src/util/preco.test.ts (9)"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Ótimo, pode commitar."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ git commit -qm \"refactor(util): formatarPreco com Intl\" && git log --oneline -1\n3f2a9c1 refactor(util): formatarPreco com Intl"
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Próxima: cria um GET /saude no api-agenda que devolve 200 com {status: 'ok', versao}. A versão vem do package.json."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "O /saude deve checar o banco também ou só responder?"
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Só responder. Checar banco fica para o /pronto, que não é agora."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Vou registrar a rota em src/rotas/index.ts."
+    },
+    {
+     "id": "m13",
+     "papel": "ferramenta",
+     "texto": "$ curl -s localhost:3000/saude\n{\"status\":\"ok\"}"
+    },
+    {
+     "id": "m14",
+     "papel": "assistente",
+     "texto": "A rota responde, mas ainda sem `versao`: o import do package.json falha no build porque resolveJsonModule está desligado. Falta decidir entre ligar no tsconfig ou ler o arquivo em tempo de execução."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m09",
+    "m11",
+    "m14"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m10",
+    "m12",
+    "m13"
+   ],
+   "nota": "difícil: restrição que caducou — m02 (não mudar a assinatura) valia só para a refatoração do formatarPreco, já entregue e commitada; m01 fica pela regra do lint, que vale sempre."
+  },
+  {
+   "id": "CC-A004",
+   "tarefa_atual": "Adicionar a opção --dry-run ao script de importação.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "No script de importação (scripts/importar.ts), adiciona --dry-run: mostra o que faria e não grava nada."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou ver como os argumentos são lidos."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -n parseArgs -A4 scripts/importar.ts\n7:const { values } = parseArgs({\n8:  options: { arquivo: { type: 'string' }, lote: { type: 'string', default: '500' } },\n9:});"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Usa parseArgs do node:util. Adiciono `dry-run` como booleano."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "No dry-run quero ver a contagem por tipo de operação: inserir, atualizar, ignorar."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Certo. Uma observação: hoje o importador grava direto dentro do laço; para o dry-run vou separar 'planejar' de 'aplicar'."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/importar.ts --arquivo dados/exemplo.csv --dry-run\n[dry-run] inserir: 120 · atualizar: 31 · ignorar: 4\n[dry-run] nada foi gravado"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Funciona: com --dry-run mostra a contagem e não grava."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Boa. Falta uma coisa: com --dry-run o código de saída tem que ser 0 mesmo com linhas ignoradas."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Hoje sai com 2 quando há ignoradas. Ajustando."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsx scripts/importar.ts --arquivo dados/exemplo.csv --dry-run; echo $?\n[dry-run] inserir: 120 · atualizar: 31 · ignorar: 4\n[dry-run] nada foi gravado\n0"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Pronto: saída 0 no dry-run. Falta só documentar a opção no README da pasta scripts/."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m09",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m07",
+    "m08",
+    "m10",
+    "m11"
+   ],
+   "nota": "Requisitos da tarefa atual ficam mesmo já cumpridos (são o critério de aceite e o que será documentado). discutível: m06 (nota de desenho do assistente — separar planejar de aplicar: ajuda a continuar, mas está no código)."
+  },
+  {
+   "id": "CC-A005",
+   "tarefa_atual": "Adicionar paginação por cursor ao GET /pedidos.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Antes de tudo: neste repo, commit só na branch feat/pedidos-v2 e nada de dependência nova. Primeira coisa: o lint está quebrando, arruma."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Entendido. Rodando o lint."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm lint\nsrc/pedidos/controller.ts\n  14:7  error  'filtro' is assigned a value but never used  no-unused-vars\n  31:1  error  Missing return type on function           explicit-function-return-type\n✖ 2 problems (2 errors, 0 warnings)"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Dois erros em controller.ts: variável sem uso e função sem tipo de retorno. Corrigindo."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm lint\n✔ No problems found"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Lint limpo. Commit feito em feat/pedidos-v2."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Show. Agora o que importa: o GET /pedidos precisa de paginação por cursor."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Vou ver como a listagem funciona hoje."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 20,26p src/pedidos/controller.ts\n  async listar(req: Request): Promise<Pedido[]> {\n    return this.repo.buscar({ clienteId: req.usuario.id, ordem: 'criado_em desc' });\n  }"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Hoje devolve tudo, ordenado por criado_em desc. Proponho cursor composto (criado_em, id) codificado em base64, com os parâmetros `cursor` e `limite`. Pode ser?"
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Pode, mas o limite máximo é 100 e o padrão é 20."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Fechado. Começando pelo repositório."
+    },
+    {
+     "id": "m13",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/pedidos\n ✓ src/pedidos/listar.test.ts (3)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m14",
+     "papel": "assistente",
+     "texto": "Repositório pronto (consulta com cursor e limite, testes passando). Falta o controller e a documentação da rota."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m10",
+    "m11",
+    "m14"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m09",
+    "m12",
+    "m13"
+   ],
+   "nota": "difícil: restrição antiga ainda válida — m01 mistura a restrição (vale até o fim) com a tarefa do lint (acabou): fica pela restrição. O 'pode' de m11 só faz sentido com a proposta de m10; ficam as duas."
+  },
+  {
+   "id": "CC-A006",
+   "tarefa_atual": "Adicionar cache Redis ao GET /catalogo.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O GET /catalogo está lento, bota um cache no Redis. A conexão já existe em src/infra/redis.ts."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou medir antes."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ hey -n 200 -c 10 http://localhost:3000/catalogo | grep -E 'Average|99%'\n  Average:\t0.8421 secs\n  99% in 1.9120 secs"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Hoje: média de 842 ms e p99 de 1,9 s."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Duas opções. 1) TTL de 60 s com invalidação quando um produto é alterado. 2) TTL de 300 s sem invalidação. Qual?"
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "a 1"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Ok, opção 1. Qual o padrão de chave que vocês usam?"
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Chave sempre com prefixo do serviço e versão: catalogo:v1:<algo>."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Implementando em src/catalogo/servico.ts."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/catalogo\n ✓ src/catalogo/servico.test.ts (6)\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ hey -n 200 -c 10 http://localhost:3000/catalogo | grep -E 'Average|99%'\n  Average:\t0.0312 secs\n  99% in 0.0890 secs"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Com cache: média caiu de 842 ms para 31 ms, p99 de 1,9 s para 89 ms. Leitura pronta com a chave catalogo:v1:lista e TTL de 60 s. Falta a invalidação na alteração de produto."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "boa!"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m06",
+    "m08",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m07",
+    "m09",
+    "m10",
+    "m11",
+    "m13"
+   ],
+   "nota": "difícil: resposta curta que depende da pergunta — 'a 1' (m06) só significa algo com as opções de m05; ficam as duas. As duas medições estão resumidas, com os números, em m12."
+  },
+  {
+   "id": "CC-A007",
+   "tarefa_atual": "Descobrir por que o worker-relatorios consome memória até cair.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O worker-relatorios está caindo por memória em dev a cada 2 h, mais ou menos. Acha o vazamento. Não reinicia o serviço em prod em hipótese alguma."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou acompanhar a memória em dev por alguns minutos."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ ./scripts/mem.sh worker-relatorios 5m 4\n14:00  312MiB\n14:05  398MiB\n14:10  487MiB\n14:15  571MiB"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Em dev cresce cerca de 85 MB a cada 5 min, de forma linear, mesmo sem relatório grande na fila (medido com ./scripts/mem.sh worker-relatorios 5m 4)."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Hipótese 1: cache de modelos de relatório sem limite. Vou desligar o cache e medir de novo."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ TEMPLATE_CACHE=off ./scripts/mem.sh worker-relatorios 5m 3\n14:30  305MiB\n14:35  391MiB\n14:40  480MiB"
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Descartado: com o cache de modelos desligado o crescimento é o mesmo. Não é o cache."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "E os listeners da fila? Lembro de alguém ter mexido na reconexão."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ grep -n \"\\.on(\" src/fila/conexao.ts\n31:    canal.on('message', tratar);\n44:  conexao.on('close', () => reconectar());\n52:    canal.on('message', tratar);"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Suspeita forte: em src/fila/conexao.ts a reconexão (linha 44) registra de novo o listener de 'message' (linha 52) sem remover o anterior (linha 31). Ainda não confirmei que há reconexões frequentes em dev."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Confirma com heap snapshot antes de mexer no código."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Vou tirar dois snapshots com 10 min de intervalo."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m04",
+    "m07",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m05",
+    "m06",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "difícil: hipótese descartada — o vazamento ainda não foi confirmado; a conclusão de m07 (não é o cache de modelos) evita repetir o teste e fica, a evidência (m05, m06) sai. m10 é a hipótese corrente, ainda sem prova, e já absorve a sugestão de m08."
+  },
+  {
+   "id": "CC-A008",
+   "tarefa_atual": "Fazer o CI passar (type-check e testes).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O CI está vermelho no type-check. Resolve, mas sem usar `any` nem `@ts-ignore`."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Rodando o tsc local."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsc --noEmit\nsrc/auth/sessao.ts(42,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.\nsrc/pedidos/total.ts(18,3): error TS2554: Expected 2 arguments, but got 1.\nsrc/relatorios/funil.ts(9,22): error TS7006: Parameter 'l' implicitly has an 'any' type.\nFound 3 errors in 3 files."
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Três erros. Começo por total.ts e funil.ts, que são simples."
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "Corrigi total.ts (faltava o argumento `moeda`) e funil.ts (tipei o parâmetro como Lead)."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsc --noEmit\nsrc/auth/sessao.ts(42,7): error TS2322: Type 'string | undefined' is not assignable to type 'string'.\nFound 1 error in 1 file."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Sobrou o de sessao.ts: `usuarioId` vem do header x-usuario, que pode faltar. Posso lançar 401 quando faltar ou usar um valor padrão. Qual?"
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Lança 401 quando o header x-usuario faltar. Valor padrão nunca."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Feito em sessao.ts. Rodando tudo de novo."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsc --noEmit && pnpm vitest run\n ✓ src/pedidos/total.test.ts (5)\n ✓ src/relatorios/funil.test.ts (2)\n ✓ src/auth/token.test.ts (7)\n ✗ src/auth/sessao.test.ts (1 failed)\n   × usa usuário anônimo quando não há header\n     Error: Unauthorized (401)\n ✓ src/pedidos/frete.test.ts (4)\n Test Files  1 failed | 4 passed (5)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "tsc limpo. Vou olhar a suíte."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "O CI roda teste também, então tem que ficar verde nos dois."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m08",
+    "m10",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m09",
+    "m11"
+   ],
+   "nota": "difícil: saída longa com uma linha necessária — m10 é quase toda de testes que passam; a linha que importa é o teste de sessao que agora falha por causa da decisão de m08. O erro de tipo de m06 parecia aberto, mas m10 mostra o tsc passando: sai."
+  },
+  {
+   "id": "CC-A009",
+   "tarefa_atual": "Criar a migration que adiciona canal_origem à tabela pedidos.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Cria uma migration adicionando canal_origem (text) em pedidos."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "A coluna aceita nulo ou tem valor padrão?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "Aceita nulo, sem padrão. Não quero travar a tabela."
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Ok, coluna nula sem padrão. Gerando."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create add-canal-origem\nCreated migrations/0142_add-canal-origem.ts"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Migration 0142 criada com `ADD COLUMN canal_origem text NULL`. Quer que eu rode em dev?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Espera."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Pensando melhor: NOT NULL com default 'site'. O relatório de vendas quebra com nulo. Continua valendo não travar a tabela."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "No Postgres 11 ou mais novo, ADD COLUMN com default constante não reescreve a tabela, então não trava. Vou reescrever a 0142."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ cat migrations/0142_add-canal-origem.ts\nexport async function up(db: Db) {\n  await db.query(`ALTER TABLE pedidos ADD COLUMN canal_origem text NOT NULL DEFAULT 'site'`);\n}\nexport async function down(db: Db) {\n  await db.query(`ALTER TABLE pedidos DROP COLUMN canal_origem`);\n}"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "migrations/0142_add-canal-origem.ts reescrita: NOT NULL DEFAULT 'site', com down. Ainda não rodei em lugar nenhum."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Roda em dev e me mostra o \\d pedidos."
+    },
+    {
+     "id": "m13",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:run --env dev\nError: canceling statement due to lock timeout\n  while executing: ALTER TABLE pedidos ADD COLUMN canal_origem text NOT NULL DEFAULT 'site'"
+    },
+    {
+     "id": "m14",
+     "papel": "assistente",
+     "texto": "Deu lock timeout em dev: outra sessão está segurando a tabela. Vou ver quem é antes de tentar de novo."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m08",
+    "m11",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m10",
+    "m14"
+   ],
+   "nota": "difícil: decisão revertida — 'nulo, sem padrão' (m03) foi trocado por NOT NULL default 'site' (m08); m08 repete a parte que continua valendo (não travar), então m03 sai inteira. discutível: m09 (justificativa de que o default não trava a tabela: confirma a restrição, mas é conhecimento geral)."
+  },
+  {
+   "id": "CC-A010",
+   "tarefa_atual": "Publicar a imagem do api-notas em dev.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Gera e publica a imagem do api-notas em dev. A tag é o hash curto do commit."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Gerando a imagem."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ docker build -t registro.exemplo.com/api-notas:8c1d2e4 .\n#9 [5/7] RUN pnpm install --frozen-lockfile\n#9 ERROR: failed to compute cache key: failed to calculate checksum of ref: not found\nERROR: failed to solve: failed to compute cache key"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Erro de cache do BuildKit. Vou limpar o cache do builder e tentar de novo."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ docker builder prune -f && docker build -t registro.exemplo.com/api-notas:8c1d2e4 .\nTotal reclaimed space: 4.2GB\n#9 ERROR: failed to compute cache key: failed to calculate checksum of ref: not found"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Limpar o cache não resolveu."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Esse executor está com BuildKit velho, é problema conhecido. Usa DOCKER_BUILDKIT=0 até a infra atualizar."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ DOCKER_BUILDKIT=0 docker build -t registro.exemplo.com/api-notas:8c1d2e4 .\nSuccessfully built 51b7e0a9c3d2\nSuccessfully tagged registro.exemplo.com/api-notas:8c1d2e4"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Com o contorno, a imagem saiu: registro.exemplo.com/api-notas:8c1d2e4. Falta o push e atualizar o serviço em dev."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ docker push registro.exemplo.com/api-notas:8c1d2e4\ndenied: requested access to the resource is denied"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Push negado: não estou autenticado no registro. Como faço o login?"
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Roda `./scripts/login-registro.sh dev`, ele pega a credencial do cofre."
+    },
+    {
+     "id": "m13",
+     "papel": "assistente",
+     "texto": "Rodando o script de login."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m09",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m11",
+    "m13"
+   ],
+   "nota": "difícil: contorno em vigor — o erro do BuildKit (m03 a m06) está contornado, não resolvido: as tentativas saem, o contorno de m07 fica. discutível: m10 (erro do push ainda aberto, mas m09 e m12 já dizem o que falta e como)."
+  },
+  {
+   "id": "CC-A011",
+   "tarefa_atual": "Corrigir o arredondamento do desconto no carrinho (urgente; a migração das tabelas para a TabelaV2 ficou para depois).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Vamos migrar as tabelas do painel para o componente novo, TabelaV2. Começa pela de pedidos."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou ver as props da TabelaV2."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ sed -n 1,6p src/componentes/TabelaV2.tsx\ntype Props<T> = {\n  colunas: Coluna<T>[];\n  linhas: T[];\n  aoOrdenar?: (campo: keyof T) => void;\n};"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Migrei a tabela de pedidos (src/painel/pedidos/Lista.tsx). Faltam clientes, produtos e cupons."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Para tudo. Chegou um bug urgente: desconto de 15% num carrinho de R$ 99,90 está dando R$ 84,91 e o financeiro calcula R$ 84,92. A migração a gente retoma depois."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Vou ver onde o desconto é aplicado."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ grep -n desconto src/carrinho/total.ts\n12:  const comDesconto = Math.floor(subtotal * (1 - cupom.percentual / 100));"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Em src/carrinho/total.ts:12 o código trunca com Math.floor: 9990 × 0,85 = 8491,5 centavos vira 8491. O financeiro arredonda para 8492."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Qual regra o financeiro usa: meio centavo sempre para cima ou arredondamento bancário?"
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Meio para cima, sempre. E isso vale para qualquer desconto percentual do sistema, não só cupom."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn \"Math.floor\" src/ --include=*.ts | grep -i desc\nsrc/carrinho/total.ts:12:  const comDesconto = Math.floor(subtotal * (1 - cupom.percentual / 100));\nsrc/assinaturas/plano.ts:40:  return Math.floor(preco * (1 - descontoAnual));"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Há dois pontos que truncam desconto: src/carrinho/total.ts:12 e src/assinaturas/plano.ts:40. Corrigi o primeiro com Math.round; o segundo ainda não."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "E escreve um teste com esse caso exato dos R$ 99,90."
+    }
+   ],
+   "manter": [
+    "m05",
+    "m10",
+    "m12",
+    "m13"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m11"
+   ],
+   "nota": "difícil: tarefa interrompida — a migração para a TabelaV2 parou no meio e o usuário disse que retoma depois: nada dela serve ao bug do desconto. O diagnóstico de m08 está repetido, com os dois endereços, em m12. discutível: m01 e m04 (pedido e ponto de parada da migração interrompida: inúteis para a tarefa atual, mas são o único registro de onde ela parou)."
+  },
+  {
+   "id": "CC-A012",
+   "tarefa_atual": "Escrever a seção 'Como rodar localmente' do README do api-agenda.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O teste de fuso do api-agenda está quebrado, corrige."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/agenda/fuso.test.ts\n ✗ converte horário de Brasília\n   AssertionError: expected '12:00' to be '09:00'\n Tests  1 failed (1)"
+    },
+    {
+     "id": "m03",
+     "papel": "assistente",
+     "texto": "O teste assumia que o processo roda em UTC-3. Corrigi usando a zona 'America/Sao_Paulo' explícita."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/agenda/fuso.test.ts\n ✓ converte horário de Brasília\n Tests  1 passed (1)"
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Boa. Agora escreve a seção 'Como rodar localmente' no README. Público: dev novo, primeiro dia."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Quais pré-requisitos devo listar?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Node 22, pnpm 9 e Docker. O banco sobe com `docker compose up -d banco`. Não cita nada de produção nem endereço interno."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ grep -A6 '\"scripts\"' package.json\n  \"scripts\": {\n    \"dev\": \"tsx watch src/main.ts\",\n    \"migration:run\": \"tsx scripts/migrar.ts\",\n    \"seed\": \"tsx scripts/semear.ts\",\n    \"test\": \"vitest run\"\n  },"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Os comandos seriam: pnpm install, docker compose up -d banco, pnpm migration:run, pnpm seed, pnpm dev. Escrevo nessa ordem?"
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Nessa ordem. E põe uma linha dizendo para copiar o .env.exemplo para .env antes."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Escrevendo."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "valeu"
+    }
+   ],
+   "manter": [
+    "m05",
+    "m07",
+    "m09",
+    "m10"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m08",
+    "m11",
+    "m12"
+   ],
+   "nota": "A correção do teste de fuso (m01 a m04) acabou e não é premissa do README: sai inteira. 'Nessa ordem' (m10) depende da lista de m09."
+  },
+  {
+   "id": "CC-A013",
+   "tarefa_atual": "Escrever o script que preenche canal_origem nos pedidos antigos.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Primeiro aplica a migration 0142 em dev e confere a coluna."
+    },
+    {
+     "id": "m02",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:run --env dev\nApplied 0142_add-canal-origem (0.3s)"
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c '\\d pedidos' | grep canal\n canal_origem | text |           | not null | 'site'::text"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "0142 aplicada em dev. A coluna canal_origem existe, NOT NULL, default 'site'. Em prod ainda NÃO foi aplicada."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Certo. Agora o preenchimento: pedido antigo tem que receber o canal de verdade. A origem está em pedidos_meta.utm_source."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Qual o mapeamento de utm_source para canal?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "google e bing viram 'busca'; instagram e facebook viram 'social'; vazio ou qualquer outra coisa, 'site'."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Quantos pedidos são? Para decidir o tamanho do lote."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -Atc 'select count(*) from pedidos'\n2841907"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "São 2,84 milhões de pedidos em dev. Proponho lotes de 10 mil por id, com pausa de 200 ms, num script em scripts/preencher-canal.ts."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Lote de 5 mil, o resto ok. E tem que ser retomável: se cair, continua de onde parou."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Fechado: 5 mil, retomável pelo último id processado."
+    }
+   ],
+   "manter": [
+    "m04",
+    "m05",
+    "m07",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m06",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "difícil: conclusão anterior é premissa — aplicar a 0142 já acabou (m01 a m03 saem), mas o resultado em m04 (coluna existe em dev, prod ainda não) é premissa do script. m11 corrige o lote de m10 e aprova 'o resto': ficam as duas."
+  },
+  {
+   "id": "CC-A014",
+   "tarefa_atual": "Renomear a variável FILA_URL para RABBITMQ_URL nos 5 serviços.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Padronização: FILA_URL vira RABBITMQ_URL nos 5 serviços (api-pedidos, api-notas, api-agenda, worker-email, worker-relatorios). Código e arquivo de stack de cada um."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou um por um, com busca antes e depois."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn FILA_URL api-pedidos/ | wc -l\n3"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "api-pedidos: 2 usos no código e 1 no stack. Trocado."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn FILA_URL api-notas/ | wc -l\n2"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "api-notas: trocado (1 uso e o stack)."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "No worker-email não mexe no stack de prod, só no de dev. O de prod está congelado até sexta."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn FILA_URL api-agenda/\napi-agenda/src/config.ts:8:  filaUrl: process.env.FILA_URL ?? process.env.AMQP_URL,\napi-agenda/stack.dev.yaml:19:      FILA_URL: ${FILA_URL}"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "api-agenda: trocado. Atenção: lá existe uma alternativa para AMQP_URL (api-agenda/src/config.ts:8). Mantive. Quer que eu remova?"
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Depois eu vejo isso, segue."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Placar: api-pedidos, api-notas e api-agenda prontos. Faltam worker-email (stack só de dev) e worker-relatorios."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "beleza"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m07",
+    "m09",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m12"
+   ],
+   "nota": "difícil: progresso parcial — os passos por serviço (m03 a m06, m08) saem; o placar de m11 e a exceção de m07 ficam. m09 é pergunta ainda sem resposta. discutível: m10 (adia a resposta de m09: evita perguntar de novo, mas não decide nada)."
+  },
+  {
+   "id": "CC-A015",
+   "tarefa_atual": "Renomear buscarCliente e atualizar os chamadores.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O nome buscarCliente em src/clientes/servico.ts está ruim, parece busca textual. Renomeia."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Sugestões: obterCliente, carregarCliente, clientePorId. Preferência?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "obterCliente."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ grep -rln buscarCliente src/ | wc -l\n17"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "17 arquivos usam. Começando."
+    },
+    {
+     "id": "m06",
+     "papel": "ferramenta",
+     "texto": "$ pnpm tsc --noEmit\nsrc/clientes/servico.ts(4,17): error TS2300: Duplicate identifier 'obterCliente'.\nsrc/clientes/servico.ts(61,17): error TS2300: Duplicate identifier 'obterCliente'."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Problema: já existe um obterCliente nesse arquivo (versão antiga, com cache). Dá conflito de nome."
+    },
+    {
+     "id": "m08",
+     "papel": "usuario",
+     "texto": "Então volta atrás: chama de carregarCliente, igual ao resto do módulo (carregarPedido, carregarEndereco). O obterCliente antigo fica como está, não mexe."
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Ok, carregarCliente. Refazendo."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ grep -rln buscarCliente src/ | wc -l\n6"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "11 dos 17 arquivos já usam carregarCliente. Faltam 6, todos em src/relatorios/."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "Os de relatorios têm teste de snapshot; atualiza os snapshots junto."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m08",
+    "m11",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m09",
+    "m10"
+   ],
+   "nota": "difícil: decisão revertida — 'obterCliente' (m03) foi abandonado em m08 por conflito de nome; m08 traz o nome novo e a restrição nova (não mexer no obterCliente antigo). m07 explica o conflito, mas m08 já basta."
+  },
+  {
+   "id": "CC-A016",
+   "tarefa_atual": "Ajustar o formulário de proposta conforme o retorno do usuário.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Monta o formulário de proposta em src/pages/proposta.tsx: nome, e-mail, valor e prazo. Sem biblioteca de formulário nova, usa o que tem."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "O projeto usa react-hook-form com zod; sigo com eles."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm dev\n  VITE v5.4.2  ready in 412 ms\n  ➜  Local:   http://localhost:5173/"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Formulário no ar em /proposta com os 4 campos e validação."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Ficou ótimo, parabéns! Só duas coisas: o botão com o texto 'Enviar proposta' e, daqui pra frente, todo valor em dinheiro nesse sistema é em centavos inteiros, nunca float."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Troquei o botão. Para o valor, vou aceitar '1.234,56' na tela e converter para centavos."
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Isso. E o prazo é em dias úteis, escreve isso no rótulo."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/util/moeda.test.ts\n ✓ converte 12,50 em 1250\n ✗ converte 1.234,56 em 123456\n   AssertionError: expected NaN to be 123456\n Tests  1 failed | 1 passed (2)"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Vou olhar a função paraCentavos."
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "blz, vou almoçar, vai tocando"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Feito até aqui: botão 'Enviar proposta' e rótulo 'Prazo (dias úteis)'. Pendente: converter valor com ponto de milhar (src/util/moeda.ts)."
+    },
+    {
+     "id": "m12",
+     "papel": "ferramenta",
+     "texto": "$ git status --short\n M src/pages/proposta.tsx\n M src/util/moeda.ts"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m07",
+    "m08",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m09",
+    "m10",
+    "m12"
+   ],
+   "nota": "difícil: decisão embutida — m05 começa como elogio e carrega uma regra permanente (dinheiro em centavos inteiros); m07 é requisito da tarefa atual e fica mesmo já cumprido. O teste que falha em m08 segue aberto."
+  },
+  {
+   "id": "CC-A017",
+   "tarefa_atual": "Acelerar a listagem de pedidos por cliente (índice pronto em dev; falta conferir as colunas pedidas pelo ORM).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "A tela 'meus pedidos' demora 1 a 2 s. A consulta é a listarPorCliente, em src/pedidos/repo.ts. Acelera."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou pegar o plano de execução."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c \"EXPLAIN ANALYZE SELECT * FROM pedidos WHERE cliente_id = 9123 ORDER BY criado_em DESC LIMIT 50\"\n Limit  (cost=84212.46..84212.55 rows=37 width=96) (actual time=1191.402..1191.410 rows=41 loops=1)\n   ->  Sort  (cost=84212.46..84212.55 rows=37 width=96)\n         ->  Seq Scan on pedidos  (cost=0.00..84211.50 rows=37 width=96) (actual time=0.412..1184.220 rows=41 loops=1)\n               Filter: (cliente_id = 9123)\n               Rows Removed by Filter: 2841866\n Execution Time: 1191.7 ms"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Seq Scan em pedidos: 1,19 s para devolver 41 linhas, descartando 2,8 milhões. Falta índice em (cliente_id, criado_em desc)."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Cria o índice, mas CONCURRENTLY e fora de transação. Em prod eu aplico; você, só em dev."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "A ferramenta de migration abre transação por padrão; vou marcar esta como sem transação."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create idx-pedidos-cliente --no-transaction\nCreated migrations/0153_idx-pedidos-cliente.ts"
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:run --env dev\nApplied 0153_idx-pedidos-cliente (41.8s)"
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ psql \"$DEV_DB\" -c \"EXPLAIN ANALYZE SELECT ...\" | tail -2\n   ->  Index Scan using idx_pedidos_cliente_criado on pedidos  (actual time=0.031..0.212 rows=41 loops=1)\n Execution Time: 0.3 ms"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "migrations/0153_idx-pedidos-cliente.ts (sem transação, CONCURRENTLY) aplicada em dev. A consulta caiu de 1.191 ms para 0,3 ms, com Index Scan. Em prod não apliquei."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Excelente. Antes de eu levar para prod, confere se o ORM não está pedindo colunas demais nessa consulta."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Vou ligar o log de SQL e olhar."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "difícil: redundância — as quatro saídas de ferramenta (m03, m07 a m09) estão resumidas, com os valores literais, em m10; o diagnóstico de m04 já foi resolvido pelo índice. m05 fica pela parte que não caduca: produção é do usuário."
+  },
+  {
+   "id": "CC-A018",
+   "tarefa_atual": "Integrar a cotação de frete do parceiro (cliente HTTP pronto; falta plugar no checkout).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Vamos integrar a cotação de frete do parceiro. Base: https://api.parceiro.exemplo.com/v1. A chave vai no header X-Parceiro-Chave e vem da variável PARCEIRO_API_KEY."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou criar src/frete/parceiro.ts com um cliente fino. Qual o tempo limite?"
+    },
+    {
+     "id": "m03",
+     "papel": "usuario",
+     "texto": "3 segundos, 1 retentativa."
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ curl -s -o /dev/null -w '%{http_code}' https://api.parceiro.exemplo.com/v1/cotacoes -H \"X-Parceiro-Chave: $PARCEIRO_API_KEY\"\n410"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "A v1 responde 410 Gone."
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Ops, erro meu: a v1 foi desligada. A base certa é https://api.parceiro.exemplo.com/v2."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ curl -s -X POST https://api.parceiro.exemplo.com/v2/cotacoes -H \"X-Parceiro-Chave: $PARCEIRO_API_KEY\" -d '{\"cep_origem\":\"01001000\",\"cep_destino\":\"20040002\",\"peso_g\":1200}'\n{\"cotacoes\":[{\"servico\":\"expresso\",\"valor_centavos\":2890,\"prazo_dias\":2},{\"servico\":\"economico\",\"valor_centavos\":1740,\"prazo_dias\":6}]}"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "A v2 responde, com uma lista de cotações por serviço."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Só nos interessa o serviço 'economico'. Se não vier, devolve erro para quem chamou; não escolhe outro."
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Anotado. Escrevendo o cliente e o teste contra o ambiente de testes do parceiro."
+    },
+    {
+     "id": "m11",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/frete/parceiro.test.ts\n ✓ cota econômico (412 ms)\n ✓ erro quando não há econômico\n Test Files  1 passed (1)"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Cliente pronto e testado em src/frete/parceiro.ts. Falta plugar no checkout e tratar o estouro dos 3 s na tela."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "valeu"
+    },
+    {
+     "id": "m14",
+     "papel": "assistente",
+     "texto": "Sigo para o checkout."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m06",
+    "m07",
+    "m09",
+    "m12"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m08",
+    "m10",
+    "m11",
+    "m13",
+    "m14"
+   ],
+   "nota": "difícil: valor corrigido — a base /v1 de m01 foi corrigida em m06; m01 fica mesmo assim, porque o nome do header e o da variável só estão nela. m07 é saída de ferramenta que vale como contrato (corpo da requisição e formato da resposta); o resumo de m08 não traz os campos."
+  }
+ ]
+}

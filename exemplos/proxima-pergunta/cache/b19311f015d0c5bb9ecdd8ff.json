@@ -1,0 +1,69 @@
+{
+ "medicao": {
+  "ms": 286,
+  "input_tokens": 2183,
+  "modelo": "jev-1.13.0",
+  "perguntas": 13
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "answered.budget": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.bedrooms": {
+    "type": "noul",
+    "noul": 0.78
+   },
+   "answered.timeframe": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "answered.visit": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "investor_not_living": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "specific_property": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "answered.purpose": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.neighbourhood": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "answered.parking": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "answered.pet": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "answered.financing": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "rental": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "positive_reaction": {
+    "type": "noul",
+    "noul": 0.02
+   }
+  },
+  "usage": {
+   "input_tokens": 2183,
+   "output_tokens": 247
+  }
+ }
+}

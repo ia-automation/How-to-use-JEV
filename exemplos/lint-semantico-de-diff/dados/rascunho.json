@@ -1,0 +1,147 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "LS-R001",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/config/pagamentos.ts b/src/config/pagamentos.ts\n--- a/src/config/pagamentos.ts\n+++ b/src/config/pagamentos.ts\n@@ -3,6 +3,6 @@\n import type { ConfigPagamentos } from './tipos';\n\n export const pagamentos: ConfigPagamentos = {\n-  chave: process.env.PAGAMENTO_CHAVE ?? '',\n+  chave: 'sk_test_FAKE9f1c2b7d8e4a',\n   moeda: 'BRL',\n   parcelasMax: 12,\n };\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "Chave de API em literal no código."
+  },
+  {
+   "id": "LS-R002",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/servico.ts b/src/leads/servico.ts\n--- a/src/leads/servico.ts\n+++ b/src/leads/servico.ts\n@@ -40,6 +40,7 @@\n export async function criarLead(dados: NovoLead) {\n   const telefone = normalizarTelefone(dados.telefone);\n+  console.log('criando lead', telefone);\n   const [lead] = await db.insert(leads).values({ ...dados, telefone }).returning();\n   await fila.publicar('lead.criado', { id: lead.id });\n   return lead;\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "console.log em código de serviço; função modificada, não nova."
+  },
+  {
+   "id": "LS-R003",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/propostas/parcelas.ts b/src/propostas/parcelas.ts\n--- a/src/propostas/parcelas.ts\n+++ b/src/propostas/parcelas.ts\n@@ -1,4 +1,13 @@\n import { arredondar } from '../util/numero';\n\n+/**\n+ * @description Calcula o valor de cada parcela de uma proposta sem juros.\n+ * @param total valor total em reais\n+ * @param n número de parcelas\n+ */\n+export function valorParcela(total: number, n: number): number {\n+  return arredondar(total / n);\n+}\n+\n export function totalComEntrada(total: number, entrada: number): number {\n   return total - entrada;\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "Função nova exportada com JSDoc completo."
+  },
+  {
+   "id": "LS-R004",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0010_remove_visitas_antigas.sql b/drizzle/0010_remove_visitas_antigas.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0010_remove_visitas_antigas.sql\n@@ -0,0 +1,7 @@\n+-- remove a tabela usada antes da agenda nova\n+DROP TABLE visitas_antigas;\n+\n+ALTER TABLE visitas ADD COLUMN origem text NOT NULL DEFAULT 'crm';\n+CREATE INDEX idx_visitas_origem ON visitas (origem);\n+\n+ALTER TABLE visitas ADD COLUMN lembrete_enviado boolean NOT NULL DEFAULT false;\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "DROP TABLE em migration sem marcador de confirmação."
+  },
+  {
+   "id": "LS-R005",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/rotas.ts b/src/leads/rotas.ts\n--- a/src/leads/rotas.ts\n+++ b/src/leads/rotas.ts\n@@ -1,4 +1,17 @@\n import { Router } from 'express';\n+import { body, validationResult } from 'express-validator';\n import { criarLead } from './servico';\n\n const router = Router();\n\n+router.post(\n+  '/leads',\n+  body('nome').isString().trim().notEmpty(),\n+  body('telefone').isMobilePhone('pt-BR'),\n+  async (req, res) => {\n+    const erros = validationResult(req);\n+    if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+    const lead = await criarLead(req.body);\n+    return res.status(201).json(lead);\n+  },\n+);\n+\n export default router;\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false,
+    "r4": false
+   },
+   "nota": "Rota nova com cadeia do express-validator e validationResult."
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "medicao": {
+  "ms": 292,
+  "input_tokens": 3471,
+  "modelo": "jev-1.13.0",
+  "perguntas": 19
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "answered.purpose": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.budget": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "answered.neighbourhood": {
+    "type": "noul",
+    "noul": 0.94
+   },
+   "answered.bedrooms": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.parking": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "answered.timeframe": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "answered.pet": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "answered.financing": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "answered.visit": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "withdrawn.purpose": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.budget": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.neighbourhood": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.bedrooms": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "withdrawn.pet": {
+    "type": "noul",
+    "noul": 0.2
+   },
+   "rental": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "investor_not_living": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "specific_property": {
+    "type": "noul",
+    "noul": 0.26
+   },
+   "positive_reaction": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "single_choice": {
+    "type": "choice",
+    "choice": "no_question_needed",
+    "confidence": 0.97,
+    "probabilities": {
+     "purpose": 0.0,
+     "budget": 0.0,
+     "neighbourhood": 0.0,
+     "bedrooms": 0.0,
+     "parking": 0.0,
+     "timeframe": 0.0,
+     "pet": 0.02,
+     "financing": 0.0,
+     "visit": 0.0,
+     "no_question_needed": 0.98
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 3471,
+   "output_tokens": 451
+  }
+ }
+}

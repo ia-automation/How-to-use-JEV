@@ -98,6 +98,34 @@ conclusão é “contrato preparado/conferido”, nunca “Jev aprovado em produ
 | Custo de "tudo no LLM" com LLM **simulado** é cenário, não economia observada. | roteador |
 | Com poucos rótulos (100), pesos fixos declarados antes ≥ logística treinada; ajuste pequeno esconde sinal raro (coluna chata no ajuste que separa no teste). Desfecho de negócio mede **sinal preditivo**, não acerto por pergunta; Brier perto da constante = usar para ordenar, não como probabilidade. | dados internos ([medicoes](../evidencias/medicoes-2026-09-30.md#dados-internos-conversas-reais-de-venda)) |
 
+## Lições de método das execuções de 2026-10-01 [testado]
+Doze exemplos com teste congelado e revisão adversarial; números em [medicoes-2026-10-01](../evidencias/medicoes-2026-10-01.md).
+| Lição | De onde |
+|---|---|
+| **Rodada única só é auditável com manifesto**: hash de perguntas, código, dados de teste E critério de aceite gravados antes do teste; o `run.py` recusa rodar se algo mudou; cache com histórico (a resposta anterior não some). Sem isso "rodei uma vez" é palavra. | revisão do Codex na onda 1; `exemplos/_comum/congelamento.py` |
+| **Critério de aceite num dicionário, com o veredito calculado pelo script.** Reprovou 4 de 12 e a reprovação ficou escrita — é o valor do protocolo. Critério só em prosa vira interpretação depois do teste. | guarda, juiz, lint, seleção |
+| **Correção depois do teste é "rodada N, pós-revisão, não cega"**, relatada ao lado da cega e nunca no lugar dela. Passar o critério na rodada 2 não reabilita o desenho. | todos os que tiveram rodada 2 |
+| **A rodada pós-revisão também regride**: a correção de um erro criou outro em 3 exemplos. Reportar o que piorou com o mesmo destaque do que melhorou. | auditor, opt-out, próxima-pergunta |
+| **Medir o baseline e as peças de código com o mesmo rigor do Jev.** O código errou mais que o modelo: número brasileiro, regex "exata", parser sem polaridade. Um critério "numéricas 100%" existia para denunciar isso e denunciou. | promessas, próxima-pergunta, duplicado, guarda, juiz |
+| **Margem sobre o baseline é critério frágil com teto perto**: fixado com o baseline em 0,722 no ajuste, virou alvo de 0,959 quando o baseline fez 0,759 no teste. Preferir limite absoluto no erro caro + piso de acerto. | [seleção](../../exemplos/selecao-de-skill/README.md) |
+| **Com n de 40–60, um caso decide o veredito** ("+15 p.p." separa 52 de 51 acertos). Declarar quando o critério passou no limite. | opt-out, próxima-pergunta |
+| **Família com poucos casos no ajuste não calibra nem faixa nem expectativa**: alerta sem necessidade 17% no ajuste, 25% no teste; taxa de revisão 8% → 15,7%. | injeção, repetição |
+| **Ablação feita depois de ver o teste é hipótese**, mesmo quando sai do cache sem chamada nova: respostas de uma requisição com 8 perguntas não provam o que uma com 3 responderia. | repetição, seleção (variante `a2`) |
+| **Variante informativa não vira principal depois do teste.** A principal é a declarada no manifesto; a melhor entre as demais é candidata para dados novos. | seleção |
+| **Falha operacional é desfecho medido, não exceção**: bateria sem rede (`testa_falhas.py`) prova que timeout, cache faltando e resposta fora do contrato caem na classe de revisão, por caso, sem abortar o lote. | opt-out, duplicado, injeção, seleção, repetição |
+| **Dado real anonimizado: a varredura automática não substitui ler a amostra.** A conferência exata contra o bruto pegou o que os padrões frouxos não viam (nome em maiúsculas após rótulo, usuário do endereço no corpo, entidade HTML escondendo o andar). | preparação do `roteador-email` |
+
+## Reavaliar quando sair versão nova do modelo [local]
+Os limiares dos exemplos valem para `jev-1.13.0`; `jev-latest` muda sozinho. Antes de trocar a versão:
+`python -X utf8 ferramentas/reavaliar_versao.py --modelo jev-1.14.0 --so-estimar` (imprime requisições e custo, zero chamada) e depois
+sem `--so-estimar`: roda o teste congelado de cada exemplo ao vivo, grava em `exemplos/<ex>/cache-<modelo>/` (o `cache/`,
+o manifesto e os limiares ficam intocados, conferido por hash) e escreve `conhecimento/evidencias/reavaliacao-<modelo>-<data>.md`
+com veredito do critério, métricas, casos e perguntas que trocaram de lado e a distância ao limiar. A rodada da MESMA
+versão ([reavaliacao-jev-1.13.0-2026-10-01](../evidencias/reavaliacao-jev-1.13.0-2026-10-01.md)) é referência
+empírica do quanto a API varia sozinha (uma amostra, um dia) — não é banda segura: a distância ao limiar não diz a
+causa, e uma troca do mesmo tamanho numa versão nova pode ser efeito da versão. Recalibrar continua decisão humana,
+registrada em `decisoes.md`.
+
 ## Avaliar o próprio repositório
 `ferramentas/copia_fria.py` copia o repositório para `C:\tmp\jev-frio-<hora>` sem `prova/`, `fontes/`,
 `chat.txt`, `.local/`, `.git/` e `api_key.txt`, por lista permitida, e confere a cópia

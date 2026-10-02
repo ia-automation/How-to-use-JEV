@@ -1,0 +1,28 @@
+{
+ "medicao": {
+  "ms": 2200,
+  "input_tokens": 6693,
+  "output_tokens": 185,
+  "modelo": "claude-haiku-4-5-20251001",
+  "data": "2026-10-01",
+  "tentativas": 1,
+  "stop_reason": "end_turn"
+ },
+ "resposta": {
+  "answers": {
+   "group": "credito_documentacao",
+   "leaf.preco": "only_group",
+   "leaf.credito_documentacao": "documentacao_imovel",
+   "leaf.imovel": "only_group",
+   "leaf.localizacao": "only_group",
+   "leaf.concorrencia": "only_group",
+   "leaf.atendimento": "demora_resposta",
+   "leaf.momento_cliente": "adiou_decisao",
+   "leaf.sem_informacao": "sumiu_sem_resposta",
+   "reason_stated": true,
+   "blames_agency": false,
+   "closed_elsewhere": false
+  }
+ },
+ "texto": "```json\n{\n  \"answers\": {\n    \"group\": \"credito_documentacao\",\n    \"leaf.preco\": \"only_group\",\n    \"leaf.credito_documentacao\": \"documentacao_imovel\",\n    \"leaf.imovel\": \"only_group\",\n    \"leaf.localizacao\": \"only_group\",\n    \"leaf.concorrencia\": \"only_group\",\n    \"leaf.atendimento\": \"demora_resposta\",\n    \"leaf.momento_cliente\": \"adiou_decisao\",\n    \"leaf.sem_informacao\": \"sumiu_sem_resposta\",\n    \"reason_stated\": true,\n    \"blames_agency\": false,\n    \"closed_elsewhere\": false\n  }\n}\n```"
+}

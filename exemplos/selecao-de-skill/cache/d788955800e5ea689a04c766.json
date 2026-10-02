@@ -1,0 +1,67 @@
+{
+ "medicao": {
+  "ms": 271,
+  "input_tokens": 2566,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "which": {
+    "type": "choice",
+    "choice": "grilling",
+    "confidence": 0.44,
+    "probabilities": {
+     "llm-eval": 0.0,
+     "db-query": 0.0,
+     "deploy-prod": 0.0,
+     "security-review": 0.0,
+     "none": 0.33,
+     "fix-ci": 0.0,
+     "api-contract": 0.16,
+     "code-review": 0.0,
+     "dataviz": 0.0,
+     "ad-creative": 0.0,
+     "email-sequence": 0.0,
+     "ux-review": 0.0,
+     "test-writer": 0.0,
+     "deploy-dev": 0.0,
+     "ads-audit": 0.0,
+     "dependency-upgrade": 0.0,
+     "refactor-safe": 0.0,
+     "secrets-vault": 0.0,
+     "ai-seo": 0.0,
+     "social-calendar": 0.0,
+     "migration-2bancos": 0.0,
+     "frontend-design": 0.0,
+     "docs-writer": 0.01,
+     "rollback": 0.0,
+     "prompt-tuning": 0.0,
+     "schema-markup": 0.0,
+     "incident-postmortem": 0.0,
+     "lead-report": 0.0,
+     "to-tickets": 0.03,
+     "e2e-browser": 0.0,
+     "pr-open": 0.0,
+     "changelog-release": 0.0,
+     "logs-prod": 0.0,
+     "perf-profile": 0.0,
+     "grilling": 0.47000000000000003,
+     "seo-audit": 0.0,
+     "copywriting": 0.0,
+     "whatsapp-template": 0.0,
+     "landing-ab-test": 0.0,
+     "simplify": 0.0,
+     "programmatic-seo": 0.0,
+     "video-listing": 0.0,
+     "diagnosing-bugs": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2566,
+   "output_tokens": 408
+  }
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "teto": 250,
+ "chamadas_http": 215,
+ "atualizado_em": "2026-10-01T23:43:07-03:00",
+ "nota": "iniciado em 2026-10-01 (revisão do Codex, achado 1) com o consumo real das rodadas anteriores: soma de `tentativas` de todos os registros em cache-llm/ (válidos + invalidos/), 201 do teste + 14 de rascunho"
+}

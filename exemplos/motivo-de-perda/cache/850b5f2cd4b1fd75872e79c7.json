@@ -1,0 +1,30 @@
+{
+ "medicao": {
+  "ms": 263,
+  "input_tokens": 1128,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "imovel_indisponivel",
+    "confidence": 0.96,
+    "probabilities": {
+     "informacao_errada": 0.0,
+     "imovel_indisponivel": 0.98,
+     "only_group": 0.0,
+     "pressao_insistencia": 0.0,
+     "demora_resposta": 0.02,
+     "visita_falhou": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1128,
+   "output_tokens": 86
+  }
+ }
+}

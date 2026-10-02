@@ -58,15 +58,18 @@ Estado: **2026-09-30**, modelo `jev-1.13.0`, SDK Python 0.7.2, SDK JS 0.6.0. Ró
 
 ## Evidências
 - [Medições de 2026-09-30](evidencias/medicoes-2026-09-30.md) — contrato, confiança, escala, estabilidade, pt × en, exemplos, texto real pt-BR (HateBR/B2W), leads reais
+- [Medições de 2026-10-01](evidencias/medicoes-2026-10-01.md) — 22 exemplos novos com teste congelado e revisão do Codex (sintéticos + e-mail real + corpus público): Jev × regra de código, Jev × LLM barato, variação entre rodadas, latência real (p95 303 ms)
+- [Reavaliação jev-1.13.0 (2026-10-01)](evidencias/reavaliacao-jev-1.13.0-2026-10-01.md) — testes congelados rodados ao vivo contra `jev-1.13.0`: 17 exemplos, US$ 0.2126; 105 perguntas trocaram de lado; veredito mudou em 1 exemplo(s)
 - [Contradições da documentação](evidencias/contradicoes-da-documentacao.md) — prosa × OpenAPI × SDK × servidor; erros das receitas
 - [Pendências](evidencias/pendencias.md) — o que falta provar (gateways, limites de taxa, retry Python, limiares reais, instalação)
 - [Decisões](evidencias/decisoes.md) — decisões do acervo e do dono
 - [Proveniência](evidencias/proveniencia.md) — quem estudou o quê, cobertura honesta, verificações, rastreio da consolidação
+- [Casos externos](evidencias/casos-externos.md) — 30 casos reais relatados fora daqui (guarda de agente, juiz de eval, SQL semântico, navegador, SOC…), número + fonte + o que não provam; os 26 exemplos novos
 - [Vídeo 1 — Max Carrau](evidencias/videos/video-01-max-carrau.md) — a tese em 4 min; "a gaveta da automação"
 - [Vídeo 2 — QuantBrasil](evidencias/videos/video-02-quantbrasil.md) — teste real: 6–7× mais rápido, ~7× e ~200× mais barato; o erro do "MS"
 - [Vídeo 3 — Maestros da IA](evidencias/videos/video-03-maestros-da-ia.md) — 4 apps de demo; 1 pergunta por item; quadros com latência/custo; cuidado com a propaganda
 
 ## Fora de `conhecimento/`
-- [Exemplos medidos](../exemplos/README.md) — 5 projetos na API real (roteador, triagem, extração, guardrail, busca)
+- [Exemplos medidos](../exemplos/README.md) — 5 projetos de 2026-09-30 (roteador, triagem, extração, guardrail, busca) + 18 de 2026-10-01 (guarda de tool-call, juiz de eval, lint de diff, auditor, injeção, seleção de skill, imóvel errado, promessas, próxima pergunta, repetição, opt-out, duplicado, triagem de alerta, roteador de e-mail real, requisito mudou, motivo de perda, compactação de contexto, compromisso real)
 - [pt × en sintético](../avaliar/resultados-pt-en.md) · [texto real pt-BR](../avaliar/publicos/README.md)
 - Skills (procedimentos): [jev-desenhar](../skills/jev-desenhar/SKILL.md) · [jev-integrar](../skills/jev-integrar/SKILL.md) · [jev-avaliar](../skills/jev-avaliar/SKILL.md) · [jev-manter](../skills/jev-manter/SKILL.md)

@@ -1,0 +1,56 @@
+{
+ "medicao": {
+  "ms": 308,
+  "input_tokens": 1797,
+  "modelo": "jev-1.13.0",
+  "perguntas": 7
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "same_listing": {
+    "type": "score",
+    "score": 1.98,
+    "confidence": 0.97,
+    "legend": {
+     "0": "They advertise different apartments: they name different buildings or different streets, or the descriptions state incompatible permanent features of the unit (one has a park view and the other faces the back with no view; north face versus south face; fireplace versus no fireplace; double-height versus standard ceiling; balcony versus no balcony).",
+     "1": "It cannot be told: they could be the same unit or an identical neighbouring unit of the same building. Neither description gives details of the unit that match, or one listing names no building or street and both are generic, or one says the unit is furnished and the other says it is empty.",
+     "2": "They advertise one and the same apartment unit: the same building or street (or one of them omits the address) and the details of the unit that are described coincide (same view, same sun orientation, same fireplace, same floor material, same balcony features). Different wording, a different asking price, an area gap that `numeric_checks` says is explained by a second area figure, or furniture mentioned in only one listing do not make them different."
+    },
+    "probabilities": {
+     "0": 0.0,
+     "1": 0.02,
+     "2": 0.98
+    }
+   },
+   "same_building_or_street": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "address_conflict": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "layout_contradiction": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "fixed_contradiction": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "state_contradiction": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "shared_distinctive_details": {
+    "type": "noul",
+    "noul": 0.96
+   }
+  },
+  "usage": {
+   "input_tokens": 1797,
+   "output_tokens": 138
+  }
+ }
+}

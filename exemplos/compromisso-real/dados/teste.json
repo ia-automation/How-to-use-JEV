@@ -1,0 +1,2283 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CR-T001",
+   "data_referencia": "2026-10-05",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Paula",
+     "texto": "Nanda, você atualiza a base de conhecimento com o erro 502 amanhã?"
+    },
+    {
+     "id": "m2",
+     "autor": "Nanda",
+     "texto": "Atualizo."
+    },
+    {
+     "id": "m3",
+     "autor": "Duda",
+     "texto": "Nanda, deixa comigo, fui eu que resolvi o caso."
+    },
+    {
+     "id": "m4",
+     "autor": "Nanda",
+     "texto": "Melhor ainda, obrigada."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "deixa comigo, fui eu que resolvi o caso",
+     "responsavel_candidato": "Duda"
+    },
+    {
+     "id": "k2",
+     "trecho": "você atualiza a base de conhecimento com o erro 502 amanhã?",
+     "responsavel_candidato": "Nanda"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-10-06",
+    "k2": null
+   },
+   "nota": "difícil: cancelamento implícito — a tarefa troca de dono ('deixa comigo'); o compromisso de Nanda cai e o de Duda herda o prazo do pedido"
+  },
+  {
+   "id": "CR-T002",
+   "data_referencia": "2026-11-27",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Hugo, a apresentação de resultados?"
+    },
+    {
+     "id": "m2",
+     "autor": "Hugo",
+     "texto": "Fica para a semana que vem, ainda não tenho os números de novembro."
+    },
+    {
+     "id": "m3",
+     "autor": "Lívia",
+     "texto": "Qual dia? Preciso marcar com o cliente."
+    },
+    {
+     "id": "m4",
+     "autor": "Hugo",
+     "texto": "Ainda não sei, te digo na segunda."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Fica para a semana que vem",
+     "responsavel_candidato": "Hugo"
+    },
+    {
+     "id": "k2",
+     "trecho": "te digo na segunda",
+     "responsavel_candidato": "Hugo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-11-30"
+   },
+   "nota": "difícil: prazo — compromisso sem dia ('semana que vem') tem `prazo` null; o que tem data é o aviso de segunda"
+  },
+  {
+   "id": "CR-T003",
+   "data_referencia": "2026-12-28",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Guto",
+     "texto": "Ivo, a renovação do domínio vence quando?"
+    },
+    {
+     "id": "m2",
+     "autor": "Ivo",
+     "texto": "Dia 3. Eu renovo na sexta."
+    },
+    {
+     "id": "m3",
+     "autor": "Guto",
+     "texto": "E o backup anual?"
+    },
+    {
+     "id": "m4",
+     "autor": "Ivo",
+     "texto": "Rodo no dia 2."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu renovo na sexta.",
+     "responsavel_candidato": "Ivo"
+    },
+    {
+     "id": "k2",
+     "trecho": "Rodo no dia 2.",
+     "responsavel_candidato": "Ivo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2027-01-01",
+    "k2": "2027-01-02"
+   },
+   "nota": "difícil: prazo — virada de ano: a sexta é 2027-01-01 e o dia 2 é 2027-01-02 (sem ajuste de feriado)"
+  },
+  {
+   "id": "CR-T004",
+   "data_referencia": "2026-10-22",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Beto",
+     "texto": "Cris, manda o DARF para o cliente hoje?"
+    },
+    {
+     "id": "m2",
+     "autor": "Cris",
+     "texto": "Mando agora."
+    },
+    {
+     "id": "m3",
+     "autor": "Beto",
+     "texto": "Eu ligo para confirmar o recebimento amanhã."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Mando agora.",
+     "responsavel_candidato": "Cris"
+    },
+    {
+     "id": "k2",
+     "trecho": "Eu ligo para confirmar o recebimento amanhã.",
+     "responsavel_candidato": "Beto"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-22",
+    "k2": "2026-10-23"
+   },
+   "nota": "fácil: dois compromissos diretos"
+  },
+  {
+   "id": "CR-T005",
+   "data_referencia": "2026-12-10",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Paula",
+     "texto": "O cliente mandou: \"o técnico Ígor prometeu voltar na sexta para trocar a fonte\"."
+    },
+    {
+     "id": "m2",
+     "autor": "Ígor",
+     "texto": "Eu não prometi sexta, falei que dependia da peça chegar."
+    },
+    {
+     "id": "m3",
+     "autor": "Paula",
+     "texto": "E a peça?"
+    },
+    {
+     "id": "m4",
+     "autor": "Ígor",
+     "texto": "Chega na terça. Vou lá na quarta."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "o técnico Ígor prometeu voltar na sexta para trocar a fonte",
+     "responsavel_candidato": "Ígor"
+    },
+    {
+     "id": "k2",
+     "trecho": "Vou lá na quarta.",
+     "responsavel_candidato": "Ígor"
+    }
+   ],
+   "vereditos": {
+    "k1": "citacao_antiga",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-12-16"
+   },
+   "nota": "difícil: citação antiga — promessa atribuída pelo cliente e contestada pelo responsável; vale o que ele assume agora"
+  },
+  {
+   "id": "CR-T006",
+   "data_referencia": "2026-10-05",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Marina",
+     "texto": "Leo, a release notes sai quando?"
+    },
+    {
+     "id": "m2",
+     "autor": "Leo",
+     "texto": "Publico amanhã."
+    },
+    {
+     "id": "m3",
+     "autor": "Leo",
+     "texto": "Corrigindo: amanhã é o treinamento. Publico depois de amanhã."
+    },
+    {
+     "id": "m4",
+     "autor": "Marina",
+     "texto": "Ok, quarta então."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Publico depois de amanhã.",
+     "responsavel_candidato": "Leo"
+    },
+    {
+     "id": "k2",
+     "trecho": "Publico amanhã.",
+     "responsavel_candidato": "Leo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-10-07",
+    "k2": null
+   },
+   "nota": "difícil: correção tardia — o próprio autor troca a data na mensagem seguinte; o primeiro trecho é cancelado"
+  },
+  {
+   "id": "CR-T007",
+   "data_referencia": "2026-12-10",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Hugo, o relatório de dezembro até dia 18. Tati, o vídeo de fim de ano até dia 16."
+    },
+    {
+     "id": "m2",
+     "autor": "Tati",
+     "texto": "Dia 16 fechado."
+    },
+    {
+     "id": "m3",
+     "autor": "Hugo",
+     "texto": "Dia 18 tá em cima das minhas férias, começo dia 17."
+    },
+    {
+     "id": "m4",
+     "autor": "Lívia",
+     "texto": "Então antecipa para o dia 16 também?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Tati, o vídeo de fim de ano até dia 16.",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k2",
+     "trecho": "Então antecipa para o dia 16 também?",
+     "responsavel_candidato": "Hugo"
+    },
+    {
+     "id": "k3",
+     "trecho": "Hugo, o relatório de dezembro até dia 18.",
+     "responsavel_candidato": "Hugo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "pedido_sem_aceite",
+    "k3": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-12-16",
+    "k2": "2026-12-16",
+    "k3": null
+   },
+   "nota": "difícil: pedido sem aceite — o primeiro pedido a Hugo é contestado e trocado por outro (cancelado); o novo termina a conversa sem resposta"
+  },
+  {
+   "id": "CR-T008",
+   "data_referencia": "2026-11-03",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Duda",
+     "texto": "Fábio, você visita o cliente do galpão na sexta?"
+    },
+    {
+     "id": "m2",
+     "autor": "Fábio",
+     "texto": "Visito."
+    },
+    {
+     "id": "m3",
+     "autor": "Paula",
+     "texto": "Fábio vai estar de folga na sexta. Ígor, você vai no lugar dele?"
+    },
+    {
+     "id": "m4",
+     "autor": "Ígor",
+     "texto": "Vou, sem problema."
+    },
+    {
+     "id": "m5",
+     "autor": "Fábio",
+     "texto": "Valeu, Ígor!"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Ígor, você vai no lugar dele?",
+     "responsavel_candidato": "Ígor"
+    },
+    {
+     "id": "k2",
+     "trecho": "você visita o cliente do galpão na sexta?",
+     "responsavel_candidato": "Fábio"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-11-06",
+    "k2": null
+   },
+   "nota": "difícil: correção tardia — o dono muda depois do aceite; o compromisso de Fábio é cancelado e o de Ígor herda a sexta"
+  },
+  {
+   "id": "CR-T009",
+   "data_referencia": "2026-10-26",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Guto",
+     "texto": "Ivo, quando você consegue olhar a dívida técnica do módulo de permissões?"
+    },
+    {
+     "id": "m2",
+     "autor": "Ivo",
+     "texto": "Em breve. Assim que fechar a sprint eu olho."
+    },
+    {
+     "id": "m3",
+     "autor": "Guto",
+     "texto": "E o bug do convite duplicado?"
+    },
+    {
+     "id": "m4",
+     "autor": "Ivo",
+     "texto": "Esse eu resolvo em 2 dias."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Assim que fechar a sprint eu olho.",
+     "responsavel_candidato": "Ivo"
+    },
+    {
+     "id": "k2",
+     "trecho": "Esse eu resolvo em 2 dias.",
+     "responsavel_candidato": "Ivo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-28"
+   },
+   "nota": "difícil: prazo — 'em breve / assim que fechar a sprint' é compromisso sem data (ordem do próprio trabalho, não condição de terceiro); 'em 2 dias' = dias corridos"
+  },
+  {
+   "id": "CR-T010",
+   "data_referencia": "2026-10-08",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Cliente perguntou quando recebe o relatório mensal."
+    },
+    {
+     "id": "m2",
+     "autor": "Tati",
+     "texto": "A gente manda até o dia 12."
+    },
+    {
+     "id": "m3",
+     "autor": "Lívia",
+     "texto": "Posso prometer isso para ele?"
+    },
+    {
+     "id": "m4",
+     "autor": "Tati",
+     "texto": "Pode, eu mesma envio."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "A gente manda até o dia 12.",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k2",
+     "trecho": "Pode, eu mesma envio.",
+     "responsavel_candidato": "Tati"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-12",
+    "k2": "2026-10-12"
+   },
+   "nota": "difícil: responsável ambíguo — 'a gente' dito por quem depois assume em primeira pessoa; o segundo trecho herda o dia 12"
+  },
+  {
+   "id": "CR-T011",
+   "data_referencia": "2026-10-06",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Alguém consegue ligar para a gráfica hoje e confirmar a tiragem?"
+    },
+    {
+     "id": "m2",
+     "autor": "Jonas",
+     "texto": "Tô em gravação o dia todo."
+    },
+    {
+     "id": "m3",
+     "autor": "Tati",
+     "texto": "Eu também tô fora, reunião no cliente."
+    },
+    {
+     "id": "m4",
+     "autor": "Lívia",
+     "texto": "Tá, vejo isso depois."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Alguém consegue ligar para a gráfica hoje e confirmar a tiragem?",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k2",
+     "trecho": "Alguém consegue ligar para a gráfica hoje e confirmar a tiragem?",
+     "responsavel_candidato": "Jonas"
+    }
+   ],
+   "vereditos": {
+    "k1": "pedido_sem_aceite",
+    "k2": "pedido_sem_aceite"
+   },
+   "prazo": {
+    "k1": "2026-10-06",
+    "k2": "2026-10-06"
+   },
+   "nota": "difícil: responsável ambíguo — pedido para 'alguém'; os dois candidatos recusam e ninguém assume: segue pedido sem aceite (a necessidade continua sem dono)"
+  },
+  {
+   "id": "CR-T012",
+   "data_referencia": "2026-10-22",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Sônia",
+     "texto": "O cliente quer o parecer até dia 28. Aline faz."
+    },
+    {
+     "id": "m2",
+     "autor": "Aline",
+     "texto": "Dia 28 eu tô no congresso, não consigo."
+    },
+    {
+     "id": "m3",
+     "autor": "Sônia",
+     "texto": "Vítor, você assume?"
+    },
+    {
+     "id": "m4",
+     "autor": "Vítor",
+     "texto": "Assumo, entrego no dia 28."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Assumo, entrego no dia 28.",
+     "responsavel_candidato": "Vítor"
+    },
+    {
+     "id": "k2",
+     "trecho": "Aline faz.",
+     "responsavel_candidato": "Aline"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-10-28",
+    "k2": null
+   },
+   "nota": "difícil: responsável ambíguo — atribuição feita pela chefe, recusada pela atribuída e assumida por outro"
+  },
+  {
+   "id": "CR-T013",
+   "data_referencia": "2026-10-06",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Sônia",
+     "texto": "Vítor precisa assinar a procuração até amanhã."
+    },
+    {
+     "id": "m2",
+     "autor": "Aline",
+     "texto": "Ele está de férias até dia 13."
+    },
+    {
+     "id": "m3",
+     "autor": "Sônia",
+     "texto": "Então assino eu como substituta. Aline, você leva ao cartório na quinta?"
+    },
+    {
+     "id": "m4",
+     "autor": "Aline",
+     "texto": "Levo."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Vítor precisa assinar a procuração até amanhã.",
+     "responsavel_candidato": "Vítor"
+    },
+    {
+     "id": "k2",
+     "trecho": "Então assino eu como substituta.",
+     "responsavel_candidato": "Sônia"
+    },
+    {
+     "id": "k3",
+     "trecho": "você leva ao cartório na quinta?",
+     "responsavel_candidato": "Aline"
+    }
+   ],
+   "vereditos": {
+    "k1": "cancelado",
+    "k2": "compromisso",
+    "k3": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-07",
+    "k3": "2026-10-08"
+   },
+   "nota": "difícil: responsável ambíguo — tarefa atribuída a um ausente e assumida por quem a atribuiu; a assinatura herda o 'até amanhã'"
+  },
+  {
+   "id": "CR-T014",
+   "data_referencia": "2026-10-20",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Ígor",
+     "texto": "Visita técnica na escola: vou na quinta."
+    },
+    {
+     "id": "m2",
+     "autor": "Ígor",
+     "texto": "*sexta, quinta eu tô no outro cliente"
+    },
+    {
+     "id": "m3",
+     "autor": "Paula",
+     "texto": "Ok, sexta. Aviso a diretora."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "*sexta, quinta eu tô no outro cliente",
+     "responsavel_candidato": "Ígor"
+    },
+    {
+     "id": "k2",
+     "trecho": "vou na quinta",
+     "responsavel_candidato": "Ígor"
+    },
+    {
+     "id": "k3",
+     "trecho": "Aviso a diretora.",
+     "responsavel_candidato": "Paula"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado",
+    "k3": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-23",
+    "k2": null,
+    "k3": null
+   },
+   "nota": "difícil: correção tardia — o asterisco troca o dia; o trecho corrigido cita os dois dias e vale a sexta"
+  },
+  {
+   "id": "CR-T015",
+   "data_referencia": "2026-11-12",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Paula",
+     "texto": "Do resumo da reunião de outubro: \"Duda abre reclamação formal com o fornecedor até o dia 25\"."
+    },
+    {
+     "id": "m2",
+     "autor": "Paula",
+     "texto": "Isso foi feito e o fornecedor respondeu. Agora só falta cobrar a entrega. Fábio, pode cobrar eles amanhã?"
+    },
+    {
+     "id": "m3",
+     "autor": "Fábio",
+     "texto": "Cobro amanhã cedo."
+    },
+    {
+     "id": "m4",
+     "autor": "Duda",
+     "texto": "Se quiserem, eu escalo para o gerente deles na segunda."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Duda abre reclamação formal com o fornecedor até o dia 25",
+     "responsavel_candidato": "Duda"
+    },
+    {
+     "id": "k2",
+     "trecho": "Se quiserem, eu escalo para o gerente deles na segunda.",
+     "responsavel_candidato": "Duda"
+    },
+    {
+     "id": "k3",
+     "trecho": "pode cobrar eles amanhã?",
+     "responsavel_candidato": "Fábio"
+    }
+   ],
+   "vereditos": {
+    "k1": "citacao_antiga",
+    "k2": "proposta",
+    "k3": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-11-16",
+    "k3": "2026-11-13"
+   },
+   "nota": "difícil: citação antiga — item de resumo de reunião de outubro, já cumprido; o 'dia 25' dele não é prazo de agora"
+  },
+  {
+   "id": "CR-T016",
+   "data_referencia": "2026-10-06",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Da ata da reunião de 15/09: \"Tati apresenta o plano de mídia na sexta\"."
+    },
+    {
+     "id": "m2",
+     "autor": "Lívia",
+     "texto": "Isso aconteceu? Não achei o arquivo."
+    },
+    {
+     "id": "m3",
+     "autor": "Tati",
+     "texto": "Apresentei sim, está na pasta do cliente."
+    },
+    {
+     "id": "m4",
+     "autor": "Lívia",
+     "texto": "Achei, obrigada. Então só falta o cronograma, você me manda hoje?"
+    },
+    {
+     "id": "m5",
+     "autor": "Tati",
+     "texto": "Mando até as 18h."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Mando até as 18h.",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k2",
+     "trecho": "Tati apresenta o plano de mídia na sexta",
+     "responsavel_candidato": "Tati"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "citacao_antiga"
+   },
+   "prazo": {
+    "k1": "2026-10-06",
+    "k2": null
+   },
+   "nota": "difícil: citação antiga — linha de ata de setembro, já cumprida; a 'sexta' dela não é a desta semana"
+  },
+  {
+   "id": "CR-T017",
+   "data_referencia": "2026-12-10",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Sônia",
+     "texto": "Vítor, você revisa o contrato de locação do cliente novo até segunda?"
+    },
+    {
+     "id": "m2",
+     "autor": "Vítor",
+     "texto": "Segunda é o prazo do recurso da transportadora..."
+    },
+    {
+     "id": "m3",
+     "autor": "Sônia",
+     "texto": "Aline, e você, consegue organizar o arquivo morto este mês?"
+    },
+    {
+     "id": "m4",
+     "autor": "Aline",
+     "texto": "Que tal eu começar pelas caixas de 2020 e a gente vê o resto depois?"
+    },
+    {
+     "id": "m5",
+     "autor": "Sônia",
+     "texto": "Deixa eu pensar, te falo amanhã."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "você revisa o contrato de locação do cliente novo até segunda?",
+     "responsavel_candidato": "Vítor"
+    },
+    {
+     "id": "k2",
+     "trecho": "consegue organizar o arquivo morto este mês?",
+     "responsavel_candidato": "Aline"
+    },
+    {
+     "id": "k3",
+     "trecho": "Que tal eu começar pelas caixas de 2020 e a gente vê o resto depois?",
+     "responsavel_candidato": "Aline"
+    }
+   ],
+   "vereditos": {
+    "k1": "pedido_sem_aceite",
+    "k2": "pedido_sem_aceite",
+    "k3": "proposta"
+   },
+   "prazo": {
+    "k1": "2026-12-14",
+    "k2": null,
+    "k3": null
+   },
+   "nota": "difícil: pedido sem aceite — a resposta de Vítor só expõe o conflito de agenda; a contraproposta de Aline ainda não foi aceita, então não substitui o pedido (são duas entregas diferentes: o arquivo inteiro e as caixas de 2020)"
+  },
+  {
+   "id": "CR-T018",
+   "data_referencia": "2026-10-26",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Hugo",
+     "texto": "Jonas, pode entregar o storyboard amanhã?"
+    },
+    {
+     "id": "m2",
+     "autor": "Jonas",
+     "texto": "Amanhã? Qual versão, a de 30 ou a de 15 segundos?"
+    },
+    {
+     "id": "m3",
+     "autor": "Hugo",
+     "texto": "A de 30."
+    },
+    {
+     "id": "m4",
+     "autor": "Jonas",
+     "texto": "Hum. Deixa eu ver o que tenho aqui."
+    },
+    {
+     "id": "m5",
+     "autor": "Hugo",
+     "texto": "Enquanto isso eu reservo a sala de edição para quarta."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "eu reservo a sala de edição para quarta",
+     "responsavel_candidato": "Hugo"
+    },
+    {
+     "id": "k2",
+     "trecho": "pode entregar o storyboard amanhã?",
+     "responsavel_candidato": "Jonas"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "pedido_sem_aceite"
+   },
+   "prazo": {
+    "k1": "2026-10-28",
+    "k2": "2026-10-27"
+   },
+   "nota": "difícil: pedido sem aceite — o destinatário responde com pergunta e evasiva ('deixa eu ver'); nunca diz sim"
+  },
+  {
+   "id": "CR-T019",
+   "data_referencia": "2026-11-03",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Hugo, você consegue entregar a planilha de verba até quinta?"
+    },
+    {
+     "id": "m2",
+     "autor": "Hugo",
+     "texto": "Quinta? Tô com três entregas no mesmo dia..."
+    },
+    {
+     "id": "m3",
+     "autor": "Lívia",
+     "texto": "Tati, que tal você adiantar as artes do carrossel?"
+    },
+    {
+     "id": "m4",
+     "autor": "Tati",
+     "texto": "Posso ver isso, mas não prometo nada."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "você consegue entregar a planilha de verba até quinta?",
+     "responsavel_candidato": "Hugo"
+    },
+    {
+     "id": "k2",
+     "trecho": "que tal você adiantar as artes do carrossel?",
+     "responsavel_candidato": "Tati"
+    }
+   ],
+   "vereditos": {
+    "k1": "pedido_sem_aceite",
+    "k2": "pedido_sem_aceite"
+   },
+   "prazo": {
+    "k1": "2026-11-05",
+    "k2": null
+   },
+   "nota": "difícil: pedido sem aceite — reticências e 'não prometo nada' não são aceite; os dois pedidos seguem sem dono"
+  },
+  {
+   "id": "CR-T020",
+   "data_referencia": "2026-10-09",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Leo",
+     "texto": "Bia, você roda o script de limpeza de logs hoje?"
+    },
+    {
+     "id": "m2",
+     "autor": "Bia",
+     "texto": "Rodo hoje à tarde."
+    },
+    {
+     "id": "m3",
+     "autor": "Marina",
+     "texto": "Não roda não: a auditoria pediu para preservar os logs até o fim do ano."
+    },
+    {
+     "id": "m4",
+     "autor": "Bia",
+     "texto": "Ih, verdade. Então fica sem rodar."
+    },
+    {
+     "id": "m5",
+     "autor": "Leo",
+     "texto": "Certo. Marina, você confirma com a auditoria a data exata de liberação?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "você confirma com a auditoria a data exata de liberação?",
+     "responsavel_candidato": "Marina"
+    },
+    {
+     "id": "k2",
+     "trecho": "Rodo hoje à tarde.",
+     "responsavel_candidato": "Bia"
+    }
+   ],
+   "vereditos": {
+    "k1": "pedido_sem_aceite",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": null
+   },
+   "nota": "difícil: cancelamento implícito — a ordem da auditoria derruba o compromisso; o pedido final fecha a conversa sem resposta"
+  },
+  {
+   "id": "CR-T021",
+   "data_referencia": "2026-11-03",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Rafa",
+     "texto": "Dani, o endpoint de estorno fica pronto essa semana?"
+    },
+    {
+     "id": "m2",
+     "autor": "Dani",
+     "texto": "Se nada pegar fogo, entrego na sexta."
+    },
+    {
+     "id": "m3",
+     "autor": "Rafa",
+     "texto": "Anotado, sexta."
+    },
+    {
+     "id": "m4",
+     "autor": "Caio",
+     "texto": "Eu poderia revisar no sábado, mas prefiro não trabalhar no fim de semana."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu poderia revisar no sábado, mas prefiro não trabalhar no fim de semana.",
+     "responsavel_candidato": "Caio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Se nada pegar fogo, entrego na sexta.",
+     "responsavel_candidato": "Dani"
+    }
+   ],
+   "vereditos": {
+    "k1": "proposta",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-11-07",
+    "k2": "2026-11-06"
+   },
+   "nota": "difícil: aceite condicional — 'se nada pegar fogo' é ressalva de cortesia, não condição: compromisso; a oferta de Caio é hipótese que ele mesmo esvazia (proposta)"
+  },
+  {
+   "id": "CR-T022",
+   "data_referencia": "2026-10-07",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Paula",
+     "texto": "Fábio, pode entregar o laudo do equipamento amanhã?"
+    },
+    {
+     "id": "m2",
+     "autor": "Duda",
+     "texto": "Paula, o cliente da farmácia ligou de novo."
+    },
+    {
+     "id": "m3",
+     "autor": "Paula",
+     "texto": "Eu retorno para ele agora."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "pode entregar o laudo do equipamento amanhã?",
+     "responsavel_candidato": "Fábio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Eu retorno para ele agora.",
+     "responsavel_candidato": "Paula"
+    }
+   ],
+   "vereditos": {
+    "k1": "pedido_sem_aceite",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-08",
+    "k2": "2026-10-07"
+   },
+   "nota": "difícil: pedido sem aceite — a conversa muda de assunto e o pedido fica sem resposta"
+  },
+  {
+   "id": "CR-T023",
+   "data_referencia": "2026-10-22",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Tati",
+     "texto": "A cliente pediu três opções de logo até segunda. Jonas, consegue?"
+    },
+    {
+     "id": "m2",
+     "autor": "Jonas",
+     "texto": "Três opções até segunda é apertado."
+    },
+    {
+     "id": "m3",
+     "autor": "Tati",
+     "texto": "O que eu respondo para ela?"
+    },
+    {
+     "id": "m4",
+     "autor": "Jonas",
+     "texto": "Diz que mando duas na segunda e a terceira na quarta."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "mando duas na segunda",
+     "responsavel_candidato": "Jonas"
+    },
+    {
+     "id": "k2",
+     "trecho": "a terceira na quarta",
+     "responsavel_candidato": "Jonas"
+    },
+    {
+     "id": "k3",
+     "trecho": "A cliente pediu três opções de logo até segunda. Jonas, consegue?",
+     "responsavel_candidato": "Jonas"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso",
+    "k3": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-10-26",
+    "k2": "2026-10-28",
+    "k3": null
+   },
+   "nota": "difícil: correção tardia — contraproposta do responsável: o pedido original (três até segunda) é substituído por duas entregas com datas diferentes"
+  },
+  {
+   "id": "CR-T024",
+   "data_referencia": "2026-10-20",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Marina",
+     "texto": "Bia, você atualiza a biblioteca de PDF essa semana?"
+    },
+    {
+     "id": "m2",
+     "autor": "Bia",
+     "texto": "Atualizo na quinta."
+    },
+    {
+     "id": "m3",
+     "autor": "Leo",
+     "texto": "Já atualizei ontem junto com o resto das dependências."
+    },
+    {
+     "id": "m4",
+     "autor": "Bia",
+     "texto": "Ah, ótimo. Então eu uso a quinta para revisar o changelog."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Atualizo na quinta.",
+     "responsavel_candidato": "Bia"
+    },
+    {
+     "id": "k2",
+     "trecho": "Então eu uso a quinta para revisar o changelog.",
+     "responsavel_candidato": "Bia"
+    }
+   ],
+   "vereditos": {
+    "k1": "cancelado",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-22"
+   },
+   "nota": "difícil: cancelamento implícito — o trabalho já foi feito por outro; no lugar nasce um compromisso novo na mesma data"
+  },
+  {
+   "id": "CR-T025",
+   "data_referencia": "2026-10-09",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Guto",
+     "texto": "Helô, você termina a tela de exportação até quarta?"
+    },
+    {
+     "id": "m2",
+     "autor": "Helô",
+     "texto": "Termino."
+    },
+    {
+     "id": "m3",
+     "autor": "Ivo",
+     "texto": "Eu faço os testes dela na quinta."
+    },
+    {
+     "id": "m4",
+     "autor": "Guto",
+     "texto": "Mudança: o produto tirou a exportação do escopo da versão. Fica para o ano que vem."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu faço os testes dela na quinta.",
+     "responsavel_candidato": "Ivo"
+    },
+    {
+     "id": "k2",
+     "trecho": "você termina a tela de exportação até quarta?",
+     "responsavel_candidato": "Helô"
+    }
+   ],
+   "vereditos": {
+    "k1": "cancelado",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": null
+   },
+   "nota": "difícil: cancelamento implícito — a funcionalidade saiu do escopo; os dois compromissos caem sem ninguém dizer 'cancela'"
+  },
+  {
+   "id": "CR-T026",
+   "data_referencia": "2026-10-08",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Beto",
+     "texto": "Achei o e-mail de julho: \"Cris, favor enviar o balanço até sexta. Obrigado.\" Você lembra se foi?"
+    },
+    {
+     "id": "m2",
+     "autor": "Cris",
+     "texto": "Foi sim, no mesmo dia."
+    },
+    {
+     "id": "m3",
+     "autor": "Beto",
+     "texto": "Então o que o banco pede agora é o balancete de setembro."
+    },
+    {
+     "id": "m4",
+     "autor": "Cris",
+     "texto": "Esse eu preparo e mando na terça."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Cris, favor enviar o balanço até sexta.",
+     "responsavel_candidato": "Cris"
+    },
+    {
+     "id": "k2",
+     "trecho": "Esse eu preparo e mando na terça.",
+     "responsavel_candidato": "Cris"
+    }
+   ],
+   "vereditos": {
+    "k1": "citacao_antiga",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-13"
+   },
+   "nota": "difícil: citação antiga — pedido de julho colado na conversa; fora das aspas pareceria pedido sem aceite com prazo na sexta"
+  },
+  {
+   "id": "CR-T027",
+   "data_referencia": "2026-10-05",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Helô",
+     "texto": "Entrego o protótipo da busca na sexta."
+    },
+    {
+     "id": "m2",
+     "autor": "Guto",
+     "texto": "Sexta é tarde, a demo é quinta de manhã. Consegue quarta?"
+    },
+    {
+     "id": "m3",
+     "autor": "Helô",
+     "texto": "Quarta consigo uma versão sem filtros."
+    },
+    {
+     "id": "m4",
+     "autor": "Guto",
+     "texto": "Serve. Quarta, sem filtros."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Quarta consigo uma versão sem filtros.",
+     "responsavel_candidato": "Helô"
+    },
+    {
+     "id": "k2",
+     "trecho": "Entrego o protótipo da busca na sexta.",
+     "responsavel_candidato": "Helô"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-10-07",
+    "k2": null
+   },
+   "nota": "difícil: correção tardia — prazo renegociado: a contraoferta de quarta é aceita e substitui a sexta"
+  },
+  {
+   "id": "CR-T028",
+   "data_referencia": "2026-11-12",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Beto",
+     "texto": "Cris, o cliente da oficina quer a rescisão calculada para 18/11."
+    },
+    {
+     "id": "m2",
+     "autor": "Cris",
+     "texto": "Calculo e mando no dia 17."
+    },
+    {
+     "id": "m3",
+     "autor": "Beto",
+     "texto": "Esquece, ele ligou agora: desistiu de demitir o funcionário."
+    },
+    {
+     "id": "m4",
+     "autor": "Cris",
+     "texto": "Melhor assim."
+    },
+    {
+     "id": "m5",
+     "autor": "Beto",
+     "texto": "Mas mantém a conferência do FGTS dele que você ia fazer, até dia 20."
+    },
+    {
+     "id": "m6",
+     "autor": "Cris",
+     "texto": "Mantenho."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "mantém a conferência do FGTS dele que você ia fazer, até dia 20",
+     "responsavel_candidato": "Cris"
+    },
+    {
+     "id": "k2",
+     "trecho": "Calculo e mando no dia 17.",
+     "responsavel_candidato": "Cris"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado"
+   },
+   "prazo": {
+    "k1": "2026-11-20",
+    "k2": null
+   },
+   "nota": "fácil: cancelamento explícito ('esquece') e pedido aceito"
+  },
+  {
+   "id": "CR-T029",
+   "data_referencia": "2026-11-03",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Duda",
+     "texto": "Como combinado ontem, o Fábio instala a atualização no servidor do cliente na quinta."
+    },
+    {
+     "id": "m2",
+     "autor": "Fábio",
+     "texto": "Isso, quinta às 8h."
+    },
+    {
+     "id": "m3",
+     "autor": "Duda",
+     "texto": "E o backup antes?"
+    },
+    {
+     "id": "m4",
+     "autor": "Fábio",
+     "texto": "Faço na quarta à noite."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "o Fábio instala a atualização no servidor do cliente na quinta",
+     "responsavel_candidato": "Fábio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Faço na quarta à noite.",
+     "responsavel_candidato": "Fábio"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-11-05",
+    "k2": "2026-11-04"
+   },
+   "nota": "difícil: citação antiga — 'como combinado ontem' remete a um acordo anterior, mas o responsável o reafirma agora: é compromisso vivo, não citação"
+  },
+  {
+   "id": "CR-T030",
+   "data_referencia": "2026-10-14",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Jonas ou Hugo, um de vocês fecha o orçamento da feira até sexta."
+    },
+    {
+     "id": "m2",
+     "autor": "Hugo",
+     "texto": "Eu fecho."
+    },
+    {
+     "id": "m3",
+     "autor": "Jonas",
+     "texto": "Valeu, Hugo. Eu fico com o briefing do estande, então."
+    },
+    {
+     "id": "m4",
+     "autor": "Lívia",
+     "texto": "Briefing para quando?"
+    },
+    {
+     "id": "m5",
+     "autor": "Jonas",
+     "texto": "Segunda."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu fico com o briefing do estande, então.",
+     "responsavel_candidato": "Jonas"
+    },
+    {
+     "id": "k2",
+     "trecho": "Jonas ou Hugo, um de vocês fecha o orçamento da feira até sexta.",
+     "responsavel_candidato": "Jonas"
+    },
+    {
+     "id": "k3",
+     "trecho": "Eu fecho.",
+     "responsavel_candidato": "Hugo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "cancelado",
+    "k3": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-19",
+    "k2": null,
+    "k3": "2026-10-16"
+   },
+   "nota": "difícil: responsável ambíguo — pedido para 'um de vocês': quem assume é Hugo; para Jonas esse pedido morre (cancelado) e nasce outro compromisso, com data dita depois"
+  },
+  {
+   "id": "CR-T031",
+   "data_referencia": "2026-10-22",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Rafa",
+     "texto": "Caio, sobe o hotfix do boleto hoje à noite?"
+    },
+    {
+     "id": "m2",
+     "autor": "Caio",
+     "texto": "Fechado."
+    },
+    {
+     "id": "m3",
+     "autor": "Rafa",
+     "texto": "Dani, e você acompanha o monitoramento amanhã cedo?"
+    },
+    {
+     "id": "m4",
+     "autor": "Dani",
+     "texto": "Amanhã cedo eu tenho médico, só chego 10h."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "você acompanha o monitoramento amanhã cedo?",
+     "responsavel_candidato": "Dani"
+    },
+    {
+     "id": "k2",
+     "trecho": "sobe o hotfix do boleto hoje à noite?",
+     "responsavel_candidato": "Caio"
+    }
+   ],
+   "vereditos": {
+    "k1": "pedido_sem_aceite",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-23",
+    "k2": "2026-10-22"
+   },
+   "nota": "difícil: aceite curto — 'Fechado.' aceita; 'tenho médico' recusa sem dizer não e deixa o pedido sem dono"
+  },
+  {
+   "id": "CR-T032",
+   "data_referencia": "2026-10-20",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Nanda",
+     "texto": "Posso montar um FAQ com as dúvidas da semana, se acharem útil."
+    },
+    {
+     "id": "m2",
+     "autor": "Ígor",
+     "texto": "Boa ideia. Mas antes temos que zerar a fila."
+    },
+    {
+     "id": "m3",
+     "autor": "Nanda",
+     "texto": "Verdade."
+    },
+    {
+     "id": "m4",
+     "autor": "Ígor",
+     "texto": "Eu fecho os chamados antigos até o fim da semana."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu fecho os chamados antigos até o fim da semana.",
+     "responsavel_candidato": "Ígor"
+    },
+    {
+     "id": "k2",
+     "trecho": "Posso montar um FAQ com as dúvidas da semana, se acharem útil.",
+     "responsavel_candidato": "Nanda"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "proposta"
+   },
+   "prazo": {
+    "k1": "2026-10-23",
+    "k2": null
+   },
+   "nota": "difícil: proposta × compromisso — 'boa ideia' elogia, não aceita; a oferta segue proposta. 'Fim da semana' = sexta-feira"
+  },
+  {
+   "id": "CR-T033",
+   "data_referencia": "2026-11-27",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Dani",
+     "texto": "Posso refatorar o serviço de e-mail na semana que vem, se o Rafa liberar a sprint."
+    },
+    {
+     "id": "m2",
+     "autor": "Rafa",
+     "texto": "Não, semana que vem a sprint é toda do fiscal. Deixa essa refatoração para lá."
+    },
+    {
+     "id": "m3",
+     "autor": "Dani",
+     "texto": "Tranquilo."
+    },
+    {
+     "id": "m4",
+     "autor": "Rafa",
+     "texto": "Mas o ajuste do template de boas-vindas você faz até terça?"
+    },
+    {
+     "id": "m5",
+     "autor": "Dani",
+     "texto": "Faço."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Posso refatorar o serviço de e-mail na semana que vem, se o Rafa liberar a sprint.",
+     "responsavel_candidato": "Dani"
+    },
+    {
+     "id": "k2",
+     "trecho": "o ajuste do template de boas-vindas você faz até terça?",
+     "responsavel_candidato": "Dani"
+    }
+   ],
+   "vereditos": {
+    "k1": "cancelado",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-12-01"
+   },
+   "nota": "difícil: proposta × compromisso — proposta recusada com todas as letras ('deixa para lá') é cancelada; não fica em aberto como proposta"
+  },
+  {
+   "id": "CR-T034",
+   "data_referencia": "2026-12-10",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Jonas",
+     "texto": "O pessoal do estúdio entrega as fotos tratadas na segunda."
+    },
+    {
+     "id": "m2",
+     "autor": "Lívia",
+     "texto": "Quem do estúdio? Você falou com eles?"
+    },
+    {
+     "id": "m3",
+     "autor": "Jonas",
+     "texto": "Falei com a Karen por telefone, ela confirmou segunda."
+    },
+    {
+     "id": "m4",
+     "autor": "Lívia",
+     "texto": "Ok. E a seleção das fotos, quem faz?"
+    },
+    {
+     "id": "m5",
+     "autor": "Jonas",
+     "texto": "Eu seleciono na terça."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu seleciono na terça.",
+     "responsavel_candidato": "Jonas"
+    },
+    {
+     "id": "k2",
+     "trecho": "O pessoal do estúdio entrega as fotos tratadas na segunda.",
+     "responsavel_candidato": "Karen"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-12-15",
+    "k2": "2026-12-14"
+   },
+   "nota": "difícil: responsável ambíguo — a responsável está fora da conversa, mas o aceite dela é relatado ('ela confirmou'): compromisso. Contraponto do compromisso feito em nome de quem não foi consultado"
+  },
+  {
+   "id": "CR-T035",
+   "data_referencia": "2026-10-29",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Duda",
+     "texto": "Fábio, o treinamento remoto do cliente novo fica para terça, né?"
+    },
+    {
+     "id": "m2",
+     "autor": "Fábio",
+     "texto": "Isso, terça às 10h eu dou o treinamento."
+    },
+    {
+     "id": "m3",
+     "autor": "Duda",
+     "texto": "Acabei de ver: o cliente pediu para adiar, sem data. Disse que avisa."
+    },
+    {
+     "id": "m4",
+     "autor": "Fábio",
+     "texto": "Ok, fico no aguardo."
+    },
+    {
+     "id": "m5",
+     "autor": "Duda",
+     "texto": "Eu mando o material de apoio para ele hoje mesmo assim."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "terça às 10h eu dou o treinamento",
+     "responsavel_candidato": "Fábio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Eu mando o material de apoio para ele hoje mesmo assim.",
+     "responsavel_candidato": "Duda"
+    }
+   ],
+   "vereditos": {
+    "k1": "cancelado",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-29"
+   },
+   "nota": "difícil: cancelamento implícito — adiado sem data pelo cliente: o compromisso de terça deixa de existir"
+  },
+  {
+   "id": "CR-T036",
+   "data_referencia": "2026-10-29",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Guto",
+     "texto": "Do README antigo: \"o Ivo vai migrar os testes para o novo runner até o fim do trimestre\"."
+    },
+    {
+     "id": "m2",
+     "autor": "Guto",
+     "texto": "Isso ainda vale? Ninguém tocou nisso."
+    },
+    {
+     "id": "m3",
+     "autor": "Ivo",
+     "texto": "Não vale mais, o runner novo foi descartado em agosto."
+    },
+    {
+     "id": "m4",
+     "autor": "Helô",
+     "texto": "Eu poderia limpar esse README na sexta, se ninguém se opuser."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Eu poderia limpar esse README na sexta, se ninguém se opuser.",
+     "responsavel_candidato": "Helô"
+    },
+    {
+     "id": "k2",
+     "trecho": "o Ivo vai migrar os testes para o novo runner até o fim do trimestre",
+     "responsavel_candidato": "Ivo"
+    }
+   ],
+   "vereditos": {
+    "k1": "proposta",
+    "k2": "citacao_antiga"
+   },
+   "prazo": {
+    "k1": "2026-10-30",
+    "k2": null
+   },
+   "nota": "difícil: citação antiga — documento antigo citado e declarado sem validade: é citação (nunca foi fala desta conversa), não cancelado; a oferta de Helô fica sem resposta"
+  },
+  {
+   "id": "CR-T037",
+   "data_referencia": "2026-10-29",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Hugo",
+     "texto": "Tati, você escreveu na semana passada: \"mando as legendas na terça\". Não chegou nada."
+    },
+    {
+     "id": "m2",
+     "autor": "Tati",
+     "texto": "Eu sei, travei na aprovação do cliente. Assim que ele aprovar o vídeo eu mando."
+    },
+    {
+     "id": "m3",
+     "autor": "Hugo",
+     "texto": "Tá, vou cobrar a aprovação dele hoje."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "mando as legendas na terça",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k2",
+     "trecho": "Assim que ele aprovar o vídeo eu mando.",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k3",
+     "trecho": "vou cobrar a aprovação dele hoje",
+     "responsavel_candidato": "Hugo"
+    }
+   ],
+   "vereditos": {
+    "k1": "citacao_antiga",
+    "k2": "proposta",
+    "k3": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": null,
+    "k3": "2026-10-29"
+   },
+   "nota": "difícil: citação antiga — fala da semana passada usada para cobrar; a renovação depende da aprovação do cliente (proposta, sem data)"
+  },
+  {
+   "id": "CR-T038",
+   "data_referencia": "2026-10-07",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Nanda",
+     "texto": "Posso ficar no plantão de sábado no lugar do Fábio, se ele quiser trocar."
+    },
+    {
+     "id": "m2",
+     "autor": "Fábio",
+     "texto": "Quero! Te devo uma."
+    },
+    {
+     "id": "m3",
+     "autor": "Paula",
+     "texto": "Trocado então: Nanda no sábado. Fábio, você cobre a segunda dela?"
+    },
+    {
+     "id": "m4",
+     "autor": "Fábio",
+     "texto": "Cubro."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Posso ficar no plantão de sábado no lugar do Fábio, se ele quiser trocar.",
+     "responsavel_candidato": "Nanda"
+    },
+    {
+     "id": "k2",
+     "trecho": "você cobre a segunda dela?",
+     "responsavel_candidato": "Fábio"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-10",
+    "k2": "2026-10-12"
+   },
+   "nota": "difícil: oferta aceita — a oferta condicionada ('se ele quiser') é aceita pelo próprio Fábio e confirmada pela gestora"
+  },
+  {
+   "id": "CR-T039",
+   "data_referencia": "2026-10-26",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Sônia",
+     "texto": "Aline, o contrato social alterado fica pronto quando?"
+    },
+    {
+     "id": "m2",
+     "autor": "Aline",
+     "texto": "Vou tentar terminar na quarta."
+    },
+    {
+     "id": "m3",
+     "autor": "Sônia",
+     "texto": "Preciso de certeza, o cliente viaja quinta."
+    },
+    {
+     "id": "m4",
+     "autor": "Aline",
+     "texto": "Então quarta está pronto, pode confirmar com ele."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Então quarta está pronto, pode confirmar com ele.",
+     "responsavel_candidato": "Aline"
+    },
+    {
+     "id": "k2",
+     "trecho": "Vou tentar terminar na quarta.",
+     "responsavel_candidato": "Aline"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-28",
+    "k2": "2026-10-28"
+   },
+   "nota": "difícil: aceite condicional — 'vou tentar' sozinho seria proposta; a própria autora firma a mesma entrega depois, então os dois trechos são o mesmo compromisso"
+  },
+  {
+   "id": "CR-T040",
+   "data_referencia": "2026-11-27",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Beto",
+     "texto": "Cris, o fechamento de novembro?"
+    },
+    {
+     "id": "m2",
+     "autor": "Cris",
+     "texto": "Fecho até o fim do mês."
+    },
+    {
+     "id": "m3",
+     "autor": "Beto",
+     "texto": "E as guias?"
+    },
+    {
+     "id": "m4",
+     "autor": "Cris",
+     "texto": "Emito no dia 5."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Fecho até o fim do mês.",
+     "responsavel_candidato": "Cris"
+    },
+    {
+     "id": "k2",
+     "trecho": "Emito no dia 5.",
+     "responsavel_candidato": "Cris"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-11-30",
+    "k2": "2026-12-05"
+   },
+   "nota": "difícil: prazo — 'dia 5' já passou neste mês: é o do mês seguinte (cai num sábado; a convenção não ajusta para dia útil)"
+  },
+  {
+   "id": "CR-T041",
+   "data_referencia": "2026-10-14",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Lívia",
+     "texto": "Divisão da semana: Tati, você entrega o calendário editorial na sexta?"
+    },
+    {
+     "id": "m2",
+     "autor": "Tati",
+     "texto": "Entrego."
+    },
+    {
+     "id": "m3",
+     "autor": "Lívia",
+     "texto": "Hugo, as métricas de setembro até amanhã?"
+    },
+    {
+     "id": "m4",
+     "autor": "Hugo",
+     "texto": "Até amanhã."
+    },
+    {
+     "id": "m5",
+     "autor": "Jonas",
+     "texto": "Se quiserem eu faço a capa do relatório."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "você entrega o calendário editorial na sexta?",
+     "responsavel_candidato": "Tati"
+    },
+    {
+     "id": "k2",
+     "trecho": "as métricas de setembro até amanhã?",
+     "responsavel_candidato": "Hugo"
+    },
+    {
+     "id": "k3",
+     "trecho": "Se quiserem eu faço a capa do relatório.",
+     "responsavel_candidato": "Jonas"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso",
+    "k3": "proposta"
+   },
+   "prazo": {
+    "k1": "2026-10-16",
+    "k2": "2026-10-15",
+    "k3": null
+   },
+   "nota": "fácil: dois pedidos aceitos e uma oferta sem resposta"
+  },
+  {
+   "id": "CR-T042",
+   "data_referencia": "2026-10-07",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Caio",
+     "texto": "A gente devia escrever testes para o módulo de cobrança."
+    },
+    {
+     "id": "m2",
+     "autor": "Rafa",
+     "texto": "Devia mesmo."
+    },
+    {
+     "id": "m3",
+     "autor": "Caio",
+     "texto": "Um dia eu faço isso."
+    },
+    {
+     "id": "m4",
+     "autor": "Rafa",
+     "texto": "Enquanto isso, você corrige o arredondamento até sexta?"
+    },
+    {
+     "id": "m5",
+     "autor": "Caio",
+     "texto": "Corrijo até sexta."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "A gente devia escrever testes para o módulo de cobrança.",
+     "responsavel_candidato": "Caio"
+    },
+    {
+     "id": "k2",
+     "trecho": "Um dia eu faço isso.",
+     "responsavel_candidato": "Caio"
+    },
+    {
+     "id": "k3",
+     "trecho": "Corrijo até sexta.",
+     "responsavel_candidato": "Caio"
+    }
+   ],
+   "vereditos": {
+    "k1": "proposta",
+    "k2": "proposta",
+    "k3": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": null,
+    "k3": "2026-10-09"
+   },
+   "nota": "difícil: proposta × compromisso — 'devia' e 'um dia eu faço' são intenção vaga, não tarefa"
+  },
+  {
+   "id": "CR-T043",
+   "data_referencia": "2026-11-12",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Sônia",
+     "texto": "Vítor, você protocola o recurso na segunda?"
+    },
+    {
+     "id": "m2",
+     "autor": "Vítor",
+     "texto": "Protocolo, desde que o cliente pague as custas até sexta."
+    },
+    {
+     "id": "m3",
+     "autor": "Sônia",
+     "texto": "Ele disse que paga, mas ainda não mandou comprovante."
+    },
+    {
+     "id": "m4",
+     "autor": "Vítor",
+     "texto": "Sem comprovante eu não protocolo."
+    },
+    {
+     "id": "m5",
+     "autor": "Sônia",
+     "texto": "Eu cobro o comprovante dele amanhã cedo."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Protocolo, desde que o cliente pague as custas até sexta.",
+     "responsavel_candidato": "Vítor"
+    },
+    {
+     "id": "k2",
+     "trecho": "Eu cobro o comprovante dele amanhã cedo.",
+     "responsavel_candidato": "Sônia"
+    }
+   ],
+   "vereditos": {
+    "k1": "proposta",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-11-16",
+    "k2": "2026-11-13"
+   },
+   "nota": "difícil: aceite condicional — a condição (custas pagas pelo cliente) não está cumprida e o responsável a reafirma: proposta com data"
+  },
+  {
+   "id": "CR-T044",
+   "data_referencia": "2026-10-14",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Ígor",
+     "texto": "O contrato diz: \"a contratada responderá em até 4 horas úteis\"."
+    },
+    {
+     "id": "m2",
+     "autor": "Ígor",
+     "texto": "Isso é cláusula, não é tarefa de ninguém hoje."
+    },
+    {
+     "id": "m3",
+     "autor": "Paula",
+     "texto": "Certo. Mas o chamado da prefeitura eu respondo em 2 dias úteis, já avisei eles."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "a contratada responderá em até 4 horas úteis",
+     "responsavel_candidato": "Paula"
+    },
+    {
+     "id": "k2",
+     "trecho": "o chamado da prefeitura eu respondo em 2 dias úteis",
+     "responsavel_candidato": "Paula"
+    }
+   ],
+   "vereditos": {
+    "k1": "citacao_antiga",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": null,
+    "k2": "2026-10-16"
+   },
+   "nota": "difícil: citação antiga — cláusula de contrato citada não é compromisso desta conversa; o compromisso é o da Paula, em dias úteis"
+  },
+  {
+   "id": "CR-T045",
+   "data_referencia": "2026-10-08",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Beto",
+     "texto": "Cris, dá para entregar a declaração do MEI amanhã?"
+    },
+    {
+     "id": "m2",
+     "autor": "Cris",
+     "texto": "Se a cliente me passar o faturamento de setembro hoje, entrego amanhã."
+    },
+    {
+     "id": "m3",
+     "autor": "Beto",
+     "texto": "Ela acabou de mandar, encaminhei no seu e-mail."
+    },
+    {
+     "id": "m4",
+     "autor": "Cris",
+     "texto": "Recebi. Então amanhã está entregue."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Então amanhã está entregue.",
+     "responsavel_candidato": "Cris"
+    },
+    {
+     "id": "k2",
+     "trecho": "Se a cliente me passar o faturamento de setembro hoje, entrego amanhã.",
+     "responsavel_candidato": "Cris"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-10-09",
+    "k2": "2026-10-09"
+   },
+   "nota": "difícil: aceite condicional — a condição é cumprida dentro do trecho ('recebi'); a proposta vira compromisso e os dois trechos falam da mesma entrega"
+  },
+  {
+   "id": "CR-T046",
+   "data_referencia": "2026-11-12",
+   "conversa": [
+    {
+     "id": "m1",
+     "autor": "Marina",
+     "texto": "Leo, a migração do Redis?"
+    },
+    {
+     "id": "m2",
+     "autor": "Leo",
+     "texto": "Terça que vem eu faço."
+    },
+    {
+     "id": "m3",
+     "autor": "Marina",
+     "texto": "E o relatório de capacidade?"
+    },
+    {
+     "id": "m4",
+     "autor": "Leo",
+     "texto": "Esse só dia 20."
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "k1",
+     "trecho": "Esse só dia 20.",
+     "responsavel_candidato": "Leo"
+    },
+    {
+     "id": "k2",
+     "trecho": "Terça que vem eu faço.",
+     "responsavel_candidato": "Leo"
+    }
+   ],
+   "vereditos": {
+    "k1": "compromisso",
+    "k2": "compromisso"
+   },
+   "prazo": {
+    "k1": "2026-11-20",
+    "k2": "2026-11-17"
+   },
+   "nota": "difícil: prazo — 'terça que vem' = primeira terça depois da referência; 'dia 20' = o deste mês"
+  }
+ ]
+}

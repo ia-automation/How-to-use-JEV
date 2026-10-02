@@ -1,0 +1,261 @@
+{
+ "versao": "2026-10-02b",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "TD-T01",
+   "condicao": "Ata que registra a aprovação da instalação de câmeras de monitoramento.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "A01",
+    "A03",
+    "A05",
+    "A08",
+    "A10"
+   ],
+   "documentos_indecidiveis": [
+    "A09"
+   ],
+   "secao_que_prova": {
+    "A01": "A01-s5",
+    "A03": "A03-s6",
+    "A05": "A05-s5",
+    "A08": "A08-s5",
+    "A10": "A10-s6"
+   },
+   "nota": "difícil: negada — instalação REJEITADA (A04, A11) é falso; seção parecida (controle de acesso por biometria, A07) é falso; teste de duas câmeras em comodato por noventa dias (A09) é indecidível"
+  },
+  {
+   "id": "TD-T02",
+   "condicao": "Contrato que se renova automaticamente ao fim do prazo se nenhuma das partes se manifestar.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L05",
+    "L06",
+    "S01",
+    "S03",
+    "S09"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s2",
+    "L05": "L05-s2",
+    "L06": "L06-s2",
+    "S01": "S01-s2",
+    "S03": "S03-s2",
+    "S09": "S09-s2"
+   },
+   "nota": "difícil: revogada — L09 e S05 preveem a renovação na cláusula de prazo e a afastam nas disposições finais (falso); 'NÃO se renovará' (L03, L08, S02, S07) é falso"
+  },
+  {
+   "id": "TD-T03",
+   "condicao": "Contrato de locação em que a garantia é prestada por fiador E a responsabilidade do fiador se estende até a efetiva devolução das chaves, inclusive na prorrogação.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L03",
+    "L10",
+    "L11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s8",
+    "L03": "L03-s8",
+    "L10": "L10-s8",
+    "L11": "L11-s8"
+   },
+   "nota": "difícil: duas seções — exige fiador na seção de garantia E a extensão nas disposições finais; L07 tem a frase 'até a devolução das chaves' mas a garantia é caução (falso); L05, L06, L09 têm fiador sem a extensão (falso)"
+  },
+  {
+   "id": "TD-T04",
+   "condicao": "O documento prevê a solução de controvérsias por arbitragem.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L02",
+    "L07",
+    "S03",
+    "S08"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L02": "L02-s7",
+    "L07": "L07-s7",
+    "S03": "S03-s6",
+    "S08": "S08-s7"
+   },
+   "nota": "difícil: termo só no título — L04, L08 e S05 têm 'arbitragem' no título da seção de foro, cujo texto só elege comarca (falso)"
+  },
+  {
+   "id": "TD-T05",
+   "condicao": "Contrato de prestação de serviços que prevê desconto, multa ou outra penalidade pelo descumprimento dos níveis de serviço (SLA).",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "S01",
+    "S03",
+    "S06",
+    "S08",
+    "S11"
+   ],
+   "documentos_indecidiveis": [
+    "S05"
+   ],
+   "secao_que_prova": {
+    "S01": "S01-s5",
+    "S03": "S03-s4",
+    "S06": "S06-s6",
+    "S08": "S08-s5",
+    "S11": "S11-s5"
+   },
+   "nota": "difícil: seção parecida de outro assunto — a multa por rescisão (S01, S06, S09) não é penalidade de SLA; níveis de serviço sem penalidade (S04, S10) é falso; 'poderá ensejar revisão do contrato' (S05) é indecidível"
+  },
+  {
+   "id": "TD-T06",
+   "condicao": "Ata com reajuste da taxa condominial igual ou superior a dez por cento (`reajuste_percentual` >= 10).",
+   "tipo": "numerica",
+   "documentos_verdadeiros": [
+    "A01",
+    "A03",
+    "A05",
+    "A11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "A01": "A01-s3",
+    "A03": "A03-s3",
+    "A05": "A05-s3",
+    "A11": "A11-s3"
+   },
+   "nota": "fácil para o código: `reajuste_percentual` é 0 quando a taxa foi mantida ou o reajuste rejeitado"
+  },
+  {
+   "id": "TD-T07",
+   "condicao": "Proposta comercial com validade inferior a quinze dias (`validade_dias` < 15).",
+   "tipo": "numerica",
+   "documentos_verdadeiros": [
+    "P02",
+    "P04",
+    "P08",
+    "P10"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "P02": "P02-s7",
+    "P04": "P04-s7",
+    "P08": "P08-s6",
+    "P10": "P10-s7"
+   },
+   "nota": "fácil para o código: quinze dias não é 'inferior a quinze'"
+  },
+  {
+   "id": "TD-T08",
+   "condicao": "O documento autoriza a presença de animais de estimação (no imóvel locado ou no condomínio).",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L03",
+    "L06",
+    "L10",
+    "A02",
+    "A07"
+   ],
+   "documentos_indecidiveis": [
+    "L08",
+    "A08"
+   ],
+   "secao_que_prova": {
+    "L03": "L03-s6",
+    "L06": "L06-s7",
+    "L10": "L10-s6",
+    "A02": "A02-s5",
+    "A07": "A07-s5"
+   },
+   "nota": "difícil: negada — 'Não é permitida' (L04) e 'MANTER a vedação' (A03, A10) são falsos; 'depende de consulta prévia' (L08) e comissão com tolerância provisória (A08) são indecidíveis; A06 cita animais só no título e diz que o ponto não foi discutido (falso)"
+  },
+  {
+   "id": "TD-T09",
+   "condicao": "Proposta comercial que inclui o treinamento da equipe do cliente no escopo.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "P01",
+    "P04",
+    "P06",
+    "P09"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "P01": "P01-s2",
+    "P04": "P04-s2",
+    "P06": "P06-s2",
+    "P09": "P09-s2"
+   },
+   "nota": "difícil: documento sem a cláusula — o escopo com implantação, suporte e manuais (P02, P03, P07, P10, P11) parece treinamento e é falso; 'treinamento NÃO está incluído' nas ressalvas (P05, P08) é falso"
+  },
+  {
+   "id": "TD-T10",
+   "condicao": "Ata de assembleia instalada com menos da metade das frações ideais presentes (`quorum_percentual` < 50).",
+   "tipo": "numerica",
+   "documentos_verdadeiros": [
+    "A02",
+    "A04",
+    "A06",
+    "A08",
+    "A10"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "A02": "A02-s1",
+    "A04": "A04-s1",
+    "A06": "A06-s1",
+    "A08": "A08-s1",
+    "A10": "A10-s1"
+   },
+   "nota": "fácil para o código: percentual na seção de abertura"
+  },
+  {
+   "id": "TD-T11",
+   "condicao": "Contrato de locação que proíbe a sublocação do imóvel.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L05",
+    "L06",
+    "L09",
+    "L11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s6",
+    "L05": "L05-s6",
+    "L06": "L06-s6",
+    "L09": "L09-s6",
+    "L11": "L11-s6"
+   },
+   "nota": "difícil: revogada — L02 veda a sublocação e revoga a vedação nas disposições finais (falso); L08 tem 'sublocação' no título de uma seção que só trata do uso do imóvel (falso); sublocação autorizada (L04, L07) é falso"
+  },
+  {
+   "id": "TD-T12",
+   "condicao": "Ata que registra a aprovação das contas da administração (ainda que com ressalvas).",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "A01",
+    "A02",
+    "A03",
+    "A05",
+    "A07",
+    "A08",
+    "A09"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "A01": "A01-s2",
+    "A02": "A02-s2",
+    "A03": "A03-s2",
+    "A05": "A05-s2",
+    "A07": "A07-s2",
+    "A08": "A08-s2",
+    "A09": "A09-s2"
+   },
+   "nota": "fácil: rejeitadas e adiadas são falsas; 'aprovadas com ressalvas' conta"
+  }
+ ]
+}

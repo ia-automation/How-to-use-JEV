@@ -1,0 +1,1327 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "PP-A001",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, procuro apê em pinheiros, 2 qts, até 600"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "finalidade"
+   ],
+   "proibidas": [
+    "orcamento",
+    "bairro",
+    "quartos"
+   ],
+   "nota": "difícil: valor ambíguo — 'até 600' sem operação é lido como R$ 600 mil; finalidade (compra × aluguel) resolve a unidade, orcamento não se repete"
+  },
+  {
+   "id": "PP-A002",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "quero alugar um apê no centro de curitiba, 1 quarto, até 600"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "orcamento"
+   ],
+   "proibidas": [
+    "finalidade",
+    "bairro",
+    "quartos",
+    "financiamento"
+   ],
+   "nota": "difícil: valor ambíguo — 'até 600' em aluguel (600/mês? 6 mil?); orcamento aceitável como confirmação de unidade"
+  },
+  {
+   "id": "PP-A003",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "a gente quer comprar nosso primeiro apê, em osasco ou carapicuíba, 2 quartos, consigo pagar uns 2500 por mês"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "orcamento"
+   ],
+   "proibidas": [
+    "finalidade",
+    "bairro",
+    "quartos",
+    "financiamento"
+   ],
+   "nota": "difícil: valor ambíguo — prestação em compra: financiamento respondido (vai financiar), valor total/entrada em aberto"
+  },
+  {
+   "id": "PP-A004",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! procuro casa pra alugar em campinas, barão geraldo, até 4 mil, pq meu labrador precisa de quintal"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "quartos"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "pet",
+    "financiamento"
+   ],
+   "nota": "difícil: já respondida de modo informal — 'meu labrador' responde pet"
+  },
+  {
+   "id": "PP-A005",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "quero 3 quartos em perdizes, pra comprar e morar, até 900"
+    },
+    {
+     "de": "agente",
+     "texto": "Tenho opções! Vai financiar?"
+    },
+    {
+     "de": "cliente",
+     "texto": "à vista, com a venda do meu apê atual"
+    },
+    {
+     "de": "agente",
+     "texto": "Ótimo, isso ajuda na negociação."
+    },
+    {
+     "de": "cliente",
+     "texto": "ah, pensando melhor 2 quartos tá bom, 3 passa do orçamento"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "vagas",
+    "prazo",
+    "pet",
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos",
+    "financiamento"
+   ],
+   "nota": "difícil: correção tardia — vale 2 quartos; quartos continua respondido"
+  },
+  {
+   "id": "PP-A006",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, mudei de ideia sobre moema, muito caro, quero olhar outra região"
+    }
+   ],
+   "campos_conhecidos": {
+    "bairro": "Moema",
+    "orcamento": 700000,
+    "finalidade": "compra para morar",
+    "quartos": 2
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "bairro"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "quartos"
+   ],
+   "nota": "difícil: campo conhecido contradito — SEM valor novo: bairro volta a ser aceitável; orçamento mantido"
+  },
+  {
+   "id": "PP-A007",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "e aí, conseguiu separar as opções que a gente combinou?"
+    }
+   ],
+   "campos_conhecidos": {
+    "finalidade": "compra para morar",
+    "orcamento": 550000,
+    "bairro": "Tatuapé",
+    "quartos": 2,
+    "vagas": 1,
+    "prazo": "até 6 meses",
+    "pet": false,
+    "financiamento": "financiamento com FGTS"
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos",
+    "vagas",
+    "prazo",
+    "pet",
+    "financiamento"
+   ],
+   "nota": "difícil: nada faltando — tudo no CRM; só responder"
+  },
+  {
+   "id": "PP-A008",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "vcs tem apê em botafogo? pra alugar"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "no_question_needed",
+    "orcamento",
+    "quartos"
+   ],
+   "proibidas": [
+    "finalidade",
+    "bairro",
+    "financiamento"
+   ],
+   "nota": "pergunta factual + essenciais faltando (regra 1)"
+  },
+  {
+   "id": "PP-A009",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "já falei pra outra atendente: compra, morar, vila mariana, 3 quartos, até 1,2 mi, financiado. não quero responder tudo de novo, só me manda o que tem"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos",
+    "financiamento"
+   ],
+   "nota": "difícil: cliente recusa repetição — só no_question_needed; vagas/prazo/pet ficam para depois"
+  },
+  {
+   "id": "PP-A010",
+   "conversa": [
+    {
+     "de": "agente",
+     "texto": "Separei este em Água Verde: 2 quartos, 1 vaga, aceita pet, R$ 3.300 + condomínio."
+    },
+    {
+     "de": "cliente",
+     "texto": "nossa, esse parece perfeito"
+    }
+   ],
+   "campos_conhecidos": {
+    "finalidade": "aluguel para morar",
+    "orcamento": 3500,
+    "bairro": "Água Verde",
+    "quartos": 2,
+    "pet": true
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "visita"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos",
+    "pet",
+    "financiamento"
+   ],
+   "nota": "imóvel específico com reação positiva em aluguel (regra 5)"
+  },
+  {
+   "id": "PP-A011",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "quero visitar aquele apê da rua augusta que vc me mandou, pode ser sábado?"
+    }
+   ],
+   "campos_conhecidos": {
+    "finalidade": "compra para morar",
+    "orcamento": 800000,
+    "bairro": "Consolação",
+    "quartos": 1
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos",
+    "visita"
+   ],
+   "nota": "visita já pedida pelo cliente — perguntar 'quer visitar?' é proibida"
+  },
+  {
+   "id": "PP-A012",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "sou investidor, quero um studio pra alugar no airbnb, zona sul de sp, à vista, até 450"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "vagas",
+    "prazo",
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos",
+    "financiamento",
+    "pet"
+   ],
+   "nota": "difícil: sem sentido no contexto — pet para investidor que não vai morar é proibida; studio responde quartos; zona sul responde bairro"
+  },
+  {
+   "id": "PP-A013",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, sou a mesma do cadastro de ontem, quero ver apês na tijuca"
+    }
+   ],
+   "campos_conhecidos": {
+    "orcamento": 2800,
+    "finalidade": "aluguel para morar"
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "quartos"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "financiamento"
+   ],
+   "nota": "campos do CRM + conversa: só falta uma essencial (regra 3) — 'quero ver apês' não dispensa a pergunta"
+  },
+  {
+   "id": "PP-A014",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "até 600, em santo andré, 3 qts"
+    }
+   ],
+   "campos_conhecidos": {
+    "finalidade": "compra para morar"
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "vagas",
+    "prazo",
+    "pet",
+    "financiamento",
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos"
+   ],
+   "nota": "difícil: valor ambíguo — compra conhecida pelo CRM, 'até 600' = R$ 600 mil; orcamento proibida"
+  },
+  {
+   "id": "PP-A015",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "tô vendo se compro ou alugo, ainda não decidi. precisa ser em pinheiros, 1 quarto, perto do metrô"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "orcamento"
+   ],
+   "proibidas": [
+    "finalidade",
+    "bairro",
+    "quartos"
+   ],
+   "nota": "difícil: já respondida de modo informal — finalidade respondida com 'não decidi': perguntar de novo é repetir; orçamento é o que destrava"
+  },
+  {
+   "id": "PP-A016",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "quero comprar pra morar, 2 quartos, até 750 mil, já tenho carta de crédito aprovada na caixa"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "bairro"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "quartos",
+    "financiamento"
+   ],
+   "nota": "difícil: já respondida de modo informal — carta de crédito aprovada responde financiamento; falta o bairro"
+  },
+  {
+   "id": "PP-A017",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "ah, no cadastro tá 2 quartos mas agora precisa ser 3, chegou bebê"
+    }
+   ],
+   "campos_conhecidos": {
+    "quartos": 2,
+    "finalidade": "compra para morar",
+    "bairro": "Savassi",
+    "orcamento": 900000
+   },
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "vagas",
+    "prazo",
+    "pet",
+    "financiamento",
+    "no_question_needed"
+   ],
+   "proibidas": [
+    "finalidade",
+    "orcamento",
+    "bairro",
+    "quartos"
+   ],
+   "nota": "difícil: campo conhecido contradito — COM valor novo: quartos continua respondido (3)"
+  },
+  {
+   "id": "PP-A018",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "procuro apê pra alugar em moinhos de vento, 2 quartos. tenho dois carros"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "orcamento"
+   ],
+   "proibidas": [
+    "finalidade",
+    "bairro",
+    "quartos",
+    "vagas",
+    "financiamento"
+   ],
+   "nota": "'tenho dois carros' responde vagas; falta o orçamento"
+  },
+  {
+   "id": "PP-A019",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "quanto tá o aluguel de um 2 quartos no cambuí hoje em dia?"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "no_question_needed",
+    "orcamento"
+   ],
+   "proibidas": [
+    "finalidade",
+    "bairro",
+    "quartos",
+    "financiamento"
+   ],
+   "nota": "pergunta factual; 'aluguel' responde finalidade"
+  },
+  {
+   "id": "PP-A020",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "preciso sair do meu apê até o fim do mês, o dono vendeu. preciso de algo rápido pra alugar"
+    }
+   ],
+   "campos_conhecidos": {},
+   "catalogo": [
+    {
+     "id": "finalidade",
+     "pergunta": "O imóvel é para comprar ou alugar? E é para morar ou para investir?"
+    },
+    {
+     "id": "orcamento",
+     "pergunta": "Qual valor você tem em mente (preço de compra ou aluguel mensal)?"
+    },
+    {
+     "id": "bairro",
+     "pergunta": "Em qual bairro ou região você prefere?"
+    },
+    {
+     "id": "quartos",
+     "pergunta": "Quantos quartos você precisa?"
+    },
+    {
+     "id": "vagas",
+     "pergunta": "Precisa de vaga de garagem? Quantas?"
+    },
+    {
+     "id": "prazo",
+     "pergunta": "Para quando você precisa do imóvel?"
+    },
+    {
+     "id": "pet",
+     "pergunta": "Você tem pet?"
+    },
+    {
+     "id": "financiamento",
+     "pergunta": "Pretende financiar ou pagar à vista?"
+    },
+    {
+     "id": "visita",
+     "pergunta": "Quer agendar uma visita?"
+    },
+    {
+     "id": "no_question_needed",
+     "pergunta": "Nenhuma pergunta é necessária agora: responder ou enviar opções."
+    }
+   ],
+   "aceitaveis": [
+    "orcamento",
+    "bairro",
+    "quartos"
+   ],
+   "proibidas": [
+    "finalidade",
+    "prazo",
+    "financiamento"
+   ],
+   "nota": "prazo respondido pela urgência; faltam três essenciais"
+  }
+ ]
+}

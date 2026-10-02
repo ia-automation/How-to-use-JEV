@@ -1,0 +1,34 @@
+{
+ "congelado_em": "2026-10-01T15:41:37-03:00",
+ "arquivos": {
+  "perguntas.py": "18d651ccebb2743c1b1f6327d986dc5cba4ef103e44cc5d02e2bfff9e5c91251",
+  "requisitos.py": "6ff62506b8f9c7dedd1ce46d431f467dd204eafab49406c09fbaed11033bbb56",
+  "run.py": "8ae5b6e032b90ce8f5d54841c765185a21336a588bd5dfce0b2d41fd2d0bef89",
+  "dados/teste.json": "20234bc9baf6b7c1772b46254c7f670f2a6a7d9caefea48faaaf6266c3aec498"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (44 histórias, 181 requisitos), variante principal `choice` com a política acima",
+  "variante_principal": "choice",
+  "1_mudanca_perdida": "requisito `substituido` ou `negado` no gabarito que saiu `mantido` ≤ 2 de 28 (a dor: shortlist velha continua valendo)",
+  "2_troca_indevida": "requisito `incerto` (hipótese/terceiro) ou `mantido` no gabarito que saiu `substituido` ou `negado` ≤ 4 de 153",
+  "3_acerto_mudados": "rótulo exato nos 40 requisitos mudados (`substituido`/`negado`/`incerto`) ≥ 0,75",
+  "4_reavaliar": "`reavaliar` exato (conjunto e ordem) ≥ 0,85 das 44 histórias",
+  "5_acerto_total": "rótulo exato nos 181 requisitos ≥ 0,90 (sempre-mantido = 0,779)",
+  "secundario_nao_decide": "`novo_valor` certo ≥ 0,85 dos `substituido` acertados; detectou que algo mudou ≥ 0,85 das 34 histórias com mudança; baseline informativo",
+  "se_falhar": "1 ou 2 falhando = o desenho não serve para atualizar o cadastro sem humano; 3, 4 ou 5 falhando = volta ao ajuste com dados novos",
+  "limites": {
+   "mudanca_perdida_max": 2,
+   "troca_indevida_max": 4,
+   "acerto_mudados_min": 0.75,
+   "reavaliar_min": 0.85,
+   "acerto_total_min": 0.9,
+   "novo_valor_min": 0.85,
+   "detectou_min": 0.85
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "583de11fc6b9e6bdd1adc5b27aa46a7e3ca65a06e045a09336b12fbb6d258bc3",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6",
+  "../_comum/numeros_br.py": "cc458db7fef558845db02e421bdeb0521f7b3a0892d01018aac984fdda339b05"
+ }
+}

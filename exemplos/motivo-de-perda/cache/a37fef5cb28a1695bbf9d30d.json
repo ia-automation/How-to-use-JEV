@@ -1,0 +1,28 @@
+{
+ "medicao": {
+  "ms": 286,
+  "input_tokens": 978,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "outra_imobiliaria",
+    "confidence": 0.98,
+    "probabilities": {
+     "only_group": 0.01,
+     "direto_proprietario": 0.0,
+     "outra_imobiliaria": 0.99,
+     "lancamento_construtora": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 978,
+   "output_tokens": 64
+  }
+ }
+}

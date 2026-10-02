@@ -1,0 +1,140 @@
+{
+ "medicao": {
+  "ms": 353,
+  "input_tokens": 14206,
+  "modelo": "jev-1.13.0",
+  "perguntas": 18
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "k1_verdict": {
+    "type": "choice",
+    "choice": "old_quote",
+    "confidence": 0.97,
+    "probabilities": {
+     "commitment": 0.0,
+     "old_quote": 0.98,
+     "unaccepted_request": 0.0,
+     "proposal": 0.0,
+     "cancelled": 0.02
+    }
+   },
+   "k1_accepted": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "k1_undone": {
+    "type": "noul",
+    "noul": 0.36
+   },
+   "k1_quoted": {
+    "type": "noul",
+    "noul": 0.92
+   },
+   "k1_open_request": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "k1_deadline": {
+    "type": "choice",
+    "choice": "m1: até o dia 25",
+    "confidence": 0.65,
+    "probabilities": {
+     "m4: segunda": 0.13,
+     "m2: amanhã": 0.01,
+     "none": 0.12,
+     "m3: amanhã cedo": 0.03,
+     "m1: até o dia 25": 0.71,
+     "m2: Agora": 0.0
+    }
+   },
+   "k2_verdict": {
+    "type": "choice",
+    "choice": "proposal",
+    "confidence": 1.0,
+    "probabilities": {
+     "commitment": 0.0,
+     "old_quote": 0.0,
+     "unaccepted_request": 0.0,
+     "proposal": 1.0,
+     "cancelled": 0.0
+    }
+   },
+   "k2_accepted": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "k2_undone": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k2_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k2_open_request": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "k2_deadline": {
+    "type": "choice",
+    "choice": "m4: segunda",
+    "confidence": 0.92,
+    "probabilities": {
+     "m4: segunda": 0.93,
+     "m2: amanhã": 0.01,
+     "m3: amanhã cedo": 0.02,
+     "none": 0.04,
+     "m1: até o dia 25": 0.0,
+     "m2: Agora": 0.0
+    }
+   },
+   "k3_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 1.0,
+    "probabilities": {
+     "commitment": 1.0,
+     "old_quote": 0.0,
+     "unaccepted_request": 0.0,
+     "proposal": 0.0,
+     "cancelled": 0.0
+    }
+   },
+   "k3_accepted": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "k3_undone": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "k3_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k3_open_request": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k3_deadline": {
+    "type": "choice",
+    "choice": "m3: amanhã cedo",
+    "confidence": 0.67,
+    "probabilities": {
+     "m4: segunda": 0.0,
+     "m2: amanhã": 0.27,
+     "none": 0.0,
+     "m3: amanhã cedo": 0.73,
+     "m1: até o dia 25": 0.0,
+     "m2: Agora": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 14206,
+   "output_tokens": 684
+  }
+ }
+}

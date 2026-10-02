@@ -1,0 +1,2250 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "linhas": [
+  {
+   "id": "OB-001",
+   "texto": "Cliente ligou de Curitiba: a empresa transferiu ele pra cá e precisa de apartamento pronto pra morar. Vai financiar uma parte.",
+   "campos": {
+    "data": "2026-07-11",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-002",
+   "texto": "Está vindo de Belo Horizonte com a família no começo do ano, quer casa com quintal. Orçamento folgado, paga à vista.",
+   "campos": {
+    "data": "2026-09-05",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 1200000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-003",
+   "texto": "Vai sair da cidade em dezembro por causa do mestrado e procura um studio mobiliado lá; quer indicação de parceiro nosso.",
+   "campos": {
+    "data": "2026-07-06",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-004",
+   "texto": "Mora hoje em Campinas e vem toda semana a trabalho; disse que vai 'fixar residência aqui de vez'. Prefere perto da estação.",
+   "campos": {
+    "data": "2026-08-27",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-005",
+   "texto": "Casal se mudando de Porto Alegre, chegam em novembro. Dois cachorros grandes, só casa.",
+   "campos": {
+    "data": "2026-09-09",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-006",
+   "texto": "Recebeu proposta de emprego em outro estado e vai vender o apto dele aqui pra comprar lá. Pediu avaliação.",
+   "campos": {
+    "data": "2026-09-27",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 2,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-007",
+   "texto": "Veio de Manaus há duas semanas, está em hotel e precisa fechar aluguel até sexta. Documentação já em mãos.",
+   "campos": {
+    "data": "2026-07-04",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 2200,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-008",
+   "texto": "Cliente comentou que a filha vai prestar vestibular em São Paulo; por enquanto procura só pra ele aqui, 2 quartos.",
+   "campos": {
+    "data": "2026-09-24",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-009",
+   "texto": "Perguntou se o condomínio tem portaria 24h e se a região é bem servida de ônibus pra rodoviária.",
+   "campos": {
+    "data": "2026-09-19",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-010",
+   "texto": "Disse que não vai mudar de cidade de jeito nenhum, a família toda é daqui; quer trocar de bairro só.",
+   "campos": {
+    "data": "2026-07-16",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-011",
+   "texto": "Trabalha remoto pra uma empresa de fora, mas faz questão de continuar morando aqui. Procura algo com um escritório.",
+   "campos": {
+    "data": "2026-07-07",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-012",
+   "texto": "Visitamos o apto da rua das Acácias: piso novo, cozinha planejada recém-instalada, ainda com cheiro de tinta. Cliente gostou.",
+   "campos": {
+    "data": "2026-08-11",
+    "canal": "email",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-013",
+   "texto": "O imóvel oferecido passou por reforma completa no ano passado (elétrica, hidráulica, banheiros). Mandei as fotos.",
+   "campos": {
+    "data": "2026-08-17",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-014",
+   "texto": "Mostrei a casa do Jardim Europa, toda repaginada pelo dono há uns meses, janelas e portas trocadas. Ela achou o valor salgado.",
+   "campos": {
+    "data": "2026-07-22",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-015",
+   "texto": "Apartamento de 3 quartos que o proprietário acabou de reformar; entregou com armários novos. Cliente pediu segunda visita com o marido.",
+   "campos": {
+    "data": "2026-07-18",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3500,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-016",
+   "texto": "Visita no sobrado: fachada pintada agora, box e louças novas, só a área de serviço ficou original. Vai pensar.",
+   "campos": {
+    "data": "2026-07-08",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 950000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-017",
+   "texto": "Unidade reformada mês passado, mobília nova; o cliente quer entrar sem mexer em nada e gostou disso.",
+   "campos": {
+    "data": "2026-07-06",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-018",
+   "texto": "A casa está com tudo renovado, dono trocou até o telhado em 2025. Cliente só achou pequeno pra família.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-019",
+   "texto": "Imóvel precisa de reforma geral, infiltração no quarto e piso solto. Cliente descartou na hora.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-020",
+   "texto": "O apto está original de 1998, nunca foi mexido. Ele topa reformar se o preço cair.",
+   "campos": {
+    "data": "2026-07-18",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-021",
+   "texto": "Anúncio diz 'oportunidade para reforma'. Cliente perguntou quanto custaria deixar habitável.",
+   "campos": {
+    "data": "2026-07-08",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-022",
+   "texto": "O proprietário disse que trocou o chuveiro e pintou um quarto antes de anunciar. Cliente quer ver pessoalmente.",
+   "campos": {
+    "data": "2026-09-05",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 650000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-023",
+   "texto": "Fotos mostram piso cerâmico claro e paredes brancas; não sei se é recente ou só limpo. Cliente pediu visita.",
+   "campos": {
+    "data": "2026-09-17",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-024",
+   "texto": "Precisa fechar em 10 dias, o contrato atual vence e o dono não renova. Aceita qualquer bairro da zona sul.",
+   "campos": {
+    "data": "2026-07-12",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 3000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-025",
+   "texto": "Cliente com pressa: casamento em março e quer entrar no apto antes. Já aprovou crédito na Caixa.",
+   "campos": {
+    "data": "2026-09-04",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-026",
+   "texto": "Está sem prazo nenhum, 'quando aparecer o certo a gente vê'. Pediu pra não ligar, só mandar anúncio por mensagem.",
+   "campos": {
+    "data": "2026-08-19",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-027",
+   "texto": "Disse que não tem pressa alguma, mora com os pais e vai esperar o mercado baixar.",
+   "campos": {
+    "data": "2026-08-20",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-028",
+   "texto": "Pediu pra agilizar a documentação porque o bebê nasce em janeiro e quer estar instalada antes.",
+   "campos": {
+    "data": "2026-08-15",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-029",
+   "texto": "Precisa de resposta hoje sobre a proposta, senão perde o imóvel que viu com outra imobiliária.",
+   "campos": {
+    "data": "2026-09-04",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-030",
+   "texto": "Quer visitar amanhã cedo e assinar na mesma semana se gostar; empresa paga a mudança até o fim do mês.",
+   "campos": {
+    "data": "2026-08-01",
+    "canal": "email",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-031",
+   "texto": "Perguntou qual o prazo médio de entrega das chaves depois da assinatura.",
+   "campos": {
+    "data": "2026-09-01",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-032",
+   "texto": "Mandou quatro mensagens no mesmo dia pedindo retorno sobre o apto.",
+   "campos": {
+    "data": "2026-09-15",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-033",
+   "texto": "Comentou que o aluguel dele vence em maio do ano que vem; está só olhando o mercado.",
+   "campos": {
+    "data": "2026-07-04",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-034",
+   "texto": "Vai financiar pela Caixa, já tem a carta de crédito aprovada em 420 mil. Entrada com FGTS.",
+   "campos": {
+    "data": "2026-09-21",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 480000,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-035",
+   "texto": "Depende de aprovação do banco; a renda dele é informal e isso pode travar. Pedi documentos.",
+   "campos": {
+    "data": "2026-08-22",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-036",
+   "texto": "Compra com recurso próprio, vendeu uma loja. Não quer saber de banco.",
+   "campos": {
+    "data": "2026-09-04",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-037",
+   "texto": "Vai pagar à vista, dinheiro da herança já está na conta. Só quer desconto por isso.",
+   "campos": {
+    "data": "2026-07-23",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-038",
+   "texto": "Simulação do Santander deu parcela de 3.800; ela quer tentar no Itaú antes de decidir.",
+   "campos": {
+    "data": "2026-08-12",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-039",
+   "texto": "Explicou que o financiamento seria pelo nome do pai, que tem renda comprovada. Decisão final é dele mesmo assim.",
+   "campos": {
+    "data": "2026-07-18",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 320000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-040",
+   "texto": "Cliente de locação, nada de financiamento no caso dele. Perguntou de seguro-fiança.",
+   "campos": {
+    "data": "2026-09-25",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-041",
+   "texto": "Quer saber se o imóvel aceita financiamento, mas ainda não decidiu se vai financiar ou usar a venda do carro mais poupança.",
+   "campos": {
+    "data": "2026-07-16",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-042",
+   "texto": "Perguntou se a gente tem parceria com correspondente bancário.",
+   "campos": {
+    "data": "2026-08-05",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-043",
+   "texto": "Disse que não precisa financiar, mas que talvez use consórcio contemplado. Avaliar se o vendedor aceita.",
+   "campos": {
+    "data": "2026-08-05",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-044",
+   "texto": "Metade financiada, metade com a venda do apto atual. Precisa vender primeiro.",
+   "campos": {
+    "data": "2026-09-04",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-045",
+   "texto": "Tem um gato e um cachorro pequeno; prédio precisa aceitar bichos, isso é inegociável.",
+   "campos": {
+    "data": "2026-08-03",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 4200,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-046",
+   "texto": "Mora com um labrador, então nada de apto sem varanda ou de condomínio restritivo.",
+   "campos": {
+    "data": "2026-08-05",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 950000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-047",
+   "texto": "Não tem animal nenhum e não pretende ter; indiferente à regra do condomínio.",
+   "campos": {
+    "data": "2026-07-03",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-048",
+   "texto": "Cliente perguntou das regras do condomínio pra animais, 'por curiosidade'.",
+   "campos": {
+    "data": "2026-09-12",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 1800,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-049",
+   "texto": "Disse que o filho cria um coelho e que isso 'não deve ser problema'.",
+   "campos": {
+    "data": "2026-08-09",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 500000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-050",
+   "texto": "Não quer saber de vizinho com cachorro barulhento; ela mesma não tem pet.",
+   "campos": {
+    "data": "2026-07-26",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-051",
+   "texto": "Três gatos, procura casa térrea com quintal murado.",
+   "campos": {
+    "data": "2026-07-23",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-052",
+   "texto": "Perguntou se há pet shop perto do condomínio.",
+   "campos": {
+    "data": "2026-08-18",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-053",
+   "texto": "Tem um cachorro idoso que não sobe escada; precisa de térreo ou elevador.",
+   "campos": {
+    "data": "2026-08-08",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-054",
+   "texto": "Alérgico a pelo, descartou unidade onde o antigo morador tinha gato.",
+   "campos": {
+    "data": "2026-09-08",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-055",
+   "texto": "Grávida de 6 meses, quer 3 quartos e escola perto. Marido vai ver as opções no fim de semana.",
+   "campos": {
+    "data": "2026-08-08",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-056",
+   "texto": "Casal com gêmeos de 2 anos, procura condomínio com playground e piso que não seja escada aberta.",
+   "campos": {
+    "data": "2026-07-11",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-057",
+   "texto": "Sem filhos, os dois trabalham fora; apto compacto está bom.",
+   "campos": {
+    "data": "2026-08-19",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-058",
+   "texto": "Está com um filho de 4 anos e outro a caminho; o atual ficou pequeno.",
+   "campos": {
+    "data": "2026-09-16",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-059",
+   "texto": "Perguntou se o condomínio tem área kids e salão de festas.",
+   "campos": {
+    "data": "2026-08-24",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 1500,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-060",
+   "texto": "Mora sozinho, divorciado, os filhos já são adultos e moram fora. Quer 1 quarto perto do centro.",
+   "campos": {
+    "data": "2026-07-22",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 1500,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-061",
+   "texto": "Precisa de um quarto a mais 'pro bebê'. Não falou prazo.",
+   "campos": {
+    "data": "2026-09-13",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-062",
+   "texto": "Comentou que a sobrinha vai morar com eles por uns meses.",
+   "campos": {
+    "data": "2026-09-08",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 1100000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-063",
+   "texto": "Trabalha de casa 100%, precisa de um cômodo isolado com porta pra reuniões. Internet fibra é condição.",
+   "campos": {
+    "data": "2026-07-27",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-064",
+   "texto": "Faz atendimento online de manhã, então quer um canto silencioso pra montar o consultório virtual.",
+   "campos": {
+    "data": "2026-08-21",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-065",
+   "texto": "Volta ao escritório todo dia, não precisa de espaço pra trabalhar em casa.",
+   "campos": {
+    "data": "2026-09-03",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 650000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-066",
+   "texto": "Pediu que o apto tivesse 'um quarto sobrando'. Não disse pra quê.",
+   "campos": {
+    "data": "2026-07-03",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 320000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-067",
+   "texto": "Freelancer de design, passa o dia em casa; iluminação natural pesa muito pra ele.",
+   "campos": {
+    "data": "2026-09-19",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-068",
+   "texto": "Perguntou se a região tem boa cobertura de internet.",
+   "campos": {
+    "data": "2026-09-22",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 1100000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-069",
+   "texto": "Trabalha em regime híbrido, 3 dias em casa; quer varanda fechada pra virar escritório.",
+   "campos": {
+    "data": "2026-07-27",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-070",
+   "texto": "Comentou que largou o home office e voltou pro presencial, então pode ser menor.",
+   "campos": {
+    "data": "2026-07-27",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 650000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-071",
+   "texto": "Cliente reclamou que ficou 3 dias sem resposta e que quase fechou com outra imobiliária. Pediu desculpas em nome da equipe.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 2200,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-072",
+   "texto": "Irritado: a visita de ontem foi desmarcada em cima da hora pela segunda vez. Disse que vai procurar em outro lugar.",
+   "campos": {
+    "data": "2026-07-23",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-073",
+   "texto": "Elogiou o atendimento, disse que foi o único corretor que mandou as fotos no mesmo dia.",
+   "campos": {
+    "data": "2026-07-27",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-074",
+   "texto": "Falou que o anúncio estava com metragem errada e se sentiu enganada. Expliquei e ela aceitou continuar.",
+   "campos": {
+    "data": "2026-08-11",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-075",
+   "texto": "Agradeceu a agilidade no contrato e vai indicar a gente pra uma colega.",
+   "campos": {
+    "data": "2026-07-22",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-076",
+   "texto": "Não gostou do tom do corretor anterior; pediu pra ser atendido por outra pessoa.",
+   "campos": {
+    "data": "2026-07-16",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 2800,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-077",
+   "texto": "Achou tudo ótimo no atendimento, só o imóvel que não serviu.",
+   "campos": {
+    "data": "2026-08-09",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-078",
+   "texto": "Perguntou por que a gente demorou pra responder. Expliquei o feriado, ela entendeu.",
+   "campos": {
+    "data": "2026-08-15",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-079",
+   "texto": "Ficou em silêncio depois que mandei o valor do condomínio.",
+   "campos": {
+    "data": "2026-07-23",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-080",
+   "texto": "Disse que a concorrente respondeu mais rápido, mas que prefere nosso portfólio.",
+   "campos": {
+    "data": "2026-07-01",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-081",
+   "texto": "Está em contato com duas imobiliárias e vai fechar com quem conseguir desconto. Pediu proposta por escrito.",
+   "campos": {
+    "data": "2026-09-27",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-082",
+   "texto": "Viu um apto parecido com outro corretor na mesma rua por 40 mil a menos. Pediu pra cobrir.",
+   "campos": {
+    "data": "2026-08-11",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-083",
+   "texto": "Só está vendo com a gente, por indicação de um amigo; não procurou mais ninguém.",
+   "campos": {
+    "data": "2026-08-03",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-084",
+   "texto": "Mencionou que 'um conhecido' tem um imóvel pra vender direto. Não sei se é concorrência real.",
+   "campos": {
+    "data": "2026-09-26",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-085",
+   "texto": "Vai visitar um lançamento da construtora no sábado e depois decide entre o nosso e o deles.",
+   "campos": {
+    "data": "2026-09-14",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3500,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-086",
+   "texto": "Disse que largou a outra imobiliária porque não respondiam. Agora é só com a gente.",
+   "campos": {
+    "data": "2026-09-11",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-087",
+   "texto": "A mãe de 82 anos vai morar junto; precisa ser térreo ou prédio com elevador, sem degrau na entrada.",
+   "campos": {
+    "data": "2026-07-12",
+    "canal": "email",
+    "finalidade": "locacao",
+    "orcamento": 1800,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-088",
+   "texto": "Cadeirante, só considera unidades com porta larga no banheiro e vaga coberta perto do elevador.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3500,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-089",
+   "texto": "Perguntou se o prédio tem elevador. Não explicou o motivo.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 1800,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-090",
+   "texto": "Não tem restrição de escada, pode ser até 4º andar sem elevador.",
+   "campos": {
+    "data": "2026-07-23",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 3000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-091",
+   "texto": "Teve cirurgia no joelho e por enquanto não consegue subir escada; prefere térreo.",
+   "campos": {
+    "data": "2026-07-18",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-092",
+   "texto": "Casal jovem, 'escada não é problema'. Quer cobertura duplex.",
+   "campos": {
+    "data": "2026-09-16",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 500000,
+    "visitas": 2,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-093",
+   "texto": "Pai idoso visita com frequência, mas 'ele sobe escada numa boa'.",
+   "campos": {
+    "data": "2026-08-16",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-094",
+   "texto": "Filho autista precisa de ambiente tranquilo e sem escada aberta; busca casa térrea em rua calma.",
+   "campos": {
+    "data": "2026-07-28",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 500000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-095",
+   "texto": "Compra pra alugar, quer rendimento acima de 0,5% ao mês; não vai morar. Tem até 450 mil.",
+   "campos": {
+    "data": "2026-07-26",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-096",
+   "texto": "Quer um studio perto da faculdade pra colocar no Airbnb, até 420 mil. Já tem outros dois.",
+   "campos": {
+    "data": "2026-07-14",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 420000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-097",
+   "texto": "É pra morar mesmo, primeira casa. Nada de investimento.",
+   "campos": {
+    "data": "2026-08-18",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-098",
+   "texto": "Perguntou quanto o imóvel renderia de aluguel, 'só pra saber'. Vai morar nele.",
+   "campos": {
+    "data": "2026-08-04",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 950000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-099",
+   "texto": "Investidor: procura kitnets abaixo de 250 mil pra reformar e revender.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 250000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-100",
+   "texto": "Compra pro filho morar durante a faculdade e depois decide se aluga.",
+   "campos": {
+    "data": "2026-08-12",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 320000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-101",
+   "texto": "Fundo familiar comprando pra renda, orçamento de 2 milhões em até 3 unidades.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 2000000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-102",
+   "texto": "Quer sala comercial pra montar a própria clínica. Uso próprio.",
+   "campos": {
+    "data": "2026-08-08",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-103",
+   "texto": "Desistiu da busca: vai renovar o aluguel atual por mais um ano. Pediu pra tirar da lista.",
+   "campos": {
+    "data": "2026-07-04",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 4200,
+    "visitas": 0,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-104",
+   "texto": "Depois de 3 visitas, parou de responder. Última mensagem dela foi 'vou pensar'.",
+   "campos": {
+    "data": "2026-09-12",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 950000,
+    "visitas": 3,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-105",
+   "texto": "Continua procurando, mesmo tendo achado tudo caro até agora. Pediu opções em bairros mais afastados.",
+   "campos": {
+    "data": "2026-09-15",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-106",
+   "texto": "Encerrou a busca por enquanto, separação em andamento.",
+   "campos": {
+    "data": "2026-07-23",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-107",
+   "texto": "Fechou com outra imobiliária na semana passada. Agradeceu o atendimento.",
+   "campos": {
+    "data": "2026-07-14",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 1800,
+    "visitas": 0,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-108",
+   "texto": "Disse que pausou a procura até vender o carro. Deve voltar em dois meses.",
+   "campos": {
+    "data": "2026-08-05",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 1500,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-109",
+   "texto": "Não desistiu, mas reduziu o orçamento pra 350 mil depois da demissão da esposa.",
+   "campos": {
+    "data": "2026-09-18",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-110",
+   "texto": "Perdeu o interesse: achou que 900 mil era demais pra 70 m² e não quer ver mais nada.",
+   "campos": {
+    "data": "2026-08-02",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 2,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-111",
+   "texto": "Avisou que vai ficar onde está, reformar a casa atual sai mais barato.",
+   "campos": {
+    "data": "2026-07-08",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 0,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-112",
+   "texto": "Achou o valor do condomínio um absurdo, 1.400 por mês num prédio sem lazer.",
+   "campos": {
+    "data": "2026-09-15",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-113",
+   "texto": "Preço dentro do esperado, não reclamou de nada. Vai fazer proposta.",
+   "campos": {
+    "data": "2026-07-02",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-114",
+   "texto": "Disse que o metro quadrado da região 'está fora da realidade' e que vai olhar mais longe.",
+   "campos": {
+    "data": "2026-08-04",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-115",
+   "texto": "Perguntou se o proprietário aceita negociação. Não disse se achou caro.",
+   "campos": {
+    "data": "2026-08-25",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 1100000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-116",
+   "texto": "Afirmou que o aluguel pedido é quase o dobro do que paga hoje; segue na busca por algo menor.",
+   "campos": {
+    "data": "2026-09-12",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-117",
+   "texto": "Achou barato pro padrão do prédio e perguntou se tem algum problema escondido.",
+   "campos": {
+    "data": "2026-09-08",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-118",
+   "texto": "Comentou que a parcela ficaria pesada demais com os juros atuais.",
+   "campos": {
+    "data": "2026-09-14",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-119",
+   "texto": "Pediu um imóvel 'mais em conta' que os três que mostrei.",
+   "campos": {
+    "data": "2026-08-18",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 1500,
+    "visitas": 3,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-120",
+   "texto": "Preocupada com barulho: trabalha à noite e dorme de dia; descartou apto de frente pra avenida.",
+   "campos": {
+    "data": "2026-09-16",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-121",
+   "texto": "Perguntou se há bar ou casa noturna na rua. Mora hoje em cima de um e não aguenta mais.",
+   "campos": {
+    "data": "2026-07-24",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-122",
+   "texto": "Barulho não incomoda, mora há anos perto do aeroporto.",
+   "campos": {
+    "data": "2026-09-03",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-123",
+   "texto": "Quer rua tranquila, sem trânsito pesado, por causa do sono do bebê.",
+   "campos": {
+    "data": "2026-09-14",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-124",
+   "texto": "Perguntou se o apto é de frente ou de fundos.",
+   "campos": {
+    "data": "2026-07-02",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-125",
+   "texto": "Músico, toca bateria em casa; precisa de vizinhança tolerante ou casa isolada.",
+   "campos": {
+    "data": "2026-07-19",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-126",
+   "texto": "Reclamou do barulho da obra ao lado durante a visita e pediu outra opção.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-127",
+   "texto": "Ele gostou, mas quem bate o martelo é a esposa, que só volta de viagem semana que vem.",
+   "campos": {
+    "data": "2026-08-27",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2800,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-128",
+   "texto": "Os pais vão pagar a entrada e querem aprovar o imóvel antes.",
+   "campos": {
+    "data": "2026-07-10",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 500000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-129",
+   "texto": "Decide sozinha, não precisa consultar ninguém. Proposta na segunda.",
+   "campos": {
+    "data": "2026-07-05",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 4200,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-130",
+   "texto": "Vai mostrar as fotos pro namorado 'só pra ele ver'.",
+   "campos": {
+    "data": "2026-09-09",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-131",
+   "texto": "Sócio precisa assinar junto; depende da reunião de quinta.",
+   "campos": {
+    "data": "2026-08-11",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 320000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-132",
+   "texto": "Comentou que a sogra 'tem opinião sobre tudo', mas a decisão é dos dois.",
+   "campos": {
+    "data": "2026-09-24",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-133",
+   "texto": "É a única compradora; já tem procuração do irmão pra fechar.",
+   "campos": {
+    "data": "2026-07-02",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-134",
+   "texto": "Quer até 20 minutos a pé do hospital onde trabalha, plantão noturno.",
+   "campos": {
+    "data": "2026-09-20",
+    "canal": "email",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-135",
+   "texto": "Precisa ficar na rota da escola das crianças, bairro vizinho no máximo.",
+   "campos": {
+    "data": "2026-07-02",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-136",
+   "texto": "Trabalha viajando, localização em relação ao trabalho não importa.",
+   "campos": {
+    "data": "2026-08-27",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-137",
+   "texto": "Perguntou qual a distância até o centro.",
+   "campos": {
+    "data": "2026-07-04",
+    "canal": "presencial",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-138",
+   "texto": "Marido trabalha na zona norte e ela na zona sul; querem algo no meio do caminho.",
+   "campos": {
+    "data": "2026-07-12",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3500,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-139",
+   "texto": "Prefere perto do metrô pra não depender de carro no trajeto pra firma.",
+   "campos": {
+    "data": "2026-07-24",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2800,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-140",
+   "texto": "Aposentado, não tem trajeto diário; quer perto do parque.",
+   "campos": {
+    "data": "2026-07-14",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 1100000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-141",
+   "texto": "Primeiro contato pelo site, pediu mais fotos do apto de 2 quartos. Sem detalhes ainda.",
+   "campos": {
+    "data": "2026-08-20",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 400000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-142",
+   "texto": "Retorno de ligação: confirmou visita sábado às 10h. Levar chave do portão.",
+   "campos": {
+    "data": "2026-08-28",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-143",
+   "texto": "Cliente antigo, comprou com a gente em 2019 e quer vender pra comprar maior. Quatro pessoas em casa.",
+   "campos": {
+    "data": "2026-08-10",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-144",
+   "texto": "Mandou lista com 6 anúncios de portais pra eu conferir disponibilidade.",
+   "campos": {
+    "data": "2026-07-16",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-145",
+   "texto": "Visita feita, achou a sala escura. Vai ver outras duas opções na quarta.",
+   "campos": {
+    "data": "2026-07-28",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-146",
+   "texto": "Pediu contrato em PDF pra ler com calma. Sem objeção até agora.",
+   "campos": {
+    "data": "2026-09-18",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-147",
+   "texto": "Quer casa com piscina e churrasqueira, orçamento até 1,5 milhão.",
+   "campos": {
+    "data": "2026-08-17",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 1500000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-148",
+   "texto": "Número errado; a pessoa disse que nunca falou com a gente. Marcar como inválido.",
+   "campos": {
+    "data": "2026-07-08",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 700000,
+    "visitas": 1,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-149",
+   "texto": "Cliente perguntou sobre IPTU e taxa de condomínio da unidade 3 quartos; vai comparar com outra.",
+   "campos": {
+    "data": "2026-07-14",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-150",
+   "texto": "Passou no escritório sem agendar, pegou catálogo impresso e deixou telefone.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-151",
+   "texto": "Interessado em terreno no litoral pra construir. Fora do nosso portfólio; indiquei parceiro.",
+   "campos": {
+    "data": "2026-08-12",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-152",
+   "texto": "Casal de aposentados mudando de Recife pra ficar perto dos netos; querem apto com elevador e sem escada, e pagam à vista.",
+   "campos": {
+    "data": "2026-08-21",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 650000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-153",
+   "texto": "Vem transferida de Brasília em janeiro, prazo apertado: a empresa só paga hotel por 15 dias. Financia 80%.",
+   "campos": {
+    "data": "2026-09-23",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 550000,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-154",
+   "texto": "Estudante vindo de Goiânia, precisa alugar antes das aulas em fevereiro; os pais assinam o contrato.",
+   "campos": {
+    "data": "2026-09-22",
+    "canal": "email",
+    "finalidade": "locacao",
+    "orcamento": 1500,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-155",
+   "texto": "Reclamou que o anúncio dizia 'reformado' e o apto está com piso de 30 anos; se sentiu enrolado.",
+   "campos": {
+    "data": "2026-07-11",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-156",
+   "texto": "Viu o sobrado recém-reformado da Vila Mariana e disse que o preço não condiz com a região; ainda assim pediu pra ver mais dois.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 800000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-157",
+   "texto": "Trabalha de casa e tem dois gatos; condomínio precisa aceitar bicho e ter sala extra.",
+   "campos": {
+    "data": "2026-09-23",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2200,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-158",
+   "texto": "Está com o apartamento emprestado pela empresa só até o fim do mês; precisa decidir rápido e a outra imobiliária já mandou proposta.",
+   "campos": {
+    "data": "2026-08-15",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-159",
+   "texto": "Cliente investidor, não vai financiar; quer dois studios reformados pra alugar por temporada.",
+   "campos": {
+    "data": "2026-08-04",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-160",
+   "texto": "Família com três crianças pequenas vindo do interior; o pai trabalha em casa e quer um escritório longe dos quartos.",
+   "campos": {
+    "data": "2026-09-06",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 500000,
+    "visitas": 1,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-161",
+   "texto": "Tem um cachorro de porte médio e disse que vai pagar o aluguel sem fiador, com caução de 3 meses.",
+   "campos": {
+    "data": "2026-08-20",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 1800,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-162",
+   "texto": "Avaliando uma proposta nossa e outra de um corretor autônomo; falou que o nosso atendimento foi 'nota dez' até agora.",
+   "campos": {
+    "data": "2026-07-18",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-163",
+   "texto": "Mãe idosa com dificuldade de locomoção vai morar junto, e o apto da rua de trás tem obra que não acaba: quer térreo em rua calma.",
+   "campos": {
+    "data": "2026-08-01",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 1100000,
+    "visitas": 1,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-164",
+   "texto": "Decisão é do marido, que acha tudo caro; ela gostaria de fechar logo.",
+   "campos": {
+    "data": "2026-07-01",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-165",
+   "texto": "Precisa ficar a no máximo 15 min do escritório, de bicicleta. Vai financiar.",
+   "campos": {
+    "data": "2026-09-10",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 950000,
+    "visitas": 1,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-166",
+   "texto": "Vai desistir se o banco não aprovar; já foi reprovado uma vez.",
+   "campos": {
+    "data": "2026-08-01",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 1100000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-167",
+   "texto": "Cliente de locação achou caro e desistiu; vai continuar na casa dos pais.",
+   "campos": {
+    "data": "2026-09-02",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-168",
+   "texto": "Quer um apto perto do trabalho dela e da escola do filho; o condomínio não pode cobrar mais de 800.",
+   "campos": {
+    "data": "2026-07-14",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-169",
+   "texto": "Fez duas visitas, elogiou a pontualidade da equipe, mas disse que vai esperar o fim do ano por causa dos juros.",
+   "campos": {
+    "data": "2026-09-15",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-170",
+   "texto": "Chegou da Argentina mês passado, ainda sem CPF regularizado; pediu locação temporária de 6 meses.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 4200,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-171",
+   "texto": "Investidor com orçamento de 380 mil quer comprar na planta pra revender.",
+   "campos": {
+    "data": "2026-09-09",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 380000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-172",
+   "texto": "Cliente perguntou se o prédio tem gerador e se a vizinhança é tranquila à noite.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "telefone",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-173",
+   "texto": "Casal sem filhos e sem pet, ambos presenciais, só querem 2 vagas de garagem.",
+   "campos": {
+    "data": "2026-07-15",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 450000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-174",
+   "texto": "Disse que não está vendo com mais ninguém e não tem pressa; prefere receber opções por e-mail uma vez por semana.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 2,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-175",
+   "texto": "Dependendo de financiamento e com orçamento de 300 mil, fez 2 visitas e gostou da segunda.",
+   "campos": {
+    "data": "2026-09-06",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 300000,
+    "visitas": 2,
+    "etapa": "visita"
+   }
+  },
+  {
+   "id": "OB-176",
+   "texto": "Precisa de financiamento; visitou 3 unidades em uma tarde e quer proposta na de 2 quartos.",
+   "campos": {
+    "data": "2026-09-22",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 600000,
+    "visitas": 3,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-177",
+   "texto": "Vai financiar 70% e já fez 2 visitas com a gente; aguardando laudo do banco.",
+   "campos": {
+    "data": "2026-08-06",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 350000,
+    "visitas": 2,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-178",
+   "texto": "Mudança de cidade confirmada pra março e precisa resolver o aluguel antes de fevereiro; orçamento até 3 mil.",
+   "campos": {
+    "data": "2026-07-19",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 3000,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-179",
+   "texto": "Locatário com pressa: foi despejado por venda do imóvel e tem 30 dias pra sair.",
+   "campos": {
+    "data": "2026-09-19",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-180",
+   "texto": "Precisa alugar até o dia 15, quando entrega as chaves do atual; aceita sem mobília.",
+   "campos": {
+    "data": "2026-07-17",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 2800,
+    "visitas": 0,
+    "etapa": "novo"
+   }
+  },
+  {
+   "id": "OB-181",
+   "texto": "Trouxe o pai de 79 anos pra morar junto e procura locação de térreo com banheiro adaptado.",
+   "campos": {
+    "data": "2026-09-28",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": null,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-182",
+   "texto": "Quer alugar e tem um gato; perguntou se o condomínio permite.",
+   "campos": {
+    "data": "2026-07-17",
+    "canal": "presencial",
+    "finalidade": "locacao",
+    "orcamento": 2500,
+    "visitas": 0,
+    "etapa": "em_contato"
+   }
+  },
+  {
+   "id": "OB-183",
+   "texto": "Locação para investidor que vai sublocar? Não: ele deixou claro que é pra morar e que tem um cachorro.",
+   "campos": {
+    "data": "2026-09-27",
+    "canal": "telefone",
+    "finalidade": "locacao",
+    "orcamento": 2800,
+    "visitas": 0,
+    "etapa": "proposta"
+   }
+  },
+  {
+   "id": "OB-184",
+   "texto": "Desistiu: os valores da região passaram do que ele consegue pagar e vai ficar no aluguel atual.",
+   "campos": {
+    "data": "2026-09-28",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": 500000,
+    "visitas": 1,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-185",
+   "texto": "Encerrou a busca depois da terceira visita; tudo acima do orçamento dela, não quer mais receber anúncios.",
+   "campos": {
+    "data": "2026-09-21",
+    "canal": "whatsapp",
+    "finalidade": "compra",
+    "orcamento": 280000,
+    "visitas": 3,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-186",
+   "texto": "Achou o aluguel pedido fora da realidade e desistiu de se mudar por enquanto.",
+   "campos": {
+    "data": "2026-08-05",
+    "canal": "whatsapp",
+    "finalidade": "locacao",
+    "orcamento": 5000,
+    "visitas": 2,
+    "etapa": "perdido"
+   }
+  },
+  {
+   "id": "OB-187",
+   "texto": "Desistiu de comprar, mas não foi por preço: o imóvel que queria foi vendido e não quer outro.",
+   "campos": {
+    "data": "2026-09-07",
+    "canal": "email",
+    "finalidade": "compra",
+    "orcamento": null,
+    "visitas": 1,
+    "etapa": "perdido"
+   }
+  }
+ ]
+}

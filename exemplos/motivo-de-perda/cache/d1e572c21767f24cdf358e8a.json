@@ -1,0 +1,28 @@
+{
+ "medicao": {
+  "ms": 292,
+  "input_tokens": 988,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "bairro_nao_desejado",
+    "confidence": 0.93,
+    "probabilities": {
+     "distancia_deslocamento": 0.04,
+     "only_group": 0.02,
+     "bairro_nao_desejado": 0.94,
+     "entorno_seguranca": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 988,
+   "output_tokens": 65
+  }
+ }
+}

@@ -1,0 +1,1326 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "ID-A001",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 68 m² - Vila Madalena",
+    "descricao": "Vila Madalena: 2 quartos com suíte, varanda com vista pro parque, piso de taco restaurado, cozinha planejada. Portaria 24h. Fotos novas!",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 777000,
+    "condominio_reais": 980
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 68 m² - Vila Madalena",
+    "descricao": "Apartamento no Edifício Solar das Acácias, Rua Harmonia, com 2 dormitórios (1 suíte), sala para dois ambientes com varanda e vista para o parque. Piso de taco original restaurado, cozinha com armários planejados. Prédio com portaria 24h.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 790000,
+    "condominio_reais": 980
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: anúncio sem endereço — bairro, planta, números e o conjunto de detalhes distintivos coincidem; mesmo imóvel"
+  },
+  {
+   "id": "ID-A002",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Batel, Curitiba",
+    "descricao": "Apartamento em Batel (Avenida das Nações): 1 dormitório, 1 vaga. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Batel",
+    "cidade": "Curitiba",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 41,
+    "preco": 397000,
+    "condominio_reais": 380
+   },
+   "b": {
+    "titulo": "Batel – 1 quarto, 42 m², pronto para morar",
+    "descricao": "Studio no Batel, na Rua Comendador Araújo: 1 dormitório, 1 vaga, com cozinha compacta, sacada e bancada de trabalho sob medida. Pronto para locação ou moradia.",
+    "bairro": "Batel",
+    "cidade": "Curitiba",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 42,
+    "preco": 390000,
+    "condominio_reais": 450
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-A003",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Água Verde",
+    "descricao": "Edifício Monte Carlo, Água Verde: 3 quartos (1 suíte com closet), 1 vaga, sacada com churrasqueira. Aquecimento a gás, janelas acústicas. Próximo ao Clube Curitibano.",
+    "bairro": "Água Verde",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 720000,
+    "condominio_reais": 680
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 130 m², 3 dormitórios, Água Verde",
+    "descricao": "Edifício Monte Carlo: 3 quartos, suíte com closet, sacada com churrasqueira. 130 m² de área total, 95 m² privativos. Janelas acústicas, aquecimento a gás.",
+    "bairro": "Água Verde",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 130,
+    "preco": 712000,
+    "condominio_reais": 680
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-A004",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Moinhos de Vento, Porto Alegre",
+    "descricao": "Moinhos de Vento, Edifício Moinhos Prime: 2 quartos, suíte, 2 vagas, sacada integrada ao living com lareira. Piscina e sauna. Água quente central.",
+    "bairro": "Moinhos de Vento",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 89,
+    "preco": 875000,
+    "condominio_reais": 950
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Moinhos de Vento",
+    "descricao": "Edifício Moinhos Prime, Rua Mostardeiro: 2 dormitórios (1 suíte), 2 vagas, living com lareira e sacada integrada. Infraestrutura para split, água quente central. Lazer com piscina e sauna. Entregue mobiliado.",
+    "bairro": "Moinhos de Vento",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 88,
+    "preco": 890000,
+    "condominio_reais": 950
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-A005",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Condomínio Reserva Savassi",
+    "descricao": "Condomínio Reserva Savassi, Rua Pernambuco: 3 quartos, 2 suítes, 2 vagas, varanda com vista para a Serra do Curral! Armários em todos os cômodos, piso de porcelanato. Lazer com piscina e espaço gourmet. Agende já sua visita.",
+    "bairro": "Savassi",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 977000,
+    "condominio_reais": 1100
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos no Condomínio Reserva Savassi",
+    "descricao": "Condomínio Reserva Savassi, Rua Pernambuco: 3 quartos, 2 suítes, 2 vagas, varanda com vista para a Serra do Curral. Armários em todos os cômodos, piso de porcelanato. Lazer com piscina e espaço gourmet.",
+    "bairro": "Savassi",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 980000,
+    "condominio_reais": 1100
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-A006",
+   "a": {
+    "titulo": "Botafogo – 1 quarto, 38 m², pronto para morar",
+    "descricao": "Residencial Jardim Botânico, Botafogo: quarto e sala com varanda, sem vaga, reformado, com cozinha americana e janelas antirruído. A 3 minutos do metrô Botafogo.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 38,
+    "preco": 450000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Apartamento 1 quarto em Botafogo",
+    "descricao": "Quarto e sala reformado no Residencial Jardim Botânico, com varanda, cozinha americana, janelas antirruído, sem vaga. Pertinho do metrô.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 38,
+    "preco": 502000,
+    "condominio_reais": 600
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-A007",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos em Trindade",
+    "descricao": "Rua Lauro Linhares, Trindade: 2 quartos, 1 vaga, sacada com churrasqueira, próximo à UFSC. Face sul, sem sol direto.",
+    "bairro": "Trindade",
+    "cidade": "Florianópolis",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 65,
+    "preco": 464000,
+    "condominio_reais": 520
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Trindade",
+    "descricao": "Apartamento na Trindade, na Rua Lauro Linhares: 2 quartos, 1 vaga, sacada com churrasqueira, a 10 minutos a pé da UFSC. Sol da manhã.",
+    "bairro": "Trindade",
+    "cidade": "Florianópolis",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 65,
+    "preco": 480000,
+    "condominio_reais": 520
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-A008",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Edifício Monte Carlo",
+    "descricao": "3 dormitórios e 1 vaga em Água Verde, Edifício Monte Carlo, Avenida Água Verde. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Água Verde",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 704000,
+    "condominio_reais": 680
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Água Verde",
+    "descricao": "Edifício Monte Carlo, Avenida Água Verde, Água Verde: 3 quartos, 1 vaga, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Água Verde",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 720000,
+    "condominio_reais": 680
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — mesmo prédio e mesma planta: mesma unidade ou vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-A009",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 85 m² - Tatuapé",
+    "descricao": "Condomínio Jardim das Palmeiras, Tatuapé: 3 quartos (1 suíte), 2 vagas cobertas, varanda gourmet com churrasqueira e vista para a piscina. Cozinha com armários, área de serviço separada. Lazer com piscina e playground.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 620000,
+    "condominio_reais": 750
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Tatuapé",
+    "descricao": "Apartamento 3 dorms no Condomínio Jardim das Palmeiras, com churrasqueira na varanda de frente para a piscina, 2 vagas cobertas e armários na cozinha. Piscina e playground no condomínio.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 680000,
+    "condominio_reais": 750
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-A010",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 68 m² - Vila Madalena",
+    "descricao": "Apartamento no Edifício Solar das Acácias, Rua Harmonia, com 2 dormitórios (1 suíte), sala para dois ambientes com varanda e vista para o parque. Piso de taco original restaurado, cozinha com armários planejados. Prédio com portaria 24h.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 790000,
+    "condominio_reais": 980
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 92 m² - Vila Madalena",
+    "descricao": "2 dormitórios, 1 suíte, varanda com vista livre para o parque. Área total de 92 m² (68 m² privativos). Edifício Solar das Acácias, Rua Harmonia. Taco original, cozinha planejada.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 92,
+    "preco": 775000,
+    "condominio_reais": 980
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-A011",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Tijuca",
+    "descricao": "Apartamento na Rua das Camélias, Tijuca: 2 quartos, 1 vaga, sala com piso de madeira, dependência completa e varanda. Prédio com portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 62,
+    "preco": 598000,
+    "condominio_reais": 720
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Tijuca",
+    "descricao": "Apartamento na Rua Conde de Bonfim, Tijuca: 2 quartos, 1 vaga, sala com piso de madeira, dependência completa e varanda. Prédio com portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 800
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: texto reaproveitado — descrição idêntica de corretor em outro anúncio, mas endereço, área e preço diferem; outro imóvel"
+  },
+  {
+   "id": "ID-A012",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Jardim Paulista",
+    "descricao": "Rua Pamplona, Jardim Paulista: 3 quartos (2 suítes), varanda gourmet com churrasqueira, 2 vagas. Reforma recente, ar-condicionado nos quartos. Prédio com lazer completo.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 1440000,
+    "condominio_reais": 1800
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 110 m², 3 dormitórios, Jardim Paulista",
+    "descricao": "Apartamento de 3 dormitórios na Rua Pamplona, sendo 2 suítes, 2 vagas, sala ampla com varanda gourmet e churrasqueira. Reformado em 2024, ar-condicionado em todos os quartos.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 1450000,
+    "condominio_reais": 1800
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-A013",
+   "a": {
+    "titulo": "Apartamento à venda, 85 m², 3 dormitórios, Tatuapé",
+    "descricao": "Condomínio Jardim das Palmeiras: 3 quartos (1 suíte), 2 vagas, varanda sem churrasqueira, voltada para a rua. Cozinha sem armários. Piscina e playground.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 603000,
+    "condominio_reais": 750
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 85 m², 3 dormitórios, Tatuapé",
+    "descricao": "Condomínio Jardim das Palmeiras, Tatuapé: 3 quartos (1 suíte), 2 vagas cobertas, varanda gourmet com churrasqueira e vista para a piscina. Cozinha com armários, área de serviço separada. Lazer com piscina e playground.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 620000,
+    "condominio_reais": 750
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesmo prédio, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-A014",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Residencial Vila Nova",
+    "descricao": "Residencial Vila Nova, Rua Domingos de Morais: apartamento de 2 quartos, 1 vaga, sala com sacada, piso laminado e cozinha americana! A 5 minutos do metrô Vila Mariana. Aceita pet. Agende já sua visita.",
+    "bairro": "Vila Mariana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 564000,
+    "condominio_reais": 620
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 60 m² - Vila Mariana",
+    "descricao": "Residencial Vila Nova, Rua Domingos de Morais: apartamento de 2 quartos, 1 vaga, sala com sacada, piso laminado e cozinha americana. A 5 minutos do metrô Vila Mariana. Aceita pet.",
+    "bairro": "Vila Mariana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 560000,
+    "condominio_reais": 620
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-A015",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 65 m² - Trindade",
+    "descricao": "Trindade, pertinho da UFSC: 2 dormitórios, 1 vaga, sacada com churrasqueira, sol da manhã. Rua Lauro Linhares.",
+    "bairro": "Trindade",
+    "cidade": "Florianópolis",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 65,
+    "preco": 480000,
+    "condominio_reais": 520
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Pinheiros",
+    "descricao": "Rua Oscar Freire, Pinheiros: 2 dormitórios (1 suíte), 1 vaga, sala com pé-direito duplo e varanda. Prédio novo com rooftop e coworking.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 72,
+    "preco": 950000,
+    "condominio_reais": 1200
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-A016",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Perdizes, São Paulo",
+    "descricao": "Apartamento em Perdizes, na Rua Padre Chico: 2 dormitórios, 2 vagas, sala com lareira e varanda envidraçada. Prédio de 2010, lazer com piscina aquecida e academia. Entregue mobiliado.",
+    "bairro": "Perdizes",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 75,
+    "preco": 810000,
+    "condominio_reais": 900
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 2 vagas, 76 m² - Perdizes",
+    "descricao": "Perdizes, Rua Padre Chico: 2 quartos, 2 vagas, varanda envidraçada e lareira na sala. Edifício de 2010 com piscina aquecida e academia. Oportunidade!",
+    "bairro": "Perdizes",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 76,
+    "preco": 800000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-A017",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Mooca, São Paulo",
+    "descricao": "Apartamento em Mooca: 2 dormitórios, 1 vaga. Prédio com portaria e elevador. Bem localizado, documentação em ordem.",
+    "bairro": "Mooca",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 54,
+    "preco": 513000,
+    "condominio_reais": 580
+   },
+   "b": {
+    "titulo": "Mooca – 2 quartos, 55 m², pronto para morar",
+    "descricao": "2 dormitórios e 1 vaga em Mooca, Condomínio Bosque da Mooca, Rua da Mooca. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Mooca",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 55,
+    "preco": 510000,
+    "condominio_reais": 580
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — um anúncio sem endereço, números batem; indecidível"
+  },
+  {
+   "id": "ID-A018",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos em Pinheiros",
+    "descricao": "Rua Oscar Freire, Pinheiros: 2 quartos (1 suíte), 1 vaga, sala com pé-direito padrão, varanda. Prédio novo com rooftop e coworking.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 72,
+    "preco": 925000,
+    "condominio_reais": 1200
+   },
+   "b": {
+    "titulo": "Pinheiros – 2 quartos, 72 m², pronto para morar",
+    "descricao": "Rua Oscar Freire, Pinheiros: 2 dormitórios (1 suíte), 1 vaga, sala com pé-direito duplo e varanda. Prédio novo com rooftop e coworking.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 72,
+    "preco": 950000,
+    "condominio_reais": 1200
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesma rua, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-A019",
+   "a": {
+    "titulo": "Cambuí – 3 quartos, 98 m², pronto para morar",
+    "descricao": "Condomínio Parque Cambuí, Rua Coronel Quirino: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, box blindex nos banheiros. Lazer completo com piscina e quadra.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 98,
+    "preco": 850000,
+    "condominio_reais": 870
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Cambuí, Campinas",
+    "descricao": "Condomínio Parque Cambuí, Rua Coronel Quirino, Cambuí: 4 quartos, 2 vagas, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 4,
+    "vagas": 2,
+    "area_m2": 120,
+    "preco": 1003000,
+    "condominio_reais": 970
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesmo prédio) — outra planta (quartos e área)"
+  },
+  {
+   "id": "ID-A020",
+   "a": {
+    "titulo": "Apartamento à venda, 68 m², 2 dormitórios, Vila Madalena",
+    "descricao": "Apartamento no Edifício Solar das Acácias, Rua Harmonia, com 2 dormitórios (1 suíte), sala para dois ambientes com varanda e vista para o parque. Piso de taco original restaurado, cozinha com armários planejados. Prédio com portaria 24h.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 790000,
+    "condominio_reais": 980
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 83 m², 3 dormitórios, Vila Madalena",
+    "descricao": "Apartamento em Vila Madalena (Edifício Solar das Acácias, Rua Harmonia): 3 dormitórios, 1 vaga. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 83,
+    "preco": 932000,
+    "condominio_reais": 1100
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesmo prédio) — outra planta (quartos e área)"
+  },
+  {
+   "id": "ID-A021",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 110 m² - Jardim Paulista",
+    "descricao": "Rua Pamplona, Jardim Paulista: 3 quartos (2 suítes), varanda gourmet com churrasqueira, 2 vagas. Reforma recente, ar-condicionado nos quartos. Prédio com lazer completo.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 1452000,
+    "condominio_reais": 1800
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 110 m², 3 dormitórios, Jardim Paulista",
+    "descricao": "Apartamento de 3 dormitórios na Rua Pamplona, sendo 2 suítes, 2 vagas, sala ampla com varanda gourmet e churrasqueira. Reformado em 2024, ar-condicionado em todos os quartos. Entregue mobiliado.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 1450000,
+    "condominio_reais": 1800
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mobiliado só num — omissão não contradiz; mesmo imóvel"
+  },
+  {
+   "id": "ID-A022",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Residencial Aurora",
+    "descricao": "Apartamento em Savassi (Residencial Aurora, Rua Pernambuco): 3 dormitórios, 2 vagas. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Savassi",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 118,
+    "preco": 1049000,
+    "condominio_reais": 940
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 105 m², 3 dormitórios, Savassi",
+    "descricao": "Condomínio Reserva Savassi, Rua Pernambuco: 3 quartos, 2 suítes, 2 vagas, varanda com vista para a Serra do Curral. Armários em todos os cômodos, piso de porcelanato. Lazer com piscina e espaço gourmet.",
+    "bairro": "Savassi",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 980000,
+    "condominio_reais": 1100
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mesma rua, prédios diferentes — nomes de condomínio distintos; não é duplicata"
+  },
+  {
+   "id": "ID-A023",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Solar das Acácias",
+    "descricao": "Apartamento no Edifício Solar das Acácias, Rua Harmonia, com 2 dormitórios (1 suíte), sala para dois ambientes com varanda e vista para o parque. Piso de taco original restaurado, cozinha com armários planejados. Prédio com portaria 24h.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 790000,
+    "condominio_reais": 980
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 68 m², 2 dormitórios, Vila Madalena",
+    "descricao": "Lindo apê na Rua Harmonia, Vila Madalena! 2 quartos sendo 1 suíte, varanda de frente pro parque, taco restaurado e cozinha planejada. Condomínio Edifício Solar das Acácias, portaria 24 horas. Agende sua visita!",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 882000,
+    "condominio_reais": 980
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-A024",
+   "a": {
+    "titulo": "Apartamento 2 quartos em Tijuca",
+    "descricao": "Apartamento na Rua Conde de Bonfim, Tijuca: 2 quartos, 1 vaga, sala com piso de madeira, dependência completa e varanda. Prédio com portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 71 m² - Tijuca",
+    "descricao": "Rua Conde de Bonfim, Tijuca: 2 quartos, 1 vaga, dependência revertida em escritório, sem varanda, piso frio na sala. Portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 71,
+    "preco": 483000,
+    "condominio_reais": 800
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesma rua) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-A025",
+   "a": {
+    "titulo": "Apartamento 3 quartos em Água Verde",
+    "descricao": "Edifício Monte Carlo, Água Verde: 3 quartos (1 suíte com closet), 1 vaga, sacada com churrasqueira. Aquecimento a gás, janelas acústicas. Próximo ao Clube Curitibano.",
+    "bairro": "Água Verde",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 720000,
+    "condominio_reais": 680
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Mooca, São Paulo",
+    "descricao": "Mooca, Condomínio Bosque da Mooca: 2 dorms, 1 vaga, sacada na sala, cozinha com armários. Piscina e salão de festas.",
+    "bairro": "Mooca",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 55,
+    "preco": 510000,
+    "condominio_reais": 580
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-A026",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Edifício Moinhos Prime",
+    "descricao": "Edifício Moinhos Prime, Rua Mostardeiro: 2 dormitórios (1 suíte), 2 vagas, living com lareira e sacada integrada. Infraestrutura para split, água quente central. Lazer com piscina e sauna.",
+    "bairro": "Moinhos de Vento",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 88,
+    "preco": 890000,
+    "condominio_reais": 950
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 2 vagas, 120 m² - Moinhos de Vento",
+    "descricao": "Edifício Moinhos Prime: 2 dormitórios, suíte, 2 vagas, lareira, sacada integrada. Área total 120 m², área privativa 88 m². Piscina, sauna.",
+    "bairro": "Moinhos de Vento",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 120,
+    "preco": 903000,
+    "condominio_reais": 950
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: área útil × total — um anúncio informa a área total; mesmo imóvel"
+  },
+  {
+   "id": "ID-A027",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 70 m² - Tijuca",
+    "descricao": "Tijuca, Rua Conde de Bonfim: 2 dorms, dependência completa, varanda, piso de madeira na sala. 1 vaga, portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 523000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Tijuca",
+    "descricao": "Apartamento na Rua Conde de Bonfim, Tijuca: 2 quartos, 1 vaga, sala com piso de madeira, dependência completa e varanda. Prédio com portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 800
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-A028",
+   "a": {
+    "titulo": "Apartamento à venda, 55 m², 2 dormitórios, Mooca",
+    "descricao": "Condomínio Bosque da Mooca, Rua da Mooca: 2 quartos, 1 vaga, sala com sacada, cozinha com armários. Condomínio com piscina, salão de festas e portaria 24h.",
+    "bairro": "Mooca",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 55,
+    "preco": 510000,
+    "condominio_reais": 580
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 56 m² - Mooca",
+    "descricao": "Mooca, Condomínio Bosque da Mooca: 2 dorms, 1 vaga, sacada na sala, cozinha com armários. Piscina e salão de festas.",
+    "bairro": "Mooca",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 56,
+    "preco": 495000,
+    "condominio_reais": 580
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-A029",
+   "a": {
+    "titulo": "Apto 2 dorms, 2 vagas, 99 m² - Moinhos de Vento",
+    "descricao": "Apartamento em Moinhos de Vento (Edifício Mirante, Rua Mostardeiro): 2 dormitórios, 2 vagas. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Moinhos de Vento",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 99,
+    "preco": 783000,
+    "condominio_reais": 1120
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 88 m², 2 dormitórios, Moinhos de Vento",
+    "descricao": "Edifício Moinhos Prime, Rua Mostardeiro: 2 dormitórios (1 suíte), 2 vagas, living com lareira e sacada integrada. Infraestrutura para split, água quente central. Lazer com piscina e sauna.",
+    "bairro": "Moinhos de Vento",
+    "cidade": "Porto Alegre",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 88,
+    "preco": 890000,
+    "condominio_reais": 950
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mesma rua, prédios diferentes — nomes de condomínio distintos; não é duplicata"
+  },
+  {
+   "id": "ID-A030",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos no Condomínio Parque Cambuí",
+    "descricao": "Condomínio Parque Cambuí, Rua Coronel Quirino: 3 dorms (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, box blindex nos banheiros! Lazer completo com piscina e quadra. Agende já sua visita.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 98,
+    "preco": 852000,
+    "condominio_reais": 870
+   },
+   "b": {
+    "titulo": "Cambuí – 3 quartos, 98 m², pronto para morar",
+    "descricao": "Condomínio Parque Cambuí, Rua Coronel Quirino: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, box blindex nos banheiros. Lazer completo com piscina e quadra.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 98,
+    "preco": 850000,
+    "condominio_reais": 870
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: descrição copiada com pequenas mudanças — mesmo imóvel"
+  },
+  {
+   "id": "ID-A031",
+   "a": {
+    "titulo": "Apartamento à venda, 103 m², 3 dormitórios, Savassi",
+    "descricao": "Condomínio Reserva Savassi, Rua Pernambuco: 3 quartos (2 suítes), 2 vagas, varanda voltada para o pátio interno, sem vista. Piso de porcelanato, armários planejados.",
+    "bairro": "Savassi",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 103,
+    "preco": 941000,
+    "condominio_reais": 1100
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 2 vagas, 105 m² - Savassi",
+    "descricao": "Condomínio Reserva Savassi, Rua Pernambuco: 3 quartos, 2 suítes, 2 vagas, varanda com vista para a Serra do Curral. Armários em todos os cômodos, piso de porcelanato. Lazer com piscina e espaço gourmet.",
+    "bairro": "Savassi",
+    "cidade": "Belo Horizonte",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 105,
+    "preco": 980000,
+    "condominio_reais": 1100
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: detalhe fixo contradiz — mesmo prédio, mesma planta e números dentro da tolerância, mas vista/face/posição/lareira diferem: unidades diferentes"
+  },
+  {
+   "id": "ID-A032",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Perdizes, São Paulo",
+    "descricao": "2 dormitórios e 2 vagas em Perdizes, Rua Coronel Oliveira. Próximo a comércio e transporte. Documentação em ordem.",
+    "bairro": "Perdizes",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 75,
+    "preco": 827000,
+    "condominio_reais": 800
+   },
+   "b": {
+    "titulo": "Oportunidade! 2 quartos em Perdizes",
+    "descricao": "Apartamento em Perdizes, na Rua Padre Chico: 2 dormitórios, 2 vagas, sala com lareira e varanda envidraçada. Prédio de 2010, lazer com piscina aquecida e academia.",
+    "bairro": "Perdizes",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 75,
+    "preco": 810000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-A033",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 98 m² - Cambuí",
+    "descricao": "Cambuí, Condomínio Parque Cambuí: 3 quartos com suíte, varanda gourmet, 2 vagas, cozinha planejada. Piscina e quadra no condomínio. Entregue vazio, sem móveis.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 98,
+    "preco": 783000,
+    "condominio_reais": 870
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Cambuí",
+    "descricao": "Condomínio Parque Cambuí, Rua Coronel Quirino: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, box blindex nos banheiros. Lazer completo com piscina e quadra. Entregue mobiliado e decorado.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 98,
+    "preco": 850000,
+    "condominio_reais": 870
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: mobiliado × vazio — resto igual: pode ser a mesma unidade em outro momento ou a vizinha idêntica; indecidível"
+  },
+  {
+   "id": "ID-A034",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Perdizes, São Paulo",
+    "descricao": "2 quartos e 2 vagas em Perdizes, com lareira na sala e varanda envidraçada. Prédio de 2010, piscina aquecida e academia.",
+    "bairro": "Perdizes",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 74,
+    "preco": 796000,
+    "condominio_reais": 900
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Perdizes, São Paulo",
+    "descricao": "Apartamento em Perdizes, na Rua Padre Chico: 2 dormitórios, 2 vagas, sala com lareira e varanda envidraçada. Prédio de 2010, lazer com piscina aquecida e academia.",
+    "bairro": "Perdizes",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 2,
+    "area_m2": 75,
+    "preco": 810000,
+    "condominio_reais": 900
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": null,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: anúncio sem endereço — bairro, planta, números e o conjunto de detalhes distintivos coincidem; mesmo imóvel"
+  },
+  {
+   "id": "ID-A035",
+   "a": {
+    "titulo": "Oportunidade! 3 quartos em Jardim Paulista",
+    "descricao": "Rua Barão do Rio Branco, Jardim Paulista: 3 quartos, 2 vagas, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 112,
+    "preco": 1458000,
+    "condominio_reais": 1630
+   },
+   "b": {
+    "titulo": "Jardim Paulista – 3 quartos, 110 m², pronto para morar",
+    "descricao": "Apartamento de 3 dormitórios na Rua Pamplona, sendo 2 suítes, 2 vagas, sala ampla com varanda gourmet e churrasqueira. Reformado em 2024, ar-condicionado em todos os quartos.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 1450000,
+    "condominio_reais": 1800
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: mesmo bairro e números parecidos — quartos, vagas, área e preço batem, mas as ruas são diferentes; outro imóvel"
+  },
+  {
+   "id": "ID-A036",
+   "a": {
+    "titulo": "Apartamento à venda, 72 m², 2 dormitórios, Pinheiros",
+    "descricao": "Rua Oscar Freire, Pinheiros: 2 dormitórios (1 suíte), 1 vaga, sala com pé-direito duplo e varanda. Prédio novo com rooftop e coworking.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 72,
+    "preco": 950000,
+    "condominio_reais": 1200
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Pinheiros",
+    "descricao": "Pinheiros, Rua Oscar Freire: apê de 2 quartos com suíte, pé-direito duplo na sala, varanda, 1 vaga. Rooftop e coworking no prédio.",
+    "bairro": "Pinheiros",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 71,
+    "preco": 937000,
+    "condominio_reais": 1200
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-A037",
+   "a": {
+    "titulo": "Apto 2 dorms, 1 vaga, 65 m² - Trindade",
+    "descricao": "Apartamento na Trindade, na Rua Lauro Linhares: 2 quartos, 1 vaga, sacada com churrasqueira, a 10 minutos a pé da UFSC. Sol da manhã.",
+    "bairro": "Trindade",
+    "cidade": "Florianópolis",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 65,
+    "preco": 480000,
+    "condominio_reais": 520
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 64 m² - Trindade",
+    "descricao": "Trindade, pertinho da UFSC: 2 dormitórios, 1 vaga, sacada com churrasqueira, sol da manhã. Rua Lauro Linhares.",
+    "bairro": "Trindade",
+    "cidade": "Florianópolis",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 64,
+    "preco": 476000,
+    "condominio_reais": 520
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-A038",
+   "a": {
+    "titulo": "Oportunidade! 2 quartos no Residencial Vila Nova",
+    "descricao": "Residencial Vila Nova, Rua Domingos de Morais: 2 quartos, 1 vaga, sala sem sacada, cozinha fechada tradicional, piso frio. Perto do metrô.",
+    "bairro": "Vila Mariana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 531000,
+    "condominio_reais": 620
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 60 m², 2 dormitórios, Vila Mariana",
+    "descricao": "Residencial Vila Nova, Rua Domingos de Morais: apartamento de 2 quartos, 1 vaga, sala com sacada, piso laminado e cozinha americana. A 5 minutos do metrô Vila Mariana. Aceita pet.",
+    "bairro": "Vila Mariana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 560000,
+    "condominio_reais": 620
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: unidade diferente (mesmo prédio) — mesmos quartos e vagas, mas um tem sacada/varanda e o outro não (planta)"
+  },
+  {
+   "id": "ID-A039",
+   "a": {
+    "titulo": "Apartamento à venda, 42 m², 1 dormitório, Batel",
+    "descricao": "Studio no Batel, na Rua Comendador Araújo: 1 dormitório, 1 vaga, com cozinha compacta, sacada e bancada de trabalho sob medida. Pronto para locação ou moradia.",
+    "bairro": "Batel",
+    "cidade": "Curitiba",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 42,
+    "preco": 390000,
+    "condominio_reais": 450
+   },
+   "b": {
+    "titulo": "Apartamento à venda, 42 m², 1 dormitório, Batel",
+    "descricao": "Apartamento 1 quarto na Rua Comendador Araújo, Batel, sacada, cozinha compacta, bancada de trabalho planejada. Ideal para investidor. Valor reduzido para venda rápida.",
+    "bairro": "Batel",
+    "cidade": "Curitiba",
+    "quartos": 1,
+    "vagas": 1,
+    "area_m2": 42,
+    "preco": 348000,
+    "condominio_reais": 450
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": false
+   },
+   "nota": "difícil: preço reajustado — mesmo imóvel anunciado com preço fora da tolerância"
+  },
+  {
+   "id": "ID-A040",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 85 m² - Tatuapé",
+    "descricao": "Apartamento em Tatuapé (Condomínio Jardim das Palmeiras): 3 dormitórios, 2 vagas. Prédio com portaria e elevador. Ótima localização.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 85,
+    "preco": 620000,
+    "condominio_reais": 750
+   },
+   "b": {
+    "titulo": "Apartamento 3 quartos em Tatuapé",
+    "descricao": "Condomínio Jardim das Palmeiras, Tatuapé: 3 quartos, 2 vagas, sala e cozinha. Condomínio com portaria 24h. Agende sua visita.",
+    "bairro": "Tatuapé",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 86,
+    "preco": 626000,
+    "condominio_reais": 750
+   },
+   "mesmo_imovel": null,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "difícil: sem detalhe distintivo — mesmo prédio e mesma planta: mesma unidade ou vizinha idêntica; indecidível"
+  }
+ ]
+}

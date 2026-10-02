@@ -1,0 +1,165 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "IE-R001",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vi dois anúncios de vcs, o apê da vila mariana e a casa do butantã"
+    },
+    {
+     "de": "agente",
+     "texto": "Oi! Posso te ajudar com os dois. Quer começar por qual?"
+    },
+    {
+     "de": "cliente",
+     "texto": "o apê da vila mariana tem vaga?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Vila Mariana, 60 m², 1 vaga, R$ 650 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Casa 3 quartos no Butantã, 2 vagas, quintal, R$ 900 mil"
+    }
+   ],
+   "rascunho": "Tem sim! O apartamento da Vila Mariana tem 1 vaga de garagem.",
+   "referente": "IM-01",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-R002",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde, to olhando o apê de copacabana e o de botafogo"
+    },
+    {
+     "de": "agente",
+     "texto": "Boa tarde! Os dois estão disponíveis para visita. Quer saber algo específico?"
+    },
+    {
+     "de": "cliente",
+     "texto": "o de botafogo aceita pet?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos em Copacabana, 70 m², aceita pet, R$ 980 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 1 quarto em Botafogo, 45 m², não aceita pet, R$ 620 mil"
+    }
+   ],
+   "rascunho": "Aceita sim, o prédio é pet friendly, pode trazer seu cachorro.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": true,
+   "nota": "rascunho responde com o fato de Copacabana (aceita pet) para o de Botafogo (não aceita)"
+  },
+  {
+   "id": "IE-R003",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "qual o valor do condomínio do apto do batel?"
+    },
+    {
+     "de": "agente",
+     "texto": "O do Batel tem condomínio de R$ 900. Também tenho um no Bigorrilho, se quiser comparar."
+    },
+    {
+     "de": "cliente",
+     "texto": "pode ser, o do bigorrilho tem quantos quartos?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Batel, Curitiba, 2 vagas, condomínio R$ 900, R$ 850 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 2 quartos no Bigorrilho, Curitiba, 1 vaga, condomínio R$ 600, R$ 520 mil"
+    }
+   ],
+   "rascunho": "O do Bigorrilho tem 2 quartos e 1 vaga, condomínio de R$ 600.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-R004",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vi o de 480 mil e o de 720 mil no site de vcs"
+    },
+    {
+     "de": "agente",
+     "texto": "Oi! O de 480 é o da Pompeia e o de 720 é o de Perdizes. Qual te interessa mais?"
+    },
+    {
+     "de": "cliente",
+     "texto": "o de 720 tem quantas vagas?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 2 quartos na Pompeia, 1 vaga, R$ 480 mil"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos em Perdizes, 2 vagas, R$ 720 mil"
+    }
+   ],
+   "rascunho": "O de Perdizes, de 720 mil, tem 2 vagas.",
+   "referente": "IM-02",
+   "rascunho_usa_outro": false,
+   "nota": null
+  },
+  {
+   "id": "IE-R005",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "me manda as opções de 3 quartos na zona sul?"
+    },
+    {
+     "de": "agente",
+     "texto": "Tenho três: um no Flamengo, um em Laranjeiras e um no Catete. Te passo os resumos."
+    },
+    {
+     "de": "cliente",
+     "texto": "obrigada. o do catete tem elevador?"
+    }
+   ],
+   "candidatos": [
+    {
+     "id": "IM-01",
+     "resumo": "Apto 3 quartos no Flamengo, 90 m², 1 vaga, prédio com elevador, R$ 1,1 mi"
+    },
+    {
+     "id": "IM-02",
+     "resumo": "Apto 3 quartos em Laranjeiras, 85 m², sem vaga, prédio antigo sem elevador, R$ 890 mil"
+    },
+    {
+     "id": "IM-03",
+     "resumo": "Apto 3 quartos no Catete, 80 m², sem vaga, prédio com elevador, R$ 760 mil"
+    }
+   ],
+   "rascunho": "Tem sim, o do Catete fica num prédio com elevador. Ele não tem vaga, só para você saber.",
+   "referente": "IM-03",
+   "rascunho_usa_outro": false,
+   "nota": null
+  }
+ ]
+}

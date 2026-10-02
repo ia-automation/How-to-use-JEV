@@ -1,0 +1,29 @@
+{
+ "congelado_em": "2026-10-01T23:57:21-03:00",
+ "arquivos": {
+  "perguntas.py": "d0aeb58b7274ef6bad936cded6c22cdf4613ed342028c8d70004d2a0bd647067",
+  "rerank.py": "4af218101f41873ba1059ec73d893423d4d2dd8af415c5dcf6b6c4b90d461bc0",
+  "bm25.py": "b7d568286c55c9c94ae1fcf0ce5931ebbdbe01fecb3bcfbc994c2efd4e11713c",
+  "run.py": "4a84d1f1d5a609c7b3bbc6f0b8b5281fab09b1bad74ab0c622482b539b176fb7",
+  "dados/teste.json": "66ae35affd4afec5e69ab83cba45f74cbf38d50f937496835416af4fd73327dd"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (as consultas sorteadas de teste), rerank por trecho em inglês sobre o top-20 do BM25",
+  "1_ganho_ndcg": "Δ NDCG@10 (Jev − BM25) médio ≥ 0,05 E limite inferior do intervalo de 95% > 0",
+  "2_custo": "custo do Jev ≤ US$ 2,00 por mil consultas (20 requisições por consulta, preço de entrada)",
+  "3_latencia": "p95 por requisição ≤ 1.200 ms, medido na chamada real (8 em paralelo)",
+  "secundario_nao_decide": "Δ MRR@10 (nota ≥ 2) com intervalo que não cruza zero; Jev ≥ baseline de sobreposição em NDCG@10; variante 'lote' (20 trechos num state) relatada ao lado, sem decidir",
+  "se_falhar": "1 falhando = o Noul por trecho não paga a chamada neste corpus; 2 ou 3 falhando = reler em lote ou indexar na ingestão",
+  "limites": {
+   "ganho_ndcg_min": 0.05,
+   "custo_por_mil_max_us": 2.0,
+   "p95_ms_max": 1200
+  }
+ },
+ "informativo": {
+  "../_comum/jevcache.py": "969aa3fdf93eb9d8958bc47b7f19ff22d594003a69e7bd2c30a4cf6c5b79d794",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6",
+  "../_comum/metricas.py": "9fbd24d53375d3a63147cb404937463e7319f0b0442990b1873a9edb5d7b4c3c",
+  "preparacao.json": "446daeffb32a751f9dde30687a3586860e266a5f5f883ce8763aef7a25a4ac3e"
+ }
+}

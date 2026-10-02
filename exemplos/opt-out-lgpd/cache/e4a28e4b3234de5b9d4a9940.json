@@ -1,0 +1,53 @@
+{
+ "medicao": {
+  "ms": 317,
+  "input_tokens": 2032,
+  "modelo": "jev-1.13.0",
+  "perguntas": 7
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "opt_out": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "temporary_pause": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "lgpd_request": {
+    "type": "noul",
+    "noul": 0.21
+   },
+   "lgpd_type": {
+    "type": "choice",
+    "choice": "deletion",
+    "confidence": 0.68,
+    "probabilities": {
+     "deletion": 0.75,
+     "none": 0.21,
+     "data_source": 0.0,
+     "access": 0.0,
+     "correction": 0.04
+    }
+   },
+   "wants_contact_to_continue": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "stop_without_object": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "about_another_contact": {
+    "type": "noul",
+    "noul": 0.04
+   }
+  },
+  "usage": {
+   "input_tokens": 2032,
+   "output_tokens": 169
+  }
+ }
+}

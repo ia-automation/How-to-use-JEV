@@ -1,0 +1,137 @@
+{
+ "versao": "2026-10-02",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "TD-R01",
+   "condicao": "O documento prevê o reajuste do valor pelo IGP-M.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L03",
+    "L05",
+    "L07",
+    "L09",
+    "S01",
+    "S04",
+    "S09"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s3",
+    "L03": "L03-s3",
+    "L05": "L05-s3",
+    "L07": "L07-s3",
+    "L09": "L09-s3",
+    "S01": "S01-s3",
+    "S04": "S04-s3",
+    "S09": "S09-s3"
+   },
+   "nota": "fácil: índice nomeado na seção de aluguel ou de remuneração; IPCA, valor fixo e 'índice a definir' são falsos"
+  },
+  {
+   "id": "TD-R02",
+   "condicao": "A ata registra a aprovação de obra ou reforma nas áreas comuns do condomínio.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "A01",
+    "A03",
+    "A07",
+    "A09",
+    "A11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "A01": "A01-s4",
+    "A03": "A03-s4",
+    "A07": "A07-s4",
+    "A09": "A09-s4",
+    "A11": "A11-s4"
+   },
+   "nota": "fácil: mesma condição de uma deliberação explícita; rejeitada e adiada são falsas"
+  },
+  {
+   "id": "TD-R03",
+   "condicao": "Proposta comercial com garantia de doze meses ou mais (`garantia_meses` >= 12).",
+   "tipo": "numerica",
+   "documentos_verdadeiros": [
+    "P01",
+    "P03",
+    "P05",
+    "P06",
+    "P07",
+    "P09",
+    "P10",
+    "P11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "P01": "P01-s6",
+    "P03": "P03-s6",
+    "P05": "P05-s6",
+    "P06": "P06-s5",
+    "P07": "P07-s6",
+    "P09": "P09-s6",
+    "P10": "P10-s5",
+    "P11": "P11-s5"
+   },
+   "nota": "fácil: valor em `campos`, prova na seção de garantia"
+  },
+  {
+   "id": "TD-R04",
+   "condicao": "Contrato de locação em que a garantia da locação é prestada por fiador.",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "L01",
+    "L03",
+    "L05",
+    "L06",
+    "L09",
+    "L10",
+    "L11"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "L01": "L01-s4",
+    "L03": "L03-s4",
+    "L05": "L05-s4",
+    "L06": "L06-s4",
+    "L09": "L09-s4",
+    "L10": "L10-s4",
+    "L11": "L11-s4"
+   },
+   "nota": "fácil: caução e seguro-fiança dizem explicitamente que não há fiador"
+  },
+  {
+   "id": "TD-R05",
+   "condicao": "O documento contém cláusula de confidencialidade (sigilo sobre informações da outra parte).",
+   "tipo": "semantica",
+   "documentos_verdadeiros": [
+    "S02",
+    "S04",
+    "S05",
+    "S06",
+    "S09",
+    "S10",
+    "P02",
+    "P04",
+    "P06",
+    "P09"
+   ],
+   "documentos_indecidiveis": [],
+   "secao_que_prova": {
+    "S02": "S02-s5",
+    "S04": "S04-s4",
+    "S05": "S05-s5",
+    "S06": "S06-s5",
+    "S09": "S09-s4",
+    "S10": "S10-s5",
+    "P02": "P02-s6",
+    "P04": "P04-s6",
+    "P06": "P06-s6",
+    "P09": "P09-s7"
+   },
+   "nota": "fácil: seção própria ou dentro de seção composta"
+  }
+ ]
+}

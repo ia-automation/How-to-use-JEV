@@ -1,0 +1,29 @@
+{
+ "congelado_em": "2026-10-01T13:30:04-03:00",
+ "arquivos": {
+  "perguntas.py": "43b4435668feb2c5177042bfa61d2d19d130f00a22603057d257945cab6d07b5",
+  "proxima.py": "a1a5d1199d27058030ea3f053cb2a0c76b8f663b7dada5561161f283ea321b15",
+  "run.py": "fa3709876f26bfc4f68c083a0152e4834fb686e21ce2360698c7af12dff3438f",
+  "dados/teste.json": "7e7c79562367f542ddd67b297d5054b06531d0e16f2b627e2bcf7584f62e5e30"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (40 conversas), variante principal `hibrida` com os limiares acima",
+  "1_pergunta_proibida": "escolha ∈ `proibidas` (perguntou o que já sabia ou o que não faz sentido) ≤ 1/40",
+  "2_acerto": "escolha ∈ `aceitaveis` ≥ melhor baseline de código + 0,15",
+  "3_deixou_de_perguntar": "`no_question_needed` indevido ≤ 2/23",
+  "4_contra_choice_unica": "acerto ≥ o da Choice única E proibidas ≤ as da Choice única",
+  "secundario_nao_decide": "portão: proibidas bloqueadas ≥ 90%; aceitáveis bloqueadas indevidamente ≤ 5%",
+  "se_falhar": "1 falhando = o portão não serve como guarda contra repetição sem mudança; 2 = a regra de palavras-chave basta; 3 = a etapa cala onde devia qualificar; 4 = decompor não paga: a Choice única (uma requisição, sem portão) faz o mesmo",
+  "limites": {
+   "proibida_max": 1,
+   "margem_acerto": 0.15,
+   "nqn_indevido_max": 2,
+   "proibidas_bloqueadas_min": 0.9,
+   "aceitavel_bloqueada_max": 0.05
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "4f8108692356f1419e66abc3b934cf214c4a0174a9f3cc37e383e820dcbd8c43"
+ }
+}

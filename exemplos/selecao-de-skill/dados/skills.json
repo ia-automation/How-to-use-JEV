@@ -1,0 +1,216 @@
+{
+  "versao": "2026-10-01",
+  "autor": "fable",
+  "casos": [
+    {
+      "id": "code-review",
+      "nome": "Revisão de código",
+      "descricao": "Revisa o diff atual ou um PR em busca de bugs de correção e de simplificações óbvias; devolve achados por gravidade. Use quando pedirem para revisar uma mudança de código."
+    },
+    {
+      "id": "security-review",
+      "nome": "Revisão de segurança",
+      "descricao": "Revisa as mudanças pendentes procurando falhas de segurança: autenticação, permissão, injeção, segredo exposto. Use quando a mudança toca auth, RBAC, token ou dado sensível."
+    },
+    {
+      "id": "simplify",
+      "nome": "Simplificar mudança",
+      "descricao": "Relê o diff recém-escrito e reduz duplicação, complexidade e código morto, sem mudar comportamento. Só qualidade: não caça bug."
+    },
+    {
+      "id": "refactor-safe",
+      "nome": "Refatoração segura",
+      "descricao": "Move, renomeia, divide ou extrai código existente em vários arquivos sem mudar comportamento, com testes rodando antes e depois."
+    },
+    {
+      "id": "diagnosing-bugs",
+      "nome": "Diagnóstico de bug difícil",
+      "descricao": "Laço de reprodução para bug intermitente, 'às vezes', fila ou pool que não se recupera, falha que o erro literal e o diff recente não explicam."
+    },
+    {
+      "id": "perf-profile",
+      "nome": "Perfil de performance",
+      "descricao": "Mede um endpoint, tela ou consulta lenta (tempo por etapa, EXPLAIN, perfil de CPU) e aponta o gargalo antes de qualquer otimização."
+    },
+    {
+      "id": "fix-ci",
+      "nome": "Conserto de CI",
+      "descricao": "Lê o log do pipeline que falhou, acha o passo quebrado (lint, build, cache, versão do runner) e corrige o workflow ou o código que o quebrou."
+    },
+    {
+      "id": "logs-prod",
+      "nome": "Leitura de logs de produção",
+      "descricao": "Busca, somente leitura, os logs de um serviço em produção por janela de tempo e termo, e resume erros e picos. Use para 'o que aconteceu em prod'."
+    },
+    {
+      "id": "incident-postmortem",
+      "nome": "Pós-incidente",
+      "descricao": "Monta o documento de um incidente: linha do tempo, impacto, causa raiz e ações, a partir de logs, deploys e conversa do time."
+    },
+    {
+      "id": "migration-2bancos",
+      "nome": "Migration nos dois bancos",
+      "descricao": "Escreve e aplica mudança de schema ou de dado em massa (coluna, índice, tabela, backfill) em dev e depois em prod, fechando com diff de tabelas e permissões."
+    },
+    {
+      "id": "db-query",
+      "nome": "Consulta ao banco",
+      "descricao": "Roda consulta SQL somente leitura em dev ou prod para responder uma pergunta de dado (contagem, lista, conferência)."
+    },
+    {
+      "id": "deploy-dev",
+      "nome": "Deploy em dev",
+      "descricao": "Build, envio da imagem e atualização do serviço no ambiente de desenvolvimento/homologação, com teste de saúde no fim."
+    },
+    {
+      "id": "deploy-prod",
+      "nome": "Deploy em produção",
+      "descricao": "Promove a develop para a main e publica em produção com verificação pós-deploy; exige ordem explícita do dono."
+    },
+    {
+      "id": "rollback",
+      "nome": "Reverter deploy",
+      "descricao": "Volta um serviço para a versão anterior que funcionava e confere a saúde; use quando um deploy recente quebrou algo."
+    },
+    {
+      "id": "secrets-vault",
+      "nome": "Segredos e variáveis no cofre",
+      "descricao": "Cria, altera ou rotaciona variável de ambiente e segredo no cofre de dev e de prod e liga a variável ao stack do serviço."
+    },
+    {
+      "id": "api-contract",
+      "nome": "Contrato de API",
+      "descricao": "Escreve ou atualiza a especificação OpenAPI de um endpoint e confere quem consome cada campo para evitar quebra entre serviços."
+    },
+    {
+      "id": "test-writer",
+      "nome": "Escrita de testes",
+      "descricao": "Cria testes unitários e de integração para função ou módulo existente, no padrão do repositório."
+    },
+    {
+      "id": "e2e-browser",
+      "nome": "Teste no navegador",
+      "descricao": "Dirige o front real no navegador (login, clique, formulário) para conferir um fluxo de ponta a ponta e relata o que viu."
+    },
+    {
+      "id": "dependency-upgrade",
+      "nome": "Atualização de dependência",
+      "descricao": "Sobe a versão de um pacote ou framework, lê as notas de mudança, ajusta o que quebrou e roda a suíte."
+    },
+    {
+      "id": "pr-open",
+      "nome": "Abrir PR",
+      "descricao": "Cria o pull request pelo terminal a partir da branch atual, com título e descrição no padrão do time."
+    },
+    {
+      "id": "changelog-release",
+      "nome": "Notas de versão",
+      "descricao": "Gera a nota de release ou o changelog a partir dos commits e PRs desde a última tag, em linguagem para quem usa."
+    },
+    {
+      "id": "docs-writer",
+      "nome": "Documentação técnica",
+      "descricao": "Escreve ou atualiza README, guia de uso, runbook ou ADR de um módulo ou serviço."
+    },
+    {
+      "id": "to-tickets",
+      "nome": "Quebra em tickets",
+      "descricao": "Divide um plano já decidido em tickets verticais, cada um dizendo quem o bloqueia, para paralelizar o trabalho."
+    },
+    {
+      "id": "grilling",
+      "nome": "Entrevista de desenho",
+      "descricao": "Rodada de perguntas para fechar um plano ou decisão ainda em aberto antes de codar; cada pergunta com resposta recomendada."
+    },
+    {
+      "id": "frontend-design",
+      "nome": "Design de interface",
+      "descricao": "Direção visual, layout e tipografia ao criar uma tela nova ou remodelar uma existente."
+    },
+    {
+      "id": "ux-review",
+      "nome": "Revisão de UX",
+      "descricao": "Avalia fluxo, usabilidade e acessibilidade de uma tela que já existe e lista os problemas por gravidade."
+    },
+    {
+      "id": "dataviz",
+      "nome": "Gráficos e painéis",
+      "descricao": "Escolhe a forma do gráfico, as cores e constrói a visualização ou o painel a partir de dados."
+    },
+    {
+      "id": "prompt-tuning",
+      "nome": "Ajuste de prompt de agente",
+      "descricao": "Edita o prompt de sistema de um agente para corrigir um comportamento, versiona a mudança e invalida o cache."
+    },
+    {
+      "id": "llm-eval",
+      "nome": "Avaliação de LLM",
+      "descricao": "Monta ou usa um conjunto rotulado para medir acerto, custo e latência de um prompt, agente ou modelo; compara versões."
+    },
+    {
+      "id": "copywriting",
+      "nome": "Texto de página",
+      "descricao": "Escreve ou reescreve o texto de uma página do site: home, landing de lançamento, página de imóvel, título e chamada."
+    },
+    {
+      "id": "ad-creative",
+      "nome": "Criativo de anúncio",
+      "descricao": "Gera títulos, descrições e variações de criativo para anúncios pagos no Meta e no Google Ads."
+    },
+    {
+      "id": "ads-audit",
+      "nome": "Auditoria de campanhas pagas",
+      "descricao": "Analisa a conta de anúncios (Meta, Google): estrutura, verba desperdiçada, custo por lead por campanha, e recomenda ajustes."
+    },
+    {
+      "id": "lead-report",
+      "nome": "Relatório de leads",
+      "descricao": "Monta o relatório de leads por canal e período: volume, custo por lead real e conversão em visita agendada."
+    },
+    {
+      "id": "seo-audit",
+      "nome": "Auditoria de SEO",
+      "descricao": "Diagnostica por que o site aparece mal no Google: indexação, velocidade, títulos, conteúdo e links."
+    },
+    {
+      "id": "ai-seo",
+      "nome": "Otimização para respostas de IA",
+      "descricao": "Prepara o site para ser citado por assistentes de IA (estrutura de conteúdo, perguntas e respostas, `llms.txt`)."
+    },
+    {
+      "id": "schema-markup",
+      "nome": "Dados estruturados",
+      "descricao": "Escreve JSON-LD para resultado rico no Google: imóvel, perguntas frequentes, avaliação, trilha de navegação."
+    },
+    {
+      "id": "programmatic-seo",
+      "nome": "Páginas em escala",
+      "descricao": "Gera páginas em massa a partir de um template e de dados: uma por cidade, bairro ou tipo de imóvel."
+    },
+    {
+      "id": "email-sequence",
+      "nome": "Sequência de e-mails",
+      "descricao": "Desenha a régua de e-mails (boas-vindas, nutrição, reativação): quantos, quando, assunto e corpo de cada um."
+    },
+    {
+      "id": "whatsapp-template",
+      "nome": "Template de WhatsApp",
+      "descricao": "Escreve mensagem-modelo (HSM) para aprovação na Meta: categoria certa, variáveis e botões."
+    },
+    {
+      "id": "social-calendar",
+      "nome": "Calendário de redes sociais",
+      "descricao": "Monta a pauta do mês para as redes: datas, formato e legenda de cada post."
+    },
+    {
+      "id": "video-listing",
+      "nome": "Vídeo de imóvel",
+      "descricao": "Roteiriza e monta vídeo curto de imóvel ou de bairro a partir das fotos e da ficha."
+    },
+    {
+      "id": "landing-ab-test",
+      "nome": "Teste A/B de página",
+      "descricao": "Desenha um teste A/B de página: hipótese, variante, métrica e tamanho de amostra necessário."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+ "congelado_em": "2026-10-01T12:47:41-03:00",
+ "arquivos": {
+  "perguntas.py": "09cee227f537c378779c5164f45495a63cc176fb0141793503e4c272e5e3d746",
+  "lint.py": "13aa805140fea096efd72c4cf7dba5ee04837efcdde9d3331380d5981a28fce2",
+  "run.py": "1d8f9976f25c08a2ec267c59ba6fe6d6fc99184cdf896fea2a4480df64a8267e",
+  "dados/teste.json": "9c029ea96c18d5b89a085085a7108dbd2796c4af9e67dc4f631c7cdf5f831261"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste, com o desenho padrão, a FAIXA e o LIMIAR_APLICA acima",
+  "1_mecanicas": "100% (menos é bug de código)",
+  "2_semantico_duro": "acerto duro (noul ≥ 0,5, gabarito true/false) ≥ 0,90 E ≥ baseline + 10 p.p.",
+  "3_erro_caro": "≤ 5% das violações reais (gabarito true) passam como `ok` ou `nao_se_aplica`",
+  "4_falso_alarme": "≤ 10% dos gabaritos false viram `viola`",
+  "5_nulo": "≥ 80% dos gabaritos null NÃO viram `viola`"
+ }
+}

@@ -1,0 +1,427 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CC-R001",
+   "tarefa_atual": "Corrigir o teste que falha em src/pedidos/total.test.ts.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Bom dia! Preciso que você corrija o teste que está falhando no módulo de pedidos. Usa pnpm, não npm."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Bom dia! Vou rodar a suíte do módulo para ver a falha."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/pedidos\n ✓ src/pedidos/frete.test.ts (4)\n ✗ src/pedidos/total.test.ts (1 failed)\n   AssertionError: expected 105.50000000000001 to be 105.5\n Test Files  1 failed | 1 passed (2)"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "A falha é de ponto flutuante em total.test.ts. Vou olhar como o total é calculado."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ cat src/pedidos/total.ts\nexport function calcularTotal(itens: Item[], desconto: number) {\n  const bruto = itens.reduce((s, i) => s + i.preco * i.qtd, 0);\n  return bruto - bruto * desconto;\n}"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "O total soma em float. Duas saídas: arredondar no fim ou somar em centavos inteiros. Qual prefere?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Soma em centavos inteiros. E não mexe no frete.ts, outro time está alterando."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Combinado: centavos, e frete.ts fica intocado. Vou procurar quem chama calcularTotal."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn calcularTotal src/ --include=*.ts | grep -v test\nsrc/pedidos/checkout.ts:41:  const total = calcularTotal(itens, cupom.desconto);\nsrc/pedidos/resumo.ts:17:  total: calcularTotal(p.itens, 0),\nsrc/relatorios/vendas.ts:88:    soma += calcularTotal(p.itens, p.desconto);"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Já passei total.ts para centavos. São 3 chamadores a ajustar: src/pedidos/checkout.ts:41, src/pedidos/resumo.ts:17 e src/relatorios/vendas.ts:88. Ainda não rodei o teste de novo."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "ok"
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Seguindo com checkout.ts."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m03",
+    "m07",
+    "m10"
+   ],
+   "descartar": [
+    "m02",
+    "m04",
+    "m05",
+    "m06",
+    "m08",
+    "m09",
+    "m11",
+    "m12"
+   ],
+   "nota": "Pedido + restrições do usuário, erro ainda aberto e placar; o resto é andaime."
+  },
+  {
+   "id": "CC-R002",
+   "tarefa_atual": "Adicionar o campo telefone ao formulário de cadastro (o ajuste do título já terminou).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Oi. Troca o título da página de cadastro para 'Crie sua conta'."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou localizar o título."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn \"Cadastre-se\" src/\nsrc/pages/cadastro.tsx:12:      <h1>Cadastre-se</h1>"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "Troquei o título em src/pages/cadastro.tsx para 'Crie sua conta'."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Perfeito. Agora adiciona um campo telefone no formulário dessa página, obrigatório, com máscara (99) 99999-9999."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "O projeto já tem algum componente de máscara ou posso instalar uma biblioteca?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Não instala nada. Usa o componente CampoMascara que já existe em src/components."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Certo, vou ver a interface do CampoMascara."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ cat src/components/CampoMascara.tsx | head -5\ntype Props = { mascara: string; valor: string; aoMudar: (v: string) => void; nome: string };\nexport function CampoMascara({ mascara, valor, aoMudar, nome }: Props) {\n  const ref = useRef<HTMLInputElement>(null);"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Campo telefone adicionado ao formulário com o CampoMascara. Falta a validação de obrigatório no schema (src/schemas/cadastro.ts)."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Boa, segue."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Seguindo com o schema."
+    },
+    {
+     "id": "m13",
+     "papel": "usuario",
+     "texto": "Ah, e a mensagem de erro tem que ser 'Informe um telefone válido'."
+    }
+   ],
+   "manter": [
+    "m05",
+    "m07",
+    "m10",
+    "m13"
+   ],
+   "descartar": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m08",
+    "m09",
+    "m11",
+    "m12"
+   ],
+   "nota": "A tarefa do título acabou e não sustenta a atual: sai inteira."
+  },
+  {
+   "id": "CC-R003",
+   "tarefa_atual": "Descobrir por que o deploy do api-agenda em dev falha na subida.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "O deploy do api-agenda em dev está falhando. Vê o que é. Só dev, não toca em prod."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou olhar o estado do serviço em dev."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ docker service ps api-agenda --no-trunc | head -3\nNAME            CURRENT STATE            ERROR\napi-agenda.1    Failed 2 minutes ago     \"task: non-zero exit (1)\"\napi-agenda.1    Failed 5 minutes ago     \"task: non-zero exit (1)\""
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "A tarefa sai com código 1 logo na subida. Vou ver o log."
+    },
+    {
+     "id": "m05",
+     "papel": "ferramenta",
+     "texto": "$ docker service logs api-agenda --tail 4\nStarting api-agenda 1.9.0\nError: connect ECONNREFUSED 10.0.0.15:6379\n    at TCPConnectWrap.afterConnect [as oncomplete]\nProcess exited with code 1"
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Não conecta no Redis em 10.0.0.15:6379. Mudou algo no Redis de dev recentemente?"
+    },
+    {
+     "id": "m07",
+     "papel": "usuario",
+     "texto": "Sim, ontem o Redis de dev passou a ser acessado pelo nome redis-dev. O IP antigo morreu."
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Então a REDIS_URL do api-agenda deve estar com o IP. Vou conferir o arquivo de stack."
+    },
+    {
+     "id": "m09",
+     "papel": "ferramenta",
+     "texto": "$ grep -n REDIS_URL stack.dev.yaml\n41:      REDIS_URL: redis://10.0.0.15:6379"
+    },
+    {
+     "id": "m10",
+     "papel": "assistente",
+     "texto": "Confirmado: stack.dev.yaml linha 41 tem REDIS_URL com o IP antigo. O conserto é trocar para redis://redis-dev:6379 e refazer o deploy em dev. Ainda não alterei."
+    },
+    {
+     "id": "m11",
+     "papel": "usuario",
+     "texto": "Faz isso. E me avisa quando a checagem de saúde passar."
+    },
+    {
+     "id": "m12",
+     "papel": "assistente",
+     "texto": "Alterando o stack.dev.yaml."
+    }
+   ],
+   "manter": [
+    "m01",
+    "m05",
+    "m07",
+    "m10",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m06",
+    "m08",
+    "m09",
+    "m12"
+   ],
+   "nota": "Erro aberto, restrição (só dev), fato novo do usuário, diagnóstico com o literal e pedido de aviso."
+  },
+  {
+   "id": "CC-R004",
+   "tarefa_atual": "Escrever testes unitários para calcularFrete.",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Escreve testes para a função calcularFrete em src/frete/calcular.ts. Usa vitest e segue o padrão dos testes que já existem na pasta."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou ver a função e um teste existente."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ cat src/frete/calcular.ts\nexport function calcularFrete(cep: string, pesoG: number, subtotal: number) {\n  if (!/^\\d{8}$/.test(cep)) throw new Error('CEP inválido');\n  if (subtotal >= 30000) return 0;\n  return pesoG <= 1000 ? 1500 : 1500 + Math.ceil((pesoG - 1000) / 500) * 400;\n}"
+    },
+    {
+     "id": "m04",
+     "papel": "ferramenta",
+     "texto": "$ head -6 src/frete/prazo.test.ts\nimport { describe, it, expect } from 'vitest';\nimport { calcularPrazo } from './prazo';\n\ndescribe('calcularPrazo', () => {\n  it('devolve 2 dias para capital', () => {"
+    },
+    {
+     "id": "m05",
+     "papel": "assistente",
+     "texto": "O padrão é um describe por função e `it` em português. A função tem 3 ramos: CEP inválido, frete grátis a partir de 300 reais e faixa por peso. Cubro os 3?"
+    },
+    {
+     "id": "m06",
+     "papel": "usuario",
+     "texto": "Cobre os 3 e inclui também peso zero, que deu bug mês passado: tem que lançar erro."
+    },
+    {
+     "id": "m07",
+     "papel": "assistente",
+     "texto": "Anotado. Criando src/frete/calcular.test.ts."
+    },
+    {
+     "id": "m08",
+     "papel": "ferramenta",
+     "texto": "$ pnpm vitest run src/frete/calcular.test.ts\n ✓ CEP inválido lança erro\n ✓ frete grátis a partir de 300 reais\n ✓ faixa por peso\n ✗ peso zero lança erro\n   AssertionError: expected [Function] to throw an error\n Tests  1 failed | 3 passed (4)"
+    },
+    {
+     "id": "m09",
+     "papel": "assistente",
+     "texto": "Três passam. O de peso zero falha porque a função hoje devolve 1500 em vez de lançar erro. Corrijo a função ou marco o teste como pendente?"
+    },
+    {
+     "id": "m10",
+     "papel": "usuario",
+     "texto": "Corrige a função para lançar erro com peso zero. Não marca teste como pulado."
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "Vou ajustar calcular.ts."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "blz"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m06",
+    "m08",
+    "m10"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m07",
+    "m09",
+    "m11",
+    "m12"
+   ],
+   "nota": "Leituras de arquivo saem (relê-se); ficam pedido, requisito extra, falha aberta e a decisão."
+  },
+  {
+   "id": "CC-R005",
+   "tarefa_atual": "Renomear a coluna dt_criacao para criado_em na tabela leads (migration e código).",
+   "mensagens": [
+    {
+     "id": "m01",
+     "papel": "usuario",
+     "texto": "Precisamos renomear dt_criacao para criado_em na tabela leads. Migration reversível, e atualiza o código que usa."
+    },
+    {
+     "id": "m02",
+     "papel": "assistente",
+     "texto": "Vou procurar os usos."
+    },
+    {
+     "id": "m03",
+     "papel": "ferramenta",
+     "texto": "$ grep -rn dt_criacao src/\nsrc/leads/repo.ts:22:    .orderBy('dt_criacao', 'desc')\nsrc/leads/repo.ts:57:    dt_criacao: new Date(),\nsrc/leads/dto.ts:9:  dt_criacao: string;\nsrc/relatorios/funil.ts:14:  where l.dt_criacao >= $1"
+    },
+    {
+     "id": "m04",
+     "papel": "assistente",
+     "texto": "São 4 usos no código: src/leads/repo.ts:22 e :57, src/leads/dto.ts:9 e src/relatorios/funil.ts:14."
+    },
+    {
+     "id": "m05",
+     "papel": "usuario",
+     "texto": "Tem também uma view no banco, vw_funil, que usa essa coluna. Não esquece."
+    },
+    {
+     "id": "m06",
+     "papel": "assistente",
+     "texto": "Boa. Vou incluir a recriação da vw_funil na migration."
+    },
+    {
+     "id": "m07",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:create renomear-dt-criacao\nCreated migrations/0151_renomear-dt-criacao.ts"
+    },
+    {
+     "id": "m08",
+     "papel": "assistente",
+     "texto": "Criei migrations/0151_renomear-dt-criacao.ts com up e down, incluindo a vw_funil. Falta trocar os 4 usos no código."
+    },
+    {
+     "id": "m09",
+     "papel": "usuario",
+     "texto": "Roda em dev antes."
+    },
+    {
+     "id": "m10",
+     "papel": "ferramenta",
+     "texto": "$ pnpm migration:run --env dev\nApplied 0151_renomear-dt-criacao (0.4s)"
+    },
+    {
+     "id": "m11",
+     "papel": "assistente",
+     "texto": "0151 aplicada em dev sem erro; em prod não. Agora o código: começo por repo.ts."
+    },
+    {
+     "id": "m12",
+     "papel": "usuario",
+     "texto": "ok"
+    }
+   ],
+   "manter": [
+    "m01",
+    "m04",
+    "m05",
+    "m08",
+    "m11"
+   ],
+   "descartar": [
+    "m02",
+    "m03",
+    "m06",
+    "m07",
+    "m09",
+    "m10",
+    "m12"
+   ],
+   "nota": "Buscas e criação de arquivo estão repetidas, com os literais, nos resumos do assistente."
+  }
+ ]
+}

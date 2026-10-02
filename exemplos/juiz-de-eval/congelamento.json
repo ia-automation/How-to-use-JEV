@@ -1,0 +1,15 @@
+{
+ "congelado_em": "2026-10-01T11:47:21-03:00",
+ "arquivos": {
+  "perguntas.py": "2d6512fb6a1477fb2a57079172b63f142a99b540d0f950cfba514488c64e95a2",
+  "juiz.py": "c9fffbb643f301037921936c48c91eb0154b897c3641b2207d303f9e1fccd978",
+  "dados/teste.json": "4bd70634a250741c408fa90108abf36e7886b872d4d44c1327f6897d8b7e14af"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste, com o desenho padrão e a FAIXA acima",
+  "1_formais": "100% (menos é bug de código)",
+  "2_semantico_duro": "acerto duro (noul ≥ 0,5, gabarito não nulo) ≥ baseline + 15 p.p.",
+  "3_erro_caro": "≤ 5% dos critérios semânticos com gabarito false (gabarito false → `atende`)",
+  "4_resposta_ruim_aprovada": "nenhuma resposta com algum critério false aprovada inteira (`aprovada` com gabarito reprovada)"
+ }
+}

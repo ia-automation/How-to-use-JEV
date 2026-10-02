@@ -1,0 +1,134 @@
+{
+ "medicao": {
+  "ms": 371,
+  "input_tokens": 13916,
+  "modelo": "jev-1.13.0",
+  "perguntas": 18
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "k1_verdict": {
+    "type": "choice",
+    "choice": "proposal",
+    "confidence": 0.99,
+    "probabilities": {
+     "proposal": 0.99,
+     "unaccepted_request": 0.0,
+     "old_quote": 0.0,
+     "commitment": 0.01,
+     "cancelled": 0.0
+    }
+   },
+   "k1_accepted": {
+    "type": "noul",
+    "noul": 0.49
+   },
+   "k1_undone": {
+    "type": "noul",
+    "noul": 0.16
+   },
+   "k1_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k1_open_request": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "k1_deadline": {
+    "type": "choice",
+    "choice": "m3: Um dia",
+    "confidence": 0.41,
+    "probabilities": {
+     "m5: sexta": 0.02,
+     "none": 0.41,
+     "m3: Um dia": 0.56,
+     "m4: sexta": 0.01
+    }
+   },
+   "k2_verdict": {
+    "type": "choice",
+    "choice": "proposal",
+    "confidence": 1.0,
+    "probabilities": {
+     "proposal": 1.0,
+     "unaccepted_request": 0.0,
+     "old_quote": 0.0,
+     "commitment": 0.0,
+     "cancelled": 0.0
+    }
+   },
+   "k2_accepted": {
+    "type": "noul",
+    "noul": 0.41
+   },
+   "k2_undone": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "k2_quoted": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k2_open_request": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "k2_deadline": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 0.45,
+    "probabilities": {
+     "m5: sexta": 0.03,
+     "none": 0.59,
+     "m3: Um dia": 0.37,
+     "m4: sexta": 0.01
+    }
+   },
+   "k3_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 1.0,
+    "probabilities": {
+     "proposal": 0.0,
+     "unaccepted_request": 0.0,
+     "old_quote": 0.0,
+     "commitment": 1.0,
+     "cancelled": 0.0
+    }
+   },
+   "k3_accepted": {
+    "type": "noul",
+    "noul": 0.97
+   },
+   "k3_undone": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k3_quoted": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "k3_open_request": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "k3_deadline": {
+    "type": "choice",
+    "choice": "m5: sexta",
+    "confidence": 0.84,
+    "probabilities": {
+     "m5: sexta": 0.88,
+     "none": 0.01,
+     "m3: Um dia": 0.0,
+     "m4: sexta": 0.11
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 13916,
+   "output_tokens": 600
+  }
+ }
+}

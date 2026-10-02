@@ -1,0 +1,185 @@
+{
+ "medicao": {
+  "ms": 266,
+  "input_tokens": 3265,
+  "modelo": "jev-1.13.0",
+  "perguntas": 42
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "fits.code-review": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "fits.security-review": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "fits.simplify": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "fits.refactor-safe": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "fits.diagnosing-bugs": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "fits.perf-profile": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "fits.fix-ci": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "fits.logs-prod": {
+    "type": "noul",
+    "noul": 0.12
+   },
+   "fits.incident-postmortem": {
+    "type": "noul",
+    "noul": 0.12
+   },
+   "fits.migration-2bancos": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "fits.db-query": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "fits.deploy-dev": {
+    "type": "noul",
+    "noul": 0.25
+   },
+   "fits.deploy-prod": {
+    "type": "noul",
+    "noul": 0.34
+   },
+   "fits.rollback": {
+    "type": "noul",
+    "noul": 0.21
+   },
+   "fits.secrets-vault": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "fits.api-contract": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "fits.test-writer": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "fits.e2e-browser": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "fits.dependency-upgrade": {
+    "type": "noul",
+    "noul": 0.53
+   },
+   "fits.pr-open": {
+    "type": "noul",
+    "noul": 0.18
+   },
+   "fits.changelog-release": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "fits.docs-writer": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "fits.to-tickets": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "fits.grilling": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "fits.frontend-design": {
+    "type": "noul",
+    "noul": 0.12
+   },
+   "fits.ux-review": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "fits.dataviz": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "fits.prompt-tuning": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "fits.llm-eval": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "fits.copywriting": {
+    "type": "noul",
+    "noul": 0.16
+   },
+   "fits.ad-creative": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "fits.ads-audit": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "fits.lead-report": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "fits.seo-audit": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "fits.ai-seo": {
+    "type": "noul",
+    "noul": 0.14
+   },
+   "fits.schema-markup": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "fits.programmatic-seo": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "fits.email-sequence": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "fits.whatsapp-template": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "fits.social-calendar": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "fits.video-listing": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "fits.landing-ab-test": {
+    "type": "noul",
+    "noul": 0.07
+   }
+  },
+  "usage": {
+   "input_tokens": 3265,
+   "output_tokens": 821
+  }
+ }
+}

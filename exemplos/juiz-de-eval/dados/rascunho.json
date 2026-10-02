@@ -1,0 +1,134 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "JE-R001",
+   "pergunta": "Contexto: ficha diz aceita pet de pequeno porte. Cliente: o apartamento da Rua das Acácias aceita pet?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que o imóvel aceita pet",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Menciona a restrição de porte",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Aceita sim! Só pets de pequeno porte, conforme o regulamento do condomínio. Quer agendar uma visita?",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Três frases, tudo explícito."
+  },
+  {
+   "id": "JE-R002",
+   "pergunta": "Cliente: posso visitar o imóvel hoje à tarde?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que a visita precisa de agendamento prévio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Termina com uma pergunta",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Hoje à tarde não consigo garantir, porque as visitas precisam ser agendadas com o proprietário com antecedência. Posso ver amanhã às 15h ou às 17h, qual prefere?",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Explícito."
+  },
+  {
+   "id": "JE-R003",
+   "pergunta": "Usuário: como exporto meus leads para planilha?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Indica onde fica a opção de exportar",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Menciona o formato do arquivo exportado",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não contém emoji",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Em Leads, clique em Exportar no canto superior direito; o arquivo sai em CSV e abre direto no Excel.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Resposta de CRM direta."
+  },
+  {
+   "id": "JE-R004",
+   "pergunta": "Contexto: ficha informa condomínio R$ 780. Cliente: quanto é o condomínio do apê da Vila Mariana?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa o valor do condomínio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa valor que não esteja no contexto",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Contém um valor em reais no formato R$",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "O condomínio é R$ 780 por mês.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Valor igual ao contexto."
+  },
+  {
+   "id": "JE-R005",
+   "pergunta": "Cliente: vocês fazem financiamento?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Explica que o financiamento é feito pelo banco, não pela imobiliária",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Olá! A imobiliária não financia diretamente, mas ajudamos você a simular e encaminhar a proposta ao banco de sua preferência.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Cordial e explícito."
+  }
+ ]
+}

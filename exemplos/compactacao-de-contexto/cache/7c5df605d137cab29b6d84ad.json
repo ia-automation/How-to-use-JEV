@@ -1,0 +1,161 @@
+{
+ "medicao": {
+  "ms": 397,
+  "input_tokens": 18859,
+  "modelo": "jev-1.13.0",
+  "perguntas": 36
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "needed_m01": {
+    "type": "noul",
+    "noul": 0.36
+   },
+   "superseded_m01": {
+    "type": "noul",
+    "noul": 0.81
+   },
+   "rule_m01": {
+    "type": "noul",
+    "noul": 0.63
+   },
+   "needed_m02": {
+    "type": "noul",
+    "noul": 0.22
+   },
+   "superseded_m02": {
+    "type": "noul",
+    "noul": 0.95
+   },
+   "status_m02": {
+    "type": "noul",
+    "noul": 0.92
+   },
+   "needed_m03": {
+    "type": "noul",
+    "noul": 0.31
+   },
+   "superseded_m03": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "rule_m03": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "needed_m04": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "superseded_m04": {
+    "type": "noul",
+    "noul": 0.58
+   },
+   "literal_m04": {
+    "type": "noul",
+    "noul": 0.34
+   },
+   "needed_m05": {
+    "type": "noul",
+    "noul": 0.12
+   },
+   "superseded_m05": {
+    "type": "noul",
+    "noul": 0.68
+   },
+   "status_m05": {
+    "type": "noul",
+    "noul": 0.25
+   },
+   "needed_m06": {
+    "type": "noul",
+    "noul": 0.18
+   },
+   "superseded_m06": {
+    "type": "noul",
+    "noul": 0.82
+   },
+   "literal_m06": {
+    "type": "noul",
+    "noul": 0.37
+   },
+   "needed_m07": {
+    "type": "noul",
+    "noul": 0.2
+   },
+   "superseded_m07": {
+    "type": "noul",
+    "noul": 0.81
+   },
+   "status_m07": {
+    "type": "noul",
+    "noul": 0.63
+   },
+   "needed_m08": {
+    "type": "noul",
+    "noul": 0.72
+   },
+   "superseded_m08": {
+    "type": "noul",
+    "noul": 0.29
+   },
+   "rule_m08": {
+    "type": "noul",
+    "noul": 0.94
+   },
+   "needed_m09": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "superseded_m09": {
+    "type": "noul",
+    "noul": 0.19
+   },
+   "status_m09": {
+    "type": "noul",
+    "noul": 0.15
+   },
+   "needed_m10": {
+    "type": "noul",
+    "noul": 0.15
+   },
+   "superseded_m10": {
+    "type": "noul",
+    "noul": 0.21
+   },
+   "literal_m10": {
+    "type": "noul",
+    "noul": 0.5
+   },
+   "needed_m11": {
+    "type": "noul",
+    "noul": 0.24
+   },
+   "superseded_m11": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "status_m11": {
+    "type": "noul",
+    "noul": 0.91
+   },
+   "needed_m12": {
+    "type": "noul",
+    "noul": 0.79
+   },
+   "superseded_m12": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "rule_m12": {
+    "type": "noul",
+    "noul": 0.95
+   }
+  },
+  "usage": {
+   "input_tokens": 18859,
+   "output_tokens": 712
+  }
+ }
+}

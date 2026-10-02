@@ -1,0 +1,20 @@
+{
+ "congelado_em": "2026-10-01T23:52:27-03:00",
+ "arquivos": {
+  "perguntas.py": "e717ed831fd15d91817396cae35ee682761c50e2935e9df38a9aac59342c5beb",
+  "conferir.py": "8606bd531793b516b7b00262222af14ea071e5225cb2efd709abaedab04a60dc",
+  "run.py": "587181f6e14736064c533451f84c3fcbce36a4f63b902a1b50612bdd8807e1c9",
+  "dados/teste.json": "c3f34fe6be0329f065bba01fe5f66c8bc32fa951acd09782e06bd546c1be9c2d"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste, com o desenho padrão e os limiares acima",
+  "1_numericas_puras": "pelo código 100% (menos é bug)",
+  "2_acerto_relacao": "código + Jev, resposta dura, ≥ baseline + 15 p.p.",
+  "3_promessa_inventada": "gabarito contradicted/not_stated → manter ≤ 3% dessas afirmações",
+  "4_cobertura": "manter ou retirar sem humano ≥ 75%"
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "969aa3fdf93eb9d8958bc47b7f19ff22d594003a69e7bd2c30a4cf6c5b79d794",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6"
+ }
+}

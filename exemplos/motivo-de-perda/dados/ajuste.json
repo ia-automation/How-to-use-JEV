@@ -1,0 +1,1129 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "MP-A001",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, pensei bastante no sobrado"
+    },
+    {
+     "de": "corretor",
+     "texto": "E qual o veredito?"
+    },
+    {
+     "de": "cliente",
+     "texto": "o preço tá um pouco acima, mas a gente até daria um jeito"
+    },
+    {
+     "de": "cliente",
+     "texto": "o problema mesmo é a distância. daria 1h20 pra levar as crianças na escola e voltar pro trabalho"
+    },
+    {
+     "de": "corretor",
+     "texto": "Tem uma escola boa a 5 minutos de lá."
+    },
+    {
+     "de": "cliente",
+     "texto": "trocar de escola agora não é opção. vamos procurar mais perto"
+    }
+   ],
+   "folha": "distancia_deslocamento",
+   "grupo": "localizacao",
+   "aceitaveis": [
+    "distancia_deslocamento"
+   ],
+   "nota": "difícil: dois motivos — o preço é declarado contornável; 'o problema mesmo é a distância' ordena os dois"
+  },
+  {
+   "id": "MP-A002",
+   "conversa": [
+    {
+     "de": "corretor",
+     "texto": "Oi, tudo bem? A análise cadastral voltou reprovada. Consta uma restrição no seu nome."
+    },
+    {
+     "de": "cliente",
+     "texto": "é uma dívida antiga de cartão, tô negociando"
+    },
+    {
+     "de": "corretor",
+     "texto": "Enquanto estiver ativa a administradora não aprova, nem com fiador."
+    },
+    {
+     "de": "cliente",
+     "texto": "entendi... vou resolver isso primeiro então"
+    }
+   ],
+   "folha": "restricao_cadastral",
+   "grupo": "credito_documentacao",
+   "aceitaveis": [
+    "restricao_cadastral"
+   ],
+   "nota": "fácil: nome negativado"
+  },
+  {
+   "id": "MP-A003",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "meu advogado olhou a matrícula que vc mandou"
+    },
+    {
+     "de": "cliente",
+     "texto": "o imóvel ainda tá no nome do pai do vendedor, que faleceu. o inventário nem foi aberto"
+    },
+    {
+     "de": "corretor",
+     "texto": "Os herdeiros estão de acordo com a venda e vão abrir o inventário."
+    },
+    {
+     "de": "cliente",
+     "texto": "isso leva um ano ou mais. não vou dar sinal num imóvel que não pode ser transferido"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendo a preocupação."
+    },
+    {
+     "de": "cliente",
+     "texto": "quando regularizar me avisa, por ora tô fora"
+    }
+   ],
+   "folha": "documentacao_imovel",
+   "grupo": "credito_documentacao",
+   "aceitaveis": [
+    "documentacao_imovel"
+   ],
+   "nota": "fácil: inventário não aberto"
+  },
+  {
+   "id": "MP-A004",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "uma dúvida antes de marcar: aceita cachorro grande? tenho uma labradora"
+    },
+    {
+     "de": "corretor",
+     "texto": "Vou confirmar com a síndica."
+    },
+    {
+     "de": "corretor",
+     "texto": "Confirmado: o regimento só permite animais de até 10 kg."
+    },
+    {
+     "de": "cliente",
+     "texto": "aí não dá né, ela tem 32 kg kkk"
+    },
+    {
+     "de": "cliente",
+     "texto": "sem ela eu não mudo. obrigada"
+    }
+   ],
+   "folha": "falta_item",
+   "grupo": "imovel",
+   "aceitaveis": [
+    "falta_item"
+   ],
+   "nota": "fácil: não aceita o pet"
+  },
+  {
+   "id": "MP-A005",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "mostrei o apto pro meu marido ontem"
+    },
+    {
+     "de": "corretor",
+     "texto": "E ele gostou?"
+    },
+    {
+     "de": "cliente",
+     "texto": "não aprovou. não quis nem dizer direito por quê, só falou que não"
+    },
+    {
+     "de": "corretor",
+     "texto": "Posso mandar outras opções para vocês verem juntos?"
+    },
+    {
+     "de": "cliente",
+     "texto": "melhor não por agora. quando ele animar eu te procuro"
+    }
+   ],
+   "folha": "decisor_vetou",
+   "grupo": "momento_cliente",
+   "aceitaveis": [
+    "decisor_vetou"
+   ],
+   "nota": "fácil: veto sem motivo"
+  },
+  {
+   "id": "MP-A006",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vi o anúncio do apto de 2 quartos na Vila Mariana, ainda tá disponível?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi! Está sim. O aluguel é R$ 3.800 mais condomínio de R$ 650."
+    },
+    {
+     "de": "cliente",
+     "texto": "ah, pensei que fosse menos. meu teto é 3.000 com tudo"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendo. Nessa região com 2 quartos dificilmente fica abaixo de 3.500. Posso te mostrar 1 quarto?"
+    },
+    {
+     "de": "cliente",
+     "texto": "não, preciso de 2. vou procurar em outro lugar então, obrigada"
+    }
+   ],
+   "folha": "preco_acima_orcamento",
+   "grupo": "preco",
+   "aceitaveis": [
+    "preco_acima_orcamento"
+   ],
+   "nota": "fácil: teto declarado"
+  },
+  {
+   "id": "MP-A007",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde, qual o valor do sobrado da rua das acácias?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Boa tarde! R$ 1.150.000, aceita financiamento."
+    },
+    {
+     "de": "corretor",
+     "texto": "Quer agendar uma visita?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Olá, tudo bem? Fico à disposição se quiser conhecer o sobrado."
+    }
+   ],
+   "folha": "sumiu_apos_valor",
+   "grupo": "sem_informacao",
+   "aceitaveis": [
+    "sumiu_apos_valor"
+   ],
+   "nota": "difícil: sumiço depois de preço — nenhuma reação ao valor; rotular como preço seria inventar o motivo"
+  },
+  {
+   "id": "MP-A008",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vou dar um tempo na procura"
+    },
+    {
+     "de": "corretor",
+     "texto": "Tudo bem. Posso saber o motivo?"
+    },
+    {
+     "de": "cliente",
+     "texto": "ah, muita correria, não é o momento"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendo. Semana passada você estava animada com o apto das Graças."
+    },
+    {
+     "de": "cliente",
+     "texto": "tava. mas pra ser sincera, depois de duas visitas desmarcadas em cima da hora por vcs eu desanimei"
+    },
+    {
+     "de": "cliente",
+     "texto": "tirei folga duas vezes pra nada"
+    },
+    {
+     "de": "corretor",
+     "texto": "Você tem razão, peço desculpas."
+    }
+   ],
+   "folha": "visita_falhou",
+   "grupo": "atendimento",
+   "aceitaveis": [
+    "visita_falhou"
+   ],
+   "nota": "difícil: motivo real diferente do declarado — 'não é o momento' é a versão educada; a causa confessada são duas visitas desmarcadas"
+  },
+  {
+   "id": "MP-A009",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "tô aqui na portaria faz 25 minutos"
+    },
+    {
+     "de": "cliente",
+     "texto": "o corretor não chegou e não atende"
+    },
+    {
+     "de": "corretor",
+     "texto": "Peço mil desculpas, vou localizar ele agora."
+    },
+    {
+     "de": "corretor",
+     "texto": "Ele teve um imprevisto com o carro. Podemos remarcar para amanhã?"
+    },
+    {
+     "de": "cliente",
+     "texto": "é a segunda vez que isso acontece. saí do trabalho mais cedo à toa de novo"
+    },
+    {
+     "de": "cliente",
+     "texto": "não quero remarcar. vou procurar com quem leve a sério"
+    }
+   ],
+   "folha": "visita_falhou",
+   "grupo": "atendimento",
+   "aceitaveis": [
+    "visita_falhou"
+   ],
+   "nota": "difícil: motivo do corretor — o cliente desiste pela segunda visita furada, não pelo imóvel (que nem viu)"
+  },
+  {
+   "id": "MP-A010",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "fui ver a casa"
+    },
+    {
+     "de": "cliente",
+     "texto": "tem infiltração no teto dos dois quartos e o piso da sala tá soltando"
+    },
+    {
+     "de": "corretor",
+     "texto": "O proprietário disse que entrega pintada."
+    },
+    {
+     "de": "cliente",
+     "texto": "pintura não resolve infiltração. ia ter que refazer o telhado"
+    },
+    {
+     "de": "cliente",
+     "texto": "não quero pegar obra, passo"
+    }
+   ],
+   "folha": "estado_conservacao",
+   "grupo": "imovel",
+   "aceitaveis": [
+    "estado_conservacao"
+   ],
+   "nota": "fácil: infiltração"
+  },
+  {
+   "id": "MP-A011",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "visitamos hoje, gostamos bastante"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que ótimo! Querem fazer uma proposta?"
+    },
+    {
+     "de": "cliente",
+     "texto": "vamos pensar com calma e te falamos"
+    },
+    {
+     "de": "corretor",
+     "texto": "Claro. Alguma dúvida que eu possa esclarecer?"
+    },
+    {
+     "de": "cliente",
+     "texto": "não, tudo certo. a gente te procura"
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi! Passando para saber se decidiram."
+    }
+   ],
+   "folha": "adiou_sem_motivo",
+   "grupo": "sem_informacao",
+   "aceitaveis": [
+    "adiou_sem_motivo"
+   ],
+   "nota": "difícil: motivo dito com educação — 'vamos pensar' sem nenhuma pista na conversa; não há motivo a extrair"
+  },
+  {
+   "id": "MP-A012",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "visitei o apto hoje com o corretor"
+    },
+    {
+     "de": "corretor",
+     "texto": "E o que achou?"
+    },
+    {
+     "de": "cliente",
+     "texto": "bem cuidado, mas os quartos são minúsculos, no de casal não cabe nem o guarda-roupa"
+    },
+    {
+     "de": "cliente",
+     "texto": "com duas crianças não tem como"
+    },
+    {
+     "de": "corretor",
+     "texto": "Tenho um de 78 m² no mesmo bairro, um pouco acima do valor."
+    },
+    {
+     "de": "cliente",
+     "texto": "acima não consigo. obrigada, vou continuar procurando"
+    }
+   ],
+   "folha": "tamanho_planta",
+   "grupo": "imovel",
+   "aceitaveis": [
+    "tamanho_planta"
+   ],
+   "nota": "difícil: dois motivos — o imóvel visitado cai por tamanho; o preço só aparece na alternativa que o corretor oferece"
+  },
+  {
+   "id": "MP-A013",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, tenho interesse na kitnet do centro"
+    },
+    {
+     "de": "corretor",
+     "texto": "Olá! Ela está disponível. Te mando as fotos e o vídeo?"
+    },
+    {
+     "de": "cliente",
+     "texto": "manda"
+    },
+    {
+     "de": "corretor",
+     "texto": "Seguem as fotos e o vídeo. Qualquer dúvida estou aqui!"
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi, conseguiu ver o material?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Bom dia! Ainda tem interesse na kitnet?"
+    }
+   ],
+   "folha": "sumiu_sem_resposta",
+   "grupo": "sem_informacao",
+   "aceitaveis": [
+    "sumiu_sem_resposta"
+   ],
+   "nota": "fácil: silêncio depois das fotos"
+  },
+  {
+   "id": "MP-A014",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, vou cancelar a visita de amanhã"
+    },
+    {
+     "de": "corretor",
+     "texto": "Aconteceu alguma coisa?"
+    },
+    {
+     "de": "cliente",
+     "texto": "um colega do trabalho tá alugando o apto dele e fechei direto com ele, sem imobiliária"
+    },
+    {
+     "de": "cliente",
+     "texto": "sem taxa, sem fiador, ficou bem mais simples"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendo. Se precisar no futuro, estamos aqui."
+    }
+   ],
+   "folha": "direto_proprietario",
+   "grupo": "concorrencia",
+   "aceitaveis": [
+    "direto_proprietario"
+   ],
+   "nota": "fácil: fechou direto com o dono"
+  },
+  {
+   "id": "MP-A015",
+   "conversa": [
+    {
+     "de": "corretor",
+     "texto": "Bom dia! E aí, vamos fechar hoje? Tem outro casal interessado, se não assinar hoje perde."
+    },
+    {
+     "de": "cliente",
+     "texto": "bom dia. eu disse que precisava da semana pra decidir"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendo, mas oportunidade assim não aparece. Te liguei ontem 3 vezes."
+    },
+    {
+     "de": "cliente",
+     "texto": "eu vi. e mandou mensagem no domingo também"
+    },
+    {
+     "de": "cliente",
+     "texto": "olha, não gosto de ser pressionada desse jeito. pode passar pro outro casal"
+    },
+    {
+     "de": "corretor",
+     "texto": "Não foi minha intenção pressionar."
+    },
+    {
+     "de": "cliente",
+     "texto": "mas pressionou. encerro por aqui"
+    }
+   ],
+   "folha": "pressao_insistencia",
+   "grupo": "atendimento",
+   "aceitaveis": [
+    "pressao_insistencia"
+   ],
+   "nota": "difícil: motivo do corretor — a cliente não critica o imóvel nem o preço; sai pela pressão"
+  },
+  {
+   "id": "MP-A016",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "fiz a simulação no banco"
+    },
+    {
+     "de": "cliente",
+     "texto": "com o juro de agora a parcela fica 5.200. ano passado tava 4.300 pro mesmo valor"
+    },
+    {
+     "de": "corretor",
+     "texto": "As taxas subiram mesmo. Mas o imóvel também pode valorizar."
+    },
+    {
+     "de": "cliente",
+     "texto": "prefiro esperar o juro cair. volto a procurar no ano que vem"
+    },
+    {
+     "de": "corretor",
+     "texto": "Combinado, mantenho seu cadastro."
+    }
+   ],
+   "folha": "adiou_decisao",
+   "grupo": "momento_cliente",
+   "aceitaveis": [
+    "adiou_decisao"
+   ],
+   "nota": "difícil: fronteira entre folhas — a parcela alta é o argumento, mas a decisão declarada é esperar o juro cair (momento, não preço do imóvel)"
+  },
+  {
+   "id": "MP-A017",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "passei na rua do apto ontem à noite pra sentir o movimento"
+    },
+    {
+     "de": "cliente",
+     "texto": "tem um bar com música ao vivo bem embaixo, 23h tava um barulho absurdo"
+    },
+    {
+     "de": "corretor",
+     "texto": "É, tem esse bar. O apartamento tem janela antirruído no quarto."
+    },
+    {
+     "de": "cliente",
+     "texto": "eu acordo 5h pra trabalhar, não vou arriscar. descarta esse"
+    },
+    {
+     "de": "corretor",
+     "texto": "Posso procurar outro na mesma região, em rua mais calma?"
+    },
+    {
+     "de": "cliente",
+     "texto": "por enquanto não, depois eu vejo"
+    }
+   ],
+   "folha": "entorno_seguranca",
+   "grupo": "localizacao",
+   "aceitaveis": [
+    "entorno_seguranca"
+   ],
+   "nota": "fácil: barulho do bar"
+  },
+  {
+   "id": "MP-A018",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "saiu a resposta do banco"
+    },
+    {
+     "de": "corretor",
+     "texto": "E aí, boa notícia?"
+    },
+    {
+     "de": "cliente",
+     "texto": "negaram. disseram que minha renda não comporta a parcela"
+    },
+    {
+     "de": "corretor",
+     "texto": "Podemos tentar outro banco ou compor renda com alguém."
+    },
+    {
+     "de": "cliente",
+     "texto": "já tentei dois. vou ter que esperar e juntar mais entrada. desculpa o trabalho"
+    }
+   ],
+   "folha": "financiamento_negado",
+   "grupo": "credito_documentacao",
+   "aceitaveis": [
+    "financiamento_negado"
+   ],
+   "nota": "fácil: crédito negado"
+  },
+  {
+   "id": "MP-A019",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde, queria saber o valor da casa do anúncio 2217"
+    },
+    {
+     "de": "corretor",
+     "texto": "Boa tarde! Está R$ 890 mil."
+    },
+    {
+     "de": "cliente",
+     "texto": "nossa, bem acima do que eu imaginava"
+    },
+    {
+     "de": "corretor",
+     "texto": "Ela tem 3 suítes e terreno de 300 m². Quer conhecer?"
+    },
+    {
+     "de": "cliente",
+     "texto": "é linda mesmo. vou pensar com carinho e qualquer coisa te chamo 😊"
+    },
+    {
+     "de": "corretor",
+     "texto": "Combinado! Fico à disposição."
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi, tudo bem? Conseguiu pensar sobre a casa?"
+    }
+   ],
+   "folha": "preco_acima_orcamento",
+   "grupo": "preco",
+   "aceitaveis": [
+    "preco_acima_orcamento"
+   ],
+   "nota": "difícil: motivo dito com educação — o 'vou pensar com carinho' vem depois de 'bem acima do que eu imaginava'; a pista é de preço"
+  },
+  {
+   "id": "MP-A020",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa noite. conversei com o dono do apto onde eu moro"
+    },
+    {
+     "de": "cliente",
+     "texto": "ele topou segurar o aluguel sem reajuste por mais dois anos se eu ficar"
+    },
+    {
+     "de": "corretor",
+     "texto": "É uma boa condição."
+    },
+    {
+     "de": "cliente",
+     "texto": "é. então vou ficar por aqui mesmo, não vou mais mudar. obrigada pelas opções"
+    }
+   ],
+   "folha": "desistiu_de_mudar",
+   "grupo": "momento_cliente",
+   "aceitaveis": [
+    "desistiu_de_mudar"
+   ],
+   "nota": "fácil: ficou onde está"
+  },
+  {
+   "id": "MP-A021",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "gostei muito do apto da visita de ontem"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que bom! Vamos avançar com a proposta?"
+    },
+    {
+     "de": "cliente",
+     "texto": "então, fui fazer a conta. o aluguel de 2.900 eu pago tranquilo"
+    },
+    {
+     "de": "cliente",
+     "texto": "mas com condomínio de 1.450 e IPTU de 310 vira quase 4.700 por mês"
+    },
+    {
+     "de": "corretor",
+     "texto": "O condomínio é alto por causa da piscina e da portaria 24h."
+    },
+    {
+     "de": "cliente",
+     "texto": "pois é, pra mim não compensa. vou procurar prédio mais simples"
+    }
+   ],
+   "folha": "custos_extras",
+   "grupo": "preco",
+   "aceitaveis": [
+    "custos_extras"
+   ],
+   "nota": "difícil: fronteira entre folhas — o cliente diz que o aluguel serve; o que derruba é condomínio + IPTU (custos, não preço)"
+  },
+  {
+   "id": "MP-A022",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, mandei os documentos ontem"
+    },
+    {
+     "de": "corretor",
+     "texto": "Recebi. O proprietário exige fiador com imóvel na cidade ou seguro-fiança."
+    },
+    {
+     "de": "cliente",
+     "texto": "fiador eu não tenho, minha família é toda do Maranhão"
+    },
+    {
+     "de": "corretor",
+     "texto": "O seguro-fiança ficaria em torno de R$ 3.900 por ano."
+    },
+    {
+     "de": "cliente",
+     "texto": "mais isso por ano?? não tenho como. caução ele não aceita?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Infelizmente não."
+    },
+    {
+     "de": "cliente",
+     "texto": "então não vai dar, que pena"
+    }
+   ],
+   "folha": "garantia_locaticia",
+   "grupo": "credito_documentacao",
+   "aceitaveis": [
+    "garantia_locaticia"
+   ],
+   "nota": "fácil: sem fiador e seguro caro"
+  },
+  {
+   "id": "MP-A023",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, sobre a casa do Taquaral: o dono aceita meu apartamento como parte do pagamento?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Consultei. Ele não aceita permuta, só dinheiro ou financiamento."
+    },
+    {
+     "de": "cliente",
+     "texto": "poxa. sem a permuta eu não consigo, meu dinheiro tá todo no apto"
+    },
+    {
+     "de": "corretor",
+     "texto": "Você poderia vender o apartamento primeiro, eu ajudo."
+    },
+    {
+     "de": "cliente",
+     "texto": "aí demora demais. sem permuta não tem negócio, obrigado"
+    }
+   ],
+   "folha": "condicao_pagamento",
+   "grupo": "preco",
+   "aceitaveis": [
+    "condicao_pagamento"
+   ],
+   "nota": "fácil: permuta recusada"
+  },
+  {
+   "id": "MP-A024",
+   "conversa": [
+    {
+     "de": "corretor",
+     "texto": "Bom dia! Seguimos com a visita de quinta?"
+    },
+    {
+     "de": "cliente",
+     "texto": "bom dia. não vou mais, já comprei outro"
+    },
+    {
+     "de": "corretor",
+     "texto": "Poxa! Foi por imobiliária ou direto?"
+    },
+    {
+     "de": "corretor",
+     "texto": "De qualquer forma, parabéns. Se puder me contar o que pesou, ajuda muito."
+    }
+   ],
+   "folha": null,
+   "grupo": "concorrencia",
+   "aceitaveis": [],
+   "nota": "difícil: só o grupo é decidível — comprou outro sem dizer com quem nem por quê; a pergunta do corretor fica sem resposta"
+  },
+  {
+   "id": "MP-A025",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "bom dia, o proprietário respondeu minha proposta?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Bom dia. Respondeu, infelizmente não aceitou os 610. Ele só baixa de 680 para 665."
+    },
+    {
+     "de": "cliente",
+     "texto": "665 pra mim não dá, meu limite era 620 e olhe lá"
+    },
+    {
+     "de": "corretor",
+     "texto": "Posso tentar 660 com ele."
+    },
+    {
+     "de": "cliente",
+     "texto": "não adianta, a diferença é grande. deixa pra lá, agradeço o empenho"
+    }
+   ],
+   "folha": "negociacao_frustrada",
+   "grupo": "preco",
+   "aceitaveis": [
+    "negociacao_frustrada",
+    "preco_acima_orcamento"
+   ],
+   "nota": "difícil: fronteira entre folhas — houve proposta e recusa (negociação); o teto abaixo do pedido também é verdade (preço aceitável)"
+  },
+  {
+   "id": "MP-A026",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "saí da visita agora e tô bem chateada"
+    },
+    {
+     "de": "corretor",
+     "texto": "O que houve?"
+    },
+    {
+     "de": "cliente",
+     "texto": "as fotos do anúncio são de quando o apto tava reformado e mobiliado. hoje tá vazio, armário arrancado, parede descascando"
+    },
+    {
+     "de": "cliente",
+     "texto": "e a \"vista livre\" dá pra um paredão"
+    },
+    {
+     "de": "corretor",
+     "texto": "Peço desculpas, as fotos são antigas mesmo. Vou pedir para atualizar."
+    },
+    {
+     "de": "cliente",
+     "texto": "perdi a tarde. não quero esse e sinceramente desanimei"
+    }
+   ],
+   "folha": "diferente_do_anuncio",
+   "grupo": "imovel",
+   "aceitaveis": [
+    "diferente_do_anuncio",
+    "estado_conservacao"
+   ],
+   "nota": "difícil: fronteira entre folhas — a queixa é o anúncio que não corresponde; o estado ruim do imóvel é verdade e também aceitável"
+  },
+  {
+   "id": "MP-A027",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "fui ver o apto"
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi! O que achou?"
+    },
+    {
+     "de": "cliente",
+     "texto": "não gostei, não é o que eu procuro"
+    },
+    {
+     "de": "corretor",
+     "texto": "O que não agradou? Assim eu ajusto a busca."
+    },
+    {
+     "de": "cliente",
+     "texto": "sei lá, não bateu. não me vi morando ali"
+    }
+   ],
+   "folha": null,
+   "grupo": "imovel",
+   "aceitaveis": [],
+   "nota": "difícil: só o grupo é decidível — rejeita o imóvel sem dizer o quê"
+  },
+  {
+   "id": "MP-A028",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "recebi a minuta do contrato"
+    },
+    {
+     "de": "cliente",
+     "texto": "tá escrito aluguel de 2.900. vc tinha me passado 2.400"
+    },
+    {
+     "de": "corretor",
+     "texto": "Deixa eu verificar. Realmente, 2.400 era o valor antigo do anúncio, o proprietário reajustou. Erro meu, desculpe."
+    },
+    {
+     "de": "cliente",
+     "texto": "eu organizei minha vida em cima de 2.400"
+    },
+    {
+     "de": "cliente",
+     "texto": "por 2.900 eu nem teria visitado. assim não dá pra confiar"
+    },
+    {
+     "de": "corretor",
+     "texto": "Vou tentar negociar com o proprietário."
+    },
+    {
+     "de": "cliente",
+     "texto": "não precisa. tô desistindo"
+    }
+   ],
+   "folha": "informacao_errada",
+   "grupo": "atendimento",
+   "aceitaveis": [
+    "informacao_errada",
+    "preco_acima_orcamento"
+   ],
+   "nota": "difícil: motivo do corretor — o valor foi informado errado; o preço real também não serve (preço aceitável), mas a queixa é a informação"
+  },
+  {
+   "id": "MP-A029",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "boa tarde. só pra te avisar que saí do mercado de usados kkk"
+    },
+    {
+     "de": "corretor",
+     "texto": "Como assim?"
+    },
+    {
+     "de": "cliente",
+     "texto": "fui num plantão de vendas no fim de semana e comprei um na planta, entrega em 2028"
+    },
+    {
+     "de": "cliente",
+     "texto": "a construtora parcela a entrada em 36 vezes, pra mim foi o que resolveu"
+    },
+    {
+     "de": "corretor",
+     "texto": "Parabéns pela compra!"
+    }
+   ],
+   "folha": "lancamento_construtora",
+   "grupo": "concorrencia",
+   "aceitaveis": [
+    "lancamento_construtora",
+    "condicao_pagamento"
+   ],
+   "nota": "difícil: fechou em outro lugar — o porquê (entrada parcelada) é vantagem do concorrente, não queixa sobre o nosso imóvel; a folha é a concorrência, condição de pagamento é aceitável"
+  },
+  {
+   "id": "MP-A030",
+   "conversa": [
+    {
+     "de": "corretor",
+     "texto": "Oi! Consegui horário para a visita no sábado, 10h. Confirmo?"
+    },
+    {
+     "de": "cliente",
+     "texto": "oi, não precisa mais"
+    },
+    {
+     "de": "cliente",
+     "texto": "fechei um apto ontem pela imobiliária aqui do lado do meu trabalho"
+    },
+    {
+     "de": "corretor",
+     "texto": "Ah, que pena. Posso perguntar o que pesou?"
+    },
+    {
+     "de": "cliente",
+     "texto": "nada demais, apareceu antes. obrigado pela atenção"
+    }
+   ],
+   "folha": "outra_imobiliaria",
+   "grupo": "concorrencia",
+   "aceitaveis": [
+    "outra_imobiliaria"
+   ],
+   "nota": "difícil: fechou em outro lugar — diz com quem, não diz por quê ('apareceu antes' não acusa demora nossa)"
+  },
+  {
+   "id": "MP-A031",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, preciso cancelar tudo"
+    },
+    {
+     "de": "corretor",
+     "texto": "O que aconteceu?"
+    },
+    {
+     "de": "cliente",
+     "texto": "minha empresa me transferiu pra Manaus, vou em janeiro"
+    },
+    {
+     "de": "cliente",
+     "texto": "não faz sentido comprar aqui agora"
+    },
+    {
+     "de": "corretor",
+     "texto": "Puxa, entendo. Boa sorte na mudança!"
+    }
+   ],
+   "folha": "mudanca_de_vida",
+   "grupo": "momento_cliente",
+   "aceitaveis": [
+    "mudanca_de_vida"
+   ],
+   "nota": "fácil: transferência"
+  },
+  {
+   "id": "MP-A032",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi! consegui juntar os documentos, podemos fechar?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Oi... tenho uma notícia chata. O proprietário aceitou outra proposta ontem à noite."
+    },
+    {
+     "de": "cliente",
+     "texto": "sério?? mas eu avisei que tava só esperando o holerite"
+    },
+    {
+     "de": "corretor",
+     "texto": "Eu sei, sinto muito. Ele não quis esperar. Tenho dois parecidos no mesmo prédio."
+    },
+    {
+     "de": "cliente",
+     "texto": "eu queria aquele, pela vista. os outros não me interessam. que frustração"
+    }
+   ],
+   "folha": "imovel_indisponivel",
+   "grupo": "atendimento",
+   "aceitaveis": [
+    "imovel_indisponivel"
+   ],
+   "nota": "fácil: imóvel saiu"
+  },
+  {
+   "id": "MP-A033",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi, alguém pode me passar o valor do condomínio do apto 3 quartos do Cambuí?"
+    },
+    {
+     "de": "cliente",
+     "texto": "boa tarde, ainda aguardando"
+    },
+    {
+     "de": "cliente",
+     "texto": "??"
+    },
+    {
+     "de": "corretor",
+     "texto": "Olá! Desculpe a demora, estávamos com muita demanda. O condomínio é R$ 780."
+    },
+    {
+     "de": "cliente",
+     "texto": "perguntei na segunda, hoje é quinta"
+    },
+    {
+     "de": "cliente",
+     "texto": "nesse meio tempo outra imobiliária me atendeu e já assinei com eles"
+    },
+    {
+     "de": "corretor",
+     "texto": "Lamento muito. Fica o nosso pedido de desculpas."
+    }
+   ],
+   "folha": "demora_resposta",
+   "grupo": "atendimento",
+   "aceitaveis": [
+    "demora_resposta",
+    "outra_imobiliaria"
+   ],
+   "nota": "difícil: motivo do corretor — fechou com outra imobiliária PORQUE ficou três dias sem resposta; o porquê é a folha, o destino é aceitável"
+  },
+  {
+   "id": "MP-A034",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "bom dia, vcs têm casa pra alugar no Santo Antônio?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Bom dia! No Santo Antônio no momento não. Tenho ótimas opções no Buritis e no Castelo."
+    },
+    {
+     "de": "cliente",
+     "texto": "não, tem que ser no Santo Antônio, minha mãe mora lá e eu cuido dela"
+    },
+    {
+     "de": "corretor",
+     "texto": "Posso te avisar quando entrar alguma."
+    },
+    {
+     "de": "cliente",
+     "texto": "pode, mas vou olhando em outras imobiliárias também"
+    }
+   ],
+   "folha": "bairro_nao_desejado",
+   "grupo": "localizacao",
+   "aceitaveis": [
+    "bairro_nao_desejado"
+   ],
+   "nota": "fácil: só aceita um bairro"
+  }
+ ]
+}

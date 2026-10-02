@@ -1,0 +1,29 @@
+{
+ "congelado_em": "2026-10-01T16:03:07-03:00",
+ "arquivos": {
+  "perguntas.py": "e69e622b3cdf00fbe5f838126ffad2bb341f798f73c4fdfcf2efd262bdcb8dda",
+  "compactacao.py": "781b2d9a4e9203c5b726e26e94ff15bcfa3236aae7a52c2aeed49d6a5ce854c1",
+  "run.py": "cb2fb77986970d3acb5d0eae9d66850f676797daa799b613d17449b7a02fc59c",
+  "dados/teste.json": "24c25f9281f1e91ef5e3fe969408ceb294bfafbaf5a562dee4a472044d90d0d0"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (36 sessões, 477 mensagens: 169 manter, 299 descartar, 9 discutíveis fora da métrica), com a política acima",
+  "1_necessaria_descartada": "gabarito `manter` que saiu `descartar` ≤ 6% das necessárias (≤ 10 de 169) — limite ABSOLUTO, não margem (no ajuste: 1 de 84)",
+  "2_acerto_piso": "acerto por mensagem ≥ 0,85 (absoluto; no ajuste 0,917)",
+  "3_acerto_sobre_baseline": "acerto ≥ melhor baseline de código no próprio teste + 0,08 (o LEIA-ME avisa 0,75 para `papel = usuario`)",
+  "secundario_nao_decide": "manter demais ≤ 20% das descartáveis; precisão de `manter` ≥ 0,75",
+  "se_falhar": "1 falhando = não serve para descartar sem revisão (só a faixa de dúvida vira `manter`, o resto vai a humano); 2 ou 3 falhando = a regra `papel = usuario` basta e o exemplo é descartado",
+  "limites": {
+   "necessaria_descartada_max_fracao": 0.06,
+   "acerto_min": 0.85,
+   "margem_sobre_baseline": 0.08,
+   "manter_demais_max_fracao": 0.2,
+   "precisao_min": 0.75
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "a4442f13c3cfb4d8120707a9d6e7c16a9e7c34eb3a605ea80e58cdea9fb9d110",
+  "../_comum/congelamento.py": "f165944288bfde660b771074519233578b2d1380b57926f60dc9932dfeda8fb6",
+  "../_comum/metricas.py": "9fbd24d53375d3a63147cb404937463e7319f0b0442990b1873a9edb5d7b4c3c"
+ }
+}

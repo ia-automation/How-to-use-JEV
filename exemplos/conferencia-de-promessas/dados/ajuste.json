@@ -1,0 +1,1074 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CP-A001",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos na Tijuca",
+    "descricao": "Apartamento de 3 quartos na Tijuca, próximo à Praça Saens Peña. Proprietário analisa propostas com financiamento bancário. Condomínio com portaria 24h.",
+    "campos": {
+     "quartos": 3,
+     "financiamento": "proprietario_analisa",
+     "condominio_reais": 780
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "O financiamento já está aprovado",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "O proprietário aceita analisar proposta com financiamento",
+     "relacao": "supported",
+     "trecho_apoio": "Proprietário analisa propostas com financiamento bancário"
+    },
+    {
+     "id": "a3",
+     "texto": "O condomínio é de R$ 780",
+     "relacao": "supported",
+     "trecho_apoio": "condominio_reais: 780"
+    },
+    {
+     "id": "a4",
+     "texto": "Tem portaria 24 horas",
+     "relacao": "supported",
+     "trecho_apoio": "portaria 24h"
+    }
+   ],
+   "nota": "difícil: possibilidade×garantia (a1); numérica: a3"
+  },
+  {
+   "id": "CP-A002",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos na Vila Mariana",
+    "descricao": "Apartamento de 2 quartos na Vila Mariana, a 600 m da estação Ana Rosa. Uma vaga rotativa, sem demarcação. Não aceita animais.",
+    "campos": {
+     "quartos": 2,
+     "vagas": 1,
+     "distancia_metro_m": 600,
+     "aceita_pet": false
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Tem vaga privativa",
+     "relacao": "contradicted",
+     "trecho_apoio": "vaga rotativa, sem demarcação"
+    },
+    {
+     "id": "a2",
+     "texto": "Tem uma vaga de garagem",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 1"
+    },
+    {
+     "id": "a3",
+     "texto": "Fica a 600 metros do metrô",
+     "relacao": "supported",
+     "trecho_apoio": "distancia_metro_m: 600"
+    },
+    {
+     "id": "a4",
+     "texto": "Aceita pet de pequeno porte",
+     "relacao": "contradicted",
+     "trecho_apoio": "Não aceita animais"
+    }
+   ],
+   "nota": "difícil: vaga rotativa×privativa (a1); numérica: a2, a3"
+  },
+  {
+   "id": "CP-A003",
+   "ficha": {
+    "titulo": "Casa de vila em Perdizes",
+    "descricao": "Casa de vila em Perdizes, 2 quartos, quintal pequeno. Aceita pet de pequeno porte, mediante aprovação do condomínio. Sem vaga.",
+    "campos": {
+     "quartos": 2,
+     "vagas": 0
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita pet",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Aceita cachorro de grande porte",
+     "relacao": "contradicted",
+     "trecho_apoio": "Aceita pet de pequeno porte"
+    },
+    {
+     "id": "a3",
+     "texto": "Aceita pet pequeno, sujeito à aprovação do condomínio",
+     "relacao": "supported",
+     "trecho_apoio": "Aceita pet de pequeno porte, mediante aprovação do condomínio"
+    },
+    {
+     "id": "a4",
+     "texto": "Não tem vaga",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 0"
+    }
+   ],
+   "nota": "difícil: condição (a1, a2); numérica: a4"
+  },
+  {
+   "id": "CP-A004",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos em Botafogo",
+    "descricao": "Apartamento em Botafogo, 2 quartos, cerca de 10 minutos a pé do metrô. Sol da manhã na varanda. 70 m² de área útil.",
+    "campos": {
+     "quartos": 2,
+     "area_m2": 70
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Fica a 300 metros do metrô",
+     "relacao": "contradicted",
+     "trecho_apoio": "cerca de 10 minutos a pé do metrô"
+    },
+    {
+     "id": "a2",
+     "texto": "Dá para ir a pé até o metrô",
+     "relacao": "supported",
+     "trecho_apoio": "10 minutos a pé do metrô"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 70 m²",
+     "relacao": "supported",
+     "trecho_apoio": "area_m2: 70"
+    },
+    {
+     "id": "a4",
+     "texto": "Tem 90 m²",
+     "relacao": "contradicted",
+     "trecho_apoio": "area_m2: 70"
+    }
+   ],
+   "nota": "difícil: distância estimada (a1: 10 min ≈ 800 m, 300 m está fora de ±50%); numérica: a1, a3, a4"
+  },
+  {
+   "id": "CP-A005",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos na Savassi",
+    "descricao": "Apartamento na Savassi com sala ampla e muito iluminada. Face norte. 3 quartos, 2 vagas.",
+    "campos": {
+     "orientacao_solar": "norte",
+     "quartos": 3,
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Bate sol da manhã na sala",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "A sala é bem iluminada",
+     "relacao": "supported",
+     "trecho_apoio": "sala ampla e muito iluminada"
+    },
+    {
+     "id": "a3",
+     "texto": "É face norte",
+     "relacao": "supported",
+     "trecho_apoio": "orientacao_solar: \"norte\""
+    },
+    {
+     "id": "a4",
+     "texto": "Tem 3 vagas",
+     "relacao": "contradicted",
+     "trecho_apoio": "vagas: 2"
+    }
+   ],
+   "nota": "difícil: orientação×iluminação (a1: face norte não é sol da manhã); numérica: a4"
+  },
+  {
+   "id": "CP-A006",
+   "ficha": {
+    "titulo": "Studio na Consolação",
+    "descricao": "Studio na Consolação, entregue com móveis planejados, cama, geladeira e fogão. Pronto para morar. Condomínio R$ 450 com água e gás inclusos.",
+    "campos": {
+     "quartos": 1,
+     "mobiliado": true,
+     "condominio_reais": 450
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Vem mobiliado",
+     "relacao": "supported",
+     "trecho_apoio": "mobiliado: true"
+    },
+    {
+     "id": "a2",
+     "texto": "Não precisa de reforma",
+     "relacao": "supported",
+     "trecho_apoio": "Pronto para morar"
+    },
+    {
+     "id": "a3",
+     "texto": "O condomínio inclui água e gás",
+     "relacao": "supported",
+     "trecho_apoio": "com água e gás inclusos"
+    },
+    {
+     "id": "a4",
+     "texto": "Condomínio de 450 reais já inclui luz",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "difícil: paráfrase (a2); composta (a4: valor certo, luz não declarada); numérica: a4"
+  },
+  {
+   "id": "CP-A007",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos em Moema",
+    "descricao": "Apartamento em Moema, 3 quartos, sem mobília, pisos em porcelanato. Prédio não aceita pet. Duas vagas cobertas.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2,
+     "mobiliado": false,
+     "aceita_pet": false
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "É mobiliado",
+     "relacao": "contradicted",
+     "trecho_apoio": "mobiliado: false"
+    },
+    {
+     "id": "a2",
+     "texto": "Vai sem móveis",
+     "relacao": "supported",
+     "trecho_apoio": "sem mobília"
+    },
+    {
+     "id": "a3",
+     "texto": "Não aceita animais",
+     "relacao": "supported",
+     "trecho_apoio": "Prédio não aceita pet"
+    },
+    {
+     "id": "a4",
+     "texto": "As vagas são cobertas",
+     "relacao": "supported",
+     "trecho_apoio": "Duas vagas cobertas"
+    },
+    {
+     "id": "a5",
+     "texto": "Tem 2 vagas",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 2"
+    }
+   ],
+   "nota": "difícil: negação (a1–a3); numérica: a5"
+  },
+  {
+   "id": "CP-A008",
+   "ficha": {
+    "titulo": "Casa 4 quartos no Jardim Botânico, Curitiba",
+    "descricao": "Casa com 4 quartos, 220 m² construídos em terreno de 400 m². 3 vagas. Condomínio fechado, taxa de R$ 1.200.",
+    "campos": {
+     "quartos": 4,
+     "area_m2": 220,
+     "vagas": 3,
+     "condominio_reais": 1200
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "220 m² de área construída",
+     "relacao": "supported",
+     "trecho_apoio": "area_m2: 220"
+    },
+    {
+     "id": "a2",
+     "texto": "Terreno de 500 m²",
+     "relacao": "contradicted",
+     "trecho_apoio": "terreno de 400 m²"
+    },
+    {
+     "id": "a3",
+     "texto": "Mais de 200 m²",
+     "relacao": "supported",
+     "trecho_apoio": "area_m2: 220"
+    },
+    {
+     "id": "a4",
+     "texto": "Condomínio de R$ 1.500",
+     "relacao": "contradicted",
+     "trecho_apoio": "condominio_reais: 1200"
+    }
+   ],
+   "nota": "numérica: a1, a2, a3, a4"
+  },
+  {
+   "id": "CP-A009",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos em Boa Viagem",
+    "descricao": "Apartamento em Boa Viagem, Recife, 2 quartos, vista para o mar. Aceita financiamento e FGTS. Condomínio com piscina e academia.",
+    "campos": {
+     "quartos": 2,
+     "financiamento": "aceita"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita financiamento",
+     "relacao": "supported",
+     "trecho_apoio": "financiamento: \"aceita\""
+    },
+    {
+     "id": "a2",
+     "texto": "Dá para usar o FGTS",
+     "relacao": "supported",
+     "trecho_apoio": "Aceita financiamento e FGTS"
+    },
+    {
+     "id": "a3",
+     "texto": "O financiamento já foi aprovado pela Caixa",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a4",
+     "texto": "Tem vista para o mar",
+     "relacao": "supported",
+     "trecho_apoio": "vista para o mar"
+    }
+   ],
+   "nota": "difícil: possibilidade×garantia (a3: aceitar não é aprovar)"
+  },
+  {
+   "id": "CP-A010",
+   "ficha": {
+    "titulo": "Apartamento 1 quarto no Centro Histórico, Porto Alegre",
+    "descricao": "Apartamento no Centro Histórico de Porto Alegre, 1 quarto. Venda somente à vista, proprietário não aceita financiamento. Imóvel precisa de reforma.",
+    "campos": {
+     "quartos": 1,
+     "financiamento": "nao_aceita"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita financiamento",
+     "relacao": "contradicted",
+     "trecho_apoio": "financiamento: \"nao_aceita\""
+    },
+    {
+     "id": "a2",
+     "texto": "Só vende à vista",
+     "relacao": "supported",
+     "trecho_apoio": "Venda somente à vista"
+    },
+    {
+     "id": "a3",
+     "texto": "Está pronto para morar",
+     "relacao": "contradicted",
+     "trecho_apoio": "Imóvel precisa de reforma"
+    }
+   ],
+   "nota": "difícil: paráfrase negativa (a3)"
+  },
+  {
+   "id": "CP-A011",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos na Lagoa",
+    "descricao": "Apartamento na Lagoa, 3 quartos, varanda voltada para o leste. 2 vagas.",
+    "campos": {
+     "quartos": 3,
+     "orientacao_solar": "leste",
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Pega sol da manhã na varanda",
+     "relacao": "supported",
+     "trecho_apoio": "varanda voltada para o leste"
+    },
+    {
+     "id": "a2",
+     "texto": "Pega sol da tarde",
+     "relacao": "contradicted",
+     "trecho_apoio": "voltada para o leste"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 2 vagas",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 2"
+    }
+   ],
+   "nota": "difícil: orientação×iluminação (leste ⇒ manhã); numérica: a3"
+  },
+  {
+   "id": "CP-A012",
+   "ficha": {
+    "titulo": "Apartamento 1 quarto na Bela Vista",
+    "descricao": "Apartamento na Bela Vista, 1 quarto, face oeste, muito claro à tarde. Condomínio R$ 600.",
+    "campos": {
+     "quartos": 1,
+     "orientacao_solar": "oeste",
+     "condominio_reais": 600
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Pega sol da manhã",
+     "relacao": "contradicted",
+     "trecho_apoio": "orientacao_solar: \"oeste\""
+    },
+    {
+     "id": "a2",
+     "texto": "É um apartamento claro",
+     "relacao": "supported",
+     "trecho_apoio": "muito claro à tarde"
+    },
+    {
+     "id": "a3",
+     "texto": "O condomínio fica abaixo de 700 reais",
+     "relacao": "supported",
+     "trecho_apoio": "condominio_reais: 600"
+    }
+   ],
+   "nota": "difícil: orientação×iluminação (oeste × manhã); numérica: a3"
+  },
+  {
+   "id": "CP-A013",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos no Campo Belo",
+    "descricao": "Apartamento no Campo Belo, 3 quartos, 1 suíte, 95 m², 2 vagas.",
+    "campos": {
+     "quartos": 3,
+     "area_m2": 95,
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita pet",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Tem lazer completo",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 95 m²",
+     "relacao": "supported",
+     "trecho_apoio": "area_m2: 95"
+    },
+    {
+     "id": "a4",
+     "texto": "Tem suíte",
+     "relacao": "supported",
+     "trecho_apoio": "1 suíte"
+    }
+   ],
+   "nota": "numérica: a3"
+  },
+  {
+   "id": "CP-A014",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos em Icaraí, Niterói",
+    "descricao": "Apartamento em Icaraí, 2 quartos, vaga de garagem escriturada e privativa. Não é mobiliado.",
+    "campos": {
+     "quartos": 2,
+     "vagas": 1,
+     "mobiliado": false
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "A vaga é rotativa",
+     "relacao": "contradicted",
+     "trecho_apoio": "escriturada e privativa"
+    },
+    {
+     "id": "a2",
+     "texto": "Tem vaga própria",
+     "relacao": "supported",
+     "trecho_apoio": "vaga de garagem escriturada e privativa"
+    },
+    {
+     "id": "a3",
+     "texto": "É mobiliado",
+     "relacao": "contradicted",
+     "trecho_apoio": "mobiliado: false"
+    }
+   ],
+   "nota": "difícil: vaga rotativa×privativa (a1); paráfrase (a2)"
+  },
+  {
+   "id": "CP-A015",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos em Santana",
+    "descricao": "Apartamento em Santana, 3 quartos, a 1.200 m da estação Santana (linha azul). Aceita pet.",
+    "campos": {
+     "quartos": 3,
+     "distancia_metro_m": 1200,
+     "aceita_pet": true
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Fica pertinho do metrô, uns 5 minutos a pé",
+     "relacao": "contradicted",
+     "trecho_apoio": "a 1.200 m da estação Santana"
+    },
+    {
+     "id": "a2",
+     "texto": "Fica a menos de 1,5 km do metrô",
+     "relacao": "supported",
+     "trecho_apoio": "distancia_metro_m: 1200"
+    },
+    {
+     "id": "a3",
+     "texto": "Aceita pet",
+     "relacao": "supported",
+     "trecho_apoio": "aceita_pet: true"
+    }
+   ],
+   "nota": "difícil: distância estimada (a1: 1.200 m ≈ 15 min, 5 min fora de ±50%); numérica: a1, a2"
+  },
+  {
+   "id": "CP-A016",
+   "ficha": {
+    "titulo": "Apartamento 4 quartos nos Jardins",
+    "descricao": "Apartamento nos Jardins, 4 quartos, 180 m². Animais: consultar regras do condomínio. 3 vagas.",
+    "campos": {
+     "quartos": 4,
+     "area_m2": 180,
+     "vagas": 3
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita pet",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Não aceita pet",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 180 m²",
+     "relacao": "supported",
+     "trecho_apoio": "area_m2: 180"
+    },
+    {
+     "id": "a4",
+     "texto": "Tem 4 dormitórios",
+     "relacao": "supported",
+     "trecho_apoio": "quartos: 4"
+    }
+   ],
+   "nota": "difícil: possibilidade×garantia (a1, a2: 'consultar' não decide); numérica: a3, a4"
+  },
+  {
+   "id": "CP-A017",
+   "ficha": {
+    "titulo": "Sobrado em Santa Felicidade, Curitiba",
+    "descricao": "Sobrado em Santa Felicidade, 3 quartos sendo 1 suíte, 2 vagas, churrasqueira. Não aceita financiamento.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2,
+     "financiamento": "nao_aceita"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Tem 3 quartos e 3 vagas",
+     "relacao": "contradicted",
+     "trecho_apoio": "vagas: 2"
+    },
+    {
+     "id": "a2",
+     "texto": "Tem churrasqueira",
+     "relacao": "supported",
+     "trecho_apoio": "churrasqueira"
+    },
+    {
+     "id": "a3",
+     "texto": "Aceita financiamento com entrada de 20%",
+     "relacao": "contradicted",
+     "trecho_apoio": "financiamento: \"nao_aceita\""
+    }
+   ],
+   "nota": "difícil: composta (a1: quartos certo, vagas errado); numérica: a1"
+  },
+  {
+   "id": "CP-A018",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos em Copacabana",
+    "descricao": "Apartamento em Copacabana, 2 quartos, semimobiliado (armários planejados na cozinha e nos quartos). Quadra da praia.",
+    "campos": {
+     "quartos": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Vem mobiliado",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Tem armários planejados",
+     "relacao": "supported",
+     "trecho_apoio": "armários planejados"
+    },
+    {
+     "id": "a3",
+     "texto": "Fica na quadra da praia",
+     "relacao": "supported",
+     "trecho_apoio": "Quadra da praia"
+    },
+    {
+     "id": "a4",
+     "texto": "Vem com geladeira e fogão",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "difícil: condição (a1: semimobiliado não é mobiliado)"
+  },
+  {
+   "id": "CP-A019",
+   "ficha": {
+    "titulo": "Apartamento 1 quarto no Bigorrilho, Curitiba",
+    "descricao": "Apartamento no Bigorrilho, Curitiba, 1 quarto. Aceita pets de até 10 kg. Uma vaga.",
+    "campos": {
+     "quartos": 1,
+     "vagas": 1
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita seu golden retriever",
+     "relacao": "contradicted",
+     "trecho_apoio": "Aceita pets de até 10 kg"
+    },
+    {
+     "id": "a2",
+     "texto": "Aceita pet de até 10 kg",
+     "relacao": "supported",
+     "trecho_apoio": "Aceita pets de até 10 kg"
+    },
+    {
+     "id": "a3",
+     "texto": "Aceita gato",
+     "relacao": "supported",
+     "trecho_apoio": "Aceita pets de até 10 kg"
+    }
+   ],
+   "nota": "difícil: condição (a1: golden passa de 10 kg; a3: gato cabe no limite)"
+  },
+  {
+   "id": "CP-A020",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos no Funcionários, BH",
+    "descricao": "Apartamento no Funcionários, BH, 3 quartos, 110 m², por R$ 890.000. Condomínio R$ 950. Metrô Santa Efigênia a 900 m.",
+    "campos": {
+     "quartos": 3,
+     "area_m2": 110,
+     "condominio_reais": 950,
+     "distancia_metro_m": 900
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Custa 890 mil",
+     "relacao": "supported",
+     "trecho_apoio": "R$ 890.000"
+    },
+    {
+     "id": "a2",
+     "texto": "Custa menos de 800 mil",
+     "relacao": "contradicted",
+     "trecho_apoio": "R$ 890.000"
+    },
+    {
+     "id": "a3",
+     "texto": "Condomínio de 950",
+     "relacao": "supported",
+     "trecho_apoio": "condominio_reais: 950"
+    },
+    {
+     "id": "a4",
+     "texto": "Fica a menos de 1 km do metrô",
+     "relacao": "supported",
+     "trecho_apoio": "distancia_metro_m: 900"
+    }
+   ],
+   "nota": "numérica: a1, a2, a3, a4"
+  },
+  {
+   "id": "CP-A021",
+   "ficha": {
+    "titulo": "Kitnet na República",
+    "descricao": "Kitnet na República, 28 m², sem vaga. Prédio com elevador e portaria. Não aceita pet.",
+    "campos": {
+     "area_m2": 28,
+     "vagas": 0,
+     "aceita_pet": false
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Tem vaga",
+     "relacao": "contradicted",
+     "trecho_apoio": "vagas: 0"
+    },
+    {
+     "id": "a2",
+     "texto": "Tem elevador",
+     "relacao": "supported",
+     "trecho_apoio": "elevador"
+    },
+    {
+     "id": "a3",
+     "texto": "Fica perto do metrô República",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "difícil: distância estimada (a3: bairro com metrô, ficha sem distância); numérica: a1"
+  },
+  {
+   "id": "CP-A022",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos em Perdizes",
+    "descricao": "Apartamento em Perdizes, 3 quartos, sol da manhã nos quartos, sala voltada para área interna. 2 vagas.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Pega sol o dia inteiro",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Os quartos pegam sol de manhã",
+     "relacao": "supported",
+     "trecho_apoio": "sol da manhã nos quartos"
+    },
+    {
+     "id": "a3",
+     "texto": "A sala tem vista livre",
+     "relacao": "contradicted",
+     "trecho_apoio": "sala voltada para área interna"
+    }
+   ],
+   "nota": "difícil: orientação×iluminação (a1: exagero; a3: área interna nega vista livre)"
+  },
+  {
+   "id": "CP-A023",
+   "ficha": {
+    "titulo": "Casa 4 quartos em Nova Lima",
+    "descricao": "Casa em Nova Lima, 4 quartos, 3 vagas. Financiamento: proprietário analisa caso a caso.",
+    "campos": {
+     "quartos": 4,
+     "vagas": 3,
+     "financiamento": "proprietario_analisa"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Não aceita financiamento",
+     "relacao": "contradicted",
+     "trecho_apoio": "financiamento: \"proprietario_analisa\""
+    },
+    {
+     "id": "a2",
+     "texto": "Pode aceitar financiamento, dependendo da proposta",
+     "relacao": "supported",
+     "trecho_apoio": "proprietário analisa caso a caso"
+    },
+    {
+     "id": "a3",
+     "texto": "Aceita financiamento",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "difícil: possibilidade×garantia (a1 nega a possibilidade; a3 exagera)"
+  },
+  {
+   "id": "CP-A024",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos na Aldeota, Fortaleza",
+    "descricao": "Apartamento na Aldeota, Fortaleza, 3 quartos, 2 vagas. Área de lazer com piscina.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Tem 2 vagas cobertas",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Tem piscina",
+     "relacao": "supported",
+     "trecho_apoio": "piscina"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 1 vaga",
+     "relacao": "contradicted",
+     "trecho_apoio": "vagas: 2"
+    }
+   ],
+   "nota": "difícil: composta (a1: número certo, cobertura não declarada); numérica: a1, a3"
+  },
+  {
+   "id": "CP-A025",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos na Barra Funda",
+    "descricao": "Apartamento na Barra Funda, 2 quartos, aproximadamente 400 m do metrô Barra Funda. Aceita pet.",
+    "campos": {
+     "quartos": 2,
+     "distancia_metro_m": 400,
+     "aceita_pet": true
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Uns 5 minutos a pé do metrô",
+     "relacao": "supported",
+     "trecho_apoio": "aproximadamente 400 m do metrô"
+    },
+    {
+     "id": "a2",
+     "texto": "Fica a 400 metros do metrô",
+     "relacao": "supported",
+     "trecho_apoio": "distancia_metro_m: 400"
+    },
+    {
+     "id": "a3",
+     "texto": "Fica colado no metrô",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "difícil: distância estimada (a1 compatível; a3 vago contra número); numérica: a1, a2"
+  },
+  {
+   "id": "CP-A026",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos no Brooklin",
+    "descricao": "Apartamento no Brooklin, 2 quartos, não mobiliado, mas com armários embutidos. Face sul.",
+    "campos": {
+     "quartos": 2,
+     "mobiliado": false,
+     "orientacao_solar": "sul"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "É mobiliado",
+     "relacao": "contradicted",
+     "trecho_apoio": "mobiliado: false"
+    },
+    {
+     "id": "a2",
+     "texto": "Tem armários",
+     "relacao": "supported",
+     "trecho_apoio": "armários embutidos"
+    },
+    {
+     "id": "a3",
+     "texto": "É bem ensolarado",
+     "relacao": "contradicted",
+     "trecho_apoio": "orientacao_solar: \"sul\""
+    }
+   ],
+   "nota": "difícil: negação (a1); orientação×iluminação (a3: face sul pega pouco sol)"
+  },
+  {
+   "id": "CP-A027",
+   "ficha": {
+    "titulo": "Cobertura em Ipanema",
+    "descricao": "Cobertura em Ipanema, 3 suítes, 2 vagas na garagem, área externa com piscina privativa.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Tem garagem para dois carros",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 2"
+    },
+    {
+     "id": "a2",
+     "texto": "Todos os quartos são suítes",
+     "relacao": "supported",
+     "trecho_apoio": "3 suítes"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem piscina do condomínio",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "difícil: paráfrase (a1, a2); a3: piscina privativa não é a do condomínio; numérica: a1"
+  },
+  {
+   "id": "CP-A028",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos no Cambuí, Campinas",
+    "descricao": "Apartamento no Cambuí, Campinas, 2 quartos, 1 vaga, rua tranquila. Condomínio R$ 520.",
+    "campos": {
+     "quartos": 2,
+     "vagas": 1,
+     "condominio_reais": 520
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Fica numa rua tranquila",
+     "relacao": "supported",
+     "trecho_apoio": "rua tranquila"
+    },
+    {
+     "id": "a2",
+     "texto": "Ótima localização",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a3",
+     "texto": "Condomínio barato, R$ 520",
+     "relacao": "supported",
+     "trecho_apoio": "condominio_reais: 520"
+    }
+   ],
+   "nota": "difícil: opinião (a2 sem fato; a3 adjetivo colado a fato certo); numérica: a3"
+  },
+  {
+   "id": "CP-A029",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos no Leblon",
+    "descricao": "Apartamento no Leblon, 2 quartos, aceita pet, 1 vaga. Condomínio R$ 1.800.",
+    "campos": {
+     "quartos": 2,
+     "aceita_pet": true,
+     "vagas": 1,
+     "condominio_reais": 1800
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Não aceita pet",
+     "relacao": "contradicted",
+     "trecho_apoio": "aceita_pet: true"
+    },
+    {
+     "id": "a2",
+     "texto": "Condomínio de 1.800 reais",
+     "relacao": "supported",
+     "trecho_apoio": "condominio_reais: 1800"
+    },
+    {
+     "id": "a3",
+     "texto": "Condomínio abaixo de mil",
+     "relacao": "contradicted",
+     "trecho_apoio": "condominio_reais: 1800"
+    }
+   ],
+   "nota": "numérica: a2, a3"
+  },
+  {
+   "id": "CP-A030",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos em Petrópolis, Porto Alegre",
+    "descricao": "Apartamento em Petrópolis, Porto Alegre, 3 quartos. O condomínio pode aceitar pets mediante assembleia. 2 vagas, uma delas rotativa.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita pet",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    },
+    {
+     "id": "a2",
+     "texto": "Duas vagas privativas",
+     "relacao": "contradicted",
+     "trecho_apoio": "uma delas rotativa"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 2 vagas",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 2"
+    }
+   ],
+   "nota": "difícil: possibilidade×garantia (a1); vaga rotativa×privativa (a2); numérica: a3"
+  }
+ ]
+}

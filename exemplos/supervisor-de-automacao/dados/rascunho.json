@@ -1,0 +1,156 @@
+{
+ "versao": "2026-10-02",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "SA-R01-1",
+   "trajetoria": "SA-R01",
+   "causa": "fluxo_normal",
+   "objetivo": "Nimbus: exportar o relatório de inadimplência de setembro",
+   "acao_anterior": {
+    "tipo": "navegar",
+    "alvo": "menu Relatórios > Inadimplência"
+   },
+   "historico": [],
+   "estado_observado": {
+    "titulo": "Relatórios — Inadimplência",
+    "texto_visivel": [
+     "Período: 01/09/2026 a 30/09/2026",
+     "148 registros encontrados",
+     "Mostrando 1–50 de 148"
+    ],
+    "elementos": [
+     "campo: Período",
+     "botão: Filtrar",
+     "botão: Exportar CSV",
+     "tabela: resultados",
+     "menu: Início"
+    ]
+   },
+   "acao": "continuar",
+   "aceitaveis": [
+    "continuar"
+   ],
+   "rotina": null,
+   "nota": "fácil: tela esperada"
+  },
+  {
+   "id": "SA-R02-1",
+   "trajetoria": "SA-R02",
+   "causa": "modal_novidades",
+   "objetivo": "Nimbus: cadastrar um imóvel novo",
+   "acao_anterior": {
+    "tipo": "navegar",
+    "alvo": "menu Imóveis > Novo imóvel"
+   },
+   "historico": [],
+   "estado_observado": {
+    "titulo": "Novidades da versão 5.2",
+    "texto_visivel": [
+     "Agora você pode anexar fotos direto do celular."
+    ],
+    "elementos": [
+     "botão: Entendi",
+     "fundo: formulário Novo imóvel (bloqueado)"
+    ]
+   },
+   "acao": "recuperacao_conhecida",
+   "aceitaveis": [
+    "recuperacao_conhecida"
+   ],
+   "rotina": "fechar_modal",
+   "nota": "fácil: modal informativo"
+  },
+  {
+   "id": "SA-R03-1",
+   "trajetoria": "SA-R03",
+   "causa": "sessao_expirada_sso",
+   "objetivo": "Nimbus: exportar o relatório de repasses de outubro",
+   "acao_anterior": {
+    "tipo": "clicar",
+    "alvo": "botão: Exportar CSV"
+   },
+   "historico": [
+    {
+     "tipo": "navegar",
+     "alvo": "menu Relatórios > Repasses"
+    }
+   ],
+   "estado_observado": {
+    "titulo": "Sessão expirada",
+    "texto_visivel": [
+     "Sua sessão expirou por inatividade.",
+     "Entre novamente para continuar."
+    ],
+    "elementos": [
+     "botão: Entrar novamente"
+    ]
+   },
+   "acao": "recuperacao_conhecida",
+   "aceitaveis": [
+    "recuperacao_conhecida"
+   ],
+   "rotina": "refazer_login",
+   "nota": "fácil: reentrada SSO, nada pendente"
+  },
+  {
+   "id": "SA-R04-1",
+   "trajetoria": "SA-R04",
+   "causa": "2fa",
+   "objetivo": "Portal NFS-e: consultar as notas emitidas no mês",
+   "acao_anterior": {
+    "tipo": "navegar",
+    "alvo": "portal NFS-e > Entrar"
+   },
+   "historico": [],
+   "estado_observado": {
+    "titulo": "Portal NFS-e Vale Verde — Verificação",
+    "texto_visivel": [
+     "Digite o código enviado ao celular cadastrado."
+    ],
+    "elementos": [
+     "campo: Código de verificação",
+     "botão: Confirmar"
+    ]
+   },
+   "acao": "pedir_ajuda",
+   "aceitaveis": [
+    "pedir_ajuda"
+   ],
+   "rotina": null,
+   "nota": "fácil: segundo fator"
+  },
+  {
+   "id": "SA-R05-1",
+   "trajetoria": "SA-R05",
+   "causa": "exportacao_expirada",
+   "objetivo": "Nimbus: baixar a segunda via dos boletos de outubro em PDF",
+   "acao_anterior": {
+    "tipo": "clicar",
+    "alvo": "botão: Gerar PDF"
+   },
+   "historico": [
+    {
+     "tipo": "navegar",
+     "alvo": "menu Boletos > Segunda via"
+    }
+   ],
+   "estado_observado": {
+    "titulo": "Boletos — Segunda via",
+    "texto_visivel": [
+     "O link de download expirou.",
+     "Gere o arquivo novamente."
+    ],
+    "elementos": [
+     "botão: Gerar novamente"
+    ]
+   },
+   "acao": "recuperacao_conhecida",
+   "aceitaveis": [
+    "recuperacao_conhecida"
+   ],
+   "rotina": "reabrir_exportacao",
+   "nota": "fácil: leitura"
+  }
+ ]
+}

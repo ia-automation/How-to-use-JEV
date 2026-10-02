@@ -1,0 +1,1836 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "LS-T001",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/fotos/s3.ts b/src/fotos/s3.ts\n--- a/src/fotos/s3.ts\n+++ b/src/fotos/s3.ts\n@@ -3,5 +3,8 @@\n import { S3Client } from '@aws-sdk/client-s3';\n\n export const s3 = new S3Client({\n   region: 'sa-east-1',\n-  credentials: credenciaisDoAmbiente(),\n+  credentials: {\n+    accessKeyId: 'AKIAFAKE7Q2W9E4R',\n+    secretAccessKey: process.env.S3_SECRET ?? '',\n+  },\n });\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "Chave de acesso em literal."
+  },
+  {
+   "id": "LS-T002",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/cobranca/servico.ts b/src/cobranca/servico.ts\n--- a/src/cobranca/servico.ts\n+++ b/src/cobranca/servico.ts\n@@ -25,6 +25,7 @@\n export async function gerarBoleto(propostaId: string) {\n   const proposta = await obterProposta(propostaId);\n+  console.log('gerando boleto', proposta.id, proposta.valor);\n   const boleto = await gateway.criarBoleto(proposta.valor, proposta.comprador);\n   await salvarBoleto(propostaId, boleto);\n   return boleto;\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "console.log em serviço."
+  },
+  {
+   "id": "LS-T003",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/agenda/horarios.ts b/src/agenda/horarios.ts\n--- a/src/agenda/horarios.ts\n+++ b/src/agenda/horarios.ts\n@@ -1,2 +1,16 @@\n import { addMinutes } from 'date-fns';\n\n+/**\n+ * @description Gera os horários livres de um corretor num dia, em blocos de 30 min.\n+ * @param inicio começo do expediente\n+ * @param fim fim do expediente\n+ * @param ocupados horários já tomados\n+ */\n+export function horariosLivres(inicio: Date, fim: Date, ocupados: Date[]): Date[] {\n+  const livres: Date[] = [];\n+  for (let t = inicio; t < fim; t = addMinutes(t, 30)) {\n+    if (!ocupados.some((o) => o.getTime() === t.getTime())) livres.push(t);\n+  }\n+  return livres;\n+}\n+\n export const BLOCO_MINUTOS = 30;\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false,
+    "r4": false
+   },
+   "nota": "JSDoc completo em função nova exportada."
+  },
+  {
+   "id": "LS-T004",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0016_remove_coluna_cep_antigo.sql b/drizzle/0016_remove_coluna_cep_antigo.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0016_remove_coluna_cep_antigo.sql\n@@ -0,0 +1,7 @@\n+-- cep passou a vir do endereço normalizado\n+ALTER TABLE imoveis DROP COLUMN cep_antigo;\n+\n+ALTER TABLE imoveis ADD COLUMN endereco_id uuid REFERENCES enderecos (id);\n+CREATE INDEX idx_imoveis_endereco ON imoveis (endereco_id);\n+\n+COMMENT ON COLUMN imoveis.endereco_id IS 'endereço normalizado';\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "DROP COLUMN sem confirmação."
+  },
+  {
+   "id": "LS-T005",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/corretores/rotas.ts b/src/corretores/rotas.ts\n--- a/src/corretores/rotas.ts\n+++ b/src/corretores/rotas.ts\n@@ -6,4 +6,13 @@\n const router = Router();\n\n+router.post('/corretores', async (req, res) => {\n+  const corretor = await criarCorretor({\n+    nome: req.body.nome,\n+    creci: req.body.creci,\n+    equipeId: req.body.equipeId,\n+  });\n+  res.status(201).json(corretor);\n+});\n+\n router.get('/corretores/:id', param('id').isUUID(), validar, async (req, res) => {\n   res.json(await obterCorretor(req.params.id));\n });\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "Rota nova lê body sem validar."
+  },
+  {
+   "id": "LS-T006",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/propostas/rotas.ts b/src/propostas/rotas.ts\n--- a/src/propostas/rotas.ts\n+++ b/src/propostas/rotas.ts\n@@ -1,4 +1,13 @@\n import { Router } from 'express';\n+import { z } from 'zod';\n import { atualizarProposta } from './servico';\n\n const router = Router();\n\n+const esquemaAtualizacao = z.object({ valor: z.number().positive(), parcelas: z.number().int().max(120) });\n+\n+router.put('/propostas/:id', async (req, res) => {\n+  const dados = esquemaAtualizacao.safeParse(req.body);\n+  if (!dados.success) return res.status(422).json(dados.error.flatten());\n+  res.json(await atualizarProposta(req.params.id, dados.data));\n+});\n+\n export default router;\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false,
+    "r4": null
+   },
+   "nota": "difícil: validação por zod, com 422 e tudo — ainda assim viola a convenção literal (express-validator)."
+  },
+  {
+   "id": "LS-T007",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/web/src/formularios/lead.ts b/web/src/formularios/lead.ts\n--- a/web/src/formularios/lead.ts\n+++ b/web/src/formularios/lead.ts\n@@ -1,2 +1,10 @@\n import { z } from 'zod';\n\n+export const esquemaLead = z.object({\n+  nome: z.string().min(2),\n+  telefone: z.string().regex(/^\\+55\\d{10,11}$/),\n+  origem: z.enum(['site', 'portal', 'indicacao']),\n+});\n+\n+export type FormLead = z.infer<typeof esquemaLead>;\n+\n export const origens = ['site', 'portal', 'indicacao'] as const;\n",
+   "violacoes": {
+    "r1": null,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: zod no front, sem rota de Express — a regra de validação não toca (null, não viola)."
+  },
+  {
+   "id": "LS-T008",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/relatorios/exportar.ts b/src/relatorios/exportar.ts\n--- a/src/relatorios/exportar.ts\n+++ b/src/relatorios/exportar.ts\n@@ -40,4 +40,6 @@\n export async function exportarCsv(linhas: Linha[]) {\n   const csv = montarCsv(linhas);\n-  return Buffer.from(csv);\n+  // a biblioteca de CSV declara retorno `string | Buffer` mas só devolve string nesta versão (2.4)\n+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion\n+  return Buffer.from(csv as string);\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: o porquê está na linha imediatamente anterior à supressão — permitido."
+  },
+  {
+   "id": "LS-T009",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/relatorios/exportar.ts b/src/relatorios/exportar.ts\n--- a/src/relatorios/exportar.ts\n+++ b/src/relatorios/exportar.ts\n@@ -40,4 +40,8 @@\n export async function exportarCsv(linhas: Linha[]) {\n+  // a biblioteca de CSV declara retorno `string | Buffer` mas só devolve string\n   const csv = montarCsv(linhas);\n+  const tamanho = csv.length;\n+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion\n+  registrarTamanho(tamanho);\n   return Buffer.from(csv as string);\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: o porquê existe, mas três linhas acima da supressão, com código no meio — a regra pede mesma linha ou imediatamente anterior; viola."
+  },
+  {
+   "id": "LS-T010",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/webhooks/portal.ts b/src/webhooks/portal.ts\n--- a/src/webhooks/portal.ts\n+++ b/src/webhooks/portal.ts\n@@ -12,7 +12,6 @@\n export async function receberPortal(req: Request, res: Response) {\n-  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n-  const corpo = req.body as any;\n+  const corpo = payloadPortal.parse(req.body);\n   const lead = normalizar(corpo);\n   await salvar(lead);\n   res.sendStatus(204);\n }\n",
+   "violacoes": {
+    "r1": null,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: a supressão aparece só em linha removida — o diff deixou de ter desvio; a regra não toca."
+  },
+  {
+   "id": "LS-T011",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/util/datas.ts b/src/util/datas.ts\n--- a/src/util/datas.ts\n+++ b/src/util/datas.ts\n@@ -1,1 +1,12 @@\n import { differenceInCalendarDays } from 'date-fns';\n\n+/** Dias corridos entre a visita e a proposta. */\n+export const diasAteProposta = (visita: Date, proposta: Date): number =>\n+  differenceInCalendarDays(proposta, visita);\n+\n+/**\n+ * @param d data base\n+ * @returns true se cai em sábado ou domingo\n+ */\n+export function fimDeSemana(d: Date): boolean {\n+  return d.getDay() === 0 || d.getDay() === 6;\n+}\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: duas funções novas exportadas com JSDoc, nenhuma com @description — viola."
+  },
+  {
+   "id": "LS-T012",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/app/integracoes/pagamento.py b/app/integracoes/pagamento.py\n--- a/app/integracoes/pagamento.py\n+++ b/app/integracoes/pagamento.py\n@@ -1,4 +1,5 @@\n import os\n\n+# chave de sandbox usada nos testes manuais: sk_test_FAKE3c9d1e2f4a5b\n CHAVE = os.environ[\"PAGAMENTO_CHAVE\"]\n\n\n def criar_cobranca(valor: int, cliente_id: str) -> dict:\n-    return cliente.cobrancas.criar(valor=valor, cliente=cliente_id)\n+    return cliente.cobrancas.criar(valor=valor, cliente=cliente_id, moeda=\"BRL\")\n",
+   "violacoes": {
+    "r1": true,
+    "r2": null,
+    "r3": false
+   },
+   "nota": "difícil: segredo em comentário Python — viola igual."
+  },
+  {
+   "id": "LS-T013",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/servico.ts b/src/leads/servico.ts\n--- a/src/leads/servico.ts\n+++ b/src/leads/servico.ts\n@@ -40,6 +40,8 @@\n export async function criarLead(dados: NovoLead) {\n   const telefone = normalizarTelefone(dados.telefone);\n+  const existente = await buscarPorTelefone(telefone);\n+  if (existente) return existente;\n   const [lead] = await db.insert(leads).values({ ...dados, telefone }).returning();\n   await fila.publicar('lead.criado', { id: lead.id });\n   return lead;\n }\n",
+   "violacoes": {
+    "r1": null,
+    "r2": false,
+    "r3": false,
+    "r4": false
+   },
+   "nota": "difícil: `criarLead` já existia; o diff só acrescenta linhas dentro dela — JSDoc não toca."
+  },
+  {
+   "id": "LS-T014",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/servico.ts b/src/leads/servico.ts\n--- a/src/leads/servico.ts\n+++ b/src/leads/servico.ts\n@@ -40,6 +40,12 @@\n export async function criarLead(dados: NovoLead) {\n   const telefone = normalizarTelefone(dados.telefone);\n-  const [lead] = await db.insert(leads).values({ ...dados, telefone }).returning();\n+  const existente = await buscarPorTelefone(telefone);\n+  if (existente) return existente;\n+  const [lead] = await db.insert(leads).values({ ...dados, telefone }).returning();\n   await fila.publicar('lead.criado', { id: lead.id });\n   return lead;\n }\n+\n+export async function buscarPorTelefone(telefone: string) {\n+  return db.query.leads.findFirst({ where: eq(leads.telefone, telefone) });\n+}\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: a função modificada não entra, mas `buscarPorTelefone` é nova, exportada e sem JSDoc — viola."
+  },
+  {
+   "id": "LS-T015",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/relatorios/ocupacao.ts b/src/relatorios/ocupacao.ts\n--- a/src/relatorios/ocupacao.ts\n+++ b/src/relatorios/ocupacao.ts\n@@ -12,3 +12,11 @@\n export async function ocupacaoPorBairro(mes: string) {\n-  return calcularNoNode(await listarVisitas(mes));\n+  // agregação com generate_series por dia; o builder não gera a série\n+  const r = await pool.query(\n+    `SELECT d::date AS dia, count(v.id) AS visitas\n+       FROM generate_series($1::date, $2::date, '1 day') d\n+       LEFT JOIN visitas v ON v.quando::date = d\n+      GROUP BY dia ORDER BY dia`,\n+    [inicioDoMes(mes), fimDoMes(mes)],\n+  );\n+  return r.rows;\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: SQL cru com justificativa imediatamente acima — não viola."
+  },
+  {
+   "id": "LS-T016",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/imoveis/servico.ts b/src/imoveis/servico.ts\n--- a/src/imoveis/servico.ts\n+++ b/src/imoveis/servico.ts\n@@ -60,6 +60,7 @@\n export async function contarPorBairro() {\n-  return db.select({ bairro: imoveis.bairro, n: count() }).from(imoveis).groupBy(imoveis.bairro);\n+  const r = await db.execute(sql`SELECT bairro, count(*) AS n FROM imoveis GROUP BY bairro`);\n+  return r.rows;\n }\n\n export async function contarAtivos() {\n   return db.select({ n: count() }).from(imoveis).where(eq(imoveis.ativo, true));\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: SQL cru que o builder faria sem esforço e sem comentário — viola."
+  },
+  {
+   "id": "LS-T017",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/propostas/servico.ts b/src/propostas/servico.ts\n--- a/src/propostas/servico.ts\n+++ b/src/propostas/servico.ts\n@@ -70,3 +70,5 @@\n export async function propostasAbertas(corretorId: string) {\n-  return db.select().from(propostas).where(and(eq(propostas.corretorId, corretorId), eq(propostas.etapa, 'analise')));\n+  // propostas em análise do corretor\n+  const r = await client.query('SELECT * FROM propostas WHERE corretor_id = $1 AND etapa = $2', [corretorId, 'analise']);\n+  return r.rows;\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": null,
+    "r3": false,
+    "r4": false
+   },
+   "nota": "difícil: comentário presente, mas descreve o que a query faz, não por que o builder não serve — viola."
+  },
+  {
+   "id": "LS-T018",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/propostas/__tests__/calculo.test.ts b/src/propostas/__tests__/calculo.test.ts\n--- a/src/propostas/__tests__/calculo.test.ts\n+++ b/src/propostas/__tests__/calculo.test.ts\n@@ -5,5 +5,7 @@\n describe('valorParcela', () => {\n   it('divide sem resto', () => {\n-    expect(valorParcela(1200, 12)).toBe(100);\n+    const v = valorParcela(1200, 12);\n+    console.log('parcela', v);\n+    expect(v).toBe(100);\n   });\n });\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: pasta `__tests__/` — exceção da regra; não viola."
+  },
+  {
+   "id": "LS-T019",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/test/agenda.spec.js b/test/agenda.spec.js\n--- a/test/agenda.spec.js\n+++ b/test/agenda.spec.js\n@@ -10,7 +10,9 @@\n it('não marca duas visitas no mesmo horário', async () => {\n   await agendar(imovel, '2026-10-02T10:00');\n+  console.log(await listar(imovel));\n   await expect(agendar(imovel, '2026-10-02T10:00')).rejects.toThrow('ocupado');\n });\n\n it('permite visitas em horários diferentes', async () => {\n   await agendar(imovel, '2026-10-02T11:00');\n+  expect((await listar(imovel)).length).toBe(2);\n });\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: pasta `test/` e sufixo `.spec.` — exceção; não viola."
+  },
+  {
+   "id": "LS-T020",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/fila/worker.ts b/src/fila/worker.ts\n--- a/src/fila/worker.ts\n+++ b/src/fila/worker.ts\n@@ -30,6 +30,12 @@\n async function laco() {\n   const job = await fila.proximo();\n   if (!job) return;\n-  await processar(job);\n+  try {\n+    await processar(job);\n+  } catch (e) {\n+    console.error('job falhou', job.id, e);\n+    await fila.reenfileirar(job.id);\n+    return;\n+  }\n   await fila.concluir(job.id);\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: `console.error` não é `console.log` — a regra é literal; não viola."
+  },
+  {
+   "id": "LS-T021",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/util/log.ts b/src/util/log.ts\n--- a/src/util/log.ts\n+++ b/src/util/log.ts\n@@ -1,2 +1,5 @@\n import pino from 'pino';\n\n export const logger = pino({ level: process.env.LOG_NIVEL ?? 'info' });\n+\n+// atalho para quem ainda escreve console.log(...) por hábito: usa o pino por baixo\n+export const log = (...args: unknown[]) => logger.info(args);\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: `console.log(` aparece dentro de um comentário — a regra mecânica conta mesmo comentado; viola ao pé da letra (JSDoc da `log` não cobrado neste caso)."
+  },
+  {
+   "id": "LS-T022",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/agenda/lembretes.ts b/src/agenda/lembretes.ts\n--- a/src/agenda/lembretes.ts\n+++ b/src/agenda/lembretes.ts\n@@ -18,6 +18,8 @@\n export async function enviarLembretes() {\n   const pendentes = await visitasSemLembrete();\n+  // TODO(CRM-530) agrupar por corretor para mandar uma mensagem só\n   for (const v of pendentes) {\n     await zap.enviar(v.lead.telefone, textoLembrete(v));\n+    await marcarLembrete(v.id);\n   }\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: TODO no formato exigido — não viola."
+  },
+  {
+   "id": "LS-T023",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/agenda/lembretes.ts b/src/agenda/lembretes.ts\n--- a/src/agenda/lembretes.ts\n+++ b/src/agenda/lembretes.ts\n@@ -18,6 +18,7 @@\n export async function enviarLembretes() {\n   const pendentes = await visitasSemLembrete();\n+  // todo: agrupar por corretor\n   for (const v of pendentes) {\n-    await zap.enviar(v.lead.telefone, textoLembrete(v));\n+    await zap.enviar(v.lead.telefone, textoLembrete(v)); // FIXME texto fixo\n   }\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: `todo` minúsculo não entra, mas o `FIXME` sem ticket entra — viola."
+  },
+  {
+   "id": "LS-T024",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0017_remove_tabela_fotos_tmp.sql b/drizzle/0017_remove_tabela_fotos_tmp.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0017_remove_tabela_fotos_tmp.sql\n@@ -0,0 +1,6 @@\n+ALTER TABLE fotos ADD COLUMN ordem smallint NOT NULL DEFAULT 0;\n+CREATE INDEX idx_fotos_imovel_ordem ON fotos (imovel_id, ordem);\n+\n+DROP TABLE IF EXISTS fotos_tmp; -- confirmado por Marcos em 2026-09-30, tabela de migração concluída\n+\n+COMMENT ON COLUMN fotos.ordem IS 'ordem de exibição no anúncio';\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: marcador na mesma linha do DROP — não viola."
+  },
+  {
+   "id": "LS-T025",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0018_migracao_manual.ts b/drizzle/0018_migracao_manual.ts\n--- a/drizzle/0018_migracao_manual.ts\n+++ b/drizzle/0018_migracao_manual.ts\n@@ -1,7 +1,9 @@\n import { sql } from 'drizzle-orm';\n\n export async function up(db: Db) {\n   await db.execute(sql`ALTER TABLE leads ADD COLUMN score smallint`);\n+  await db.execute(sql`ALTER TABLE leads DROP COLUMN score_antigo`);\n }\n\n export async function down(db: Db) {\n   await db.execute(sql`ALTER TABLE leads ADD COLUMN score_antigo smallint`);\n+  await db.execute(sql`ALTER TABLE leads DROP COLUMN score`);\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: DROP COLUMN dentro de migration em TypeScript, sem marcador — a regra é por linha adicionada, viola; arquivo de migration não conta como SQL cru."
+  },
+  {
+   "id": "LS-T026",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/db/manutencao.ts b/src/db/manutencao.ts\nnew file mode 100644\n--- /dev/null\n+++ b/src/db/manutencao.ts\n@@ -0,0 +1,6 @@\n+import { db } from './cliente';\n+\n+export async function dropTableIfTemp(nome: string) {\n+  if (!nome.startsWith('tmp_')) throw new Error('só tabela temporária');\n+  await db.execute(sql.raw(`DROP TABLE IF EXISTS ${nome}`));\n+}\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: `DROP TABLE` aparece em linha adicionada sem marcador — viola a regra mecânica ao pé da letra (apesar da guarda do prefixo tmp_)."
+  },
+  {
+   "id": "LS-T027",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/tests/test_login.py b/tests/test_login.py\n--- a/tests/test_login.py\n+++ b/tests/test_login.py\n@@ -1,4 +1,9 @@\n import pytest\n from app.auth import autenticar\n\n\n+@pytest.fixture\n+def usuario():\n+    return Usuario(email=\"ana.teste@exemplo.com.br\", senha=\"Teste@1234\", papel=\"corretor\")\n+\n+\n def test_login_ok(usuario):\n-    assert autenticar(\"ana.teste@exemplo.com.br\", \"x\") is not None\n+    assert autenticar(usuario.email, usuario.senha) is not None\n",
+   "violacoes": {
+    "r1": true,
+    "r2": null,
+    "r3": false
+   },
+   "nota": "difícil: senha literal em fixture de teste Python — a regra inclui testes; viola."
+  },
+  {
+   "id": "LS-T028",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/auth/login.ts b/src/auth/login.ts\n--- a/src/auth/login.ts\n+++ b/src/auth/login.ts\n@@ -15,5 +15,8 @@\n export async function login(email: string, senha: string) {\n   const usuario = await obterPorEmail(email);\n-  if (!usuario || !(await compare(senha, usuario.senhaHash))) throw new NaoAutorizado();\n+  if (!usuario) throw new NaoAutorizado();\n+  const senhaConfere = await compare(senha, usuario.senhaHash);\n+  if (!senhaConfere) throw new NaoAutorizado();\n+  const token = await assinar({ sub: usuario.id, papel: usuario.papel });\n   return { token, usuario: paraDto(usuario) };\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: `senha`, `senhaHash`, `token` por toda parte, nenhum literal — não viola."
+  },
+  {
+   "id": "LS-T029",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/auth/rotas.ts b/src/auth/rotas.ts\n--- a/src/auth/rotas.ts\n+++ b/src/auth/rotas.ts\n@@ -20,1 +20,7 @@\n router.post('/login', body('email').isEmail(), body('senha').isString(), validar, login);\n+\n+router.post('/logout', async (req, res) => {\n+  const token = req.headers.authorization?.replace('Bearer ', '');\n+  if (token) await revogar(token);\n+  res.sendStatus(204);\n+});\n",
+   "violacoes": {
+    "r1": null,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: rota nova lê só o header, não body/params/query — a regra não toca."
+  },
+  {
+   "id": "LS-T030",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/imoveis/rotas.ts b/src/imoveis/rotas.ts\n--- a/src/imoveis/rotas.ts\n+++ b/src/imoveis/rotas.ts\n@@ -40,3 +40,8 @@\n router.get('/imoveis/:id', param('id').isUUID(), validar, async (req, res) => {\n   res.json(await obter(req.params.id));\n });\n+\n+router.get('/imoveis/busca', async (req, res) => {\n+  const { bairro, precoMax } = req.query;\n+  res.json(await buscar({ bairro: String(bairro), precoMax: Number(precoMax) }));\n+});\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false,
+    "r4": false
+   },
+   "nota": "difícil: a rota vizinha valida; a nova lê query com coerção manual — viola."
+  },
+  {
+   "id": "LS-T031",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/visitas/rotas.ts b/src/visitas/rotas.ts\n--- a/src/visitas/rotas.ts\n+++ b/src/visitas/rotas.ts\n@@ -1,3 +1,10 @@\n import { Router } from 'express';\n-import { param } from 'express-validator';\n+import { body, param, checkSchema, validationResult } from 'express-validator';\n const router = Router();\n\n+const esquemaReagendar = checkSchema({ quando: { isISO8601: true }, motivo: { optional: true, isString: true } });\n+\n+router.patch('/visitas/:id', param('id').isUUID(), esquemaReagendar, async (req, res) => {\n+  const erros = validationResult(req);\n+  if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+  res.json(await reagendar(req.params.id, req.body.quando, req.body.motivo));\n+});\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: `checkSchema` é do express-validator (não aparece `body()` na rota) — a convenção está atendida; não viola."
+  },
+  {
+   "id": "LS-T032",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/app/__init__.py b/app/__init__.py\n--- a/app/__init__.py\n+++ b/app/__init__.py\n@@ -1,3 +1,6 @@\n from .config import settings\n+from .modelos import *  # noqa: F401,F403  -- reexporta os modelos para o Alembic enxergar as tabelas\n\n\n def criar_app():\n-    return montar(settings)\n+    app = montar(settings)\n+    registrar_rotas(app)\n+    return app\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: `# noqa` com o porquê na mesma linha — não viola."
+  },
+  {
+   "id": "LS-T033",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/app/fila/consumidor.py b/app/fila/consumidor.py\n--- a/app/fila/consumidor.py\n+++ b/app/fila/consumidor.py\n@@ -14,3 +14,5 @@\n def consumir(canal) -> None:\n     for mensagem in canal.iterar():\n-        processar(mensagem)\n+        corpo = mensagem.body  # type: ignore\n+        processar(corpo)\n+        canal.ack(mensagem.tag)\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: `# type: ignore` nu — viola."
+  },
+  {
+   "id": "LS-T034",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/app/leads/repositorio.py b/app/leads/repositorio.py\n--- a/app/leads/repositorio.py\n+++ b/app/leads/repositorio.py\n@@ -30,5 +30,6 @@\n def marcar_contatado(con, lead_id: str) -> None:\n     with con.cursor() as cur:\n-        Lead.objects.filter(id=lead_id).update(contatado=True)\n+        cur.execute(\"UPDATE leads SET contatado = true WHERE id = %s\", (lead_id,))\n+        con.commit()\n\n\n def listar_nao_contatados(limite: int = 100):\n     return Lead.objects.filter(contatado=False)[:limite]\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "SQL cru em Python sem comentário — viola."
+  },
+  {
+   "id": "LS-T035",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/app/config.py b/app/config.py\n--- a/app/config.py\n+++ b/app/config.py\n@@ -1,2 +1,5 @@\n import os\n\n+DB_PASSWORD = os.environ[\"DB_PASSWORD\"]\n+ZAP_TOKEN = os.environ.get(\"ZAP_TOKEN\", \"\")\n+token_header = \"x-crm-token\"\n SMTP_HOST = os.environ.get(\"SMTP_HOST\", \"smtp.exemplo.com.br\")\n",
+   "violacoes": {
+    "r1": false,
+    "r2": null,
+    "r3": null
+   },
+   "nota": "difícil: `token_header = \"x-crm-token\"` — a palavra `token` é seguida de `_header`, não é atribuição a `token`; nenhum literal de segredo; não viola."
+  },
+  {
+   "id": "LS-T036",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/corretores/rotas.ts b/src/corretores/rotas.ts\n--- a/src/corretores/rotas.ts\n+++ b/src/corretores/rotas.ts\n@@ -6,2 +6,8 @@\n const router = Router();\n\n+router.patch('/corretores/:id/equipe', param('id').isUUID(), body('equipeId').isUUID(), async (req, res) => {\n+  const erros = validationResult(req);\n+  if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+  res.json(await moverEquipe(req.params.id, req.body.equipeId));\n+});\n+\n export default router;\ndiff --git a/tests/corretores.test.ts b/tests/corretores.test.ts\n--- a/tests/corretores.test.ts\n+++ b/tests/corretores.test.ts\n@@ -30,4 +30,5 @@\n it('move corretor de equipe', async () => {\n   const resp = await request(app).patch(`/corretores/${c.id}/equipe`).send({ equipeId: e.id });\n+  console.log(resp.body);\n   expect(resp.status).toBe(200);\n });\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "Dois arquivos: rota validada e console.log só no teste."
+  },
+  {
+   "id": "LS-T037",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/corretores/servico.ts b/src/corretores/servico.ts\n--- a/src/corretores/servico.ts\n+++ b/src/corretores/servico.ts\n@@ -50,4 +50,5 @@\n export async function moverEquipe(id: string, equipeId: string) {\n+  console.log('movendo', id, equipeId);\n   await db.update(corretores).set({ equipeId }).where(eq(corretores.id, id));\n   return obterCorretor(id);\n }\ndiff --git a/tests/corretores.test.ts b/tests/corretores.test.ts\n--- a/tests/corretores.test.ts\n+++ b/tests/corretores.test.ts\n@@ -30,4 +30,5 @@\n it('move corretor de equipe', async () => {\n   const resp = await request(app).patch(`/corretores/${c.id}/equipe`).send({ equipeId: e.id });\n+  console.log(resp.body);\n   expect(resp.status).toBe(200);\n });\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: o console.log do teste é permitido, o do serviço não — basta um para violar."
+  },
+  {
+   "id": "LS-T038",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/tests/auth.test.ts b/tests/auth.test.ts\n--- a/tests/auth.test.ts\n+++ b/tests/auth.test.ts\n@@ -1,4 +1,7 @@\n import { verificar } from '../src/auth/token';\n\n+const TOKEN_VALIDO = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.FAKEassinaturaDeTeste';\n+\n it('rejeita token expirado', async () => {\n-  await expect(verificar(gerarExpirado())).rejects.toThrow('expirado');\n+  await expect(verificar(gerarExpirado())).rejects.toThrow('expirado');\n+  await expect(verificar(TOKEN_VALIDO)).resolves.toBeDefined();\n });\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: JWT literal em teste — a regra inclui teste; viola (o nome `TOKEN_VALIDO` nem é o gatilho; o `eyJ…` é)."
+  },
+  {
+   "id": "LS-T039",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0019_limpeza.sql b/drizzle/0019_limpeza.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0019_limpeza.sql\n@@ -0,0 +1,7 @@\n+-- confirmado por Marcos em 2026-09-30: tabela de staging da importação de agosto\n+DROP TABLE IF EXISTS leads_staging_ago;\n+\n+ALTER TABLE leads ADD COLUMN importado_em timestamptz;\n+ALTER TABLE leads DROP COLUMN importacao_lote_antigo;\n+\n+CREATE INDEX idx_leads_importado ON leads (importado_em);\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: o DROP TABLE está confirmado, o DROP COLUMN mais abaixo não — viola."
+  },
+  {
+   "id": "LS-T040",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/propostas/tipos.ts b/src/propostas/tipos.ts\n--- a/src/propostas/tipos.ts\n+++ b/src/propostas/tipos.ts\n@@ -1,1 +1,13 @@\n export type Etapa = 'analise' | 'aprovada' | 'recusada';\n+\n+export interface ResumoProposta {\n+  id: string;\n+  etapa: Etapa;\n+  valor: number;\n+}\n+\n+function etapaFinal(e: Etapa): boolean {\n+  return e !== 'analise';\n+}\n+\n+export const ETAPAS_FINAIS = (['aprovada', 'recusada'] as Etapa[]).filter(etapaFinal);\n",
+   "violacoes": {
+    "r1": null,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: nada de função nova exportada (interface, const de array, helper interno) — a regra não toca."
+  },
+  {
+   "id": "LS-T041",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/middlewares/correlacao.ts b/src/middlewares/correlacao.ts\nnew file mode 100644\n--- /dev/null\n+++ b/src/middlewares/correlacao.ts\n@@ -0,0 +1,10 @@\n+import { randomUUID } from 'node:crypto';\n+import type { RequestHandler } from 'express';\n+\n+const correlacao: RequestHandler = (req, res, next) => {\n+  const id = req.header('x-correlacao') ?? randomUUID();\n+  res.setHeader('x-correlacao', id);\n+  next();\n+};\n+\n+export default correlacao;\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: função nova exportada via `export default` de uma const arrow, sem JSDoc — o revisor sênior conta como função nova exportada; viola."
+  },
+  {
+   "id": "LS-T042",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/legado/importador.ts b/src/legado/importador.ts\n--- a/src/legado/importador.ts\n+++ b/src/legado/importador.ts\n@@ -5,3 +5,5 @@\n export function converter(linha: LinhaAntiga) {\n-  return { nome: linha.nome, telefone: linha.fone };\n+  // legado\n+  // @ts-expect-error\n+  return { nome: linha.nome, telefone: linha.fone, origem: linha.origem_lead };\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: 'legado' é rótulo, não porquê (não diz o que impede tipar) — viola."
+  },
+  {
+   "id": "LS-T043",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/legado/importador.ts b/src/legado/importador.ts\n--- a/src/legado/importador.ts\n+++ b/src/legado/importador.ts\n@@ -5,3 +5,5 @@\n export function converter(linha: LinhaAntiga) {\n-  return { nome: linha.nome, telefone: linha.fone };\n+  // `origem_lead` só existe nas planilhas de 2024; o tipo LinhaAntiga é gerado da planilha atual\n+  // @ts-expect-error campo ausente no tipo gerado\n+  return { nome: linha.nome, telefone: linha.fone, origem: linha.origem_lead };\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: o porquê está na linha anterior e explica o que impede tipar — permitido."
+  },
+  {
+   "id": "LS-T044",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/tests/apoio/banco.ts b/tests/apoio/banco.ts\n--- a/tests/apoio/banco.ts\n+++ b/tests/apoio/banco.ts\n@@ -1,4 +1,8 @@\n import { db } from '../../src/db';\n\n+export async function limparTabelas() {\n+  await db.execute(sql`TRUNCATE leads, visitas, propostas RESTART IDENTITY CASCADE`);\n+}\n+\n export async function semear() {\n   await db.insert(leads).values(leadsDeTeste);\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: SQL cru em arquivo de apoio de teste sem comentário — a regra de SQL não excetua teste; viola (a de console.log excetua, mas não há console.log)."
+  },
+  {
+   "id": "LS-T045",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/relatorios/ranking.ts b/src/relatorios/ranking.ts\n--- a/src/relatorios/ranking.ts\n+++ b/src/relatorios/ranking.ts\n@@ -8,2 +8,10 @@\n export async function rankingCorretores(mes: string) {\n+  // rank() OVER (PARTITION BY equipe) não existe no builder; SQL cru até o Drizzle expor janela\n+  // TODO trocar pelo builder quando a versão com window functions sair\n+  const r = await db.execute(sql`\n+    SELECT corretor_id, equipe_id,\n+           rank() OVER (PARTITION BY equipe_id ORDER BY count(*) DESC) AS posicao\n+    FROM propostas WHERE etapa = 'aprovada' AND to_char(criado_em, 'YYYY-MM') = ${mes}\n+    GROUP BY corretor_id, equipe_id`);\n+  return r.rows;\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": true,
+    "r3": false
+   },
+   "nota": "difícil: a justificativa do SQL está imediatamente acima (o bloco de comentário é contínuo) — não viola; o TODO sem ticket viola."
+  },
+  {
+   "id": "LS-T046",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/scripts/sincronizar_issues.py b/scripts/sincronizar_issues.py\n--- a/scripts/sincronizar_issues.py\n+++ b/scripts/sincronizar_issues.py\n@@ -1,5 +1,5 @@\n import httpx\n\n-TOKEN = os.environ[\"GITHUB_TOKEN\"]\n+TOKEN = \"ghp_FAKEa8s7d6f5g4h3j2k1l0\"\n\n\n def listar_issues(repo: str) -> list[dict]:\n-    r = httpx.get(f\"https://api.github.com/repos/{repo}/issues\", headers={\"Authorization\": f\"Bearer {TOKEN}\"})\n+    r = httpx.get(f\"https://api.github.com/repos/{repo}/issues\", headers={\"Authorization\": f\"Bearer {TOKEN}\"}, timeout=10)\n     return r.json()\n",
+   "violacoes": {
+    "r1": true,
+    "r2": null,
+    "r3": false
+   },
+   "nota": "Token literal substituindo variável de ambiente."
+  },
+  {
+   "id": "LS-T047",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/integracoes/geocode.ts b/src/integracoes/geocode.ts\n--- a/src/integracoes/geocode.ts\n+++ b/src/integracoes/geocode.ts\n@@ -1,1 +1,6 @@\n import { readFileSync } from 'node:fs';\n\n+export function chaveGeocode(): string {\n+  const api_key = readFileSync(process.env.GEOCODE_KEY_FILE ?? 'api_key.txt', 'utf8').trim();\n+  if (api_key.length < 20) throw new Error('chave de geocode ausente');\n+  return api_key;\n+}\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": true
+   },
+   "nota": "difícil: `api_key` recebe o conteúdo de um arquivo, não um literal — não viola; a função nova exportada sem JSDoc viola."
+  },
+  {
+   "id": "LS-T048",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/rotas.ts b/src/leads/rotas.ts\n--- a/src/leads/rotas.ts\n+++ b/src/leads/rotas.ts\n@@ -30,1 +30,11 @@\n+/**\n+ * Marca o lead como perdido.\n+ */\n+router.post('/leads/:id/perder', param('id').isUUID(), body('motivo').isString().isLength({ max: 200 }), async (req, res) => {\n+  const erros = validationResult(req);\n+  if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+  await perder(req.params.id, req.body.motivo);\n+  res.sendStatus(204);\n+});\n+\n export default router;\n",
+   "violacoes": {
+    "r1": false,
+    "r2": null,
+    "r3": false,
+    "r4": false
+   },
+   "nota": "difícil: o handler inline não é função exportada (JSDoc não toca); validação completa (não viola)."
+  },
+  {
+   "id": "LS-T049",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0020_enderecos.sql b/drizzle/0020_enderecos.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0020_enderecos.sql\n@@ -0,0 +1,10 @@\n+CREATE TABLE enderecos (\n+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),\n+  logradouro text NOT NULL,\n+  bairro text NOT NULL,\n+  cidade text NOT NULL,\n+  cep char(8),\n+  criado_em timestamptz NOT NULL DEFAULT now()\n+);\n+\n+CREATE INDEX idx_enderecos_cep ON enderecos (cep);\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "Migration só cria."
+  },
+  {
+   "id": "LS-T050",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/drizzle/0021_renomeia_fone.sql b/drizzle/0021_renomeia_fone.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0021_renomeia_fone.sql\n@@ -0,0 +1,5 @@\n+-- renomeia em vez de DROP COLUMN + ADD, para não perder os valores\n+ALTER TABLE leads RENAME COLUMN fone TO telefone;\n+\n+ALTER TABLE leads ALTER COLUMN telefone TYPE varchar(20);\n+CREATE INDEX idx_leads_telefone_norm ON leads (telefone);\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: `DROP COLUMN` aparece só num comentário (e sem marcador) — a regra mecânica é por linha adicionada; viola ao pé da letra, embora nada seja apagado."
+  },
+  {
+   "id": "LS-T051",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/util/teste-util.ts b/src/util/teste-util.ts\n--- a/src/util/teste-util.ts\n+++ b/src/util/teste-util.ts\n@@ -1,3 +1,6 @@\n export function apenasEmDev(fn: () => void) {\n-  if (process.env.NODE_ENV !== 'production') fn();\n+  if (process.env.NODE_ENV !== 'production') {\n+    console.log('[dev]', fn.name);\n+    fn();\n+  }\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: o nome `teste-util.ts` não casa com `.test.`/`.spec.`/pasta de teste — viola."
+  },
+  {
+   "id": "LS-T052",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r4",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/tsconfig.json b/tsconfig.json\n--- a/tsconfig.json\n+++ b/tsconfig.json\n@@ -1,8 +1,9 @@\n {\n   \"compilerOptions\": {\n     \"target\": \"ES2022\",\n-    \"strict\": false,\n+    \"strict\": true,\n+    \"noUncheckedIndexedAccess\": true,\n     \"module\": \"NodeNext\",\n     \"outDir\": \"dist\"\n   }\n }\n",
+   "violacoes": {
+    "r1": false,
+    "r2": null,
+    "r3": null,
+    "r4": null
+   },
+   "nota": "difícil: diff de configuração — as regras semânticas não tocam (null); a mecânica responde false."
+  },
+  {
+   "id": "LS-T053",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r4",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/src/propostas/rotas.ts b/src/propostas/rotas.ts\n--- a/src/propostas/rotas.ts\n+++ b/src/propostas/rotas.ts\n@@ -1,3 +1,16 @@\n import { Router } from 'express';\n import { body, validationResult } from 'express-validator';\n const router = Router();\n\n+const validarProposta = [\n+  body('valor').isInt({ min: 1 }),\n+  body('imovelId').isUUID(),\n+  (req: Request, res: Response, next: NextFunction) => {\n+    const erros = validationResult(req);\n+    if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+    next();\n+  },\n+];\n+\n+router.post('/propostas', validarProposta, async (req, res) => {\n+  res.status(201).json(await criarProposta(req.body));\n+});\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false,
+    "r4": null
+   },
+   "nota": "difícil: a cadeia e o validationResult estão num array de middlewares local — convenção atendida; não viola."
+  },
+  {
+   "id": "LS-T054",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/agenda/rotas.ts b/src/agenda/rotas.ts\n--- a/src/agenda/rotas.ts\n+++ b/src/agenda/rotas.ts\n@@ -1,4 +1,7 @@\n import { Router } from 'express';\n import { body, param } from 'express-validator';\n import { validar } from '../middlewares/validar';\n const router = Router();\n\n+router.post('/corretores/:id/bloqueios', param('id').isUUID(), body('de').isISO8601(), body('ate').isISO8601(), validar, async (req, res) => {\n+  res.status(201).json(await bloquear(req.params.id, req.body.de, req.body.ate));\n+});\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: cadeia do express-validator presente e middleware `validar` do projeto na sequência (padrão das rotas vizinhas) — não viola; o revisor confia no middleware compartilhado."
+  },
+  {
+   "id": "LS-T055",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/notificacoes/rotas.ts b/src/notificacoes/rotas.ts\n--- a/src/notificacoes/rotas.ts\n+++ b/src/notificacoes/rotas.ts\n@@ -1,2 +1,10 @@\n import { Router } from 'express';\n+import Joi from 'joi';\n const router = Router();\n\n+const esquema = Joi.object({ leadId: Joi.string().uuid().required(), canal: Joi.string().valid('zap', 'email') });\n+\n+router.post('/notificacoes', async (req, res) => {\n+  const { error, value } = esquema.validate(req.body);\n+  if (error) return res.status(422).json({ erro: error.message });\n+  res.status(201).json(await enfileirar(value));\n+});\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: joi valida, mas não é express-validator — viola."
+  },
+  {
+   "id": "LS-T056",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/fotos/redimensionar.ts b/src/fotos/redimensionar.ts\n--- a/src/fotos/redimensionar.ts\n+++ b/src/fotos/redimensionar.ts\n@@ -10,7 +10,8 @@\n export async function redimensionar(buf: Buffer) {\n-  return sharp(buf).resize(1200).toBuffer();\n+  // TODO gerar também a miniatura de 300px\n+  return sharp(buf).resize(1200, undefined, { withoutEnlargement: true }).toBuffer();\n }\n\n export async function dimensoes(buf: Buffer) {\n   const m = await sharp(buf).metadata();\n   return { largura: m.width, altura: m.height };\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "TODO sem ticket."
+  },
+  {
+   "id": "LS-T057",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/servico.ts b/src/leads/servico.ts\n--- a/src/leads/servico.ts\n+++ b/src/leads/servico.ts\n@@ -60,6 +60,6 @@\n-export async function buscarPorFone(fone: string) {\n+export async function buscarPorTelefone(telefone: string) {\n-  return db.query.leads.findFirst({ where: eq(leads.fone, fone) });\n+  return db.query.leads.findFirst({ where: eq(leads.telefone, telefone) });\n }\n\n export async function buscarPorEmail(email: string) {\n   return db.query.leads.findFirst({ where: eq(leads.email, email) });\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: renomear faz a assinatura aparecer como linha `+` com `export async function` nova e sem JSDoc — pelo texto da regra (função nova exportada) viola; decisão registrada no LEIA-ME."
+  },
+  {
+   "id": "LS-T058",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/app/relatorios/dump.py b/app/relatorios/dump.py\n--- a/app/relatorios/dump.py\n+++ b/app/relatorios/dump.py\n@@ -1,6 +1,7 @@\n import psycopg\n\n-con = psycopg.connect(os.environ[\"DATABASE_URL\"])\n+con = psycopg.connect(host=\"db.exemplo.com.br\", user=\"relatorios\", password=\"Rel4torios!2026\")\n\n\n def dump_leads(destino) -> None:\n     with con.cursor() as cur:\n+        # COPY TO STDOUT é 20x mais rápido que iterar o ORM para 3M linhas (medido em 2026-09-15)\n         cur.execute(\"COPY leads TO STDOUT WITH CSV HEADER\")\n         destino.write(cur.fetchall())\n",
+   "violacoes": {
+    "r1": false,
+    "r2": true,
+    "r3": null
+   },
+   "nota": "difícil: a justificativa do COPY é boa (não viola SQL), mas a senha do banco virou literal (viola)."
+  },
+  {
+   "id": "LS-T059",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/webhooks/rotas.ts b/src/webhooks/rotas.ts\n--- a/src/webhooks/rotas.ts\n+++ b/src/webhooks/rotas.ts\n@@ -1,3 +1,10 @@\n import { Router } from 'express';\n import { header, validationResult } from 'express-validator';\n const router = Router();\n\n+router.post('/webhooks/portal', header('x-portal-secret').isString().notEmpty(), async (req, res) => {\n+  const erros = validationResult(req);\n+  if (!erros.isEmpty()) return res.sendStatus(401);\n+  if (req.header('x-portal-secret') !== process.env.PORTAL_SECRET) return res.sendStatus(401);\n+  await receber(req.body);\n+  res.sendStatus(204);\n+});\n",
+   "violacoes": {
+    "r1": false,
+    "r2": true,
+    "r3": false
+   },
+   "nota": "difícil: nenhum literal de segredo (comparação com env, não viola); a cadeia valida só o header e `req.body` vai para `receber()` sem validação — viola a regra de validação."
+  },
+  {
+   "id": "LS-T060",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/leads/rotas.ts b/src/leads/rotas.ts\n--- a/src/leads/rotas.ts\n+++ b/src/leads/rotas.ts\n@@ -1,3 +1,11 @@\n import { Router } from 'express';\n import { body, validationResult } from 'express-validator';\n+import { z } from 'zod';\n const router = Router();\n\n+export const esquemaExportacao = z.object({ formato: z.enum(['csv', 'xlsx']) });\n+\n+router.post('/leads/importar', body('linhas').isArray({ min: 1 }), async (req, res) => {\n+  const erros = validationResult(req);\n+  if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+  res.status(202).json(await importar(req.body.linhas));\n+});\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: há zod no arquivo, mas a rota nova valida com express-validator — não viola (o esquema zod não valida rota)."
+  },
+  {
+   "id": "LS-T061",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém `DROP TABLE` ou `DROP COLUMN` sem o marcador `confirmado por` na mesma linha ou na linha adicionada imediatamente anterior.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/config/db.ts b/src/config/db.ts\n--- a/src/config/db.ts\n+++ b/src/config/db.ts\n@@ -1,4 +1,4 @@\n export const db = {\n   host: process.env.DB_HOST,\n-  password: process.env.DB_PASSWORD,\n+  password: 'crm#Prod2026',\n };\ndiff --git a/drizzle/0022_limpa.sql b/drizzle/0022_limpa.sql\nnew file mode 100644\n--- /dev/null\n+++ b/drizzle/0022_limpa.sql\n@@ -0,0 +1,2 @@\n+DROP TABLE sessoes_antigas;\n+CREATE TABLE sessoes (id uuid PRIMARY KEY, usuario_id uuid NOT NULL, expira_em timestamptz NOT NULL);\n",
+   "violacoes": {
+    "r1": true,
+    "r2": true,
+    "r3": false
+   },
+   "nota": "Senha literal e DROP sem confirmação em dois arquivos."
+  },
+  {
+   "id": "LS-T062",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/README.md b/README.md\n--- a/README.md\n+++ b/README.md\n@@ -20,2 +20,8 @@\n ## Banco local\n\n-Crie o banco `crm` e aponte `DATABASE_URL`.\n+Crie o banco `crm` e aponte `DATABASE_URL`. Para subir rápido com Docker:\n+\n+```yaml\n+environment:\n+  POSTGRES_USER: crm\n+  POSTGRES_PASSWORD: \"crm-local-dev\"\n+```\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: senha de banco local de desenvolvimento em exemplo de README — a regra inclui documentação; viola (o revisor talvez relevasse, a regra não)."
+  },
+  {
+   "id": "LS-T063",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Toda função nova exportada em TypeScript (`export function`, `export async function` ou `export const nome = (...) =>`) tem JSDoc imediatamente acima com a tag `@description`. Função que já existia e foi só modificada não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    }
+   ],
+   "diff": "diff --git a/app/util/telefone.py b/app/util/telefone.py\n--- a/app/util/telefone.py\n+++ b/app/util/telefone.py\n@@ -1,3 +1,11 @@\n import re\n\n+SO_DIGITOS = re.compile(r\"\\D\")\n+\n+\n+def normalizar(bruto: str) -> str:\n+    d = SO_DIGITOS.sub(\"\", bruto)\n+    return f\"+{d}\" if d.startswith(\"55\") else f\"+55{d}\"\n+\n+\n def valido(telefone: str) -> bool:\n     return 12 <= len(telefone) <= 13\n",
+   "violacoes": {
+    "r1": null,
+    "r2": false,
+    "r3": null
+   },
+   "nota": "difícil: função nova em Python sem docstring — a regra fala de JSDoc em TypeScript; não toca."
+  },
+  {
+   "id": "LS-T064",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Supressão de lint ou de tipo em linha adicionada (`eslint-disable`, `@ts-ignore`, `@ts-expect-error`, `# noqa`, `# type: ignore`) leva, na mesma linha ou na linha imediatamente anterior, comentário dizendo o porquê do desvio.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/tests/webhooks.test.ts b/tests/webhooks.test.ts\n--- a/tests/webhooks.test.ts\n+++ b/tests/webhooks.test.ts\n@@ -1,5 +1,10 @@\n import { app } from '../src/app';\n\n+// o payload real do portal vem sem tipo; o teste reproduz o JSON bruto\n+// eslint-disable-next-line @typescript-eslint/no-explicit-any\n+const payload: any = { lead: { nome: 'Ana', fone: '11987654321' } };\n+\n it('recebe webhook do portal', async () => {\n-  const resp = await request(app).post('/webhooks/portal').send({});\n+  const resp = await request(app).post('/webhooks/portal').set('x-portal-secret', 'segredo-de-teste-123').send(payload);\n+  console.log(resp.status);\n   expect(resp.status).toBe(204);\n });\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: supressão com porquê (ok) e console.log em teste (ok); o valor de teste passado em `.set('x-portal-secret', '…')` não é atribuição a `secret` nem tem prefixo conhecido — a regra mecânica, lida ao pé da letra, não casa (false); limite registrado no LEIA-ME."
+  },
+  {
+   "id": "LS-T065",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Rota nova de Express (`router.<verbo>(` ou `app.<verbo>(`) que lê `req.body`, `req.params` ou `req.query` valida essa entrada com express-validator (cadeia `body()`/`param()`/`query()` E checagem de `validationResult`); zod, joi, yup ou checagem manual no backend não substituem. Rota que já existia não entra.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Todo `TODO` ou `FIXME` (maiúsculas) em linha adicionada vem seguido de referência de ticket entre parênteses, no formato `TODO(CRM-123)` / `FIXME(CRM-123)`.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/imoveis/rotas.ts b/src/imoveis/rotas.ts\n--- a/src/imoveis/rotas.ts\n+++ b/src/imoveis/rotas.ts\n@@ -50,1 +50,8 @@\n+// TODO(CRM-602) paginar por cursor\n+router.get('/imoveis/:id/fotos', param('id').isUUID(), async (req, res) => {\n+  const erros = validationResult(req);\n+  if (!erros.isEmpty()) return res.status(422).json({ erros: erros.array() });\n+  res.json(await listarFotos(req.params.id));\n+});\n+\n export default router;\n",
+   "violacoes": {
+    "r1": false,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "Rota validada; TODO no formato."
+  },
+  {
+   "id": "LS-T066",
+   "regras": [
+    {
+     "id": "r1",
+     "texto": "Query SQL crua em código adicionado (`db.execute(sql`…`)`, `pool.query`/`client.query` com string SQL, `cursor.execute`/`cur.execute`) leva comentário imediatamente acima justificando por que o query builder não serve. Fragmento `sql`…`` dentro de `.where()`/`.orderBy()` do builder e arquivo de migration não contam.",
+     "tipo": "semantica"
+    },
+    {
+     "id": "r2",
+     "texto": "Nenhuma linha adicionada contém valor de segredo em literal: chave com prefixo `sk_live_`, `sk_test_`, `ghp_` ou `AKIA`, JWT (`eyJ…`), ou `password`/`senha`/`secret`/`api_key`/`token` recebendo string literal de 6 ou mais caracteres — vale também em comentário, teste, documentação e arquivo de exemplo.",
+     "tipo": "mecanica"
+    },
+    {
+     "id": "r3",
+     "texto": "Nenhum `console.log(` em linha adicionada, mesmo comentado, exceto em arquivo de teste (caminho com `.test.`, `.spec.`, ou pasta `test/`, `tests/`, `__tests__/`).",
+     "tipo": "mecanica"
+    }
+   ],
+   "diff": "diff --git a/src/relatorios/dinamico.ts b/src/relatorios/dinamico.ts\n--- a/src/relatorios/dinamico.ts\n+++ b/src/relatorios/dinamico.ts\n@@ -10,3 +10,5 @@\n export async function relatorioDinamico(colunas: string[], tabela: string) {\n-  return db.select().from(tabelas[tabela]);\n+  // dinâmico\n+  const r = await db.execute(sql.raw(`SELECT ${colunas.join(', ')} FROM ${tabela} LIMIT 1000`));\n+  return r.rows;\n }\n",
+   "violacoes": {
+    "r1": true,
+    "r2": false,
+    "r3": false
+   },
+   "nota": "difícil: 'dinâmico' não explica por que o builder não serve (e o SQL ainda concatena entrada) — viola."
+  }
+ ]
+}

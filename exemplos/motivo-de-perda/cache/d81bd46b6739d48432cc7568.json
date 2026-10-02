@@ -1,0 +1,30 @@
+{
+ "medicao": {
+  "ms": 258,
+  "input_tokens": 1184,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "visita_falhou",
+    "confidence": 0.99,
+    "probabilities": {
+     "demora_resposta": 0.0,
+     "pressao_insistencia": 0.0,
+     "visita_falhou": 0.99,
+     "imovel_indisponivel": 0.0,
+     "only_group": 0.01,
+     "informacao_errada": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1184,
+   "output_tokens": 85
+  }
+ }
+}

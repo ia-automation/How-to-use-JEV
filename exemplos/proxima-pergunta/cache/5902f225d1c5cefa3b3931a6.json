@@ -1,0 +1,90 @@
+{
+ "medicao": {
+  "ms": 309,
+  "input_tokens": 2816,
+  "modelo": "jev-1.13.0",
+  "perguntas": 15
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "answered.purpose": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "answered.budget": {
+    "type": "noul",
+    "noul": 0.92
+   },
+   "answered.neighbourhood": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "answered.bedrooms": {
+    "type": "noul",
+    "noul": 0.94
+   },
+   "answered.parking": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "answered.timeframe": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "answered.pet": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "answered.financing": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "answered.visit": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "withdrawn.purpose": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "rental": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "investor_not_living": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "specific_property": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "positive_reaction": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "single_choice": {
+    "type": "choice",
+    "choice": "no_question_needed",
+    "confidence": 0.29,
+    "probabilities": {
+     "neighbourhood": 0.0,
+     "pet": 0.01,
+     "bedrooms": 0.01,
+     "budget": 0.01,
+     "timeframe": 0.23,
+     "purpose": 0.01,
+     "parking": 0.33,
+     "no_question_needed": 0.36,
+     "financing": 0.04,
+     "visit": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2816,
+   "output_tokens": 366
+  }
+ }
+}

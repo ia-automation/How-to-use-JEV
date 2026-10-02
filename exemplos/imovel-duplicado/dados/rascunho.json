@@ -1,0 +1,171 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "ID-R001",
+   "a": {
+    "titulo": "Vila Madalena – 2 quartos, 68 m², pronto para morar",
+    "descricao": "Lindo apê na Rua Harmonia, Vila Madalena! 2 quartos sendo 1 suíte, varanda de frente pro parque, taco restaurado e cozinha planejada. Condomínio Edifício Solar das Acácias, portaria 24 horas. Agende sua visita!",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 802000,
+    "condominio_reais": 980
+   },
+   "b": {
+    "titulo": "Apto 2 dorms, 1 vaga, 68 m² - Vila Madalena",
+    "descricao": "Apartamento no Edifício Solar das Acácias, Rua Harmonia, com 2 dormitórios (1 suíte), sala para dois ambientes com varanda e vista para o parque. Piso de taco original restaurado, cozinha com armários planejados. Prédio com portaria 24h.",
+    "bairro": "Vila Madalena",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 68,
+    "preco": 790000,
+    "condominio_reais": 980
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-R002",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 110 m² - Jardim Paulista",
+    "descricao": "Apartamento de 3 dormitórios na Rua Pamplona, sendo 2 suítes, 2 vagas, sala ampla com varanda gourmet e churrasqueira. Reformado em 2024, ar-condicionado em todos os quartos.",
+    "bairro": "Jardim Paulista",
+    "cidade": "São Paulo",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 110,
+    "preco": 1450000,
+    "condominio_reais": 1800
+   },
+   "b": {
+    "titulo": "Apartamento 2 quartos em Tijuca",
+    "descricao": "Tijuca, Rua Conde de Bonfim: 2 dorms, dependência completa, varanda, piso de madeira na sala. 1 vaga, portaria e elevador.",
+    "bairro": "Tijuca",
+    "cidade": "Rio de Janeiro",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 70,
+    "preco": 520000,
+    "condominio_reais": 800
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-R003",
+   "a": {
+    "titulo": "Lindo apartamento à venda em Vila Mariana, São Paulo",
+    "descricao": "Residencial Vila Nova, Rua Domingos de Morais: apartamento de 2 quartos, 1 vaga, sala com sacada, piso laminado e cozinha americana. A 5 minutos do metrô Vila Mariana. Aceita pet.",
+    "bairro": "Vila Mariana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 60,
+    "preco": 560000,
+    "condominio_reais": 620
+   },
+   "b": {
+    "titulo": "Lindo apartamento à venda em Vila Mariana, São Paulo",
+    "descricao": "2 dormitórios e 1 vaga no Residencial Vila Nova, a poucos minutos do metrô. Cozinha americana, sacada, piso laminado na sala, pet friendly. Ótimo para quem usa transporte público.",
+    "bairro": "Vila Mariana",
+    "cidade": "São Paulo",
+    "quartos": 2,
+    "vagas": 1,
+    "area_m2": 59,
+    "preco": 571000,
+    "condominio_reais": 620
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  },
+  {
+   "id": "ID-R004",
+   "a": {
+    "titulo": "Botafogo – 1 quarto, 38 m², pronto para morar",
+    "descricao": "Quarto e sala reformado no Residencial Jardim Botânico, com varanda, cozinha americana, janelas antirruído, sem vaga. Pertinho do metrô.",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "quartos": 1,
+    "vagas": 0,
+    "area_m2": 38,
+    "preco": 450000,
+    "condominio_reais": 600
+   },
+   "b": {
+    "titulo": "Apto 3 dorms, 1 vaga, 95 m² - Água Verde",
+    "descricao": "Edifício Monte Carlo, Água Verde: 3 quartos (1 suíte com closet), 1 vaga, sacada com churrasqueira. Aquecimento a gás, janelas acústicas. Próximo ao Clube Curitibano.",
+    "bairro": "Água Verde",
+    "cidade": "Curitiba",
+    "quartos": 3,
+    "vagas": 1,
+    "area_m2": 95,
+    "preco": 720000,
+    "condominio_reais": 680
+   },
+   "mesmo_imovel": false,
+   "sinais": {
+    "mesmo_endereco": false,
+    "mesma_area": false,
+    "mesma_planta": false,
+    "mesmo_preco": false
+   },
+   "nota": "bairros/cidades diferentes — imóveis distintos"
+  },
+  {
+   "id": "ID-R005",
+   "a": {
+    "titulo": "Apto 3 dorms, 2 vagas, 98 m² - Cambuí",
+    "descricao": "Condomínio Parque Cambuí, Rua Coronel Quirino: 3 dormitórios (1 suíte), 2 vagas, varanda gourmet, cozinha planejada, box blindex nos banheiros. Lazer completo com piscina e quadra.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 98,
+    "preco": 850000,
+    "condominio_reais": 870
+   },
+   "b": {
+    "titulo": "Oportunidade! 3 quartos no Condomínio Parque Cambuí",
+    "descricao": "Cambuí, Condomínio Parque Cambuí: 3 quartos com suíte, varanda gourmet, 2 vagas, cozinha planejada. Piscina e quadra no condomínio.",
+    "bairro": "Cambuí",
+    "cidade": "Campinas",
+    "quartos": 3,
+    "vagas": 2,
+    "area_m2": 97,
+    "preco": 844000,
+    "condominio_reais": 870
+   },
+   "mesmo_imovel": true,
+   "sinais": {
+    "mesmo_endereco": true,
+    "mesma_area": true,
+    "mesma_planta": true,
+    "mesmo_preco": true
+   },
+   "nota": "dois corretores, mesmo imóvel: descrições diferentes, mesmos detalhes distintivos"
+  }
+ ]
+}

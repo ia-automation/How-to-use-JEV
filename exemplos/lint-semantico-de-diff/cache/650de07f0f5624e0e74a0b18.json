@@ -1,0 +1,33 @@
+{
+ "medicao": {
+  "ms": 234,
+  "input_tokens": 1973,
+  "modelo": "jev-1.13.0",
+  "perguntas": 4
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "r1_viola": {
+    "type": "noul",
+    "noul": 0.74
+   },
+   "r1_aplica": {
+    "type": "noul",
+    "noul": 0.88
+   },
+   "r3_viola": {
+    "type": "noul",
+    "noul": 0.56
+   },
+   "r3_aplica": {
+    "type": "noul",
+    "noul": 0.86
+   }
+  },
+  "usage": {
+   "input_tokens": 1973,
+   "output_tokens": 80
+  }
+ }
+}

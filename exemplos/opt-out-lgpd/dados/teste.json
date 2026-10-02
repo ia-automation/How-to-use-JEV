@@ -1,0 +1,546 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "OL-T001",
+   "mensagem": "Não me mandem mais nada. Obrigado.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "opt-out explícito"
+  },
+  {
+   "id": "OL-T002",
+   "mensagem": "Oi, gostei do apê de 2 quartos na Pompeia, qual o valor do condomínio?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado"
+  },
+  {
+   "id": "OL-T003",
+   "mensagem": "Pelo amor de deus parem de me ligar, é a quinta vez essa semana",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "parar de ligar sem manter outro canal = opt-out"
+  },
+  {
+   "id": "OL-T004",
+   "mensagem": "Quem passou meus dados pra vocês? Exijo saber a origem.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "origem"
+  },
+  {
+   "id": "OL-T005",
+   "mensagem": "ainda não, me chama depois das eleições kkk",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com prazo"
+  },
+  {
+   "id": "OL-T006",
+   "mensagem": "quero que vocês apaguem tudo que têm sobre mim, inclusive o histórico de conversa",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "exclusão (implica opt-out)"
+  },
+  {
+   "id": "OL-T007",
+   "mensagem": "Meu e-mail no cadastro tá errado, o certo termina com .com.br",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "correcao",
+   "pausa_temporaria": false,
+   "nota": "correção"
+  },
+  {
+   "id": "OL-T008",
+   "mensagem": "não para não, pode continuar mandando, só evita fim de semana",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — 'não para não' + preferência de dia"
+  },
+  {
+   "id": "OL-T009",
+   "mensagem": "ADORO acordar com 3 mensagens de imóvel às 7 da manhã. Sério, me tira dessa lista.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: ironia — seguida de pedido explícito"
+  },
+  {
+   "id": "OL-T010",
+   "mensagem": "minha esposa não quer mais receber, ela tá cansada. eu sigo interessado, pode continuar comigo",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — pedido sobre outro contato; este titular continua"
+  },
+  {
+   "id": "OL-T011",
+   "mensagem": "esse celular é da minha filha, ela tem 15 anos, não mandem mais nada aqui e apaguem o número",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — o número deste canal sai + exclusão; menor de idade"
+  },
+  {
+   "id": "OL-T012",
+   "mensagem": "Tô pensando ainda. Volto a falar com vocês quando decidir, pode deixar.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "difícil: pausa × opt-out — pausa implícita com condição ('quando decidir')"
+  },
+  {
+   "id": "OL-T013",
+   "mensagem": "Vou ser direto: cancelem meu cadastro e não me procurem mais.",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "exclusão ('cancelem meu cadastro') + opt-out"
+  },
+  {
+   "id": "OL-T014",
+   "mensagem": "Oi! O corretor ficou de me mandar as fotos do sobrado e não mandou, pode cobrar ele?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado cobrando"
+  },
+  {
+   "id": "OL-T015",
+   "mensagem": "Não precisa apagar meus dados, só não quero mais mensagem de lançamento, pode?",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — nega a exclusão; opt-out parcial de campanha conta como opt-out"
+  },
+  {
+   "id": "OL-T016",
+   "mensagem": "Vocês têm meu endereço? Quero saber tudo que consta no meu cadastro, me manda por e-mail.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "acesso",
+   "pausa_temporaria": false,
+   "nota": "acesso"
+  },
+  {
+   "id": "OL-T017",
+   "mensagem": "Depois da reforma eu vejo, por enquanto deixa quieto, lá por junho a gente retoma",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com prazo"
+  },
+  {
+   "id": "OL-T018",
+   "mensagem": "tem como marcar visita sábado de manhã no de 3 quartos?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado"
+  },
+  {
+   "id": "OL-T019",
+   "mensagem": "nossa, que insistência... pode me mandar o link do apê de perdizes de novo? perdi",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: ironia — queixa leve com interesse mantido"
+  },
+  {
+   "id": "OL-T020",
+   "mensagem": "para de mandar coisa que eu já disse que não quero, apê sem vaga não serve",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: 'para' ambíguo — pedido de filtro"
+  },
+  {
+   "id": "OL-T021",
+   "mensagem": "Chega. Já disse três vezes que não quero. Remove meu número agora.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "'remove meu número' = sair da lista (opt-out), não exclusão formal"
+  },
+  {
+   "id": "OL-T022",
+   "mensagem": "Qual é a base legal pra vocês terem meu CPF? Quem forneceu?",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "origem + base legal"
+  },
+  {
+   "id": "OL-T023",
+   "mensagem": "Boa noite, tô interessado no terreno de Indaiatuba, aceita permuta?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado"
+  },
+  {
+   "id": "OL-T024",
+   "mensagem": "não quero mais receber mensagem",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "opt-out explícito"
+  },
+  {
+   "id": "OL-T025",
+   "mensagem": "não quero mais esse apê, achei caro. tem outro parecido?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — 'não quero mais' é sobre o imóvel"
+  },
+  {
+   "id": "OL-T026",
+   "mensagem": "Já comprei com outra imobiliária. Não preciso mais, obrigado, podem parar.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "fim de interesse COM pedido de parar"
+  },
+  {
+   "id": "OL-T027",
+   "mensagem": "Já comprei com outra imobiliária, obrigado pela atenção!",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: fim de interesse sem pedido de parar — não é opt-out"
+  },
+  {
+   "id": "OL-T028",
+   "mensagem": "A gente tá de luto na família, por favor não mandem nada esse mês.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com prazo ('esse mês')"
+  },
+  {
+   "id": "OL-T029",
+   "mensagem": "quero corrigir: meu nome é Fabrício e não Fabiano, e o endereço tá desatualizado também",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "correcao",
+   "pausa_temporaria": false,
+   "nota": "correção"
+  },
+  {
+   "id": "OL-T030",
+   "mensagem": "meu irmão usou meu número no cadastro de vocês sem me avisar. eu não quero nada disso, apaguem",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — cadastro feito por terceiro; titular pede exclusão"
+  },
+  {
+   "id": "OL-T031",
+   "mensagem": "Olha, sinceramente vocês deviam treinar melhor o pessoal. Fui mal atendida no plantão de vendas, a moça nem olhou na minha cara, e depois ainda recebo pesquisa de satisfação. Enfim. Não quero mais contato nenhum de vocês, nem pesquisa, nem oferta, nada.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: reclamação longa — opt-out dentro"
+  },
+  {
+   "id": "OL-T032",
+   "mensagem": "Olha, sinceramente vocês deviam treinar melhor o pessoal. Fui mal atendido ontem, o corretor chegou atrasado e não sabia nada do imóvel. Mas ainda tenho interesse no apê, pode me mandar outro corretor?",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: reclamação longa — SEM opt-out, interesse mantido"
+  },
+  {
+   "id": "OL-T033",
+   "mensagem": "vcs vendem meus dados pra alguém? quero saber se compartilham com banco",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "acesso",
+   "pausa_temporaria": false,
+   "nota": "difícil: tipo — informação sobre compartilhamento entra em acesso"
+  },
+  {
+   "id": "OL-T034",
+   "mensagem": "ok manda",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado, mensagem mínima"
+  },
+  {
+   "id": "OL-T035",
+   "mensagem": "caramba, cinco mensagens num dia só. pode parar",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: 'para' ambíguo — 'pode parar' depois de queixa de volume = opt-out"
+  },
+  {
+   "id": "OL-T036",
+   "mensagem": "Não, não quero que tirem meu número, só achei a mensagem anterior estranha.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — nega o opt-out"
+  },
+  {
+   "id": "OL-T037",
+   "mensagem": "Esse apê era pra minha sogra. Ela não quer mais, mas eu talvez queira pra investir",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — a sogra desistiu do imóvel; ninguém pede para parar"
+  },
+  {
+   "id": "OL-T038",
+   "mensagem": "Exijo acesso aos dados que vocês coletaram no site, incluindo navegação, conforme art. 18.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "acesso",
+   "pausa_temporaria": false,
+   "nota": "acesso formal"
+  },
+  {
+   "id": "OL-T039",
+   "mensagem": "Preciso dar uma pausa, tô sem cabeça pra isso agora. Daqui uns 2 meses te chamo.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com prazo"
+  },
+  {
+   "id": "OL-T040",
+   "mensagem": "Me tira da lista. E me diz quem foi que vendeu meu contato, porque eu vou atrás.",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "difícil: dois pedidos — opt-out + origem, sem exclusão"
+  },
+  {
+   "id": "OL-T041",
+   "mensagem": "Ainda procuro, mas só coisa abaixo de 500 mil, pfv filtra",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "pedido de filtro"
+  },
+  {
+   "id": "OL-T042",
+   "mensagem": "respondendo a pesquisa: nota 2. o atendimento foi ruim.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "reclamação comum sem pedido"
+  },
+  {
+   "id": "OL-T043",
+   "mensagem": "ainda tô interessado, mas pede pro corretor não me ligar durante o expediente, mando msg quando puder",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "preferência de horário/canal"
+  },
+  {
+   "id": "OL-T044",
+   "mensagem": "quero exercer meu direito de exclusão, confirmem por escrito quando concluir",
+   "opt_out": true,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "exclusão formal (implica opt-out)"
+  },
+  {
+   "id": "OL-T045",
+   "mensagem": "Hahaha vocês são piores que operadora de celular. Manda o do Brooklin aí que eu quero ver",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: ironia — com interesse mantido"
+  },
+  {
+   "id": "OL-T046",
+   "mensagem": "Me descadastra desse whatsapp. Obrigada.",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "'descadastrar do whatsapp' = sair da lista (opt-out)"
+  },
+  {
+   "id": "OL-T047",
+   "mensagem": "a corretora anotou meu nome errado na proposta, tá 'Andréia' e é 'Andrea' sem acento, corrige antes de mandar pro proprietário",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "correcao",
+   "pausa_temporaria": false,
+   "nota": "difícil: tipo — correção de dado pessoal em documento, cliente em negociação"
+  },
+  {
+   "id": "OL-T048",
+   "mensagem": "Vou pedir pro meu advogado olhar isso. Não me mandem mais nada até lá.",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "difícil: pausa × opt-out — 'até lá' dá condição de retomada → pausa"
+  },
+  {
+   "id": "OL-T049",
+   "mensagem": "Como vocês conseguiram meu WhatsApp? Eu só preenchi o formulário do portal, não autorizei contato.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "difícil: origem sem pedir exclusão — queixa de consentimento, sem pedir para parar"
+  },
+  {
+   "id": "OL-T050",
+   "mensagem": "não é pausa não, é definitivo: não quero mais nenhum contato",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: pausa × opt-out — nega a pausa, afirma o definitivo"
+  },
+  {
+   "id": "OL-T051",
+   "mensagem": "tô viajando, mas pode mandar as opções que eu vejo quando der",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: pausa × opt-out — viagem SEM pedido de parar"
+  },
+  {
+   "id": "OL-T052",
+   "mensagem": "quem é vc? como tem meu número?",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "origem_dos_dados",
+   "pausa_temporaria": false,
+   "nota": "difícil: origem sem pedir exclusão — em tom de estranhamento, conta como pergunta de origem"
+  },
+  {
+   "id": "OL-T053",
+   "mensagem": "Vocês ainda têm o meu cadastro de 2019? Se tiverem, podem usar, tô procurando de novo",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: negação — pergunta retórica de cliente interessado, não é exercício de acesso"
+  },
+  {
+   "id": "OL-T054",
+   "mensagem": "Olha, prefiro que apaguem meu histórico de buscas, mas podem continuar me mandando os lançamentos de Santos",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "exclusao",
+   "pausa_temporaria": false,
+   "nota": "difícil: exclusão parcial — pedido explícito de continuar recebendo: exceção à regra exclusão ⇒ opt-out"
+  },
+  {
+   "id": "OL-T055",
+   "mensagem": "Tira meu número daí!!! Já falei!!!",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "opt-out irritado"
+  },
+  {
+   "id": "OL-T056",
+   "mensagem": "oi, foi sem querer a mensagem anterior, era pra outra pessoa. seguimos, me manda o apê de 3 quartos",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "cliente interessado"
+  },
+  {
+   "id": "OL-T057",
+   "mensagem": "Não autorizei o compartilhamento dos meus dados com a construtora. Quero que me informem exatamente o que foi enviado.",
+   "opt_out": false,
+   "pedido_lgpd": true,
+   "tipo_lgpd": "acesso",
+   "pausa_temporaria": false,
+   "nota": "difícil: tipo — informação sobre o que foi compartilhado entra em acesso; não pede exclusão"
+  },
+  {
+   "id": "OL-T058",
+   "mensagem": "preciso de um tempo, meu pai tá internado. depois eu retomo",
+   "opt_out": false,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": true,
+   "nota": "pausa com retomada"
+  },
+  {
+   "id": "OL-T059",
+   "mensagem": "esse número era do antigo dono do chip, não sou a Carla. tirem daqui por favor",
+   "opt_out": true,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: terceiro — chip herdado: o número sai, mas quem escreve não é a titular dos dados"
+  },
+  {
+   "id": "OL-T060",
+   "mensagem": "não quero mais, obrigado",
+   "opt_out": null,
+   "pedido_lgpd": false,
+   "tipo_lgpd": null,
+   "pausa_temporaria": false,
+   "nota": "difícil: 'para' ambíguo — 'não quero mais' sem objeto: a oferta ou as mensagens? indecidível"
+  }
+ ]
+}

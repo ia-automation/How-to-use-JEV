@@ -61,5 +61,29 @@ pede "devolva JSON" por uma chamada que devolve valor tipado por construção**.
 "Using the TypeSafe skill, explore the project and find opportunities for using intelligent
 judgement to stand in for complex parsing or other fragile code."
 
+## Programação e agentes (casos externos, 2026-10-01) [terceiro]
+Família que o doc chama de "harness" e que apareceu com mais força fora do doc: guarda de tool-call de agente de
+código (irreversível / fora da tarefa / vindo de conteúdo lido), juiz de eval no lugar de LLM-as-judge, lint
+semântico de PR em CI, SQL semântico (`WHERE jev(linha, 'condição')`), injeção de prompt em resultado de
+ferramenta, agente de navegador que escolhe operação + alvo. Números, fontes e limites: [casos-externos](../evidencias/casos-externos.md).
+Exemplos nossos medidos: [guarda-tool-call](../../exemplos/guarda-tool-call/README.md) · [juiz-de-eval](../../exemplos/juiz-de-eval/README.md) ·
+[lint-semantico-de-diff](../../exemplos/lint-semantico-de-diff/README.md) · [auditor-de-evidencia](../../exemplos/auditor-de-evidencia/README.md) ·
+[injecao-em-ferramenta](../../exemplos/injecao-em-ferramenta/README.md) · [selecao-de-skill](../../exemplos/selecao-de-skill/README.md).
+Atendimento e imóveis, medidos na mesma onda: [imovel-errado](../../exemplos/imovel-errado/README.md) ·
+[conferencia-de-promessas](../../exemplos/conferencia-de-promessas/README.md) · [opt-out-lgpd](../../exemplos/opt-out-lgpd/README.md) ·
+[proxima-pergunta](../../exemplos/proxima-pergunta/README.md) · [imovel-duplicado](../../exemplos/imovel-duplicado/README.md) ·
+[repeticao-ou-revisao](../../exemplos/repeticao-ou-revisao/README.md) · [requisito-mudou](../../exemplos/requisito-mudou/README.md) ·
+[motivo-de-perda](../../exemplos/motivo-de-perda/README.md) · [compromisso-real](../../exemplos/compromisso-real/README.md).
+Operação e agentes, tarde de 2026-10-01: [triagem-de-alerta](../../exemplos/triagem-de-alerta/README.md) ·
+[compactacao-de-contexto](../../exemplos/compactacao-de-contexto/README.md) (reprovado para descarte automático) ·
+[roteador-email](../../exemplos/roteador-email/README.md) (dado real, concordância com produção).
+Madrugada de 2026-10-02: [sql-semantico](../../exemplos/sql-semantico/README.md) ·
+[triagem-de-documentos](../../exemplos/triagem-de-documentos/README.md) (mapa por seção × documento inteiro) ·
+[supervisor-de-automacao](../../exemplos/supervisor-de-automacao/README.md) (erro caro zero, critério de acerto reprovado) ·
+[comparador-de-propostas](../../exemplos/comparador-de-propostas/README.md) ·
+[rerank-publico-ptbr](../../exemplos/rerank-publico-ptbr/README.md) (dado público, gabarito de terceiros) ·
+[jev-x-llm](../../exemplos/jev-x-llm/README.md) (um LLM barato nos mesmos testes) ·
+[latencia-interface](../../exemplos/latencia-interface/README.md) (p95 303 ms: não cabe em 300).
+
 ## Relacionados
-[o-que-e-o-jev](o-que-e-o-jev.md) · [como-construir](../construir/como-construir.md) · receitas: [índice](../INDICE.md#receitas-cookbooks-destilados)
+[o-que-e-o-jev](o-que-e-o-jev.md) · [como-construir](../construir/como-construir.md) · [casos-externos](../evidencias/casos-externos.md) · receitas: [índice](../INDICE.md#receitas-cookbooks-destilados)

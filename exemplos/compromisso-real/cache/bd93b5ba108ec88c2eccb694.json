@@ -1,0 +1,95 @@
+{
+ "medicao": {
+  "ms": 464,
+  "input_tokens": 15487,
+  "modelo": "jev-1.13.0",
+  "perguntas": 12
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "k1_verdict": {
+    "type": "choice",
+    "choice": "commitment",
+    "confidence": 0.93,
+    "probabilities": {
+     "cancelled": 0.06,
+     "commitment": 0.94,
+     "proposal": 0.0,
+     "unaccepted_request": 0.0,
+     "old_quote": 0.0
+    }
+   },
+   "k1_accepted": {
+    "type": "noul",
+    "noul": 0.93
+   },
+   "k1_undone": {
+    "type": "noul",
+    "noul": 0.25
+   },
+   "k1_quoted": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "k1_open_request": {
+    "type": "noul",
+    "noul": 0.15
+   },
+   "k1_deadline": {
+    "type": "choice",
+    "choice": "m3: amanhã de manhã",
+    "confidence": 0.92,
+    "probabilities": {
+     "m3: amanhã de manhã": 0.9299999999999999,
+     "none": 0.01,
+     "m2: amanhã": 0.06,
+     "m1: hoje": 0.0
+    }
+   },
+   "k2_verdict": {
+    "type": "choice",
+    "choice": "cancelled",
+    "confidence": 1.0,
+    "probabilities": {
+     "cancelled": 1.0,
+     "proposal": 0.0,
+     "commitment": 0.0,
+     "unaccepted_request": 0.0,
+     "old_quote": 0.0
+    }
+   },
+   "k2_accepted": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "k2_undone": {
+    "type": "noul",
+    "noul": 0.61
+   },
+   "k2_quoted": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "k2_open_request": {
+    "type": "noul",
+    "noul": 0.07
+   },
+   "k2_deadline": {
+    "type": "choice",
+    "choice": "m1: hoje",
+    "confidence": 0.9,
+    "probabilities": {
+     "m3: amanhã de manhã": 0.01,
+     "none": 0.06,
+     "m2: amanhã": 0.0,
+     "m1: hoje": 0.93
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 15487,
+   "output_tokens": 409
+  }
+ }
+}

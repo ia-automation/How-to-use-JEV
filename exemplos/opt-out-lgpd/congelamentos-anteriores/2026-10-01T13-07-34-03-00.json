@@ -1,0 +1,30 @@
+{
+ "congelado_em": "2026-10-01T13:07:34-03:00",
+ "arquivos": {
+  "perguntas.py": "bd839986d8b3eab058a4ebcbddb3a29bcc23518bc169feb82134e896441b1238",
+  "optout.py": "99515b087057bdad10e498403c31322446484313c3ca14189704a20df4c9ed2e",
+  "run.py": "2695bda4d2ae0edfedac92558547bbb2639cb26503954a46179a7c80f922fb62",
+  "dados/teste.json": "1207d0b7d4d14d6a6644c6ce8a6011a9008263872d757c3907784f6be96713c2"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste (60 mensagens), com a política acima",
+  "1_infracao": "opt-out ou pedido LGPD real que saiu `seguir` = 0",
+  "2_obrigacao_pela_metade": "opt-out real → `pausar`, pedido LGPD real sem pedido aberto, ou pedido aberto sem bloqueio ≤ 1",
+  "3_bloqueio_indevido": "mensagem sem opt-out nem LGPD com envio bloqueado ≤ 1/28 (3,6%)",
+  "4_acerto_acao": "ação (5 classes) ≥ baseline + 0,15",
+  "secundario_nao_decide": "`opt_out` nulo → `revisar`; revisou sem necessidade ≤ 15% dos decidíveis; tipo LGPD certo ≥ 85% dos pedidos reais",
+  "se_falhar": "1, 2 ou 3 falhando = o desenho não serve como guarda de entrada sem mudança; 4 falhando = a lista de expressões basta",
+  "limites": {
+   "infracao_max": 0,
+   "metade_max": 1,
+   "bloqueio_indevido_max": 1,
+   "margem_acao": 0.15,
+   "revisou_sem_necessidade_max": 0.15,
+   "tipo_certo_min": 0.85
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "606066d516d2745f6683f9ac020fe726775ff009c2bb5497ce7497ebfd32a52a",
+  "../_comum/congelamento.py": "4f8108692356f1419e66abc3b934cf214c4a0174a9f3cc37e383e820dcbd8c43"
+ }
+}

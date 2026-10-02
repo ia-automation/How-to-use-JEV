@@ -1,0 +1,54 @@
+{
+ "congelado_em": "2026-10-01T23:45:23-03:00",
+ "arquivos": {
+  "comparar.py": "077e2e546eb7b97c61f487a2e1d507ec600cc3101e8df59a24c2f435b8b093ae",
+  "criterio.py": "ae51b3a8cde4c6041b72dc0a55566c487d46403deab29348bd72aa38f6f7ae98",
+  "run.py": "f6c25497fbf906c76e13a7d46ae5df11bdbb3977912f1c5bdf4d9171e25089cc",
+  "../_comum/llmcache.py": "75b0227322b5eaf49418282194f3a0616dd5416e1533e4c79b8403d7a5ec9eff",
+  "../opt-out-lgpd/perguntas.py": "a494a14de522a0d11bd8f7b8c4cc7011c7a7185ac17907931b427298aca0a6d0",
+  "../opt-out-lgpd/optout.py": "50f780a69cd3c413da3903475b3e5f97bae9def7a40211240352742949a5814d",
+  "../opt-out-lgpd/run.py": "f8ef07f6e3a223687802be0935693c9ed4544d1786c134cb046d4dfce2e5bb9c",
+  "../opt-out-lgpd/dados/teste.json": "1207d0b7d4d14d6a6644c6ce8a6011a9008263872d757c3907784f6be96713c2",
+  "../motivo-de-perda/perguntas.py": "8b2914532a56161070fefa6eeaa9ef0f0059b8c3b7f6620c7880c9089b02b69f",
+  "../motivo-de-perda/motivo.py": "44151a7e23ba2ec438fbbf31b569654469044a04ef7976798d6fd70533803a0d",
+  "../motivo-de-perda/run.py": "625005edb785efe1f50195ccd105473bad39d08b90baa156dd26c27ee61d01ca",
+  "../motivo-de-perda/dados/teste.json": "015a04e1f083ddb743d9155474505752c92ec73ef3f0a3d6824e83b813f1bca3",
+  "../auditor-de-evidencia/perguntas.py": "bc1f1307eaabb826aa9cc2f0534628bf3d8b5d8cc64deae2cd32829ec0785375",
+  "../auditor-de-evidencia/auditor.py": "47832e24fe065ea44ffb962bbb877d4f16aa844b3104de6efd090589365bbbb8",
+  "../auditor-de-evidencia/run.py": "15865525a2d7cbbbd021afdea5d81b6ba873e055e966f1dc30ddc352b891247a",
+  "../auditor-de-evidencia/dados/teste.json": "6bdb935ba4030be26d46c85363c845b8a1920765491f0d3f88698d213780db5b",
+  "../motivo-de-perda/dados/taxonomia.json": "7ab1ad5faeeedc803af42d7127e58e3840903f90be0fe66b4d2d9cd0a5ec4d8f"
+ },
+ "criterio_de_aceite": {
+  "fixado_em": "2026-10-01, antes da primeira chamada ao LLM",
+  "lado_a_lado": "mesmo teste congelado (hash do manifesto de cada exemplo conferido), mesmas instructions/criteria/opções de perguntas.py serializadas em JSON, mesma validação estrita, mesma regra de decisão do módulo do exemplo (respostas do LLM injetadas no lugar das do Jev: Noul true/false → 1,0/0,0; Choice → one-hot), mesmo baseline",
+  "metrica_principal": "LLM ganha se acerta ≥ 3 casos a mais que o Jev; perde se ≥ 3 a menos; senão empata. Falha operacional do LLM conta como erro (como `revisar`) e é reportada à parte",
+  "erro_caro": "contagem absoluta: LLM ganha se tem MENOS erros caros que o Jev, perde se tem MAIS, empata se igual (erro caro é raro: cada caso conta)",
+  "custo_latencia": "razão = US$ por mil casos do LLM ÷ do Jev (tokens de entrada + saída ao preço publicado, input US$ 1,00/M e output US$ 5,00/M em 2026-10-01; Jev US$ 0,042/M só entrada); latência = p50 do LLM ÷ p50 do Jev, as duas medidas na chamada real (Jev com 8 em paralelo na rodada original; LLM em série)",
+  "concordancia": "fração dos casos em que a decisão final do Jev e a do LLM são iguais (ação+tipo / grupo+folha+revisar / relação); informativa, não decide",
+  "exemplos": {
+   "opt-out-lgpd": {
+    "n": 60,
+    "metrica_principal": "acerto da ação (5 classes)",
+    "erro_caro": "infração + obrigação pela metade + bloqueio indevido (os três somados; cada um reportado)",
+    "baseline": "lista de expressões (optout.baseline)"
+   },
+   "motivo-de-perda": {
+    "n": 68,
+    "metrica_principal": "acerto folgado (folha ∈ aceitáveis ou só-grupo certo; revisão e falha = erro), variante c",
+    "erro_caro": "motivo inventado + grupo errado automatizado (contados juntos, como no exemplo)",
+    "baseline": "palavra-chave por folha (motivo.baseline)"
+   },
+   "auditor-de-evidencia": {
+    "n": 73,
+    "metrica_principal": "acerto da relação (revisa = erro)",
+    "erro_caro": "falsa aprovação (gabarito não sustentado → supported)",
+    "baseline": "palavra-chave + regex de falha (auditor.baseline)"
+   }
+  },
+  "o_que_nao_conclui": "um fornecedor, um modelo barato (Haiku 4.5), uma rodada, temperatura 0, prompt sem exemplos e sem raciocínio pedido; dados sintéticos do mesmo fornecedor do LLM. Nada aqui mede o topo da linha nem o que um prompt afinado faria.",
+  "limites": {
+   "empate_casos": 3
+  }
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "medicao": {
+  "ms": 426,
+  "input_tokens": 12269,
+  "modelo": "jev-1.13.0",
+  "perguntas": 19
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "q1_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "replaced": 0.0,
+     "uncertain": 0.0,
+     "denied": 0.0,
+     "kept": 1.0
+    }
+   },
+   "q1_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "0": 0.0,
+     "none": 1.0,
+     "3": 0.0,
+     "4": 0.0,
+     "1": 0.0
+    }
+   },
+   "q1_changed": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "q1_dropped": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "q1_open": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "q2_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "replaced": 0.0,
+     "uncertain": 0.0,
+     "denied": 0.0,
+     "kept": 1.0
+    }
+   },
+   "q2_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 1.0,
+    "probabilities": {
+     "5": 0.0,
+     "none": 1.0,
+     "2": 0.0,
+     "4": 0.0,
+     "1": 0.0
+    }
+   },
+   "q2_changed": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q2_dropped": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q2_open": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "q3_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 1.0,
+    "probabilities": {
+     "replaced": 0.0,
+     "kept": 1.0,
+     "denied": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q3_changed": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "q3_dropped": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q3_open": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "q4_status": {
+    "type": "choice",
+    "choice": "replaced",
+    "confidence": 1.0,
+    "probabilities": {
+     "replaced": 1.0,
+     "kept": 0.0,
+     "denied": 0.0,
+     "uncertain": 0.0
+    }
+   },
+   "q4_new_value": {
+    "type": "choice",
+    "choice": "Perdizes",
+    "confidence": 1.0,
+    "probabilities": {
+     "Vila Madalena ou Perdizes": 0.0,
+     "none": 0.0,
+     "Pinheiros ou Perdizes": 0.0,
+     "Vila Madalena": 0.0,
+     "Pinheiros": 0.0,
+     "Perdizes": 1.0,
+     "Pinheiros ou Vila Madalena ou Perdizes": 0.0
+    }
+   },
+   "q4_changed": {
+    "type": "noul",
+    "noul": 0.96
+   },
+   "q4_dropped": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "q4_open": {
+    "type": "noul",
+    "noul": 0.04
+   }
+  },
+  "usage": {
+   "input_tokens": 12269,
+   "output_tokens": 635
+  }
+ }
+}

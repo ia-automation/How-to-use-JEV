@@ -1,0 +1,121 @@
+{
+ "medicao": {
+  "ms": 344,
+  "input_tokens": 11229,
+  "modelo": "jev-1.13.0",
+  "perguntas": 17
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "q1_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 0.91,
+    "probabilities": {
+     "kept": 0.9400000000000001,
+     "denied": 0.0,
+     "replaced": 0.0,
+     "uncertain": 0.06
+    }
+   },
+   "q1_new_value": {
+    "type": "choice",
+    "choice": "none",
+    "confidence": 0.98,
+    "probabilities": {
+     "3": 0.01,
+     "none": 0.99,
+     "4": 0.0,
+     "5": 0.0,
+     "1": 0.0
+    }
+   },
+   "q1_changed": {
+    "type": "noul",
+    "noul": 0.06
+   },
+   "q1_dropped": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "q1_open": {
+    "type": "noul",
+    "noul": 0.28
+   },
+   "q2_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 0.99,
+    "probabilities": {
+     "kept": 0.99,
+     "denied": 0.0,
+     "replaced": 0.0,
+     "uncertain": 0.01
+    }
+   },
+   "q2_changed": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "q2_dropped": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "q2_open": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "q3_status": {
+    "type": "choice",
+    "choice": "uncertain",
+    "confidence": 0.79,
+    "probabilities": {
+     "kept": 0.16,
+     "denied": 0.0,
+     "replaced": 0.0,
+     "uncertain": 0.84
+    }
+   },
+   "q3_changed": {
+    "type": "noul",
+    "noul": 0.13
+   },
+   "q3_dropped": {
+    "type": "noul",
+    "noul": 0.1
+   },
+   "q3_open": {
+    "type": "noul",
+    "noul": 0.94
+   },
+   "q4_status": {
+    "type": "choice",
+    "choice": "kept",
+    "confidence": 0.97,
+    "probabilities": {
+     "kept": 0.98,
+     "denied": 0.0,
+     "replaced": 0.0,
+     "uncertain": 0.02
+    }
+   },
+   "q4_changed": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "q4_dropped": {
+    "type": "noul",
+    "noul": 0.03
+   },
+   "q4_open": {
+    "type": "noul",
+    "noul": 0.16
+   }
+  },
+  "usage": {
+   "input_tokens": 11229,
+   "output_tokens": 485
+  }
+ }
+}

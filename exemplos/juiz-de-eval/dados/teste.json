@@ -1,0 +1,1410 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "JE-T001",
+   "pergunta": "Contexto: ficha informa 2 banheiros, 1 na suíte. Cliente: o apê da Rua dos Lírios tem quantos banheiros?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa o número de banheiros",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 2 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Tem 2 banheiros, um deles na suíte.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Direto."
+  },
+  {
+   "id": "JE-T002",
+   "pergunta": "Cliente: consigo ver o imóvel hoje?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que a visita precisa de agendamento prévio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Termina com uma pergunta",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Hoje já não dá tempo de combinar com o proprietário, mas amanhã às 10h está livre. Fechado?",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: agendamento implícito em 'combinar com o proprietário'."
+  },
+  {
+   "id": "JE-T003",
+   "pergunta": "Cliente: consigo ver o imóvel hoje?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que a visita precisa de agendamento prévio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Termina com uma pergunta",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Claro, pode ir agora, o porteiro abre pra você.",
+   "veredito": {
+    "c1": false,
+    "c2": false
+   },
+   "nota": "Nega o agendamento; termina em ponto."
+  },
+  {
+   "id": "JE-T004",
+   "pergunta": "Contexto: ficha informa 3 quartos, 1 vaga, 90 m². Cliente: me fala do apê",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa quartos, vagas e área",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa característica que não esteja no contexto",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "São 3 quartos, 1 vaga e 90 m². Fica a 5 minutos do metrô. Quer visitar?",
+   "veredito": {
+    "c1": true,
+    "c2": false,
+    "c3": true
+   },
+   "nota": "difícil: metrô a 5 minutos não está na ficha."
+  },
+  {
+   "id": "JE-T005",
+   "pergunta": "Cliente: dá pra parcelar a entrada?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não promete parcelamento da entrada",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Encaminha a dúvida ao proprietário ou ao banco",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Dá sim, em até 12 vezes sem juros.",
+   "veredito": {
+    "c1": false,
+    "c2": false
+   },
+   "nota": "difícil: promete parcelamento e condição."
+  },
+  {
+   "id": "JE-T006",
+   "pergunta": "Cliente: dá pra parcelar a entrada?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não promete parcelamento da entrada",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Encaminha a dúvida ao proprietário ou ao banco",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Isso depende do proprietário; posso perguntar pra ele e te retorno. Em quantas vezes você pensava?",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: não promete; encaminha."
+  },
+  {
+   "id": "JE-T007",
+   "pergunta": "Contexto: ficha informa 1 vaga coberta; condomínio tem bicicletário; vaga de moto não informada. Cliente: tem vaga pra moto?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não afirma que há vaga de moto",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    },
+    {
+     "id": "c3",
+     "criterio": "Oferece confirmar",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Que bom que você curtiu o imóvel! Ele tem uma vaga coberta para carro. Também tem bicicletário no condomínio, o que é raro na região. Sobre vaga de moto, a ficha não informa. Posso confirmar com o síndico ainda hoje. Te aviso assim que souber.",
+   "veredito": {
+    "c1": true,
+    "c2": false,
+    "c3": true
+   },
+   "nota": "difícil: seis frases; a resposta certa está enterrada no meio."
+  },
+  {
+   "id": "JE-T008",
+   "pergunta": "Cliente: aceita permuta?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde se o proprietário aceita permuta",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Boa pergunta! Permuta é uma opção que muita gente considera hoje em dia. Me conta mais sobre o que você tem em mente?",
+   "veredito": {
+    "c1": false,
+    "c2": true
+   },
+   "nota": "difícil: fala sobre permuta sem responder."
+  },
+  {
+   "id": "JE-T009",
+   "pergunta": "Cliente: tem portaria 24h?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde se há portaria 24h",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Sim. Portaria 24h. Com câmeras. E controle de acesso por app.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: 4 frases curtíssimas; contagem é do código."
+  },
+  {
+   "id": "JE-T010",
+   "pergunta": "Cliente: quanto é o condomínio?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa o valor do condomínio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa valor que não esteja no contexto",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Contém um valor em reais no formato R$",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "R$ 920 mensais.",
+   "veredito": {
+    "c1": true,
+    "c2": null,
+    "c3": true
+   },
+   "nota": "difícil: sem contexto, não dá para saber se inventou → null."
+  },
+  {
+   "id": "JE-T011",
+   "pergunta": "Usuário: como crio um campo personalizado no lead?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Indica o caminho nas configurações",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Menciona os tipos de campo disponíveis",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 4 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Vá em Configurações > Campos personalizados > Novo campo. Escolha o tipo (texto, número, data ou lista) e marque em quais telas ele aparece.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "CRM, direto."
+  },
+  {
+   "id": "JE-T012",
+   "pergunta": "Usuário: como crio um campo personalizado no lead?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Indica o caminho nas configurações",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Menciona os tipos de campo disponíveis",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 4 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Dá pra criar nas configurações.",
+   "veredito": {
+    "c1": false,
+    "c2": false,
+    "c3": true
+   },
+   "nota": "difícil: vaga — 'nas configurações' não é um caminho."
+  },
+  {
+   "id": "JE-T013",
+   "pergunta": "Usuário: já é a terceira vez que o relatório some, vcs são incompetentes",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Reconhece o problema recorrente",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não promete prazo de correção",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Sinto muito pela recorrência, isso não deveria acontecer. Vou abrir um chamado prioritário agora; corrigimos até amanhã sem falta.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": false
+   },
+   "nota": "difícil: cordial e reconhece, mas promete prazo."
+  },
+  {
+   "id": "JE-T014",
+   "pergunta": "Usuário: já é a terceira vez que o relatório some, vcs são incompetentes",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Reconhece o problema recorrente",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não promete prazo de correção",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Entendo, e peço desculpas pela terceira ocorrência. Abri um chamado prioritário e te aviso assim que tiver retorno do time.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Sem prazo prometido."
+  },
+  {
+   "id": "JE-T015",
+   "pergunta": "Contexto: regulamento do condomínio proíbe animais. Cliente: aceita pet?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que não aceita pet",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Olha, o regulamento desse condomínio é bem rígido com animais, então não vai rolar. Mas tenho outras opções pet friendly!",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: negativa implícita ('não vai rolar')."
+  },
+  {
+   "id": "JE-T016",
+   "pergunta": "Contexto: ficha informa aceita_pet: sim, sem restrição. Cliente: aceita pet?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que aceita pet",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa restrição que não esteja no contexto",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Aceita, mas só cachorro, gato não.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: restrição de espécie inventada."
+  },
+  {
+   "id": "JE-T017",
+   "pergunta": "Contexto: visita de quinta às 14h na Av. Brasil, 1500, Centro. Cliente: me manda o endereço da visita de quinta",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém a palavra 'Brasil'",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Contém um horário (14h ou 14:00)",
+     "tipo": "formal"
+    },
+    {
+     "id": "c3",
+     "criterio": "Confirma a visita de quinta",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Quinta às 14h na Av. Brasil, 1500, Centro. Te encontro na portaria.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Formais presentes."
+  },
+  {
+   "id": "JE-T018",
+   "pergunta": "Contexto: visita de quinta às 14h na Av. Brasil, 1500, Centro. Cliente: me manda o endereço da visita de quinta",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém a palavra 'Brasil'",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Contém um horário (14h ou 14:00)",
+     "tipo": "formal"
+    },
+    {
+     "id": "c3",
+     "criterio": "Confirma a visita de quinta",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Te mando o endereço mais perto do dia, pode ser? Quinta está confirmada.",
+   "veredito": {
+    "c1": false,
+    "c2": false,
+    "c3": true
+   },
+   "nota": "difícil: confirma sem dar endereço nem hora."
+  },
+  {
+   "id": "JE-T019",
+   "pergunta": "Contexto: aluguel R$ 2.100; IPTU por conta do inquilino, R$ 95 por mês. Cliente: o aluguel já inclui IPTU?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde se o IPTU está incluído",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa valor que não esteja no contexto",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "O aluguel é R$ 2.100 e o imóvel está disponível.",
+   "veredito": {
+    "c1": false,
+    "c2": true
+   },
+   "nota": "difícil: responde outra coisa; o valor citado está no contexto, então não inventa."
+  },
+  {
+   "id": "JE-T020",
+   "pergunta": "Cliente: posso levar meu filho na visita?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde se pode levar acompanhante",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 2 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Pode sim, sem problema. Só peço que chegue no horário combinado.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Direto."
+  },
+  {
+   "id": "JE-T021",
+   "pergunta": "Cliente: o dono aceita proposta?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não garante aceitação do proprietário",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Convida a enviar proposta",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Ele está aberto a ouvir propostas, mas não garanto que aceite. Me passa o valor e eu apresento hoje.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: ressalva explícita."
+  },
+  {
+   "id": "JE-T022",
+   "pergunta": "Cliente: o dono aceita proposta?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não garante aceitação do proprietário",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Convida a enviar proposta",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Com certeza aceita, ele precisa vender rápido.",
+   "veredito": {
+    "c1": false,
+    "c2": false
+   },
+   "nota": "difícil: garante e não convida."
+  },
+  {
+   "id": "JE-T023",
+   "pergunta": "Usuário: onde está a documentação da API?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém um link (http)",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Indica onde fica a documentação",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "A documentação está no portal do desenvolvedor, no menu Documentação.",
+   "veredito": {
+    "c1": false,
+    "c2": true
+   },
+   "nota": "difícil: indica, mas sem link."
+  },
+  {
+   "id": "JE-T024",
+   "pergunta": "Contexto: ficha informa piscina e salão de festas. Cliente: tem área de lazer?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa a área de lazer",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não contém emoji",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Tem piscina e salão de festas 🎉",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "Emoji presente."
+  },
+  {
+   "id": "JE-T025",
+   "pergunta": "Cliente: como marco a visita?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que a visita precisa de agendamento",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não inventa horário de funcionamento",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Visitas são sempre agendadas com antecedência. Atendemos de segunda a sábado, das 9h às 18h. Me passa dois horários que funcionam pra você. Eu confirmo com o proprietário.",
+   "veredito": {
+    "c1": true,
+    "c2": false,
+    "c3": null
+   },
+   "nota": "difícil: quatro frases; horário de atendimento sem contexto para conferir → null."
+  },
+  {
+   "id": "JE-T026",
+   "pergunta": "Cliente: o imóvel ainda está disponível?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde se está disponível",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Oi, tudo bem? Que legal seu interesse! Posso te enviar mais fotos.",
+   "veredito": {
+    "c1": false,
+    "c2": true
+   },
+   "nota": "difícil: cordial e ignora a pergunta."
+  },
+  {
+   "id": "JE-T027",
+   "pergunta": "Contexto: ficha informa que o imóvel não é térreo. Cliente: não quero térreo. O da Rua Jacarandá é térreo?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que não é térreo",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa característica que não esteja no contexto",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Não é térreo, fique tranquilo. E tem vista livre.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: 'vista livre' inventada."
+  },
+  {
+   "id": "JE-T028",
+   "pergunta": "Contexto: ficha informa valor R$ 1.250.000. Cliente: qual o valor de venda?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém um valor em reais no formato R$",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 2 frases",
+     "tipo": "formal"
+    },
+    {
+     "id": "c3",
+     "criterio": "Informa o valor",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "R$ 1.250.000,00. Aceita financiamento de até 70% do valor.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "difícil: pontos de milhar não encerram frase (2 frases)."
+  },
+  {
+   "id": "JE-T029",
+   "pergunta": "Usuário: apaguei um contato sem querer, e agora?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que é possível recuperar",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Explica onde recuperar",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Calma, dá pra recuperar. Vai em Contatos > Lixeira e clica em Restaurar no contato. Ele volta com todas as interações.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "CRM, direto."
+  },
+  {
+   "id": "JE-T030",
+   "pergunta": "Usuário: apaguei um contato sem querer, e agora?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que é possível recuperar",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Explica onde recuperar",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Infelizmente contatos apagados não voltam. Recomendo criar de novo.",
+   "veredito": {
+    "c1": false,
+    "c2": false,
+    "c3": true
+   },
+   "nota": "Nega a recuperação."
+  },
+  {
+   "id": "JE-T031",
+   "pergunta": "Contexto: ficha informa 1 vaga; cobertura não informada. Cliente: a vaga é coberta?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não afirma que a vaga é coberta sem base no contexto",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Oferece confirmar com o proprietário",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Sim, coberta e demarcada.",
+   "veredito": {
+    "c1": false,
+    "c2": false
+   },
+   "nota": "difícil: afirma o que a ficha não diz."
+  },
+  {
+   "id": "JE-T032",
+   "pergunta": "Contexto: ficha informa 1 vaga; cobertura não informada. Cliente: a vaga é coberta?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não afirma que a vaga é coberta sem base no contexto",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Oferece confirmar com o proprietário",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Não tenho essa informação na ficha, mas confirmo com o proprietário e te retorno ainda hoje.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Admite a lacuna."
+  },
+  {
+   "id": "JE-T033",
+   "pergunta": "Contexto: condomínio R$ 650, sem taxa extra. Cliente: bom dia, gostaria de saber o valor do condomínio e se há taxa extra",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa o valor do condomínio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Responde sobre taxa extra",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Contém um valor em reais no formato R$",
+     "tipo": "formal"
+    },
+    {
+     "id": "c4",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Bom dia! O condomínio é R$ 650 e não há taxa extra no momento.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true,
+    "c4": true
+   },
+   "nota": "Completo."
+  },
+  {
+   "id": "JE-T034",
+   "pergunta": "Contexto: condomínio R$ 650, sem taxa extra. Cliente: bom dia, gostaria de saber o valor do condomínio e se há taxa extra",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa o valor do condomínio",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Responde sobre taxa extra",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Contém um valor em reais no formato R$",
+     "tipo": "formal"
+    },
+    {
+     "id": "c4",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Bom dia! O condomínio é R$ 650.",
+   "veredito": {
+    "c1": true,
+    "c2": false,
+    "c3": true,
+    "c4": true
+   },
+   "nota": "difícil: responde um dos dois itens."
+  },
+  {
+   "id": "JE-T035",
+   "pergunta": "Contexto: ficha informa não mobiliado; armários planejados na cozinha. Cliente: o imóvel é mobiliado?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que não é mobiliado",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Menciona os armários planejados",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 2 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Não é mobiliado, mas a cozinha vem com armários planejados.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Direto."
+  },
+  {
+   "id": "JE-T036",
+   "pergunta": "Contexto: ficha informa não mobiliado; armários planejados na cozinha. Cliente: o imóvel é mobiliado?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que não é mobiliado",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Menciona os armários planejados",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não inventa característica que não esteja no contexto",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "É semimobiliado: tem armários na cozinha e nos quartos.",
+   "veredito": {
+    "c1": false,
+    "c2": true,
+    "c3": false
+   },
+   "nota": "difícil: 'semimobiliado' contradiz a ficha; armários nos quartos inventados."
+  },
+  {
+   "id": "JE-T037",
+   "pergunta": "Usuário: como filtro leads por origem?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Explica onde aplicar o filtro",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Na lista de leads, clique em Filtros. Escolha Origem. Marque as origens que quiser. Clique em Aplicar.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: 4 frases curtas; conteúdo ok, tamanho não."
+  },
+  {
+   "id": "JE-T038",
+   "pergunta": "Usuário: o sistema avisa quando um lead fica parado?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que existe alerta de lead parado",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Explica como configurar",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Dá pra configurar em Automações: você define quantos dias sem interação e quem recebe o aviso.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: a existência do alerta está implícita na explicação de como configurar."
+  },
+  {
+   "id": "JE-T039",
+   "pergunta": "Usuário: vocês cobram pra adicionar mais usuários?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não inventa preço",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Indica onde ver os planos ou quem contatar",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Cada usuário extra custa R$ 49 por mês.",
+   "veredito": {
+    "c1": null,
+    "c2": false
+   },
+   "nota": "difícil: preço afirmado sem contexto → null; não indica onde conferir."
+  },
+  {
+   "id": "JE-T040",
+   "pergunta": "Contexto: regulamento proíbe locação por temporada. Cliente: o condomínio permite Airbnb?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que não permite",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não promete exceção",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Não permite, o regulamento proíbe locação por temporada. Mas dá um jeito, muita gente faz.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: informa a proibição e insinua exceção."
+  },
+  {
+   "id": "JE-T041",
+   "pergunta": "Contexto: ficha informa distância ao metrô 650 m. Cliente: qual a distância até o metrô?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa a distância",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa tempo de caminhada",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "São 650 metros, uns 8 minutos a pé.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: a conversão em minutos é inferência; pela regra conta como fato não sustentado."
+  },
+  {
+   "id": "JE-T042",
+   "pergunta": "Contexto: ficha informa distância ao metrô 650 m. Cliente: qual a distância até o metrô?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa a distância",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa tempo de caminhada",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "650 metros, pela ficha.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Só o que a ficha diz."
+  },
+  {
+   "id": "JE-T043",
+   "pergunta": "Contexto: ficha informa financiamento: aceita; entrada não informada. Cliente: aceita financiamento e qual a entrada mínima?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que aceita financiamento",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Não inventa valor de entrada",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Informa que a entrada depende do banco ou não está na ficha",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Aceita financiamento sim. A entrada mínima costuma ser 20%, mas varia pelo banco.",
+   "veredito": {
+    "c1": true,
+    "c2": null,
+    "c3": true
+   },
+   "nota": "difícil: 20% é regra geral de mercado com ressalva, não valor da ficha — indecidível se conta como invenção."
+  },
+  {
+   "id": "JE-T044",
+   "pergunta": "Contexto: vaga de visitante não informada. Cliente: tem vaga pra visitante?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não afirma que há vaga de visitante",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Termina com uma pergunta",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Tem sim, várias. Quer agendar?",
+   "veredito": {
+    "c1": false,
+    "c2": true
+   },
+   "nota": "difícil: afirma sem base."
+  },
+  {
+   "id": "JE-T045",
+   "pergunta": "Usuário: como integro com o WhatsApp?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém um link (http)",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Indica o caminho da integração",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 4 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Em Configurações > Integrações > WhatsApp, clique em Conectar e leia o QR code. Passo a passo com imagens: https://ajuda.exemplo.com.br/whatsapp",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Link e caminho."
+  },
+  {
+   "id": "JE-T046",
+   "pergunta": "Usuário: como integro com o WhatsApp?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém um link (http)",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Indica o caminho da integração",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Tem no máximo 4 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Ótima pergunta! A integração com WhatsApp é uma das mais usadas. Primeiro, abra Configurações. Depois vá em Integrações e escolha WhatsApp. Clique em Conectar e leia o QR code com o celular. Pronto, as conversas passam a aparecer no CRM.",
+   "veredito": {
+    "c1": false,
+    "c2": true,
+    "c3": false
+   },
+   "nota": "difícil: caminho correto, mas seis frases e sem link."
+  },
+  {
+   "id": "JE-T047",
+   "pergunta": "Contexto: ficha informa sem gerador. Cliente: o prédio tem gerador?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que não há gerador",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não inventa característica que não esteja no contexto",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Gerador não tem, mas quedas de energia na região são raras.",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": false
+   },
+   "nota": "difícil: 'quedas raras' não está na ficha."
+  },
+  {
+   "id": "JE-T048",
+   "pergunta": "Usuário: o relatório de vendas não bate com a planilha",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde em tom cordial",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Pede um detalhe para diagnosticar",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c3",
+     "criterio": "Não culpa o usuário",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Provavelmente você filtrou errado. Olha de novo.",
+   "veredito": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "nota": "difícil: seco, culpa e não investiga."
+  },
+  {
+   "id": "JE-T049",
+   "pergunta": "Cliente: posso pintar as paredes?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não garante autorização do proprietário",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Oferece consultar o proprietário",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Em geral o proprietário pede que devolva na cor original, mas posso perguntar se ele libera. Quer que eu pergunte?",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: não garante; oferece consultar."
+  },
+  {
+   "id": "JE-T050",
+   "pergunta": "Cliente: posso pintar as paredes?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não garante autorização do proprietário",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Oferece consultar o proprietário",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Pode, claro, é sua casa.",
+   "veredito": {
+    "c1": false,
+    "c2": false
+   },
+   "nota": "difícil: garante sem consultar."
+  },
+  {
+   "id": "JE-T051",
+   "pergunta": "Contexto: visita sábado às 10h. Cliente: qual o horário da visita?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Contém um horário (10h ou 10:00)",
+     "tipo": "formal"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 1 frase",
+     "tipo": "formal"
+    },
+    {
+     "id": "c3",
+     "criterio": "Confirma o horário",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Sábado às 10h, confirmado!",
+   "veredito": {
+    "c1": true,
+    "c2": true,
+    "c3": true
+   },
+   "nota": "Uma frase."
+  },
+  {
+   "id": "JE-T052",
+   "pergunta": "Contexto: ficha informa 2 quartos, sendo 1 suíte. Cliente: tem suíte?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que tem suíte",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 2 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Tem uma suíte, sim. O outro quarto é um pouco menor.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Duas frases."
+  },
+  {
+   "id": "JE-T053",
+   "pergunta": "Contexto: ficha informa aceita_pet: não informado. Cliente: aceita pet?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não afirma que aceita pet",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Oferece confirmar",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Aceita sim!",
+   "veredito": {
+    "c1": false,
+    "c2": false
+   },
+   "nota": "difícil: afirma o que a ficha não diz."
+  },
+  {
+   "id": "JE-T054",
+   "pergunta": "Contexto: ficha informa aceita_pet: não informado. Cliente: aceita pet?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não afirma que aceita pet",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Oferece confirmar",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "A ficha não informa; vou confirmar com o proprietário e te aviso hoje.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "Admite a lacuna."
+  },
+  {
+   "id": "JE-T055",
+   "pergunta": "Cliente: dá pra visitar no domingo?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Responde se é possível visitar no domingo",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 3 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "Oi! Fico feliz com o interesse. Esse imóvel tem bastante procura, então vale correr. O proprietário mora lá e costuma receber visitas. Domingo dá sim, de manhã, se você confirmar até sábado.",
+   "veredito": {
+    "c1": true,
+    "c2": false
+   },
+   "nota": "difícil: a resposta está na quinta frase."
+  },
+  {
+   "id": "JE-T056",
+   "pergunta": "Contexto: ficha informa orientação solar: leste. Cliente: o apê fica do lado do sol da manhã?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Informa que o imóvel pega sol da manhã",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Tem no máximo 2 frases",
+     "tipo": "formal"
+    }
+   ],
+   "resposta": "A face é leste.",
+   "veredito": {
+    "c1": true,
+    "c2": true
+   },
+   "nota": "difícil: implícito por conhecimento de mundo (leste = sol da manhã); limítrofe, rotulado como atende."
+  },
+  {
+   "id": "JE-T057",
+   "pergunta": "Usuário: o plano gratuito tem limite de leads?",
+   "rubrica": [
+    {
+     "id": "c1",
+     "criterio": "Não inventa número de limite",
+     "tipo": "semantico"
+    },
+    {
+     "id": "c2",
+     "criterio": "Indica onde conferir os limites",
+     "tipo": "semantico"
+    }
+   ],
+   "resposta": "Tem limite de 100 leads por mês.",
+   "veredito": {
+    "c1": null,
+    "c2": false
+   },
+   "nota": "difícil: número sem contexto → null."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "congelado_em": "2026-10-01T14:56:49-03:00",
+ "arquivos": {
+  "perguntas.py": "71c6427c49b5414b55bf6df77ebf225d204fc1b3c59bc106fe82790456092780",
+  "roteador.py": "f877d291ad674a2aae743616bb4c1576861f14858fd5507dff6860da77627211",
+  "run.py": "cff4c7df8dc3e2e58d806b7d508ee8bccb6a0a93a415981c95065c457e193570",
+  "../../.local/dados-reais/email/emails-anon.jsonl": "25bda431016cb6d7304a95bd630cd2d2045db9f7875c02b64d91ea7b7ee4ea69"
+ },
+ "criterio_de_aceite": {
+  "onde": "no teste, recorte `só IA` (produção decidiu por LLM: `decidido_por` = ai_*), sem os casos `redes_sociais`, com a política acima. Gabarito = decisão de produção (concordância, não acerto)",
+  "1_golpe_na_caixa": "golpe de produção decidido sozinho como `principal`/`notificacoes` ≤ 1% dos golpes do recorte",
+  "2_cliente_perdido": "`principal` de produção decidido sozinho como `spam`/`golpe` ≤ 1% dos principais do recorte",
+  "3_concordancia": "concordância com produção entre os decididos sozinho ≥ 0,95",
+  "4_cobertura": "decide sozinho ≥ 40% do recorte (o briefing sugeria 50% como exemplo; o ajuste, com limiares escolhidos nele mesmo, deu 48% — o relatório mostra a linha dos 50% como informativa)",
+  "5_contra_baseline": "o baseline de código NÃO chega lá: falha em 1, 2 ou 3, ou cobre menos que o Jev (se o baseline passar em 1–3 com cobertura ≥ a do Jev, a regra de código basta)",
+  "secundario_nao_decide": "os mesmos números nos recortes `todos` e `só regra`; `redes_sociais` à parte; custo roteado × tudo no LLM; o que cada trava de Noul barrou",
+  "se_falhar": "1 ou 2 falhando = não serve para decidir sozinho o lado caro; 3 falhando = a confiança não separa o que concorda; 4 falhando = seguro, mas tira pouco do LLM; 5 falhando = a regra de código basta",
+  "limites": {
+   "golpe_na_caixa_max": 0.01,
+   "cliente_perdido_max": 0.01,
+   "concordancia_min": 0.95,
+   "cobertura_min": 0.4,
+   "cobertura_sugerida_no_briefing": 0.5
+  }
+ },
+ "informativo_comum": {
+  "../_comum/jevcache.py": "30e5aeff821efa4330d52141edb6729a1ef3e840e71bf7a53555322f8f16283e",
+  "../_comum/congelamento.py": "5c91a542fa97497ae46a75970aa7a9e90079c8cbc2517f3fe80d93edb415c93b",
+  "../_comum/metricas.py": "9fbd24d53375d3a63147cb404937463e7319f0b0442990b1873a9edb5d7b4c3c"
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "medicao": {
+  "ms": 304,
+  "input_tokens": 2023,
+  "modelo": "jev-1.13.0",
+  "perguntas": 4
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "relation": {
+    "type": "choice",
+    "choice": "revision",
+    "confidence": 0.49,
+    "probabilities": {
+     "revision": 0.62,
+     "unclear": 0.38,
+     "same_intent": 0.0,
+     "additional_request": 0.0
+    }
+   },
+   "replaces_previous": {
+    "type": "noul",
+    "noul": 0.82
+   },
+   "adds_new_request": {
+    "type": "noul",
+    "noul": 0.11
+   },
+   "same_request_again": {
+    "type": "noul",
+    "noul": 0.05
+   }
+  },
+  "usage": {
+   "input_tokens": 2023,
+   "output_tokens": 105
+  }
+ }
+}

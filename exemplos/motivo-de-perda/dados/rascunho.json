@@ -1,0 +1,149 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "MP-R001",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "quanto tá o apto de 3 quartos da savassi?"
+    },
+    {
+     "de": "corretor",
+     "texto": "R$ 1,2 milhão."
+    },
+    {
+     "de": "cliente",
+     "texto": "fora da minha realidade, tenho no máximo 800"
+    },
+    {
+     "de": "corretor",
+     "texto": "Posso procurar até 800 em bairros vizinhos."
+    },
+    {
+     "de": "cliente",
+     "texto": "não, queria esse. deixa pra lá"
+    }
+   ],
+   "folha": "preco_acima_orcamento",
+   "grupo": "preco",
+   "aceitaveis": [
+    "preco_acima_orcamento"
+   ],
+   "nota": "fácil: preço dito com todas as letras"
+  },
+  {
+   "id": "MP-R002",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "o banco não aprovou meu financiamento"
+    },
+    {
+     "de": "corretor",
+     "texto": "Que pena. Quer tentar em outro banco?"
+    },
+    {
+     "de": "cliente",
+     "texto": "não, vou desistir da compra por enquanto"
+    },
+    {
+     "de": "corretor",
+     "texto": "Entendido, boa sorte."
+    }
+   ],
+   "folha": "financiamento_negado",
+   "grupo": "credito_documentacao",
+   "aceitaveis": [
+    "financiamento_negado"
+   ],
+   "nota": "fácil: crédito negado"
+  },
+  {
+   "id": "MP-R003",
+   "conversa": [
+    {
+     "de": "corretor",
+     "texto": "Oi! Ainda procurando apartamento?"
+    },
+    {
+     "de": "cliente",
+     "texto": "não, já aluguei por outra imobiliária"
+    },
+    {
+     "de": "corretor",
+     "texto": "Tudo bem, obrigado por avisar."
+    },
+    {
+     "de": "cliente",
+     "texto": "eu que agradeço"
+    }
+   ],
+   "folha": "outra_imobiliaria",
+   "grupo": "concorrencia",
+   "aceitaveis": [
+    "outra_imobiliaria"
+   ],
+   "nota": "fácil: fechou com outra imobiliária"
+  },
+  {
+   "id": "MP-R004",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "oi tem casa de 2 quartos pra alugar?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Tem sim! Qual bairro você prefere?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Olá, consegue me dizer o bairro?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Bom dia, ainda procura casa?"
+    }
+   ],
+   "folha": "sumiu_sem_resposta",
+   "grupo": "sem_informacao",
+   "aceitaveis": [
+    "sumiu_sem_resposta"
+   ],
+   "nota": "fácil: parou de responder"
+  },
+  {
+   "id": "MP-R005",
+   "conversa": [
+    {
+     "de": "cliente",
+     "texto": "o apto tem vaga de garagem?"
+    },
+    {
+     "de": "corretor",
+     "texto": "Não tem, o prédio é antigo e não tem garagem."
+    },
+    {
+     "de": "cliente",
+     "texto": "sem vaga não serve pra mim, tenho carro"
+    },
+    {
+     "de": "corretor",
+     "texto": "Posso buscar outros com vaga."
+    },
+    {
+     "de": "cliente",
+     "texto": "não precisa, obrigado"
+    }
+   ],
+   "folha": "falta_item",
+   "grupo": "imovel",
+   "aceitaveis": [
+    "falta_item"
+   ],
+   "nota": "fácil: falta vaga"
+  }
+ ]
+}

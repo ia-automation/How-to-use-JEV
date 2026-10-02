@@ -1,0 +1,29 @@
+{
+ "medicao": {
+  "ms": 239,
+  "input_tokens": 1030,
+  "modelo": "jev-1.13.0",
+  "perguntas": 1
+ },
+ "resposta": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "leaf": {
+    "type": "choice",
+    "choice": "restricao_cadastral",
+    "confidence": 0.99,
+    "probabilities": {
+     "financiamento_negado": 0.0,
+     "garantia_locaticia": 0.0,
+     "documentacao_imovel": 0.0,
+     "restricao_cadastral": 1.0,
+     "only_group": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1030,
+   "output_tokens": 74
+  }
+ }
+}

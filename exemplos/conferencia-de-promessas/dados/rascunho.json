@@ -1,0 +1,195 @@
+{
+ "versao": "2026-10-01",
+ "autor": "fable",
+ "casos": [
+  {
+   "id": "CP-R001",
+   "ficha": {
+    "titulo": "Apartamento 2 quartos em Pinheiros",
+    "descricao": "Apartamento de 2 quartos em Pinheiros, a poucos passos da Rua dos Pinheiros. Prédio aceita pet. Uma vaga de garagem coberta. Sala com varanda.",
+    "campos": {
+     "quartos": 2,
+     "vagas": 1,
+     "area_m2": 65,
+     "aceita_pet": true
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "O imóvel tem 2 quartos",
+     "relacao": "supported",
+     "trecho_apoio": "quartos: 2"
+    },
+    {
+     "id": "a2",
+     "texto": "O prédio aceita pet",
+     "relacao": "supported",
+     "trecho_apoio": "Prédio aceita pet"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem piscina",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "numérica: a1"
+  },
+  {
+   "id": "CP-R002",
+   "ficha": {
+    "titulo": "Casa térrea em Santa Felicidade, Curitiba",
+    "descricao": "Casa térrea com 3 quartos em Santa Felicidade. Entregue sem mobília. Duas vagas cobertas e quintal com churrasqueira.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2,
+     "mobiliado": false
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "A casa vem mobiliada",
+     "relacao": "contradicted",
+     "trecho_apoio": "Entregue sem mobília"
+    },
+    {
+     "id": "a2",
+     "texto": "Tem 2 vagas",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 2"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem churrasqueira",
+     "relacao": "supported",
+     "trecho_apoio": "quintal com churrasqueira"
+    }
+   ],
+   "nota": "numérica: a2"
+  },
+  {
+   "id": "CP-R003",
+   "ficha": {
+    "titulo": "Apartamento 1 quarto na Tijuca",
+    "descricao": "Apartamento de 1 quarto na Tijuca, 45 m², a 500 m do metrô Saens Peña. Condomínio de R$ 520. Não aceita animais.",
+    "campos": {
+     "quartos": 1,
+     "area_m2": 45,
+     "distancia_metro_m": 500,
+     "condominio_reais": 520,
+     "aceita_pet": false
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Fica a 500 metros do metrô",
+     "relacao": "supported",
+     "trecho_apoio": "distancia_metro_m: 500"
+    },
+    {
+     "id": "a2",
+     "texto": "Aceita pet",
+     "relacao": "contradicted",
+     "trecho_apoio": "Não aceita animais"
+    },
+    {
+     "id": "a3",
+     "texto": "O condomínio custa R$ 520",
+     "relacao": "supported",
+     "trecho_apoio": "condominio_reais: 520"
+    },
+    {
+     "id": "a4",
+     "texto": "Tem 2 vagas",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "numérica: a1, a3"
+  },
+  {
+   "id": "CP-R004",
+   "ficha": {
+    "titulo": "Apartamento 3 quartos na Savassi, BH",
+    "descricao": "Apartamento de 3 quartos na Savassi, 2 vagas, 98 m². Aceita financiamento bancário. Prédio com piscina e academia.",
+    "campos": {
+     "quartos": 3,
+     "vagas": 2,
+     "area_m2": 98,
+     "financiamento": "aceita"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Aceita financiamento",
+     "relacao": "supported",
+     "trecho_apoio": "financiamento: \"aceita\""
+    },
+    {
+     "id": "a2",
+     "texto": "Tem 98 m²",
+     "relacao": "supported",
+     "trecho_apoio": "area_m2: 98"
+    },
+    {
+     "id": "a3",
+     "texto": "Tem 3 vagas",
+     "relacao": "contradicted",
+     "trecho_apoio": "vagas: 2"
+    },
+    {
+     "id": "a4",
+     "texto": "Tem academia",
+     "relacao": "supported",
+     "trecho_apoio": "piscina e academia"
+    }
+   ],
+   "nota": "numérica: a2, a3"
+  },
+  {
+   "id": "CP-R005",
+   "ficha": {
+    "titulo": "Studio mobiliado na Consolação",
+    "descricao": "Studio na Consolação, 30 m², mobiliado, sem vaga. Condomínio R$ 400 com água inclusa. Venda somente à vista.",
+    "campos": {
+     "area_m2": 30,
+     "vagas": 0,
+     "mobiliado": true,
+     "condominio_reais": 400,
+     "financiamento": "nao_aceita"
+    }
+   },
+   "afirmacoes": [
+    {
+     "id": "a1",
+     "texto": "Vem mobiliado",
+     "relacao": "supported",
+     "trecho_apoio": "mobiliado: true"
+    },
+    {
+     "id": "a2",
+     "texto": "Aceita financiamento",
+     "relacao": "contradicted",
+     "trecho_apoio": "financiamento: \"nao_aceita\""
+    },
+    {
+     "id": "a3",
+     "texto": "Não tem vaga",
+     "relacao": "supported",
+     "trecho_apoio": "vagas: 0"
+    },
+    {
+     "id": "a4",
+     "texto": "Aceita pet",
+     "relacao": "not_stated",
+     "trecho_apoio": null
+    }
+   ],
+   "nota": "numérica: a3"
+  }
+ ]
+}
